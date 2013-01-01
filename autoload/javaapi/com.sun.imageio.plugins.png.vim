@@ -1,0 +1,211 @@
+call javaapi#namespace('com.sun.imageio.plugins.png')
+
+call javaapi#class('CRC', '', [
+  \ javaapi#method(0,'CRC(', ')', 'public'),
+  \ javaapi#method(0,'reset(', ')', 'void'),
+  \ javaapi#method(0,'update(', 'byte[], int, int)', 'void'),
+  \ javaapi#method(0,'update(', 'int)', 'void'),
+  \ javaapi#method(0,'getValue(', ')', 'int'),
+  \ ])
+
+call javaapi#class('ChunkStream', '', [
+  \ javaapi#method(0,'ChunkStream(', 'int, ImageOutputStream) throws IOException', 'public'),
+  \ javaapi#method(0,'read(', ') throws IOException', 'int'),
+  \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
+  \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
+  \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
+  \ javaapi#method(0,'finish(', ') throws IOException', 'void'),
+  \ ])
+
+call javaapi#class('IDATOutputStream', '', [
+  \ javaapi#method(0,'IDATOutputStream(', 'ImageOutputStream, int) throws IOException', 'public'),
+  \ javaapi#method(0,'read(', ') throws IOException', 'int'),
+  \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
+  \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
+  \ javaapi#method(0,'deflate(', ') throws IOException', 'void'),
+  \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
+  \ javaapi#method(0,'finish(', ') throws IOException', 'void'),
+  \ ])
+
+call javaapi#class('PNGImageDataEnumeration', 'InputStream>', [
+  \ javaapi#method(0,'PNGImageDataEnumeration(', 'ImageInputStream) throws IOException', 'public'),
+  \ javaapi#method(0,'nextElement(', ')', 'InputStream'),
+  \ javaapi#method(0,'hasMoreElements(', ')', 'boolean'),
+  \ javaapi#method(0,'nextElement(', ')', 'Object'),
+  \ ])
+
+call javaapi#class('PNGImageReader', '', [
+  \ javaapi#method(0,'PNGImageReader(', 'ImageReaderSpi)', 'public'),
+  \ javaapi#method(0,'setInput(', 'Object, boolean, boolean)', 'void'),
+  \ javaapi#method(0,'getNumImages(', 'boolean) throws IIOException', 'int'),
+  \ javaapi#method(0,'getWidth(', 'int) throws IIOException', 'int'),
+  \ javaapi#method(0,'getHeight(', 'int) throws IIOException', 'int'),
+  \ javaapi#method(0,'getImageTypes(', 'int) throws IIOException', 'ImageTypeSpecifier>'),
+  \ javaapi#method(0,'getRawImageType(', 'int) throws IOException', 'ImageTypeSpecifier'),
+  \ javaapi#method(0,'getDefaultReadParam(', ')', 'ImageReadParam'),
+  \ javaapi#method(0,'getStreamMetadata(', ') throws IIOException', 'IIOMetadata'),
+  \ javaapi#method(0,'getImageMetadata(', 'int) throws IIOException', 'IIOMetadata'),
+  \ javaapi#method(0,'read(', 'int, ImageReadParam) throws IIOException', 'BufferedImage'),
+  \ javaapi#method(0,'reset(', ')', 'void'),
+  \ ])
+
+call javaapi#class('PNGImageReaderSpi', '', [
+  \ javaapi#method(0,'PNGImageReaderSpi(', ')', 'public'),
+  \ javaapi#method(0,'getDescription(', 'Locale)', 'String'),
+  \ javaapi#method(0,'canDecodeInput(', 'Object) throws IOException', 'boolean'),
+  \ javaapi#method(0,'createReaderInstance(', 'Object)', 'ImageReader'),
+  \ ])
+
+call javaapi#class('PNGImageWriteParam', '', [
+  \ javaapi#method(0,'PNGImageWriteParam(', 'Locale)', 'public'),
+  \ ])
+
+call javaapi#class('PNGImageWriter', '', [
+  \ javaapi#method(0,'PNGImageWriter(', 'ImageWriterSpi)', 'public'),
+  \ javaapi#method(0,'setOutput(', 'Object)', 'void'),
+  \ javaapi#method(0,'getDefaultWriteParam(', ')', 'ImageWriteParam'),
+  \ javaapi#method(0,'getDefaultStreamMetadata(', 'ImageWriteParam)', 'IIOMetadata'),
+  \ javaapi#method(0,'getDefaultImageMetadata(', 'ImageTypeSpecifier, ImageWriteParam)', 'IIOMetadata'),
+  \ javaapi#method(0,'convertStreamMetadata(', 'IIOMetadata, ImageWriteParam)', 'IIOMetadata'),
+  \ javaapi#method(0,'convertImageMetadata(', 'IIOMetadata, ImageTypeSpecifier, ImageWriteParam)', 'IIOMetadata'),
+  \ javaapi#method(0,'write(', 'IIOMetadata, IIOImage, ImageWriteParam) throws IIOException', 'void'),
+  \ ])
+
+call javaapi#class('PNGImageWriterSpi', '', [
+  \ javaapi#method(0,'PNGImageWriterSpi(', ')', 'public'),
+  \ javaapi#method(0,'canEncodeImage(', 'ImageTypeSpecifier)', 'boolean'),
+  \ javaapi#method(0,'getDescription(', 'Locale)', 'String'),
+  \ javaapi#method(0,'createWriterInstance(', 'Object)', 'ImageWriter'),
+  \ ])
+
+call javaapi#class('PNGMetadata', '', [
+  \ javaapi#field(1,'nativeMetadataFormatName', 'String'),
+  \ javaapi#field(1,'IHDR_colorTypeNames', 'String[]'),
+  \ javaapi#field(1,'IHDR_numChannels', 'int[]'),
+  \ javaapi#field(1,'IHDR_bitDepths', 'String[]'),
+  \ javaapi#field(1,'IHDR_compressionMethodNames', 'String[]'),
+  \ javaapi#field(1,'IHDR_filterMethodNames', 'String[]'),
+  \ javaapi#field(1,'IHDR_interlaceMethodNames', 'String[]'),
+  \ javaapi#field(1,'iCCP_compressionMethodNames', 'String[]'),
+  \ javaapi#field(1,'zTXt_compressionMethodNames', 'String[]'),
+  \ javaapi#field(1,'PHYS_UNIT_UNKNOWN', 'int'),
+  \ javaapi#field(1,'PHYS_UNIT_METER', 'int'),
+  \ javaapi#field(1,'unitSpecifierNames', 'String[]'),
+  \ javaapi#field(1,'renderingIntentNames', 'String[]'),
+  \ javaapi#field(1,'colorSpaceTypeNames', 'String[]'),
+  \ javaapi#field(0,'IHDR_present', 'boolean'),
+  \ javaapi#field(0,'IHDR_width', 'int'),
+  \ javaapi#field(0,'IHDR_height', 'int'),
+  \ javaapi#field(0,'IHDR_bitDepth', 'int'),
+  \ javaapi#field(0,'IHDR_colorType', 'int'),
+  \ javaapi#field(0,'IHDR_compressionMethod', 'int'),
+  \ javaapi#field(0,'IHDR_filterMethod', 'int'),
+  \ javaapi#field(0,'IHDR_interlaceMethod', 'int'),
+  \ javaapi#field(0,'PLTE_present', 'boolean'),
+  \ javaapi#field(0,'PLTE_red', 'byte[]'),
+  \ javaapi#field(0,'PLTE_green', 'byte[]'),
+  \ javaapi#field(0,'PLTE_blue', 'byte[]'),
+  \ javaapi#field(0,'PLTE_order', 'int[]'),
+  \ javaapi#field(0,'bKGD_present', 'boolean'),
+  \ javaapi#field(0,'bKGD_colorType', 'int'),
+  \ javaapi#field(0,'bKGD_index', 'int'),
+  \ javaapi#field(0,'bKGD_gray', 'int'),
+  \ javaapi#field(0,'bKGD_red', 'int'),
+  \ javaapi#field(0,'bKGD_green', 'int'),
+  \ javaapi#field(0,'bKGD_blue', 'int'),
+  \ javaapi#field(0,'cHRM_present', 'boolean'),
+  \ javaapi#field(0,'cHRM_whitePointX', 'int'),
+  \ javaapi#field(0,'cHRM_whitePointY', 'int'),
+  \ javaapi#field(0,'cHRM_redX', 'int'),
+  \ javaapi#field(0,'cHRM_redY', 'int'),
+  \ javaapi#field(0,'cHRM_greenX', 'int'),
+  \ javaapi#field(0,'cHRM_greenY', 'int'),
+  \ javaapi#field(0,'cHRM_blueX', 'int'),
+  \ javaapi#field(0,'cHRM_blueY', 'int'),
+  \ javaapi#field(0,'gAMA_present', 'boolean'),
+  \ javaapi#field(0,'gAMA_gamma', 'int'),
+  \ javaapi#field(0,'hIST_present', 'boolean'),
+  \ javaapi#field(0,'hIST_histogram', 'char[]'),
+  \ javaapi#field(0,'iCCP_present', 'boolean'),
+  \ javaapi#field(0,'iCCP_profileName', 'String'),
+  \ javaapi#field(0,'iCCP_compressionMethod', 'int'),
+  \ javaapi#field(0,'iCCP_compressedProfile', 'byte[]'),
+  \ javaapi#field(0,'iTXt_keyword', 'String>'),
+  \ javaapi#field(0,'iTXt_compressionFlag', 'Boolean>'),
+  \ javaapi#field(0,'iTXt_compressionMethod', 'Integer>'),
+  \ javaapi#field(0,'iTXt_languageTag', 'String>'),
+  \ javaapi#field(0,'iTXt_translatedKeyword', 'String>'),
+  \ javaapi#field(0,'iTXt_text', 'String>'),
+  \ javaapi#field(0,'pHYs_present', 'boolean'),
+  \ javaapi#field(0,'pHYs_pixelsPerUnitXAxis', 'int'),
+  \ javaapi#field(0,'pHYs_pixelsPerUnitYAxis', 'int'),
+  \ javaapi#field(0,'pHYs_unitSpecifier', 'int'),
+  \ javaapi#field(0,'sBIT_present', 'boolean'),
+  \ javaapi#field(0,'sBIT_colorType', 'int'),
+  \ javaapi#field(0,'sBIT_grayBits', 'int'),
+  \ javaapi#field(0,'sBIT_redBits', 'int'),
+  \ javaapi#field(0,'sBIT_greenBits', 'int'),
+  \ javaapi#field(0,'sBIT_blueBits', 'int'),
+  \ javaapi#field(0,'sBIT_alphaBits', 'int'),
+  \ javaapi#field(0,'sPLT_present', 'boolean'),
+  \ javaapi#field(0,'sPLT_paletteName', 'String'),
+  \ javaapi#field(0,'sPLT_sampleDepth', 'int'),
+  \ javaapi#field(0,'sPLT_red', 'int[]'),
+  \ javaapi#field(0,'sPLT_green', 'int[]'),
+  \ javaapi#field(0,'sPLT_blue', 'int[]'),
+  \ javaapi#field(0,'sPLT_alpha', 'int[]'),
+  \ javaapi#field(0,'sPLT_frequency', 'int[]'),
+  \ javaapi#field(0,'sRGB_present', 'boolean'),
+  \ javaapi#field(0,'sRGB_renderingIntent', 'int'),
+  \ javaapi#field(0,'tEXt_keyword', 'String>'),
+  \ javaapi#field(0,'tEXt_text', 'String>'),
+  \ javaapi#field(0,'tIME_present', 'boolean'),
+  \ javaapi#field(0,'tIME_year', 'int'),
+  \ javaapi#field(0,'tIME_month', 'int'),
+  \ javaapi#field(0,'tIME_day', 'int'),
+  \ javaapi#field(0,'tIME_hour', 'int'),
+  \ javaapi#field(0,'tIME_minute', 'int'),
+  \ javaapi#field(0,'tIME_second', 'int'),
+  \ javaapi#field(0,'tRNS_present', 'boolean'),
+  \ javaapi#field(0,'tRNS_colorType', 'int'),
+  \ javaapi#field(0,'tRNS_alpha', 'byte[]'),
+  \ javaapi#field(0,'tRNS_gray', 'int'),
+  \ javaapi#field(0,'tRNS_red', 'int'),
+  \ javaapi#field(0,'tRNS_green', 'int'),
+  \ javaapi#field(0,'tRNS_blue', 'int'),
+  \ javaapi#field(0,'zTXt_keyword', 'String>'),
+  \ javaapi#field(0,'zTXt_compressionMethod', 'Integer>'),
+  \ javaapi#field(0,'zTXt_text', 'String>'),
+  \ javaapi#field(0,'unknownChunkType', 'String>'),
+  \ javaapi#field(0,'unknownChunkData', 'ArrayList<byte[]>'),
+  \ javaapi#method(0,'PNGMetadata(', ')', 'public'),
+  \ javaapi#method(0,'PNGMetadata(', 'IIOMetadata)', 'public'),
+  \ javaapi#method(0,'initialize(', 'ImageTypeSpecifier, int)', 'void'),
+  \ javaapi#method(0,'isReadOnly(', ')', 'boolean'),
+  \ javaapi#method(0,'clone(', ')', 'Object'),
+  \ javaapi#method(0,'getAsTree(', 'String)', 'Node'),
+  \ javaapi#method(0,'getStandardChromaNode(', ')', 'IIOMetadataNode'),
+  \ javaapi#method(0,'getStandardCompressionNode(', ')', 'IIOMetadataNode'),
+  \ javaapi#method(0,'getStandardDataNode(', ')', 'IIOMetadataNode'),
+  \ javaapi#method(0,'getStandardDimensionNode(', ')', 'IIOMetadataNode'),
+  \ javaapi#method(0,'getStandardDocumentNode(', ')', 'IIOMetadataNode'),
+  \ javaapi#method(0,'getStandardTextNode(', ')', 'IIOMetadataNode'),
+  \ javaapi#method(0,'getStandardTransparencyNode(', ')', 'IIOMetadataNode'),
+  \ javaapi#method(0,'mergeTree(', 'String, Node) throws IIOInvalidTreeException', 'void'),
+  \ javaapi#method(0,'reset(', ')', 'void'),
+  \ ])
+
+call javaapi#class('PNGMetadataFormat', '', [
+  \ javaapi#method(0,'canNodeAppear(', 'String, ImageTypeSpecifier)', 'boolean'),
+  \ javaapi#method(1,'getInstance(', ')', 'IIOMetadataFormat'),
+  \ ])
+
+call javaapi#class('PNGMetadataFormatResources', '', [
+  \ javaapi#method(0,'PNGMetadataFormatResources(', ')', 'public'),
+  \ ])
+
+call javaapi#class('RowFilter', '', [
+  \ javaapi#method(0,'RowFilter(', ')', 'public'),
+  \ javaapi#method(0,'filterRow(', 'int, byte[], byte[], byte[][], int, int)', 'int'),
+  \ ])
+

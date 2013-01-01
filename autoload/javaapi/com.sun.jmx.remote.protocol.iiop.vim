@@ -1,0 +1,76 @@
+call javaapi#namespace('com.sun.jmx.remote.protocol.iiop')
+
+call javaapi#class('ClientProvider', 'JMXConnectorProvider', [
+  \ javaapi#method(0,'ClientProvider(', ')', 'public'),
+  \ javaapi#method(0,'newJMXConnector(', 'JMXServiceURL, Map<String, ?>) throws IOException', 'JMXConnector'),
+  \ ])
+
+call javaapi#class('IIOPProxyImpl', 'IIOPProxy', [
+  \ javaapi#method(0,'IIOPProxyImpl(', ')', 'public'),
+  \ javaapi#method(0,'isStub(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'getDelegate(', 'Object)', 'Object'),
+  \ javaapi#method(0,'setDelegate(', 'Object, Object)', 'void'),
+  \ javaapi#method(0,'getOrb(', 'Object)', 'Object'),
+  \ javaapi#method(0,'connect(', 'Object, Object) throws RemoteException', 'void'),
+  \ javaapi#method(0,'isOrb(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'createOrb(', 'String[], Properties)', 'Object'),
+  \ javaapi#method(0,'stringToObject(', 'Object, String)', 'Object'),
+  \ javaapi#method(0,'objectToString(', 'Object, Object)', 'String'),
+  \ javaapi#method(0,'narrow(', 'Object, Class<T>)', 'T'),
+  \ javaapi#method(0,'exportObject(', 'Remote) throws RemoteException', 'void'),
+  \ javaapi#method(0,'unexportObject(', 'Remote) throws NoSuchObjectException', 'void'),
+  \ javaapi#method(0,'toStub(', 'Remote) throws NoSuchObjectException', 'Remote'),
+  \ ])
+
+call javaapi#class('ProxyInputStream', '', [
+  \ javaapi#method(0,'ProxyInputStream(', 'InputStream)', 'public'),
+  \ javaapi#method(0,'read_boolean(', ')', 'boolean'),
+  \ javaapi#method(0,'read_char(', ')', 'char'),
+  \ javaapi#method(0,'read_wchar(', ')', 'char'),
+  \ javaapi#method(0,'read_octet(', ')', 'byte'),
+  \ javaapi#method(0,'read_short(', ')', 'short'),
+  \ javaapi#method(0,'read_ushort(', ')', 'short'),
+  \ javaapi#method(0,'read_long(', ')', 'int'),
+  \ javaapi#method(0,'read_ulong(', ')', 'int'),
+  \ javaapi#method(0,'read_longlong(', ')', 'long'),
+  \ javaapi#method(0,'read_ulonglong(', ')', 'long'),
+  \ javaapi#method(0,'read_float(', ')', 'float'),
+  \ javaapi#method(0,'read_double(', ')', 'double'),
+  \ javaapi#method(0,'read_string(', ')', 'String'),
+  \ javaapi#method(0,'read_wstring(', ')', 'String'),
+  \ javaapi#method(0,'read_boolean_array(', 'boolean[], int, int)', 'void'),
+  \ javaapi#method(0,'read_char_array(', 'char[], int, int)', 'void'),
+  \ javaapi#method(0,'read_wchar_array(', 'char[], int, int)', 'void'),
+  \ javaapi#method(0,'read_octet_array(', 'byte[], int, int)', 'void'),
+  \ javaapi#method(0,'read_short_array(', 'short[], int, int)', 'void'),
+  \ javaapi#method(0,'read_ushort_array(', 'short[], int, int)', 'void'),
+  \ javaapi#method(0,'read_long_array(', 'int[], int, int)', 'void'),
+  \ javaapi#method(0,'read_ulong_array(', 'int[], int, int)', 'void'),
+  \ javaapi#method(0,'read_longlong_array(', 'long[], int, int)', 'void'),
+  \ javaapi#method(0,'read_ulonglong_array(', 'long[], int, int)', 'void'),
+  \ javaapi#method(0,'read_float_array(', 'float[], int, int)', 'void'),
+  \ javaapi#method(0,'read_double_array(', 'double[], int, int)', 'void'),
+  \ javaapi#method(0,'read_Object(', ')', 'Object'),
+  \ javaapi#method(0,'read_TypeCode(', ')', 'TypeCode'),
+  \ javaapi#method(0,'read_any(', ')', 'Any'),
+  \ javaapi#method(0,'read_Principal(', ')', 'Principal'),
+  \ javaapi#method(0,'read(', ') throws IOException', 'int'),
+  \ javaapi#method(0,'read_fixed(', ')', 'BigDecimal'),
+  \ javaapi#method(0,'read_Context(', ')', 'Context'),
+  \ javaapi#method(0,'read_Object(', 'Class)', 'Object'),
+  \ javaapi#method(0,'orb(', ')', 'ORB'),
+  \ javaapi#method(0,'read_value(', ')', 'Serializable'),
+  \ javaapi#method(0,'read_value(', 'Class)', 'Serializable'),
+  \ javaapi#method(0,'read_value(', 'BoxedValueHelper)', 'Serializable'),
+  \ javaapi#method(0,'read_value(', 'String)', 'Serializable'),
+  \ javaapi#method(0,'read_value(', 'Serializable)', 'Serializable'),
+  \ javaapi#method(0,'read_abstract_interface(', ')', 'Object'),
+  \ javaapi#method(0,'read_abstract_interface(', 'Class)', 'Object'),
+  \ javaapi#method(0,'getProxiedInputStream(', ')', 'InputStream'),
+  \ ])
+
+call javaapi#class('ServerProvider', 'JMXConnectorServerProvider', [
+  \ javaapi#method(0,'ServerProvider(', ')', 'public'),
+  \ javaapi#method(0,'newJMXConnectorServer(', 'JMXServiceURL, Map<String, ?>, MBeanServer) throws IOException', 'JMXConnectorServer'),
+  \ ])
+
