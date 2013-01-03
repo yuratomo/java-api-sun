@@ -25,10 +25,6 @@ call javaapi#class('ReferenceWrapper', 'UnicastRemoteObject', [
   \ javaapi#method(0,'getReference(', ') throws RemoteException', 'Reference'),
   \ ])
 
-call javaapi#com.sun.jndi.rmi.registry.ReferenceWrapper_Stub(java.rmi.server.RemoteRef);('ReferenceWrapper', '', [
-  \ javaapi#method(0,'getReference(', ') throws RemoteException, NamingException', 'Reference'),
-  \ ])
-
 call javaapi#class('RegistryContext', 'Referenceable', [
   \ javaapi#field(1,'SECURITY_MGR', 'String'),
   \ javaapi#method(0,'RegistryContext(', 'String, int, Hashtable) throws NamingException', 'public'),

@@ -85,17 +85,6 @@ call javaapi#class('DGCImpl', 'DGC', [
   \ javaapi#method(0,'clean(', 'ObjID[], long, VMID, boolean)', 'void'),
   \ ])
 
-call javaapi#sun.rmi.transport.DGCImpl_Skel();('DGCImpl', '', [
-  \ javaapi#method(0,'dispatch(', 'Remote, RemoteCall, int, long) throws Exception', 'void'),
-  \ javaapi#method(0,'getOperations(', ')', 'Operation[]'),
-  \ ])
-
-call javaapi#sun.rmi.transport.DGCImpl_Stub();('DGCImpl', '', [
-  \ javaapi#method(0,'DGCImpl_Stub(', 'RemoteRef)', 'public'),
-  \ javaapi#method(0,'clean(', 'ObjID[], long, VMID, boolean) throws RemoteException', 'void'),
-  \ javaapi#method(0,'dirty(', 'ObjID[], long, Lease) throws RemoteException', 'Lease'),
-  \ ])
-
 call javaapi#interface('Endpoint', '', [
   \ javaapi#method(0,'getChannel(', ')', 'Channel'),
   \ javaapi#method(0,'exportObject(', 'Target) throws RemoteException', 'void'),

@@ -71,19 +71,6 @@ call javaapi#class('ActivationSystemImpl', 'RemoteServer', [
   \ javaapi#method(0,'shutdown(', ') throws AccessException', 'void'),
   \ ])
 
-call javaapi#sun.rmi.server.Activation$ActivationSystemImpl_Stub(java.rmi.server.RemoteRef);('ActivationSystemImpl', '', [
-  \ javaapi#method(0,'activeGroup(', 'ActivationGroupID, ActivationInstantiator, long) throws RemoteException, ActivationException, UnknownGroupException', 'ActivationMonitor'),
-  \ javaapi#method(0,'getActivationDesc(', 'ActivationID) throws RemoteException, ActivationException, UnknownObjectException', 'ActivationDesc'),
-  \ javaapi#method(0,'getActivationGroupDesc(', 'ActivationGroupID) throws RemoteException, ActivationException, UnknownGroupException', 'ActivationGroupDesc'),
-  \ javaapi#method(0,'registerGroup(', 'ActivationGroupDesc) throws RemoteException, ActivationException', 'ActivationGroupID'),
-  \ javaapi#method(0,'registerObject(', 'ActivationDesc) throws RemoteException, ActivationException, UnknownGroupException', 'ActivationID'),
-  \ javaapi#method(0,'setActivationDesc(', 'ActivationID, ActivationDesc) throws RemoteException, ActivationException, UnknownGroupException, UnknownObjectException', 'ActivationDesc'),
-  \ javaapi#method(0,'setActivationGroupDesc(', 'ActivationGroupID, ActivationGroupDesc) throws RemoteException, ActivationException, UnknownGroupException', 'ActivationGroupDesc'),
-  \ javaapi#method(0,'shutdown(', ') throws RemoteException', 'void'),
-  \ javaapi#method(0,'unregisterGroup(', 'ActivationGroupID) throws RemoteException, ActivationException, UnknownGroupException', 'void'),
-  \ javaapi#method(0,'unregisterObject(', 'ActivationID) throws RemoteException, ActivationException, UnknownObjectException', 'void'),
-  \ ])
-
 call javaapi#class('ActivatorImpl', 'RemoteServer', [
   \ javaapi#method(0,'activate(', 'ActivationID, boolean) throws ActivationException, UnknownObjectException, RemoteException', 'Remote>'),
   \ ])

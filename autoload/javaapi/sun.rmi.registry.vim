@@ -33,17 +33,3 @@ call javaapi#class('RegistryImpl', 'RemoteServer', [
   \ javaapi#method(1,'main(', 'String[])', 'void'),
   \ ])
 
-call javaapi#sun.rmi.registry.RegistryImpl_Skel();('RegistryImpl', '', [
-  \ javaapi#method(0,'dispatch(', 'Remote, RemoteCall, int, long) throws Exception', 'void'),
-  \ javaapi#method(0,'getOperations(', ')', 'Operation[]'),
-  \ ])
-
-call javaapi#sun.rmi.registry.RegistryImpl_Stub();('RegistryImpl', '', [
-  \ javaapi#method(0,'RegistryImpl_Stub(', 'RemoteRef)', 'public'),
-  \ javaapi#method(0,'bind(', 'String, Remote) throws AccessException, AlreadyBoundException, RemoteException', 'void'),
-  \ javaapi#method(0,'list(', ') throws AccessException, RemoteException', 'String[]'),
-  \ javaapi#method(0,'lookup(', 'String) throws AccessException, NotBoundException, RemoteException', 'Remote'),
-  \ javaapi#method(0,'rebind(', 'String, Remote) throws AccessException, RemoteException', 'void'),
-  \ javaapi#method(0,'unbind(', 'String) throws AccessException, NotBoundException, RemoteException', 'void'),
-  \ ])
-
