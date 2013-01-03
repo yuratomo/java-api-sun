@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xerces.internal.xinclude')
 
-call javaapi#class('MultipleScopeNamespaceSupport', '', [
+call javaapi#class('MultipleScopeNamespaceSupport', 'NamespaceSupport', [
   \ javaapi#method(0,'MultipleScopeNamespaceSupport(', ')', 'public'),
   \ javaapi#method(0,'MultipleScopeNamespaceSupport(', 'NamespaceContext)', 'public'),
   \ javaapi#method(0,'getAllPrefixes(', ')', 'Enumeration'),
@@ -16,7 +16,7 @@ call javaapi#class('MultipleScopeNamespaceSupport', '', [
   \ javaapi#method(0,'popScope(', ')', 'void'),
   \ ])
 
-call javaapi#class('ConfigurationError', '', [
+call javaapi#class('ConfigurationError', 'Error', [
   \ ])
 
 call javaapi#class('ObjectFactory', '', [
@@ -57,7 +57,7 @@ call javaapi#class('8', 'PrivilegedAction', [
 call javaapi#class('SecuritySupport', '', [
   \ ])
 
-call javaapi#class('XInclude11TextReader', '', [
+call javaapi#class('XInclude11TextReader', 'XIncludeTextReader', [
   \ javaapi#method(0,'XInclude11TextReader(', 'XMLInputSource, XIncludeHandler, int) throws IOException', 'public'),
   \ ])
 
@@ -168,7 +168,7 @@ call javaapi#class('XIncludeMessageFormatter', 'MessageFormatter', [
   \ javaapi#method(0,'formatMessage(', 'Locale, String, Object[]) throws MissingResourceException', 'String'),
   \ ])
 
-call javaapi#class('XIncludeNamespaceSupport', '', [
+call javaapi#class('XIncludeNamespaceSupport', 'MultipleScopeNamespaceSupport', [
   \ javaapi#method(0,'XIncludeNamespaceSupport(', ')', 'public'),
   \ javaapi#method(0,'XIncludeNamespaceSupport(', 'NamespaceContext)', 'public'),
   \ javaapi#method(0,'pushContext(', ')', 'void'),
@@ -243,7 +243,7 @@ call javaapi#class('XPointerFramework', '', [
   \ javaapi#method(0,'getCurrentPointer(', ')', 'int'),
   \ ])
 
-call javaapi#interface('XPointerSchema', '', [
+call javaapi#interface('XPointerSchema', 'XMLDocumentFilter', [
   \ javaapi#method(0,'setXPointerSchemaName(', 'String)', 'void'),
   \ javaapi#method(0,'getXpointerSchemaName(', ')', 'String'),
   \ javaapi#method(0,'setParent(', 'Object)', 'void'),

@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.glassfish.external.statistics.impl')
 
-call javaapi#class('AverageRangeStatisticImpl', '', [
+call javaapi#class('AverageRangeStatisticImpl', 'StatisticImpl', [
   \ javaapi#method(0,'AverageRangeStatisticImpl(', 'long, long, long, String, String, String, long, long)', 'public'),
   \ javaapi#method(0,'getStatistic(', ')', 'AverageRangeStatistic'),
   \ javaapi#method(0,'toString(', ')', 'String'),
@@ -14,7 +14,7 @@ call javaapi#class('AverageRangeStatisticImpl', '', [
   \ javaapi#method(0,'invoke(', 'Object, Method, Object[]) throws Throwable', 'Object'),
   \ ])
 
-call javaapi#class('BoundaryStatisticImpl', '', [
+call javaapi#class('BoundaryStatisticImpl', 'StatisticImpl', [
   \ javaapi#method(0,'BoundaryStatisticImpl(', 'long, long, String, String, String, long, long)', 'public'),
   \ javaapi#method(0,'getStatistic(', ')', 'BoundaryStatistic'),
   \ javaapi#method(0,'getStaticAsMap(', ')', 'Map'),
@@ -24,7 +24,7 @@ call javaapi#class('BoundaryStatisticImpl', '', [
   \ javaapi#method(0,'invoke(', 'Object, Method, Object[]) throws Throwable', 'Object'),
   \ ])
 
-call javaapi#class('BoundedRangeStatisticImpl', '', [
+call javaapi#class('BoundedRangeStatisticImpl', 'StatisticImpl', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'BoundedRangeStatisticImpl(', 'long, long, long, long, long, String, String, String, long, long)', 'public'),
   \ javaapi#method(0,'getStatistic(', ')', 'BoundedRangeStatistic'),
@@ -41,7 +41,7 @@ call javaapi#class('BoundedRangeStatisticImpl', '', [
   \ javaapi#method(0,'invoke(', 'Object, Method, Object[]) throws Throwable', 'Object'),
   \ ])
 
-call javaapi#class('CountStatisticImpl', '', [
+call javaapi#class('CountStatisticImpl', 'StatisticImpl', [
   \ javaapi#method(0,'CountStatisticImpl(', 'long, String, String, String, long, long)', 'public'),
   \ javaapi#method(0,'CountStatisticImpl(', 'String, String, String)', 'public'),
   \ javaapi#method(0,'getStatistic(', ')', 'CountStatistic'),
@@ -56,7 +56,7 @@ call javaapi#class('CountStatisticImpl', '', [
   \ javaapi#method(0,'invoke(', 'Object, Method, Object[]) throws Throwable', 'Object'),
   \ ])
 
-call javaapi#class('RangeStatisticImpl', '', [
+call javaapi#class('RangeStatisticImpl', 'StatisticImpl', [
   \ javaapi#method(0,'RangeStatisticImpl(', 'long, long, long, String, String, String, long, long)', 'public'),
   \ javaapi#method(0,'getStatistic(', ')', 'RangeStatistic'),
   \ javaapi#method(0,'getStaticAsMap(', ')', 'Map'),
@@ -96,7 +96,7 @@ call javaapi#class('StatsImpl', 'Stats', [
   \ javaapi#method(0,'reset(', ')', 'void'),
   \ ])
 
-call javaapi#class('StringStatisticImpl', '', [
+call javaapi#class('StringStatisticImpl', 'StatisticImpl', [
   \ javaapi#method(0,'StringStatisticImpl(', 'String, String, String, String, long, long)', 'public'),
   \ javaapi#method(0,'StringStatisticImpl(', 'String, String, String)', 'public'),
   \ javaapi#method(0,'getStatistic(', ')', 'StringStatistic'),
@@ -108,7 +108,7 @@ call javaapi#class('StringStatisticImpl', '', [
   \ javaapi#method(0,'invoke(', 'Object, Method, Object[]) throws Throwable', 'Object'),
   \ ])
 
-call javaapi#class('TimeStatisticImpl', '', [
+call javaapi#class('TimeStatisticImpl', 'StatisticImpl', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'TimeStatisticImpl(', 'long, long, long, long, String, String, String, long, long)', 'public'),
   \ javaapi#method(0,'getStatistic(', ')', 'TimeStatistic'),

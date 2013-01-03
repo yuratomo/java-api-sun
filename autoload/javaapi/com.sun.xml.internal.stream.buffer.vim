@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.stream.buffer')
 
-call javaapi#class('AbstractCreator', '', [
+call javaapi#class('AbstractCreator', 'AbstractCreatorProcessor', [
   \ javaapi#method(0,'AbstractCreator(', ')', 'public'),
   \ javaapi#method(0,'setXMLStreamBuffer(', 'MutableXMLStreamBuffer)', 'void'),
   \ javaapi#method(0,'getXMLStreamBuffer(', ')', 'MutableXMLStreamBuffer'),
@@ -10,7 +10,7 @@ call javaapi#class('AbstractCreatorProcessor', '', [
   \ javaapi#method(0,'AbstractCreatorProcessor(', ')', 'public'),
   \ ])
 
-call javaapi#class('AbstractProcessor', '', [
+call javaapi#class('AbstractProcessor', 'AbstractCreatorProcessor', [
   \ javaapi#method(0,'AbstractProcessor(', ')', 'public'),
   \ ])
 
@@ -37,7 +37,7 @@ call javaapi#class('AttributesHolder', 'Attributes', [
 call javaapi#class('FragmentedArray<T>', '', [
   \ ])
 
-call javaapi#class('MutableXMLStreamBuffer', '', [
+call javaapi#class('MutableXMLStreamBuffer', 'XMLStreamBuffer', [
   \ javaapi#field(1,'DEFAULT_ARRAY_SIZE', 'int'),
   \ javaapi#method(0,'MutableXMLStreamBuffer(', ')', 'public'),
   \ javaapi#method(0,'setSystemId(', 'String)', 'void'),
@@ -74,17 +74,17 @@ call javaapi#class('XMLStreamBuffer', '', [
   \ javaapi#method(1,'createNewBufferFromXMLReader(', 'XMLReader, InputStream, String) throws SAXException, IOException', 'XMLStreamBuffer'),
   \ ])
 
-call javaapi#class('XMLStreamBufferException', '', [
+call javaapi#class('XMLStreamBufferException', 'Exception', [
   \ javaapi#method(0,'XMLStreamBufferException(', 'String)', 'public'),
   \ javaapi#method(0,'XMLStreamBufferException(', 'String, Exception)', 'public'),
   \ javaapi#method(0,'XMLStreamBufferException(', 'Exception)', 'public'),
   \ ])
 
-call javaapi#class('XMLStreamBufferMark', '', [
+call javaapi#class('XMLStreamBufferMark', 'XMLStreamBuffer', [
   \ javaapi#method(0,'XMLStreamBufferMark(', 'Map<String, String>, AbstractCreatorProcessor)', 'public'),
   \ ])
 
-call javaapi#class('XMLStreamBufferResult', '', [
+call javaapi#class('XMLStreamBufferResult', 'SAXResult', [
   \ javaapi#method(0,'XMLStreamBufferResult(', ')', 'public'),
   \ javaapi#method(0,'XMLStreamBufferResult(', 'MutableXMLStreamBuffer)', 'public'),
   \ javaapi#method(0,'getXMLStreamBuffer(', ')', 'MutableXMLStreamBuffer'),
@@ -93,7 +93,7 @@ call javaapi#class('XMLStreamBufferResult', '', [
   \ javaapi#method(0,'getLexicalHandler(', ')', 'LexicalHandler'),
   \ ])
 
-call javaapi#class('XMLStreamBufferSource', '', [
+call javaapi#class('XMLStreamBufferSource', 'SAXSource', [
   \ javaapi#method(0,'XMLStreamBufferSource(', 'XMLStreamBuffer)', 'public'),
   \ javaapi#method(0,'getXMLStreamBuffer(', ')', 'XMLStreamBuffer'),
   \ javaapi#method(0,'setXMLStreamBuffer(', 'XMLStreamBuffer)', 'void'),

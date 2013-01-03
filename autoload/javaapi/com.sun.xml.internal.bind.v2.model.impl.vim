@@ -10,7 +10,7 @@ call javaapi#class('AnyTypeImpl<T,C>', 'NonElement<T,C>', [
   \ javaapi#method(0,'canBeReferencedByIDREF(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('ArrayInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', '', [
+call javaapi#class('ArrayInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', 'TypeInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', [
   \ javaapi#method(0,'ArrayInfoImpl(', 'ModelBuilder<TypeT, ClassDeclT, FieldT, MethodT>, Locatable, TypeT)', 'public'),
   \ javaapi#method(1,'calcArrayTypeName(', 'QName)', 'QName'),
   \ javaapi#method(0,'getItemType(', ')', 'ClassDeclT>'),
@@ -26,13 +26,13 @@ call javaapi#class('ArrayInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('AttributePropertyInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', '', [
+call javaapi#class('AttributePropertyInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', 'SingleTypePropertyInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', [
   \ javaapi#method(0,'isRequired(', ')', 'boolean'),
   \ javaapi#method(0,'getXmlName(', ')', 'QName'),
   \ javaapi#method(0,'kind(', ')', 'PropertyKind'),
   \ ])
 
-call javaapi#class('BuiltinLeafInfoImpl<TypeT,ClassDeclT>', '', [
+call javaapi#class('BuiltinLeafInfoImpl<TypeT,ClassDeclT>', 'LeafInfoImpl<TypeT,ClassDeclT>', [
   \ javaapi#method(0,'getTypeNames(', ')', 'QName[]'),
   \ javaapi#method(0,'isElement(', ')', 'boolean'),
   \ javaapi#method(0,'getElementName(', ')', 'QName'),
@@ -49,15 +49,15 @@ call javaapi#class('BuiltinLeafInfoImpl<TypeT,ClassDeclT>', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('ConflictException', '', [
+call javaapi#class('ConflictException', 'Exception', [
   \ javaapi#method(0,'ConflictException(', 'List<Annotation>)', 'public'),
   \ ])
 
-call javaapi#class('DuplicateException', '', [
+call javaapi#class('DuplicateException', 'Exception', [
   \ javaapi#method(0,'DuplicateException(', 'Annotation, Annotation)', 'public'),
   \ ])
 
-call javaapi#class('PropertyGroup', '', [
+call javaapi#class('PropertyGroup', 'PropertyGroup>', [
   \ javaapi#field(1,'TRANSIENT', 'PropertyGroup'),
   \ javaapi#field(1,'ANY_ATTRIBUTE', 'PropertyGroup'),
   \ javaapi#field(1,'ATTRIBUTE', 'PropertyGroup'),
@@ -69,19 +69,19 @@ call javaapi#class('PropertyGroup', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'PropertyGroup'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'String>', [
   \ javaapi#method(0,'get(', 'int)', 'String'),
   \ javaapi#method(0,'size(', ')', 'int'),
   \ javaapi#method(0,'get(', 'int)', 'Object'),
   \ ])
 
-call javaapi#class('PropertySorter', '', [
+call javaapi#class('PropertySorter', 'Integer>', [
   \ javaapi#method(0,'compare(', 'PropertyInfoImpl, PropertyInfoImpl)', 'int'),
   \ javaapi#method(0,'checkUnusedProperties(', ')', 'void'),
   \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
   \ ])
 
-call javaapi#class('SecondaryAnnotation', '', [
+call javaapi#class('SecondaryAnnotation', 'SecondaryAnnotation>', [
   \ javaapi#field(1,'JAVA_TYPE', 'SecondaryAnnotation'),
   \ javaapi#field(1,'ID_IDREF', 'SecondaryAnnotation'),
   \ javaapi#field(1,'BINARY', 'SecondaryAnnotation'),
@@ -92,7 +92,7 @@ call javaapi#class('SecondaryAnnotation', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'SecondaryAnnotation'),
   \ ])
 
-call javaapi#class('ClassInfoImpl<T,C,F,M>', '', [
+call javaapi#class('ClassInfoImpl<T,C,F,M>', 'TypeInfoImpl<T,C,F,M>', [
   \ javaapi#method(0,'getBaseClass(', ')', 'M>'),
   \ javaapi#method(0,'getSubstitutionHead(', ')', 'C>'),
   \ javaapi#method(0,'getClazz(', ')', 'C'),
@@ -129,7 +129,7 @@ call javaapi#interface('DummyPropertyInfo<T,C,F,M>', '', [
   \ javaapi#method(0,'addType(', 'PropertyInfoImpl<T, C, F, M>)', 'void'),
   \ ])
 
-call javaapi#class('ERPropertyInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', '', [
+call javaapi#class('ERPropertyInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', 'PropertyInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', [
   \ javaapi#method(0,'ERPropertyInfoImpl(', 'ClassInfoImpl<TypeT, ClassDeclT, FieldT, MethodT>, PropertySeed<TypeT, ClassDeclT, FieldT, MethodT>)', 'public'),
   \ javaapi#method(0,'getXmlName(', ')', 'QName'),
   \ javaapi#method(0,'isCollectionNillable(', ')', 'boolean'),
@@ -165,7 +165,7 @@ call javaapi#class('PropertyImpl', 'AnnotationSource', [
   \ javaapi#method(0,'parent(', ')', 'TypeInfo'),
   \ ])
 
-call javaapi#class('ElementInfoImpl<T,C,F,M>', '', [
+call javaapi#class('ElementInfoImpl<T,C,F,M>', 'TypeInfoImpl<T,C,F,M>', [
   \ javaapi#method(0,'ElementInfoImpl(', 'ModelBuilder<T, C, F, M>, RegistryInfoImpl<T, C, F, M>, M) throws IllegalAnnotationException', 'public'),
   \ javaapi#method(0,'getProperty(', ')', 'C>'),
   \ javaapi#method(0,'getContentType(', ')', 'C>'),
@@ -180,13 +180,13 @@ call javaapi#class('ElementInfoImpl<T,C,F,M>', '', [
   \ javaapi#method(0,'getSubstitutionHead(', ')', 'Element'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'TypeInfo<TypeT,ClassDeclT>>', [
   \ javaapi#method(0,'get(', 'int)', 'ClassDeclT>'),
   \ javaapi#method(0,'size(', ')', 'int'),
   \ javaapi#method(0,'get(', 'int)', 'Object'),
   \ ])
 
-call javaapi#class('ElementPropertyInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', '', [
+call javaapi#class('ElementPropertyInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', 'ERPropertyInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', [
   \ javaapi#method(0,'getTypes(', ')', 'ClassDeclT>>'),
   \ javaapi#method(0,'isValueList(', ')', 'boolean'),
   \ javaapi#method(0,'isRequired(', ')', 'boolean'),
@@ -209,7 +209,7 @@ call javaapi#class('1', 'EnumConstantImpl<T,C,F,M>>', [
   \ javaapi#method(0,'next(', ')', 'Object'),
   \ ])
 
-call javaapi#class('EnumLeafInfoImpl<T,C,F,M>', '', [
+call javaapi#class('EnumLeafInfoImpl<T,C,F,M>', 'TypeInfoImpl<T,C,F,M>', [
   \ javaapi#method(0,'EnumLeafInfoImpl(', 'ModelBuilder<T, C, F, M>, Locatable, C, T)', 'public'),
   \ javaapi#method(0,'getType(', ')', 'T'),
   \ javaapi#method(0,'isToken(', ')', 'boolean'),
@@ -257,7 +257,7 @@ call javaapi#class('LeafInfoImpl<TypeT,ClassDeclT>', 'Location', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('MapPropertyInfoImpl<T,C,F,M>', '', [
+call javaapi#class('MapPropertyInfoImpl<T,C,F,M>', 'PropertyInfoImpl<T,C,F,M>', [
   \ javaapi#method(0,'MapPropertyInfoImpl(', 'ClassInfoImpl<T, C, F, M>, PropertySeed<T, C, F, M>)', 'public'),
   \ javaapi#method(0,'ref(', ')', 'C>>'),
   \ javaapi#method(0,'kind(', ')', 'PropertyKind'),
@@ -268,7 +268,7 @@ call javaapi#class('MapPropertyInfoImpl<T,C,F,M>', '', [
   \ javaapi#method(0,'getTarget(', 'T)', 'C>'),
   \ ])
 
-call javaapi#class('Messages', '', [
+call javaapi#class('Messages', 'Messages>', [
   \ javaapi#field(1,'ID_MUST_BE_STRING', 'Messages'),
   \ javaapi#field(1,'MUTUALLY_EXCLUSIVE_ANNOTATIONS', 'Messages'),
   \ javaapi#field(1,'DUPLICATE_ANNOTATIONS', 'Messages'),
@@ -381,12 +381,12 @@ call javaapi#class('PropertyInfoImpl<T,C,F,M>', 'PropertyInfoImpl>', [
   \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
   \ ])
 
-call javaapi#interface('PropertySeed<T,C,F,M>', '', [
+call javaapi#interface('PropertySeed<T,C,F,M>', 'AnnotationSource', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getRawType(', ')', 'T'),
   \ ])
 
-call javaapi#class('ReferencePropertyInfoImpl<T,C,F,M>', '', [
+call javaapi#class('ReferencePropertyInfoImpl<T,C,F,M>', 'ERPropertyInfoImpl<T,C,F,M>', [
   \ javaapi#method(0,'ReferencePropertyInfoImpl(', 'ClassInfoImpl<T, C, F, M>, PropertySeed<T, C, F, M>)', 'public'),
   \ javaapi#method(0,'ref(', ')', 'C>>'),
   \ javaapi#method(0,'kind(', ')', 'PropertyKind'),
@@ -407,11 +407,11 @@ call javaapi#class('RegistryInfoImpl<T,C,F,M>', 'RegistryInfo<T,C>', [
   \ javaapi#method(0,'getClazz(', ')', 'C'),
   \ ])
 
-call javaapi#class('RuntimeAnyTypeImpl', '', [
+call javaapi#class('RuntimeAnyTypeImpl', 'Class>', [
   \ javaapi#method(0,'getTransducer(', ')', 'Transducer<V>'),
   \ ])
 
-call javaapi#class('RuntimeArrayInfoImpl', '', [
+call javaapi#class('RuntimeArrayInfoImpl', 'Method>', [
   \ javaapi#method(0,'getType(', ')', 'Class'),
   \ javaapi#method(0,'getItemType(', ')', 'RuntimeNonElement'),
   \ javaapi#method(0,'getTransducer(', ')', 'Transducer<V>'),
@@ -419,7 +419,7 @@ call javaapi#class('RuntimeArrayInfoImpl', '', [
   \ javaapi#method(0,'getItemType(', ')', 'NonElement'),
   \ ])
 
-call javaapi#class('RuntimeAttributePropertyInfoImpl', '', [
+call javaapi#class('RuntimeAttributePropertyInfoImpl', 'Method>', [
   \ javaapi#method(0,'elementOnlyContent(', ')', 'boolean'),
   \ javaapi#method(0,'getTarget(', ')', 'RuntimeNonElement'),
   \ javaapi#method(0,'ref(', ')', 'RuntimeNonElement>'),
@@ -432,7 +432,7 @@ call javaapi#class('RuntimeAttributePropertyInfoImpl', '', [
   \ javaapi#method(0,'getRawType(', ')', 'Type'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Character>', [
   \ javaapi#method(0,'parse(', 'CharSequence)', 'Character'),
   \ javaapi#method(0,'print(', 'Character)', 'String'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'String'),
@@ -440,7 +440,7 @@ call javaapi#class('1', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('10', '', [
+call javaapi#class('10', 'DataHandler>', [
   \ javaapi#method(0,'parse(', 'CharSequence)', 'DataHandler'),
   \ javaapi#method(0,'print(', 'DataHandler)', 'Base64Data'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'Pcdata'),
@@ -448,7 +448,7 @@ call javaapi#class('10', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('11', '', [
+call javaapi#class('11', 'Source>', [
   \ javaapi#method(0,'parse(', 'CharSequence) throws SAXException', 'Source'),
   \ javaapi#method(0,'print(', 'Source)', 'Base64Data'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'Pcdata'),
@@ -456,7 +456,7 @@ call javaapi#class('11', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('12', '', [
+call javaapi#class('12', 'XMLGregorianCalendar>', [
   \ javaapi#method(0,'print(', 'XMLGregorianCalendar)', 'String'),
   \ javaapi#method(0,'parse(', 'CharSequence) throws SAXException', 'XMLGregorianCalendar'),
   \ javaapi#method(0,'getTypeName(', 'XMLGregorianCalendar)', 'QName'),
@@ -466,7 +466,7 @@ call javaapi#class('12', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('13', '', [
+call javaapi#class('13', 'Boolean>', [
   \ javaapi#method(0,'parse(', 'CharSequence)', 'Boolean'),
   \ javaapi#method(0,'print(', 'Boolean)', 'String'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'String'),
@@ -474,7 +474,7 @@ call javaapi#class('13', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('14', '', [
+call javaapi#class('14', 'PcdataImpl<byte[]>', [
   \ javaapi#method(0,'parse(', 'CharSequence)', 'byte[]'),
   \ javaapi#method(0,'print(', 'byte[])', 'Base64Data'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'Pcdata'),
@@ -482,7 +482,7 @@ call javaapi#class('14', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('15', '', [
+call javaapi#class('15', 'Byte>', [
   \ javaapi#method(0,'parse(', 'CharSequence)', 'Byte'),
   \ javaapi#method(0,'print(', 'Byte)', 'String'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'String'),
@@ -490,7 +490,7 @@ call javaapi#class('15', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('16', '', [
+call javaapi#class('16', 'Short>', [
   \ javaapi#method(0,'parse(', 'CharSequence)', 'Short'),
   \ javaapi#method(0,'print(', 'Short)', 'String'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'String'),
@@ -498,7 +498,7 @@ call javaapi#class('16', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('17', '', [
+call javaapi#class('17', 'Integer>', [
   \ javaapi#method(0,'parse(', 'CharSequence)', 'Integer'),
   \ javaapi#method(0,'print(', 'Integer)', 'String'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'String'),
@@ -506,7 +506,7 @@ call javaapi#class('17', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('18', '', [
+call javaapi#class('18', 'Long>', [
   \ javaapi#method(0,'parse(', 'CharSequence)', 'Long'),
   \ javaapi#method(0,'print(', 'Long)', 'String'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'String'),
@@ -514,7 +514,7 @@ call javaapi#class('18', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('19', '', [
+call javaapi#class('19', 'Float>', [
   \ javaapi#method(0,'parse(', 'CharSequence)', 'Float'),
   \ javaapi#method(0,'print(', 'Float)', 'String'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'String'),
@@ -522,7 +522,7 @@ call javaapi#class('19', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'Calendar>', [
   \ javaapi#method(0,'parse(', 'CharSequence)', 'Calendar'),
   \ javaapi#method(0,'print(', 'Calendar)', 'String'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'String'),
@@ -530,7 +530,7 @@ call javaapi#class('2', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('20', '', [
+call javaapi#class('20', 'Double>', [
   \ javaapi#method(0,'parse(', 'CharSequence)', 'Double'),
   \ javaapi#method(0,'print(', 'Double)', 'String'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'String'),
@@ -538,7 +538,7 @@ call javaapi#class('20', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('21', '', [
+call javaapi#class('21', 'BigInteger>', [
   \ javaapi#method(0,'parse(', 'CharSequence)', 'BigInteger'),
   \ javaapi#method(0,'print(', 'BigInteger)', 'String'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'String'),
@@ -546,7 +546,7 @@ call javaapi#class('21', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('22', '', [
+call javaapi#class('22', 'BigDecimal>', [
   \ javaapi#method(0,'parse(', 'CharSequence)', 'BigDecimal'),
   \ javaapi#method(0,'print(', 'BigDecimal)', 'String'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'String'),
@@ -554,7 +554,7 @@ call javaapi#class('22', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('23', '', [
+call javaapi#class('23', 'QName>', [
   \ javaapi#method(0,'parse(', 'CharSequence) throws SAXException', 'QName'),
   \ javaapi#method(0,'print(', 'QName)', 'String'),
   \ javaapi#method(0,'useNamespace(', ')', 'boolean'),
@@ -565,7 +565,7 @@ call javaapi#class('23', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('24', '', [
+call javaapi#class('24', 'URI>', [
   \ javaapi#method(0,'parse(', 'CharSequence) throws SAXException', 'URI'),
   \ javaapi#method(0,'print(', 'URI)', 'String'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'String'),
@@ -573,7 +573,7 @@ call javaapi#class('24', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('25', '', [
+call javaapi#class('25', 'Duration>', [
   \ javaapi#method(0,'print(', 'Duration)', 'String'),
   \ javaapi#method(0,'parse(', 'CharSequence)', 'Duration'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'String'),
@@ -581,7 +581,7 @@ call javaapi#class('25', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('26', '', [
+call javaapi#class('26', 'Void>', [
   \ javaapi#method(0,'print(', 'Void)', 'String'),
   \ javaapi#method(0,'parse(', 'CharSequence)', 'Void'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'String'),
@@ -589,7 +589,7 @@ call javaapi#class('26', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'GregorianCalendar>', [
   \ javaapi#method(0,'parse(', 'CharSequence)', 'GregorianCalendar'),
   \ javaapi#method(0,'print(', 'GregorianCalendar)', 'String'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'String'),
@@ -597,7 +597,7 @@ call javaapi#class('3', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('4', '', [
+call javaapi#class('4', 'Date>', [
   \ javaapi#method(0,'parse(', 'CharSequence)', 'Date'),
   \ javaapi#method(0,'print(', 'Date)', 'String'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'String'),
@@ -605,7 +605,7 @@ call javaapi#class('4', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('5', '', [
+call javaapi#class('5', 'File>', [
   \ javaapi#method(0,'parse(', 'CharSequence)', 'File'),
   \ javaapi#method(0,'print(', 'File)', 'String'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'String'),
@@ -613,7 +613,7 @@ call javaapi#class('5', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('6', '', [
+call javaapi#class('6', 'URL>', [
   \ javaapi#method(0,'parse(', 'CharSequence) throws SAXException', 'URL'),
   \ javaapi#method(0,'print(', 'URL)', 'String'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'String'),
@@ -621,7 +621,7 @@ call javaapi#class('6', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('7', '', [
+call javaapi#class('7', 'URI>', [
   \ javaapi#method(0,'parse(', 'CharSequence) throws SAXException', 'URI'),
   \ javaapi#method(0,'print(', 'URI)', 'String'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'String'),
@@ -629,7 +629,7 @@ call javaapi#class('7', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('8', '', [
+call javaapi#class('8', 'Class>', [
   \ javaapi#method(0,'parse(', 'CharSequence) throws SAXException', 'Class'),
   \ javaapi#method(0,'print(', 'Class)', 'String'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'String'),
@@ -637,10 +637,10 @@ call javaapi#class('8', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Component', [
   \ ])
 
-call javaapi#class('9', '', [
+call javaapi#class('9', 'Image>', [
   \ javaapi#method(0,'parse(', 'CharSequence) throws SAXException', 'Image'),
   \ javaapi#method(0,'print(', 'Image)', 'Base64Data'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'Pcdata'),
@@ -648,21 +648,21 @@ call javaapi#class('9', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('PcdataImpl<T>', '', [
+call javaapi#class('PcdataImpl<T>', 'RuntimeBuiltinLeafInfoImpl<T>', [
   \ javaapi#method(0,'print(', 'T) throws AccessorException', 'Pcdata'),
   \ javaapi#method(0,'writeText(', 'XMLSerializer, T, String) throws IOException, SAXException, XMLStreamException, AccessorException', 'void'),
   \ javaapi#method(0,'writeLeafElement(', 'XMLSerializer, Name, T, String) throws IOException, SAXException, XMLStreamException, AccessorException', 'void'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('StringImpl<T>', '', [
+call javaapi#class('StringImpl<T>', 'RuntimeBuiltinLeafInfoImpl<T>', [
   \ javaapi#method(0,'print(', 'T) throws AccessorException', 'String'),
   \ javaapi#method(0,'writeText(', 'XMLSerializer, T, String) throws IOException, SAXException, XMLStreamException, AccessorException', 'void'),
   \ javaapi#method(0,'writeLeafElement(', 'XMLSerializer, Name, T, String) throws IOException, SAXException, XMLStreamException, AccessorException', 'void'),
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('StringImplImpl', '', [
+call javaapi#class('StringImplImpl', 'String>', [
   \ javaapi#method(0,'StringImplImpl(', 'Class, QName[])', 'public'),
   \ javaapi#method(0,'parse(', 'CharSequence)', 'String'),
   \ javaapi#method(0,'print(', 'String)', 'String'),
@@ -675,7 +675,7 @@ call javaapi#class('StringImplImpl', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('UUIDImpl', '', [
+call javaapi#class('UUIDImpl', 'UUID>', [
   \ javaapi#method(0,'UUIDImpl(', ')', 'public'),
   \ javaapi#method(0,'parse(', 'CharSequence) throws SAXException', 'UUID'),
   \ javaapi#method(0,'print(', 'UUID)', 'String'),
@@ -684,7 +684,7 @@ call javaapi#class('UUIDImpl', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException', 'CharSequence'),
   \ ])
 
-call javaapi#class('RuntimeBuiltinLeafInfoImpl<T>', '', [
+call javaapi#class('RuntimeBuiltinLeafInfoImpl<T>', 'Class>', [
   \ javaapi#field(1,'LEAVES', 'RuntimeBuiltinLeafInfoImpl<?>>'),
   \ javaapi#field(1,'STRING', 'String>'),
   \ javaapi#field(1,'builtinBeanInfos', 'RuntimeBuiltinLeafInfoImpl<?>>'),
@@ -721,7 +721,7 @@ call javaapi#class('TransducerImpl<BeanT>', 'Transducer<BeanT>', [
   \ javaapi#method(0,'getTypeName(', 'BeanT)', 'QName'),
   \ ])
 
-call javaapi#class('RuntimeClassInfoImpl', '', [
+call javaapi#class('RuntimeClassInfoImpl', 'Method>', [
   \ javaapi#method(0,'RuntimeClassInfoImpl(', 'RuntimeModelBuilder, Locatable, Class)', 'public'),
   \ javaapi#method(0,'getFactoryMethod(', ')', 'Method'),
   \ javaapi#method(0,'getBaseClass(', ')', 'RuntimeClassInfoImpl'),
@@ -739,7 +739,7 @@ call javaapi#class('RuntimeClassInfoImpl', '', [
   \ javaapi#method(0,'getBaseClass(', ')', 'RuntimeClassInfo'),
   \ ])
 
-call javaapi#class('RuntimePropertyImpl', '', [
+call javaapi#class('RuntimePropertyImpl', 'PropertyImpl', [
   \ javaapi#method(0,'getAccessor(', ')', 'Accessor'),
   \ javaapi#method(0,'getRawType(', ')', 'Type'),
   \ javaapi#method(0,'getIndividualType(', ')', 'Type'),
@@ -754,7 +754,7 @@ call javaapi#class('RuntimePropertyImpl', '', [
   \ javaapi#method(0,'ref(', ')', 'Collection'),
   \ ])
 
-call javaapi#class('RuntimeElementInfoImpl', '', [
+call javaapi#class('RuntimeElementInfoImpl', 'Method>', [
   \ javaapi#method(0,'RuntimeElementInfoImpl(', 'RuntimeModelBuilder, RegistryInfoImpl, Method) throws IllegalAnnotationException', 'public'),
   \ javaapi#method(0,'getProperty(', ')', 'RuntimeElementPropertyInfo'),
   \ javaapi#method(0,'getType(', ')', 'JAXBElement>'),
@@ -766,7 +766,7 @@ call javaapi#class('RuntimeElementInfoImpl', '', [
   \ javaapi#method(0,'getProperty(', ')', 'ElementPropertyInfo'),
   \ ])
 
-call javaapi#class('RuntimeElementPropertyInfoImpl', '', [
+call javaapi#class('RuntimeElementPropertyInfoImpl', 'Method>', [
   \ javaapi#method(0,'getAccessor(', ')', 'Accessor'),
   \ javaapi#method(0,'elementOnlyContent(', ')', 'boolean'),
   \ javaapi#method(0,'ref(', ')', 'RuntimeTypeInfo>'),
@@ -776,11 +776,11 @@ call javaapi#class('RuntimeElementPropertyInfoImpl', '', [
   \ javaapi#method(0,'getRawType(', ')', 'Type'),
   \ ])
 
-call javaapi#class('RuntimeEnumConstantImpl', '', [
+call javaapi#class('RuntimeEnumConstantImpl', 'Method>', [
   \ javaapi#method(0,'RuntimeEnumConstantImpl(', 'RuntimeEnumLeafInfoImpl, String, String, EnumConstantImpl<Type, Class, Field, Method>)', 'public'),
   \ ])
 
-call javaapi#class('RuntimeEnumLeafInfoImpl<T', '', [
+call javaapi#class('RuntimeEnumLeafInfoImpl<T', 'Enum<T>,B>', [
   \ javaapi#method(0,'getTransducer(', ')', 'Transducer<T>'),
   \ javaapi#method(0,'createEnumConstant(', 'String, String, Field, EnumConstantImpl<Type, Class, Field, Method>)', 'RuntimeEnumConstantImpl'),
   \ javaapi#method(0,'getTypeNames(', ')', 'QName[]'),
@@ -803,7 +803,7 @@ call javaapi#class('RuntimeEnumLeafInfoImpl<T', '', [
   \ javaapi#method(0,'declareNamespace(', 'Object, XMLSerializer) throws AccessorException', 'void'),
   \ ])
 
-call javaapi#class('RuntimeMapPropertyInfoImpl', '', [
+call javaapi#class('RuntimeMapPropertyInfoImpl', 'Method>', [
   \ javaapi#method(0,'getAccessor(', ')', 'Accessor'),
   \ javaapi#method(0,'elementOnlyContent(', ')', 'boolean'),
   \ javaapi#method(0,'getKeyType(', ')', 'RuntimeNonElement'),
@@ -816,12 +816,12 @@ call javaapi#class('RuntimeMapPropertyInfoImpl', '', [
   \ javaapi#method(0,'getRawType(', ')', 'Type'),
   \ ])
 
-call javaapi#class('IDTransducerImpl<ValueT>', '', [
+call javaapi#class('IDTransducerImpl<ValueT>', 'FilterTransducer<ValueT>', [
   \ javaapi#method(0,'IDTransducerImpl(', 'Transducer<ValueT>)', 'public'),
   \ javaapi#method(0,'parse(', 'CharSequence) throws AccessorException, SAXException', 'ValueT'),
   \ ])
 
-call javaapi#class('RuntimeModelBuilder', '', [
+call javaapi#class('RuntimeModelBuilder', 'Method>', [
   \ javaapi#field(0,'context', 'JAXBContextImpl'),
   \ javaapi#method(0,'RuntimeModelBuilder(', 'JAXBContextImpl, RuntimeAnnotationReader, Map<Class, Class>, String)', 'public'),
   \ javaapi#method(0,'getClassInfo(', 'Class, Locatable)', 'RuntimeNonElement'),
@@ -838,7 +838,7 @@ call javaapi#class('RuntimeModelBuilder', '', [
   \ javaapi#method(0,'getClassInfo(', 'Object, Locatable)', 'NonElement'),
   \ ])
 
-call javaapi#class('RuntimeReferencePropertyInfoImpl', '', [
+call javaapi#class('RuntimeReferencePropertyInfoImpl', 'Method>', [
   \ javaapi#method(0,'RuntimeReferencePropertyInfoImpl(', 'RuntimeClassInfoImpl, PropertySeed<Type, Class, Field, Method>)', 'public'),
   \ javaapi#method(0,'getElements(', ')', 'RuntimeElement>'),
   \ javaapi#method(0,'ref(', ')', 'RuntimeElement>'),
@@ -849,7 +849,7 @@ call javaapi#class('RuntimeReferencePropertyInfoImpl', '', [
   \ javaapi#method(0,'getRawType(', ')', 'Type'),
   \ ])
 
-call javaapi#class('RuntimeTypeInfoSetImpl', '', [
+call javaapi#class('RuntimeTypeInfoSetImpl', 'Method>', [
   \ javaapi#method(0,'RuntimeTypeInfoSetImpl(', 'AnnotationReader<Type, Class, Field, Method>)', 'public'),
   \ javaapi#method(0,'getNavigator(', ')', 'ReflectionNavigator'),
   \ javaapi#method(0,'getTypeInfo(', 'Type)', 'RuntimeNonElement'),
@@ -872,7 +872,7 @@ call javaapi#class('RuntimeTypeInfoSetImpl', '', [
   \ javaapi#method(0,'getElementInfo(', 'Class, QName)', 'RuntimeElementInfo'),
   \ ])
 
-call javaapi#class('RuntimeTypeRefImpl', '', [
+call javaapi#class('RuntimeTypeRefImpl', 'Class>', [
   \ javaapi#method(0,'RuntimeTypeRefImpl(', 'RuntimeElementPropertyInfoImpl, QName, Type, boolean, String)', 'public'),
   \ javaapi#method(0,'getTarget(', ')', 'RuntimeNonElement'),
   \ javaapi#method(0,'getTransducer(', ')', 'Transducer'),
@@ -881,7 +881,7 @@ call javaapi#class('RuntimeTypeRefImpl', '', [
   \ javaapi#method(0,'getTarget(', ')', 'NonElement'),
   \ ])
 
-call javaapi#class('RuntimeValuePropertyInfoImpl', '', [
+call javaapi#class('RuntimeValuePropertyInfoImpl', 'Method>', [
   \ javaapi#method(0,'elementOnlyContent(', ')', 'boolean'),
   \ javaapi#method(0,'getSource(', ')', 'RuntimePropertyInfo'),
   \ javaapi#method(0,'getTarget(', ')', 'RuntimeNonElement'),
@@ -894,7 +894,7 @@ call javaapi#class('RuntimeValuePropertyInfoImpl', '', [
   \ javaapi#method(0,'getRawType(', ')', 'Type'),
   \ ])
 
-call javaapi#class('SingleTypePropertyInfoImpl<T,C,F,M>', '', [
+call javaapi#class('SingleTypePropertyInfoImpl<T,C,F,M>', 'PropertyInfoImpl<T,C,F,M>', [
   \ javaapi#method(0,'SingleTypePropertyInfoImpl(', 'ClassInfoImpl<T, C, F, M>, PropertySeed<T, C, F, M>)', 'public'),
   \ javaapi#method(0,'ref(', ')', 'C>>'),
   \ javaapi#method(0,'getTarget(', ')', 'C>'),
@@ -953,7 +953,7 @@ call javaapi#class('TypeRefImpl<TypeT,ClassDeclT>', 'TypeRef<TypeT,ClassDeclT>',
 call javaapi#class('Util', '', [
   \ ])
 
-call javaapi#class('ValuePropertyInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', '', [
+call javaapi#class('ValuePropertyInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', 'SingleTypePropertyInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', [
   \ javaapi#method(0,'kind(', ')', 'PropertyKind'),
   \ ])
 

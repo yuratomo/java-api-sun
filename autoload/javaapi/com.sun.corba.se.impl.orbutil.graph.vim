@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.corba.se.impl.orbutil.graph')
 
-call javaapi#interface('Graph', '', [
+call javaapi#interface('Graph', 'Set', [
   \ javaapi#method(0,'getNodeData(', 'Node)', 'NodeData'),
   \ javaapi#method(0,'getRoots(', ')', 'Set'),
   \ ])
@@ -13,7 +13,7 @@ call javaapi#interface('NodeVisitor', '', [
   \ javaapi#method(0,'visit(', 'Graph, Node, NodeData)', 'void'),
   \ ])
 
-call javaapi#class('GraphImpl', '', [
+call javaapi#class('GraphImpl', 'AbstractSet', [
   \ javaapi#method(0,'GraphImpl(', ')', 'public'),
   \ javaapi#method(0,'GraphImpl(', 'Collection)', 'public'),
   \ javaapi#method(0,'add(', 'Object)', 'boolean'),

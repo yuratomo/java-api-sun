@@ -19,7 +19,7 @@ call javaapi#class('2', 'Void>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('FileLoginConfig', '', [
+call javaapi#class('FileLoginConfig', 'Configuration', [
   \ javaapi#method(0,'FileLoginConfig(', 'String)', 'public'),
   \ javaapi#method(0,'getAppConfigurationEntry(', 'String)', 'AppConfigurationEntry[]'),
   \ javaapi#method(0,'refresh(', ')', 'void'),
@@ -34,7 +34,7 @@ call javaapi#class('JMXPluggableAuthenticator', 'JMXAuthenticator', [
   \ javaapi#method(0,'authenticate(', 'Object)', 'Subject'),
   \ ])
 
-call javaapi#class('JMXSubjectDomainCombiner', '', [
+call javaapi#class('JMXSubjectDomainCombiner', 'SubjectDomainCombiner', [
   \ javaapi#method(0,'JMXSubjectDomainCombiner(', 'Subject)', 'public'),
   \ javaapi#method(0,'combine(', 'ProtectionDomain[], ProtectionDomain[])', 'ProtectionDomain[]'),
   \ javaapi#method(1,'getContext(', 'Subject)', 'AccessControlContext'),
@@ -94,7 +94,7 @@ call javaapi#class('2', '', [
 call javaapi#class('Access', '', [
   \ ])
 
-call javaapi#class('AccessType', '', [
+call javaapi#class('AccessType', 'AccessType>', [
   \ javaapi#field(1,'READ', 'AccessType'),
   \ javaapi#field(1,'WRITE', 'AccessType'),
   \ javaapi#field(1,'CREATE', 'AccessType'),
@@ -106,7 +106,7 @@ call javaapi#class('AccessType', '', [
 call javaapi#class('Parser', '', [
   \ ])
 
-call javaapi#class('MBeanServerFileAccessController', '', [
+call javaapi#class('MBeanServerFileAccessController', 'MBeanServerAccessController', [
   \ javaapi#method(0,'MBeanServerFileAccessController(', 'String) throws IOException', 'public'),
   \ javaapi#method(0,'MBeanServerFileAccessController(', 'String, MBeanServer) throws IOException', 'public'),
   \ javaapi#method(0,'MBeanServerFileAccessController(', 'Properties) throws IOException', 'public'),

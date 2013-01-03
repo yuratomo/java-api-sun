@@ -12,14 +12,14 @@ call javaapi#class('StaticAttribute', 'StaticAttribute>', [
   \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
   \ ])
 
-call javaapi#class('C14nXmlOutput', '', [
+call javaapi#class('C14nXmlOutput', 'UTF8XmlOutput', [
   \ javaapi#method(0,'C14nXmlOutput(', 'OutputStream, Encoded[], boolean, CharacterEscapeHandler)', 'public'),
   \ javaapi#method(0,'attribute(', 'Name, String) throws IOException', 'void'),
   \ javaapi#method(0,'attribute(', 'int, String, String) throws IOException', 'void'),
   \ javaapi#method(0,'endStartTag(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('DOMOutput', '', [
+call javaapi#class('DOMOutput', 'SAXOutput', [
   \ javaapi#method(0,'DOMOutput(', 'Node, AssociationMap)', 'public'),
   \ javaapi#method(0,'endStartTag(', ') throws SAXException', 'void'),
   \ ])
@@ -47,7 +47,7 @@ call javaapi#class('TablesPerJAXBContext', '', [
   \ javaapi#method(0,'incrementMaxIndexValue(', ')', 'void'),
   \ ])
 
-call javaapi#class('FastInfosetStreamWriterOutput', '', [
+call javaapi#class('FastInfosetStreamWriterOutput', 'XMLStreamWriterOutput', [
   \ javaapi#method(0,'FastInfosetStreamWriterOutput(', 'StAXDocumentSerializer, JAXBContextImpl)', 'public'),
   \ javaapi#method(0,'startDocument(', 'XMLSerializer, boolean, int[], NamespaceContextImpl) throws IOException, SAXException, XMLStreamException', 'void'),
   \ javaapi#method(0,'endDocument(', 'boolean) throws IOException, SAXException, XMLStreamException', 'void'),
@@ -63,7 +63,7 @@ call javaapi#class('FastInfosetStreamWriterOutput', '', [
   \ javaapi#method(0,'attribute(', 'int, String, String) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('ForkXmlOutput', '', [
+call javaapi#class('ForkXmlOutput', 'XmlOutputAbstractImpl', [
   \ javaapi#method(0,'ForkXmlOutput(', 'XmlOutput, XmlOutput)', 'public'),
   \ javaapi#method(0,'startDocument(', 'XMLSerializer, boolean, int[], NamespaceContextImpl) throws IOException, SAXException, XMLStreamException', 'void'),
   \ javaapi#method(0,'endDocument(', 'boolean) throws IOException, SAXException, XMLStreamException', 'void'),
@@ -78,12 +78,12 @@ call javaapi#class('ForkXmlOutput', '', [
   \ javaapi#method(0,'text(', 'Pcdata, boolean) throws IOException, SAXException, XMLStreamException', 'void'),
   \ ])
 
-call javaapi#class('InPlaceDOMOutput', '', [
+call javaapi#class('InPlaceDOMOutput', 'SAXOutput', [
   \ javaapi#method(0,'InPlaceDOMOutput(', 'Node, AssociationMap)', 'public'),
   \ javaapi#method(0,'endStartTag(', ') throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('IndentingUTF8XmlOutput', '', [
+call javaapi#class('IndentingUTF8XmlOutput', 'UTF8XmlOutput', [
   \ javaapi#method(0,'IndentingUTF8XmlOutput(', 'OutputStream, String, Encoded[], CharacterEscapeHandler)', 'public'),
   \ javaapi#method(0,'beginStartTag(', 'int, String) throws IOException', 'void'),
   \ javaapi#method(0,'beginStartTag(', 'Name) throws IOException', 'void'),
@@ -94,7 +94,7 @@ call javaapi#class('IndentingUTF8XmlOutput', '', [
   \ javaapi#method(0,'endDocument(', 'boolean) throws IOException, SAXException, XMLStreamException', 'void'),
   \ ])
 
-call javaapi#class('MTOMXmlOutput', '', [
+call javaapi#class('MTOMXmlOutput', 'XmlOutputAbstractImpl', [
   \ javaapi#method(0,'MTOMXmlOutput(', 'XmlOutput)', 'public'),
   \ javaapi#method(0,'startDocument(', 'XMLSerializer, boolean, int[], NamespaceContextImpl) throws IOException, SAXException, XMLStreamException', 'void'),
   \ javaapi#method(0,'endDocument(', 'boolean) throws IOException, SAXException, XMLStreamException', 'void'),
@@ -109,7 +109,7 @@ call javaapi#class('MTOMXmlOutput', '', [
   \ javaapi#method(0,'text(', 'Pcdata, boolean) throws IOException, SAXException, XMLStreamException', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'NamespacePrefixMapper', [
   \ javaapi#method(0,'getPreferredPrefix(', 'String, String, boolean)', 'String'),
   \ ])
 
@@ -158,7 +158,7 @@ call javaapi#class('Pcdata', 'CharSequence', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SAXOutput', '', [
+call javaapi#class('SAXOutput', 'XmlOutputAbstractImpl', [
   \ javaapi#method(0,'SAXOutput(', 'ContentHandler)', 'public'),
   \ javaapi#method(0,'startDocument(', 'XMLSerializer, boolean, int[], NamespaceContextImpl) throws SAXException, IOException, XMLStreamException', 'void'),
   \ javaapi#method(0,'endDocument(', 'boolean) throws SAXException, IOException, XMLStreamException', 'void'),
@@ -170,12 +170,12 @@ call javaapi#class('SAXOutput', '', [
   \ javaapi#method(0,'text(', 'Pcdata, boolean) throws IOException, SAXException, XMLStreamException', 'void'),
   \ ])
 
-call javaapi#class('StAXExStreamWriterOutput', '', [
+call javaapi#class('StAXExStreamWriterOutput', 'XMLStreamWriterOutput', [
   \ javaapi#method(0,'StAXExStreamWriterOutput(', 'XMLStreamWriterEx)', 'public'),
   \ javaapi#method(0,'text(', 'Pcdata, boolean) throws XMLStreamException', 'void'),
   \ ])
 
-call javaapi#class('UTF8XmlOutput', '', [
+call javaapi#class('UTF8XmlOutput', 'XmlOutputAbstractImpl', [
   \ javaapi#method(0,'UTF8XmlOutput(', 'OutputStream, Encoded[], CharacterEscapeHandler)', 'public'),
   \ javaapi#method(0,'setHeader(', 'String)', 'void'),
   \ javaapi#method(0,'startDocument(', 'XMLSerializer, boolean, int[], NamespaceContextImpl) throws IOException, SAXException, XMLStreamException', 'void'),
@@ -194,7 +194,7 @@ call javaapi#class('UTF8XmlOutput', '', [
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('XMLEventWriterOutput', '', [
+call javaapi#class('XMLEventWriterOutput', 'XmlOutputAbstractImpl', [
   \ javaapi#method(0,'XMLEventWriterOutput(', 'XMLEventWriter)', 'public'),
   \ javaapi#method(0,'startDocument(', 'XMLSerializer, boolean, int[], NamespaceContextImpl) throws IOException, SAXException, XMLStreamException', 'void'),
   \ javaapi#method(0,'endDocument(', 'boolean) throws IOException, SAXException, XMLStreamException', 'void'),
@@ -206,7 +206,7 @@ call javaapi#class('XMLEventWriterOutput', '', [
   \ javaapi#method(0,'text(', 'Pcdata, boolean) throws IOException, SAXException, XMLStreamException', 'void'),
   \ ])
 
-call javaapi#class('XMLStreamWriterOutput', '', [
+call javaapi#class('XMLStreamWriterOutput', 'XmlOutputAbstractImpl', [
   \ javaapi#method(1,'create(', 'XMLStreamWriter, JAXBContextImpl)', 'XmlOutput'),
   \ javaapi#method(0,'startDocument(', 'XMLSerializer, boolean, int[], NamespaceContextImpl) throws IOException, SAXException, XMLStreamException', 'void'),
   \ javaapi#method(0,'endDocument(', 'boolean) throws IOException, SAXException, XMLStreamException', 'void'),

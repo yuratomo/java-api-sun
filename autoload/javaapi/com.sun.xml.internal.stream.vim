@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.stream')
 
-call javaapi#class('ExternalEntity', '', [
+call javaapi#class('ExternalEntity', 'Entity', [
   \ javaapi#field(0,'entityLocation', 'XMLResourceIdentifier'),
   \ javaapi#field(0,'notation', 'String'),
   \ javaapi#method(0,'ExternalEntity(', ')', 'public'),
@@ -12,7 +12,7 @@ call javaapi#class('ExternalEntity', '', [
   \ javaapi#method(0,'setValues(', 'ExternalEntity)', 'void'),
   \ ])
 
-call javaapi#class('InternalEntity', '', [
+call javaapi#class('InternalEntity', 'Entity', [
   \ javaapi#field(0,'text', 'String'),
   \ javaapi#method(0,'InternalEntity(', ')', 'public'),
   \ javaapi#method(0,'InternalEntity(', 'String, String, boolean)', 'public'),
@@ -23,7 +23,7 @@ call javaapi#class('InternalEntity', '', [
   \ javaapi#method(0,'setValues(', 'InternalEntity)', 'void'),
   \ ])
 
-call javaapi#class('ScannedEntity', '', [
+call javaapi#class('ScannedEntity', 'Entity', [
   \ javaapi#field(1,'DEFAULT_BUFFER_SIZE', 'int'),
   \ javaapi#field(0,'fBufferSize', 'int'),
   \ javaapi#field(1,'DEFAULT_XMLDECL_BUFFER_SIZE', 'int'),
@@ -75,7 +75,7 @@ call javaapi#class('Entity', '', [
   \ javaapi#method(0,'setValues(', 'Entity)', 'void'),
   \ ])
 
-call javaapi#class('EventFilterSupport', '', [
+call javaapi#class('EventFilterSupport', 'EventReaderDelegate', [
   \ javaapi#method(0,'EventFilterSupport(', 'XMLEventReader, EventFilter)', 'public'),
   \ javaapi#method(0,'next(', ')', 'Object'),
   \ javaapi#method(0,'hasNext(', ')', 'boolean'),
@@ -100,7 +100,7 @@ call javaapi#class('1', 'Location', [
   \ javaapi#method(0,'getLocationURI(', ')', 'String'),
   \ ])
 
-call javaapi#class('StaxErrorReporter', '', [
+call javaapi#class('StaxErrorReporter', 'XMLErrorReporter', [
   \ javaapi#method(0,'StaxErrorReporter(', 'PropertyManager)', 'public'),
   \ javaapi#method(0,'StaxErrorReporter(', ')', 'public'),
   \ javaapi#method(0,'reset(', 'PropertyManager)', 'void'),
@@ -177,7 +177,7 @@ call javaapi#class('XMLEventReaderImpl', 'XMLEventReader', [
   \ javaapi#method(0,'peek(', ') throws XMLStreamException', 'XMLEvent'),
   \ ])
 
-call javaapi#class('XMLInputFactoryImpl', '', [
+call javaapi#class('XMLInputFactoryImpl', 'XMLInputFactory', [
   \ javaapi#method(0,'XMLInputFactoryImpl(', ')', 'public'),
   \ javaapi#method(0,'createXMLEventReader(', 'InputStream) throws XMLStreamException', 'XMLEventReader'),
   \ javaapi#method(0,'createXMLEventReader(', 'Reader) throws XMLStreamException', 'XMLEventReader'),
@@ -205,7 +205,7 @@ call javaapi#class('XMLInputFactoryImpl', '', [
   \ javaapi#method(0,'setProperty(', 'String, Object) throws IllegalArgumentException', 'void'),
   \ ])
 
-call javaapi#class('XMLOutputFactoryImpl', '', [
+call javaapi#class('XMLOutputFactoryImpl', 'XMLOutputFactory', [
   \ javaapi#method(0,'XMLOutputFactoryImpl(', ')', 'public'),
   \ javaapi#method(0,'createXMLEventWriter(', 'OutputStream) throws XMLStreamException', 'XMLEventWriter'),
   \ javaapi#method(0,'createXMLEventWriter(', 'OutputStream, String) throws XMLStreamException', 'XMLEventWriter'),

@@ -1,157 +1,12 @@
 call javaapi#namespace('sun.swing')
 
-call javaapi#class('LSBCacheEntry', '', [
-  \ javaapi#method(0,'LSBCacheEntry(', 'FontRenderContext, Font)', 'public'),
-  \ javaapi#method(0,'reset(', 'FontRenderContext, Font)', 'void'),
-  \ javaapi#method(0,'getLeftSideBearing(', 'char)', 'int'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ ])
-
-call javaapi#class('SwingUtilities2', '', [
-  \ javaapi#field(1,'LAF_STATE_KEY', 'Object'),
-  \ javaapi#field(1,'DEFAULT_FRC', 'FontRenderContext'),
-  \ javaapi#field(1,'AA_TEXT_PROPERTY_KEY', 'Object'),
-  \ javaapi#field(1,'IMPLIED_CR', 'String'),
-  \ javaapi#field(1,'COMPONENT_UI_PROPERTY_KEY', 'Object'),
-  \ javaapi#field(1,'BASICMENUITEMUI_MAX_TEXT_OFFSET', 'StringUIClientPropertyKey'),
-  \ javaapi#method(0,'SwingUtilities2(', ')', 'public'),
-  \ javaapi#method(1,'isComplexLayout(', 'char[], int, int)', 'boolean'),
-  \ javaapi#method(1,'drawTextAntialiased(', 'JComponent)', 'AATextInfo'),
-  \ javaapi#method(1,'getLeftSideBearing(', 'JComponent, FontMetrics, String)', 'int'),
-  \ javaapi#method(1,'getLeftSideBearing(', 'JComponent, FontMetrics, char)', 'int'),
-  \ javaapi#method(1,'getFontMetrics(', 'JComponent, Graphics)', 'FontMetrics'),
-  \ javaapi#method(1,'getFontMetrics(', 'JComponent, Graphics, Font)', 'FontMetrics'),
-  \ javaapi#method(1,'stringWidth(', 'JComponent, FontMetrics, String)', 'int'),
-  \ javaapi#method(1,'clipStringIfNecessary(', 'JComponent, FontMetrics, String, int)', 'String'),
-  \ javaapi#method(1,'clipString(', 'JComponent, FontMetrics, String, int)', 'String'),
-  \ javaapi#method(1,'drawString(', 'JComponent, Graphics, String, int, int)', 'void'),
-  \ javaapi#method(1,'drawStringUnderlineCharAt(', 'JComponent, Graphics, String, int, int, int)', 'void'),
-  \ javaapi#method(1,'loc2IndexFileList(', 'JList, Point)', 'int'),
-  \ javaapi#method(1,'pointOutsidePrefSize(', 'JTable, int, int, Point)', 'boolean'),
-  \ javaapi#method(1,'setLeadAnchorWithoutSelection(', 'ListSelectionModel, int, int)', 'void'),
-  \ javaapi#method(1,'shouldIgnore(', 'MouseEvent, JComponent)', 'boolean'),
-  \ javaapi#method(1,'adjustFocus(', 'JComponent)', 'void'),
-  \ javaapi#method(1,'drawChars(', 'JComponent, Graphics, char[], int, int, int, int)', 'int'),
-  \ javaapi#method(1,'drawString(', 'JComponent, Graphics, AttributedCharacterIterator, int, int)', 'float'),
-  \ javaapi#method(1,'getGraphics2D(', 'Graphics)', 'Graphics2D'),
-  \ javaapi#method(1,'getFontRenderContext(', 'Component)', 'FontRenderContext'),
-  \ javaapi#method(1,'getFontMetrics(', 'JComponent, Font)', 'FontMetrics'),
-  \ javaapi#method(1,'useSelectedTextColor(', 'Highlight, JTextComponent)', 'boolean'),
-  \ javaapi#method(1,'canAccessSystemClipboard(', ')', 'boolean'),
-  \ javaapi#method(1,'canCurrentEventAccessSystemClipboard(', ')', 'boolean'),
-  \ javaapi#method(1,'canEventAccessSystemClipboard(', 'AWTEvent)', 'boolean'),
-  \ javaapi#method(1,'displayPropertiesToCSS(', 'Font, Color)', 'String'),
-  \ javaapi#method(1,'makeIcon(', 'Class<?>, Class<?>, String)', 'Object'),
-  \ javaapi#method(1,'isLocalDisplay(', ')', 'boolean'),
-  \ javaapi#method(1,'getUIDefaultsInt(', 'Object)', 'int'),
-  \ javaapi#method(1,'getUIDefaultsInt(', 'Object, Locale)', 'int'),
-  \ javaapi#method(1,'getUIDefaultsInt(', 'Object, int)', 'int'),
-  \ javaapi#method(1,'getUIDefaultsInt(', 'Object, Locale, int)', 'int'),
-  \ javaapi#method(1,'compositeRequestFocus(', 'Component)', 'Component'),
-  \ javaapi#method(1,'tabbedPaneChangeFocusTo(', 'Component)', 'boolean'),
-  \ javaapi#method(1,'submit(', 'Callable<V>)', 'Future<V>'),
-  \ javaapi#method(1,'submit(', 'Runnable, V)', 'Future<V>'),
-  \ javaapi#method(1,'setSkipClickCount(', 'Component, int)', 'void'),
-  \ javaapi#method(1,'getAdjustedClickCount(', 'JTextComponent, MouseEvent)', 'int'),
-  \ javaapi#method(1,'liesInHorizontal(', 'Rectangle, Point, boolean, boolean)', 'Section'),
-  \ javaapi#method(1,'liesInVertical(', 'Rectangle, Point, boolean)', 'Section'),
-  \ javaapi#method(1,'convertColumnIndexToModel(', 'TableColumnModel, int)', 'int'),
-  \ javaapi#method(1,'convertColumnIndexToView(', 'TableColumnModel, int)', 'int'),
-  \ ])
-
-
-call javaapi#class('DefaultLookup', '', [
-  \ javaapi#method(0,'DefaultLookup(', ')', 'public'),
-  \ javaapi#method(1,'setDefaultLookup(', 'DefaultLookup)', 'void'),
-  \ javaapi#method(1,'get(', 'JComponent, ComponentUI, String)', 'Object'),
-  \ javaapi#method(1,'getInt(', 'JComponent, ComponentUI, String, int)', 'int'),
-  \ javaapi#method(1,'getInt(', 'JComponent, ComponentUI, String)', 'int'),
-  \ javaapi#method(1,'getInsets(', 'JComponent, ComponentUI, String, Insets)', 'Insets'),
-  \ javaapi#method(1,'getInsets(', 'JComponent, ComponentUI, String)', 'Insets'),
-  \ javaapi#method(1,'getBoolean(', 'JComponent, ComponentUI, String, boolean)', 'boolean'),
-  \ javaapi#method(1,'getBoolean(', 'JComponent, ComponentUI, String)', 'boolean'),
-  \ javaapi#method(1,'getColor(', 'JComponent, ComponentUI, String, Color)', 'Color'),
-  \ javaapi#method(1,'getColor(', 'JComponent, ComponentUI, String)', 'Color'),
-  \ javaapi#method(1,'getIcon(', 'JComponent, ComponentUI, String, Icon)', 'Icon'),
-  \ javaapi#method(1,'getIcon(', 'JComponent, ComponentUI, String)', 'Icon'),
-  \ javaapi#method(1,'getBorder(', 'JComponent, ComponentUI, String, Border)', 'Border'),
-  \ javaapi#method(1,'getBorder(', 'JComponent, ComponentUI, String)', 'Border'),
-  \ javaapi#method(0,'getDefault(', 'JComponent, ComponentUI, String)', 'Object'),
-  \ ])
-
-
-call javaapi#class('PrintColorUIResource', '', [
-  \ javaapi#method(0,'PrintColorUIResource(', 'int, Color)', 'public'),
-  \ javaapi#method(0,'getPrintColor(', ')', 'Color'),
-  \ ])
-
-
-call javaapi#class('SwingLazyValue', 'LazyValue', [
-  \ javaapi#method(0,'SwingLazyValue(', 'String)', 'public'),
-  \ javaapi#method(0,'SwingLazyValue(', 'String, String)', 'public'),
-  \ javaapi#method(0,'SwingLazyValue(', 'String, Object[])', 'public'),
-  \ javaapi#method(0,'SwingLazyValue(', 'String, String, Object[])', 'public'),
-  \ javaapi#method(0,'createValue(', 'UIDefaults)', 'Object'),
-  \ ])
-
-
-call javaapi#class('2', 'LazyValue', [
-  \ javaapi#method(0,'createValue(', 'UIDefaults)', 'Object'),
-  \ ])
-
-
-call javaapi#class('AATextInfo', '', [
-  \ javaapi#method(1,'getAATextInfo(', 'boolean)', 'AATextInfo'),
-  \ javaapi#method(0,'AATextInfo(', 'Object, Integer)', 'public'),
-  \ ])
-
-
-call javaapi#class('UIAction', 'Action', [
-  \ javaapi#method(0,'UIAction(', 'String)', 'public'),
-  \ javaapi#method(0,'getName(', ')', 'String'),
-  \ javaapi#method(0,'getValue(', 'String)', 'Object'),
-  \ javaapi#method(0,'putValue(', 'String, Object)', 'void'),
-  \ javaapi#method(0,'setEnabled(', 'boolean)', 'void'),
-  \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
-  \ javaapi#method(0,'isEnabled(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'addPropertyChangeListener(', 'PropertyChangeListener)', 'void'),
-  \ javaapi#method(0,'removePropertyChangeListener(', 'PropertyChangeListener)', 'void'),
-  \ ])
-
-
-call javaapi#class('ImageIconUIResource', '', [
-  \ javaapi#method(0,'ImageIconUIResource(', 'byte[])', 'public'),
-  \ javaapi#method(0,'ImageIconUIResource(', 'Image)', 'public'),
-  \ ])
-
-
-call javaapi#class('ImageCache', '', [
-  \ javaapi#method(0,'ImageCache(', 'int)', 'public'),
-  \ javaapi#method(0,'flush(', ')', 'void'),
-  \ javaapi#method(0,'getImage(', 'Object, GraphicsConfiguration, int, int, Object[])', 'Image'),
-  \ javaapi#method(0,'setImage(', 'Object, GraphicsConfiguration, int, int, Object[], Image)', 'void'),
-  \ ])
-
-call javaapi#class('CachedPainter', '', [
-  \ javaapi#method(0,'CachedPainter(', 'int)', 'public'),
-  \ javaapi#method(0,'paint(', 'Component, Graphics, int, int, int, int, )', 'void'),
-  \ ])
-
-
-call javaapi#class('1', 'PrivilegedAction<byte[]>', [
-  \ javaapi#method(0,'run(', ')', 'byte[]'),
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
-
 call javaapi#class('AccumulativeRunnable<T>', 'Runnable', [
   \ javaapi#method(0,'AccumulativeRunnable(', ')', 'public'),
   \ javaapi#method(0,'run(', ')', 'void'),
   \ javaapi#method(0,'add(', ')', 'void'),
   \ ])
 
-call javaapi#class('BakedArrayList', '', [
+call javaapi#class('BakedArrayList', 'ArrayList', [
   \ javaapi#method(0,'BakedArrayList(', 'int)', 'public'),
   \ javaapi#method(0,'BakedArrayList(', 'List)', 'public'),
   \ javaapi#method(0,'cacheHashCode(', ')', 'void'),
@@ -159,7 +14,7 @@ call javaapi#class('BakedArrayList', '', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('DefaultLayoutStyle', '', [
+call javaapi#class('DefaultLayoutStyle', 'LayoutStyle', [
   \ javaapi#method(0,'DefaultLayoutStyle(', ')', 'public'),
   \ javaapi#method(1,'getInstance(', ')', 'LayoutStyle'),
   \ javaapi#method(0,'getPreferredGap(', 'JComponent, JComponent, ComponentPlacement, int, Container)', 'int'),
@@ -167,16 +22,16 @@ call javaapi#class('DefaultLayoutStyle', '', [
   \ javaapi#method(0,'getButtonGap(', 'JComponent, int)', 'int'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'KeyAdapter', [
   \ javaapi#method(0,'keyTyped(', 'KeyEvent)', 'void'),
   \ ])
 
-call javaapi#class('1FilePaneAction', '', [
+call javaapi#class('1FilePaneAction', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'FocusAdapter', [
   \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
   \ ])
 
@@ -185,7 +40,7 @@ call javaapi#class('3', 'FocusListener', [
   \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
   \ ])
 
-call javaapi#class('4', '', [
+call javaapi#class('4', 'JList', [
   \ javaapi#method(0,'getNextMatch(', 'String, int, Bias)', 'int'),
   \ ])
 
@@ -195,19 +50,19 @@ call javaapi#class('5', 'ListDataListener', [
   \ javaapi#method(0,'contentsChanged(', 'ListDataEvent)', 'void'),
   \ ])
 
-call javaapi#class('6', '', [
+call javaapi#class('6', 'JTable', [
   \ javaapi#method(0,'tableChanged(', 'TableModelEvent)', 'void'),
   \ ])
 
-call javaapi#class('7', '', [
+call javaapi#class('7', 'ComponentAdapter', [
   \ javaapi#method(0,'componentResized(', 'ComponentEvent)', 'void'),
   \ ])
 
-call javaapi#class('8', '', [
+call javaapi#class('8', 'MouseAdapter', [
   \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('9', '', [
+call javaapi#class('9', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
@@ -220,12 +75,12 @@ call javaapi#class('DelayedSelectionUpdater', 'Runnable', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('DetailsTableCellEditor', '', [
+call javaapi#class('DetailsTableCellEditor', 'DefaultCellEditor', [
   \ javaapi#method(0,'DetailsTableCellEditor(', 'FilePane, JTextField)', 'public'),
   \ javaapi#method(0,'getTableCellEditorComponent(', 'JTable, Object, boolean, int, int)', 'Component'),
   \ ])
 
-call javaapi#class('DetailsTableCellRenderer', '', [
+call javaapi#class('DetailsTableCellRenderer', 'DefaultTableCellRenderer', [
   \ javaapi#method(0,'setBounds(', 'int, int, int, int)', 'void'),
   \ javaapi#method(0,'getInsets(', 'Insets)', 'Insets'),
   \ javaapi#method(0,'getTableCellRendererComponent(', 'JTable, Object, boolean, boolean, int, int)', 'Component'),
@@ -235,7 +90,7 @@ call javaapi#class('1', 'Runnable', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('DetailsTableModel', '', [
+call javaapi#class('DetailsTableModel', 'AbstractTableModel', [
   \ javaapi#method(0,'getRowCount(', ')', 'int'),
   \ javaapi#method(0,'getColumnCount(', ')', 'int'),
   \ javaapi#method(0,'getValueAt(', 'int, int)', 'Object'),
@@ -252,7 +107,7 @@ call javaapi#class('1', 'Void>', [
   \ javaapi#method(0,'call(', ') throws Exception', 'Object'),
   \ ])
 
-call javaapi#class('SorterModelWrapper', '', [
+call javaapi#class('SorterModelWrapper', 'Integer>', [
   \ javaapi#method(0,'getModel(', ')', 'TableModel'),
   \ javaapi#method(0,'getColumnCount(', ')', 'int'),
   \ javaapi#method(0,'getRowCount(', ')', 'int'),
@@ -262,7 +117,7 @@ call javaapi#class('SorterModelWrapper', '', [
   \ javaapi#method(0,'getModel(', ')', 'Object'),
   \ ])
 
-call javaapi#class('DetailsTableRowSorter', '', [
+call javaapi#class('DetailsTableRowSorter', 'TableModel>', [
   \ javaapi#method(0,'DetailsTableRowSorter(', 'FilePane)', 'public'),
   \ javaapi#method(0,'updateComparators(', 'ShellFolderColumnInfo[])', 'void'),
   \ javaapi#method(0,'sort(', ')', 'void'),
@@ -293,7 +148,7 @@ call javaapi#interface('FileChooserUIAccessor', '', [
   \ javaapi#method(0,'createListSelectionListener(', ')', 'ListSelectionListener'),
   \ ])
 
-call javaapi#class('FileRenderer', '', [
+call javaapi#class('FileRenderer', 'DefaultListCellRenderer', [
   \ javaapi#method(0,'getListCellRendererComponent(', 'JList, Object, int, boolean, boolean)', 'Component'),
   \ ])
 
@@ -305,7 +160,7 @@ call javaapi#class('Handler', 'MouseListener', [
   \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('SortableListModel', '', [
+call javaapi#class('SortableListModel', 'AbstractListModel', [
   \ javaapi#method(0,'SortableListModel(', 'FilePane)', 'public'),
   \ javaapi#method(0,'getSize(', ')', 'int'),
   \ javaapi#method(0,'getElementAt(', 'int)', 'Object'),
@@ -313,11 +168,11 @@ call javaapi#class('SortableListModel', '', [
   \ javaapi#method(0,'sorterChanged(', 'RowSorterEvent)', 'void'),
   \ ])
 
-call javaapi#class('ViewTypeAction', '', [
+call javaapi#class('ViewTypeAction', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('FilePane', '', [
+call javaapi#class('FilePane', 'JPanel', [
   \ javaapi#field(1,'ACTION_APPROVE_SELECTION', 'String'),
   \ javaapi#field(1,'ACTION_CANCEL', 'String'),
   \ javaapi#field(1,'ACTION_EDIT_FILE_NAME', 'String'),
@@ -459,11 +314,11 @@ call javaapi#class('MenuItemLayoutHelper', '', [
   \ javaapi#method(1,'useCheckAndArrow(', 'JMenuItem)', 'boolean'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'WindowAdapter', [
   \ javaapi#method(0,'windowClosing(', 'WindowEvent)', 'void'),
   \ ])
 
@@ -517,7 +372,7 @@ call javaapi#class('1', 'Field>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('Section', '', [
+call javaapi#class('Section', 'Section>', [
   \ javaapi#field(1,'LEADING', 'Section'),
   \ javaapi#field(1,'MIDDLE', 'Section'),
   \ javaapi#field(1,'TRAILING', 'Section'),
@@ -533,10 +388,165 @@ call javaapi#class('1', 'File[]>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('WindowsPlacesBar', '', [
+call javaapi#class('WindowsPlacesBar', 'JToolBar', [
   \ javaapi#method(0,'WindowsPlacesBar(', 'JFileChooser, boolean)', 'public'),
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'getPreferredSize(', ')', 'Dimension'),
+  \ ])
+
+call javaapi#namespace('sun.swing')
+
+call javaapi#class('1', 'PrivilegedAction<byte[]>', [
+  \ javaapi#method(0,'run(', ')', 'byte[]'),
+  \ javaapi#method(0,'run(', ')', 'Object'),
+  \ ])
+
+call javaapi#namespace('sun.swing')
+
+call javaapi#class('ImageCache', '', [
+  \ javaapi#method(0,'ImageCache(', 'int)', 'public'),
+  \ javaapi#method(0,'flush(', ')', 'void'),
+  \ javaapi#method(0,'getImage(', 'Object, GraphicsConfiguration, int, int, Object[])', 'Image'),
+  \ javaapi#method(0,'setImage(', 'Object, GraphicsConfiguration, int, int, Object[], Image)', 'void'),
+  \ ])
+
+call javaapi#class('CachedPainter', '', [
+  \ javaapi#method(0,'CachedPainter(', 'int)', 'public'),
+  \ javaapi#method(0,'paint(', 'Component, Graphics, int, int, int, int, )', 'void'),
+  \ ])
+
+call javaapi#namespace('sun.swing')
+
+call javaapi#class('ImageIconUIResource', 'ImageIcon', [
+  \ javaapi#method(0,'ImageIconUIResource(', 'byte[])', 'public'),
+  \ javaapi#method(0,'ImageIconUIResource(', 'Image)', 'public'),
+  \ ])
+
+call javaapi#namespace('sun.swing')
+
+call javaapi#class('UIAction', 'Action', [
+  \ javaapi#method(0,'UIAction(', 'String)', 'public'),
+  \ javaapi#method(0,'getName(', ')', 'String'),
+  \ javaapi#method(0,'getValue(', 'String)', 'Object'),
+  \ javaapi#method(0,'putValue(', 'String, Object)', 'void'),
+  \ javaapi#method(0,'setEnabled(', 'boolean)', 'void'),
+  \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
+  \ javaapi#method(0,'isEnabled(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'addPropertyChangeListener(', 'PropertyChangeListener)', 'void'),
+  \ javaapi#method(0,'removePropertyChangeListener(', 'PropertyChangeListener)', 'void'),
+  \ ])
+
+call javaapi#namespace('sun.swing')
+
+call javaapi#class('AATextInfo', '', [
+  \ javaapi#method(1,'getAATextInfo(', 'boolean)', 'AATextInfo'),
+  \ javaapi#method(0,'AATextInfo(', 'Object, Integer)', 'public'),
+  \ ])
+
+call javaapi#namespace('sun.swing')
+
+call javaapi#class('2', 'LazyValue', [
+  \ javaapi#method(0,'createValue(', 'UIDefaults)', 'Object'),
+  \ ])
+
+call javaapi#namespace('sun.swing')
+
+call javaapi#class('SwingLazyValue', 'LazyValue', [
+  \ javaapi#method(0,'SwingLazyValue(', 'String)', 'public'),
+  \ javaapi#method(0,'SwingLazyValue(', 'String, String)', 'public'),
+  \ javaapi#method(0,'SwingLazyValue(', 'String, Object[])', 'public'),
+  \ javaapi#method(0,'SwingLazyValue(', 'String, String, Object[])', 'public'),
+  \ javaapi#method(0,'createValue(', 'UIDefaults)', 'Object'),
+  \ ])
+
+call javaapi#namespace('sun.swing')
+
+call javaapi#class('PrintColorUIResource', 'ColorUIResource', [
+  \ javaapi#method(0,'PrintColorUIResource(', 'int, Color)', 'public'),
+  \ javaapi#method(0,'getPrintColor(', ')', 'Color'),
+  \ ])
+
+call javaapi#namespace('sun.swing')
+
+call javaapi#class('DefaultLookup', '', [
+  \ javaapi#method(0,'DefaultLookup(', ')', 'public'),
+  \ javaapi#method(1,'setDefaultLookup(', 'DefaultLookup)', 'void'),
+  \ javaapi#method(1,'get(', 'JComponent, ComponentUI, String)', 'Object'),
+  \ javaapi#method(1,'getInt(', 'JComponent, ComponentUI, String, int)', 'int'),
+  \ javaapi#method(1,'getInt(', 'JComponent, ComponentUI, String)', 'int'),
+  \ javaapi#method(1,'getInsets(', 'JComponent, ComponentUI, String, Insets)', 'Insets'),
+  \ javaapi#method(1,'getInsets(', 'JComponent, ComponentUI, String)', 'Insets'),
+  \ javaapi#method(1,'getBoolean(', 'JComponent, ComponentUI, String, boolean)', 'boolean'),
+  \ javaapi#method(1,'getBoolean(', 'JComponent, ComponentUI, String)', 'boolean'),
+  \ javaapi#method(1,'getColor(', 'JComponent, ComponentUI, String, Color)', 'Color'),
+  \ javaapi#method(1,'getColor(', 'JComponent, ComponentUI, String)', 'Color'),
+  \ javaapi#method(1,'getIcon(', 'JComponent, ComponentUI, String, Icon)', 'Icon'),
+  \ javaapi#method(1,'getIcon(', 'JComponent, ComponentUI, String)', 'Icon'),
+  \ javaapi#method(1,'getBorder(', 'JComponent, ComponentUI, String, Border)', 'Border'),
+  \ javaapi#method(1,'getBorder(', 'JComponent, ComponentUI, String)', 'Border'),
+  \ javaapi#method(0,'getDefault(', 'JComponent, ComponentUI, String)', 'Object'),
+  \ ])
+
+call javaapi#namespace('sun.swing')
+
+call javaapi#class('LSBCacheEntry', '', [
+  \ javaapi#method(0,'LSBCacheEntry(', 'FontRenderContext, Font)', 'public'),
+  \ javaapi#method(0,'reset(', 'FontRenderContext, Font)', 'void'),
+  \ javaapi#method(0,'getLeftSideBearing(', 'char)', 'int'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ ])
+
+call javaapi#class('SwingUtilities2', '', [
+  \ javaapi#field(1,'LAF_STATE_KEY', 'Object'),
+  \ javaapi#field(1,'DEFAULT_FRC', 'FontRenderContext'),
+  \ javaapi#field(1,'AA_TEXT_PROPERTY_KEY', 'Object'),
+  \ javaapi#field(1,'IMPLIED_CR', 'String'),
+  \ javaapi#field(1,'COMPONENT_UI_PROPERTY_KEY', 'Object'),
+  \ javaapi#field(1,'BASICMENUITEMUI_MAX_TEXT_OFFSET', 'StringUIClientPropertyKey'),
+  \ javaapi#method(0,'SwingUtilities2(', ')', 'public'),
+  \ javaapi#method(1,'isComplexLayout(', 'char[], int, int)', 'boolean'),
+  \ javaapi#method(1,'drawTextAntialiased(', 'JComponent)', 'AATextInfo'),
+  \ javaapi#method(1,'getLeftSideBearing(', 'JComponent, FontMetrics, String)', 'int'),
+  \ javaapi#method(1,'getLeftSideBearing(', 'JComponent, FontMetrics, char)', 'int'),
+  \ javaapi#method(1,'getFontMetrics(', 'JComponent, Graphics)', 'FontMetrics'),
+  \ javaapi#method(1,'getFontMetrics(', 'JComponent, Graphics, Font)', 'FontMetrics'),
+  \ javaapi#method(1,'stringWidth(', 'JComponent, FontMetrics, String)', 'int'),
+  \ javaapi#method(1,'clipStringIfNecessary(', 'JComponent, FontMetrics, String, int)', 'String'),
+  \ javaapi#method(1,'clipString(', 'JComponent, FontMetrics, String, int)', 'String'),
+  \ javaapi#method(1,'drawString(', 'JComponent, Graphics, String, int, int)', 'void'),
+  \ javaapi#method(1,'drawStringUnderlineCharAt(', 'JComponent, Graphics, String, int, int, int)', 'void'),
+  \ javaapi#method(1,'loc2IndexFileList(', 'JList, Point)', 'int'),
+  \ javaapi#method(1,'pointOutsidePrefSize(', 'JTable, int, int, Point)', 'boolean'),
+  \ javaapi#method(1,'setLeadAnchorWithoutSelection(', 'ListSelectionModel, int, int)', 'void'),
+  \ javaapi#method(1,'shouldIgnore(', 'MouseEvent, JComponent)', 'boolean'),
+  \ javaapi#method(1,'adjustFocus(', 'JComponent)', 'void'),
+  \ javaapi#method(1,'drawChars(', 'JComponent, Graphics, char[], int, int, int, int)', 'int'),
+  \ javaapi#method(1,'drawString(', 'JComponent, Graphics, AttributedCharacterIterator, int, int)', 'float'),
+  \ javaapi#method(1,'getGraphics2D(', 'Graphics)', 'Graphics2D'),
+  \ javaapi#method(1,'getFontRenderContext(', 'Component)', 'FontRenderContext'),
+  \ javaapi#method(1,'getFontMetrics(', 'JComponent, Font)', 'FontMetrics'),
+  \ javaapi#method(1,'useSelectedTextColor(', 'Highlight, JTextComponent)', 'boolean'),
+  \ javaapi#method(1,'canAccessSystemClipboard(', ')', 'boolean'),
+  \ javaapi#method(1,'canCurrentEventAccessSystemClipboard(', ')', 'boolean'),
+  \ javaapi#method(1,'canEventAccessSystemClipboard(', 'AWTEvent)', 'boolean'),
+  \ javaapi#method(1,'displayPropertiesToCSS(', 'Font, Color)', 'String'),
+  \ javaapi#method(1,'makeIcon(', 'Class<?>, Class<?>, String)', 'Object'),
+  \ javaapi#method(1,'isLocalDisplay(', ')', 'boolean'),
+  \ javaapi#method(1,'getUIDefaultsInt(', 'Object)', 'int'),
+  \ javaapi#method(1,'getUIDefaultsInt(', 'Object, Locale)', 'int'),
+  \ javaapi#method(1,'getUIDefaultsInt(', 'Object, int)', 'int'),
+  \ javaapi#method(1,'getUIDefaultsInt(', 'Object, Locale, int)', 'int'),
+  \ javaapi#method(1,'compositeRequestFocus(', 'Component)', 'Component'),
+  \ javaapi#method(1,'tabbedPaneChangeFocusTo(', 'Component)', 'boolean'),
+  \ javaapi#method(1,'submit(', 'Callable<V>)', 'Future<V>'),
+  \ javaapi#method(1,'submit(', 'Runnable, V)', 'Future<V>'),
+  \ javaapi#method(1,'setSkipClickCount(', 'Component, int)', 'void'),
+  \ javaapi#method(1,'getAdjustedClickCount(', 'JTextComponent, MouseEvent)', 'int'),
+  \ javaapi#method(1,'liesInHorizontal(', 'Rectangle, Point, boolean, boolean)', 'Section'),
+  \ javaapi#method(1,'liesInVertical(', 'Rectangle, Point, boolean)', 'Section'),
+  \ javaapi#method(1,'convertColumnIndexToModel(', 'TableColumnModel, int)', 'int'),
+  \ javaapi#method(1,'convertColumnIndexToView(', 'TableColumnModel, int)', 'int'),
   \ ])
 

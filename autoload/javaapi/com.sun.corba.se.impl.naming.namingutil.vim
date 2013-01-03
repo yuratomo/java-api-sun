@@ -1,11 +1,11 @@
 call javaapi#namespace('com.sun.corba.se.impl.naming.namingutil')
 
-call javaapi#class('CorbalocURL', '', [
+call javaapi#class('CorbalocURL', 'INSURLBase', [
   \ javaapi#method(0,'CorbalocURL(', 'String)', 'public'),
   \ javaapi#method(0,'isCorbanameURL(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('CorbanameURL', '', [
+call javaapi#class('CorbanameURL', 'INSURLBase', [
   \ javaapi#method(0,'CorbanameURL(', 'String)', 'public'),
   \ javaapi#method(0,'isCorbanameURL(', ')', 'boolean'),
   \ ])

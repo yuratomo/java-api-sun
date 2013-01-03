@@ -1,13 +1,13 @@
 call javaapi#namespace('sun.org.mozilla.javascript.internal.serialize')
 
-call javaapi#class('ScriptableInputStream', '', [
+call javaapi#class('ScriptableInputStream', 'ObjectInputStream', [
   \ javaapi#method(0,'ScriptableInputStream(', 'InputStream, Scriptable) throws IOException', 'public'),
   \ ])
 
 call javaapi#class('PendingLookup', 'Serializable', [
   \ ])
 
-call javaapi#class('ScriptableOutputStream', '', [
+call javaapi#class('ScriptableOutputStream', 'ObjectOutputStream', [
   \ javaapi#method(0,'ScriptableOutputStream(', 'OutputStream, Scriptable) throws IOException', 'public'),
   \ javaapi#method(0,'excludeAllIds(', 'Object[])', 'void'),
   \ javaapi#method(0,'addOptionalExcludedName(', 'String)', 'void'),

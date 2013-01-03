@@ -1,97 +1,208 @@
 call javaapi#namespace('sun.java2d')
 
-call javaapi#interface('FontSupport', '', [
-  \ javaapi#method(0,'getFontConfiguration(', ')', 'FontConfiguration'),
+call javaapi#interface('DestSurfaceProvider', '', [
+  \ javaapi#method(0,'getDestSurface(', ')', 'Surface'),
   \ ])
 
-call javaapi#class('SunGraphicsEnvironment', '', [
-  \ javaapi#field(1,'isOpenSolaris', 'boolean'),
-  \ javaapi#method(0,'SunGraphicsEnvironment(', ')', 'public'),
-  \ javaapi#method(0,'getScreenDevices(', ')', 'GraphicsDevice[]'),
-  \ javaapi#method(0,'getDefaultScreenDevice(', ')', 'GraphicsDevice'),
-  \ javaapi#method(0,'createGraphics(', 'BufferedImage)', 'Graphics2D'),
-  \ javaapi#method(1,'getFontManagerForSGE(', ')', 'FontManagerForSGE'),
-  \ javaapi#method(1,'useAlternateFontforJALocales(', ')', 'void'),
-  \ javaapi#method(0,'getAllFonts(', ')', 'Font[]'),
-  \ javaapi#method(0,'getAvailableFontFamilyNames(', 'Locale)', 'String[]'),
-  \ javaapi#method(0,'getAvailableFontFamilyNames(', ')', 'String[]'),
-  \ javaapi#method(1,'getUsableBounds(', 'GraphicsDevice)', 'Rectangle'),
-  \ javaapi#method(0,'displayChanged(', ')', 'void'),
-  \ javaapi#method(0,'paletteChanged(', ')', 'void'),
-  \ javaapi#method(0,'isDisplayLocal(', ')', 'boolean'),
-  \ javaapi#method(0,'addDisplayChangedListener(', 'DisplayChangedListener)', 'void'),
-  \ javaapi#method(0,'removeDisplayChangedListener(', 'DisplayChangedListener)', 'void'),
-  \ javaapi#method(0,'isFlipStrategyPreferred(', 'ComponentPeer)', 'boolean'),
+call javaapi#interface('PollDisposable', '', [
   \ ])
 
-
-call javaapi#class('InvalidPipeException', '', [
-  \ javaapi#method(0,'InvalidPipeException(', ')', 'public'),
-  \ javaapi#method(0,'InvalidPipeException(', 'String)', 'public'),
+call javaapi#class('ScreenUpdateManager', '', [
+  \ javaapi#method(0,'createGraphics(', 'SurfaceData, WComponentPeer, Color, Color, Font)', 'Graphics2D'),
+  \ javaapi#method(0,'createScreenSurface(', 'Win32GraphicsConfig, WComponentPeer, int, boolean)', 'SurfaceData'),
+  \ javaapi#method(0,'dropScreenSurface(', 'SurfaceData)', 'void'),
+  \ javaapi#method(0,'getReplacementScreenSurface(', 'WComponentPeer, SurfaceData)', 'SurfaceData'),
+  \ javaapi#method(1,'getInstance(', ')', 'ScreenUpdateManager'),
   \ ])
 
-call javaapi#interface('DisposerTarget', '', [
-  \ javaapi#method(0,'getDisposerReferent(', ')', 'Object'),
+call javaapi#class('Span', 'Comparable', [
+  \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SurfaceData', 'Surface', [
-  \ javaapi#field(1,'outlineTextRenderer', 'TextPipe'),
-  \ javaapi#field(1,'solidTextRenderer', 'TextPipe'),
-  \ javaapi#field(1,'aaTextRenderer', 'TextPipe'),
-  \ javaapi#field(1,'lcdTextRenderer', 'TextPipe'),
-  \ javaapi#method(0,'getSourceSurfaceData(', 'Image, int, CompositeType, Color)', 'SurfaceData'),
-  \ javaapi#method(0,'makeProxyFor(', 'SurfaceData)', 'SurfaceDataProxy'),
-  \ javaapi#method(1,'getPrimarySurfaceData(', 'Image)', 'SurfaceData'),
-  \ javaapi#method(1,'restoreContents(', 'Image)', 'SurfaceData'),
+call javaapi#class('SpanIntersection', 'Comparator', [
+  \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
+  \ ])
+
+call javaapi#class('Spans', '', [
+  \ javaapi#method(0,'Spans(', ')', 'public'),
+  \ javaapi#method(0,'add(', 'float, float)', 'void'),
+  \ javaapi#method(0,'addInfinite(', ')', 'void'),
+  \ javaapi#method(0,'intersects(', 'float, float)', 'boolean'),
+  \ ])
+
+call javaapi#class('State', 'State>', [
+  \ javaapi#field(1,'IMMUTABLE', 'State'),
+  \ javaapi#field(1,'STABLE', 'State'),
+  \ javaapi#field(1,'DYNAMIC', 'State'),
+  \ javaapi#field(1,'UNTRACKABLE', 'State'),
+  \ javaapi#method(1,'values(', ')', 'State[]'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'State'),
+  \ ])
+
+call javaapi#interface('StateTrackable', '', [
   \ javaapi#method(0,'getState(', ')', 'State'),
   \ javaapi#method(0,'getStateTracker(', ')', 'StateTracker'),
+  \ ])
+
+call javaapi#class('1', 'StateTracker', [
+  \ javaapi#method(0,'isCurrent(', ')', 'boolean'),
+  \ ])
+
+call javaapi#class('2', '', [
+  \ ])
+
+call javaapi#class('StateTrackableDelegate', 'StateTrackable', [
+  \ javaapi#field(1,'UNTRACKABLE_DELEGATE', 'StateTrackableDelegate'),
+  \ javaapi#field(1,'IMMUTABLE_DELEGATE', 'StateTrackableDelegate'),
+  \ javaapi#method(1,'createInstance(', 'State)', 'StateTrackableDelegate'),
+  \ javaapi#method(0,'getState(', ')', 'State'),
+  \ javaapi#method(0,'getStateTracker(', ')', 'StateTracker'),
+  \ javaapi#method(0,'setImmutable(', ')', 'void'),
+  \ javaapi#method(0,'setUntrackable(', ')', 'void'),
+  \ javaapi#method(0,'addDynamicAgent(', ')', 'void'),
   \ javaapi#method(0,'markDirty(', ')', 'void'),
-  \ javaapi#method(0,'setSurfaceLost(', 'boolean)', 'void'),
-  \ javaapi#method(0,'isSurfaceLost(', ')', 'boolean'),
+  \ ])
+
+call javaapi#class('1', 'StateTracker', [
+  \ javaapi#method(0,'isCurrent(', ')', 'boolean'),
+  \ ])
+
+call javaapi#class('2', 'StateTracker', [
+  \ javaapi#method(0,'isCurrent(', ')', 'boolean'),
+  \ ])
+
+call javaapi#interface('StateTracker', '', [
+  \ javaapi#field(1,'ALWAYS_CURRENT', 'StateTracker'),
+  \ javaapi#field(1,'NEVER_CURRENT', 'StateTracker'),
+  \ javaapi#method(0,'isCurrent(', ')', 'boolean'),
+  \ ])
+
+call javaapi#class('SunCompositeContext', 'CompositeContext', [
+  \ javaapi#method(0,'SunCompositeContext(', 'AlphaComposite, ColorModel, ColorModel)', 'public'),
+  \ javaapi#method(0,'SunCompositeContext(', 'XORComposite, ColorModel, ColorModel)', 'public'),
+  \ javaapi#method(0,'dispose(', ')', 'void'),
+  \ javaapi#method(0,'compose(', 'Raster, Raster, WritableRaster)', 'void'),
+  \ ])
+
+call javaapi#interface('Surface', '', [
+  \ ])
+
+call javaapi#class('PixelToPgramLoopConverter', 'PixelToParallelogramConverter', [
+  \ javaapi#method(0,'PixelToPgramLoopConverter(', 'ShapeDrawPipe, ParallelogramPipe, double, double, boolean)', 'public'),
+  \ ])
+
+call javaapi#class('PixelToShapeLoopConverter', 'PixelToShapeConverter', [
+  \ javaapi#method(0,'PixelToShapeLoopConverter(', 'ShapeDrawPipe)', 'public'),
+  \ ])
+
+call javaapi#class('1', 'SurfaceDataProxy', [
+  \ javaapi#method(0,'isAccelerated(', ')', 'boolean'),
+  \ javaapi#method(0,'isSupportedOperation(', 'SurfaceData, int, CompositeType, Color)', 'boolean'),
+  \ javaapi#method(0,'validateSurfaceData(', 'SurfaceData, SurfaceData, int, int)', 'SurfaceData'),
+  \ javaapi#method(0,'replaceData(', 'SurfaceData, int, CompositeType, Color)', 'SurfaceData'),
+  \ ])
+
+call javaapi#class('CountdownTracker', 'StateTracker', [
+  \ javaapi#method(0,'CountdownTracker(', 'int)', 'public'),
+  \ javaapi#method(0,'isCurrent(', ')', 'boolean'),
+  \ ])
+
+call javaapi#class('SurfaceDataProxy', 'FlushableCacheData', [
+  \ javaapi#field(1,'UNCACHED', 'SurfaceDataProxy'),
+  \ javaapi#method(1,'isCachingAllowed(', ')', 'boolean'),
+  \ javaapi#method(0,'isSupportedOperation(', 'SurfaceData, int, CompositeType, Color)', 'boolean'),
+  \ javaapi#method(0,'validateSurfaceData(', 'SurfaceData, SurfaceData, int, int)', 'SurfaceData'),
+  \ javaapi#method(0,'getRetryTracker(', 'SurfaceData)', 'StateTracker'),
+  \ javaapi#method(0,'SurfaceDataProxy(', ')', 'public'),
+  \ javaapi#method(0,'SurfaceDataProxy(', 'int)', 'public'),
   \ javaapi#method(0,'isValid(', ')', 'boolean'),
-  \ javaapi#method(0,'getDisposerReferent(', ')', 'Object'),
-  \ javaapi#method(0,'getNativeOps(', ')', 'long'),
   \ javaapi#method(0,'invalidate(', ')', 'void'),
-  \ javaapi#method(0,'getReplacement(', ')', 'SurfaceData'),
-  \ javaapi#method(0,'canRenderLCDText(', 'SunGraphics2D)', 'boolean'),
-  \ javaapi#method(0,'canRenderParallelograms(', 'SunGraphics2D)', 'boolean'),
-  \ javaapi#method(0,'validatePipe(', 'SunGraphics2D)', 'void'),
-  \ javaapi#method(0,'getRenderLoops(', 'SunGraphics2D)', 'RenderLoops'),
-  \ javaapi#method(1,'makeRenderLoops(', 'SurfaceType, CompositeType, SurfaceType)', 'RenderLoops'),
-  \ javaapi#method(0,'getDeviceConfiguration(', ')', 'GraphicsConfiguration'),
-  \ javaapi#method(0,'getSurfaceType(', ')', 'SurfaceType'),
-  \ javaapi#method(0,'getColorModel(', ')', 'ColorModel'),
-  \ javaapi#method(0,'getTransparency(', ')', 'int'),
-  \ javaapi#method(0,'getRaster(', 'int, int, int, int)', 'Raster'),
-  \ javaapi#method(0,'useTightBBoxes(', ')', 'boolean'),
-  \ javaapi#method(0,'pixelFor(', 'int)', 'int'),
-  \ javaapi#method(0,'pixelFor(', 'Color)', 'int'),
-  \ javaapi#method(0,'rgbFor(', 'int)', 'int'),
-  \ javaapi#method(0,'getBounds(', ')', 'Rectangle'),
-  \ javaapi#method(1,'isNull(', 'SurfaceData)', 'boolean'),
-  \ javaapi#method(0,'copyArea(', 'SunGraphics2D, int, int, int, int, int, int)', 'boolean'),
+  \ javaapi#method(0,'flush(', 'boolean)', 'boolean'),
   \ javaapi#method(0,'flush(', ')', 'void'),
-  \ javaapi#method(0,'getDestination(', ')', 'Object'),
+  \ javaapi#method(0,'isAccelerated(', ')', 'boolean'),
+  \ javaapi#method(0,'displayChanged(', ')', 'void'),
+  \ javaapi#method(0,'paletteChanged(', ')', 'void'),
+  \ javaapi#method(0,'replaceData(', 'SurfaceData, int, CompositeType, Color)', 'SurfaceData'),
+  \ javaapi#method(0,'updateSurfaceData(', 'SurfaceData, SurfaceData, int, int)', 'void'),
+  \ javaapi#method(0,'updateSurfaceDataBg(', 'SurfaceData, SurfaceData, int, int, Color)', 'void'),
   \ ])
 
-
-call javaapi#class('NullSurfaceData', '', [
-  \ javaapi#field(1,'theInstance', 'SurfaceData'),
-  \ javaapi#method(0,'invalidate(', ')', 'void'),
-  \ javaapi#method(0,'getReplacement(', ')', 'SurfaceData'),
-  \ javaapi#method(0,'validatePipe(', 'SunGraphics2D)', 'void'),
-  \ javaapi#method(0,'getDeviceConfiguration(', ')', 'GraphicsConfiguration'),
-  \ javaapi#method(0,'getRaster(', 'int, int, int, int)', 'Raster'),
-  \ javaapi#method(0,'useTightBBoxes(', ')', 'boolean'),
-  \ javaapi#method(0,'pixelFor(', 'int)', 'int'),
-  \ javaapi#method(0,'rgbFor(', 'int)', 'int'),
-  \ javaapi#method(0,'getBounds(', ')', 'Rectangle'),
-  \ javaapi#method(0,'copyArea(', 'SunGraphics2D, int, int, int, int, int, int)', 'boolean'),
-  \ javaapi#method(0,'getDestination(', ')', 'Object'),
+call javaapi#class('WindowsSurfaceManagerFactory', 'SurfaceManagerFactory', [
+  \ javaapi#method(0,'WindowsSurfaceManagerFactory(', ')', 'public'),
+  \ javaapi#method(0,'createVolatileManager(', 'SunVolatileImage, Object)', 'VolatileSurfaceManager'),
   \ ])
 
+call javaapi#namespace('sun.java2d')
 
-call javaapi#class('SunGraphics2D', '', [
+call javaapi#class('HeadlessGraphicsEnvironment', 'GraphicsEnvironment', [
+  \ javaapi#method(0,'HeadlessGraphicsEnvironment(', 'GraphicsEnvironment)', 'public'),
+  \ javaapi#method(0,'getScreenDevices(', ') throws HeadlessException', 'GraphicsDevice[]'),
+  \ javaapi#method(0,'getDefaultScreenDevice(', ') throws HeadlessException', 'GraphicsDevice'),
+  \ javaapi#method(0,'getCenterPoint(', ') throws HeadlessException', 'Point'),
+  \ javaapi#method(0,'getMaximumWindowBounds(', ') throws HeadlessException', 'Rectangle'),
+  \ javaapi#method(0,'createGraphics(', 'BufferedImage)', 'Graphics2D'),
+  \ javaapi#method(0,'getAllFonts(', ')', 'Font[]'),
+  \ javaapi#method(0,'getAvailableFontFamilyNames(', ')', 'String[]'),
+  \ javaapi#method(0,'getAvailableFontFamilyNames(', 'Locale)', 'String[]'),
+  \ javaapi#method(0,'getSunGraphicsEnvironment(', ')', 'GraphicsEnvironment'),
+  \ ])
+
+call javaapi#namespace('sun.java2d')
+
+call javaapi#class('SurfaceManagerFactory', '', [
+  \ javaapi#method(0,'SurfaceManagerFactory(', ')', 'public'),
+  \ javaapi#method(1,'getInstance(', ')', 'SurfaceManagerFactory'),
+  \ javaapi#method(1,'setInstance(', 'SurfaceManagerFactory)', 'void'),
+  \ javaapi#method(0,'createVolatileManager(', 'SunVolatileImage, Object)', 'VolatileSurfaceManager'),
+  \ ])
+
+call javaapi#namespace('sun.java2d')
+
+call javaapi#class('DefaultDisposerRecord', 'DisposerRecord', [
+  \ javaapi#method(0,'DefaultDisposerRecord(', 'long, long)', 'public'),
+  \ javaapi#method(0,'dispose(', ')', 'void'),
+  \ javaapi#method(0,'getDataPointer(', ')', 'long'),
+  \ javaapi#method(0,'getDisposerMethodPointer(', ')', 'long'),
+  \ javaapi#method(1,'invokeNativeDispose(', 'long, long)', 'void'),
+  \ ])
+
+call javaapi#namespace('sun.java2d')
+
+call javaapi#interface('DisposerRecord', '', [
+  \ javaapi#method(0,'dispose(', ')', 'void'),
+  \ ])
+
+call javaapi#namespace('sun.java2d')
+
+call javaapi#class('1', 'PrivilegedAction', [
+  \ javaapi#method(0,'run(', ')', 'Object'),
+  \ ])
+
+call javaapi#class('Disposer', 'Runnable', [
+  \ javaapi#field(1,'WEAK', 'int'),
+  \ javaapi#field(1,'PHANTOM', 'int'),
+  \ javaapi#field(1,'refType', 'int'),
+  \ javaapi#field(1,'pollingQueue', 'boolean'),
+  \ javaapi#method(0,'Disposer(', ')', 'public'),
+  \ javaapi#method(1,'addRecord(', 'Object, long, long)', 'void'),
+  \ javaapi#method(1,'addRecord(', 'Object, DisposerRecord)', 'void'),
+  \ javaapi#method(0,'run(', ')', 'void'),
+  \ javaapi#method(1,'pollRemove(', ')', 'void'),
+  \ javaapi#method(1,'addReference(', 'Reference, DisposerRecord)', 'void'),
+  \ javaapi#method(1,'addObjectRecord(', 'Object, DisposerRecord)', 'void'),
+  \ javaapi#method(1,'getQueue(', ')', 'ReferenceQueue'),
+  \ ])
+
+call javaapi#namespace('sun.java2d')
+
+call javaapi#class('1', 'PrivilegedAction', [
+  \ javaapi#method(0,'run(', ')', 'Object'),
+  \ ])
+
+call javaapi#namespace('sun.java2d')
+
+call javaapi#class('SunGraphics2D', 'Graphics2D', [
   \ javaapi#field(1,'PAINT_CUSTOM', 'int'),
   \ javaapi#field(1,'PAINT_TEXTURE', 'int'),
   \ javaapi#field(1,'PAINT_RAD_GRADIENT', 'int'),
@@ -250,198 +361,97 @@ call javaapi#class('SunGraphics2D', '', [
   \ javaapi#method(0,'getDestSurface(', ')', 'Surface'),
   \ ])
 
+call javaapi#namespace('sun.java2d')
 
-call javaapi#class('1', 'PrivilegedAction', [
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
-
-call javaapi#class('1', 'PrivilegedAction', [
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('Disposer', 'Runnable', [
-  \ javaapi#field(1,'WEAK', 'int'),
-  \ javaapi#field(1,'PHANTOM', 'int'),
-  \ javaapi#field(1,'refType', 'int'),
-  \ javaapi#field(1,'pollingQueue', 'boolean'),
-  \ javaapi#method(0,'Disposer(', ')', 'public'),
-  \ javaapi#method(1,'addRecord(', 'Object, long, long)', 'void'),
-  \ javaapi#method(1,'addRecord(', 'Object, DisposerRecord)', 'void'),
-  \ javaapi#method(0,'run(', ')', 'void'),
-  \ javaapi#method(1,'pollRemove(', ')', 'void'),
-  \ javaapi#method(1,'addReference(', 'Reference, DisposerRecord)', 'void'),
-  \ javaapi#method(1,'addObjectRecord(', 'Object, DisposerRecord)', 'void'),
-  \ javaapi#method(1,'getQueue(', ')', 'ReferenceQueue'),
-  \ ])
-
-
-call javaapi#interface('DisposerRecord', '', [
-  \ javaapi#method(0,'dispose(', ')', 'void'),
-  \ ])
-
-
-call javaapi#class('DefaultDisposerRecord', 'DisposerRecord', [
-  \ javaapi#method(0,'DefaultDisposerRecord(', 'long, long)', 'public'),
-  \ javaapi#method(0,'dispose(', ')', 'void'),
-  \ javaapi#method(0,'getDataPointer(', ')', 'long'),
-  \ javaapi#method(0,'getDisposerMethodPointer(', ')', 'long'),
-  \ javaapi#method(1,'invokeNativeDispose(', 'long, long)', 'void'),
-  \ ])
-
-
-call javaapi#class('SurfaceManagerFactory', '', [
-  \ javaapi#method(0,'SurfaceManagerFactory(', ')', 'public'),
-  \ javaapi#method(1,'getInstance(', ')', 'SurfaceManagerFactory'),
-  \ javaapi#method(1,'setInstance(', 'SurfaceManagerFactory)', 'void'),
-  \ javaapi#method(0,'createVolatileManager(', 'SunVolatileImage, Object)', 'VolatileSurfaceManager'),
-  \ ])
-
-
-call javaapi#class('HeadlessGraphicsEnvironment', '', [
-  \ javaapi#method(0,'HeadlessGraphicsEnvironment(', 'GraphicsEnvironment)', 'public'),
-  \ javaapi#method(0,'getScreenDevices(', ') throws HeadlessException', 'GraphicsDevice[]'),
-  \ javaapi#method(0,'getDefaultScreenDevice(', ') throws HeadlessException', 'GraphicsDevice'),
-  \ javaapi#method(0,'getCenterPoint(', ') throws HeadlessException', 'Point'),
-  \ javaapi#method(0,'getMaximumWindowBounds(', ') throws HeadlessException', 'Rectangle'),
-  \ javaapi#method(0,'createGraphics(', 'BufferedImage)', 'Graphics2D'),
-  \ javaapi#method(0,'getAllFonts(', ')', 'Font[]'),
-  \ javaapi#method(0,'getAvailableFontFamilyNames(', ')', 'String[]'),
-  \ javaapi#method(0,'getAvailableFontFamilyNames(', 'Locale)', 'String[]'),
-  \ javaapi#method(0,'getSunGraphicsEnvironment(', ')', 'GraphicsEnvironment'),
-  \ ])
-
-
-call javaapi#interface('DestSurfaceProvider', '', [
-  \ javaapi#method(0,'getDestSurface(', ')', 'Surface'),
-  \ ])
-
-call javaapi#interface('PollDisposable', '', [
-  \ ])
-
-call javaapi#class('ScreenUpdateManager', '', [
-  \ javaapi#method(0,'createGraphics(', 'SurfaceData, WComponentPeer, Color, Color, Font)', 'Graphics2D'),
-  \ javaapi#method(0,'createScreenSurface(', 'Win32GraphicsConfig, WComponentPeer, int, boolean)', 'SurfaceData'),
-  \ javaapi#method(0,'dropScreenSurface(', 'SurfaceData)', 'void'),
-  \ javaapi#method(0,'getReplacementScreenSurface(', 'WComponentPeer, SurfaceData)', 'SurfaceData'),
-  \ javaapi#method(1,'getInstance(', ')', 'ScreenUpdateManager'),
-  \ ])
-
-call javaapi#class('Span', 'Comparable', [
-  \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('SpanIntersection', 'Comparator', [
-  \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
-  \ ])
-
-call javaapi#class('Spans', '', [
-  \ javaapi#method(0,'Spans(', ')', 'public'),
-  \ javaapi#method(0,'add(', 'float, float)', 'void'),
-  \ javaapi#method(0,'addInfinite(', ')', 'void'),
-  \ javaapi#method(0,'intersects(', 'float, float)', 'boolean'),
-  \ ])
-
-call javaapi#class('State', '', [
-  \ javaapi#field(1,'IMMUTABLE', 'State'),
-  \ javaapi#field(1,'STABLE', 'State'),
-  \ javaapi#field(1,'DYNAMIC', 'State'),
-  \ javaapi#field(1,'UNTRACKABLE', 'State'),
-  \ javaapi#method(1,'values(', ')', 'State[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'State'),
-  \ ])
-
-call javaapi#interface('StateTrackable', '', [
-  \ javaapi#method(0,'getState(', ')', 'State'),
-  \ javaapi#method(0,'getStateTracker(', ')', 'StateTracker'),
-  \ ])
-
-call javaapi#class('1', 'StateTracker', [
-  \ javaapi#method(0,'isCurrent(', ')', 'boolean'),
-  \ ])
-
-call javaapi#class('2', '', [
-  \ ])
-
-call javaapi#class('StateTrackableDelegate', 'StateTrackable', [
-  \ javaapi#field(1,'UNTRACKABLE_DELEGATE', 'StateTrackableDelegate'),
-  \ javaapi#field(1,'IMMUTABLE_DELEGATE', 'StateTrackableDelegate'),
-  \ javaapi#method(1,'createInstance(', 'State)', 'StateTrackableDelegate'),
-  \ javaapi#method(0,'getState(', ')', 'State'),
-  \ javaapi#method(0,'getStateTracker(', ')', 'StateTracker'),
-  \ javaapi#method(0,'setImmutable(', ')', 'void'),
-  \ javaapi#method(0,'setUntrackable(', ')', 'void'),
-  \ javaapi#method(0,'addDynamicAgent(', ')', 'void'),
-  \ javaapi#method(0,'markDirty(', ')', 'void'),
-  \ ])
-
-call javaapi#class('1', 'StateTracker', [
-  \ javaapi#method(0,'isCurrent(', ')', 'boolean'),
-  \ ])
-
-call javaapi#class('2', 'StateTracker', [
-  \ javaapi#method(0,'isCurrent(', ')', 'boolean'),
-  \ ])
-
-call javaapi#interface('StateTracker', '', [
-  \ javaapi#field(1,'ALWAYS_CURRENT', 'StateTracker'),
-  \ javaapi#field(1,'NEVER_CURRENT', 'StateTracker'),
-  \ javaapi#method(0,'isCurrent(', ')', 'boolean'),
-  \ ])
-
-call javaapi#class('SunCompositeContext', 'CompositeContext', [
-  \ javaapi#method(0,'SunCompositeContext(', 'AlphaComposite, ColorModel, ColorModel)', 'public'),
-  \ javaapi#method(0,'SunCompositeContext(', 'XORComposite, ColorModel, ColorModel)', 'public'),
-  \ javaapi#method(0,'dispose(', ')', 'void'),
-  \ javaapi#method(0,'compose(', 'Raster, Raster, WritableRaster)', 'void'),
-  \ ])
-
-call javaapi#interface('Surface', '', [
-  \ ])
-
-call javaapi#class('PixelToPgramLoopConverter', '', [
-  \ javaapi#method(0,'PixelToPgramLoopConverter(', 'ShapeDrawPipe, ParallelogramPipe, double, double, boolean)', 'public'),
-  \ ])
-
-call javaapi#class('PixelToShapeLoopConverter', '', [
-  \ javaapi#method(0,'PixelToShapeLoopConverter(', 'ShapeDrawPipe)', 'public'),
-  \ ])
-
-call javaapi#class('1', '', [
-  \ javaapi#method(0,'isAccelerated(', ')', 'boolean'),
-  \ javaapi#method(0,'isSupportedOperation(', 'SurfaceData, int, CompositeType, Color)', 'boolean'),
-  \ javaapi#method(0,'validateSurfaceData(', 'SurfaceData, SurfaceData, int, int)', 'SurfaceData'),
-  \ javaapi#method(0,'replaceData(', 'SurfaceData, int, CompositeType, Color)', 'SurfaceData'),
-  \ ])
-
-call javaapi#class('CountdownTracker', 'StateTracker', [
-  \ javaapi#method(0,'CountdownTracker(', 'int)', 'public'),
-  \ javaapi#method(0,'isCurrent(', ')', 'boolean'),
-  \ ])
-
-call javaapi#class('SurfaceDataProxy', 'FlushableCacheData', [
-  \ javaapi#field(1,'UNCACHED', 'SurfaceDataProxy'),
-  \ javaapi#method(1,'isCachingAllowed(', ')', 'boolean'),
-  \ javaapi#method(0,'isSupportedOperation(', 'SurfaceData, int, CompositeType, Color)', 'boolean'),
-  \ javaapi#method(0,'validateSurfaceData(', 'SurfaceData, SurfaceData, int, int)', 'SurfaceData'),
-  \ javaapi#method(0,'getRetryTracker(', 'SurfaceData)', 'StateTracker'),
-  \ javaapi#method(0,'SurfaceDataProxy(', ')', 'public'),
-  \ javaapi#method(0,'SurfaceDataProxy(', 'int)', 'public'),
-  \ javaapi#method(0,'isValid(', ')', 'boolean'),
+call javaapi#class('NullSurfaceData', 'SurfaceData', [
+  \ javaapi#field(1,'theInstance', 'SurfaceData'),
   \ javaapi#method(0,'invalidate(', ')', 'void'),
-  \ javaapi#method(0,'flush(', 'boolean)', 'boolean'),
+  \ javaapi#method(0,'getReplacement(', ')', 'SurfaceData'),
+  \ javaapi#method(0,'validatePipe(', 'SunGraphics2D)', 'void'),
+  \ javaapi#method(0,'getDeviceConfiguration(', ')', 'GraphicsConfiguration'),
+  \ javaapi#method(0,'getRaster(', 'int, int, int, int)', 'Raster'),
+  \ javaapi#method(0,'useTightBBoxes(', ')', 'boolean'),
+  \ javaapi#method(0,'pixelFor(', 'int)', 'int'),
+  \ javaapi#method(0,'rgbFor(', 'int)', 'int'),
+  \ javaapi#method(0,'getBounds(', ')', 'Rectangle'),
+  \ javaapi#method(0,'copyArea(', 'SunGraphics2D, int, int, int, int, int, int)', 'boolean'),
+  \ javaapi#method(0,'getDestination(', ')', 'Object'),
+  \ ])
+
+call javaapi#namespace('sun.java2d')
+
+call javaapi#class('InvalidPipeException', 'IllegalStateException', [
+  \ javaapi#method(0,'InvalidPipeException(', ')', 'public'),
+  \ javaapi#method(0,'InvalidPipeException(', 'String)', 'public'),
+  \ ])
+
+call javaapi#interface('DisposerTarget', '', [
+  \ javaapi#method(0,'getDisposerReferent(', ')', 'Object'),
+  \ ])
+
+call javaapi#class('SurfaceData', 'Surface', [
+  \ javaapi#field(1,'outlineTextRenderer', 'TextPipe'),
+  \ javaapi#field(1,'solidTextRenderer', 'TextPipe'),
+  \ javaapi#field(1,'aaTextRenderer', 'TextPipe'),
+  \ javaapi#field(1,'lcdTextRenderer', 'TextPipe'),
+  \ javaapi#method(0,'getSourceSurfaceData(', 'Image, int, CompositeType, Color)', 'SurfaceData'),
+  \ javaapi#method(0,'makeProxyFor(', 'SurfaceData)', 'SurfaceDataProxy'),
+  \ javaapi#method(1,'getPrimarySurfaceData(', 'Image)', 'SurfaceData'),
+  \ javaapi#method(1,'restoreContents(', 'Image)', 'SurfaceData'),
+  \ javaapi#method(0,'getState(', ')', 'State'),
+  \ javaapi#method(0,'getStateTracker(', ')', 'StateTracker'),
+  \ javaapi#method(0,'markDirty(', ')', 'void'),
+  \ javaapi#method(0,'setSurfaceLost(', 'boolean)', 'void'),
+  \ javaapi#method(0,'isSurfaceLost(', ')', 'boolean'),
+  \ javaapi#method(0,'isValid(', ')', 'boolean'),
+  \ javaapi#method(0,'getDisposerReferent(', ')', 'Object'),
+  \ javaapi#method(0,'getNativeOps(', ')', 'long'),
+  \ javaapi#method(0,'invalidate(', ')', 'void'),
+  \ javaapi#method(0,'getReplacement(', ')', 'SurfaceData'),
+  \ javaapi#method(0,'canRenderLCDText(', 'SunGraphics2D)', 'boolean'),
+  \ javaapi#method(0,'canRenderParallelograms(', 'SunGraphics2D)', 'boolean'),
+  \ javaapi#method(0,'validatePipe(', 'SunGraphics2D)', 'void'),
+  \ javaapi#method(0,'getRenderLoops(', 'SunGraphics2D)', 'RenderLoops'),
+  \ javaapi#method(1,'makeRenderLoops(', 'SurfaceType, CompositeType, SurfaceType)', 'RenderLoops'),
+  \ javaapi#method(0,'getDeviceConfiguration(', ')', 'GraphicsConfiguration'),
+  \ javaapi#method(0,'getSurfaceType(', ')', 'SurfaceType'),
+  \ javaapi#method(0,'getColorModel(', ')', 'ColorModel'),
+  \ javaapi#method(0,'getTransparency(', ')', 'int'),
+  \ javaapi#method(0,'getRaster(', 'int, int, int, int)', 'Raster'),
+  \ javaapi#method(0,'useTightBBoxes(', ')', 'boolean'),
+  \ javaapi#method(0,'pixelFor(', 'int)', 'int'),
+  \ javaapi#method(0,'pixelFor(', 'Color)', 'int'),
+  \ javaapi#method(0,'rgbFor(', 'int)', 'int'),
+  \ javaapi#method(0,'getBounds(', ')', 'Rectangle'),
+  \ javaapi#method(1,'isNull(', 'SurfaceData)', 'boolean'),
+  \ javaapi#method(0,'copyArea(', 'SunGraphics2D, int, int, int, int, int, int)', 'boolean'),
   \ javaapi#method(0,'flush(', ')', 'void'),
-  \ javaapi#method(0,'isAccelerated(', ')', 'boolean'),
+  \ javaapi#method(0,'getDestination(', ')', 'Object'),
+  \ ])
+
+call javaapi#namespace('sun.java2d')
+
+call javaapi#interface('FontSupport', '', [
+  \ javaapi#method(0,'getFontConfiguration(', ')', 'FontConfiguration'),
+  \ ])
+
+call javaapi#class('SunGraphicsEnvironment', 'GraphicsEnvironment', [
+  \ javaapi#field(1,'isOpenSolaris', 'boolean'),
+  \ javaapi#method(0,'SunGraphicsEnvironment(', ')', 'public'),
+  \ javaapi#method(0,'getScreenDevices(', ')', 'GraphicsDevice[]'),
+  \ javaapi#method(0,'getDefaultScreenDevice(', ')', 'GraphicsDevice'),
+  \ javaapi#method(0,'createGraphics(', 'BufferedImage)', 'Graphics2D'),
+  \ javaapi#method(1,'getFontManagerForSGE(', ')', 'FontManagerForSGE'),
+  \ javaapi#method(1,'useAlternateFontforJALocales(', ')', 'void'),
+  \ javaapi#method(0,'getAllFonts(', ')', 'Font[]'),
+  \ javaapi#method(0,'getAvailableFontFamilyNames(', 'Locale)', 'String[]'),
+  \ javaapi#method(0,'getAvailableFontFamilyNames(', ')', 'String[]'),
+  \ javaapi#method(1,'getUsableBounds(', 'GraphicsDevice)', 'Rectangle'),
   \ javaapi#method(0,'displayChanged(', ')', 'void'),
   \ javaapi#method(0,'paletteChanged(', ')', 'void'),
-  \ javaapi#method(0,'replaceData(', 'SurfaceData, int, CompositeType, Color)', 'SurfaceData'),
-  \ javaapi#method(0,'updateSurfaceData(', 'SurfaceData, SurfaceData, int, int)', 'void'),
-  \ javaapi#method(0,'updateSurfaceDataBg(', 'SurfaceData, SurfaceData, int, int, Color)', 'void'),
-  \ ])
-
-call javaapi#class('WindowsSurfaceManagerFactory', '', [
-  \ javaapi#method(0,'WindowsSurfaceManagerFactory(', ')', 'public'),
-  \ javaapi#method(0,'createVolatileManager(', 'SunVolatileImage, Object)', 'VolatileSurfaceManager'),
+  \ javaapi#method(0,'isDisplayLocal(', ')', 'boolean'),
+  \ javaapi#method(0,'addDisplayChangedListener(', 'DisplayChangedListener)', 'void'),
+  \ javaapi#method(0,'removeDisplayChangedListener(', 'DisplayChangedListener)', 'void'),
+  \ javaapi#method(0,'isFlipStrategyPreferred(', 'ComponentPeer)', 'boolean'),
   \ ])
 

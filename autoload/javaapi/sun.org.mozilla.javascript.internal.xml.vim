@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.org.mozilla.javascript.internal.xml')
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Factory', [
   \ javaapi#method(0,'getImplementationClassName(', ')', 'String'),
   \ ])
 
@@ -32,7 +32,7 @@ call javaapi#class('XMLLib', '', [
   \ javaapi#method(0,'getPrettyIndent(', ')', 'int'),
   \ ])
 
-call javaapi#class('XMLObject', '', [
+call javaapi#class('XMLObject', 'IdScriptableObject', [
   \ javaapi#method(0,'XMLObject(', ')', 'public'),
   \ javaapi#method(0,'XMLObject(', 'Scriptable, Scriptable)', 'public'),
   \ javaapi#method(0,'ecmaHas(', 'Context, Object)', 'boolean'),

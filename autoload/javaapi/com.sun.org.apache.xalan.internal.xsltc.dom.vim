@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xalan.internal.xsltc.dom')
 
-call javaapi#class('AbsoluteIterator', '', [
+call javaapi#class('AbsoluteIterator', 'DTMAxisIteratorBase', [
   \ javaapi#method(0,'AbsoluteIterator(', 'DTMAxisIterator)', 'public'),
   \ javaapi#method(0,'setRestartable(', 'boolean)', 'void'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
@@ -11,7 +11,7 @@ call javaapi#class('AbsoluteIterator', '', [
   \ javaapi#method(0,'gotoMark(', ')', 'void'),
   \ ])
 
-call javaapi#class('AdaptiveResultTreeImpl', '', [
+call javaapi#class('AdaptiveResultTreeImpl', 'SimpleResultTreeImpl', [
   \ javaapi#method(0,'AdaptiveResultTreeImpl(', 'XSLTCDTMManager, int, DTMWSFilter, int, boolean)', 'public'),
   \ javaapi#method(0,'getNestedDOM(', ')', 'DOM'),
   \ javaapi#method(0,'getDocument(', ')', 'int'),
@@ -134,12 +134,12 @@ call javaapi#class('AdaptiveResultTreeImpl', '', [
   \ javaapi#method(0,'documentRelease(', ')', 'void'),
   \ ])
 
-call javaapi#class('DefaultAnyNodeCounter', '', [
+call javaapi#class('DefaultAnyNodeCounter', 'AnyNodeCounter', [
   \ javaapi#method(0,'DefaultAnyNodeCounter(', 'Translet, DOM, DTMAxisIterator)', 'public'),
   \ javaapi#method(0,'getCounter(', ')', 'String'),
   \ ])
 
-call javaapi#class('AnyNodeCounter', '', [
+call javaapi#class('AnyNodeCounter', 'NodeCounter', [
   \ javaapi#method(0,'AnyNodeCounter(', 'Translet, DOM, DTMAxisIterator)', 'public'),
   \ javaapi#method(0,'AnyNodeCounter(', 'Translet, DOM, DTMAxisIterator, boolean)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'NodeCounter'),
@@ -166,7 +166,7 @@ call javaapi#class('BitArray', 'Externalizable', [
   \ javaapi#method(0,'readExternal(', 'ObjectInput) throws IOException, ClassNotFoundException', 'void'),
   \ ])
 
-call javaapi#class('CachedNodeListIterator', '', [
+call javaapi#class('CachedNodeListIterator', 'DTMAxisIteratorBase', [
   \ javaapi#method(0,'CachedNodeListIterator(', 'DTMAxisIterator)', 'public'),
   \ javaapi#method(0,'setRestartable(', 'boolean)', 'void'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
@@ -180,7 +180,7 @@ call javaapi#class('CachedNodeListIterator', '', [
   \ javaapi#method(0,'gotoMark(', ')', 'void'),
   \ ])
 
-call javaapi#class('ClonedNodeListIterator', '', [
+call javaapi#class('ClonedNodeListIterator', 'DTMAxisIteratorBase', [
   \ javaapi#method(0,'ClonedNodeListIterator(', 'CachedNodeListIterator)', 'public'),
   \ javaapi#method(0,'setRestartable(', 'boolean)', 'void'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
@@ -205,7 +205,7 @@ call javaapi#interface('CurrentNodeListFilter', '', [
   \ javaapi#method(0,'test(', 'int, int, int, int, AbstractTranslet, DTMAxisIterator)', 'boolean'),
   \ ])
 
-call javaapi#class('CurrentNodeListIterator', '', [
+call javaapi#class('CurrentNodeListIterator', 'DTMAxisIteratorBase', [
   \ javaapi#method(0,'CurrentNodeListIterator(', 'DTMAxisIterator, CurrentNodeListFilter, int, AbstractTranslet)', 'public'),
   \ javaapi#method(0,'CurrentNodeListIterator(', 'DTMAxisIterator, boolean, CurrentNodeListFilter, int, AbstractTranslet)', 'public'),
   \ javaapi#method(0,'forceNaturalOrder(', ')', 'DTMAxisIterator'),
@@ -277,7 +277,7 @@ call javaapi#class('DOMAdapter', 'DOM', [
   \ javaapi#method(0,'getElementsWithIDs(', ')', 'Hashtable'),
   \ ])
 
-call javaapi#interface('DOMBuilder', '', [
+call javaapi#interface('DOMBuilder', 'ExtendedSAX', [
   \ ])
 
 call javaapi#class('DOMWSFilter', 'DTMWSFilter', [
@@ -308,7 +308,7 @@ call javaapi#class('DocumentCache', 'DOMCache', [
   \ javaapi#method(0,'getStatistics(', 'PrintWriter)', 'void'),
   \ ])
 
-call javaapi#class('DupFilterIterator', '', [
+call javaapi#class('DupFilterIterator', 'DTMAxisIteratorBase', [
   \ javaapi#method(0,'DupFilterIterator(', 'DTMAxisIterator)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
@@ -324,14 +324,14 @@ call javaapi#class('EmptyFilter', 'Filter', [
   \ javaapi#method(0,'test(', 'int)', 'boolean'),
   \ ])
 
-call javaapi#interface('ExtendedSAX', '', [
+call javaapi#interface('ExtendedSAX', 'DeclHandler', [
   \ ])
 
 call javaapi#interface('Filter', '', [
   \ javaapi#method(0,'test(', 'int)', 'boolean'),
   \ ])
 
-call javaapi#class('FilterIterator', '', [
+call javaapi#class('FilterIterator', 'DTMAxisIteratorBase', [
   \ javaapi#method(0,'FilterIterator(', 'DTMAxisIterator, DTMFilter)', 'public'),
   \ javaapi#method(0,'isReverse(', ')', 'boolean'),
   \ javaapi#method(0,'setRestartable(', 'boolean)', 'void'),
@@ -343,12 +343,12 @@ call javaapi#class('FilterIterator', '', [
   \ javaapi#method(0,'gotoMark(', ')', 'void'),
   \ ])
 
-call javaapi#class('FilteredStepIterator', '', [
+call javaapi#class('FilteredStepIterator', 'StepIterator', [
   \ javaapi#method(0,'FilteredStepIterator(', 'DTMAxisIterator, DTMAxisIterator, Filter)', 'public'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('ForwardPositionIterator', '', [
+call javaapi#class('ForwardPositionIterator', 'DTMAxisIteratorBase', [
   \ javaapi#method(0,'ForwardPositionIterator(', 'DTMAxisIterator)', 'public'),
   \ javaapi#method(0,'cloneIterator(', ')', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
@@ -358,7 +358,7 @@ call javaapi#class('ForwardPositionIterator', '', [
   \ javaapi#method(0,'gotoMark(', ')', 'void'),
   \ ])
 
-call javaapi#class('KeyIndexHeapNode', '', [
+call javaapi#class('KeyIndexHeapNode', 'HeapNode', [
   \ javaapi#method(0,'step(', ')', 'int'),
   \ javaapi#method(0,'cloneHeapNode(', ')', 'HeapNode'),
   \ javaapi#method(0,'setMark(', ')', 'void'),
@@ -368,7 +368,7 @@ call javaapi#class('KeyIndexHeapNode', '', [
   \ javaapi#method(0,'reset(', ')', 'HeapNode'),
   \ ])
 
-call javaapi#class('KeyIndexIterator', '', [
+call javaapi#class('KeyIndexIterator', 'MultiValuedNodeHeapIterator', [
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ javaapi#method(0,'reset(', ')', 'DTMAxisIterator'),
@@ -376,7 +376,7 @@ call javaapi#class('KeyIndexIterator', '', [
   \ javaapi#method(0,'getNodeByPosition(', 'int)', 'int'),
   \ ])
 
-call javaapi#class('KeyIndex', '', [
+call javaapi#class('KeyIndex', 'DTMAxisIteratorBase', [
   \ javaapi#method(0,'KeyIndex(', 'int)', 'public'),
   \ javaapi#method(0,'setRestartable(', 'boolean)', 'void'),
   \ javaapi#method(0,'add(', 'Object, int, int)', 'void'),
@@ -408,7 +408,7 @@ call javaapi#class('LoadDocument', '', [
   \ javaapi#method(1,'documentF(', 'Object, String, AbstractTranslet, DOM) throws TransletException', 'DTMAxisIterator'),
   \ ])
 
-call javaapi#class('MatchingIterator', '', [
+call javaapi#class('MatchingIterator', 'DTMAxisIteratorBase', [
   \ javaapi#method(0,'MatchingIterator(', 'int, DTMAxisIterator)', 'public'),
   \ javaapi#method(0,'setRestartable(', 'boolean)', 'void'),
   \ javaapi#method(0,'cloneIterator(', ')', 'DTMAxisIterator'),
@@ -421,7 +421,7 @@ call javaapi#class('MatchingIterator', '', [
   \ javaapi#method(0,'gotoMark(', ')', 'void'),
   \ ])
 
-call javaapi#class('AxisIterator', '', [
+call javaapi#class('AxisIterator', 'DTMAxisIteratorBase', [
   \ javaapi#method(0,'AxisIterator(', 'MultiDOM, int, int)', 'public'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ javaapi#method(0,'setRestartable(', 'boolean)', 'void'),
@@ -435,7 +435,7 @@ call javaapi#class('AxisIterator', '', [
   \ javaapi#method(0,'cloneIterator(', ')', 'DTMAxisIterator'),
   \ ])
 
-call javaapi#class('NodeValueIterator', '', [
+call javaapi#class('NodeValueIterator', 'DTMAxisIteratorBase', [
   \ javaapi#method(0,'NodeValueIterator(', 'MultiDOM, DTMAxisIterator, int, String, boolean)', 'public'),
   \ javaapi#method(0,'isReverse(', ')', 'boolean'),
   \ javaapi#method(0,'cloneIterator(', ')', 'DTMAxisIterator'),
@@ -514,7 +514,7 @@ call javaapi#class('HeapNode', 'Cloneable', [
   \ javaapi#method(0,'reset(', ')', 'HeapNode'),
   \ ])
 
-call javaapi#class('MultiValuedNodeHeapIterator', '', [
+call javaapi#class('MultiValuedNodeHeapIterator', 'DTMAxisIteratorBase', [
   \ javaapi#method(0,'MultiValuedNodeHeapIterator(', ')', 'public'),
   \ javaapi#method(0,'cloneIterator(', ')', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
@@ -524,11 +524,11 @@ call javaapi#class('MultiValuedNodeHeapIterator', '', [
   \ javaapi#method(0,'reset(', ')', 'DTMAxisIterator'),
   \ ])
 
-call javaapi#class('DefaultMultipleNodeCounter', '', [
+call javaapi#class('DefaultMultipleNodeCounter', 'MultipleNodeCounter', [
   \ javaapi#method(0,'DefaultMultipleNodeCounter(', 'Translet, DOM, DTMAxisIterator)', 'public'),
   \ ])
 
-call javaapi#class('MultipleNodeCounter', '', [
+call javaapi#class('MultipleNodeCounter', 'NodeCounter', [
   \ javaapi#method(0,'MultipleNodeCounter(', 'Translet, DOM, DTMAxisIterator)', 'public'),
   \ javaapi#method(0,'MultipleNodeCounter(', 'Translet, DOM, DTMAxisIterator, boolean)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'NodeCounter'),
@@ -584,7 +584,7 @@ call javaapi#class('NodeSortRecordFactory', '', [
   \ javaapi#method(0,'getClassName(', ')', 'String'),
   \ ])
 
-call javaapi#class('NthIterator', '', [
+call javaapi#class('NthIterator', 'DTMAxisIteratorBase', [
   \ javaapi#method(0,'NthIterator(', 'DTMAxisIterator, int)', 'public'),
   \ javaapi#method(0,'setRestartable(', 'boolean)', 'void'),
   \ javaapi#method(0,'cloneIterator(', ')', 'DTMAxisIterator'),
@@ -597,25 +597,25 @@ call javaapi#class('NthIterator', '', [
   \ javaapi#method(0,'gotoMark(', ')', 'void'),
   \ ])
 
-call javaapi#class('ConfigurationError', '', [
+call javaapi#class('ConfigurationError', 'Error', [
   \ ])
 
 call javaapi#class('ObjectFactory', '', [
   \ ])
 
-call javaapi#class('NamespaceAttributeIterator', '', [
+call javaapi#class('NamespaceAttributeIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'NamespaceAttributeIterator(', 'SAXImpl, int)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('NamespaceChildrenIterator', '', [
+call javaapi#class('NamespaceChildrenIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'NamespaceChildrenIterator(', 'SAXImpl, int)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('NamespaceWildcardIterator', '', [
+call javaapi#class('NamespaceWildcardIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'NamespaceWildcardIterator(', 'SAXImpl, int, int)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
@@ -625,7 +625,7 @@ call javaapi#class('NamespaceWildcardIterator', '', [
   \ javaapi#method(0,'gotoMark(', ')', 'void'),
   \ ])
 
-call javaapi#class('NodeValueIterator', '', [
+call javaapi#class('NodeValueIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'NodeValueIterator(', 'SAXImpl, DTMAxisIterator, int, String, boolean)', 'public'),
   \ javaapi#method(0,'isReverse(', ')', 'boolean'),
   \ javaapi#method(0,'cloneIterator(', ')', 'DTMAxisIterator'),
@@ -637,12 +637,12 @@ call javaapi#class('NodeValueIterator', '', [
   \ javaapi#method(0,'gotoMark(', ')', 'void'),
   \ ])
 
-call javaapi#class('TypedNamespaceIterator', '', [
+call javaapi#class('TypedNamespaceIterator', 'NamespaceIterator', [
   \ javaapi#method(0,'TypedNamespaceIterator(', 'SAXImpl, int)', 'public'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('SAXImpl', '', [
+call javaapi#class('SAXImpl', 'SAX2DTM2', [
   \ javaapi#method(0,'setDocumentURI(', 'String)', 'void'),
   \ javaapi#method(0,'getDocumentURI(', ')', 'String'),
   \ javaapi#method(0,'getDocumentURI(', 'int)', 'String'),
@@ -746,10 +746,10 @@ call javaapi#class('8', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('SecuritySupport12', '', [
+call javaapi#class('SecuritySupport12', 'SecuritySupport', [
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'DTMAxisIteratorBase', [
   \ javaapi#method(0,'reset(', ')', 'DTMAxisIterator'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
@@ -761,7 +761,7 @@ call javaapi#class('1', '', [
   \ javaapi#method(0,'setRestartable(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('SimpleIterator', '', [
+call javaapi#class('SimpleIterator', 'DTMAxisIteratorBase', [
   \ javaapi#method(0,'SimpleIterator(', 'SimpleResultTreeImpl)', 'public'),
   \ javaapi#method(0,'SimpleIterator(', 'SimpleResultTreeImpl, int)', 'public'),
   \ javaapi#method(0,'SimpleIterator(', 'SimpleResultTreeImpl, int, int)', 'public'),
@@ -771,7 +771,7 @@ call javaapi#class('SimpleIterator', '', [
   \ javaapi#method(0,'gotoMark(', ')', 'void'),
   \ ])
 
-call javaapi#class('SingletonIterator', '', [
+call javaapi#class('SingletonIterator', 'DTMAxisIteratorBase', [
   \ javaapi#method(0,'SingletonIterator(', 'SimpleResultTreeImpl)', 'public'),
   \ javaapi#method(0,'SingletonIterator(', 'SimpleResultTreeImpl, int)', 'public'),
   \ javaapi#method(0,'setMark(', ')', 'void'),
@@ -780,7 +780,7 @@ call javaapi#class('SingletonIterator', '', [
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('SimpleResultTreeImpl', '', [
+call javaapi#class('SimpleResultTreeImpl', 'EmptySerializer', [
   \ javaapi#field(1,'RTF_ROOT', 'int'),
   \ javaapi#field(1,'RTF_TEXT', 'int'),
   \ javaapi#field(1,'NUMBER_OF_NODES', 'int'),
@@ -896,13 +896,13 @@ call javaapi#class('SimpleResultTreeImpl', '', [
   \ javaapi#method(0,'migrateTo(', 'DTMManager)', 'void'),
   \ ])
 
-call javaapi#class('DefaultSingleNodeCounter', '', [
+call javaapi#class('DefaultSingleNodeCounter', 'SingleNodeCounter', [
   \ javaapi#method(0,'DefaultSingleNodeCounter(', 'Translet, DOM, DTMAxisIterator)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'NodeCounter'),
   \ javaapi#method(0,'getCounter(', ')', 'String'),
   \ ])
 
-call javaapi#class('SingleNodeCounter', '', [
+call javaapi#class('SingleNodeCounter', 'NodeCounter', [
   \ javaapi#method(0,'SingleNodeCounter(', 'Translet, DOM, DTMAxisIterator)', 'public'),
   \ javaapi#method(0,'SingleNodeCounter(', 'Translet, DOM, DTMAxisIterator, boolean)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'NodeCounter'),
@@ -910,7 +910,7 @@ call javaapi#class('SingleNodeCounter', '', [
   \ javaapi#method(1,'getDefaultNodeCounter(', 'Translet, DOM, DTMAxisIterator)', 'NodeCounter'),
   \ ])
 
-call javaapi#class('SingletonIterator', '', [
+call javaapi#class('SingletonIterator', 'DTMAxisIteratorBase', [
   \ javaapi#method(0,'SingletonIterator(', ')', 'public'),
   \ javaapi#method(0,'SingletonIterator(', 'int)', 'public'),
   \ javaapi#method(0,'SingletonIterator(', 'int, boolean)', 'public'),
@@ -924,7 +924,7 @@ call javaapi#class('SingletonIterator', '', [
 call javaapi#class('SortSettings', '', [
   \ ])
 
-call javaapi#class('SortingIterator', '', [
+call javaapi#class('SortingIterator', 'DTMAxisIteratorBase', [
   \ javaapi#method(0,'SortingIterator(', 'DTMAxisIterator, NodeSortRecordFactory)', 'public'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
@@ -935,7 +935,7 @@ call javaapi#class('SortingIterator', '', [
   \ javaapi#method(0,'cloneIterator(', ')', 'DTMAxisIterator'),
   \ ])
 
-call javaapi#class('StepIterator', '', [
+call javaapi#class('StepIterator', 'DTMAxisIteratorBase', [
   \ javaapi#method(0,'StepIterator(', 'DTMAxisIterator, DTMAxisIterator)', 'public'),
   \ javaapi#method(0,'setRestartable(', 'boolean)', 'void'),
   \ javaapi#method(0,'cloneIterator(', ')', 'DTMAxisIterator'),
@@ -950,7 +950,7 @@ call javaapi#interface('StripWhitespaceFilter', '', [
   \ javaapi#method(0,'stripSpace(', 'DOM, int, int)', 'boolean'),
   \ ])
 
-call javaapi#class('LookAheadIterator', '', [
+call javaapi#class('LookAheadIterator', 'HeapNode', [
   \ javaapi#field(0,'iterator', 'DTMAxisIterator'),
   \ javaapi#method(0,'LookAheadIterator(', 'UnionIterator, DTMAxisIterator)', 'public'),
   \ javaapi#method(0,'step(', ')', 'int'),
@@ -962,12 +962,12 @@ call javaapi#class('LookAheadIterator', '', [
   \ javaapi#method(0,'reset(', ')', 'HeapNode'),
   \ ])
 
-call javaapi#class('UnionIterator', '', [
+call javaapi#class('UnionIterator', 'MultiValuedNodeHeapIterator', [
   \ javaapi#method(0,'UnionIterator(', 'DOM)', 'public'),
   \ javaapi#method(0,'addIterator(', 'DTMAxisIterator)', 'UnionIterator'),
   \ ])
 
-call javaapi#class('XSLTCDTMManager', '', [
+call javaapi#class('XSLTCDTMManager', 'DTMManagerDefault', [
   \ javaapi#method(0,'XSLTCDTMManager(', ')', 'public'),
   \ javaapi#method(1,'newInstance(', ')', 'XSLTCDTMManager'),
   \ javaapi#method(1,'getDTMManagerClass(', ')', 'Class'),

@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.corba.se.impl.protocol')
 
-call javaapi#class('AddressingDispositionException', '', [
+call javaapi#class('AddressingDispositionException', 'RuntimeException', [
   \ javaapi#method(0,'AddressingDispositionException(', 'short)', 'public'),
   \ javaapi#method(0,'expectedAddrDisp(', ')', 'short'),
   \ ])
@@ -12,7 +12,7 @@ call javaapi#class('BootstrapServerRequestDispatcher', 'CorbaServerRequestDispat
   \ javaapi#method(0,'getId(', ')', 'int'),
   \ ])
 
-call javaapi#class('CorbaClientDelegateImpl', '', [
+call javaapi#class('CorbaClientDelegateImpl', 'CorbaClientDelegate', [
   \ javaapi#method(0,'CorbaClientDelegateImpl(', 'ORB, CorbaContactInfoList)', 'public'),
   \ javaapi#method(0,'getBroker(', ')', 'Broker'),
   \ javaapi#method(0,'getContactInfoList(', ')', 'ContactInfoList'),
@@ -157,13 +157,13 @@ call javaapi#class('CorbaServerRequestDispatcherImpl', 'CorbaServerRequestDispat
   \ javaapi#method(0,'dispatch(', 'MessageMediator)', 'void'),
   \ ])
 
-call javaapi#class('FullServantCacheLocalCRDImpl', '', [
+call javaapi#class('FullServantCacheLocalCRDImpl', 'ServantCacheLocalCRDBase', [
   \ javaapi#method(0,'FullServantCacheLocalCRDImpl(', 'ORB, int, IOR)', 'public'),
   \ javaapi#method(0,'servant_preinvoke(', 'Object, String, Class)', 'ServantObject'),
   \ javaapi#method(0,'servant_postinvoke(', 'Object, ServantObject)', 'void'),
   \ ])
 
-call javaapi#class('GetInterface', '', [
+call javaapi#class('GetInterface', 'SpecialMethod', [
   \ javaapi#method(0,'isNonExistentMethod(', ')', 'boolean'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'invoke(', 'Object, CorbaMessageMediator, byte[], ObjectAdapter)', 'CorbaMessageMediator'),
@@ -175,19 +175,19 @@ call javaapi#class('INSServerRequestDispatcher', 'CorbaServerRequestDispatcher',
   \ javaapi#method(0,'dispatch(', 'MessageMediator)', 'void'),
   \ ])
 
-call javaapi#class('InfoOnlyServantCacheLocalCRDImpl', '', [
+call javaapi#class('InfoOnlyServantCacheLocalCRDImpl', 'ServantCacheLocalCRDBase', [
   \ javaapi#method(0,'InfoOnlyServantCacheLocalCRDImpl(', 'ORB, int, IOR)', 'public'),
   \ javaapi#method(0,'servant_preinvoke(', 'Object, String, Class)', 'ServantObject'),
   \ javaapi#method(0,'servant_postinvoke(', 'Object, ServantObject)', 'void'),
   \ ])
 
-call javaapi#class('IsA', '', [
+call javaapi#class('IsA', 'SpecialMethod', [
   \ javaapi#method(0,'isNonExistentMethod(', ')', 'boolean'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'invoke(', 'Object, CorbaMessageMediator, byte[], ObjectAdapter)', 'CorbaMessageMediator'),
   \ ])
 
-call javaapi#class('JIDLLocalCRDImpl', '', [
+call javaapi#class('JIDLLocalCRDImpl', 'LocalClientRequestDispatcherBase', [
   \ javaapi#method(0,'JIDLLocalCRDImpl(', 'ORB, int, IOR)', 'public'),
   \ javaapi#method(0,'servant_preinvoke(', 'Object, String, Class)', 'ServantObject'),
   \ javaapi#method(0,'servant_postinvoke(', 'Object, ServantObject)', 'void'),
@@ -195,7 +195,7 @@ call javaapi#class('JIDLLocalCRDImpl', '', [
   \ javaapi#method(0,'unexport(', ')', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ThreadLocal', [
   \ ])
 
 call javaapi#class('LocalClientRequestDispatcherBase', 'LocalClientRequestDispatcher', [
@@ -204,19 +204,19 @@ call javaapi#class('LocalClientRequestDispatcherBase', 'LocalClientRequestDispat
   \ javaapi#method(0,'useLocalInvocation(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('MinimalServantCacheLocalCRDImpl', '', [
+call javaapi#class('MinimalServantCacheLocalCRDImpl', 'ServantCacheLocalCRDBase', [
   \ javaapi#method(0,'MinimalServantCacheLocalCRDImpl(', 'ORB, int, IOR)', 'public'),
   \ javaapi#method(0,'servant_preinvoke(', 'Object, String, Class)', 'ServantObject'),
   \ javaapi#method(0,'servant_postinvoke(', 'Object, ServantObject)', 'void'),
   \ ])
 
-call javaapi#class('NonExistent', '', [
+call javaapi#class('NonExistent', 'SpecialMethod', [
   \ javaapi#method(0,'isNonExistentMethod(', ')', 'boolean'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'invoke(', 'Object, CorbaMessageMediator, byte[], ObjectAdapter)', 'CorbaMessageMediator'),
   \ ])
 
-call javaapi#class('NotExistent', '', [
+call javaapi#class('NotExistent', 'NonExistent', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
@@ -228,13 +228,13 @@ call javaapi#class('NotLocalLocalCRDImpl', 'LocalClientRequestDispatcher', [
   \ javaapi#method(0,'servant_postinvoke(', 'Object, ServantObject)', 'void'),
   \ ])
 
-call javaapi#class('POALocalCRDImpl', '', [
+call javaapi#class('POALocalCRDImpl', 'LocalClientRequestDispatcherBase', [
   \ javaapi#method(0,'POALocalCRDImpl(', 'ORB, int, IOR)', 'public'),
   \ javaapi#method(0,'servant_preinvoke(', 'Object, String, Class)', 'ServantObject'),
   \ javaapi#method(0,'servant_postinvoke(', 'Object, ServantObject)', 'void'),
   \ ])
 
-call javaapi#class('RequestCanceledException', '', [
+call javaapi#class('RequestCanceledException', 'RuntimeException', [
   \ javaapi#method(0,'RequestCanceledException(', 'int)', 'public'),
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
   \ ])
@@ -254,10 +254,10 @@ call javaapi#class('RequestDispatcherRegistryImpl', 'RequestDispatcherRegistry',
   \ javaapi#method(0,'getObjectAdapterFactories(', ')', 'Set'),
   \ ])
 
-call javaapi#class('ServantCacheLocalCRDBase', '', [
+call javaapi#class('ServantCacheLocalCRDBase', 'LocalClientRequestDispatcherBase', [
   \ ])
 
-call javaapi#class('SharedCDRClientRequestDispatcherImpl', '', [
+call javaapi#class('SharedCDRClientRequestDispatcherImpl', 'CorbaClientRequestDispatcherImpl', [
   \ javaapi#method(0,'SharedCDRClientRequestDispatcherImpl(', ')', 'public'),
   \ javaapi#method(0,'marshalingComplete(', 'Object, OutputObject) throws ApplicationException, RemarshalException', 'InputObject'),
   \ ])

@@ -48,7 +48,7 @@ call javaapi#class('DOM2TO', 'Locator2', [
   \ javaapi#method(0,'getEncoding(', ')', 'String'),
   \ ])
 
-call javaapi#class('ConfigurationError', '', [
+call javaapi#class('ConfigurationError', 'Error', [
   \ ])
 
 call javaapi#class('ObjectFactory', '', [
@@ -95,7 +95,7 @@ call javaapi#class('SAXLocation', 'Location', [
   \ javaapi#method(0,'getSystemId(', ')', 'String'),
   \ ])
 
-call javaapi#class('SAX2StAXBaseWriter', '', [
+call javaapi#class('SAX2StAXBaseWriter', 'DefaultHandler', [
   \ javaapi#method(0,'SAX2StAXBaseWriter(', ')', 'public'),
   \ javaapi#method(0,'SAX2StAXBaseWriter(', 'XMLReporter)', 'public'),
   \ javaapi#method(0,'setXMLReporter(', 'XMLReporter)', 'void'),
@@ -121,7 +121,7 @@ call javaapi#class('SAX2StAXBaseWriter', '', [
   \ javaapi#method(1,'parseQName(', 'String, String[])', 'void'),
   \ ])
 
-call javaapi#class('SAX2StAXEventWriter', '', [
+call javaapi#class('SAX2StAXEventWriter', 'SAX2StAXBaseWriter', [
   \ javaapi#method(0,'SAX2StAXEventWriter(', ')', 'public'),
   \ javaapi#method(0,'SAX2StAXEventWriter(', 'XMLEventWriter)', 'public'),
   \ javaapi#method(0,'SAX2StAXEventWriter(', 'XMLEventWriter, XMLEventFactory)', 'public'),
@@ -140,7 +140,7 @@ call javaapi#class('SAX2StAXEventWriter', '', [
   \ javaapi#method(0,'endCDATA(', ') throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('SAX2StAXStreamWriter', '', [
+call javaapi#class('SAX2StAXStreamWriter', 'SAX2StAXBaseWriter', [
   \ javaapi#method(0,'SAX2StAXStreamWriter(', ')', 'public'),
   \ javaapi#method(0,'SAX2StAXStreamWriter(', 'XMLStreamWriter)', 'public'),
   \ javaapi#method(0,'getStreamWriter(', ')', 'XMLStreamWriter'),
@@ -191,10 +191,10 @@ call javaapi#class('8', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('SecuritySupport12', '', [
+call javaapi#class('SecuritySupport12', 'SecuritySupport', [
   \ ])
 
-call javaapi#class('SmartTransformerFactoryImpl', '', [
+call javaapi#class('SmartTransformerFactoryImpl', 'SAXTransformerFactory', [
   \ javaapi#method(0,'SmartTransformerFactoryImpl(', ')', 'public'),
   \ javaapi#method(0,'setErrorListener(', 'ErrorListener) throws IllegalArgumentException', 'void'),
   \ javaapi#method(0,'getErrorListener(', ')', 'ErrorListener'),
@@ -304,7 +304,7 @@ call javaapi#class('1', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('TransletClassLoader', '', [
+call javaapi#class('TransletClassLoader', 'ClassLoader', [
   \ ])
 
 call javaapi#class('TemplatesImpl', 'Serializable', [
@@ -317,7 +317,7 @@ call javaapi#class('TemplatesImpl', 'Serializable', [
   \ javaapi#method(0,'setStylesheetDOM(', 'DOM)', 'void'),
   \ ])
 
-call javaapi#class('TrAXFilter', '', [
+call javaapi#class('TrAXFilter', 'XMLFilterImpl', [
   \ javaapi#method(0,'TrAXFilter(', 'Templates) throws TransformerConfigurationException', 'public'),
   \ javaapi#method(0,'getTransformer(', ')', 'Transformer'),
   \ javaapi#method(0,'parse(', 'InputSource) throws SAXException, IOException', 'void'),
@@ -337,7 +337,7 @@ call javaapi#class('PIParamWrapper', '', [
   \ javaapi#method(0,'PIParamWrapper(', 'String, String, String)', 'public'),
   \ ])
 
-call javaapi#class('TransformerFactoryImpl', '', [
+call javaapi#class('TransformerFactoryImpl', 'SAXTransformerFactory', [
   \ javaapi#field(1,'TRANSLET_NAME', 'String'),
   \ javaapi#field(1,'DESTINATION_DIRECTORY', 'String'),
   \ javaapi#field(1,'PACKAGE_NAME', 'String'),
@@ -406,12 +406,12 @@ call javaapi#class('TransformerHandlerImpl', 'DeclHandler', [
   \ javaapi#method(0,'reset(', ')', 'void'),
   \ ])
 
-call javaapi#class('MessageHandler', '', [
+call javaapi#class('MessageHandler', 'MessageHandler', [
   \ javaapi#method(0,'MessageHandler(', 'ErrorListener)', 'public'),
   \ javaapi#method(0,'displayMessage(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('TransformerImpl', '', [
+call javaapi#class('TransformerImpl', 'Transformer', [
   \ javaapi#method(0,'isSecureProcessing(', ')', 'boolean'),
   \ javaapi#method(0,'setSecureProcessing(', 'boolean)', 'void'),
   \ javaapi#method(0,'isIdentity(', ')', 'boolean'),

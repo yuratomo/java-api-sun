@@ -32,10 +32,10 @@ call javaapi#class('MethodInjectionPlan<T,R>', 'InjectionPlan<T,R>', [
   \ javaapi#method(0,'count(', ')', 'int'),
   \ ])
 
-call javaapi#class('AbstractInstanceResolver<T>', '', [
+call javaapi#class('AbstractInstanceResolver<T>', 'InstanceResolver<T>', [
   \ ])
 
-call javaapi#class('AbstractMultiInstanceResolver<T>', '', [
+call javaapi#class('AbstractMultiInstanceResolver<T>', 'AbstractInstanceResolver<T>', [
   \ javaapi#method(0,'AbstractMultiInstanceResolver(', 'Class<T>)', 'public'),
   \ javaapi#method(0,'start(', 'WSWebServiceContext, WSEndpoint)', 'void'),
   \ ])
@@ -49,12 +49,12 @@ call javaapi#class('AbstractWebServiceContext', 'WSWebServiceContext', [
   \ javaapi#method(0,'getEndpointReference(', 'Class<T>, )', 'T'),
   \ ])
 
-call javaapi#class('DefaultResourceInjector', '', [
+call javaapi#class('DefaultResourceInjector', 'ResourceInjector', [
   \ javaapi#method(0,'DefaultResourceInjector(', ')', 'public'),
   \ javaapi#method(0,'inject(', 'WSWebServiceContext, Object)', 'void'),
   \ ])
 
-call javaapi#class('DraconianValidationErrorHandler', '', [
+call javaapi#class('DraconianValidationErrorHandler', 'ValidationErrorHandler', [
   \ javaapi#method(0,'DraconianValidationErrorHandler(', ')', 'public'),
   \ javaapi#method(0,'warning(', 'SAXParseException) throws SAXException', 'void'),
   \ javaapi#method(0,'error(', 'SAXParseException) throws SAXException', 'void'),
@@ -88,12 +88,12 @@ call javaapi#class('1', 'Object>>', [
   \ javaapi#method(0,'next(', ')', 'Object'),
   \ ])
 
-call javaapi#class('EntrySet', '', [
+call javaapi#class('EntrySet', 'Object>>', [
   \ javaapi#method(0,'iterator(', ')', 'Object>>'),
   \ javaapi#method(0,'size(', ')', 'int'),
   \ ])
 
-call javaapi#class('EndpointMessageContextImpl', '', [
+call javaapi#class('EndpointMessageContextImpl', 'Object>', [
   \ javaapi#method(0,'EndpointMessageContextImpl(', 'Packet)', 'public'),
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,'put(', 'String, Object)', 'Object'),
@@ -104,17 +104,17 @@ call javaapi#class('EndpointMessageContextImpl', '', [
   \ javaapi#method(0,'put(', 'Object, Object)', 'Object'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'AbstractWebServiceContext', [
   \ javaapi#method(0,'getRequestPacket(', ')', 'Packet'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'Invoker', [
   \ javaapi#method(0,'invoke(', 'Packet, Method, ) throws InvocationTargetException, IllegalAccessException', 'Object'),
   \ javaapi#method(0,'invokeProvider(', 'Packet, T) throws IllegalAccessException, InvocationTargetException', 'T'),
   \ javaapi#method(0,'invokeAsyncProvider(', 'Packet, T, AsyncProviderCallback, WebServiceContext) throws IllegalAccessException, InvocationTargetException', 'void'),
   \ ])
 
-call javaapi#class('InvokerTube<T>', '', [
+call javaapi#class('InvokerTube<T>', 'AbstractTubeImpl', [
   \ javaapi#method(0,'setEndpoint(', 'WSEndpoint)', 'void'),
   \ javaapi#method(0,'getInvoker(', 'Packet)', 'Invoker'),
   \ javaapi#method(0,'copy(', 'TubeCloner)', 'AbstractTubeImpl'),
@@ -130,7 +130,7 @@ call javaapi#class('MonitorBase', '', [
   \ javaapi#method(1,'closeMOM(', 'ManagedObjectManager)', 'void'),
   \ ])
 
-call javaapi#class('MonitorRootService', '', [
+call javaapi#class('MonitorRootService', 'MonitorBase', [
   \ javaapi#method(0,'policy(', ')', 'String'),
   \ javaapi#method(0,'container(', ')', 'Container'),
   \ javaapi#method(0,'portName(', ')', 'QName'),
@@ -186,13 +186,13 @@ call javaapi#class('DocumentLocationResolverImpl', 'DocumentLocationResolver', [
   \ javaapi#method(0,'getLocationFor(', 'String, String)', 'String'),
   \ ])
 
-call javaapi#class('SchemaImpl', '', [
+call javaapi#class('SchemaImpl', 'SDDocumentImpl', [
   \ javaapi#method(0,'SchemaImpl(', 'QName, URL, SDDocumentSource, String, Set<String>)', 'public'),
   \ javaapi#method(0,'getTargetNamespace(', ')', 'String'),
   \ javaapi#method(0,'isSchema(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('WSDLImpl', '', [
+call javaapi#class('WSDLImpl', 'SDDocumentImpl', [
   \ javaapi#method(0,'WSDLImpl(', 'QName, URL, SDDocumentSource, String, boolean, boolean, Set<String>, Set<QName>)', 'public'),
   \ javaapi#method(0,'getTargetNamespace(', ')', 'String'),
   \ javaapi#method(0,'hasPortType(', ')', 'boolean'),
@@ -201,7 +201,7 @@ call javaapi#class('WSDLImpl', '', [
   \ javaapi#method(0,'isWSDL(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('SDDocumentImpl', '', [
+call javaapi#class('SDDocumentImpl', 'SDDocumentSource', [
   \ javaapi#method(1,'create(', 'SDDocumentSource, QName, QName)', 'SDDocumentImpl'),
   \ javaapi#method(0,'getRootName(', ')', 'QName'),
   \ javaapi#method(0,'isWSDL(', ')', 'boolean'),
@@ -221,14 +221,14 @@ call javaapi#interface('ServerPropertyConstants', '', [
   \ javaapi#field(1,'GET_ATTACHMENT_PROPERTY', 'String'),
   \ ])
 
-call javaapi#class('ServerRtException', '', [
+call javaapi#class('ServerRtException', 'JAXWSExceptionBase', [
   \ javaapi#method(0,'ServerRtException(', 'String, )', 'public'),
   \ javaapi#method(0,'ServerRtException(', 'Throwable)', 'public'),
   \ javaapi#method(0,'ServerRtException(', 'Localizable)', 'public'),
   \ javaapi#method(0,'getDefaultResourceBundleName(', ')', 'String'),
   \ ])
 
-call javaapi#class('ServerSchemaValidationTube', '', [
+call javaapi#class('ServerSchemaValidationTube', 'AbstractSchemaValidationTube', [
   \ javaapi#method(0,'ServerSchemaValidationTube(', 'WSEndpoint, WSBinding, SEIModel, WSDLPort, Tube)', 'public'),
   \ javaapi#method(0,'processRequest(', 'Packet)', 'NextAction'),
   \ javaapi#method(0,'processResponse(', 'Packet)', 'NextAction'),
@@ -244,14 +244,14 @@ call javaapi#class('ServiceDefinitionImpl', 'SDDocumentResolver', [
   \ javaapi#method(0,'resolve(', 'String)', 'SDDocument'),
   \ ])
 
-call javaapi#class('SingletonResolver<T>', '', [
+call javaapi#class('SingletonResolver<T>', 'AbstractInstanceResolver<T>', [
   \ javaapi#method(0,'SingletonResolver(', 'T)', 'public'),
   \ javaapi#method(0,'resolve(', 'Packet)', 'T'),
   \ javaapi#method(0,'start(', 'WSWebServiceContext, WSEndpoint)', 'void'),
   \ javaapi#method(0,'dispose(', ')', 'void'),
   \ ])
 
-call javaapi#class('UnsupportedMediaException', '', [
+call javaapi#class('UnsupportedMediaException', 'JAXWSExceptionBase', [
   \ javaapi#method(0,'UnsupportedMediaException(', 'String, List<String>)', 'public'),
   \ javaapi#method(0,'UnsupportedMediaException(', ')', 'public'),
   \ javaapi#method(0,'UnsupportedMediaException(', 'String)', 'public'),
@@ -275,7 +275,7 @@ call javaapi#class('2', 'PipeHead', [
   \ javaapi#method(0,'process(', 'Packet, WebServiceContextDelegate, TransportBackChannel)', 'Packet'),
   \ ])
 
-call javaapi#class('WSEndpointImpl<T>', '', [
+call javaapi#class('WSEndpointImpl<T>', 'WSEndpoint<T>', [
   \ javaapi#method(0,'getEndpointReferenceExtensions(', ')', 'EPRExtension>'),
   \ javaapi#method(0,'getOperationDispatcher(', ')', 'OperationDispatcher'),
   \ javaapi#method(0,'getPolicyMap(', ')', 'PolicyMap'),

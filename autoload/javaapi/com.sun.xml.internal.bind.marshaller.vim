@@ -4,7 +4,7 @@ call javaapi#interface('CharacterEscapeHandler', '', [
   \ javaapi#method(0,'escape(', 'char[], int, int, boolean, Writer) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('DataWriter', '', [
+call javaapi#class('DataWriter', 'XMLWriter', [
   \ javaapi#method(0,'DataWriter(', 'Writer, String, CharacterEscapeHandler)', 'public'),
   \ javaapi#method(0,'DataWriter(', 'Writer, String)', 'public'),
   \ javaapi#method(0,'getIndentStep(', ')', 'int'),
@@ -77,7 +77,7 @@ call javaapi#class('SAX2DOMEx', 'ContentHandler', [
   \ javaapi#method(0,'endPrefixMapping(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('XMLWriter', '', [
+call javaapi#class('XMLWriter', 'XMLFilterImpl', [
   \ javaapi#method(0,'XMLWriter(', 'Writer, String, CharacterEscapeHandler)', 'public'),
   \ javaapi#method(0,'XMLWriter(', 'Writer, String)', 'public'),
   \ javaapi#method(0,'reset(', ')', 'void'),

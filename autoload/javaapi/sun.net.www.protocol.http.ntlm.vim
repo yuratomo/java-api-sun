@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.net.www.protocol.http.ntlm')
 
-call javaapi#class('B64Encoder', '', [
+call javaapi#class('B64Encoder', 'BASE64Encoder', [
   \ ])
 
 call javaapi#class('NTLMAuthSequence', '', [
@@ -12,7 +12,7 @@ call javaapi#class('1', 'String>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('NTLMAuthentication', '', [
+call javaapi#class('NTLMAuthentication', 'AuthenticationInfo', [
   \ javaapi#method(0,'NTLMAuthentication(', 'boolean, URL, PasswordAuthentication)', 'public'),
   \ javaapi#method(0,'NTLMAuthentication(', 'boolean, String, int, PasswordAuthentication)', 'public'),
   \ javaapi#method(0,'supportsPreemptiveAuthorization(', ')', 'boolean'),
@@ -23,7 +23,7 @@ call javaapi#class('NTLMAuthentication', '', [
   \ javaapi#method(0,'setHeaders(', 'HttpURLConnection, HeaderParser, String)', 'boolean'),
   \ ])
 
-call javaapi#class('DefaultNTLMAuthenticationCallback', '', [
+call javaapi#class('DefaultNTLMAuthenticationCallback', 'NTLMAuthenticationCallback', [
   \ javaapi#method(0,'isTrustedSite(', 'URL)', 'boolean'),
   \ ])
 

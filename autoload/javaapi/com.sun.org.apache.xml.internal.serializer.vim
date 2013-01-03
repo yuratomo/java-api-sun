@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xml.internal.serializer')
 
-call javaapi#class('AttributesImplSerializer', '', [
+call javaapi#class('AttributesImplSerializer', 'AttributesImpl', [
   \ javaapi#method(0,'AttributesImplSerializer(', ')', 'public'),
   \ javaapi#method(0,'getIndex(', 'String)', 'int'),
   \ javaapi#method(0,'addAttribute(', 'String, String, String, String, String)', 'void'),
@@ -157,7 +157,7 @@ call javaapi#class('Encodings', '', [
   \ javaapi#method(1,'convertMime2JavaEncoding(', 'String)', 'String'),
   \ ])
 
-call javaapi#interface('ExtendedContentHandler', '', [
+call javaapi#interface('ExtendedContentHandler', 'ContentHandler', [
   \ javaapi#field(1,'NO_BAD_CHARS', 'int'),
   \ javaapi#field(1,'HTML_ATTREMPTY', 'int'),
   \ javaapi#field(1,'HTML_ATTRURL', 'int'),
@@ -182,7 +182,7 @@ call javaapi#interface('ExtendedContentHandler', '', [
   \ javaapi#method(0,'addAttribute(', 'String, String, String, String, String) throws SAXException', 'void'),
   \ ])
 
-call javaapi#interface('ExtendedLexicalHandler', '', [
+call javaapi#interface('ExtendedLexicalHandler', 'LexicalHandler', [
   \ javaapi#method(0,'comment(', 'String) throws SAXException', 'void'),
   \ ])
 
@@ -205,7 +205,7 @@ call javaapi#class('NamespaceMappings', '', [
   \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'Object'),
   \ ])
 
-call javaapi#class('ConfigurationError', '', [
+call javaapi#class('ConfigurationError', 'Error', [
   \ ])
 
 call javaapi#class('ObjectFactory', '', [
@@ -270,10 +270,10 @@ call javaapi#class('8', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('SecuritySupport12', '', [
+call javaapi#class('SecuritySupport12', 'SecuritySupport', [
   \ ])
 
-call javaapi#interface('SerializationHandler', '', [
+call javaapi#interface('SerializationHandler', 'Serializer', [
   \ javaapi#method(0,'setContentHandler(', 'ContentHandler)', 'void'),
   \ javaapi#method(0,'close(', ')', 'void'),
   \ javaapi#method(0,'serialize(', 'Node) throws IOException', 'void'),
@@ -396,7 +396,7 @@ call javaapi#interface('SerializerTrace', '', [
   \ javaapi#method(0,'fireGenerateEvent(', 'int, String)', 'void'),
   \ ])
 
-call javaapi#class('SerializerTraceWriter', '', [
+call javaapi#class('SerializerTraceWriter', 'Writer', [
   \ javaapi#method(0,'SerializerTraceWriter(', 'Writer, SerializerTrace)', 'public'),
   \ javaapi#method(0,'flush(', ') throws IOException', 'void'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
@@ -407,7 +407,7 @@ call javaapi#class('SerializerTraceWriter', '', [
   \ javaapi#method(0,'getOutputStream(', ')', 'OutputStream'),
   \ ])
 
-call javaapi#class('ToHTMLSAXHandler', '', [
+call javaapi#class('ToHTMLSAXHandler', 'ToSAXHandler', [
   \ javaapi#method(0,'getOutputFormat(', ')', 'Properties'),
   \ javaapi#method(0,'getOutputStream(', ')', 'OutputStream'),
   \ javaapi#method(0,'getWriter(', ')', 'Writer'),
@@ -464,7 +464,7 @@ call javaapi#class('Trie', '', [
   \ javaapi#method(0,'getLongestKeyLength(', ')', 'int'),
   \ ])
 
-call javaapi#class('ToHTMLStream', '', [
+call javaapi#class('ToHTMLStream', 'ToStream', [
   \ javaapi#method(0,'setSpecialEscapeURLs(', 'boolean)', 'void'),
   \ javaapi#method(0,'setOmitMetaTag(', 'boolean)', 'void'),
   \ javaapi#method(0,'setOutputFormat(', 'Properties)', 'void'),
@@ -494,7 +494,7 @@ call javaapi#class('ToHTMLStream', '', [
   \ javaapi#method(0,'reset(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('ToSAXHandler', '', [
+call javaapi#class('ToSAXHandler', 'SerializerBase', [
   \ javaapi#method(0,'ToSAXHandler(', ')', 'public'),
   \ javaapi#method(0,'ToSAXHandler(', 'ContentHandler, LexicalHandler, String)', 'public'),
   \ javaapi#method(0,'ToSAXHandler(', 'ContentHandler, String)', 'public'),
@@ -534,7 +534,7 @@ call javaapi#class('BoolStack', '', [
   \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('WritertoStringBuffer', '', [
+call javaapi#class('WritertoStringBuffer', 'Writer', [
   \ javaapi#method(0,'write(', 'char[], int, int) throws IOException', 'void'),
   \ javaapi#method(0,'flush(', ') throws IOException', 'void'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
@@ -542,7 +542,7 @@ call javaapi#class('WritertoStringBuffer', '', [
   \ javaapi#method(0,'write(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('ToStream', '', [
+call javaapi#class('ToStream', 'SerializerBase', [
   \ javaapi#method(0,'ToStream(', ')', 'public'),
   \ javaapi#method(0,'serialize(', 'Node) throws IOException', 'void'),
   \ javaapi#method(0,'getOutputStream(', ')', 'OutputStream'),
@@ -593,7 +593,7 @@ call javaapi#class('ToStream', '', [
   \ javaapi#method(0,'setDTDEntityExpansion(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('ToTextSAXHandler', '', [
+call javaapi#class('ToTextSAXHandler', 'ToSAXHandler', [
   \ javaapi#method(0,'endElement(', 'String) throws SAXException', 'void'),
   \ javaapi#method(0,'endElement(', 'String, String, String) throws SAXException', 'void'),
   \ javaapi#method(0,'ToTextSAXHandler(', 'ContentHandler, LexicalHandler, String)', 'public'),
@@ -637,7 +637,7 @@ call javaapi#class('ToTextSAXHandler', '', [
   \ javaapi#method(0,'namespaceAfterStartElement(', 'String, String) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('ToTextStream', '', [
+call javaapi#class('ToTextStream', 'ToStream', [
   \ javaapi#method(0,'ToTextStream(', ')', 'public'),
   \ javaapi#method(0,'endDocument(', ') throws SAXException', 'void'),
   \ javaapi#method(0,'startElement(', 'String, String, String, Attributes) throws SAXException', 'void'),
@@ -663,7 +663,7 @@ call javaapi#class('ToTextStream', '', [
   \ javaapi#method(0,'flushPending(', ') throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('ToUnknownStream', '', [
+call javaapi#class('ToUnknownStream', 'SerializerBase', [
   \ javaapi#method(0,'ToUnknownStream(', ')', 'public'),
   \ javaapi#method(0,'asContentHandler(', ') throws IOException', 'ContentHandler'),
   \ javaapi#method(0,'close(', ')', 'void'),
@@ -743,7 +743,7 @@ call javaapi#class('ToUnknownStream', '', [
   \ javaapi#method(0,'setSourceLocator(', 'SourceLocator)', 'void'),
   \ ])
 
-call javaapi#class('ToXMLSAXHandler', '', [
+call javaapi#class('ToXMLSAXHandler', 'ToSAXHandler', [
   \ javaapi#method(0,'ToXMLSAXHandler(', ')', 'public'),
   \ javaapi#method(0,'getOutputFormat(', ')', 'Properties'),
   \ javaapi#method(0,'getOutputStream(', ')', 'OutputStream'),
@@ -786,7 +786,7 @@ call javaapi#class('ToXMLSAXHandler', '', [
   \ javaapi#method(0,'reset(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('ToXMLStream', '', [
+call javaapi#class('ToXMLStream', 'ToStream', [
   \ javaapi#method(0,'ToXMLStream(', ')', 'public'),
   \ javaapi#method(0,'CopyFrom(', 'ToXMLStream)', 'void'),
   \ javaapi#method(0,'startDocumentInternal(', ') throws SAXException', 'void'),
@@ -845,7 +845,7 @@ call javaapi#interface('WriterChain', '', [
   \ javaapi#method(0,'getOutputStream(', ')', 'OutputStream'),
   \ ])
 
-call javaapi#class('WriterToASCI', '', [
+call javaapi#class('WriterToASCI', 'Writer', [
   \ javaapi#method(0,'WriterToASCI(', 'OutputStream)', 'public'),
   \ javaapi#method(0,'write(', 'char[], int, int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
@@ -856,7 +856,7 @@ call javaapi#class('WriterToASCI', '', [
   \ javaapi#method(0,'getWriter(', ')', 'Writer'),
   \ ])
 
-call javaapi#class('WriterToUTF8Buffered', '', [
+call javaapi#class('WriterToUTF8Buffered', 'Writer', [
   \ javaapi#method(0,'WriterToUTF8Buffered(', 'OutputStream) throws UnsupportedEncodingException', 'public'),
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'char[], int, int) throws IOException', 'void'),

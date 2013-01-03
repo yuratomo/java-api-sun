@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.fastinfoset')
 
-call javaapi#class('AbstractResourceBundle', '', [
+call javaapi#class('AbstractResourceBundle', 'ResourceBundle', [
   \ javaapi#field(1,'LOCALE', 'String'),
   \ javaapi#method(0,'AbstractResourceBundle(', ')', 'public'),
   \ javaapi#method(0,'getString(', 'String, Object[])', 'String'),
@@ -9,7 +9,7 @@ call javaapi#class('AbstractResourceBundle', '', [
   \ javaapi#method(0,'getKeys(', ')', 'Enumeration'),
   \ ])
 
-call javaapi#class('CommonResourceBundle', '', [
+call javaapi#class('CommonResourceBundle', 'AbstractResourceBundle', [
   \ javaapi#field(1,'BASE_NAME', 'String'),
   \ javaapi#method(1,'getInstance(', ')', 'CommonResourceBundle'),
   \ javaapi#method(1,'getInstance(', 'Locale)', 'CommonResourceBundle'),
@@ -17,7 +17,7 @@ call javaapi#class('CommonResourceBundle', '', [
   \ javaapi#method(0,'getBundle(', 'Locale)', 'ResourceBundle'),
   \ ])
 
-call javaapi#class('EncodingAlgorithmInputStream', '', [
+call javaapi#class('EncodingAlgorithmInputStream', 'InputStream', [
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[]) throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
@@ -102,14 +102,14 @@ call javaapi#class('DecoderStateTables', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('EncodingBufferOutputStream', '', [
+call javaapi#class('EncodingBufferOutputStream', 'OutputStream', [
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
   \ javaapi#method(0,'getLength(', ')', 'int'),
   \ javaapi#method(0,'reset(', ')', 'void'),
   \ ])
 
-call javaapi#class('Encoder', '', [
+call javaapi#class('Encoder', 'DefaultHandler', [
   \ javaapi#field(1,'CHARACTER_ENCODING_SCHEME_SYSTEM_PROPERTY', 'String'),
   \ javaapi#method(0,'setIgnoreDTD(', 'boolean)', 'void'),
   \ javaapi#method(0,'getIgnoreDTD(', ')', 'boolean'),
@@ -334,7 +334,7 @@ call javaapi#class('QualifiedName', '', [
   \ javaapi#method(0,'createAttributeValues(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('UnparsedEntity', '', [
+call javaapi#class('UnparsedEntity', 'Notation', [
   \ javaapi#field(0,'notationName', 'String'),
   \ javaapi#method(0,'UnparsedEntity(', 'String, String, String, String)', 'public'),
   \ ])

@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.stream.writers')
 
-call javaapi#class('UTF8OutputStreamWriter', '', [
+call javaapi#class('UTF8OutputStreamWriter', 'Writer', [
   \ javaapi#method(0,'UTF8OutputStreamWriter(', 'OutputStream)', 'public'),
   \ javaapi#method(0,'getEncoding(', ')', 'String'),
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
@@ -90,7 +90,7 @@ call javaapi#class('XMLOutputSource', '', [
   \ javaapi#method(0,'XMLOutputSource(', ')', 'public'),
   \ ])
 
-call javaapi#class('Attribute', '', [
+call javaapi#class('Attribute', 'QName', [
   \ ])
 
 call javaapi#class('ElementStack', '', [
@@ -103,7 +103,7 @@ call javaapi#class('ElementStack', '', [
   \ javaapi#method(0,'empty(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('ElementState', '', [
+call javaapi#class('ElementState', 'QName', [
   \ javaapi#field(0,'isEmpty', 'boolean'),
   \ javaapi#method(0,'ElementState(', 'XMLStreamWriterImpl)', 'public'),
   \ javaapi#method(0,'ElementState(', 'XMLStreamWriterImpl, String, String, String, String)', 'public'),
@@ -116,7 +116,7 @@ call javaapi#class('NamespaceContextImpl', 'NamespaceContext', [
   \ javaapi#method(0,'getPrefixes(', 'String)', 'Iterator'),
   \ ])
 
-call javaapi#class('XMLStreamWriterImpl', '', [
+call javaapi#class('XMLStreamWriterImpl', 'AbstractMap', [
   \ javaapi#field(1,'START_COMMENT', 'String'),
   \ javaapi#field(1,'END_COMMENT', 'String'),
   \ javaapi#field(1,'DEFAULT_ENCODING', 'String'),
@@ -183,7 +183,7 @@ call javaapi#class('XMLStreamWriterImpl', '', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('XMLWriter', '', [
+call javaapi#class('XMLWriter', 'Writer', [
   \ javaapi#method(0,'XMLWriter(', 'Writer)', 'public'),
   \ javaapi#method(0,'XMLWriter(', 'Writer, int)', 'public'),
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),

@@ -21,7 +21,7 @@ call javaapi#class('AclEnumerator', 'AclEntry>', [
   \ javaapi#method(0,'nextElement(', ')', 'Object'),
   \ ])
 
-call javaapi#class('AclImpl', '', [
+call javaapi#class('AclImpl', 'OwnerImpl', [
   \ javaapi#method(0,'AclImpl(', 'Principal, String)', 'public'),
   \ javaapi#method(0,'setName(', 'Principal, String) throws NotOwnerException', 'void'),
   \ javaapi#method(0,'getName(', ')', 'String'),
@@ -33,7 +33,7 @@ call javaapi#class('AclImpl', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('AllPermissionsImpl', '', [
+call javaapi#class('AllPermissionsImpl', 'PermissionImpl', [
   \ javaapi#method(0,'AllPermissionsImpl(', 'String)', 'public'),
   \ javaapi#method(0,'equals(', 'Permission)', 'boolean'),
   \ ])
@@ -73,7 +73,7 @@ call javaapi#class('PrincipalImpl', 'Principal', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('WorldGroupImpl', '', [
+call javaapi#class('WorldGroupImpl', 'GroupImpl', [
   \ javaapi#method(0,'WorldGroupImpl(', 'String)', 'public'),
   \ javaapi#method(0,'isMember(', 'Principal)', 'boolean'),
   \ ])

@@ -3,11 +3,11 @@ call javaapi#namespace('com.sun.xml.internal.ws.policy.jaxws')
 call javaapi#class('BuilderHandler', '', [
   \ ])
 
-call javaapi#class('BuilderHandlerEndpointScope', '', [
+call javaapi#class('BuilderHandlerEndpointScope', 'BuilderHandler', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('Scope', '', [
+call javaapi#class('Scope', 'Scope>', [
   \ javaapi#field(1,'InputMessageScope', 'Scope'),
   \ javaapi#field(1,'OutputMessageScope', 'Scope'),
   \ javaapi#field(1,'FaultMessageScope', 'Scope'),
@@ -15,15 +15,15 @@ call javaapi#class('Scope', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'Scope'),
   \ ])
 
-call javaapi#class('BuilderHandlerMessageScope', '', [
+call javaapi#class('BuilderHandlerMessageScope', 'BuilderHandler', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('BuilderHandlerOperationScope', '', [
+call javaapi#class('BuilderHandlerOperationScope', 'BuilderHandler', [
   \ ])
 
-call javaapi#class('BuilderHandlerServiceScope', '', [
+call javaapi#class('BuilderHandlerServiceScope', 'BuilderHandler', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
@@ -46,7 +46,7 @@ call javaapi#class('PolicyUtil', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('ScopeType', '', [
+call javaapi#class('ScopeType', 'ScopeType>', [
   \ javaapi#field(1,'SERVICE', 'ScopeType'),
   \ javaapi#field(1,'ENDPOINT', 'ScopeType'),
   \ javaapi#field(1,'OPERATION', 'ScopeType'),
@@ -57,7 +57,7 @@ call javaapi#class('ScopeType', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'ScopeType'),
   \ ])
 
-call javaapi#class('PolicyWSDLGeneratorExtension', '', [
+call javaapi#class('PolicyWSDLGeneratorExtension', 'WSDLGeneratorExtension', [
   \ javaapi#method(0,'PolicyWSDLGeneratorExtension(', ')', 'public'),
   \ javaapi#method(0,'start(', 'WSDLGenExtnContext)', 'void'),
   \ javaapi#method(0,'addDefinitionsExtension(', 'TypedXmlWriter)', 'void'),
@@ -78,7 +78,7 @@ call javaapi#class('PolicyWSDLGeneratorExtension', '', [
   \ javaapi#method(0,'addBindingOperationFaultExtension(', 'TypedXmlWriter, JavaMethod, CheckedException)', 'void'),
   \ ])
 
-call javaapi#class('HandlerType', '', [
+call javaapi#class('HandlerType', 'HandlerType>', [
   \ javaapi#field(1,'PolicyUri', 'HandlerType'),
   \ javaapi#field(1,'AnonymousPolicyId', 'HandlerType'),
   \ javaapi#method(1,'values(', ')', 'HandlerType[]'),
@@ -88,7 +88,7 @@ call javaapi#class('HandlerType', '', [
 call javaapi#class('PolicyRecordHandler', '', [
   \ ])
 
-call javaapi#class('PolicyWSDLParserExtension', '', [
+call javaapi#class('PolicyWSDLParserExtension', 'WSDLParserExtension', [
   \ javaapi#method(0,'PolicyWSDLParserExtension(', ')', 'public'),
   \ javaapi#method(0,'portElements(', 'WSDLPort, XMLStreamReader)', 'boolean'),
   \ javaapi#method(0,'portAttributes(', 'WSDLPort, XMLStreamReader)', 'void'),

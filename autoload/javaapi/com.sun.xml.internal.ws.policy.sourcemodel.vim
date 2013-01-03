@@ -25,11 +25,11 @@ call javaapi#class('AssertionData', 'Serializable', [
   \ javaapi#method(0,'getNodeType(', ')', 'Type'),
   \ ])
 
-call javaapi#class('CompactModelGenerator', '', [
+call javaapi#class('CompactModelGenerator', 'PolicyModelGenerator', [
   \ javaapi#method(0,'translate(', 'Policy) throws PolicyException', 'PolicySourceModel'),
   \ ])
 
-call javaapi#class('DefaultPolicyAssertion', '', [
+call javaapi#class('DefaultPolicyAssertion', 'PolicyAssertion', [
   \ ])
 
 call javaapi#class('DefaultPolicyAssertionCreator', 'PolicyAssertionCreator', [
@@ -40,7 +40,7 @@ call javaapi#class('DefaultPolicyAssertionCreator', 'PolicyAssertionCreator', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('Type', '', [
+call javaapi#class('Type', 'Type>', [
   \ javaapi#field(1,'POLICY', 'Type'),
   \ javaapi#field(1,'ALL', 'Type'),
   \ javaapi#field(1,'EXACTLY_ONE', 'Type'),
@@ -73,7 +73,7 @@ call javaapi#class('ModelNode', 'Cloneable', [
   \ javaapi#method(0,'toString(', 'int, StringBuffer)', 'StringBuffer'),
   \ ])
 
-call javaapi#class('NormalizedModelGenerator', '', [
+call javaapi#class('NormalizedModelGenerator', 'PolicyModelGenerator', [
   \ javaapi#method(0,'translate(', 'Policy) throws PolicyException', 'PolicySourceModel'),
   \ ])
 
@@ -147,7 +147,7 @@ call javaapi#class('PolicySourceModelContext', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('XmlPolicyModelMarshaller', '', [
+call javaapi#class('XmlPolicyModelMarshaller', 'PolicyModelMarshaller', [
   \ javaapi#method(0,'marshal(', 'PolicySourceModel, Object) throws PolicyException', 'void'),
   \ javaapi#method(0,'marshal(', 'Collection<PolicySourceModel>, Object) throws PolicyException', 'void'),
   \ ])
@@ -155,7 +155,7 @@ call javaapi#class('XmlPolicyModelMarshaller', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('XmlPolicyModelUnmarshaller', '', [
+call javaapi#class('XmlPolicyModelUnmarshaller', 'PolicyModelUnmarshaller', [
   \ javaapi#method(0,'unmarshalModel(', 'Object) throws PolicyException', 'PolicySourceModel'),
   \ ])
 

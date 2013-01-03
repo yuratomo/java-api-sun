@@ -55,7 +55,7 @@ call javaapi#interface('AttributeReader', '', [
   \ javaapi#method(0,'createAttribute(', 'int, int, DataInputStream, ConstantPool)', 'Attribute'),
   \ ])
 
-call javaapi#class('ClassFormatException', '', [
+call javaapi#class('ClassFormatException', 'RuntimeException', [
   \ javaapi#method(0,'ClassFormatException(', ')', 'public'),
   \ javaapi#method(0,'ClassFormatException(', 'String)', 'public'),
   \ ])
@@ -67,7 +67,7 @@ call javaapi#class('ClassParser', '', [
   \ javaapi#method(0,'parse(', ') throws IOException, ClassFormatException', 'JavaClass'),
   \ ])
 
-call javaapi#class('Code', '', [
+call javaapi#class('Code', 'Attribute', [
   \ javaapi#method(0,'Code(', 'Code)', 'public'),
   \ javaapi#method(0,'Code(', 'int, int, int, int, byte[], CodeException[], Attribute[], ConstantPool)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -117,7 +117,7 @@ call javaapi#class('Constant', 'Serializable', [
   \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'Object'),
   \ ])
 
-call javaapi#class('ConstantCP', '', [
+call javaapi#class('ConstantCP', 'Constant', [
   \ javaapi#method(0,'ConstantCP(', 'ConstantCP)', 'public'),
   \ javaapi#method(0,'dump(', 'DataOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,'getClassIndex(', ')', 'int'),
@@ -128,7 +128,7 @@ call javaapi#class('ConstantCP', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ConstantClass', '', [
+call javaapi#class('ConstantClass', 'Constant', [
   \ javaapi#method(0,'ConstantClass(', 'ConstantClass)', 'public'),
   \ javaapi#method(0,'ConstantClass(', 'int)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -140,7 +140,7 @@ call javaapi#class('ConstantClass', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ConstantDouble', '', [
+call javaapi#class('ConstantDouble', 'Constant', [
   \ javaapi#method(0,'ConstantDouble(', 'double)', 'public'),
   \ javaapi#method(0,'ConstantDouble(', 'ConstantDouble)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -151,13 +151,13 @@ call javaapi#class('ConstantDouble', '', [
   \ javaapi#method(0,'getConstantValue(', 'ConstantPool)', 'Object'),
   \ ])
 
-call javaapi#class('ConstantFieldref', '', [
+call javaapi#class('ConstantFieldref', 'ConstantCP', [
   \ javaapi#method(0,'ConstantFieldref(', 'ConstantFieldref)', 'public'),
   \ javaapi#method(0,'ConstantFieldref(', 'int, int)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('ConstantFloat', '', [
+call javaapi#class('ConstantFloat', 'Constant', [
   \ javaapi#method(0,'ConstantFloat(', 'float)', 'public'),
   \ javaapi#method(0,'ConstantFloat(', 'ConstantFloat)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -168,7 +168,7 @@ call javaapi#class('ConstantFloat', '', [
   \ javaapi#method(0,'getConstantValue(', 'ConstantPool)', 'Object'),
   \ ])
 
-call javaapi#class('ConstantInteger', '', [
+call javaapi#class('ConstantInteger', 'Constant', [
   \ javaapi#method(0,'ConstantInteger(', 'int)', 'public'),
   \ javaapi#method(0,'ConstantInteger(', 'ConstantInteger)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -179,13 +179,13 @@ call javaapi#class('ConstantInteger', '', [
   \ javaapi#method(0,'getConstantValue(', 'ConstantPool)', 'Object'),
   \ ])
 
-call javaapi#class('ConstantInterfaceMethodref', '', [
+call javaapi#class('ConstantInterfaceMethodref', 'ConstantCP', [
   \ javaapi#method(0,'ConstantInterfaceMethodref(', 'ConstantInterfaceMethodref)', 'public'),
   \ javaapi#method(0,'ConstantInterfaceMethodref(', 'int, int)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('ConstantLong', '', [
+call javaapi#class('ConstantLong', 'Constant', [
   \ javaapi#method(0,'ConstantLong(', 'long)', 'public'),
   \ javaapi#method(0,'ConstantLong(', 'ConstantLong)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -196,13 +196,13 @@ call javaapi#class('ConstantLong', '', [
   \ javaapi#method(0,'getConstantValue(', 'ConstantPool)', 'Object'),
   \ ])
 
-call javaapi#class('ConstantMethodref', '', [
+call javaapi#class('ConstantMethodref', 'ConstantCP', [
   \ javaapi#method(0,'ConstantMethodref(', 'ConstantMethodref)', 'public'),
   \ javaapi#method(0,'ConstantMethodref(', 'int, int)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('ConstantNameAndType', '', [
+call javaapi#class('ConstantNameAndType', 'Constant', [
   \ javaapi#method(0,'ConstantNameAndType(', 'ConstantNameAndType)', 'public'),
   \ javaapi#method(0,'ConstantNameAndType(', 'int, int)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -237,7 +237,7 @@ call javaapi#class('ConstantPool', 'Serializable', [
   \ javaapi#method(0,'copy(', ')', 'ConstantPool'),
   \ ])
 
-call javaapi#class('ConstantString', '', [
+call javaapi#class('ConstantString', 'Constant', [
   \ javaapi#method(0,'ConstantString(', 'ConstantString)', 'public'),
   \ javaapi#method(0,'ConstantString(', 'int)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -249,7 +249,7 @@ call javaapi#class('ConstantString', '', [
   \ javaapi#method(0,'getBytes(', 'ConstantPool)', 'String'),
   \ ])
 
-call javaapi#class('ConstantUtf8', '', [
+call javaapi#class('ConstantUtf8', 'Constant', [
   \ javaapi#method(0,'ConstantUtf8(', 'ConstantUtf8)', 'public'),
   \ javaapi#method(0,'ConstantUtf8(', 'String)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -259,7 +259,7 @@ call javaapi#class('ConstantUtf8', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ConstantValue', '', [
+call javaapi#class('ConstantValue', 'Attribute', [
   \ javaapi#method(0,'ConstantValue(', 'ConstantValue)', 'public'),
   \ javaapi#method(0,'ConstantValue(', 'int, int, int, ConstantPool)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -270,7 +270,7 @@ call javaapi#class('ConstantValue', '', [
   \ javaapi#method(0,'copy(', 'ConstantPool)', 'Attribute'),
   \ ])
 
-call javaapi#class('Deprecated', '', [
+call javaapi#class('Deprecated', 'Attribute', [
   \ javaapi#method(0,'Deprecated(', 'Deprecated)', 'public'),
   \ javaapi#method(0,'Deprecated(', 'int, int, byte[], ConstantPool)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -356,7 +356,7 @@ call javaapi#class('EmptyVisitor', 'Visitor', [
   \ javaapi#method(0,'visitStackMapEntry(', 'StackMapEntry)', 'void'),
   \ ])
 
-call javaapi#class('ExceptionTable', '', [
+call javaapi#class('ExceptionTable', 'Attribute', [
   \ javaapi#method(0,'ExceptionTable(', 'ExceptionTable)', 'public'),
   \ javaapi#method(0,'ExceptionTable(', 'int, int, int[], ConstantPool)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -369,7 +369,7 @@ call javaapi#class('ExceptionTable', '', [
   \ javaapi#method(0,'copy(', 'ConstantPool)', 'Attribute'),
   \ ])
 
-call javaapi#class('Field', '', [
+call javaapi#class('Field', 'FieldOrMethod', [
   \ javaapi#method(0,'Field(', 'Field)', 'public'),
   \ javaapi#method(0,'Field(', 'int, int, int, Attribute[], ConstantPool)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -379,7 +379,7 @@ call javaapi#class('Field', '', [
   \ javaapi#method(0,'getType(', ')', 'Type'),
   \ ])
 
-call javaapi#class('FieldOrMethod', '', [
+call javaapi#class('FieldOrMethod', 'AccessFlags', [
   \ javaapi#method(0,'dump(', 'DataOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,'getAttributes(', ')', 'Attribute[]'),
   \ javaapi#method(0,'setAttributes(', 'Attribute[])', 'void'),
@@ -411,7 +411,7 @@ call javaapi#class('InnerClass', 'Node', [
   \ javaapi#method(0,'copy(', ')', 'InnerClass'),
   \ ])
 
-call javaapi#class('InnerClasses', '', [
+call javaapi#class('InnerClasses', 'Attribute', [
   \ javaapi#method(0,'InnerClasses(', 'InnerClasses)', 'public'),
   \ javaapi#method(0,'InnerClasses(', 'int, int, InnerClass[], ConstantPool)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -422,7 +422,7 @@ call javaapi#class('InnerClasses', '', [
   \ javaapi#method(0,'copy(', 'ConstantPool)', 'Attribute'),
   \ ])
 
-call javaapi#class('JavaClass', '', [
+call javaapi#class('JavaClass', 'AccessFlags', [
   \ javaapi#field(1,'HEAP', 'byte'),
   \ javaapi#field(1,'FILE', 'byte'),
   \ javaapi#field(1,'ZIP', 'byte'),
@@ -492,7 +492,7 @@ call javaapi#class('LineNumber', 'Serializable', [
   \ javaapi#method(0,'copy(', ')', 'LineNumber'),
   \ ])
 
-call javaapi#class('LineNumberTable', '', [
+call javaapi#class('LineNumberTable', 'Attribute', [
   \ javaapi#method(0,'LineNumberTable(', 'LineNumberTable)', 'public'),
   \ javaapi#method(0,'LineNumberTable(', 'int, int, LineNumber[], ConstantPool)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -528,7 +528,7 @@ call javaapi#class('LocalVariable', 'Serializable', [
   \ javaapi#method(0,'copy(', ')', 'LocalVariable'),
   \ ])
 
-call javaapi#class('LocalVariableTable', '', [
+call javaapi#class('LocalVariableTable', 'Attribute', [
   \ javaapi#method(0,'LocalVariableTable(', 'LocalVariableTable)', 'public'),
   \ javaapi#method(0,'LocalVariableTable(', 'int, int, LocalVariable[], ConstantPool)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -541,7 +541,7 @@ call javaapi#class('LocalVariableTable', '', [
   \ javaapi#method(0,'getTableLength(', ')', 'int'),
   \ ])
 
-call javaapi#class('Method', '', [
+call javaapi#class('Method', 'FieldOrMethod', [
   \ javaapi#method(0,'Method(', ')', 'public'),
   \ javaapi#method(0,'Method(', 'Method)', 'public'),
   \ javaapi#method(0,'Method(', 'int, int, int, Attribute[], ConstantPool)', 'public'),
@@ -560,7 +560,7 @@ call javaapi#interface('Node', '', [
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('PMGClass', '', [
+call javaapi#class('PMGClass', 'Attribute', [
   \ javaapi#method(0,'PMGClass(', 'PMGClass)', 'public'),
   \ javaapi#method(0,'PMGClass(', 'int, int, int, int, ConstantPool)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -575,10 +575,10 @@ call javaapi#class('PMGClass', '', [
   \ javaapi#method(0,'copy(', 'ConstantPool)', 'Attribute'),
   \ ])
 
-call javaapi#class('MyByteArrayInputStream', '', [
+call javaapi#class('MyByteArrayInputStream', 'ByteArrayInputStream', [
   \ ])
 
-call javaapi#class('Signature', '', [
+call javaapi#class('Signature', 'Attribute', [
   \ javaapi#method(0,'Signature(', 'Signature)', 'public'),
   \ javaapi#method(0,'Signature(', 'int, int, int, ConstantPool)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -593,7 +593,7 @@ call javaapi#class('Signature', '', [
   \ javaapi#method(0,'copy(', 'ConstantPool)', 'Attribute'),
   \ ])
 
-call javaapi#class('SourceFile', '', [
+call javaapi#class('SourceFile', 'Attribute', [
   \ javaapi#method(0,'SourceFile(', 'SourceFile)', 'public'),
   \ javaapi#method(0,'SourceFile(', 'int, int, int, ConstantPool)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -605,7 +605,7 @@ call javaapi#class('SourceFile', '', [
   \ javaapi#method(0,'copy(', 'ConstantPool)', 'Attribute'),
   \ ])
 
-call javaapi#class('StackMap', '', [
+call javaapi#class('StackMap', 'Attribute', [
   \ javaapi#method(0,'StackMap(', 'int, int, StackMapEntry[], ConstantPool)', 'public'),
   \ javaapi#method(0,'dump(', 'DataOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,'getStackMap(', ')', 'StackMapEntry[]'),
@@ -650,7 +650,7 @@ call javaapi#class('StackMapType', 'Cloneable', [
   \ javaapi#method(0,'setConstantPool(', 'ConstantPool)', 'void'),
   \ ])
 
-call javaapi#class('Synthetic', '', [
+call javaapi#class('Synthetic', 'Attribute', [
   \ javaapi#method(0,'Synthetic(', 'Synthetic)', 'public'),
   \ javaapi#method(0,'Synthetic(', 'int, int, byte[], ConstantPool)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -661,7 +661,7 @@ call javaapi#class('Synthetic', '', [
   \ javaapi#method(0,'copy(', 'ConstantPool)', 'Attribute'),
   \ ])
 
-call javaapi#class('Unknown', '', [
+call javaapi#class('Unknown', 'Attribute', [
   \ javaapi#method(0,'Unknown(', 'Unknown)', 'public'),
   \ javaapi#method(0,'Unknown(', 'int, int, byte[], ConstantPool)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -673,13 +673,13 @@ call javaapi#class('Unknown', '', [
   \ javaapi#method(0,'copy(', 'ConstantPool)', 'Attribute'),
   \ ])
 
-call javaapi#class('JavaReader', '', [
+call javaapi#class('JavaReader', 'FilterReader', [
   \ javaapi#method(0,'JavaReader(', 'Reader)', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'char[], int, int) throws IOException', 'int'),
   \ ])
 
-call javaapi#class('JavaWriter', '', [
+call javaapi#class('JavaWriter', 'FilterWriter', [
   \ javaapi#method(0,'JavaWriter(', 'Writer)', 'public'),
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'char[], int, int) throws IOException', 'void'),

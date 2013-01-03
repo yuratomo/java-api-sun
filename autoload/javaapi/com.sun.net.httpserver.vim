@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.net.httpserver')
 
-call javaapi#class('Failure', '', [
+call javaapi#class('Failure', 'Result', [
   \ javaapi#method(0,'Failure(', 'int)', 'public'),
   \ javaapi#method(0,'getResponseCode(', ')', 'int'),
   \ ])
@@ -9,12 +9,12 @@ call javaapi#class('Result', '', [
   \ javaapi#method(0,'Result(', ')', 'public'),
   \ ])
 
-call javaapi#class('Retry', '', [
+call javaapi#class('Retry', 'Result', [
   \ javaapi#method(0,'Retry(', 'int)', 'public'),
   \ javaapi#method(0,'getResponseCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('Success', '', [
+call javaapi#class('Success', 'Result', [
   \ javaapi#method(0,'Success(', 'HttpPrincipal)', 'public'),
   \ javaapi#method(0,'getPrincipal(', ')', 'HttpPrincipal'),
   \ ])
@@ -27,7 +27,7 @@ call javaapi#class('Authenticator', '', [
 call javaapi#class('Base64', '', [
   \ ])
 
-call javaapi#class('BasicAuthenticator', '', [
+call javaapi#class('BasicAuthenticator', 'Authenticator', [
   \ javaapi#method(0,'BasicAuthenticator(', 'String)', 'public'),
   \ javaapi#method(0,'getRealm(', ')', 'String'),
   \ javaapi#method(0,'authenticate(', 'HttpExchange)', 'Result'),
@@ -134,7 +134,7 @@ call javaapi#class('HttpsConfigurator', '', [
   \ javaapi#method(0,'configure(', 'HttpsParameters)', 'void'),
   \ ])
 
-call javaapi#class('HttpsExchange', '', [
+call javaapi#class('HttpsExchange', 'HttpExchange', [
   \ javaapi#method(0,'getSSLSession(', ')', 'SSLSession'),
   \ ])
 
@@ -152,7 +152,7 @@ call javaapi#class('HttpsParameters', '', [
   \ javaapi#method(0,'setNeedClientAuth(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('HttpsServer', '', [
+call javaapi#class('HttpsServer', 'HttpServer', [
   \ javaapi#method(1,'create(', ') throws IOException', 'HttpsServer'),
   \ javaapi#method(1,'create(', 'InetSocketAddress, int) throws IOException', 'HttpsServer'),
   \ javaapi#method(0,'setHttpsConfigurator(', 'HttpsConfigurator)', 'void'),

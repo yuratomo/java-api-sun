@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.corba.se.spi.resolver')
 
-call javaapi#interface('LocalResolver', '', [
+call javaapi#interface('LocalResolver', 'Resolver', [
   \ javaapi#method(0,'register(', 'String, Closure)', 'void'),
   \ ])
 

@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.net.httpserver')
 
-call javaapi#class('AuthFilter', '', [
+call javaapi#class('AuthFilter', 'Filter', [
   \ javaapi#method(0,'AuthFilter(', 'Authenticator)', 'public'),
   \ javaapi#method(0,'description(', ')', 'String'),
   \ javaapi#method(0,'setAuthenticator(', 'Authenticator)', 'void'),
@@ -8,7 +8,7 @@ call javaapi#class('AuthFilter', '', [
   \ javaapi#method(0,'doFilter(', 'HttpExchange, Chain) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('ChunkedInputStream', '', [
+call javaapi#class('ChunkedInputStream', 'LeftOverInputStream', [
   \ javaapi#method(0,'available(', ') throws IOException', 'int'),
   \ javaapi#method(0,'isDataBuffered(', ') throws IOException', 'boolean'),
   \ javaapi#method(0,'markSupported(', ')', 'boolean'),
@@ -16,7 +16,7 @@ call javaapi#class('ChunkedInputStream', '', [
   \ javaapi#method(0,'reset(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('ChunkedOutputStream', '', [
+call javaapi#class('ChunkedOutputStream', 'FilterOutputStream', [
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
@@ -69,7 +69,7 @@ call javaapi#class('ContextList', '', [
   \ javaapi#method(0,'remove(', 'HttpContextImpl) throws IllegalArgumentException', 'void'),
   \ ])
 
-call javaapi#class('DefaultHttpServerProvider', '', [
+call javaapi#class('DefaultHttpServerProvider', 'HttpServerProvider', [
   \ javaapi#method(0,'DefaultHttpServerProvider(', ')', 'public'),
   \ javaapi#method(0,'createHttpServer(', 'InetSocketAddress, int) throws IOException', 'HttpServer'),
   \ javaapi#method(0,'createHttpsServer(', 'InetSocketAddress, int) throws IOException', 'HttpsServer'),
@@ -78,7 +78,7 @@ call javaapi#class('DefaultHttpServerProvider', '', [
 call javaapi#class('Event', '', [
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'DateFormat>', [
   \ ])
 
 call javaapi#class('ExchangeImpl', '', [
@@ -102,20 +102,20 @@ call javaapi#class('ExchangeImpl', '', [
   \ javaapi#method(0,'getPrincipal(', ')', 'HttpPrincipal'),
   \ ])
 
-call javaapi#class('FixedLengthInputStream', '', [
+call javaapi#class('FixedLengthInputStream', 'LeftOverInputStream', [
   \ javaapi#method(0,'available(', ') throws IOException', 'int'),
   \ javaapi#method(0,'markSupported(', ')', 'boolean'),
   \ javaapi#method(0,'mark(', 'int)', 'void'),
   \ javaapi#method(0,'reset(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('FixedLengthOutputStream', '', [
+call javaapi#class('FixedLengthOutputStream', 'FilterOutputStream', [
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('State', '', [
+call javaapi#class('State', 'State>', [
   \ javaapi#field(1,'IDLE', 'State'),
   \ javaapi#field(1,'REQUEST', 'State'),
   \ javaapi#field(1,'RESPONSE', 'State'),
@@ -127,7 +127,7 @@ call javaapi#class('HttpConnection', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('HttpContextImpl', '', [
+call javaapi#class('HttpContextImpl', 'HttpContext', [
   \ javaapi#method(0,'getHandler(', ')', 'HttpHandler'),
   \ javaapi#method(0,'setHandler(', 'HttpHandler)', 'void'),
   \ javaapi#method(0,'getPath(', ')', 'String'),
@@ -139,11 +139,11 @@ call javaapi#class('HttpContextImpl', '', [
   \ javaapi#method(0,'getAuthenticator(', ')', 'Authenticator'),
   \ ])
 
-call javaapi#class('HttpError', '', [
+call javaapi#class('HttpError', 'RuntimeException', [
   \ javaapi#method(0,'HttpError(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('HttpExchangeImpl', '', [
+call javaapi#class('HttpExchangeImpl', 'HttpExchange', [
   \ javaapi#method(0,'getRequestHeaders(', ')', 'Headers'),
   \ javaapi#method(0,'getResponseHeaders(', ')', 'Headers'),
   \ javaapi#method(0,'getRequestURI(', ')', 'URI'),
@@ -164,7 +164,7 @@ call javaapi#class('HttpExchangeImpl', '', [
   \ javaapi#method(0,'getHttpContext(', ')', 'HttpContext'),
   \ ])
 
-call javaapi#class('HttpServerImpl', '', [
+call javaapi#class('HttpServerImpl', 'HttpServer', [
   \ javaapi#method(0,'bind(', 'InetSocketAddress, int) throws IOException', 'void'),
   \ javaapi#method(0,'start(', ')', 'void'),
   \ javaapi#method(0,'setExecutor(', 'Executor)', 'void'),
@@ -179,7 +179,7 @@ call javaapi#class('HttpServerImpl', '', [
   \ javaapi#method(0,'createContext(', 'String, HttpHandler)', 'HttpContext'),
   \ ])
 
-call javaapi#class('HttpsExchangeImpl', '', [
+call javaapi#class('HttpsExchangeImpl', 'HttpsExchange', [
   \ javaapi#method(0,'getRequestHeaders(', ')', 'Headers'),
   \ javaapi#method(0,'getResponseHeaders(', ')', 'Headers'),
   \ javaapi#method(0,'getRequestURI(', ')', 'URI'),
@@ -201,7 +201,7 @@ call javaapi#class('HttpsExchangeImpl', '', [
   \ javaapi#method(0,'getHttpContext(', ')', 'HttpContext'),
   \ ])
 
-call javaapi#class('HttpsServerImpl', '', [
+call javaapi#class('HttpsServerImpl', 'HttpsServer', [
   \ javaapi#method(0,'setHttpsConfigurator(', 'HttpsConfigurator)', 'void'),
   \ javaapi#method(0,'getHttpsConfigurator(', ')', 'HttpsConfigurator'),
   \ javaapi#method(0,'bind(', 'InetSocketAddress, int) throws IOException', 'void'),
@@ -218,7 +218,7 @@ call javaapi#class('HttpsServerImpl', '', [
   \ javaapi#method(0,'createContext(', 'String, HttpHandler)', 'HttpContext'),
   \ ])
 
-call javaapi#class('LeftOverInputStream', '', [
+call javaapi#class('LeftOverInputStream', 'FilterInputStream', [
   \ javaapi#method(0,'LeftOverInputStream(', 'ExchangeImpl, InputStream)', 'public'),
   \ javaapi#method(0,'isDataBuffered(', ') throws IOException', 'boolean'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
@@ -229,7 +229,7 @@ call javaapi#class('LeftOverInputStream', '', [
   \ javaapi#method(0,'drain(', 'long) throws IOException', 'boolean'),
   \ ])
 
-call javaapi#class('PlaceholderOutputStream', '', [
+call javaapi#class('PlaceholderOutputStream', 'OutputStream', [
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[]) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
@@ -237,7 +237,7 @@ call javaapi#class('PlaceholderOutputStream', '', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('ReadStream', '', [
+call javaapi#class('ReadStream', 'InputStream', [
   \ javaapi#method(0,'ReadStream(', 'ServerImpl, SocketChannel) throws IOException', 'public'),
   \ javaapi#method(0,'read(', 'byte[]) throws IOException', 'int'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
@@ -249,7 +249,7 @@ call javaapi#class('ReadStream', '', [
   \ javaapi#method(0,'reset(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('WriteStream', '', [
+call javaapi#class('WriteStream', 'OutputStream', [
   \ javaapi#method(0,'WriteStream(', 'ServerImpl, SocketChannel) throws IOException', 'public'),
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[]) throws IOException', 'void'),
@@ -267,7 +267,7 @@ call javaapi#class('Request', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('BufType', '', [
+call javaapi#class('BufType', 'BufType>', [
   \ javaapi#field(1,'PACKET', 'BufType'),
   \ javaapi#field(1,'APPLICATION', 'BufType'),
   \ javaapi#method(1,'values(', ')', 'BufType[]'),
@@ -277,7 +277,7 @@ call javaapi#class('BufType', '', [
 call javaapi#class('EngineWrapper', '', [
   \ ])
 
-call javaapi#class('InputStream', '', [
+call javaapi#class('InputStream', 'InputStream', [
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ javaapi#method(0,'available(', ') throws IOException', 'int'),
   \ javaapi#method(0,'markSupported(', ')', 'boolean'),
@@ -288,7 +288,7 @@ call javaapi#class('InputStream', '', [
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ ])
 
-call javaapi#class('OutputStream', '', [
+call javaapi#class('OutputStream', 'OutputStream', [
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[]) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
@@ -296,7 +296,7 @@ call javaapi#class('OutputStream', '', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('Parameters', '', [
+call javaapi#class('Parameters', 'HttpsParameters', [
   \ javaapi#method(0,'getClientAddress(', ')', 'InetSocketAddress'),
   \ javaapi#method(0,'getHttpsConfigurator(', ')', 'HttpsConfigurator'),
   \ javaapi#method(0,'setSSLParameters(', 'SSLParameters)', 'void'),
@@ -343,11 +343,11 @@ call javaapi#class('Exchange', 'Runnable', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('ServerTimerTask', '', [
+call javaapi#class('ServerTimerTask', 'TimerTask', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('ServerTimerTask1', '', [
+call javaapi#class('ServerTimerTask1', 'TimerTask', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
@@ -367,20 +367,20 @@ call javaapi#class('ServerImpl', 'TimeSource', [
   \ javaapi#method(0,'getTime(', ')', 'long'),
   \ ])
 
-call javaapi#class('StreamClosedException', '', [
+call javaapi#class('StreamClosedException', 'IOException', [
   \ ])
 
 call javaapi#interface('TimeSource', '', [
   \ javaapi#method(0,'getTime(', ')', 'long'),
   \ ])
 
-call javaapi#class('UndefLengthOutputStream', '', [
+call javaapi#class('UndefLengthOutputStream', 'FilterOutputStream', [
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('UnmodifiableHeaders', '', [
+call javaapi#class('UnmodifiableHeaders', 'Headers', [
   \ javaapi#method(0,'size(', ')', 'int'),
   \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
   \ javaapi#method(0,'containsKey(', 'Object)', 'boolean'),
@@ -403,6 +403,6 @@ call javaapi#class('UnmodifiableHeaders', '', [
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ ])
 
-call javaapi#class('WriteFinishedEvent', '', [
+call javaapi#class('WriteFinishedEvent', 'Event', [
   \ ])
 

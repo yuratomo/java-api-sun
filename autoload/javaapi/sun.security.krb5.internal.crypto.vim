@@ -10,7 +10,7 @@ call javaapi#class('Aes128', '', [
   \ javaapi#method(1,'decryptRaw(', 'byte[], int, byte[], byte[], int, int) throws GeneralSecurityException', 'byte[]'),
   \ ])
 
-call javaapi#class('Aes128CtsHmacSha1EType', '', [
+call javaapi#class('Aes128CtsHmacSha1EType', 'EType', [
   \ javaapi#method(0,'Aes128CtsHmacSha1EType(', ')', 'public'),
   \ javaapi#method(0,'eType(', ')', 'int'),
   \ javaapi#method(0,'minimumPadSize(', ')', 'int'),
@@ -37,7 +37,7 @@ call javaapi#class('Aes256', '', [
   \ javaapi#method(1,'decryptRaw(', 'byte[], int, byte[], byte[], int, int) throws GeneralSecurityException', 'byte[]'),
   \ ])
 
-call javaapi#class('Aes256CtsHmacSha1EType', '', [
+call javaapi#class('Aes256CtsHmacSha1EType', 'EType', [
   \ javaapi#method(0,'Aes256CtsHmacSha1EType(', ')', 'public'),
   \ javaapi#method(0,'eType(', ')', 'int'),
   \ javaapi#method(0,'minimumPadSize(', ')', 'int'),
@@ -66,7 +66,7 @@ call javaapi#class('ArcFourHmac', '', [
   \ javaapi#method(1,'decryptRaw(', 'byte[], int, byte[], byte[], int, int, byte[]) throws GeneralSecurityException', 'byte[]'),
   \ ])
 
-call javaapi#class('ArcFourHmacEType', '', [
+call javaapi#class('ArcFourHmacEType', 'EType', [
   \ javaapi#method(0,'ArcFourHmacEType(', ')', 'public'),
   \ javaapi#method(0,'eType(', ')', 'int'),
   \ javaapi#method(0,'minimumPadSize(', ')', 'int'),
@@ -99,7 +99,7 @@ call javaapi#class('CksumType', '', [
   \ javaapi#method(1,'isChecksumEqual(', 'byte[], byte[])', 'boolean'),
   \ ])
 
-call javaapi#class('Crc32CksumType', '', [
+call javaapi#class('Crc32CksumType', 'CksumType', [
   \ javaapi#method(0,'Crc32CksumType(', ')', 'public'),
   \ javaapi#method(0,'confounderSize(', ')', 'int'),
   \ javaapi#method(0,'cksumType(', ')', 'int'),
@@ -142,7 +142,7 @@ call javaapi#class('Des3', '', [
   \ javaapi#method(1,'decryptRaw(', 'byte[], int, byte[], byte[], int, int) throws GeneralSecurityException', 'byte[]'),
   \ ])
 
-call javaapi#class('Des3CbcHmacSha1KdEType', '', [
+call javaapi#class('Des3CbcHmacSha1KdEType', 'EType', [
   \ javaapi#method(0,'Des3CbcHmacSha1KdEType(', ')', 'public'),
   \ javaapi#method(0,'eType(', ')', 'int'),
   \ javaapi#method(0,'minimumPadSize(', ')', 'int'),
@@ -159,7 +159,7 @@ call javaapi#class('Des3CbcHmacSha1KdEType', '', [
   \ javaapi#method(0,'decryptedData(', 'byte[])', 'byte[]'),
   \ ])
 
-call javaapi#class('DesCbcCrcEType', '', [
+call javaapi#class('DesCbcCrcEType', 'DesCbcEType', [
   \ javaapi#method(0,'DesCbcCrcEType(', ')', 'public'),
   \ javaapi#method(0,'eType(', ')', 'int'),
   \ javaapi#method(0,'minimumPadSize(', ')', 'int'),
@@ -175,7 +175,7 @@ call javaapi#class('DesCbcCrcEType', '', [
   \ javaapi#method(0,'blockSize(', ')', 'int'),
   \ ])
 
-call javaapi#class('DesCbcEType', '', [
+call javaapi#class('DesCbcEType', 'EType', [
   \ javaapi#method(0,'blockSize(', ')', 'int'),
   \ javaapi#method(0,'keyType(', ')', 'int'),
   \ javaapi#method(0,'keySize(', ')', 'int'),
@@ -185,7 +185,7 @@ call javaapi#class('DesCbcEType', '', [
   \ javaapi#method(0,'decrypt(', 'byte[], byte[], byte[], int) throws KrbApErrException, KrbCryptoException', 'byte[]'),
   \ ])
 
-call javaapi#class('DesCbcMd5EType', '', [
+call javaapi#class('DesCbcMd5EType', 'DesCbcEType', [
   \ javaapi#method(0,'DesCbcMd5EType(', ')', 'public'),
   \ javaapi#method(0,'eType(', ')', 'int'),
   \ javaapi#method(0,'minimumPadSize(', ')', 'int'),
@@ -201,7 +201,7 @@ call javaapi#class('DesCbcMd5EType', '', [
   \ javaapi#method(0,'blockSize(', ')', 'int'),
   \ ])
 
-call javaapi#class('DesMacCksumType', '', [
+call javaapi#class('DesMacCksumType', 'CksumType', [
   \ javaapi#method(0,'DesMacCksumType(', ')', 'public'),
   \ javaapi#method(0,'confounderSize(', ')', 'int'),
   \ javaapi#method(0,'cksumType(', ')', 'int'),
@@ -214,7 +214,7 @@ call javaapi#class('DesMacCksumType', '', [
   \ javaapi#method(0,'verifyKeyedChecksum(', 'byte[], int, byte[], byte[], int) throws KrbCryptoException', 'boolean'),
   \ ])
 
-call javaapi#class('DesMacKCksumType', '', [
+call javaapi#class('DesMacKCksumType', 'CksumType', [
   \ javaapi#method(0,'DesMacKCksumType(', ')', 'public'),
   \ javaapi#method(0,'confounderSize(', ')', 'int'),
   \ javaapi#method(0,'cksumType(', ')', 'int'),
@@ -256,7 +256,7 @@ call javaapi#class('EType', '', [
   \ javaapi#method(1,'toString(', 'int)', 'String'),
   \ ])
 
-call javaapi#class('HmacMd5ArcFourCksumType', '', [
+call javaapi#class('HmacMd5ArcFourCksumType', 'CksumType', [
   \ javaapi#method(0,'HmacMd5ArcFourCksumType(', ')', 'public'),
   \ javaapi#method(0,'confounderSize(', ')', 'int'),
   \ javaapi#method(0,'cksumType(', ')', 'int'),
@@ -269,7 +269,7 @@ call javaapi#class('HmacMd5ArcFourCksumType', '', [
   \ javaapi#method(0,'verifyKeyedChecksum(', 'byte[], int, byte[], byte[], int) throws KrbCryptoException', 'boolean'),
   \ ])
 
-call javaapi#class('HmacSha1Aes128CksumType', '', [
+call javaapi#class('HmacSha1Aes128CksumType', 'CksumType', [
   \ javaapi#method(0,'HmacSha1Aes128CksumType(', ')', 'public'),
   \ javaapi#method(0,'confounderSize(', ')', 'int'),
   \ javaapi#method(0,'cksumType(', ')', 'int'),
@@ -282,7 +282,7 @@ call javaapi#class('HmacSha1Aes128CksumType', '', [
   \ javaapi#method(0,'verifyKeyedChecksum(', 'byte[], int, byte[], byte[], int) throws KrbCryptoException', 'boolean'),
   \ ])
 
-call javaapi#class('HmacSha1Aes256CksumType', '', [
+call javaapi#class('HmacSha1Aes256CksumType', 'CksumType', [
   \ javaapi#method(0,'HmacSha1Aes256CksumType(', ')', 'public'),
   \ javaapi#method(0,'confounderSize(', ')', 'int'),
   \ javaapi#method(0,'cksumType(', ')', 'int'),
@@ -295,7 +295,7 @@ call javaapi#class('HmacSha1Aes256CksumType', '', [
   \ javaapi#method(0,'verifyKeyedChecksum(', 'byte[], int, byte[], byte[], int) throws KrbCryptoException', 'boolean'),
   \ ])
 
-call javaapi#class('HmacSha1Des3KdCksumType', '', [
+call javaapi#class('HmacSha1Des3KdCksumType', 'CksumType', [
   \ javaapi#method(0,'HmacSha1Des3KdCksumType(', ')', 'public'),
   \ javaapi#method(0,'confounderSize(', ')', 'int'),
   \ javaapi#method(0,'cksumType(', ')', 'int'),
@@ -334,7 +334,7 @@ call javaapi#class('Nonce', '', [
   \ javaapi#method(1,'value(', ')', 'int'),
   \ ])
 
-call javaapi#class('NullEType', '', [
+call javaapi#class('NullEType', 'EType', [
   \ javaapi#method(0,'NullEType(', ')', 'public'),
   \ javaapi#method(0,'eType(', ')', 'int'),
   \ javaapi#method(0,'minimumPadSize(', ')', 'int'),
@@ -350,7 +350,7 @@ call javaapi#class('NullEType', '', [
   \ javaapi#method(0,'decrypt(', 'byte[], byte[], byte[], int) throws KrbApErrException', 'byte[]'),
   \ ])
 
-call javaapi#class('RsaMd5CksumType', '', [
+call javaapi#class('RsaMd5CksumType', 'CksumType', [
   \ javaapi#method(0,'RsaMd5CksumType(', ')', 'public'),
   \ javaapi#method(0,'confounderSize(', ')', 'int'),
   \ javaapi#method(0,'cksumType(', ')', 'int'),
@@ -363,7 +363,7 @@ call javaapi#class('RsaMd5CksumType', '', [
   \ javaapi#method(0,'verifyKeyedChecksum(', 'byte[], int, byte[], byte[], int) throws KrbCryptoException', 'boolean'),
   \ ])
 
-call javaapi#class('RsaMd5DesCksumType', '', [
+call javaapi#class('RsaMd5DesCksumType', 'CksumType', [
   \ javaapi#method(0,'RsaMd5DesCksumType(', ')', 'public'),
   \ javaapi#method(0,'confounderSize(', ')', 'int'),
   \ javaapi#method(0,'cksumType(', ')', 'int'),
@@ -376,7 +376,7 @@ call javaapi#class('RsaMd5DesCksumType', '', [
   \ javaapi#method(0,'calculateChecksum(', 'byte[], int) throws KrbCryptoException', 'byte[]'),
   \ ])
 
-call javaapi#class('crc32', '', [
+call javaapi#class('crc32', 'MessageDigestSpi', [
   \ javaapi#method(0,'crc32(', ')', 'public'),
   \ javaapi#method(0,'clone(', ')', 'Object'),
   \ javaapi#method(0,'init(', ')', 'void'),

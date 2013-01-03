@@ -58,7 +58,7 @@ call javaapi#class('LocateServerForORB', 'CommandHandler', [
   \ javaapi#method(0,'processCommand(', 'String[], ORB, PrintStream)', 'boolean'),
   \ ])
 
-call javaapi#class('NameServiceStartThread', '', [
+call javaapi#class('NameServiceStartThread', 'Thread', [
   \ javaapi#method(0,'NameServiceStartThread(', 'ORB, File)', 'public'),
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
@@ -68,7 +68,7 @@ call javaapi#class('ORBD', '', [
   \ javaapi#method(1,'main(', 'String[])', 'void'),
   \ ])
 
-call javaapi#class('ProcessMonitorThread', '', [
+call javaapi#class('ProcessMonitorThread', 'Thread', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
@@ -91,7 +91,7 @@ call javaapi#class('DBServerDef', 'Serializable', [
 call javaapi#class('RepositoryDB', 'Serializable', [
   \ ])
 
-call javaapi#class('RepositoryImpl', '', [
+call javaapi#class('RepositoryImpl', '_RepositoryImplBase', [
   \ javaapi#method(0,'registerServer(', 'ServerDef, int) throws ServerAlreadyRegistered', 'int'),
   \ javaapi#method(0,'registerServer(', 'ServerDef) throws ServerAlreadyRegistered, BadServerDefinition', 'int'),
   \ javaapi#method(0,'unregisterServer(', 'int) throws ServerNotRegistered', 'void'),
@@ -105,7 +105,7 @@ call javaapi#class('RepositoryImpl', '', [
   \ javaapi#method(1,'main(', 'String[])', 'void'),
   \ ])
 
-call javaapi#class('ServerCallback', '', [
+call javaapi#class('ServerCallback', '_ServerImplBase', [
   \ javaapi#method(0,'shutdown(', ')', 'void'),
   \ javaapi#method(0,'install(', ')', 'void'),
   \ javaapi#method(0,'uninstall(', ')', 'void'),
@@ -127,7 +127,7 @@ call javaapi#class('ServerMain', '', [
   \ javaapi#method(1,'main(', 'String[])', 'void'),
   \ ])
 
-call javaapi#class('ServerManagerImpl', '', [
+call javaapi#class('ServerManagerImpl', '_ServerManagerImplBase', [
   \ javaapi#method(0,'activate(', 'int) throws ServerAlreadyActive, ServerNotRegistered, ServerHeldDown', 'void'),
   \ javaapi#method(0,'active(', 'int, Server) throws ServerNotRegistered', 'void'),
   \ javaapi#method(0,'registerEndpoints(', 'int, String, EndPointInfo[]) throws NoSuchEndPoint, ServerNotRegistered, ORBAlreadyRegistered', 'void'),

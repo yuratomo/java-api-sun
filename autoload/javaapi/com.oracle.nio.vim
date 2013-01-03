@@ -8,7 +8,7 @@ call javaapi#class('BufferSecrets<A>', '', [
   \ javaapi#method(0,'truncate(', 'Buffer)', 'void'),
   \ ])
 
-call javaapi#class('BufferSecretsPermission', '', [
+call javaapi#class('BufferSecretsPermission', 'BasicPermission', [
   \ javaapi#method(0,'BufferSecretsPermission(', 'String)', 'public'),
   \ ])
 

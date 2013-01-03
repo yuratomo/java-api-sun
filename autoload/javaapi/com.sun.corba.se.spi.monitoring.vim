@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.corba.se.spi.monitoring')
 
-call javaapi#class('LongMonitoredAttributeBase', '', [
+call javaapi#class('LongMonitoredAttributeBase', 'MonitoredAttributeBase', [
   \ javaapi#method(0,'LongMonitoredAttributeBase(', 'String, String)', 'public'),
   \ ])
 
@@ -106,7 +106,7 @@ call javaapi#interface('MonitoringManagerFactory', '', [
   \ javaapi#method(0,'createMonitoringManager(', 'String, String)', 'MonitoringManager'),
   \ ])
 
-call javaapi#class('StatisticMonitoredAttribute', '', [
+call javaapi#class('StatisticMonitoredAttribute', 'MonitoredAttributeBase', [
   \ javaapi#method(0,'StatisticMonitoredAttribute(', 'String, String, StatisticsAccumulator, Object)', 'public'),
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ javaapi#method(0,'clearState(', ')', 'void'),
@@ -121,7 +121,7 @@ call javaapi#class('StatisticsAccumulator', '', [
   \ javaapi#method(0,'unitTestValidate(', 'String, double, double, long, double, double)', 'void'),
   \ ])
 
-call javaapi#class('StringMonitoredAttributeBase', '', [
+call javaapi#class('StringMonitoredAttributeBase', 'MonitoredAttributeBase', [
   \ javaapi#method(0,'StringMonitoredAttributeBase(', 'String, String)', 'public'),
   \ ])
 

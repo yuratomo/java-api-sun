@@ -6,7 +6,7 @@ call javaapi#class('ArrayTypeSignature', 'FieldTypeSignature', [
   \ javaapi#method(0,'accept(', 'TypeTreeVisitor<?>)', 'void'),
   \ ])
 
-call javaapi#interface('BaseType', '', [
+call javaapi#interface('BaseType', 'TypeSignature', [
   \ ])
 
 call javaapi#class('BooleanSignature', 'BaseType', [
@@ -48,7 +48,7 @@ call javaapi#class('DoubleSignature', 'BaseType', [
   \ javaapi#method(0,'accept(', 'TypeTreeVisitor<?>)', 'void'),
   \ ])
 
-call javaapi#interface('FieldTypeSignature', '', [
+call javaapi#interface('FieldTypeSignature', 'TypeArgument', [
   \ ])
 
 call javaapi#class('FloatSignature', 'BaseType', [
@@ -82,7 +82,7 @@ call javaapi#class('MethodTypeSignature', 'Signature', [
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#interface('ReturnType', '', [
+call javaapi#interface('ReturnType', 'TypeTree', [
   \ ])
 
 call javaapi#class('ShortSignature', 'BaseType', [
@@ -90,7 +90,7 @@ call javaapi#class('ShortSignature', 'BaseType', [
   \ javaapi#method(0,'accept(', 'TypeTreeVisitor<?>)', 'void'),
   \ ])
 
-call javaapi#interface('Signature', '', [
+call javaapi#interface('Signature', 'Tree', [
   \ javaapi#method(0,'getFormalTypeParameters(', ')', 'FormalTypeParameter[]'),
   \ ])
 
@@ -105,13 +105,13 @@ call javaapi#class('SimpleClassTypeSignature', 'FieldTypeSignature', [
 call javaapi#interface('Tree', '', [
   \ ])
 
-call javaapi#interface('TypeArgument', '', [
+call javaapi#interface('TypeArgument', 'TypeTree', [
   \ ])
 
-call javaapi#interface('TypeSignature', '', [
+call javaapi#interface('TypeSignature', 'ReturnType', [
   \ ])
 
-call javaapi#interface('TypeTree', '', [
+call javaapi#interface('TypeTree', 'Tree', [
   \ javaapi#method(0,'accept(', 'TypeTreeVisitor<?>)', 'void'),
   \ ])
 

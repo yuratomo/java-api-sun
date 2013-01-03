@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.jndi.url.rmi')
 
-call javaapi#class('rmiURLContext', '', [
+call javaapi#class('rmiURLContext', 'GenericURLContext', [
   \ javaapi#method(0,'rmiURLContext(', 'Hashtable)', 'public'),
   \ ])
 

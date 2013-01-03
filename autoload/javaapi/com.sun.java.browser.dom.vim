@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.java.browser.dom')
 
-call javaapi#class('DOMAccessException', '', [
+call javaapi#class('DOMAccessException', 'Exception', [
   \ javaapi#method(0,'DOMAccessException(', ')', 'public'),
   \ javaapi#method(0,'DOMAccessException(', 'String)', 'public'),
   \ javaapi#method(0,'DOMAccessException(', 'Exception)', 'public'),
@@ -32,7 +32,7 @@ call javaapi#class('DOMServiceProvider', '', [
   \ javaapi#method(0,'getDOMImplementation(', ')', 'DOMImplementation'),
   \ ])
 
-call javaapi#class('DOMUnsupportedException', '', [
+call javaapi#class('DOMUnsupportedException', 'Exception', [
   \ javaapi#method(0,'DOMUnsupportedException(', ')', 'public'),
   \ javaapi#method(0,'DOMUnsupportedException(', 'String)', 'public'),
   \ javaapi#method(0,'DOMUnsupportedException(', 'Exception)', 'public'),

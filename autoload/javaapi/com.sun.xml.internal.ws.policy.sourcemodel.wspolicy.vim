@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.ws.policy.sourcemodel.wspolicy')
 
-call javaapi#class('NamespaceVersion', '', [
+call javaapi#class('NamespaceVersion', 'NamespaceVersion>', [
   \ javaapi#field(1,'v1_2', 'NamespaceVersion'),
   \ javaapi#field(1,'v1_5', 'NamespaceVersion'),
   \ javaapi#method(1,'values(', ')', 'NamespaceVersion[]'),
@@ -14,7 +14,7 @@ call javaapi#class('NamespaceVersion', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('XmlToken', '', [
+call javaapi#class('XmlToken', 'XmlToken>', [
   \ javaapi#field(1,'Policy', 'XmlToken'),
   \ javaapi#field(1,'ExactlyOne', 'XmlToken'),
   \ javaapi#field(1,'All', 'XmlToken'),

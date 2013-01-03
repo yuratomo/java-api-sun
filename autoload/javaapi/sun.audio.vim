@@ -4,7 +4,7 @@ call javaapi#class('AudioData', '', [
   \ javaapi#method(0,'AudioData(', 'byte[])', 'public'),
   \ ])
 
-call javaapi#class('AudioDataStream', '', [
+call javaapi#class('AudioDataStream', 'ByteArrayInputStream', [
   \ javaapi#method(0,'AudioDataStream(', 'AudioData)', 'public'),
   \ ])
 
@@ -27,7 +27,7 @@ call javaapi#class('1', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('AudioPlayer', '', [
+call javaapi#class('AudioPlayer', 'Thread', [
   \ javaapi#field(1,'player', 'AudioPlayer'),
   \ javaapi#method(0,'start(', 'InputStream)', 'void'),
   \ javaapi#method(0,'stop(', 'InputStream)', 'void'),
@@ -42,33 +42,33 @@ call javaapi#interface('AudioSecurityExceptionAction', '', [
   \ javaapi#method(0,'run(', ') throws Exception', 'Object'),
   \ ])
 
-call javaapi#class('AudioStream', '', [
+call javaapi#class('AudioStream', 'FilterInputStream', [
   \ javaapi#method(0,'AudioStream(', 'InputStream) throws IOException', 'public'),
   \ javaapi#method(0,'getData(', ') throws IOException', 'AudioData'),
   \ javaapi#method(0,'getLength(', ')', 'int'),
   \ ])
 
-call javaapi#class('AudioStreamSequence', '', [
+call javaapi#class('AudioStreamSequence', 'SequenceInputStream', [
   \ javaapi#method(0,'AudioStreamSequence(', 'Enumeration)', 'public'),
   \ ])
 
-call javaapi#class('AudioTranslatorStream', '', [
+call javaapi#class('AudioTranslatorStream', 'NativeAudioStream', [
   \ javaapi#method(0,'AudioTranslatorStream(', 'InputStream) throws IOException', 'public'),
   \ javaapi#method(0,'getLength(', ')', 'int'),
   \ ])
 
-call javaapi#class('ContinuousAudioDataStream', '', [
+call javaapi#class('ContinuousAudioDataStream', 'AudioDataStream', [
   \ javaapi#method(0,'ContinuousAudioDataStream(', 'AudioData)', 'public'),
   \ javaapi#method(0,'read(', ')', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int)', 'int'),
   \ ])
 
-call javaapi#class('InvalidAudioFormatException', '', [
+call javaapi#class('InvalidAudioFormatException', 'IOException', [
   \ javaapi#method(0,'InvalidAudioFormatException(', ')', 'public'),
   \ javaapi#method(0,'InvalidAudioFormatException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('NativeAudioStream', '', [
+call javaapi#class('NativeAudioStream', 'FilterInputStream', [
   \ javaapi#method(0,'NativeAudioStream(', 'InputStream) throws IOException', 'public'),
   \ javaapi#method(0,'getLength(', ')', 'int'),
   \ ])

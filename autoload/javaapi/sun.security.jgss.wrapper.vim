@@ -103,7 +103,7 @@ call javaapi#class('1', 'HashMap>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('SunNativeProvider', '', [
+call javaapi#class('SunNativeProvider', 'Provider', [
   \ javaapi#method(0,'SunNativeProvider(', ')', 'public'),
   \ ])
 

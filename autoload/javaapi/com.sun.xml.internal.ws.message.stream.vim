@@ -4,7 +4,7 @@ call javaapi#class('Attribute', '', [
   \ javaapi#method(0,'Attribute(', 'String, String, String)', 'public'),
   \ ])
 
-call javaapi#class('OutboundStreamHeader', '', [
+call javaapi#class('OutboundStreamHeader', 'AbstractHeaderImpl', [
   \ javaapi#method(0,'OutboundStreamHeader(', 'XMLStreamBuffer, String, String)', 'public'),
   \ javaapi#method(0,'getNamespaceURI(', ')', 'String'),
   \ javaapi#method(0,'getLocalPart(', ')', 'String'),
@@ -15,7 +15,7 @@ call javaapi#class('OutboundStreamHeader', '', [
   \ javaapi#method(0,'writeTo(', 'ContentHandler, ErrorHandler) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('PayloadStreamReaderMessage', '', [
+call javaapi#class('PayloadStreamReaderMessage', 'AbstractMessageImpl', [
   \ javaapi#method(0,'PayloadStreamReaderMessage(', 'XMLStreamReader, SOAPVersion)', 'public'),
   \ javaapi#method(0,'PayloadStreamReaderMessage(', 'HeaderList, XMLStreamReader, AttachmentSet, SOAPVersion)', 'public'),
   \ javaapi#method(0,'hasHeaders(', ')', 'boolean'),
@@ -49,7 +49,7 @@ call javaapi#class('Attribute', '', [
   \ javaapi#method(0,'Attribute(', 'String, String, String)', 'public'),
   \ ])
 
-call javaapi#class('StreamHeader', '', [
+call javaapi#class('StreamHeader', 'AbstractHeaderImpl', [
   \ javaapi#method(0,'isIgnorable(', 'SOAPVersion, Set<String>)', 'boolean'),
   \ javaapi#method(0,'getRole(', 'SOAPVersion)', 'String'),
   \ javaapi#method(0,'isRelay(', ')', 'boolean'),
@@ -63,17 +63,17 @@ call javaapi#class('StreamHeader', '', [
   \ javaapi#method(0,'readAsEPR(', 'AddressingVersion) throws XMLStreamException', 'WSEndpointReference'),
   \ ])
 
-call javaapi#class('StreamHeader11', '', [
+call javaapi#class('StreamHeader11', 'StreamHeader', [
   \ javaapi#method(0,'StreamHeader11(', 'XMLStreamReader, XMLStreamBuffer)', 'public'),
   \ javaapi#method(0,'StreamHeader11(', 'XMLStreamReader) throws XMLStreamException', 'public'),
   \ ])
 
-call javaapi#class('StreamHeader12', '', [
+call javaapi#class('StreamHeader12', 'StreamHeader', [
   \ javaapi#method(0,'StreamHeader12(', 'XMLStreamReader, XMLStreamBuffer)', 'public'),
   \ javaapi#method(0,'StreamHeader12(', 'XMLStreamReader) throws XMLStreamException', 'public'),
   \ ])
 
-call javaapi#class('StreamMessage', '', [
+call javaapi#class('StreamMessage', 'AbstractMessageImpl', [
   \ javaapi#method(0,'StreamMessage(', 'HeaderList, AttachmentSet, XMLStreamReader, SOAPVersion)', 'public'),
   \ javaapi#method(0,'StreamMessage(', 'TagInfoset, TagInfoset, AttachmentSet, HeaderList, TagInfoset, XMLStreamReader, SOAPVersion)', 'public'),
   \ javaapi#method(0,'hasHeaders(', ')', 'boolean'),

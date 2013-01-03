@@ -5,19 +5,19 @@ call javaapi#class('1', 'Boolean>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'XMLInputFactory>', [
   \ javaapi#method(0,'initialValue(', ')', 'XMLInputFactory'),
   \ javaapi#method(0,'initialValue(', ')', 'Object'),
   \ ])
 
-call javaapi#class('Default', '', [
+call javaapi#class('Default', 'XMLStreamReaderFactory', [
   \ javaapi#method(0,'Default(', ')', 'public'),
   \ javaapi#method(0,'doCreate(', 'String, InputStream, boolean)', 'XMLStreamReader'),
   \ javaapi#method(0,'doCreate(', 'String, Reader, boolean)', 'XMLStreamReader'),
   \ javaapi#method(0,'doRecycle(', 'XMLStreamReader)', 'void'),
   \ ])
 
-call javaapi#class('NoLock', '', [
+call javaapi#class('NoLock', 'XMLStreamReaderFactory', [
   \ javaapi#method(0,'NoLock(', 'XMLInputFactory)', 'public'),
   \ javaapi#method(0,'doCreate(', 'String, InputStream, boolean)', 'XMLStreamReader'),
   \ javaapi#method(0,'doCreate(', 'String, Reader, boolean)', 'XMLStreamReader'),
@@ -28,13 +28,13 @@ call javaapi#interface('RecycleAware', '', [
   \ javaapi#method(0,'onRecycled(', ')', 'void'),
   \ ])
 
-call javaapi#class('Woodstox', '', [
+call javaapi#class('Woodstox', 'NoLock', [
   \ javaapi#method(0,'Woodstox(', 'XMLInputFactory)', 'public'),
   \ javaapi#method(0,'doCreate(', 'String, InputStream, boolean)', 'XMLStreamReader'),
   \ javaapi#method(0,'doCreate(', 'String, Reader, boolean)', 'XMLStreamReader'),
   \ ])
 
-call javaapi#class('Zephyr', '', [
+call javaapi#class('Zephyr', 'XMLStreamReaderFactory', [
   \ javaapi#method(1,'newInstance(', 'XMLInputFactory)', 'XMLStreamReaderFactory'),
   \ javaapi#method(0,'Zephyr(', 'XMLInputFactory, Class) throws NoSuchMethodException', 'public'),
   \ javaapi#method(0,'doRecycle(', 'XMLStreamReader)', 'void'),
@@ -56,14 +56,14 @@ call javaapi#class('XMLStreamReaderFactory', '', [
   \ javaapi#method(0,'doRecycle(', 'XMLStreamReader)', 'void'),
   \ ])
 
-call javaapi#class('Default', '', [
+call javaapi#class('Default', 'XMLStreamWriterFactory', [
   \ javaapi#method(0,'Default(', 'XMLOutputFactory)', 'public'),
   \ javaapi#method(0,'doCreate(', 'OutputStream)', 'XMLStreamWriter'),
   \ javaapi#method(0,'doCreate(', 'OutputStream, String)', 'XMLStreamWriter'),
   \ javaapi#method(0,'doRecycle(', 'XMLStreamWriter)', 'void'),
   \ ])
 
-call javaapi#class('NoLock', '', [
+call javaapi#class('NoLock', 'XMLStreamWriterFactory', [
   \ javaapi#method(0,'NoLock(', 'XMLOutputFactory)', 'public'),
   \ javaapi#method(0,'doCreate(', 'OutputStream)', 'XMLStreamWriter'),
   \ javaapi#method(0,'doCreate(', 'OutputStream, String)', 'XMLStreamWriter'),
@@ -74,7 +74,7 @@ call javaapi#interface('RecycleAware', '', [
   \ javaapi#method(0,'onRecycled(', ')', 'void'),
   \ ])
 
-call javaapi#class('Zephyr', '', [
+call javaapi#class('Zephyr', 'XMLStreamWriterFactory', [
   \ javaapi#method(1,'newInstance(', 'XMLOutputFactory)', 'XMLStreamWriterFactory'),
   \ javaapi#method(0,'doCreate(', 'OutputStream)', 'XMLStreamWriter'),
   \ javaapi#method(0,'doCreate(', 'OutputStream, String)', 'XMLStreamWriter'),

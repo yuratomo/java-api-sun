@@ -5,7 +5,7 @@ call javaapi#interface('Probe', '', [
   \ javaapi#method(0,'trigger(', ')', 'void'),
   \ ])
 
-call javaapi#interface('ProbeName', '', [
+call javaapi#interface('ProbeName', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'String'),
   \ ])
 
@@ -24,7 +24,7 @@ call javaapi#class('ProviderFactory', '', [
   \ javaapi#method(1,'getDefaultFactory(', ')', 'ProviderFactory'),
   \ ])
 
-call javaapi#interface('ProviderName', '', [
+call javaapi#interface('ProviderName', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'String'),
   \ ])
 

@@ -4,11 +4,11 @@ call javaapi#interface('ClientDelegateFactory', '', [
   \ javaapi#method(0,'create(', 'CorbaContactInfoList)', 'CorbaClientDelegate'),
   \ ])
 
-call javaapi#class('CorbaClientDelegate', '', [
+call javaapi#class('CorbaClientDelegate', 'Delegate', [
   \ javaapi#method(0,'CorbaClientDelegate(', ')', 'public'),
   \ ])
 
-call javaapi#interface('CorbaMessageMediator', '', [
+call javaapi#interface('CorbaMessageMediator', 'ResponseHandler', [
   \ javaapi#method(0,'setReplyHeader(', 'LocateReplyOrReplyMessage)', 'void'),
   \ javaapi#method(0,'getLocateReplyHeader(', ')', 'LocateReplyMessage'),
   \ javaapi#method(0,'getReplyHeader(', ')', 'ReplyMessage'),
@@ -56,7 +56,7 @@ call javaapi#interface('CorbaMessageMediator', '', [
   \ javaapi#method(0,'setExecutePIInResponseConstructor(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#interface('CorbaProtocolHandler', '', [
+call javaapi#interface('CorbaProtocolHandler', 'ProtocolHandler', [
   \ javaapi#method(0,'handleRequest(', 'RequestMessage, CorbaMessageMediator)', 'void'),
   \ javaapi#method(0,'handleRequest(', 'LocateRequestMessage, CorbaMessageMediator)', 'void'),
   \ javaapi#method(0,'createResponse(', 'CorbaMessageMediator, ServiceContexts)', 'CorbaMessageMediator'),
@@ -67,18 +67,18 @@ call javaapi#interface('CorbaProtocolHandler', '', [
   \ javaapi#method(0,'handleThrowableDuringServerDispatch(', 'CorbaMessageMediator, Throwable, CompletionStatus)', 'void'),
   \ ])
 
-call javaapi#interface('CorbaServerRequestDispatcher', '', [
+call javaapi#interface('CorbaServerRequestDispatcher', 'ServerRequestDispatcher', [
   \ javaapi#method(0,'locate(', 'ObjectKey)', 'IOR'),
   \ ])
 
-call javaapi#class('ForwardException', '', [
+call javaapi#class('ForwardException', 'RuntimeException', [
   \ javaapi#method(0,'ForwardException(', 'ORB, IOR)', 'public'),
   \ javaapi#method(0,'ForwardException(', 'ORB, Object)', 'public'),
   \ javaapi#method(0,'getObject(', ')', 'Object'),
   \ javaapi#method(0,'getIOR(', ')', 'IOR'),
   \ ])
 
-call javaapi#interface('InitialServerRequestDispatcher', '', [
+call javaapi#interface('InitialServerRequestDispatcher', 'CorbaServerRequestDispatcher', [
   \ javaapi#method(0,'init(', 'Resolver)', 'void'),
   \ ])
 
@@ -171,7 +171,7 @@ call javaapi#interface('RequestDispatcherRegistry', '', [
   \ javaapi#method(0,'getObjectAdapterFactories(', ')', 'Set'),
   \ ])
 
-call javaapi#class('RetryType', '', [
+call javaapi#class('RetryType', 'RetryType>', [
   \ javaapi#field(1,'NONE', 'RetryType'),
   \ javaapi#field(1,'BEFORE_RESPONSE', 'RetryType'),
   \ javaapi#field(1,'AFTER_RESPONSE', 'RetryType'),

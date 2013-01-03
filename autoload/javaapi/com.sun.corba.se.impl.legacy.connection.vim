@@ -31,31 +31,31 @@ call javaapi#class('LegacyServerSocketManagerImpl', 'LegacyServerSocketManager',
   \ javaapi#method(0,'legacyIsLocalServerPort(', 'int)', 'boolean'),
   \ ])
 
-call javaapi#class('SocketFactoryAcceptorImpl', '', [
+call javaapi#class('SocketFactoryAcceptorImpl', 'SocketOrChannelAcceptorImpl', [
   \ javaapi#method(0,'SocketFactoryAcceptorImpl(', 'ORB, int, String, String)', 'public'),
   \ javaapi#method(0,'initialize(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('SocketFactoryConnectionImpl', '', [
+call javaapi#class('SocketFactoryConnectionImpl', 'SocketOrChannelConnectionImpl', [
   \ javaapi#method(0,'SocketFactoryConnectionImpl(', 'ORB, CorbaContactInfo, boolean, boolean)', 'public'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'dprint(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('SocketFactoryContactInfoImpl', '', [
+call javaapi#class('SocketFactoryContactInfoImpl', 'SocketOrChannelContactInfoImpl', [
   \ javaapi#method(0,'SocketFactoryContactInfoImpl(', ')', 'public'),
   \ javaapi#method(0,'SocketFactoryContactInfoImpl(', 'ORB, CorbaContactInfoList, IOR, short, SocketInfo)', 'public'),
   \ javaapi#method(0,'createConnection(', ')', 'Connection'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SocketFactoryContactInfoListImpl', '', [
+call javaapi#class('SocketFactoryContactInfoListImpl', 'CorbaContactInfoListImpl', [
   \ javaapi#method(0,'SocketFactoryContactInfoListImpl(', 'ORB)', 'public'),
   \ javaapi#method(0,'SocketFactoryContactInfoListImpl(', 'ORB, IOR)', 'public'),
   \ javaapi#method(0,'iterator(', ')', 'Iterator'),
   \ ])
 
-call javaapi#class('SocketFactoryContactInfoListIteratorImpl', '', [
+call javaapi#class('SocketFactoryContactInfoListIteratorImpl', 'CorbaContactInfoListIteratorImpl', [
   \ javaapi#method(0,'SocketFactoryContactInfoListIteratorImpl(', 'ORB, CorbaContactInfoList)', 'public'),
   \ javaapi#method(0,'hasNext(', ')', 'boolean'),
   \ javaapi#method(0,'next(', ')', 'Object'),

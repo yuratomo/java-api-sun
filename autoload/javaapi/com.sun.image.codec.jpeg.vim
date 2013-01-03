@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.image.codec.jpeg')
 
-call javaapi#class('ImageFormatException', '', [
+call javaapi#class('ImageFormatException', 'RuntimeException', [
   \ javaapi#method(0,'ImageFormatException(', ')', 'public'),
   \ javaapi#method(0,'ImageFormatException(', 'String)', 'public'),
   \ ])
@@ -16,7 +16,7 @@ call javaapi#class('JPEGCodec', '', [
   \ javaapi#method(1,'getDefaultJPEGEncodeParam(', 'JPEGDecodeParam) throws ImageFormatException', 'JPEGEncodeParam'),
   \ ])
 
-call javaapi#interface('JPEGDecodeParam', '', [
+call javaapi#interface('JPEGDecodeParam', 'Cloneable', [
   \ javaapi#field(1,'COLOR_ID_UNKNOWN', 'int'),
   \ javaapi#field(1,'COLOR_ID_GRAY', 'int'),
   \ javaapi#field(1,'COLOR_ID_RGB', 'int'),
@@ -78,7 +78,7 @@ call javaapi#interface('JPEGDecodeParam', '', [
   \ javaapi#method(0,'getYDensity(', ')', 'int'),
   \ ])
 
-call javaapi#interface('JPEGEncodeParam', '', [
+call javaapi#interface('JPEGEncodeParam', 'JPEGDecodeParam', [
   \ javaapi#method(0,'clone(', ')', 'Object'),
   \ javaapi#method(0,'setHorizontalSubsampling(', 'int, int)', 'void'),
   \ javaapi#method(0,'setVerticalSubsampling(', 'int, int)', 'void'),
@@ -140,7 +140,7 @@ call javaapi#class('JPEGQTable', '', [
   \ javaapi#method(0,'getScaledInstance(', 'float, boolean)', 'JPEGQTable'),
   \ ])
 
-call javaapi#class('TruncatedFileException', '', [
+call javaapi#class('TruncatedFileException', 'RuntimeException', [
   \ javaapi#method(0,'TruncatedFileException(', 'BufferedImage)', 'public'),
   \ javaapi#method(0,'TruncatedFileException(', 'Raster)', 'public'),
   \ javaapi#method(0,'getRaster(', ')', 'Raster'),

@@ -16,7 +16,7 @@ call javaapi#class('ResourceResolver', '', [
   \ javaapi#method(0,'understandsProperty(', 'String)', 'boolean'),
   \ ])
 
-call javaapi#class('ResourceResolverException', '', [
+call javaapi#class('ResourceResolverException', 'XMLSecurityException', [
   \ javaapi#method(0,'ResourceResolverException(', 'String, Attr, String)', 'public'),
   \ javaapi#method(0,'ResourceResolverException(', 'String, Object[], Attr, String)', 'public'),
   \ javaapi#method(0,'ResourceResolverException(', 'String, Exception, Attr, String)', 'public'),

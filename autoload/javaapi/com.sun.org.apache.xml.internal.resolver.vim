@@ -58,7 +58,7 @@ call javaapi#class('CatalogEntry', '', [
   \ javaapi#method(0,'setEntryArg(', 'int, String) throws ArrayIndexOutOfBoundsException', 'void'),
   \ ])
 
-call javaapi#class('CatalogException', '', [
+call javaapi#class('CatalogException', 'Exception', [
   \ javaapi#field(1,'WRAPPER', 'int'),
   \ javaapi#field(1,'INVALID_ENTRY', 'int'),
   \ javaapi#field(1,'INVALID_ENTRY_TYPE', 'int'),
@@ -114,7 +114,7 @@ call javaapi#class('CatalogManager', '', [
   \ javaapi#method(0,'catalogClassName(', ')', 'String'),
   \ ])
 
-call javaapi#class('Resolver', '', [
+call javaapi#class('Resolver', 'Catalog', [
   \ javaapi#field(1,'URISUFFIX', 'int'),
   \ javaapi#field(1,'SYSTEMSUFFIX', 'int'),
   \ javaapi#field(1,'RESOLVER', 'int'),

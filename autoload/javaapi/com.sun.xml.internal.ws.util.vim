@@ -8,7 +8,7 @@ call javaapi#class('ASCIIUtility', '', [
   \ javaapi#method(1,'copyStream(', 'InputStream, OutputStream) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('ByteArrayBuffer', '', [
+call javaapi#class('ByteArrayBuffer', 'OutputStream', [
   \ javaapi#method(0,'ByteArrayBuffer(', ')', 'public'),
   \ javaapi#method(0,'ByteArrayBuffer(', 'int)', 'public'),
   \ javaapi#method(0,'ByteArrayBuffer(', 'byte[])', 'public'),
@@ -124,27 +124,27 @@ call javaapi#class('NamespaceSupport', '', [
   \ javaapi#method(0,'getDeclaredPrefixes(', ')', 'String>'),
   \ ])
 
-call javaapi#class('NoCloseInputStream', '', [
+call javaapi#class('NoCloseInputStream', 'FilterInputStream', [
   \ javaapi#method(0,'NoCloseInputStream(', 'InputStream)', 'public'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ javaapi#method(0,'doClose(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('NoCloseOutputStream', '', [
+call javaapi#class('NoCloseOutputStream', 'FilterOutputStream', [
   \ javaapi#method(0,'NoCloseOutputStream(', 'OutputStream)', 'public'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ javaapi#method(0,'doClose(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('Marshaller', '', [
+call javaapi#class('Marshaller', 'Marshaller>', [
   \ javaapi#method(0,'Marshaller(', 'JAXBContext)', 'public'),
   \ ])
 
-call javaapi#class('TubePool', '', [
+call javaapi#class('TubePool', 'Tube>', [
   \ javaapi#method(0,'TubePool(', 'Tube)', 'public'),
   \ ])
 
-call javaapi#class('Unmarshaller', '', [
+call javaapi#class('Unmarshaller', 'Unmarshaller>', [
   \ javaapi#method(0,'Unmarshaller(', 'JAXBContext)', 'public'),
   \ ])
 
@@ -169,12 +169,12 @@ call javaapi#class('Entry<V>', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('EntryIterator', '', [
+call javaapi#class('EntryIterator', 'Entry<V>>', [
   \ javaapi#method(0,'next(', ')', 'Entry<V>'),
   \ javaapi#method(0,'next(', ')', 'Object'),
   \ ])
 
-call javaapi#class('EntrySet', '', [
+call javaapi#class('EntrySet', 'Entry<V>>', [
   \ javaapi#method(0,'iterator(', ')', 'Entry<V>>'),
   \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
   \ javaapi#method(0,'remove(', 'Object)', 'boolean'),
@@ -186,7 +186,7 @@ call javaapi#class('HashIterator<E>', 'Iterator<E>', [
   \ javaapi#method(0,'remove(', ')', 'void'),
   \ ])
 
-call javaapi#class('ValueIterator', '', [
+call javaapi#class('ValueIterator', 'HashIterator<V>', [
   \ javaapi#method(0,'next(', ')', 'V'),
   \ ])
 
@@ -211,7 +211,7 @@ call javaapi#class('QNameMap<V>', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('FileStream', '', [
+call javaapi#class('FileStream', 'InputStream', [
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
@@ -222,12 +222,12 @@ call javaapi#class('Chunk', '', [
   \ javaapi#method(0,'createNext(', 'byte[], int, int)', 'Chunk'),
   \ ])
 
-call javaapi#class('MemoryStream', '', [
+call javaapi#class('MemoryStream', 'InputStream', [
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ ])
 
-call javaapi#class('ReadAllStream', '', [
+call javaapi#class('ReadAllStream', 'InputStream', [
   \ javaapi#method(0,'ReadAllStream(', ')', 'public'),
   \ javaapi#method(0,'readAll(', 'InputStream, long) throws IOException', 'void'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
@@ -235,7 +235,7 @@ call javaapi#class('ReadAllStream', '', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('ReadOnlyPropertyException', '', [
+call javaapi#class('ReadOnlyPropertyException', 'IllegalArgumentException', [
   \ javaapi#method(0,'ReadOnlyPropertyException(', 'String)', 'public'),
   \ javaapi#method(0,'getPropertyName(', ')', 'String'),
   \ ])
@@ -246,7 +246,7 @@ call javaapi#class('RuntimeVersion', '', [
   \ javaapi#method(0,'getVersion(', ')', 'String'),
   \ ])
 
-call javaapi#class('ServiceConfigurationError', '', [
+call javaapi#class('ServiceConfigurationError', 'Error', [
   \ javaapi#method(0,'ServiceConfigurationError(', 'String)', 'public'),
   \ javaapi#method(0,'ServiceConfigurationError(', 'Throwable)', 'public'),
   \ ])
@@ -278,7 +278,7 @@ call javaapi#class('StringUtils', '', [
   \ javaapi#method(1,'capitalize(', 'String)', 'String'),
   \ ])
 
-call javaapi#class('UtilException', '', [
+call javaapi#class('UtilException', 'JAXWSExceptionBase', [
   \ javaapi#method(0,'UtilException(', 'String, )', 'public'),
   \ javaapi#method(0,'UtilException(', 'Throwable)', 'public'),
   \ javaapi#method(0,'UtilException(', 'Localizable)', 'public'),

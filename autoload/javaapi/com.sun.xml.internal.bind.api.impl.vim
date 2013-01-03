@@ -1,13 +1,13 @@
 call javaapi#namespace('com.sun.xml.internal.bind.api.impl')
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Standard', [
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'Standard', [
   \ javaapi#method(0,'toConstantName(', 'String)', 'String'),
   \ ])
 
-call javaapi#class('Standard', '', [
+call javaapi#class('Standard', 'NameUtil', [
   \ javaapi#method(0,'Standard(', ')', 'public'),
   \ javaapi#method(0,'toClassName(', 'String)', 'String'),
   \ javaapi#method(0,'toVariableName(', 'String)', 'String'),

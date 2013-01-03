@@ -19,7 +19,7 @@ call javaapi#interface('PathConsumer', '', [
   \ javaapi#method(0,'getConsumer(', ')', 'PathConsumer'),
   \ ])
 
-call javaapi#class('PathError', '', [
+call javaapi#class('PathError', 'RuntimeException', [
   \ javaapi#field(1,'UNEX_beginPath', 'String'),
   \ javaapi#field(1,'UNEX_beginSubpath', 'String'),
   \ javaapi#field(1,'UNEX_appendLine', 'String'),
@@ -38,7 +38,7 @@ call javaapi#class('PathError', '', [
   \ javaapi#method(0,'PathError(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('PathException', '', [
+call javaapi#class('PathException', 'Exception', [
   \ javaapi#field(1,'BAD_PATH_endPath', 'String'),
   \ javaapi#field(1,'BAD_PATH_useProxy', 'String'),
   \ javaapi#field(1,'DUMMY', 'String'),

@@ -19,7 +19,7 @@ call javaapi#class('XPathExpressionImpl', 'XPathExpression', [
   \ javaapi#method(0,'evaluate(', 'Node, short, Object) throws XPathException, DOMException', 'Object'),
   \ ])
 
-call javaapi#class('XPathNSResolverImpl', '', [
+call javaapi#class('XPathNSResolverImpl', 'PrefixResolverDefault', [
   \ javaapi#method(0,'XPathNSResolverImpl(', 'Node)', 'public'),
   \ javaapi#method(0,'lookupNamespaceURI(', 'String)', 'String'),
   \ ])
@@ -78,7 +78,7 @@ call javaapi#class('XPathResultImpl', 'EventListener', [
   \ javaapi#method(0,'handleEvent(', 'Event)', 'void'),
   \ ])
 
-call javaapi#class('XPathStylesheetDOM3Exception', '', [
+call javaapi#class('XPathStylesheetDOM3Exception', 'TransformerException', [
   \ javaapi#method(0,'XPathStylesheetDOM3Exception(', 'String, SourceLocator)', 'public'),
   \ ])
 

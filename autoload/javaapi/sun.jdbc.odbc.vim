@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.jdbc.odbc')
 
-call javaapi#class('JdbcOdbc', '', [
+call javaapi#class('JdbcOdbc', 'JdbcOdbcObject', [
   \ javaapi#field(1,'MajorVersion', 'int'),
   \ javaapi#field(1,'MinorVersion', 'int'),
   \ javaapi#field(0,'charSet', 'String'),
@@ -143,7 +143,7 @@ call javaapi#class('JdbcOdbc', '', [
   \ javaapi#method(0,'getTracer(', ')', 'JdbcOdbcTracer'),
   \ ])
 
-call javaapi#class('JdbcOdbcBatchUpdateException', '', [
+call javaapi#class('JdbcOdbcBatchUpdateException', 'BatchUpdateException', [
   \ javaapi#method(0,'JdbcOdbcBatchUpdateException(', 'String, String, int, int[])', 'public'),
   \ javaapi#method(0,'JdbcOdbcBatchUpdateException(', 'String, String, int[])', 'public'),
   \ javaapi#method(0,'JdbcOdbcBatchUpdateException(', 'String, int[])', 'public'),
@@ -152,7 +152,7 @@ call javaapi#class('JdbcOdbcBatchUpdateException', '', [
   \ javaapi#method(0,'getUpdateCounts(', ')', 'int[]'),
   \ ])
 
-call javaapi#class('JdbcOdbcBoundArrayOfParams', '', [
+call javaapi#class('JdbcOdbcBoundArrayOfParams', 'JdbcOdbcObject', [
   \ javaapi#method(0,'JdbcOdbcBoundArrayOfParams(', 'int)', 'public'),
   \ javaapi#method(0,'initialize(', ')', 'void'),
   \ javaapi#method(0,'storeValue(', 'int, Object, int)', 'void'),
@@ -170,7 +170,7 @@ call javaapi#class('JdbcOdbcBoundArrayOfParams', '', [
   \ javaapi#method(0,'getElementLength(', 'int, int)', 'int'),
   \ ])
 
-call javaapi#class('JdbcOdbcBoundCol', '', [
+call javaapi#class('JdbcOdbcBoundCol', 'JdbcOdbcObject', [
   \ javaapi#field(1,'ASCII', 'short'),
   \ javaapi#field(1,'UNICODE', 'short'),
   \ javaapi#field(1,'BINARY', 'short'),
@@ -198,7 +198,7 @@ call javaapi#class('JdbcOdbcBoundCol', '', [
   \ javaapi#method(0,'getStreamType(', ')', 'int'),
   \ ])
 
-call javaapi#class('JdbcOdbcBoundParam', '', [
+call javaapi#class('JdbcOdbcBoundParam', 'JdbcOdbcObject', [
   \ javaapi#field(1,'ASCII', 'short'),
   \ javaapi#field(1,'UNICODE', 'short'),
   \ javaapi#field(1,'BINARY', 'short'),
@@ -221,7 +221,7 @@ call javaapi#class('JdbcOdbcBoundParam', '', [
   \ javaapi#method(0,'isInOutParameter(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('JdbcOdbcCallableStatement', '', [
+call javaapi#class('JdbcOdbcCallableStatement', 'JdbcOdbcPreparedStatement', [
   \ javaapi#field(0,'scalez', 'byte[]'),
   \ javaapi#method(0,'JdbcOdbcCallableStatement(', 'JdbcOdbcConnectionInterface)', 'public'),
   \ javaapi#method(0,'registerOutParameter(', 'int, int) throws SQLException', 'void'),
@@ -342,7 +342,7 @@ call javaapi#class('JdbcOdbcCallableStatement', '', [
   \ javaapi#method(0,'getObject(', 'String, Class<T>) throws SQLException', 'T'),
   \ ])
 
-call javaapi#class('JdbcOdbcConnection', '', [
+call javaapi#class('JdbcOdbcConnection', 'JdbcOdbcObject', [
   \ javaapi#field(0,'statements', 'WeakHashMap'),
   \ javaapi#method(0,'JdbcOdbcConnection(', 'JdbcOdbc, long, JdbcOdbcDriverInterface)', 'public'),
   \ javaapi#method(0,'initialize(', 'String, Properties, int) throws SQLException', 'void'),
@@ -423,7 +423,7 @@ call javaapi#class('JdbcOdbcConnection', '', [
   \ javaapi#method(0,'getNetworkTimeout(', ') throws SQLException', 'int'),
   \ ])
 
-call javaapi#interface('JdbcOdbcConnectionInterface', '', [
+call javaapi#interface('JdbcOdbcConnectionInterface', 'Connection', [
   \ javaapi#method(0,'getHDBC(', ')', 'long'),
   \ javaapi#method(0,'getURL(', ')', 'String'),
   \ javaapi#method(0,'getODBCVer(', ')', 'int'),
@@ -440,7 +440,7 @@ call javaapi#interface('JdbcOdbcConnectionInterface', '', [
   \ javaapi#method(0,'isFreeStmtsFromConnectionOnly(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('JdbcOdbcDatabaseMetaData', '', [
+call javaapi#class('JdbcOdbcDatabaseMetaData', 'JdbcOdbcObject', [
   \ javaapi#method(0,'JdbcOdbcDatabaseMetaData(', 'JdbcOdbc, JdbcOdbcConnectionInterface)', 'public'),
   \ javaapi#method(0,'allProceduresAreCallable(', ') throws SQLException', 'boolean'),
   \ javaapi#method(0,'allTablesAreSelectable(', ') throws SQLException', 'boolean'),
@@ -621,7 +621,7 @@ call javaapi#class('JdbcOdbcDatabaseMetaData', '', [
   \ javaapi#method(0,'generatedKeyAlwaysReturned(', ') throws SQLException', 'boolean'),
   \ ])
 
-call javaapi#class('JdbcOdbcDriver', '', [
+call javaapi#class('JdbcOdbcDriver', 'JdbcOdbcObject', [
   \ javaapi#method(0,'JdbcOdbcDriver(', ')', 'public'),
   \ javaapi#method(0,'connect(', 'String, Properties) throws SQLException', 'Connection'),
   \ javaapi#method(0,'EEConnect(', 'String, Properties) throws SQLException', 'Connection'),
@@ -648,13 +648,13 @@ call javaapi#class('JdbcOdbcDriver', '', [
 call javaapi#class('JdbcOdbcDriverAttribute', '', [
   \ ])
 
-call javaapi#interface('JdbcOdbcDriverInterface', '', [
+call javaapi#interface('JdbcOdbcDriverInterface', 'Driver', [
   \ javaapi#method(0,'allocConnection(', 'long) throws SQLException', 'long'),
   \ javaapi#method(0,'closeConnection(', 'long) throws SQLException', 'void'),
   \ javaapi#method(0,'disconnect(', 'long) throws SQLException', 'void'),
   \ ])
 
-call javaapi#class('JdbcOdbcInputStream', '', [
+call javaapi#class('JdbcOdbcInputStream', 'InputStream', [
   \ javaapi#field(1,'ASCII', 'short'),
   \ javaapi#field(1,'UNICODE', 'short'),
   \ javaapi#field(1,'BINARY', 'short'),
@@ -707,7 +707,7 @@ call javaapi#class('JdbcOdbcPlatform', '', [
   \ javaapi#method(1,'convertLongToByteArray(', 'long)', 'byte[]'),
   \ ])
 
-call javaapi#class('JdbcOdbcPreparedStatement', '', [
+call javaapi#class('JdbcOdbcPreparedStatement', 'JdbcOdbcStatement', [
   \ javaapi#method(0,'JdbcOdbcPreparedStatement(', 'JdbcOdbcConnectionInterface)', 'public'),
   \ javaapi#method(0,'initialize(', 'JdbcOdbc, long, long, Hashtable, int, int) throws SQLException', 'void'),
   \ javaapi#method(0,'executeQuery(', ') throws SQLException', 'ResultSet'),
@@ -789,7 +789,7 @@ call javaapi#class('JdbcOdbcPreparedStatement', '', [
   \ javaapi#method(0,'setNClob(', 'int, Reader) throws SQLException', 'void'),
   \ ])
 
-call javaapi#class('JdbcOdbcPseudoCol', '', [
+call javaapi#class('JdbcOdbcPseudoCol', 'JdbcOdbcObject', [
   \ javaapi#method(0,'JdbcOdbcPseudoCol(', 'String, int, int)', 'public'),
   \ javaapi#method(0,'getColumnLabel(', ')', 'String'),
   \ javaapi#method(0,'getColumnType(', ')', 'int'),
@@ -797,7 +797,7 @@ call javaapi#class('JdbcOdbcPseudoCol', '', [
   \ javaapi#method(0,'getColumnDisplaySize(', ')', 'int'),
   \ ])
 
-call javaapi#class('JdbcOdbcResultSet', '', [
+call javaapi#class('JdbcOdbcResultSet', 'JdbcOdbcObject', [
   \ javaapi#method(0,'JdbcOdbcResultSet(', ')', 'public'),
   \ javaapi#method(0,'initialize(', 'JdbcOdbc, long, long, boolean, JdbcOdbcStatement) throws SQLException', 'void'),
   \ javaapi#method(0,'wasNull(', ') throws SQLException', 'boolean'),
@@ -1023,7 +1023,7 @@ call javaapi#class('JdbcOdbcResultSet', '', [
   \ javaapi#method(0,'getObject(', 'String, Class<T>) throws SQLException', 'T'),
   \ ])
 
-call javaapi#interface('JdbcOdbcResultSetInterface', '', [
+call javaapi#interface('JdbcOdbcResultSetInterface', 'ResultSet', [
   \ javaapi#method(0,'getPseudoCol(', 'int)', 'JdbcOdbcPseudoCol'),
   \ javaapi#method(0,'mapColumn(', 'int)', 'int'),
   \ javaapi#method(0,'clearWarnings(', ') throws SQLException', 'void'),
@@ -1036,7 +1036,7 @@ call javaapi#interface('JdbcOdbcResultSetInterface', '', [
   \ javaapi#method(0,'mapColumnName(', 'String, int)', 'String'),
   \ ])
 
-call javaapi#class('JdbcOdbcResultSetMetaData', '', [
+call javaapi#class('JdbcOdbcResultSetMetaData', 'JdbcOdbcObject', [
   \ javaapi#method(0,'JdbcOdbcResultSetMetaData(', 'JdbcOdbc, JdbcOdbcResultSetInterface)', 'public'),
   \ javaapi#method(0,'getColumnCount(', ') throws SQLException', 'int'),
   \ javaapi#method(0,'isAutoIncrement(', 'int) throws SQLException', 'boolean'),
@@ -1063,14 +1063,14 @@ call javaapi#class('JdbcOdbcResultSetMetaData', '', [
   \ javaapi#method(0,'isWrapperFor(', 'Class<?>) throws SQLException', 'boolean'),
   \ ])
 
-call javaapi#class('JdbcOdbcSQLWarning', '', [
+call javaapi#class('JdbcOdbcSQLWarning', 'SQLWarning', [
   \ javaapi#method(0,'JdbcOdbcSQLWarning(', 'String, String, int)', 'public'),
   \ javaapi#method(0,'JdbcOdbcSQLWarning(', 'String, String)', 'public'),
   \ javaapi#method(0,'JdbcOdbcSQLWarning(', 'String)', 'public'),
   \ javaapi#method(0,'JdbcOdbcSQLWarning(', ')', 'public'),
   \ ])
 
-call javaapi#class('JdbcOdbcStatement', '', [
+call javaapi#class('JdbcOdbcStatement', 'JdbcOdbcObject', [
   \ javaapi#method(0,'JdbcOdbcStatement(', 'JdbcOdbcConnectionInterface)', 'public'),
   \ javaapi#method(0,'initialize(', 'JdbcOdbc, long, long, Hashtable, int, int) throws SQLException', 'void'),
   \ javaapi#method(0,'executeQuery(', 'String) throws SQLException', 'ResultSet'),
@@ -1138,7 +1138,7 @@ call javaapi#class('JdbcOdbcTracer', '', [
   \ javaapi#method(0,'getWriter(', ')', 'PrintWriter'),
   \ ])
 
-call javaapi#class('JdbcOdbcTypeInfo', '', [
+call javaapi#class('JdbcOdbcTypeInfo', 'JdbcOdbcObject', [
   \ javaapi#method(0,'JdbcOdbcTypeInfo(', ')', 'public'),
   \ javaapi#method(0,'setName(', 'String)', 'void'),
   \ javaapi#method(0,'getName(', ')', 'String'),

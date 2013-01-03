@@ -7,7 +7,7 @@ call javaapi#class('NotificationHandler', 'NotificationListener', [
   \ javaapi#method(0,'handleNotification(', 'Notification, Object)', 'void'),
   \ ])
 
-call javaapi#class('JVM_MANAGEMENT_MIB_IMPL', '', [
+call javaapi#class('JVM_MANAGEMENT_MIB_IMPL', 'JVM_MANAGEMENT_MIB', [
   \ javaapi#method(1,'getOidTable(', ')', 'SnmpOidTable'),
   \ javaapi#method(0,'JVM_MANAGEMENT_MIB_IMPL(', ')', 'public'),
   \ javaapi#method(0,'addTarget(', 'NotificationTarget) throws IllegalArgumentException', 'void'),
@@ -49,7 +49,7 @@ call javaapi#class('GCTableFilter', '', [
   \ javaapi#method(0,'contains(', 'SnmpTableHandler, SnmpOid)', 'boolean'),
   \ ])
 
-call javaapi#class('JvmMemGCTableMetaImpl', '', [
+call javaapi#class('JvmMemGCTableMetaImpl', 'JvmMemGCTableMeta', [
   \ javaapi#method(0,'JvmMemGCTableMetaImpl(', 'SnmpMib, SnmpStandardObjectServer)', 'public'),
   \ javaapi#method(0,'getEntry(', 'SnmpOid) throws SnmpStatusException', 'Object'),
   \ ])
@@ -61,11 +61,11 @@ call javaapi#class('JvmMemManagerEntryImpl', 'JvmMemManagerEntryMBean', [
   \ javaapi#method(0,'getJvmMemManagerState(', ') throws SnmpStatusException', 'EnumJvmMemManagerState'),
   \ ])
 
-call javaapi#class('JvmMemManagerTableCache', '', [
+call javaapi#class('JvmMemManagerTableCache', 'SnmpNamedListTableCache', [
   \ javaapi#method(0,'getTableHandler(', ')', 'SnmpTableHandler'),
   \ ])
 
-call javaapi#class('JvmMemManagerTableMetaImpl', '', [
+call javaapi#class('JvmMemManagerTableMetaImpl', 'JvmMemManagerTableMeta', [
   \ javaapi#method(0,'JvmMemManagerTableMetaImpl(', 'SnmpMib, SnmpStandardObjectServer)', 'public'),
   \ javaapi#method(0,'getEntry(', 'SnmpOid) throws SnmpStatusException', 'Object'),
   \ ])
@@ -78,11 +78,11 @@ call javaapi#class('JvmMemMgrPoolRelEntryImpl', 'JvmMemMgrPoolRelEntryMBean', [
   \ javaapi#method(0,'getJvmMemPoolIndex(', ') throws SnmpStatusException', 'Integer'),
   \ ])
 
-call javaapi#class('JvmMemMgrPoolRelTableCache', '', [
+call javaapi#class('JvmMemMgrPoolRelTableCache', 'SnmpTableCache', [
   \ javaapi#method(0,'getTableHandler(', ')', 'SnmpTableHandler'),
   \ ])
 
-call javaapi#class('JvmMemMgrPoolRelTableMetaImpl', '', [
+call javaapi#class('JvmMemMgrPoolRelTableMetaImpl', 'JvmMemMgrPoolRelTableMeta', [
   \ javaapi#method(0,'JvmMemMgrPoolRelTableMetaImpl(', 'SnmpMib, SnmpStandardObjectServer)', 'public'),
   \ javaapi#method(0,'getEntry(', 'SnmpOid) throws SnmpStatusException', 'Object'),
   \ ])
@@ -119,11 +119,11 @@ call javaapi#class('JvmMemPoolEntryImpl', 'JvmMemPoolEntryMBean', [
   \ javaapi#method(0,'checkJvmMemPoolPeakReset(', 'Long) throws SnmpStatusException', 'void'),
   \ ])
 
-call javaapi#class('JvmMemPoolTableCache', '', [
+call javaapi#class('JvmMemPoolTableCache', 'SnmpNamedListTableCache', [
   \ javaapi#method(0,'getTableHandler(', ')', 'SnmpTableHandler'),
   \ ])
 
-call javaapi#class('JvmMemPoolTableMetaImpl', '', [
+call javaapi#class('JvmMemPoolTableMetaImpl', 'JvmMemPoolTableMeta', [
   \ javaapi#method(0,'JvmMemPoolTableMetaImpl(', 'SnmpMib, SnmpStandardObjectServer)', 'public'),
   \ javaapi#method(0,'getEntry(', 'SnmpOid) throws SnmpStatusException', 'Object'),
   \ ])
@@ -148,7 +148,7 @@ call javaapi#class('JvmMemoryImpl', 'JvmMemoryMBean', [
   \ javaapi#method(0,'getJvmMemoryPendingFinalCount(', ') throws SnmpStatusException', 'Long'),
   \ ])
 
-call javaapi#class('JvmMemoryMetaImpl', '', [
+call javaapi#class('JvmMemoryMetaImpl', 'JvmMemoryMeta', [
   \ javaapi#method(0,'JvmMemoryMetaImpl(', 'SnmpMib, SnmpStandardObjectServer)', 'public'),
   \ ])
 
@@ -167,11 +167,11 @@ call javaapi#class('JvmRTBootClassPathEntryImpl', 'Serializable', [
   \ javaapi#method(0,'getJvmRTBootClassPathIndex(', ') throws SnmpStatusException', 'Integer'),
   \ ])
 
-call javaapi#class('JvmRTBootClassPathTableCache', '', [
+call javaapi#class('JvmRTBootClassPathTableCache', 'SnmpTableCache', [
   \ javaapi#method(0,'getTableHandler(', ')', 'SnmpTableHandler'),
   \ ])
 
-call javaapi#class('JvmRTBootClassPathTableMetaImpl', '', [
+call javaapi#class('JvmRTBootClassPathTableMetaImpl', 'JvmRTBootClassPathTableMeta', [
   \ javaapi#method(0,'JvmRTBootClassPathTableMetaImpl(', 'SnmpMib, SnmpStandardObjectServer)', 'public'),
   \ javaapi#method(0,'getEntry(', 'SnmpOid) throws SnmpStatusException', 'Object'),
   \ ])
@@ -182,11 +182,11 @@ call javaapi#class('JvmRTClassPathEntryImpl', 'Serializable', [
   \ javaapi#method(0,'getJvmRTClassPathIndex(', ') throws SnmpStatusException', 'Integer'),
   \ ])
 
-call javaapi#class('JvmRTClassPathTableCache', '', [
+call javaapi#class('JvmRTClassPathTableCache', 'SnmpTableCache', [
   \ javaapi#method(0,'getTableHandler(', ')', 'SnmpTableHandler'),
   \ ])
 
-call javaapi#class('JvmRTClassPathTableMetaImpl', '', [
+call javaapi#class('JvmRTClassPathTableMetaImpl', 'JvmRTClassPathTableMeta', [
   \ javaapi#method(0,'JvmRTClassPathTableMetaImpl(', 'SnmpMib, SnmpStandardObjectServer)', 'public'),
   \ javaapi#method(0,'getEntry(', 'SnmpOid) throws SnmpStatusException', 'Object'),
   \ ])
@@ -197,11 +197,11 @@ call javaapi#class('JvmRTInputArgsEntryImpl', 'Serializable', [
   \ javaapi#method(0,'getJvmRTInputArgsIndex(', ') throws SnmpStatusException', 'Integer'),
   \ ])
 
-call javaapi#class('JvmRTInputArgsTableCache', '', [
+call javaapi#class('JvmRTInputArgsTableCache', 'SnmpTableCache', [
   \ javaapi#method(0,'getTableHandler(', ')', 'SnmpTableHandler'),
   \ ])
 
-call javaapi#class('JvmRTInputArgsTableMetaImpl', '', [
+call javaapi#class('JvmRTInputArgsTableMetaImpl', 'JvmRTInputArgsTableMeta', [
   \ javaapi#method(0,'JvmRTInputArgsTableMetaImpl(', 'SnmpMib, SnmpStandardObjectServer)', 'public'),
   \ javaapi#method(0,'getEntry(', 'SnmpOid) throws SnmpStatusException', 'Object'),
   \ ])
@@ -212,11 +212,11 @@ call javaapi#class('JvmRTLibraryPathEntryImpl', 'Serializable', [
   \ javaapi#method(0,'getJvmRTLibraryPathIndex(', ') throws SnmpStatusException', 'Integer'),
   \ ])
 
-call javaapi#class('JvmRTLibraryPathTableCache', '', [
+call javaapi#class('JvmRTLibraryPathTableCache', 'SnmpTableCache', [
   \ javaapi#method(0,'getTableHandler(', ')', 'SnmpTableHandler'),
   \ ])
 
-call javaapi#class('JvmRTLibraryPathTableMetaImpl', '', [
+call javaapi#class('JvmRTLibraryPathTableMetaImpl', 'JvmRTLibraryPathTableMeta', [
   \ javaapi#method(0,'JvmRTLibraryPathTableMetaImpl(', 'SnmpMib, SnmpStandardObjectServer)', 'public'),
   \ javaapi#method(0,'getEntry(', 'SnmpOid) throws SnmpStatusException', 'Object'),
   \ ])
@@ -238,7 +238,7 @@ call javaapi#class('JvmRuntimeImpl', 'JvmRuntimeMBean', [
   \ javaapi#method(0,'getJvmRTName(', ') throws SnmpStatusException', 'String'),
   \ ])
 
-call javaapi#class('JvmRuntimeMetaImpl', '', [
+call javaapi#class('JvmRuntimeMetaImpl', 'JvmRuntimeMeta', [
   \ javaapi#method(0,'JvmRuntimeMetaImpl(', 'SnmpMib, SnmpStandardObjectServer)', 'public'),
   \ ])
 
@@ -296,11 +296,11 @@ call javaapi#class('JvmThreadInstanceEntryImpl', 'Serializable', [
   \ javaapi#method(0,'getJvmThreadInstIndex(', ') throws SnmpStatusException', 'Byte[]'),
   \ ])
 
-call javaapi#class('JvmThreadInstanceTableCache', '', [
+call javaapi#class('JvmThreadInstanceTableCache', 'SnmpTableCache', [
   \ javaapi#method(0,'getTableHandler(', ')', 'SnmpTableHandler'),
   \ ])
 
-call javaapi#class('JvmThreadInstanceTableMetaImpl', '', [
+call javaapi#class('JvmThreadInstanceTableMetaImpl', 'JvmThreadInstanceTableMeta', [
   \ javaapi#field(1,'MAX_STACK_TRACE_DEPTH', 'int'),
   \ javaapi#method(0,'JvmThreadInstanceTableMetaImpl(', 'SnmpMib, SnmpStandardObjectServer)', 'public'),
   \ javaapi#method(0,'getEntry(', 'SnmpOid) throws SnmpStatusException', 'Object'),
@@ -324,7 +324,7 @@ call javaapi#class('JvmThreadingImpl', 'JvmThreadingMBean', [
   \ javaapi#method(0,'checkJvmThreadPeakCountReset(', 'Long) throws SnmpStatusException', 'void'),
   \ ])
 
-call javaapi#class('JvmThreadingMetaImpl', '', [
+call javaapi#class('JvmThreadingMetaImpl', 'JvmThreadingMeta', [
   \ javaapi#method(0,'JvmThreadingMetaImpl(', 'SnmpMib, SnmpStandardObjectServer)', 'public'),
   \ ])
 

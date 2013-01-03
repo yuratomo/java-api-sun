@@ -34,7 +34,7 @@ call javaapi#class('MtomFeatureConfigurator', 'PolicyFeatureConfigurator', [
   \ javaapi#method(0,'getFeatures(', 'PolicyMapKey, PolicyMap) throws PolicyException', 'WebServiceFeature>'),
   \ ])
 
-call javaapi#class('MtomAssertion', '', [
+call javaapi#class('MtomAssertion', 'PolicyAssertion', [
   \ ])
 
 call javaapi#class('MtomPolicyMapConfigurator', 'PolicyMapConfigurator', [

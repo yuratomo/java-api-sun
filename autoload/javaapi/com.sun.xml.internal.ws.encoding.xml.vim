@@ -13,7 +13,7 @@ call javaapi#class('XMLCodec', 'Codec', [
   \ javaapi#method(0,'decode(', 'ReadableByteChannel, String, Packet)', 'void'),
   \ ])
 
-call javaapi#class('FaultMessage', '', [
+call javaapi#class('FaultMessage', 'EmptyMessageImpl', [
   \ javaapi#method(0,'FaultMessage(', 'SOAPVersion)', 'public'),
   \ javaapi#method(0,'isFault(', ')', 'boolean'),
   \ ])
@@ -23,7 +23,7 @@ call javaapi#interface('MessageDataSource', '', [
   \ javaapi#method(0,'getDataSource(', ')', 'DataSource'),
   \ ])
 
-call javaapi#class('UnknownContent', '', [
+call javaapi#class('UnknownContent', 'AbstractMessageImpl', [
   \ javaapi#method(0,'UnknownContent(', 'String, InputStream)', 'public'),
   \ javaapi#method(0,'UnknownContent(', 'DataSource)', 'public'),
   \ javaapi#method(0,'hasUnconsumedDataSource(', ')', 'boolean'),
@@ -40,7 +40,7 @@ call javaapi#class('UnknownContent', '', [
   \ javaapi#method(0,'copy(', ')', 'Message'),
   \ ])
 
-call javaapi#class('XMLMultiPart', '', [
+call javaapi#class('XMLMultiPart', 'AbstractMessageImpl', [
   \ javaapi#method(0,'XMLMultiPart(', 'String, InputStream, WSBinding)', 'public'),
   \ javaapi#method(0,'hasUnconsumedDataSource(', ')', 'boolean'),
   \ javaapi#method(0,'getDataSource(', ')', 'DataSource'),
@@ -65,7 +65,7 @@ call javaapi#class('XMLMultiPart', '', [
   \ javaapi#method(0,'getAttachments(', ')', 'AttachmentSet'),
   \ ])
 
-call javaapi#class('XmlContent', '', [
+call javaapi#class('XmlContent', 'AbstractMessageImpl', [
   \ javaapi#method(0,'XmlContent(', 'String, InputStream, WSBinding)', 'public'),
   \ javaapi#method(0,'hasUnconsumedDataSource(', ')', 'boolean'),
   \ javaapi#method(0,'getDataSource(', ')', 'DataSource'),

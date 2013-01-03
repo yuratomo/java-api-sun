@@ -7,7 +7,7 @@ call javaapi#class('AuthorizationDataEntry', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('ExtendedGSSContext', '', [
+call javaapi#interface('ExtendedGSSContext', 'GSSContext', [
   \ javaapi#method(0,'inquireSecContext(', 'InquireType) throws GSSException', 'Object'),
   \ javaapi#method(0,'requestDelegPolicy(', 'boolean) throws GSSException', 'void'),
   \ javaapi#method(0,'getDelegPolicyState(', ')', 'boolean'),
@@ -18,11 +18,11 @@ call javaapi#class('GSSUtil', '', [
   \ javaapi#method(1,'createSubject(', 'GSSName, GSSCredential)', 'Subject'),
   \ ])
 
-call javaapi#class('InquireSecContextPermission', '', [
+call javaapi#class('InquireSecContextPermission', 'BasicPermission', [
   \ javaapi#method(0,'InquireSecContextPermission(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('InquireType', '', [
+call javaapi#class('InquireType', 'InquireType>', [
   \ javaapi#field(1,'KRB5_GET_SESSION_KEY', 'InquireType'),
   \ javaapi#field(1,'KRB5_GET_TKT_FLAGS', 'InquireType'),
   \ javaapi#field(1,'KRB5_GET_AUTHZ_DATA', 'InquireType'),

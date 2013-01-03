@@ -50,7 +50,7 @@ call javaapi#class('ExsltDatetime', '', [
   \ javaapi#method(1,'formatDate(', 'String, String)', 'String'),
   \ ])
 
-call javaapi#class('ExsltDynamic', '', [
+call javaapi#class('ExsltDynamic', 'ExsltBase', [
   \ javaapi#field(1,'EXSL_URI', 'String'),
   \ javaapi#method(0,'ExsltDynamic(', ')', 'public'),
   \ javaapi#method(1,'max(', 'ExpressionContext, NodeList, String) throws SAXNotSupportedException', 'double'),
@@ -61,7 +61,7 @@ call javaapi#class('ExsltDynamic', '', [
   \ javaapi#method(1,'closure(', 'ExpressionContext, NodeList, String) throws SAXNotSupportedException', 'NodeList'),
   \ ])
 
-call javaapi#class('ExsltMath', '', [
+call javaapi#class('ExsltMath', 'ExsltBase', [
   \ javaapi#method(0,'ExsltMath(', ')', 'public'),
   \ javaapi#method(1,'max(', 'NodeList)', 'double'),
   \ javaapi#method(1,'min(', 'NodeList)', 'double'),
@@ -83,7 +83,7 @@ call javaapi#class('ExsltMath', '', [
   \ javaapi#method(1,'constant(', 'String, double)', 'double'),
   \ ])
 
-call javaapi#class('ExsltSets', '', [
+call javaapi#class('ExsltSets', 'ExsltBase', [
   \ javaapi#method(0,'ExsltSets(', ')', 'public'),
   \ javaapi#method(1,'leading(', 'NodeList, NodeList)', 'NodeList'),
   \ javaapi#method(1,'trailing(', 'NodeList, NodeList)', 'NodeList'),
@@ -96,7 +96,7 @@ call javaapi#class('ExsltSets', '', [
 call javaapi#class('DocumentHolder', '', [
   \ ])
 
-call javaapi#class('ExsltStrings', '', [
+call javaapi#class('ExsltStrings', 'ExsltBase', [
   \ javaapi#method(0,'ExsltStrings(', ')', 'public'),
   \ javaapi#method(1,'align(', 'String, String, String)', 'String'),
   \ javaapi#method(1,'align(', 'String, String)', 'String'),
@@ -136,7 +136,7 @@ call javaapi#class('NodeInfo', '', [
   \ javaapi#method(1,'columnNumber(', 'NodeList)', 'int'),
   \ ])
 
-call javaapi#class('ConfigurationError', '', [
+call javaapi#class('ConfigurationError', 'Error', [
   \ ])
 
 call javaapi#class('ObjectFactory', '', [
@@ -177,6 +177,6 @@ call javaapi#class('8', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('SecuritySupport12', '', [
+call javaapi#class('SecuritySupport12', 'SecuritySupport', [
   \ ])
 

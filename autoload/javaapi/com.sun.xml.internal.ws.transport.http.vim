@@ -38,7 +38,7 @@ call javaapi#class('3', 'DocumentAddressResolver', [
   \ javaapi#method(0,'getRelativeAddressFor(', 'SDDocument, SDDocument)', 'String'),
   \ ])
 
-call javaapi#class('AsyncTransport', '', [
+call javaapi#class('AsyncTransport', 'WSHTTPConnection>', [
   \ javaapi#method(0,'AsyncTransport(', 'HttpAdapter)', 'public'),
   \ javaapi#method(0,'handleAsync(', 'WSHTTPConnection) throws IOException', 'void'),
   \ ])
@@ -47,14 +47,14 @@ call javaapi#interface('CompletionCallback', '', [
   \ javaapi#method(0,'onCompletion(', ')', 'void'),
   \ ])
 
-call javaapi#class('DummyList', '', [
+call javaapi#class('DummyList', 'HttpAdapter>', [
   \ ])
 
-call javaapi#class('Http10OutputStream', '', [
+call javaapi#class('Http10OutputStream', 'ByteArrayBuffer', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('HttpToolkit', '', [
+call javaapi#class('HttpToolkit', 'Toolkit', [
   \ javaapi#method(0,'handle(', 'WSHTTPConnection) throws IOException', 'void'),
   \ ])
 
@@ -62,7 +62,7 @@ call javaapi#class('Oneway', 'TransportBackChannel', [
   \ javaapi#method(0,'close(', ')', 'void'),
   \ ])
 
-call javaapi#class('HttpAdapter', '', [
+call javaapi#class('HttpAdapter', 'HttpToolkit>', [
   \ javaapi#field(0,'owner', 'HttpAdapter>'),
   \ javaapi#field(0,'urlPattern', 'String'),
   \ javaapi#field(1,'NO_OP_COMPLETION_CALLBACK', 'CompletionCallback'),
@@ -79,7 +79,7 @@ call javaapi#class('HttpAdapter', '', [
   \ javaapi#method(0,'publishWSDL(', 'WSHTTPConnection) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'PortAddressResolver', [
   \ javaapi#method(0,'getAddressFor(', 'QName, String)', 'String'),
   \ ])
 
@@ -88,7 +88,7 @@ call javaapi#class('PortInfo', '', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('HttpAdapterList<T', '', [
+call javaapi#class('HttpAdapterList<T', 'HttpAdapter>', [
   \ javaapi#method(0,'HttpAdapterList(', ')', 'public'),
   \ javaapi#method(0,'createAdapter(', 'String, String, WSEndpoint<?>)', 'T'),
   \ javaapi#method(0,'createPortAddressResolver(', 'String)', 'PortAddressResolver'),
@@ -109,7 +109,7 @@ call javaapi#interface('ResourceLoader', '', [
   \ javaapi#method(0,'getResourcePaths(', 'String)', 'String>'),
   \ ])
 
-call javaapi#class('WSHTTPConnection', '', [
+call javaapi#class('WSHTTPConnection', 'PropertySet', [
   \ javaapi#field(1,'OK', 'int'),
   \ javaapi#field(1,'ONEWAY', 'int'),
   \ javaapi#field(1,'UNSUPPORTED_MEDIA', 'int'),

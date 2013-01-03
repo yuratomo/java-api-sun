@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.corba.se.impl.util')
 
-call javaapi#class('IdentityHashtable', '', [
+call javaapi#class('IdentityHashtable', 'Dictionary', [
   \ javaapi#method(0,'IdentityHashtable(', 'int, float)', 'public'),
   \ javaapi#method(0,'IdentityHashtable(', 'int)', 'public'),
   \ javaapi#method(0,'IdentityHashtable(', ')', 'public'),
@@ -163,12 +163,12 @@ call javaapi#class('RepositoryId', '', [
   \ javaapi#method(1,'getServerURL(', ')', 'String'),
   \ ])
 
-call javaapi#class('RepositoryIdCache', '', [
+call javaapi#class('RepositoryIdCache', 'Hashtable', [
   \ javaapi#method(0,'RepositoryIdCache(', ')', 'public'),
   \ javaapi#method(0,'getId(', 'String)', 'RepositoryId'),
   \ ])
 
-call javaapi#class('RepositoryIdPool', '', [
+call javaapi#class('RepositoryIdPool', 'Stack', [
   \ javaapi#method(0,'popId(', ')', 'RepositoryId'),
   \ ])
 

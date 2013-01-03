@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.jndi.url.dns')
 
-call javaapi#class('dnsURLContext', '', [
+call javaapi#class('dnsURLContext', 'GenericURLDirContext', [
   \ javaapi#method(0,'dnsURLContext(', 'Hashtable)', 'public'),
   \ ])
 

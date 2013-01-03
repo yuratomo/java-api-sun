@@ -1,12 +1,12 @@
 call javaapi#namespace('com.sun.jmx.remote.util')
 
-call javaapi#class('CacheMap<K,V>', '', [
+call javaapi#class('CacheMap<K,V>', 'WeakHashMap<K,V>', [
   \ javaapi#method(0,'CacheMap(', 'int)', 'public'),
   \ javaapi#method(0,'put(', 'K, V)', 'V'),
   \ javaapi#method(0,'get(', 'Object)', 'V'),
   \ ])
 
-call javaapi#class('ClassLoaderWithRepository', '', [
+call javaapi#class('ClassLoaderWithRepository', 'ClassLoader', [
   \ javaapi#method(0,'ClassLoaderWithRepository(', 'ClassLoaderRepository, ClassLoader)', 'public'),
   \ ])
 
@@ -55,7 +55,7 @@ call javaapi#class('ClassLogger', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('SinkOutputStream', '', [
+call javaapi#class('SinkOutputStream', 'OutputStream', [
   \ javaapi#method(0,'write(', 'byte[], int, int)', 'void'),
   \ javaapi#method(0,'write(', 'int)', 'void'),
   \ ])
@@ -91,7 +91,7 @@ call javaapi#class('EnvHelp', '', [
   \ javaapi#method(1,'isServerDaemon(', 'Map<String, ?>)', 'boolean'),
   \ ])
 
-call javaapi#class('OrderClassLoaders', '', [
+call javaapi#class('OrderClassLoaders', 'ClassLoader', [
   \ javaapi#method(0,'OrderClassLoaders(', 'ClassLoader, ClassLoader)', 'public'),
   \ ])
 

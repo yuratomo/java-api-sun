@@ -18,7 +18,7 @@ call javaapi#class('NTLMClient', 'SaslClient', [
   \ javaapi#method(0,'evaluateChallenge(', 'byte[]) throws SaslException', 'byte[]'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Server', [
   \ javaapi#method(0,'getPassword(', 'String, String)', 'char[]'),
   \ ])
 

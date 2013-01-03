@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xerces.internal.impl.io')
 
-call javaapi#class('ASCIIReader', '', [
+call javaapi#class('ASCIIReader', 'Reader', [
   \ javaapi#field(1,'DEFAULT_BUFFER_SIZE', 'int'),
   \ javaapi#method(0,'ASCIIReader(', 'InputStream, MessageFormatter, Locale)', 'public'),
   \ javaapi#method(0,'ASCIIReader(', 'InputStream, int, MessageFormatter, Locale)', 'public'),
@@ -14,7 +14,7 @@ call javaapi#class('ASCIIReader', '', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('MalformedByteSequenceException', '', [
+call javaapi#class('MalformedByteSequenceException', 'CharConversionException', [
   \ javaapi#method(0,'MalformedByteSequenceException(', 'MessageFormatter, Locale, String, String, Object[])', 'public'),
   \ javaapi#method(0,'getDomain(', ')', 'String'),
   \ javaapi#method(0,'getKey(', ')', 'String'),
@@ -22,7 +22,7 @@ call javaapi#class('MalformedByteSequenceException', '', [
   \ javaapi#method(0,'getMessage(', ')', 'String'),
   \ ])
 
-call javaapi#class('UCSReader', '', [
+call javaapi#class('UCSReader', 'Reader', [
   \ javaapi#field(1,'DEFAULT_BUFFER_SIZE', 'int'),
   \ javaapi#field(1,'UCS2LE', 'short'),
   \ javaapi#field(1,'UCS2BE', 'short'),
@@ -40,7 +40,7 @@ call javaapi#class('UCSReader', '', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('UTF8Reader', '', [
+call javaapi#class('UTF8Reader', 'Reader', [
   \ javaapi#field(1,'DEFAULT_BUFFER_SIZE', 'int'),
   \ javaapi#method(0,'UTF8Reader(', 'InputStream)', 'public'),
   \ javaapi#method(0,'UTF8Reader(', 'InputStream, MessageFormatter, Locale)', 'public'),

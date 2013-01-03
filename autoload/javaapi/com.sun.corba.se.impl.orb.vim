@@ -1,22 +1,22 @@
 call javaapi#namespace('com.sun.corba.se.impl.orb')
 
-call javaapi#class('AppletDataCollector', '', [
+call javaapi#class('AppletDataCollector', 'DataCollectorBase', [
   \ javaapi#method(0,'isApplet(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'PropertyCallback', [
   \ javaapi#method(0,'get(', 'String)', 'String'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'PropertyCallback', [
   \ javaapi#method(0,'get(', 'String)', 'String'),
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'PropertyCallback', [
   \ javaapi#method(0,'get(', 'String)', 'String'),
   \ ])
 
-call javaapi#class('4', '', [
+call javaapi#class('4', 'PropertyCallback', [
   \ javaapi#method(0,'get(', 'String)', 'String'),
   \ ])
 
@@ -44,17 +44,17 @@ call javaapi#class('DataCollectorFactory', '', [
   \ javaapi#method(1,'create(', 'Properties, String)', 'DataCollector'),
   \ ])
 
-call javaapi#class('NormalDataCollector', '', [
+call javaapi#class('NormalDataCollector', 'DataCollectorBase', [
   \ javaapi#method(0,'NormalDataCollector(', 'String[], Properties, String, String)', 'public'),
   \ javaapi#method(0,'isApplet(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('NormalParserAction', '', [
+call javaapi#class('NormalParserAction', 'ParserActionBase', [
   \ javaapi#method(0,'NormalParserAction(', 'String, Operation, String)', 'public'),
   \ javaapi#method(0,'apply(', 'Properties)', 'Object'),
   \ ])
 
-call javaapi#class('NormalParserData', '', [
+call javaapi#class('NormalParserData', 'ParserDataBase', [
   \ javaapi#method(0,'NormalParserData(', 'String, Operation, String, Object, Object, String)', 'public'),
   \ javaapi#method(0,'addToParser(', 'PropertyParser)', 'void'),
   \ javaapi#method(0,'addToProperties(', 'Properties)', 'void'),
@@ -73,7 +73,7 @@ call javaapi#class('3', 'Closure', [
   \ javaapi#method(0,'evaluate(', ')', 'Object'),
   \ ])
 
-call javaapi#class('ConfigParser', '', [
+call javaapi#class('ConfigParser', 'ParserImplBase', [
   \ javaapi#field(0,'userConfigurators', 'Class[]'),
   \ javaapi#method(0,'ConfigParser(', ')', 'public'),
   \ javaapi#method(0,'makeParser(', ')', 'PropertyParser'),
@@ -84,7 +84,7 @@ call javaapi#class('ORBConfiguratorImpl', 'ORBConfigurator', [
   \ javaapi#method(0,'configure(', 'DataCollector, ORB)', 'void'),
   \ ])
 
-call javaapi#class('ORBDataParserImpl', '', [
+call javaapi#class('ORBDataParserImpl', 'ParserImplTableBase', [
   \ javaapi#method(0,'getORBInitialHost(', ')', 'String'),
   \ javaapi#method(0,'getORBInitialPort(', ')', 'int'),
   \ javaapi#method(0,'getORBServerHost(', ')', 'String'),
@@ -137,28 +137,28 @@ call javaapi#class('ORBDataParserImpl', '', [
   \ javaapi#method(0,'complete(', ')', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ThreadLocal', [
   \ ])
 
 call javaapi#class('2', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'ThreadLocal', [
   \ ])
 
-call javaapi#class('4', '', [
+call javaapi#class('4', 'ThreadLocal', [
   \ ])
 
-call javaapi#class('5', '', [
+call javaapi#class('5', 'ThreadLocal', [
   \ ])
 
-call javaapi#class('ConfigParser', '', [
+call javaapi#class('ConfigParser', 'ParserImplBase', [
   \ javaapi#field(0,'configurator', 'Class'),
   \ javaapi#method(0,'makeParser(', ')', 'PropertyParser'),
   \ ])
 
-call javaapi#class('ORBImpl', '', [
+call javaapi#class('ORBImpl', 'ORB', [
   \ javaapi#method(0,'getORBData(', ')', 'ORBData'),
   \ javaapi#method(0,'getPIHandler(', ')', 'PIHandler'),
   \ javaapi#method(0,'ORBImpl(', ')', 'public'),
@@ -260,7 +260,7 @@ call javaapi#class('ORBImpl', '', [
   \ javaapi#method(0,'getCopierManager(', ')', 'CopierManager'),
   \ ])
 
-call javaapi#class('ORBSingleton', '', [
+call javaapi#class('ORBSingleton', 'ORB', [
   \ javaapi#method(0,'ORBSingleton(', ')', 'public'),
   \ javaapi#method(0,'set_parameters(', 'Properties)', 'void'),
   \ javaapi#method(0,'create_output_stream(', ')', 'OutputStream'),
@@ -573,14 +573,14 @@ call javaapi#class('TestLegacyORBSocketFactory', 'ORBSocketFactory', [
   \ javaapi#method(0,'createSocket(', 'SocketInfo)', 'Socket'),
   \ ])
 
-call javaapi#class('TestORBInitializer1', '', [
+call javaapi#class('TestORBInitializer1', 'LocalObject', [
   \ javaapi#method(0,'TestORBInitializer1(', ')', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'pre_init(', 'ORBInitInfo)', 'void'),
   \ javaapi#method(0,'post_init(', 'ORBInitInfo)', 'void'),
   \ ])
 
-call javaapi#class('TestORBInitializer2', '', [
+call javaapi#class('TestORBInitializer2', 'LocalObject', [
   \ javaapi#method(0,'TestORBInitializer2(', ')', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'pre_init(', 'ORBInitInfo)', 'void'),
@@ -601,12 +601,12 @@ call javaapi#class('ParserTable', '', [
   \ javaapi#method(0,'getParserData(', ')', 'ParserData[]'),
   \ ])
 
-call javaapi#class('PrefixParserAction', '', [
+call javaapi#class('PrefixParserAction', 'ParserActionBase', [
   \ javaapi#method(0,'PrefixParserAction(', 'String, Operation, String, Class)', 'public'),
   \ javaapi#method(0,'apply(', 'Properties)', 'Object'),
   \ ])
 
-call javaapi#class('PrefixParserData', '', [
+call javaapi#class('PrefixParserData', 'ParserDataBase', [
   \ javaapi#method(0,'PrefixParserData(', 'String, Operation, String, Object, Object, StringPair[], Class)', 'public'),
   \ javaapi#method(0,'addToParser(', 'PropertyParser)', 'void'),
   \ javaapi#method(0,'addToProperties(', 'Properties)', 'void'),
@@ -616,7 +616,7 @@ call javaapi#class('PropertyCallback', '', [
   \ javaapi#method(0,'get(', 'String)', 'String'),
   \ ])
 
-call javaapi#class('PropertyOnlyDataCollector', '', [
+call javaapi#class('PropertyOnlyDataCollector', 'DataCollectorBase', [
   \ javaapi#method(0,'PropertyOnlyDataCollector(', 'Properties, String, String)', 'public'),
   \ javaapi#method(0,'isApplet(', ')', 'boolean'),
   \ ])

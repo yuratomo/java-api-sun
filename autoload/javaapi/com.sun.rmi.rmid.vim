@@ -1,13 +1,13 @@
 call javaapi#namespace('com.sun.rmi.rmid')
 
-call javaapi#class('ExecOptionPermissionCollection', '', [
+call javaapi#class('ExecOptionPermissionCollection', 'PermissionCollection', [
   \ javaapi#method(0,'ExecOptionPermissionCollection(', ')', 'public'),
   \ javaapi#method(0,'add(', 'Permission)', 'void'),
   \ javaapi#method(0,'implies(', 'Permission)', 'boolean'),
   \ javaapi#method(0,'elements(', ')', 'Enumeration'),
   \ ])
 
-call javaapi#class('ExecOptionPermission', '', [
+call javaapi#class('ExecOptionPermission', 'Permission', [
   \ javaapi#method(0,'ExecOptionPermission(', 'String)', 'public'),
   \ javaapi#method(0,'ExecOptionPermission(', 'String, String)', 'public'),
   \ javaapi#method(0,'implies(', 'Permission)', 'boolean'),
@@ -17,14 +17,14 @@ call javaapi#class('ExecOptionPermission', '', [
   \ javaapi#method(0,'newPermissionCollection(', ')', 'PermissionCollection'),
   \ ])
 
-call javaapi#class('ExecPermissionCollection', '', [
+call javaapi#class('ExecPermissionCollection', 'PermissionCollection', [
   \ javaapi#method(0,'ExecPermissionCollection(', ')', 'public'),
   \ javaapi#method(0,'add(', 'Permission)', 'void'),
   \ javaapi#method(0,'implies(', 'Permission)', 'boolean'),
   \ javaapi#method(0,'elements(', ')', 'Enumeration'),
   \ ])
 
-call javaapi#class('ExecPermission', '', [
+call javaapi#class('ExecPermission', 'Permission', [
   \ javaapi#method(0,'ExecPermission(', 'String)', 'public'),
   \ javaapi#method(0,'ExecPermission(', 'String, String)', 'public'),
   \ javaapi#method(0,'implies(', 'Permission)', 'boolean'),

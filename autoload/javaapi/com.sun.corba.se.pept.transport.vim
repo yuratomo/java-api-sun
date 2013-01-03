@@ -77,7 +77,7 @@ call javaapi#interface('ContactInfoList', '', [
   \ javaapi#method(0,'iterator(', ')', 'Iterator'),
   \ ])
 
-call javaapi#interface('ContactInfoListIterator', '', [
+call javaapi#interface('ContactInfoListIterator', 'Iterator', [
   \ javaapi#method(0,'getContactInfoList(', ')', 'ContactInfoList'),
   \ javaapi#method(0,'reportSuccess(', 'ContactInfo)', 'void'),
   \ javaapi#method(0,'reportException(', 'ContactInfo, RuntimeException)', 'boolean'),
@@ -100,7 +100,7 @@ call javaapi#interface('EventHandler', '', [
   \ javaapi#method(0,'getConnection(', ')', 'Connection'),
   \ ])
 
-call javaapi#interface('InboundConnectionCache', '', [
+call javaapi#interface('InboundConnectionCache', 'ConnectionCache', [
   \ javaapi#method(0,'get(', 'Acceptor)', 'Connection'),
   \ javaapi#method(0,'put(', 'Acceptor, Connection)', 'void'),
   \ javaapi#method(0,'remove(', 'Connection)', 'void'),
@@ -111,7 +111,7 @@ call javaapi#interface('ListenerThread', '', [
   \ javaapi#method(0,'close(', ')', 'void'),
   \ ])
 
-call javaapi#interface('OutboundConnectionCache', '', [
+call javaapi#interface('OutboundConnectionCache', 'ConnectionCache', [
   \ javaapi#method(0,'get(', 'ContactInfo)', 'Connection'),
   \ javaapi#method(0,'put(', 'ContactInfo, Connection)', 'void'),
   \ javaapi#method(0,'remove(', 'ContactInfo)', 'void'),

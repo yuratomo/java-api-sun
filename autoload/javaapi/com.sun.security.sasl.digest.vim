@@ -5,12 +5,12 @@ call javaapi#class('DigestIntegrity', 'SecurityCtx', [
   \ javaapi#method(0,'unwrap(', 'byte[], int, int) throws SaslException', 'byte[]'),
   \ ])
 
-call javaapi#class('DigestPrivacy', '', [
+call javaapi#class('DigestPrivacy', 'DigestIntegrity', [
   \ javaapi#method(0,'wrap(', 'byte[], int, int) throws SaslException', 'byte[]'),
   \ javaapi#method(0,'unwrap(', 'byte[], int, int) throws SaslException', 'byte[]'),
   \ ])
 
-call javaapi#class('DigestMD5Base', '', [
+call javaapi#class('DigestMD5Base', 'AbstractSaslImpl', [
   \ javaapi#method(0,'getMechanismName(', ')', 'String'),
   \ javaapi#method(0,'unwrap(', 'byte[], int, int) throws SaslException', 'byte[]'),
   \ javaapi#method(0,'wrap(', 'byte[], int, int) throws SaslException', 'byte[]'),
@@ -18,12 +18,12 @@ call javaapi#class('DigestMD5Base', '', [
   \ javaapi#method(0,'getNegotiatedProperty(', 'String)', 'Object'),
   \ ])
 
-call javaapi#class('DigestMD5Client', '', [
+call javaapi#class('DigestMD5Client', 'DigestMD5Base', [
   \ javaapi#method(0,'hasInitialResponse(', ')', 'boolean'),
   \ javaapi#method(0,'evaluateChallenge(', 'byte[]) throws SaslException', 'byte[]'),
   \ ])
 
-call javaapi#class('DigestMD5Server', '', [
+call javaapi#class('DigestMD5Server', 'DigestMD5Base', [
   \ javaapi#method(0,'evaluateResponse(', 'byte[]) throws SaslException', 'byte[]'),
   \ javaapi#method(0,'getAuthorizationID(', ')', 'String'),
   \ ])

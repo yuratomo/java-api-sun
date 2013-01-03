@@ -3,7 +3,7 @@ call javaapi#namespace('com.sun.beans.finder')
 call javaapi#class('AbstractFinder<T>', '', [
   \ ])
 
-call javaapi#class('BeanInfoFinder', '', [
+call javaapi#class('BeanInfoFinder', 'BeanInfo>', [
   \ javaapi#method(0,'BeanInfoFinder(', ')', 'public'),
   \ javaapi#method(0,'setPackages(', 'String[])', 'void'),
   \ javaapi#method(0,'getPackages(', ')', 'String[]'),
@@ -16,7 +16,7 @@ call javaapi#class('ClassFinder', '', [
   \ javaapi#method(1,'resolveClass(', 'String, ClassLoader) throws ClassNotFoundException', 'Class<?>'),
   \ ])
 
-call javaapi#class('ConstructorFinder', '', [
+call javaapi#class('ConstructorFinder', 'Constructor<?>>', [
   \ javaapi#method(1,'findConstructor(', 'Class<?>, Class<?>) throws NoSuchMethodException', 'Constructor<?>'),
   \ ])
 
@@ -32,14 +32,14 @@ call javaapi#class('InstanceFinder<T>', '', [
   \ javaapi#method(0,'find(', 'Class<?>)', 'T'),
   \ ])
 
-call javaapi#class('MethodFinder', '', [
+call javaapi#class('MethodFinder', 'Method>', [
   \ javaapi#method(1,'findMethod(', 'Class<?>, String, Class<?>) throws NoSuchMethodException', 'Method'),
   \ javaapi#method(1,'findInstanceMethod(', 'Class<?>, String, Class<?>) throws NoSuchMethodException', 'Method'),
   \ javaapi#method(1,'findStaticMethod(', 'Class<?>, String, Class<?>) throws NoSuchMethodException', 'Method'),
   \ javaapi#method(1,'findAccessibleMethod(', 'Method) throws NoSuchMethodException', 'Method'),
   \ ])
 
-call javaapi#class('PersistenceDelegateFinder', '', [
+call javaapi#class('PersistenceDelegateFinder', 'PersistenceDelegate>', [
   \ javaapi#method(0,'PersistenceDelegateFinder(', ')', 'public'),
   \ javaapi#method(0,'register(', 'Class<?>, PersistenceDelegate)', 'void'),
   \ javaapi#method(0,'find(', 'Class<?>)', 'PersistenceDelegate'),
@@ -55,7 +55,7 @@ call javaapi#class('PrimitiveWrapperMap', '', [
   \ javaapi#method(1,'getType(', 'String)', 'Class<?>'),
   \ ])
 
-call javaapi#class('PropertyEditorFinder', '', [
+call javaapi#class('PropertyEditorFinder', 'PropertyEditor>', [
   \ javaapi#method(0,'PropertyEditorFinder(', ')', 'public'),
   \ javaapi#method(0,'register(', 'Class<?>, Class<?>)', 'void'),
   \ javaapi#method(0,'find(', 'Class<?>)', 'PropertyEditor'),

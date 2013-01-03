@@ -7,7 +7,7 @@ call javaapi#class('UnknownWSDLExtension', 'WSDLObject', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('AbstractExtensibleImpl', '', [
+call javaapi#class('AbstractExtensibleImpl', 'AbstractObjectImpl', [
   \ javaapi#method(0,'getExtensions(', ')', 'WSDLExtension>'),
   \ javaapi#method(0,'getExtensions(', 'Class<T>)', 'Iterable<T>'),
   \ javaapi#method(0,'getExtension(', 'Class<T>)', 'T'),
@@ -16,7 +16,7 @@ call javaapi#class('AbstractExtensibleImpl', '', [
   \ javaapi#method(0,'areRequiredExtensionsUnderstood(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('AbstractFeaturedObjectImpl', '', [
+call javaapi#class('AbstractFeaturedObjectImpl', 'AbstractExtensibleImpl', [
   \ javaapi#method(0,'addFeature(', 'WebServiceFeature)', 'void'),
   \ javaapi#method(0,'getFeatures(', ')', 'WebServiceFeatureList'),
   \ javaapi#method(0,'getFeature(', 'String)', 'WebServiceFeature'),
@@ -28,7 +28,7 @@ call javaapi#class('AbstractObjectImpl', 'WSDLObject', [
   \ javaapi#method(0,'getLocation(', ')', 'Locator'),
   \ ])
 
-call javaapi#class('WSDLBoundFaultImpl', '', [
+call javaapi#class('WSDLBoundFaultImpl', 'AbstractExtensibleImpl', [
   \ javaapi#method(0,'WSDLBoundFaultImpl(', 'XMLStreamReader, String, WSDLBoundOperationImpl)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getQName(', ')', 'QName'),
@@ -40,7 +40,7 @@ call javaapi#class('WSDLBoundFaultImpl', '', [
   \ javaapi#method(0,'getExtension(', 'Class)', 'WSDLExtension'),
   \ ])
 
-call javaapi#class('WSDLBoundOperationImpl', '', [
+call javaapi#class('WSDLBoundOperationImpl', 'AbstractExtensibleImpl', [
   \ javaapi#method(0,'WSDLBoundOperationImpl(', 'XMLStreamReader, WSDLBoundPortTypeImpl, QName)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'QName'),
   \ javaapi#method(0,'getSOAPAction(', ')', 'String'),
@@ -86,7 +86,7 @@ call javaapi#class('WSDLBoundOperationImpl', '', [
   \ javaapi#method(0,'getOperation(', ')', 'WSDLOperation'),
   \ ])
 
-call javaapi#class('WSDLBoundPortTypeImpl', '', [
+call javaapi#class('WSDLBoundPortTypeImpl', 'AbstractFeaturedObjectImpl', [
   \ javaapi#method(0,'WSDLBoundPortTypeImpl(', 'XMLStreamReader, WSDLModelImpl, QName, QName)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'QName'),
   \ javaapi#method(0,'getOwner(', ')', 'WSDLModelImpl'),
@@ -119,7 +119,7 @@ call javaapi#class('WSDLBoundPortTypeImpl', '', [
   \ javaapi#method(0,'getOwner(', ')', 'WSDLModel'),
   \ ])
 
-call javaapi#class('WSDLFaultImpl', '', [
+call javaapi#class('WSDLFaultImpl', 'AbstractExtensibleImpl', [
   \ javaapi#method(0,'WSDLFaultImpl(', 'XMLStreamReader, String, QName, WSDLOperationImpl)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getMessage(', ')', 'WSDLMessageImpl'),
@@ -136,7 +136,7 @@ call javaapi#class('WSDLFaultImpl', '', [
   \ javaapi#method(0,'getMessage(', ')', 'WSDLMessage'),
   \ ])
 
-call javaapi#class('WSDLInputImpl', '', [
+call javaapi#class('WSDLInputImpl', 'AbstractExtensibleImpl', [
   \ javaapi#method(0,'WSDLInputImpl(', 'XMLStreamReader, String, QName, WSDLOperationImpl)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getMessage(', ')', 'WSDLMessage'),
@@ -152,7 +152,7 @@ call javaapi#class('WSDLInputImpl', '', [
   \ javaapi#method(0,'getExtension(', 'Class)', 'WSDLExtension'),
   \ ])
 
-call javaapi#class('WSDLMessageImpl', '', [
+call javaapi#class('WSDLMessageImpl', 'AbstractExtensibleImpl', [
   \ javaapi#method(0,'WSDLMessageImpl(', 'XMLStreamReader, QName)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'QName'),
   \ javaapi#method(0,'add(', 'WSDLPartImpl)', 'void'),
@@ -163,7 +163,7 @@ call javaapi#class('WSDLMessageImpl', '', [
   \ javaapi#method(0,'getExtension(', 'Class)', 'WSDLExtension'),
   \ ])
 
-call javaapi#class('WSDLModelImpl', '', [
+call javaapi#class('WSDLModelImpl', 'AbstractExtensibleImpl', [
   \ javaapi#method(0,'WSDLModelImpl(', 'String)', 'public'),
   \ javaapi#method(0,'WSDLModelImpl(', ')', 'public'),
   \ javaapi#method(0,'addMessage(', 'WSDLMessageImpl)', 'void'),
@@ -195,7 +195,7 @@ call javaapi#class('WSDLModelImpl', '', [
   \ javaapi#method(0,'getPortType(', 'QName)', 'WSDLPortType'),
   \ ])
 
-call javaapi#class('WSDLOperationImpl', '', [
+call javaapi#class('WSDLOperationImpl', 'AbstractExtensibleImpl', [
   \ javaapi#method(0,'WSDLOperationImpl(', 'XMLStreamReader, WSDLPortTypeImpl, QName)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'QName'),
   \ javaapi#method(0,'getParameterOrder(', ')', 'String'),
@@ -218,7 +218,7 @@ call javaapi#class('WSDLOperationImpl', '', [
   \ javaapi#method(0,'getInput(', ')', 'WSDLInput'),
   \ ])
 
-call javaapi#class('WSDLOutputImpl', '', [
+call javaapi#class('WSDLOutputImpl', 'AbstractExtensibleImpl', [
   \ javaapi#method(0,'WSDLOutputImpl(', 'XMLStreamReader, String, QName, WSDLOperationImpl)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getMessage(', ')', 'WSDLMessage'),
@@ -234,13 +234,13 @@ call javaapi#class('WSDLOutputImpl', '', [
   \ javaapi#method(0,'getExtension(', 'Class)', 'WSDLExtension'),
   \ ])
 
-call javaapi#class('WSDLPartDescriptorImpl', '', [
+call javaapi#class('WSDLPartDescriptorImpl', 'AbstractObjectImpl', [
   \ javaapi#method(0,'WSDLPartDescriptorImpl(', 'XMLStreamReader, QName, WSDLDescriptorKind)', 'public'),
   \ javaapi#method(0,'name(', ')', 'QName'),
   \ javaapi#method(0,'type(', ')', 'WSDLDescriptorKind'),
   \ ])
 
-call javaapi#class('WSDLPartImpl', '', [
+call javaapi#class('WSDLPartImpl', 'AbstractObjectImpl', [
   \ javaapi#method(0,'WSDLPartImpl(', 'XMLStreamReader, String, int, WSDLPartDescriptor)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getBinding(', ')', 'ParameterBinding'),
@@ -250,7 +250,7 @@ call javaapi#class('WSDLPartImpl', '', [
   \ javaapi#method(0,'getDescriptor(', ')', 'WSDLPartDescriptor'),
   \ ])
 
-call javaapi#class('WSDLPortImpl', '', [
+call javaapi#class('WSDLPortImpl', 'AbstractFeaturedObjectImpl', [
   \ javaapi#method(0,'WSDLPortImpl(', 'XMLStreamReader, WSDLServiceImpl, QName, QName)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'QName'),
   \ javaapi#method(0,'getBindingName(', ')', 'QName'),
@@ -271,7 +271,7 @@ call javaapi#class('WSDLPortImpl', '', [
   \ javaapi#method(0,'getBinding(', ')', 'WSDLBoundPortType'),
   \ ])
 
-call javaapi#class('WSDLPortTypeImpl', '', [
+call javaapi#class('WSDLPortTypeImpl', 'AbstractExtensibleImpl', [
   \ javaapi#method(0,'WSDLPortTypeImpl(', 'XMLStreamReader, WSDLModelImpl, QName)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'QName'),
   \ javaapi#method(0,'get(', 'String)', 'WSDLOperationImpl'),
@@ -284,14 +284,14 @@ call javaapi#class('WSDLPortTypeImpl', '', [
   \ javaapi#method(0,'get(', 'String)', 'WSDLOperation'),
   \ ])
 
-call javaapi#class('WSDLProperties', '', [
+call javaapi#class('WSDLProperties', 'PropertySet', [
   \ javaapi#method(0,'WSDLProperties(', 'WSDLPort)', 'public'),
   \ javaapi#method(0,'getWSDLService(', ')', 'QName'),
   \ javaapi#method(0,'getWSDLPort(', ')', 'QName'),
   \ javaapi#method(0,'getWSDLPortType(', ')', 'QName'),
   \ ])
 
-call javaapi#class('WSDLServiceImpl', '', [
+call javaapi#class('WSDLServiceImpl', 'AbstractExtensibleImpl', [
   \ javaapi#method(0,'WSDLServiceImpl(', 'XMLStreamReader, WSDLModelImpl, QName)', 'public'),
   \ javaapi#method(0,'getParent(', ')', 'WSDLModelImpl'),
   \ javaapi#method(0,'getName(', ')', 'QName'),

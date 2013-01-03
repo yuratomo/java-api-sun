@@ -25,12 +25,12 @@ call javaapi#class('AMX', '', [
   \ javaapi#field(1,'GROUP_OTHER', 'String'),
   \ ])
 
-call javaapi#class('BootAMXCallback', '', [
+call javaapi#class('BootAMXCallback', 'CallbackImpl', [
   \ javaapi#method(0,'BootAMXCallback(', 'MBeanServerConnection)', 'public'),
   \ javaapi#method(0,'mbeanRegistered(', 'ObjectName, MBeanListener)', 'void'),
   \ ])
 
-call javaapi#class('WaitForDomainRootListenerCallback', '', [
+call javaapi#class('WaitForDomainRootListenerCallback', 'CallbackImpl', [
   \ javaapi#method(0,'WaitForDomainRootListenerCallback(', 'MBeanServerConnection)', 'public'),
   \ javaapi#method(0,'mbeanRegistered(', 'ObjectName, MBeanListener)', 'void'),
   \ ])
@@ -87,7 +87,7 @@ call javaapi#class('CallbackImpl', 'Callback', [
   \ javaapi#method(0,'mbeanUnregistered(', 'ObjectName, MBeanListener)', 'void'),
   \ ])
 
-call javaapi#class('MBeanListener<T', '', [
+call javaapi#class('MBeanListener<T', 'Callback>', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'getType(', ')', 'String'),
   \ javaapi#method(0,'getName(', ')', 'String'),

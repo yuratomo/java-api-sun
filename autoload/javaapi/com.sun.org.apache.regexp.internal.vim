@@ -55,7 +55,7 @@ call javaapi#class('RECompiler', '', [
   \ javaapi#method(0,'compile(', 'String) throws RESyntaxException', 'REProgram'),
   \ ])
 
-call javaapi#class('REDebugCompiler', '', [
+call javaapi#class('REDebugCompiler', 'RECompiler', [
   \ javaapi#method(0,'REDebugCompiler(', ')', 'public'),
   \ javaapi#method(0,'dumpProgram(', 'PrintWriter)', 'void'),
   \ ])
@@ -68,7 +68,7 @@ call javaapi#class('REProgram', 'Serializable', [
   \ javaapi#method(0,'setInstructions(', 'char[], int)', 'void'),
   \ ])
 
-call javaapi#class('RESyntaxException', '', [
+call javaapi#class('RESyntaxException', 'RuntimeException', [
   \ javaapi#method(0,'RESyntaxException(', 'String)', 'public'),
   \ ])
 

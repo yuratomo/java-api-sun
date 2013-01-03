@@ -173,7 +173,7 @@ call javaapi#class('Constants', '', [
   \ javaapi#method(1,'main(', 'String[])', 'void'),
   \ ])
 
-call javaapi#interface('ExternalSubsetResolver', '', [
+call javaapi#interface('ExternalSubsetResolver', 'XMLEntityResolver', [
   \ javaapi#method(0,'getExternalSubset(', 'XMLDTDDescription) throws XNIException, IOException', 'XMLInputSource'),
   \ ])
 
@@ -190,7 +190,7 @@ call javaapi#class('PropertyManager', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('RevalidationHandler', '', [
+call javaapi#interface('RevalidationHandler', 'XMLDocumentFilter', [
   \ javaapi#method(0,'characterData(', 'String, Augmentations)', 'boolean'),
   \ ])
 
@@ -201,16 +201,16 @@ call javaapi#class('Version', '', [
   \ javaapi#method(1,'main(', 'String[])', 'void'),
   \ ])
 
-call javaapi#class('XML11DTDScannerImpl', '', [
+call javaapi#class('XML11DTDScannerImpl', 'XMLDTDScannerImpl', [
   \ javaapi#method(0,'XML11DTDScannerImpl(', ')', 'public'),
   \ javaapi#method(0,'XML11DTDScannerImpl(', 'SymbolTable, XMLErrorReporter, XMLEntityManager)', 'public'),
   \ ])
 
-call javaapi#class('XML11DocumentScannerImpl', '', [
+call javaapi#class('XML11DocumentScannerImpl', 'XMLDocumentScannerImpl', [
   \ javaapi#method(0,'XML11DocumentScannerImpl(', ')', 'public'),
   \ ])
 
-call javaapi#class('XML11EntityScanner', '', [
+call javaapi#class('XML11EntityScanner', 'XMLEntityScanner', [
   \ javaapi#method(0,'XML11EntityScanner(', ')', 'public'),
   \ javaapi#method(0,'peekChar(', ') throws IOException', 'int'),
   \ javaapi#method(0,'scanChar(', ') throws IOException', 'int'),
@@ -226,21 +226,21 @@ call javaapi#class('XML11EntityScanner', '', [
   \ javaapi#method(0,'skipString(', 'String) throws IOException', 'boolean'),
   \ ])
 
-call javaapi#class('NS11ContentDriver', '', [
+call javaapi#class('NS11ContentDriver', 'ContentDriver', [
   \ ])
 
-call javaapi#class('XML11NSDocumentScannerImpl', '', [
+call javaapi#class('XML11NSDocumentScannerImpl', 'XML11DocumentScannerImpl', [
   \ javaapi#method(0,'XML11NSDocumentScannerImpl(', ')', 'public'),
   \ javaapi#method(0,'setDTDValidator(', 'XMLDTDValidatorFilter)', 'void'),
   \ javaapi#method(0,'reset(', 'XMLComponentManager) throws XMLConfigurationException', 'void'),
   \ javaapi#method(0,'next(', ') throws IOException, XNIException', 'int'),
   \ ])
 
-call javaapi#class('XML11NamespaceBinder', '', [
+call javaapi#class('XML11NamespaceBinder', 'XMLNamespaceBinder', [
   \ javaapi#method(0,'XML11NamespaceBinder(', ')', 'public'),
   \ ])
 
-call javaapi#class('XMLDTDScannerImpl', '', [
+call javaapi#class('XMLDTDScannerImpl', 'XMLScanner', [
   \ javaapi#field(0,'fDTDHandler', 'XMLDTDHandler'),
   \ javaapi#method(0,'XMLDTDScannerImpl(', ')', 'public'),
   \ javaapi#method(0,'XMLDTDScannerImpl(', 'SymbolTable, XMLErrorReporter, XMLEntityManager)', 'public'),
@@ -302,7 +302,7 @@ call javaapi#class('FragmentContentDriver', 'Driver', [
   \ javaapi#method(0,'next(', ') throws IOException, XNIException', 'int'),
   \ ])
 
-call javaapi#class('XMLDocumentFragmentScannerImpl', '', [
+call javaapi#class('XMLDocumentFragmentScannerImpl', 'XMLScanner', [
   \ javaapi#method(0,'XMLDocumentFragmentScannerImpl(', ')', 'public'),
   \ javaapi#method(0,'setInputSource(', 'XMLInputSource) throws IOException', 'void'),
   \ javaapi#method(0,'scanDocument(', 'boolean) throws IOException, XNIException', 'boolean'),
@@ -334,7 +334,7 @@ call javaapi#class('XMLDocumentFragmentScannerImpl', '', [
   \ javaapi#method(0,'refresh(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('ContentDriver', '', [
+call javaapi#class('ContentDriver', 'FragmentContentDriver', [
   \ ])
 
 call javaapi#class('DTDDriver', 'Driver', [
@@ -354,7 +354,7 @@ call javaapi#class('XMLDeclDriver', 'Driver', [
   \ javaapi#method(0,'next(', ') throws IOException, XNIException', 'int'),
   \ ])
 
-call javaapi#class('XMLDocumentScannerImpl', '', [
+call javaapi#class('XMLDocumentScannerImpl', 'XMLDocumentFragmentScannerImpl', [
   \ javaapi#method(0,'XMLDocumentScannerImpl(', ')', 'public'),
   \ javaapi#method(0,'setInputSource(', 'XMLInputSource) throws IOException', 'void'),
   \ javaapi#method(0,'getScannetState(', ')', 'int'),
@@ -375,7 +375,7 @@ call javaapi#class('XMLDocumentScannerImpl', '', [
   \ javaapi#method(0,'refresh(', 'int)', 'void'),
   \ ])
 
-call javaapi#interface('XMLEntityDescription', '', [
+call javaapi#interface('XMLEntityDescription', 'XMLResourceIdentifier', [
   \ javaapi#method(0,'setEntityName(', 'String)', 'void'),
   \ javaapi#method(0,'getEntityName(', ')', 'String'),
   \ ])
@@ -397,7 +397,7 @@ call javaapi#class('CharacterBufferPool', '', [
   \ javaapi#method(0,'setExternalBufferSize(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('RewindableInputStream', '', [
+call javaapi#class('RewindableInputStream', 'InputStream', [
   \ javaapi#method(0,'RewindableInputStream(', 'XMLEntityManager, InputStream)', 'public'),
   \ javaapi#method(0,'setStartOffset(', 'int)', 'void'),
   \ javaapi#method(0,'rewind(', ')', 'void'),
@@ -467,7 +467,7 @@ call javaapi#class('XMLEntityManager', 'XMLEntityResolver', [
   \ javaapi#method(0,'test(', ')', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'EOFException', [
   \ javaapi#method(0,'fillInStackTrace(', ')', 'Throwable'),
   \ ])
 
@@ -521,7 +521,7 @@ call javaapi#class('XMLEntityScanner', 'XMLLocator', [
   \ javaapi#method(0,'skipDeclSpaces(', ') throws IOException', 'boolean'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ErrorHandlerProxy', [
   \ ])
 
 call javaapi#class('XMLErrorReporter', 'XMLComponent', [
@@ -551,10 +551,10 @@ call javaapi#class('XMLErrorReporter', 'XMLComponent', [
   \ javaapi#method(0,'getSAXErrorHandler(', ')', 'ErrorHandler'),
   \ ])
 
-call javaapi#class('NSContentDriver', '', [
+call javaapi#class('NSContentDriver', 'ContentDriver', [
   \ ])
 
-call javaapi#class('XMLNSDocumentScannerImpl', '', [
+call javaapi#class('XMLNSDocumentScannerImpl', 'XMLDocumentScannerImpl', [
   \ javaapi#method(0,'XMLNSDocumentScannerImpl(', ')', 'public'),
   \ javaapi#method(0,'reset(', 'PropertyManager)', 'void'),
   \ javaapi#method(0,'reset(', 'XMLComponentManager) throws XMLConfigurationException', 'void'),

@@ -4,7 +4,7 @@ call javaapi#interface('Action', '', [
   \ javaapi#method(0,'doIt(', 'FSM, Input)', 'void'),
   \ ])
 
-call javaapi#class('ActionBase', '', [
+call javaapi#class('ActionBase', 'NameBase', [
   \ javaapi#method(0,'ActionBase(', 'String)', 'public'),
   \ ])
 
@@ -38,7 +38,7 @@ call javaapi#class('FSMTest', '', [
   \ javaapi#method(1,'main(', 'String[])', 'void'),
   \ ])
 
-call javaapi#class('Complement', '', [
+call javaapi#class('Complement', 'GuardBase', [
   \ javaapi#method(0,'Complement(', 'GuardBase)', 'public'),
   \ javaapi#method(0,'evaluate(', 'FSM, Input)', 'Result'),
   \ ])
@@ -56,18 +56,18 @@ call javaapi#interface('Guard', '', [
   \ javaapi#method(0,'evaluate(', 'FSM, Input)', 'Result'),
   \ ])
 
-call javaapi#class('GuardBase', '', [
+call javaapi#class('GuardBase', 'NameBase', [
   \ javaapi#method(0,'GuardBase(', 'String)', 'public'),
   \ ])
 
 call javaapi#interface('Input', '', [
   \ ])
 
-call javaapi#class('InputImpl', '', [
+call javaapi#class('InputImpl', 'NameBase', [
   \ javaapi#method(0,'InputImpl(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('MyFSM', '', [
+call javaapi#class('MyFSM', 'FSMImpl', [
   \ javaapi#field(0,'counter', 'int'),
   \ javaapi#method(0,'MyFSM(', 'StateEngine)', 'public'),
   \ ])
@@ -97,7 +97,7 @@ call javaapi#class('StateEngineFactory', '', [
   \ javaapi#method(1,'create(', ')', 'StateEngine'),
   \ ])
 
-call javaapi#class('StateImpl', '', [
+call javaapi#class('StateImpl', 'NameBase', [
   \ javaapi#method(0,'StateImpl(', 'String)', 'public'),
   \ javaapi#method(0,'preAction(', 'FSM)', 'void'),
   \ javaapi#method(0,'postAction(', 'FSM)', 'void'),

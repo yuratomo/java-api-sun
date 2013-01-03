@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xerces.internal.jaxp.datatype')
 
-call javaapi#class('DatatypeFactoryImpl', '', [
+call javaapi#class('DatatypeFactoryImpl', 'DatatypeFactory', [
   \ javaapi#method(0,'DatatypeFactoryImpl(', ')', 'public'),
   \ javaapi#method(0,'newDuration(', 'String)', 'Duration'),
   \ javaapi#method(0,'newDuration(', 'long)', 'Duration'),
@@ -19,7 +19,7 @@ call javaapi#class('DatatypeFactoryImpl', '', [
   \ javaapi#method(0,'newXMLGregorianCalendar(', 'BigInteger, int, int, int, int, int, BigDecimal, int)', 'XMLGregorianCalendar'),
   \ ])
 
-call javaapi#class('DurationDayTimeImpl', '', [
+call javaapi#class('DurationDayTimeImpl', 'DurationImpl', [
   \ javaapi#method(0,'DurationDayTimeImpl(', 'boolean, BigInteger, BigInteger, BigInteger, BigDecimal)', 'public'),
   \ javaapi#method(0,'DurationDayTimeImpl(', 'boolean, int, int, int, int)', 'public'),
   \ javaapi#method(0,'getValue(', ')', 'float'),
@@ -31,7 +31,7 @@ call javaapi#class('1', '', [
 call javaapi#class('DurationStream', 'Serializable', [
   \ ])
 
-call javaapi#class('DurationImpl', '', [
+call javaapi#class('DurationImpl', 'Duration', [
   \ javaapi#method(0,'getSign(', ')', 'int'),
   \ javaapi#method(0,'compare(', 'Duration)', 'int'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
@@ -57,7 +57,7 @@ call javaapi#class('DurationImpl', '', [
   \ javaapi#method(0,'addTo(', 'Date)', 'void'),
   \ ])
 
-call javaapi#class('DurationYearMonthImpl', '', [
+call javaapi#class('DurationYearMonthImpl', 'DurationImpl', [
   \ javaapi#method(0,'DurationYearMonthImpl(', 'boolean, BigInteger, BigInteger)', 'public'),
   \ javaapi#method(0,'getValue(', ')', 'int'),
   \ ])
@@ -69,7 +69,7 @@ call javaapi#class('Parser', '', [
   \ javaapi#method(0,'parse(', ') throws IllegalArgumentException', 'void'),
   \ ])
 
-call javaapi#class('XMLGregorianCalendarImpl', '', [
+call javaapi#class('XMLGregorianCalendarImpl', 'XMLGregorianCalendar', [
   \ javaapi#field(1,'LEAP_YEAR_DEFAULT', 'XMLGregorianCalendar'),
   \ javaapi#method(0,'XMLGregorianCalendarImpl(', ')', 'public'),
   \ javaapi#method(0,'XMLGregorianCalendarImpl(', 'GregorianCalendar)', 'public'),

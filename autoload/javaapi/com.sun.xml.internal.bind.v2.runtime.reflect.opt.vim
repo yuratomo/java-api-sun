@@ -45,55 +45,55 @@ call javaapi#class('Const', '', [
   \ javaapi#method(0,'Const(', ')', 'public'),
   \ ])
 
-call javaapi#class('FieldAccessor_Boolean', '', [
+call javaapi#class('FieldAccessor_Boolean', 'Accessor', [
   \ javaapi#method(0,'FieldAccessor_Boolean(', ')', 'public'),
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,'set(', 'Object, Object)', 'void'),
   \ ])
 
-call javaapi#class('FieldAccessor_Byte', '', [
+call javaapi#class('FieldAccessor_Byte', 'Accessor', [
   \ javaapi#method(0,'FieldAccessor_Byte(', ')', 'public'),
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,'set(', 'Object, Object)', 'void'),
   \ ])
 
-call javaapi#class('FieldAccessor_Character', '', [
+call javaapi#class('FieldAccessor_Character', 'Accessor', [
   \ javaapi#method(0,'FieldAccessor_Character(', ')', 'public'),
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,'set(', 'Object, Object)', 'void'),
   \ ])
 
-call javaapi#class('FieldAccessor_Double', '', [
+call javaapi#class('FieldAccessor_Double', 'Accessor', [
   \ javaapi#method(0,'FieldAccessor_Double(', ')', 'public'),
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,'set(', 'Object, Object)', 'void'),
   \ ])
 
-call javaapi#class('FieldAccessor_Float', '', [
+call javaapi#class('FieldAccessor_Float', 'Accessor', [
   \ javaapi#method(0,'FieldAccessor_Float(', ')', 'public'),
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,'set(', 'Object, Object)', 'void'),
   \ ])
 
-call javaapi#class('FieldAccessor_Integer', '', [
+call javaapi#class('FieldAccessor_Integer', 'Accessor', [
   \ javaapi#method(0,'FieldAccessor_Integer(', ')', 'public'),
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,'set(', 'Object, Object)', 'void'),
   \ ])
 
-call javaapi#class('FieldAccessor_Long', '', [
+call javaapi#class('FieldAccessor_Long', 'Accessor', [
   \ javaapi#method(0,'FieldAccessor_Long(', ')', 'public'),
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,'set(', 'Object, Object)', 'void'),
   \ ])
 
-call javaapi#class('FieldAccessor_Ref', '', [
+call javaapi#class('FieldAccessor_Ref', 'Accessor', [
   \ javaapi#method(0,'FieldAccessor_Ref(', ')', 'public'),
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,'set(', 'Object, Object)', 'void'),
   \ ])
 
-call javaapi#class('FieldAccessor_Short', '', [
+call javaapi#class('FieldAccessor_Short', 'Accessor', [
   \ javaapi#method(0,'FieldAccessor_Short(', ')', 'public'),
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,'set(', 'Object, Object)', 'void'),
@@ -107,55 +107,55 @@ call javaapi#class('1', 'Void>', [
 call javaapi#class('Injector', '', [
   \ ])
 
-call javaapi#class('MethodAccessor_Boolean', '', [
+call javaapi#class('MethodAccessor_Boolean', 'Accessor', [
   \ javaapi#method(0,'MethodAccessor_Boolean(', ')', 'public'),
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,'set(', 'Object, Object)', 'void'),
   \ ])
 
-call javaapi#class('MethodAccessor_Byte', '', [
+call javaapi#class('MethodAccessor_Byte', 'Accessor', [
   \ javaapi#method(0,'MethodAccessor_Byte(', ')', 'public'),
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,'set(', 'Object, Object)', 'void'),
   \ ])
 
-call javaapi#class('MethodAccessor_Character', '', [
+call javaapi#class('MethodAccessor_Character', 'Accessor', [
   \ javaapi#method(0,'MethodAccessor_Character(', ')', 'public'),
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,'set(', 'Object, Object)', 'void'),
   \ ])
 
-call javaapi#class('MethodAccessor_Double', '', [
+call javaapi#class('MethodAccessor_Double', 'Accessor', [
   \ javaapi#method(0,'MethodAccessor_Double(', ')', 'public'),
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,'set(', 'Object, Object)', 'void'),
   \ ])
 
-call javaapi#class('MethodAccessor_Float', '', [
+call javaapi#class('MethodAccessor_Float', 'Accessor', [
   \ javaapi#method(0,'MethodAccessor_Float(', ')', 'public'),
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,'set(', 'Object, Object)', 'void'),
   \ ])
 
-call javaapi#class('MethodAccessor_Integer', '', [
+call javaapi#class('MethodAccessor_Integer', 'Accessor', [
   \ javaapi#method(0,'MethodAccessor_Integer(', ')', 'public'),
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,'set(', 'Object, Object)', 'void'),
   \ ])
 
-call javaapi#class('MethodAccessor_Long', '', [
+call javaapi#class('MethodAccessor_Long', 'Accessor', [
   \ javaapi#method(0,'MethodAccessor_Long(', ')', 'public'),
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,'set(', 'Object, Object)', 'void'),
   \ ])
 
-call javaapi#class('MethodAccessor_Ref', '', [
+call javaapi#class('MethodAccessor_Ref', 'Accessor', [
   \ javaapi#method(0,'MethodAccessor_Ref(', ')', 'public'),
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,'set(', 'Object, Object)', 'void'),
   \ ])
 
-call javaapi#class('MethodAccessor_Short', '', [
+call javaapi#class('MethodAccessor_Short', 'Accessor', [
   \ javaapi#method(0,'MethodAccessor_Short(', ')', 'public'),
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,'set(', 'Object, Object)', 'void'),
@@ -173,7 +173,7 @@ call javaapi#class('OptimizedTransducedAccessorFactory', '', [
 call javaapi#class('Ref', '', [
   \ ])
 
-call javaapi#class('TransducedAccessor_field_Boolean', '', [
+call javaapi#class('TransducedAccessor_field_Boolean', 'DefaultTransducedAccessor', [
   \ javaapi#method(0,'TransducedAccessor_field_Boolean(', ')', 'public'),
   \ javaapi#method(0,'print(', 'Object)', 'String'),
   \ javaapi#method(0,'parse(', 'Object, CharSequence)', 'void'),
@@ -181,7 +181,7 @@ call javaapi#class('TransducedAccessor_field_Boolean', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException, SAXException', 'CharSequence'),
   \ ])
 
-call javaapi#class('TransducedAccessor_field_Byte', '', [
+call javaapi#class('TransducedAccessor_field_Byte', 'DefaultTransducedAccessor', [
   \ javaapi#method(0,'TransducedAccessor_field_Byte(', ')', 'public'),
   \ javaapi#method(0,'print(', 'Object)', 'String'),
   \ javaapi#method(0,'parse(', 'Object, CharSequence)', 'void'),
@@ -189,7 +189,7 @@ call javaapi#class('TransducedAccessor_field_Byte', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException, SAXException', 'CharSequence'),
   \ ])
 
-call javaapi#class('TransducedAccessor_field_Double', '', [
+call javaapi#class('TransducedAccessor_field_Double', 'DefaultTransducedAccessor', [
   \ javaapi#method(0,'TransducedAccessor_field_Double(', ')', 'public'),
   \ javaapi#method(0,'print(', 'Object)', 'String'),
   \ javaapi#method(0,'parse(', 'Object, CharSequence)', 'void'),
@@ -197,7 +197,7 @@ call javaapi#class('TransducedAccessor_field_Double', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException, SAXException', 'CharSequence'),
   \ ])
 
-call javaapi#class('TransducedAccessor_field_Float', '', [
+call javaapi#class('TransducedAccessor_field_Float', 'DefaultTransducedAccessor', [
   \ javaapi#method(0,'TransducedAccessor_field_Float(', ')', 'public'),
   \ javaapi#method(0,'print(', 'Object)', 'String'),
   \ javaapi#method(0,'parse(', 'Object, CharSequence)', 'void'),
@@ -205,7 +205,7 @@ call javaapi#class('TransducedAccessor_field_Float', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException, SAXException', 'CharSequence'),
   \ ])
 
-call javaapi#class('TransducedAccessor_field_Integer', '', [
+call javaapi#class('TransducedAccessor_field_Integer', 'DefaultTransducedAccessor', [
   \ javaapi#method(0,'TransducedAccessor_field_Integer(', ')', 'public'),
   \ javaapi#method(0,'print(', 'Object)', 'String'),
   \ javaapi#method(0,'parse(', 'Object, CharSequence)', 'void'),
@@ -214,7 +214,7 @@ call javaapi#class('TransducedAccessor_field_Integer', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException, SAXException', 'CharSequence'),
   \ ])
 
-call javaapi#class('TransducedAccessor_field_Long', '', [
+call javaapi#class('TransducedAccessor_field_Long', 'DefaultTransducedAccessor', [
   \ javaapi#method(0,'TransducedAccessor_field_Long(', ')', 'public'),
   \ javaapi#method(0,'print(', 'Object)', 'String'),
   \ javaapi#method(0,'parse(', 'Object, CharSequence)', 'void'),
@@ -222,7 +222,7 @@ call javaapi#class('TransducedAccessor_field_Long', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException, SAXException', 'CharSequence'),
   \ ])
 
-call javaapi#class('TransducedAccessor_field_Short', '', [
+call javaapi#class('TransducedAccessor_field_Short', 'DefaultTransducedAccessor', [
   \ javaapi#method(0,'TransducedAccessor_field_Short(', ')', 'public'),
   \ javaapi#method(0,'print(', 'Object)', 'String'),
   \ javaapi#method(0,'parse(', 'Object, CharSequence)', 'void'),
@@ -230,7 +230,7 @@ call javaapi#class('TransducedAccessor_field_Short', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException, SAXException', 'CharSequence'),
   \ ])
 
-call javaapi#class('TransducedAccessor_method_Boolean', '', [
+call javaapi#class('TransducedAccessor_method_Boolean', 'DefaultTransducedAccessor', [
   \ javaapi#method(0,'TransducedAccessor_method_Boolean(', ')', 'public'),
   \ javaapi#method(0,'print(', 'Object)', 'String'),
   \ javaapi#method(0,'parse(', 'Object, CharSequence)', 'void'),
@@ -238,7 +238,7 @@ call javaapi#class('TransducedAccessor_method_Boolean', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException, SAXException', 'CharSequence'),
   \ ])
 
-call javaapi#class('TransducedAccessor_method_Byte', '', [
+call javaapi#class('TransducedAccessor_method_Byte', 'DefaultTransducedAccessor', [
   \ javaapi#method(0,'TransducedAccessor_method_Byte(', ')', 'public'),
   \ javaapi#method(0,'print(', 'Object)', 'String'),
   \ javaapi#method(0,'parse(', 'Object, CharSequence)', 'void'),
@@ -246,7 +246,7 @@ call javaapi#class('TransducedAccessor_method_Byte', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException, SAXException', 'CharSequence'),
   \ ])
 
-call javaapi#class('TransducedAccessor_method_Double', '', [
+call javaapi#class('TransducedAccessor_method_Double', 'DefaultTransducedAccessor', [
   \ javaapi#method(0,'TransducedAccessor_method_Double(', ')', 'public'),
   \ javaapi#method(0,'print(', 'Object)', 'String'),
   \ javaapi#method(0,'parse(', 'Object, CharSequence)', 'void'),
@@ -254,7 +254,7 @@ call javaapi#class('TransducedAccessor_method_Double', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException, SAXException', 'CharSequence'),
   \ ])
 
-call javaapi#class('TransducedAccessor_method_Float', '', [
+call javaapi#class('TransducedAccessor_method_Float', 'DefaultTransducedAccessor', [
   \ javaapi#method(0,'TransducedAccessor_method_Float(', ')', 'public'),
   \ javaapi#method(0,'print(', 'Object)', 'String'),
   \ javaapi#method(0,'parse(', 'Object, CharSequence)', 'void'),
@@ -262,7 +262,7 @@ call javaapi#class('TransducedAccessor_method_Float', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException, SAXException', 'CharSequence'),
   \ ])
 
-call javaapi#class('TransducedAccessor_method_Integer', '', [
+call javaapi#class('TransducedAccessor_method_Integer', 'DefaultTransducedAccessor', [
   \ javaapi#method(0,'TransducedAccessor_method_Integer(', ')', 'public'),
   \ javaapi#method(0,'print(', 'Object)', 'String'),
   \ javaapi#method(0,'parse(', 'Object, CharSequence)', 'void'),
@@ -271,7 +271,7 @@ call javaapi#class('TransducedAccessor_method_Integer', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException, SAXException', 'CharSequence'),
   \ ])
 
-call javaapi#class('TransducedAccessor_method_Long', '', [
+call javaapi#class('TransducedAccessor_method_Long', 'DefaultTransducedAccessor', [
   \ javaapi#method(0,'TransducedAccessor_method_Long(', ')', 'public'),
   \ javaapi#method(0,'print(', 'Object)', 'String'),
   \ javaapi#method(0,'parse(', 'Object, CharSequence)', 'void'),
@@ -279,7 +279,7 @@ call javaapi#class('TransducedAccessor_method_Long', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException, SAXException', 'CharSequence'),
   \ ])
 
-call javaapi#class('TransducedAccessor_method_Short', '', [
+call javaapi#class('TransducedAccessor_method_Short', 'DefaultTransducedAccessor', [
   \ javaapi#method(0,'TransducedAccessor_method_Short(', ')', 'public'),
   \ javaapi#method(0,'print(', 'Object)', 'String'),
   \ javaapi#method(0,'parse(', 'Object, CharSequence)', 'void'),

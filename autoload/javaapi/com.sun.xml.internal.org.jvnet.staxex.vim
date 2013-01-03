@@ -10,13 +10,13 @@ call javaapi#class('Base64DataSource', 'DataSource', [
   \ javaapi#method(0,'getOutputStream(', ')', 'OutputStream'),
   \ ])
 
-call javaapi#class('Base64StreamingDataHandler', '', [
+call javaapi#class('Base64StreamingDataHandler', 'StreamingDataHandler', [
   \ javaapi#method(0,'readOnce(', ') throws IOException', 'InputStream'),
   \ javaapi#method(0,'moveTo(', 'File) throws IOException', 'void'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('FilterDataHandler', '', [
+call javaapi#class('FilterDataHandler', 'StreamingDataHandler', [
   \ javaapi#method(0,'readOnce(', ') throws IOException', 'InputStream'),
   \ javaapi#method(0,'moveTo(', 'File) throws IOException', 'void'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
@@ -52,7 +52,7 @@ call javaapi#class('Base64Encoder', '', [
   \ javaapi#method(1,'print(', 'byte[], int, int, char[], int)', 'int'),
   \ ])
 
-call javaapi#class('ByteArrayOutputStreamEx', '', [
+call javaapi#class('ByteArrayOutputStreamEx', 'ByteArrayOutputStream', [
   \ javaapi#method(0,'ByteArrayOutputStreamEx(', ')', 'public'),
   \ javaapi#method(0,'ByteArrayOutputStreamEx(', 'int)', 'public'),
   \ javaapi#method(0,'set(', 'Base64Data, String)', 'void'),
@@ -65,11 +65,11 @@ call javaapi#interface('Binding', '', [
   \ javaapi#method(0,'getNamespaceURI(', ')', 'String'),
   \ ])
 
-call javaapi#interface('NamespaceContextEx', '', [
+call javaapi#interface('NamespaceContextEx', 'Binding>', [
   \ javaapi#method(0,'iterator(', ')', 'Binding>'),
   \ ])
 
-call javaapi#class('StreamingDataHandler', '', [
+call javaapi#class('StreamingDataHandler', 'DataHandler', [
   \ javaapi#method(0,'StreamingDataHandler(', 'Object, String)', 'public'),
   \ javaapi#method(0,'StreamingDataHandler(', 'URL)', 'public'),
   \ javaapi#method(0,'StreamingDataHandler(', 'DataSource)', 'public'),
@@ -78,13 +78,13 @@ call javaapi#class('StreamingDataHandler', '', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#interface('XMLStreamReaderEx', '', [
+call javaapi#interface('XMLStreamReaderEx', 'XMLStreamReader', [
   \ javaapi#method(0,'getPCDATA(', ') throws XMLStreamException', 'CharSequence'),
   \ javaapi#method(0,'getNamespaceContext(', ')', 'NamespaceContextEx'),
   \ javaapi#method(0,'getElementTextTrim(', ') throws XMLStreamException', 'String'),
   \ ])
 
-call javaapi#interface('XMLStreamWriterEx', '', [
+call javaapi#interface('XMLStreamWriterEx', 'XMLStreamWriter', [
   \ javaapi#method(0,'writeBinary(', 'byte[], int, int, String) throws XMLStreamException', 'void'),
   \ javaapi#method(0,'writeBinary(', 'DataHandler) throws XMLStreamException', 'void'),
   \ javaapi#method(0,'writeBinary(', 'String) throws XMLStreamException', 'OutputStream'),

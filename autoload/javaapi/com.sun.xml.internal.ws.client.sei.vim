@@ -5,52 +5,52 @@ call javaapi#class('1', 'CompletionCallback', [
   \ javaapi#method(0,'onCompletion(', 'Throwable)', 'void'),
   \ ])
 
-call javaapi#class('SEIAsyncInvoker', '', [
+call javaapi#class('SEIAsyncInvoker', 'AsyncInvoker', [
   \ javaapi#method(0,'do_run(', ')', 'void'),
   \ ])
 
-call javaapi#class('AsyncMethodHandler', '', [
+call javaapi#class('AsyncMethodHandler', 'SEIMethodHandler', [
   \ ])
 
-call javaapi#class('Bare', '', [
+call javaapi#class('Bare', 'JAXB', [
   \ ])
 
-call javaapi#class('DocLit', '', [
+call javaapi#class('DocLit', 'Wrapped', [
   \ ])
 
-call javaapi#class('Empty', '', [
+call javaapi#class('Empty', 'BodyBuilder', [
   \ javaapi#method(0,'Empty(', 'SOAPVersion)', 'public'),
   \ ])
 
-call javaapi#class('JAXB', '', [
+call javaapi#class('JAXB', 'BodyBuilder', [
   \ ])
 
-call javaapi#class('RpcLit', '', [
+call javaapi#class('RpcLit', 'Wrapped', [
   \ ])
 
-call javaapi#class('Wrapped', '', [
+call javaapi#class('Wrapped', 'JAXB', [
   \ ])
 
 call javaapi#class('BodyBuilder', '', [
   \ ])
 
-call javaapi#class('CallbackMethodHandler', '', [
+call javaapi#class('CallbackMethodHandler', 'AsyncMethodHandler', [
   \ ])
 
-call javaapi#class('AttachmentFiller', '', [
+call javaapi#class('AttachmentFiller', 'MessageFiller', [
   \ javaapi#method(1,'createAttachmentFiller(', 'ParameterImpl, ValueGetter)', 'MessageFiller'),
   \ ])
 
-call javaapi#class('ByteArrayFiller', '', [
+call javaapi#class('ByteArrayFiller', 'AttachmentFiller', [
   \ ])
 
-call javaapi#class('DataHandlerFiller', '', [
+call javaapi#class('DataHandlerFiller', 'AttachmentFiller', [
   \ ])
 
-call javaapi#class('Header', '', [
+call javaapi#class('Header', 'MessageFiller', [
   \ ])
 
-call javaapi#class('JAXBFiller', '', [
+call javaapi#class('JAXBFiller', 'AttachmentFiller', [
   \ ])
 
 call javaapi#class('MessageFiller', '', [
@@ -59,63 +59,63 @@ call javaapi#class('MessageFiller', '', [
 call javaapi#class('MethodHandler', '', [
   \ ])
 
-call javaapi#class('PollingMethodHandler', '', [
+call javaapi#class('PollingMethodHandler', 'AsyncMethodHandler', [
   \ ])
 
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('AttachmentBuilder', '', [
+call javaapi#class('AttachmentBuilder', 'ResponseBuilder', [
   \ javaapi#method(1,'createAttachmentBuilder(', 'ParameterImpl, ValueSetter)', 'ResponseBuilder'),
   \ javaapi#method(0,'readResponse(', 'Message, Object[]) throws JAXBException, XMLStreamException', 'Object'),
   \ ])
 
-call javaapi#class('Body', '', [
+call javaapi#class('Body', 'ResponseBuilder', [
   \ javaapi#method(0,'Body(', 'Bridge<?>, ValueSetter)', 'public'),
   \ javaapi#method(0,'readResponse(', 'Message, Object[]) throws JAXBException', 'Object'),
   \ ])
 
-call javaapi#class('ByteArrayBuilder', '', [
+call javaapi#class('ByteArrayBuilder', 'AttachmentBuilder', [
   \ ])
 
-call javaapi#class('Composite', '', [
+call javaapi#class('Composite', 'ResponseBuilder', [
   \ javaapi#method(0,'Composite(', ')', 'public'),
   \ javaapi#method(0,'Composite(', 'Collection<? extends ResponseBuilder>)', 'public'),
   \ javaapi#method(0,'readResponse(', 'Message, Object[]) throws JAXBException, XMLStreamException', 'Object'),
   \ ])
 
-call javaapi#class('DataHandlerBuilder', '', [
+call javaapi#class('DataHandlerBuilder', 'AttachmentBuilder', [
   \ ])
 
 call javaapi#class('PartBuilder', '', [
   \ javaapi#method(0,'PartBuilder(', 'RawAccessor, ValueSetter)', 'public'),
   \ ])
 
-call javaapi#class('DocLit', '', [
+call javaapi#class('DocLit', 'ResponseBuilder', [
   \ javaapi#method(0,'DocLit(', 'WrapperParameter, ValueSetterFactory)', 'public'),
   \ javaapi#method(0,'readResponse(', 'Message, Object[]) throws JAXBException, XMLStreamException', 'Object'),
   \ ])
 
-call javaapi#class('Header', '', [
+call javaapi#class('Header', 'ResponseBuilder', [
   \ javaapi#method(0,'Header(', 'SOAPVersion, QName, Bridge<?>, ValueSetter)', 'public'),
   \ javaapi#method(0,'Header(', 'SOAPVersion, ParameterImpl, ValueSetter)', 'public'),
   \ javaapi#method(0,'readResponse(', 'Message, Object[]) throws JAXBException', 'Object'),
   \ ])
 
-call javaapi#class('ImageBuilder', '', [
+call javaapi#class('ImageBuilder', 'AttachmentBuilder', [
   \ ])
 
-call javaapi#class('InputStreamBuilder', '', [
+call javaapi#class('InputStreamBuilder', 'AttachmentBuilder', [
   \ ])
 
-call javaapi#class('JAXBBuilder', '', [
+call javaapi#class('JAXBBuilder', 'AttachmentBuilder', [
   \ ])
 
-call javaapi#class('None', '', [
+call javaapi#class('None', 'ResponseBuilder', [
   \ javaapi#method(0,'readResponse(', 'Message, Object[])', 'Object'),
   \ ])
 
-call javaapi#class('NullSetter', '', [
+call javaapi#class('NullSetter', 'ResponseBuilder', [
   \ javaapi#method(0,'NullSetter(', 'ValueSetter, Object)', 'public'),
   \ javaapi#method(0,'readResponse(', 'Message, Object[])', 'Object'),
   \ ])
@@ -124,15 +124,15 @@ call javaapi#class('PartBuilder', '', [
   \ javaapi#method(0,'PartBuilder(', 'Bridge, ValueSetter)', 'public'),
   \ ])
 
-call javaapi#class('RpcLit', '', [
+call javaapi#class('RpcLit', 'ResponseBuilder', [
   \ javaapi#method(0,'RpcLit(', 'WrapperParameter, ValueSetterFactory)', 'public'),
   \ javaapi#method(0,'readResponse(', 'Message, Object[]) throws JAXBException, XMLStreamException', 'Object'),
   \ ])
 
-call javaapi#class('SourceBuilder', '', [
+call javaapi#class('SourceBuilder', 'AttachmentBuilder', [
   \ ])
 
-call javaapi#class('StringBuilder', '', [
+call javaapi#class('StringBuilder', 'AttachmentBuilder', [
   \ ])
 
 call javaapi#class('ResponseBuilder', '', [
@@ -144,10 +144,10 @@ call javaapi#class('ResponseBuilder', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('SEIMethodHandler', '', [
+call javaapi#class('SEIMethodHandler', 'MethodHandler', [
   \ ])
 
-call javaapi#class('SEIStub', '', [
+call javaapi#class('SEIStub', 'Stub', [
   \ javaapi#field(0,'seiModel', 'SOAPSEIModel'),
   \ javaapi#field(0,'soapVersion', 'SOAPVersion'),
   \ javaapi#method(0,'SEIStub(', 'WSServiceDelegate, BindingImpl, SOAPSEIModel, Tube, WSEndpointReference)', 'public'),
@@ -159,26 +159,26 @@ call javaapi#class('SEIStub', '', [
   \ javaapi#method(0,'setOutboundHeaders(', ')', 'void'),
   \ ])
 
-call javaapi#class('SyncMethodHandler', '', [
+call javaapi#class('SyncMethodHandler', 'SEIMethodHandler', [
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ValueGetter', [
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'ValueGetter', [
   \ ])
 
-call javaapi#class('ValueGetter', '', [
+call javaapi#class('ValueGetter', 'ValueGetter>', [
   \ javaapi#field(1,'PLAIN', 'ValueGetter'),
   \ javaapi#field(1,'HOLDER', 'ValueGetter'),
   \ javaapi#method(1,'values(', ')', 'ValueGetter[]'),
   \ javaapi#method(1,'valueOf(', 'String)', 'ValueGetter'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ValueGetterFactory', [
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'ValueGetterFactory', [
   \ ])
 
 call javaapi#class('ValueGetterFactory', '', [
@@ -187,32 +187,32 @@ call javaapi#class('ValueGetterFactory', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('AsyncBeanValueSetter', '', [
+call javaapi#class('AsyncBeanValueSetter', 'ValueSetter', [
   \ ])
 
-call javaapi#class('Param', '', [
+call javaapi#class('Param', 'ValueSetter', [
   \ javaapi#method(0,'Param(', 'int)', 'public'),
   \ ])
 
-call javaapi#class('ReturnValue', '', [
+call javaapi#class('ReturnValue', 'ValueSetter', [
   \ ])
 
-call javaapi#class('SingleValue', '', [
+call javaapi#class('SingleValue', 'ValueSetter', [
   \ ])
 
 call javaapi#class('ValueSetter', '', [
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ValueSetterFactory', [
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'ValueSetterFactory', [
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'ValueSetterFactory', [
   \ ])
 
-call javaapi#class('AsyncBeanValueSetterFactory', '', [
+call javaapi#class('AsyncBeanValueSetterFactory', 'ValueSetterFactory', [
   \ ])
 
 call javaapi#class('ValueSetterFactory', '', [

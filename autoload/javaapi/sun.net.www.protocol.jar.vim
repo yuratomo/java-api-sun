@@ -1,11 +1,49 @@
 call javaapi#namespace('sun.net.www.protocol.jar')
 
-call javaapi#class('Handler', '', [
-  \ javaapi#method(0,'Handler(', ')', 'public'),
+call javaapi#class('1', 'JarFile>', [
+  \ javaapi#method(0,'run(', ') throws IOException', 'JarFile'),
+  \ javaapi#method(0,'run(', ') throws Exception', 'Object'),
   \ ])
 
+call javaapi#interface('URLJarFileCallBack', '', [
+  \ javaapi#method(0,'retrieve(', 'URL) throws IOException', 'JarFile'),
+  \ ])
 
-call javaapi#class('JarURLConnection', '', [
+call javaapi#namespace('sun.net.www.protocol.jar')
+
+call javaapi#class('JarURLInputStream', 'FilterInputStream', [
+  \ javaapi#method(0,'close(', ') throws IOException', 'void'),
+  \ ])
+
+call javaapi#class('URLJarFileEntry', 'JarEntry', [
+  \ javaapi#method(0,'getAttributes(', ') throws IOException', 'Attributes'),
+  \ javaapi#method(0,'getCertificates(', ')', 'Certificate[]'),
+  \ javaapi#method(0,'getCodeSigners(', ')', 'CodeSigner[]'),
+  \ ])
+
+call javaapi#class('URLJarFile', 'JarFile', [
+  \ javaapi#method(0,'URLJarFile(', 'File) throws IOException', 'public'),
+  \ javaapi#method(0,'URLJarFile(', 'File, URLJarFileCloseController) throws IOException', 'public'),
+  \ javaapi#method(0,'getEntry(', 'String)', 'ZipEntry'),
+  \ javaapi#method(0,'getManifest(', ') throws IOException', 'Manifest'),
+  \ javaapi#method(0,'close(', ') throws IOException', 'void'),
+  \ javaapi#method(1,'setCallBack(', 'URLJarFileCallBack)', 'void'),
+  \ ])
+
+call javaapi#namespace('sun.net.www.protocol.jar')
+
+call javaapi#interface('URLJarFileCloseController', '', [
+  \ javaapi#method(0,'close(', 'JarFile)', 'void'),
+  \ ])
+
+call javaapi#class('JarFileFactory', 'URLJarFileCloseController', [
+  \ javaapi#method(0,'get(', 'URL) throws IOException', 'JarFile'),
+  \ javaapi#method(0,'close(', 'JarFile)', 'void'),
+  \ ])
+
+call javaapi#namespace('sun.net.www.protocol.jar')
+
+call javaapi#class('JarURLConnection', 'JarURLConnection', [
   \ javaapi#method(0,'JarURLConnection(', 'URL, Handler) throws MalformedURLException, IOException', 'public'),
   \ javaapi#method(0,'getJarFile(', ') throws IOException', 'JarFile'),
   \ javaapi#method(0,'getJarEntry(', ') throws IOException', 'JarEntry'),
@@ -30,43 +68,9 @@ call javaapi#class('JarURLConnection', '', [
   \ javaapi#method(0,'getDefaultUseCaches(', ')', 'boolean'),
   \ ])
 
+call javaapi#namespace('sun.net.www.protocol.jar')
 
-call javaapi#interface('URLJarFileCloseController', '', [
-  \ javaapi#method(0,'close(', 'JarFile)', 'void'),
-  \ ])
-
-call javaapi#class('JarFileFactory', 'URLJarFileCloseController', [
-  \ javaapi#method(0,'get(', 'URL) throws IOException', 'JarFile'),
-  \ javaapi#method(0,'close(', 'JarFile)', 'void'),
-  \ ])
-
-
-call javaapi#class('JarURLInputStream', '', [
-  \ javaapi#method(0,'close(', ') throws IOException', 'void'),
-  \ ])
-
-call javaapi#class('URLJarFileEntry', '', [
-  \ javaapi#method(0,'getAttributes(', ') throws IOException', 'Attributes'),
-  \ javaapi#method(0,'getCertificates(', ')', 'Certificate[]'),
-  \ javaapi#method(0,'getCodeSigners(', ')', 'CodeSigner[]'),
-  \ ])
-
-call javaapi#class('URLJarFile', '', [
-  \ javaapi#method(0,'URLJarFile(', 'File) throws IOException', 'public'),
-  \ javaapi#method(0,'URLJarFile(', 'File, URLJarFileCloseController) throws IOException', 'public'),
-  \ javaapi#method(0,'getEntry(', 'String)', 'ZipEntry'),
-  \ javaapi#method(0,'getManifest(', ') throws IOException', 'Manifest'),
-  \ javaapi#method(0,'close(', ') throws IOException', 'void'),
-  \ javaapi#method(1,'setCallBack(', 'URLJarFileCallBack)', 'void'),
-  \ ])
-
-
-call javaapi#class('1', 'JarFile>', [
-  \ javaapi#method(0,'run(', ') throws IOException', 'JarFile'),
-  \ javaapi#method(0,'run(', ') throws Exception', 'Object'),
-  \ ])
-
-call javaapi#interface('URLJarFileCallBack', '', [
-  \ javaapi#method(0,'retrieve(', 'URL) throws IOException', 'JarFile'),
+call javaapi#class('Handler', 'URLStreamHandler', [
+  \ javaapi#method(0,'Handler(', ')', 'public'),
   \ ])
 

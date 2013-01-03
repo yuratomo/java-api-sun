@@ -4,7 +4,7 @@ call javaapi#interface('CharacterEscapeHandler', '', [
   \ javaapi#method(0,'escape(', 'char[], int, int, boolean, Writer) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('DataWriter', '', [
+call javaapi#class('DataWriter', 'XMLWriter', [
   \ javaapi#method(0,'DataWriter(', 'Writer, String, CharacterEscapeHandler)', 'public'),
   \ javaapi#method(0,'DataWriter(', 'Writer, String)', 'public'),
   \ javaapi#method(0,'DataWriter(', 'Writer)', 'public'),
@@ -115,7 +115,7 @@ call javaapi#class('DumpSerializer', 'XmlSerializer', [
   \ javaapi#method(0,'flush(', ')', 'void'),
   \ ])
 
-call javaapi#class('IndentingXMLFilter', '', [
+call javaapi#class('IndentingXMLFilter', 'XMLFilterImpl', [
   \ javaapi#method(0,'IndentingXMLFilter(', ')', 'public'),
   \ javaapi#method(0,'IndentingXMLFilter(', 'ContentHandler)', 'public'),
   \ javaapi#method(0,'IndentingXMLFilter(', 'ContentHandler, LexicalHandler)', 'public'),
@@ -136,7 +136,7 @@ call javaapi#class('IndentingXMLFilter', '', [
   \ javaapi#method(0,'endCDATA(', ') throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('IndentingXMLStreamWriter', '', [
+call javaapi#class('IndentingXMLStreamWriter', 'DelegatingXMLStreamWriter', [
   \ javaapi#method(0,'IndentingXMLStreamWriter(', 'XMLStreamWriter)', 'public'),
   \ javaapi#method(0,'getIndentStep(', ')', 'int'),
   \ javaapi#method(0,'setIndentStep(', 'int)', 'void'),
@@ -213,7 +213,7 @@ call javaapi#class('StaxSerializer', 'XmlSerializer', [
   \ javaapi#method(0,'flush(', ')', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'SaxSerializer', [
   \ javaapi#method(0,'endDocument(', ')', 'void'),
   \ ])
 
@@ -259,7 +259,7 @@ call javaapi#class('TXWSerializer', 'XmlSerializer', [
   \ javaapi#method(0,'flush(', ')', 'void'),
   \ ])
 
-call javaapi#class('XMLWriter', '', [
+call javaapi#class('XMLWriter', 'XMLFilterImpl', [
   \ javaapi#method(0,'XMLWriter(', 'Writer, String, CharacterEscapeHandler)', 'public'),
   \ javaapi#method(0,'XMLWriter(', 'Writer, String)', 'public'),
   \ javaapi#method(0,'reset(', ')', 'void'),

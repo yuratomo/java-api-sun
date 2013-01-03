@@ -3,41 +3,41 @@ call javaapi#namespace('sun.java2d.d3d')
 call javaapi#class('D3DBlitLoops', '', [
   \ ])
 
-call javaapi#class('D3DBufImgOps', '', [
+call javaapi#class('D3DBufImgOps', 'BufferedBufImgOps', [
   \ ])
 
-call javaapi#class('D3DContextCaps', '', [
+call javaapi#class('D3DContextCaps', 'ContextCapabilities', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('D3DContext', '', [
+call javaapi#class('D3DContext', 'BufferedContext', [
   \ javaapi#method(0,'getRenderQueue(', ')', 'RenderQueue'),
   \ javaapi#method(0,'saveState(', ')', 'void'),
   \ javaapi#method(0,'restoreState(', ')', 'void'),
   \ ])
 
-call javaapi#class('D3DDrawImage', '', [
+call javaapi#class('D3DDrawImage', 'DrawImage', [
   \ javaapi#method(0,'D3DDrawImage(', ')', 'public'),
   \ javaapi#method(0,'transformImage(', 'SunGraphics2D, BufferedImage, BufferedImageOp, int, int)', 'void'),
   \ ])
 
-call javaapi#class('D3DGeneralBlit', '', [
+call javaapi#class('D3DGeneralBlit', 'Blit', [
   \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
   \ ])
 
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('D3DBufferCaps', '', [
+call javaapi#class('D3DBufferCaps', 'BufferCapabilities', [
   \ javaapi#method(0,'D3DBufferCaps(', ')', 'public'),
   \ javaapi#method(0,'isMultiBufferAvailable(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('D3DImageCaps', '', [
+call javaapi#class('D3DImageCaps', 'ImageCapabilities', [
   \ javaapi#method(0,'isTrueVolatile(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('D3DGraphicsConfig', '', [
+call javaapi#class('D3DGraphicsConfig', 'Win32GraphicsConfig', [
   \ javaapi#method(0,'createManagedSurface(', 'int, int, int)', 'SurfaceData'),
   \ javaapi#method(0,'displayChanged(', ')', 'void'),
   \ javaapi#method(0,'getColorModel(', 'int)', 'ColorModel'),
@@ -100,12 +100,12 @@ call javaapi#class('8', 'Runnable', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('D3DFSWindowAdapter', '', [
+call javaapi#class('D3DFSWindowAdapter', 'WindowAdapter', [
   \ javaapi#method(0,'windowDeactivated(', 'WindowEvent)', 'void'),
   \ javaapi#method(0,'windowActivated(', 'WindowEvent)', 'void'),
   \ ])
 
-call javaapi#class('D3DGraphicsDevice', '', [
+call javaapi#class('D3DGraphicsDevice', 'Win32GraphicsDevice', [
   \ javaapi#method(1,'createDevice(', 'int)', 'D3DGraphicsDevice'),
   \ javaapi#method(0,'isCapPresent(', 'int)', 'boolean'),
   \ javaapi#method(0,'isD3DEnabledOnDevice(', ')', 'boolean'),
@@ -117,44 +117,44 @@ call javaapi#class('D3DGraphicsDevice', '', [
   \ javaapi#method(0,'displayChanged(', ')', 'void'),
   \ ])
 
-call javaapi#class('D3DMaskBlit', '', [
+call javaapi#class('D3DMaskBlit', 'BufferedMaskBlit', [
   \ ])
 
-call javaapi#class('D3DMaskFill', '', [
+call javaapi#class('D3DMaskFill', 'BufferedMaskFill', [
   \ ])
 
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('Gradient', '', [
+call javaapi#class('Gradient', 'D3DPaints', [
   \ ])
 
-call javaapi#class('LinearGradient', '', [
+call javaapi#class('LinearGradient', 'MultiGradient', [
   \ ])
 
-call javaapi#class('MultiGradient', '', [
+call javaapi#class('MultiGradient', 'D3DPaints', [
   \ javaapi#field(1,'MULTI_MAX_FRACTIONS_D3D', 'int'),
   \ ])
 
-call javaapi#class('RadialGradient', '', [
+call javaapi#class('RadialGradient', 'MultiGradient', [
   \ ])
 
-call javaapi#class('Texture', '', [
+call javaapi#class('Texture', 'D3DPaints', [
   \ javaapi#method(0,'isPaintValid(', 'SunGraphics2D)', 'boolean'),
   \ ])
 
 call javaapi#class('D3DPaints', '', [
   \ ])
 
-call javaapi#class('D3DRTTSurfaceToSurfaceBlit', '', [
+call javaapi#class('D3DRTTSurfaceToSurfaceBlit', 'Blit', [
   \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('D3DRTTSurfaceToSurfaceScale', '', [
+call javaapi#class('D3DRTTSurfaceToSurfaceScale', 'ScaledBlit', [
   \ javaapi#method(0,'Scale(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, double, double, double, double)', 'void'),
   \ ])
 
-call javaapi#class('D3DRTTSurfaceToSurfaceTransform', '', [
+call javaapi#class('D3DRTTSurfaceToSurfaceTransform', 'TransformBlit', [
   \ javaapi#method(0,'Transform(', 'SurfaceData, SurfaceData, Composite, Region, AffineTransform, int, int, int, int, int, int, int)', 'void'),
   \ ])
 
@@ -162,7 +162,7 @@ call javaapi#class('1', 'Runnable', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('D3DRenderQueue', '', [
+call javaapi#class('D3DRenderQueue', 'RenderQueue', [
   \ javaapi#method(1,'getInstance(', ')', 'D3DRenderQueue'),
   \ javaapi#method(1,'sync(', ')', 'void'),
   \ javaapi#method(1,'restoreDevices(', ')', 'void'),
@@ -177,7 +177,7 @@ call javaapi#class('1', 'ParallelogramPipe', [
   \ javaapi#method(0,'drawParallelogram(', 'SunGraphics2D, double, double, double, double, double, double, double, double, double, double, double, double)', 'void'),
   \ ])
 
-call javaapi#class('Tracer', '', [
+call javaapi#class('Tracer', 'D3DRenderer', [
   \ javaapi#method(0,'getAAParallelogramPipe(', ')', 'ParallelogramPipe'),
   \ javaapi#method(0,'drawLine(', 'SunGraphics2D, int, int, int, int)', 'void'),
   \ javaapi#method(0,'drawRect(', 'SunGraphics2D, int, int, int, int)', 'void'),
@@ -187,7 +187,7 @@ call javaapi#class('Tracer', '', [
   \ javaapi#method(0,'copyArea(', 'SunGraphics2D, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('D3DRenderer', '', [
+call javaapi#class('D3DRenderer', 'BufferedRenderPipe', [
   \ ])
 
 call javaapi#class('1', 'Runnable', [
@@ -202,7 +202,7 @@ call javaapi#class('2', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('D3DScreenUpdateManager', '', [
+call javaapi#class('D3DScreenUpdateManager', 'ScreenUpdateManager', [
   \ javaapi#method(0,'D3DScreenUpdateManager(', ')', 'public'),
   \ javaapi#method(0,'createScreenSurface(', 'Win32GraphicsConfig, WComponentPeer, int, boolean)', 'SurfaceData'),
   \ javaapi#method(1,'canUseD3DOnScreen(', 'WComponentPeer, Win32GraphicsConfig, int)', 'boolean'),
@@ -233,10 +233,10 @@ call javaapi#class('2', 'Runnable', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('D3DDataBufferNative', '', [
+call javaapi#class('D3DDataBufferNative', 'DataBufferNative', [
   \ ])
 
-call javaapi#class('D3DWindowSurfaceData', '', [
+call javaapi#class('D3DWindowSurfaceData', 'D3DSurfaceData', [
   \ javaapi#method(0,'D3DWindowSurfaceData(', 'WComponentPeer, D3DGraphicsConfig)', 'public'),
   \ javaapi#method(0,'getReplacement(', ')', 'SurfaceData'),
   \ javaapi#method(0,'getDestination(', ')', 'Object'),
@@ -245,7 +245,7 @@ call javaapi#class('D3DWindowSurfaceData', '', [
   \ javaapi#method(0,'getContext(', ')', 'BufferedContext'),
   \ ])
 
-call javaapi#class('D3DSurfaceData', '', [
+call javaapi#class('D3DSurfaceData', 'SurfaceData', [
   \ javaapi#field(1,'D3D_DEVICE_RESOURCE', 'int'),
   \ javaapi#field(1,'ST_INT_ARGB', 'int'),
   \ javaapi#field(1,'ST_INT_ARGB_PRE', 'int'),
@@ -282,76 +282,76 @@ call javaapi#class('D3DSurfaceData', '', [
   \ javaapi#method(0,'getContext(', ')', 'BufferedContext'),
   \ ])
 
-call javaapi#class('D3DSurfaceDataProxy', '', [
+call javaapi#class('D3DSurfaceDataProxy', 'SurfaceDataProxy', [
   \ javaapi#method(1,'createProxy(', 'SurfaceData, D3DGraphicsConfig)', 'SurfaceDataProxy'),
   \ javaapi#method(0,'D3DSurfaceDataProxy(', 'D3DGraphicsConfig, int)', 'public'),
   \ javaapi#method(0,'validateSurfaceData(', 'SurfaceData, SurfaceData, int, int)', 'SurfaceData'),
   \ javaapi#method(0,'isSupportedOperation(', 'SurfaceData, int, CompositeType, Color)', 'boolean'),
   \ ])
 
-call javaapi#class('D3DSurfaceToGDIWindowSurfaceBlit', '', [
+call javaapi#class('D3DSurfaceToGDIWindowSurfaceBlit', 'Blit', [
   \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('D3DSurfaceToGDIWindowSurfaceScale', '', [
+call javaapi#class('D3DSurfaceToGDIWindowSurfaceScale', 'ScaledBlit', [
   \ javaapi#method(0,'Scale(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, double, double, double, double)', 'void'),
   \ ])
 
-call javaapi#class('D3DSurfaceToGDIWindowSurfaceTransform', '', [
+call javaapi#class('D3DSurfaceToGDIWindowSurfaceTransform', 'TransformBlit', [
   \ javaapi#method(0,'Transform(', 'SurfaceData, SurfaceData, Composite, Region, AffineTransform, int, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('D3DSurfaceToSurfaceBlit', '', [
+call javaapi#class('D3DSurfaceToSurfaceBlit', 'Blit', [
   \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('D3DSurfaceToSurfaceScale', '', [
+call javaapi#class('D3DSurfaceToSurfaceScale', 'ScaledBlit', [
   \ javaapi#method(0,'Scale(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, double, double, double, double)', 'void'),
   \ ])
 
-call javaapi#class('D3DSurfaceToSurfaceTransform', '', [
+call javaapi#class('D3DSurfaceToSurfaceTransform', 'TransformBlit', [
   \ javaapi#method(0,'Transform(', 'SurfaceData, SurfaceData, Composite, Region, AffineTransform, int, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('D3DSurfaceToSwBlit', '', [
+call javaapi#class('D3DSurfaceToSwBlit', 'Blit', [
   \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('D3DSwToSurfaceBlit', '', [
+call javaapi#class('D3DSwToSurfaceBlit', 'Blit', [
   \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('D3DSwToSurfaceScale', '', [
+call javaapi#class('D3DSwToSurfaceScale', 'ScaledBlit', [
   \ javaapi#method(0,'Scale(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, double, double, double, double)', 'void'),
   \ ])
 
-call javaapi#class('D3DSwToSurfaceTransform', '', [
+call javaapi#class('D3DSwToSurfaceTransform', 'TransformBlit', [
   \ javaapi#method(0,'Transform(', 'SurfaceData, SurfaceData, Composite, Region, AffineTransform, int, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('D3DSwToTextureBlit', '', [
+call javaapi#class('D3DSwToTextureBlit', 'Blit', [
   \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('Tracer', '', [
+call javaapi#class('Tracer', 'D3DTextRenderer', [
   \ ])
 
-call javaapi#class('D3DTextRenderer', '', [
+call javaapi#class('D3DTextRenderer', 'BufferedTextPipe', [
   \ ])
 
-call javaapi#class('D3DTextureToSurfaceBlit', '', [
+call javaapi#class('D3DTextureToSurfaceBlit', 'Blit', [
   \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('D3DTextureToSurfaceScale', '', [
+call javaapi#class('D3DTextureToSurfaceScale', 'ScaledBlit', [
   \ javaapi#method(0,'Scale(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, double, double, double, double)', 'void'),
   \ ])
 
-call javaapi#class('D3DTextureToSurfaceTransform', '', [
+call javaapi#class('D3DTextureToSurfaceTransform', 'TransformBlit', [
   \ javaapi#method(0,'Transform(', 'SurfaceData, SurfaceData, Composite, Region, AffineTransform, int, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('D3DVolatileSurfaceManager', '', [
+call javaapi#class('D3DVolatileSurfaceManager', 'VolatileSurfaceManager', [
   \ javaapi#method(0,'D3DVolatileSurfaceManager(', 'SunVolatileImage, Object)', 'public'),
   \ javaapi#method(0,'setAccelerationEnabled(', 'boolean)', 'void'),
   \ javaapi#method(0,'restoreContents(', ')', 'SurfaceData'),

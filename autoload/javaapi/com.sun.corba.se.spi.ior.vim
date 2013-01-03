@@ -6,7 +6,7 @@ call javaapi#class('EncapsulationFactoryBase', 'IdentifiableFactory', [
   \ javaapi#method(0,'create(', 'InputStream)', 'Identifiable'),
   \ ])
 
-call javaapi#interface('IOR', '', [
+call javaapi#interface('IOR', 'MakeImmutable', [
   \ javaapi#method(0,'getORB(', ')', 'ORB'),
   \ javaapi#method(0,'getTypeId(', ')', 'String'),
   \ javaapi#method(0,'iteratorById(', 'int)', 'Iterator'),
@@ -46,20 +46,20 @@ call javaapi#class('IORFactories', '', [
   \ javaapi#method(1,'registerValueFactories(', 'ORB)', 'void'),
   \ ])
 
-call javaapi#interface('IORFactory', '', [
+call javaapi#interface('IORFactory', 'MakeImmutable', [
   \ javaapi#method(0,'makeIOR(', 'ORB, String, ObjectId)', 'IOR'),
   \ javaapi#method(0,'isEquivalent(', 'IORFactory)', 'boolean'),
   \ ])
 
-call javaapi#interface('IORTemplate', '', [
+call javaapi#interface('IORTemplate', 'MakeImmutable', [
   \ javaapi#method(0,'iteratorById(', 'int)', 'Iterator'),
   \ javaapi#method(0,'getObjectKeyTemplate(', ')', 'ObjectKeyTemplate'),
   \ ])
 
-call javaapi#interface('IORTemplateList', '', [
+call javaapi#interface('IORTemplateList', 'MakeImmutable', [
   \ ])
 
-call javaapi#interface('Identifiable', '', [
+call javaapi#interface('Identifiable', 'Writeable', [
   \ javaapi#method(0,'getId(', ')', 'int'),
   \ ])
 
@@ -74,7 +74,7 @@ call javaapi#class('1', 'Iterator', [
   \ javaapi#method(0,'remove(', ')', 'void'),
   \ ])
 
-call javaapi#class('IdentifiableContainerBase', '', [
+call javaapi#class('IdentifiableContainerBase', 'FreezableList', [
   \ javaapi#method(0,'IdentifiableContainerBase(', ')', 'public'),
   \ javaapi#method(0,'iteratorById(', 'int)', 'Iterator'),
   \ ])
@@ -93,17 +93,17 @@ call javaapi#interface('MakeImmutable', '', [
   \ javaapi#method(0,'makeImmutable(', ')', 'void'),
   \ ])
 
-call javaapi#interface('ObjectAdapterId', '', [
+call javaapi#interface('ObjectAdapterId', 'Writeable', [
   \ javaapi#method(0,'getNumLevels(', ')', 'int'),
   \ javaapi#method(0,'iterator(', ')', 'Iterator'),
   \ javaapi#method(0,'getAdapterName(', ')', 'String[]'),
   \ ])
 
-call javaapi#interface('ObjectId', '', [
+call javaapi#interface('ObjectId', 'Writeable', [
   \ javaapi#method(0,'getId(', ')', 'byte[]'),
   \ ])
 
-call javaapi#interface('ObjectKey', '', [
+call javaapi#interface('ObjectKey', 'Writeable', [
   \ javaapi#method(0,'getId(', ')', 'ObjectId'),
   \ javaapi#method(0,'getTemplate(', ')', 'ObjectKeyTemplate'),
   \ javaapi#method(0,'getBytes(', 'ORB)', 'byte[]'),
@@ -115,7 +115,7 @@ call javaapi#interface('ObjectKeyFactory', '', [
   \ javaapi#method(0,'createTemplate(', 'InputStream)', 'ObjectKeyTemplate'),
   \ ])
 
-call javaapi#interface('ObjectKeyTemplate', '', [
+call javaapi#interface('ObjectKeyTemplate', 'Writeable', [
   \ javaapi#method(0,'getORBVersion(', ')', 'ORBVersion'),
   \ javaapi#method(0,'getSubcontractId(', ')', 'int'),
   \ javaapi#method(0,'getServerId(', ')', 'int'),
@@ -126,20 +126,20 @@ call javaapi#interface('ObjectKeyTemplate', '', [
   \ javaapi#method(0,'getServerRequestDispatcher(', 'ORB, ObjectId)', 'CorbaServerRequestDispatcher'),
   \ ])
 
-call javaapi#interface('TaggedComponent', '', [
+call javaapi#interface('TaggedComponent', 'Identifiable', [
   \ javaapi#method(0,'getIOPComponent(', 'ORB)', 'TaggedComponent'),
   \ ])
 
-call javaapi#class('TaggedComponentBase', '', [
+call javaapi#class('TaggedComponentBase', 'IdentifiableBase', [
   \ javaapi#method(0,'TaggedComponentBase(', ')', 'public'),
   \ javaapi#method(0,'getIOPComponent(', 'ORB)', 'TaggedComponent'),
   \ ])
 
-call javaapi#interface('TaggedComponentFactoryFinder', '', [
+call javaapi#interface('TaggedComponentFactoryFinder', 'IdentifiableFactoryFinder', [
   \ javaapi#method(0,'create(', 'ORB, TaggedComponent)', 'TaggedComponent'),
   \ ])
 
-call javaapi#interface('TaggedProfile', '', [
+call javaapi#interface('TaggedProfile', 'MakeImmutable', [
   \ javaapi#method(0,'getTaggedProfileTemplate(', ')', 'TaggedProfileTemplate'),
   \ javaapi#method(0,'getObjectId(', ')', 'ObjectId'),
   \ javaapi#method(0,'getObjectKeyTemplate(', ')', 'ObjectKeyTemplate'),
@@ -149,7 +149,7 @@ call javaapi#interface('TaggedProfile', '', [
   \ javaapi#method(0,'isLocal(', ')', 'boolean'),
   \ ])
 
-call javaapi#interface('TaggedProfileTemplate', '', [
+call javaapi#interface('TaggedProfileTemplate', 'MakeImmutable', [
   \ javaapi#method(0,'iteratorById(', 'int)', 'Iterator'),
   \ javaapi#method(0,'create(', 'ObjectKeyTemplate, ObjectId)', 'TaggedProfile'),
   \ javaapi#method(0,'write(', 'ObjectKeyTemplate, ObjectId, OutputStream)', 'void'),
@@ -157,7 +157,7 @@ call javaapi#interface('TaggedProfileTemplate', '', [
   \ javaapi#method(0,'getIOPComponents(', 'ORB, int)', 'TaggedComponent[]'),
   \ ])
 
-call javaapi#class('TaggedProfileTemplateBase', '', [
+call javaapi#class('TaggedProfileTemplateBase', 'IdentifiableContainerBase', [
   \ javaapi#method(0,'TaggedProfileTemplateBase(', ')', 'public'),
   \ javaapi#method(0,'write(', 'OutputStream)', 'void'),
   \ javaapi#method(0,'getIOPComponents(', 'ORB, int)', 'TaggedComponent[]'),

@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.corba.se.spi.orbutil.proxy')
 
-call javaapi#interface('CompositeInvocationHandler', '', [
+call javaapi#interface('CompositeInvocationHandler', 'Serializable', [
   \ javaapi#method(0,'addInvocationHandler(', 'Class, InvocationHandler)', 'void'),
   \ javaapi#method(0,'setDefaultHandler(', 'InvocationHandler)', 'void'),
   \ ])
@@ -25,7 +25,7 @@ call javaapi#interface('InvocationHandlerFactory', '', [
   \ javaapi#method(0,'getProxyInterfaces(', ')', 'Class[]'),
   \ ])
 
-call javaapi#interface('LinkedInvocationHandler', '', [
+call javaapi#interface('LinkedInvocationHandler', 'InvocationHandler', [
   \ javaapi#method(0,'setProxy(', 'Proxy)', 'void'),
   \ javaapi#method(0,'getProxy(', ')', 'Proxy'),
   \ ])

@@ -1,72 +1,10 @@
 call javaapi#namespace('sun.net')
 
-call javaapi#interface('ProgressMeteringPolicy', '', [
-  \ javaapi#method(0,'shouldMeterInput(', 'URL, String)', 'boolean'),
-  \ javaapi#method(0,'getProgressUpdateThreshold(', ')', 'int'),
-  \ ])
-
-call javaapi#class('DefaultProgressMeteringPolicy', 'ProgressMeteringPolicy', [
-  \ javaapi#method(0,'shouldMeterInput(', 'URL, String)', 'boolean'),
-  \ javaapi#method(0,'getProgressUpdateThreshold(', ')', 'int'),
-  \ ])
-
-call javaapi#class('ProgressMonitor', '', [
-  \ javaapi#method(0,'ProgressMonitor(', ')', 'public'),
-  \ javaapi#method(1,'getDefault(', ')', 'ProgressMonitor'),
-  \ javaapi#method(1,'setDefault(', 'ProgressMonitor)', 'void'),
-  \ javaapi#method(1,'setMeteringPolicy(', 'ProgressMeteringPolicy)', 'void'),
-  \ javaapi#method(0,'getProgressSources(', ')', 'ProgressSource>'),
-  \ javaapi#method(0,'getProgressUpdateThreshold(', ')', 'int'),
-  \ javaapi#method(0,'shouldMeterInput(', 'URL, String)', 'boolean'),
-  \ javaapi#method(0,'registerSource(', 'ProgressSource)', 'void'),
-  \ javaapi#method(0,'unregisterSource(', 'ProgressSource)', 'void'),
-  \ javaapi#method(0,'updateProgress(', 'ProgressSource)', 'void'),
-  \ javaapi#method(0,'addProgressListener(', 'ProgressListener)', 'void'),
-  \ javaapi#method(0,'removeProgressListener(', 'ProgressListener)', 'void'),
-  \ ])
-
-
-call javaapi#class('1', 'Void>', [
-  \ javaapi#method(0,'run(', ')', 'Void'),
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('NetProperties', '', [
-  \ javaapi#method(1,'get(', 'String)', 'String'),
-  \ javaapi#method(1,'getInteger(', 'String, int)', 'Integer'),
-  \ javaapi#method(1,'getBoolean(', 'String)', 'Boolean'),
-  \ ])
-
-
-call javaapi#class('1', 'String>', [
-  \ javaapi#method(0,'run(', ')', 'String'),
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
-
-call javaapi#class('2', 'String>', [
-  \ javaapi#method(0,'run(', ')', 'String'),
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
-
-call javaapi#class('InetAddressCachePolicy', '', [
-  \ javaapi#field(1,'FOREVER', 'int'),
-  \ javaapi#field(1,'NEVER', 'int'),
-  \ javaapi#field(1,'DEFAULT_POSITIVE', 'int'),
-  \ javaapi#method(0,'InetAddressCachePolicy(', ')', 'public'),
-  \ javaapi#method(1,'get(', ')', 'int'),
-  \ javaapi#method(1,'getNegative(', ')', 'int'),
-  \ javaapi#method(1,'setIfNotSet(', 'int)', 'void'),
-  \ javaapi#method(1,'setNegativeIfNotSet(', 'int)', 'void'),
-  \ ])
-
-
-call javaapi#class('ApplicationProxy', '', [
+call javaapi#class('ApplicationProxy', 'Proxy', [
   \ javaapi#method(1,'create(', 'Proxy)', 'ApplicationProxy'),
   \ ])
 
-call javaapi#class('ConnectionResetException', '', [
+call javaapi#class('ConnectionResetException', 'SocketException', [
   \ javaapi#method(0,'ConnectionResetException(', 'String)', 'public'),
   \ javaapi#method(0,'ConnectionResetException(', ')', 'public'),
   \ ])
@@ -117,7 +55,7 @@ call javaapi#class('NetworkServer', 'Cloneable', [
   \ javaapi#method(0,'NetworkServer(', ')', 'public'),
   \ ])
 
-call javaapi#class('ProgressEvent', '', [
+call javaapi#class('ProgressEvent', 'EventObject', [
   \ javaapi#method(0,'ProgressEvent(', 'ProgressSource, URL, String, String, State, long, long)', 'public'),
   \ javaapi#method(0,'getURL(', ')', 'URL'),
   \ javaapi#method(0,'getMethod(', ')', 'String'),
@@ -128,13 +66,13 @@ call javaapi#class('ProgressEvent', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('ProgressListener', '', [
+call javaapi#interface('ProgressListener', 'EventListener', [
   \ javaapi#method(0,'progressStart(', 'ProgressEvent)', 'void'),
   \ javaapi#method(0,'progressUpdate(', 'ProgressEvent)', 'void'),
   \ javaapi#method(0,'progressFinish(', 'ProgressEvent)', 'void'),
   \ ])
 
-call javaapi#class('State', '', [
+call javaapi#class('State', 'State>', [
   \ javaapi#field(1,'NEW', 'State'),
   \ javaapi#field(1,'CONNECTED', 'State'),
   \ javaapi#field(1,'UPDATE', 'State'),
@@ -173,12 +111,12 @@ call javaapi#class('ResourceManager', '', [
   \ javaapi#method(1,'afterUdpClose(', ')', 'void'),
   \ ])
 
-call javaapi#class('SocksProxy', '', [
+call javaapi#class('SocksProxy', 'Proxy', [
   \ javaapi#method(1,'create(', 'SocketAddress, int)', 'SocksProxy'),
   \ javaapi#method(0,'protocolVersion(', ')', 'int'),
   \ ])
 
-call javaapi#class('TelnetInputStream', '', [
+call javaapi#class('TelnetInputStream', 'FilterInputStream', [
   \ javaapi#field(0,'binaryMode', 'boolean'),
   \ javaapi#method(0,'TelnetInputStream(', 'InputStream, boolean)', 'public'),
   \ javaapi#method(0,'setStickyCRLF(', 'boolean)', 'void'),
@@ -187,7 +125,7 @@ call javaapi#class('TelnetInputStream', '', [
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ ])
 
-call javaapi#class('TelnetOutputStream', '', [
+call javaapi#class('TelnetOutputStream', 'BufferedOutputStream', [
   \ javaapi#field(0,'binaryMode', 'boolean'),
   \ javaapi#method(0,'TelnetOutputStream(', 'OutputStream, boolean)', 'public'),
   \ javaapi#method(0,'setStickyCRLF(', 'boolean)', 'void'),
@@ -195,11 +133,11 @@ call javaapi#class('TelnetOutputStream', '', [
   \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('TelnetProtocolException', '', [
+call javaapi#class('TelnetProtocolException', 'IOException', [
   \ javaapi#method(0,'TelnetProtocolException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('TransferProtocolClient', '', [
+call javaapi#class('TransferProtocolClient', 'NetworkClient', [
   \ javaapi#method(0,'readServerResponse(', ') throws IOException', 'int'),
   \ javaapi#method(0,'sendServer(', 'String)', 'void'),
   \ javaapi#method(0,'getResponseString(', ')', 'String'),
@@ -212,5 +150,72 @@ call javaapi#class('URLCanonicalizer', '', [
   \ javaapi#method(0,'URLCanonicalizer(', ')', 'public'),
   \ javaapi#method(0,'canonicalize(', 'String)', 'String'),
   \ javaapi#method(0,'hasProtocolName(', 'String)', 'boolean'),
+  \ ])
+
+call javaapi#namespace('sun.net')
+
+call javaapi#class('InetAddressCachePolicy', '', [
+  \ javaapi#field(1,'FOREVER', 'int'),
+  \ javaapi#field(1,'NEVER', 'int'),
+  \ javaapi#field(1,'DEFAULT_POSITIVE', 'int'),
+  \ javaapi#method(0,'InetAddressCachePolicy(', ')', 'public'),
+  \ javaapi#method(1,'get(', ')', 'int'),
+  \ javaapi#method(1,'getNegative(', ')', 'int'),
+  \ javaapi#method(1,'setIfNotSet(', 'int)', 'void'),
+  \ javaapi#method(1,'setNegativeIfNotSet(', 'int)', 'void'),
+  \ ])
+
+call javaapi#namespace('sun.net')
+
+call javaapi#class('2', 'String>', [
+  \ javaapi#method(0,'run(', ')', 'String'),
+  \ javaapi#method(0,'run(', ')', 'Object'),
+  \ ])
+
+call javaapi#namespace('sun.net')
+
+call javaapi#class('1', 'String>', [
+  \ javaapi#method(0,'run(', ')', 'String'),
+  \ javaapi#method(0,'run(', ')', 'Object'),
+  \ ])
+
+call javaapi#namespace('sun.net')
+
+call javaapi#class('1', 'Void>', [
+  \ javaapi#method(0,'run(', ')', 'Void'),
+  \ javaapi#method(0,'run(', ')', 'Object'),
+  \ ])
+
+call javaapi#class('NetProperties', '', [
+  \ javaapi#method(1,'get(', 'String)', 'String'),
+  \ javaapi#method(1,'getInteger(', 'String, int)', 'Integer'),
+  \ javaapi#method(1,'getBoolean(', 'String)', 'Boolean'),
+  \ ])
+
+call javaapi#namespace('sun.net')
+
+call javaapi#interface('ProgressMeteringPolicy', '', [
+  \ javaapi#method(0,'shouldMeterInput(', 'URL, String)', 'boolean'),
+  \ javaapi#method(0,'getProgressUpdateThreshold(', ')', 'int'),
+  \ ])
+
+call javaapi#class('DefaultProgressMeteringPolicy', 'ProgressMeteringPolicy', [
+  \ javaapi#method(0,'shouldMeterInput(', 'URL, String)', 'boolean'),
+  \ javaapi#method(0,'getProgressUpdateThreshold(', ')', 'int'),
+  \ ])
+
+call javaapi#class('ProgressMonitor', '', [
+  \ javaapi#method(0,'ProgressMonitor(', ')', 'public'),
+  \ javaapi#method(1,'getDefault(', ')', 'ProgressMonitor'),
+  \ javaapi#method(1,'setDefault(', 'ProgressMonitor)', 'void'),
+  \ javaapi#method(1,'setMeteringPolicy(', 'ProgressMeteringPolicy)', 'void'),
+  \ javaapi#method(0,'getProgressSources(', ')', 'ProgressSource>'),
+  \ javaapi#method(0,'getProgressUpdateThreshold(', ')', 'int'),
+  \ javaapi#method(0,'shouldMeterInput(', 'URL, String)', 'boolean'),
+  \ javaapi#method(0,'registerSource(', 'ProgressSource)', 'void'),
+  \ javaapi#method(0,'unregisterSource(', 'ProgressSource)', 'void'),
+  \ javaapi#method(0,'updateProgress(', 'ProgressSource)', 'void'),
+  \ javaapi#method(0,'addProgressListener(', 'ProgressListener)', 'void'),
+  \ javaapi#method(0,'removeProgressListener(', 'ProgressListener)', 'void'),
   \ ])
 

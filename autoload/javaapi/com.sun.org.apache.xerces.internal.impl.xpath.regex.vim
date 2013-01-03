@@ -22,36 +22,36 @@ call javaapi#class('Match', 'Cloneable', [
   \ javaapi#method(0,'getCapturedText(', 'int)', 'String'),
   \ ])
 
-call javaapi#class('CharOp', '', [
+call javaapi#class('CharOp', 'Op', [
   \ ])
 
-call javaapi#class('ChildOp', '', [
+call javaapi#class('ChildOp', 'Op', [
   \ ])
 
-call javaapi#class('ConditionOp', '', [
+call javaapi#class('ConditionOp', 'Op', [
   \ ])
 
-call javaapi#class('ModifierOp', '', [
+call javaapi#class('ModifierOp', 'ChildOp', [
   \ ])
 
-call javaapi#class('RangeOp', '', [
+call javaapi#class('RangeOp', 'Op', [
   \ ])
 
-call javaapi#class('StringOp', '', [
+call javaapi#class('StringOp', 'Op', [
   \ ])
 
-call javaapi#class('UnionOp', '', [
+call javaapi#class('UnionOp', 'Op', [
   \ ])
 
 call javaapi#class('Op', '', [
   \ ])
 
-call javaapi#class('ParseException', '', [
+call javaapi#class('ParseException', 'RuntimeException', [
   \ javaapi#method(0,'ParseException(', 'String, int)', 'public'),
   \ javaapi#method(0,'getLocation(', ')', 'int'),
   \ ])
 
-call javaapi#class('ParserForXMLSchema', '', [
+call javaapi#class('ParserForXMLSchema', 'RegexParser', [
   \ javaapi#method(0,'ParserForXMLSchema(', ')', 'public'),
   \ javaapi#method(0,'ParserForXMLSchema(', 'Locale)', 'public'),
   \ ])
@@ -64,7 +64,7 @@ call javaapi#class('REUtil', '', [
   \ javaapi#method(1,'quoteMeta(', 'String)', 'String'),
   \ ])
 
-call javaapi#class('RangeToken', '', [
+call javaapi#class('RangeToken', 'Token', [
   \ javaapi#method(0,'toString(', 'int)', 'String'),
   \ ])
 
@@ -77,10 +77,10 @@ call javaapi#class('RegexParser', '', [
   \ javaapi#method(0,'setLocale(', 'Locale)', 'void'),
   \ ])
 
-call javaapi#class('CharArrayTarget', '', [
+call javaapi#class('CharArrayTarget', 'ExpressionTarget', [
   \ ])
 
-call javaapi#class('CharacterIteratorTarget', '', [
+call javaapi#class('CharacterIteratorTarget', 'ExpressionTarget', [
   \ ])
 
 call javaapi#class('ClosureContext', '', [
@@ -92,7 +92,7 @@ call javaapi#class('Context', '', [
 call javaapi#class('ExpressionTarget', '', [
   \ ])
 
-call javaapi#class('StringTarget', '', [
+call javaapi#class('StringTarget', 'ExpressionTarget', [
   \ ])
 
 call javaapi#class('RegularExpression', 'Serializable', [
@@ -121,38 +121,38 @@ call javaapi#class('RegularExpression', 'Serializable', [
   \ javaapi#method(0,'getNumberOfGroups(', ')', 'int'),
   \ ])
 
-call javaapi#class('CharToken', '', [
+call javaapi#class('CharToken', 'Token', [
   \ javaapi#method(0,'toString(', 'int)', 'String'),
   \ ])
 
-call javaapi#class('ClosureToken', '', [
+call javaapi#class('ClosureToken', 'Token', [
   \ javaapi#method(0,'toString(', 'int)', 'String'),
   \ ])
 
-call javaapi#class('ConcatToken', '', [
+call javaapi#class('ConcatToken', 'Token', [
   \ javaapi#method(0,'toString(', 'int)', 'String'),
   \ ])
 
-call javaapi#class('ConditionToken', '', [
+call javaapi#class('ConditionToken', 'Token', [
   \ javaapi#method(0,'toString(', 'int)', 'String'),
   \ ])
 
 call javaapi#class('FixedStringContainer', '', [
   \ ])
 
-call javaapi#class('ModifierToken', '', [
+call javaapi#class('ModifierToken', 'Token', [
   \ javaapi#method(0,'toString(', 'int)', 'String'),
   \ ])
 
-call javaapi#class('ParenToken', '', [
+call javaapi#class('ParenToken', 'Token', [
   \ javaapi#method(0,'toString(', 'int)', 'String'),
   \ ])
 
-call javaapi#class('StringToken', '', [
+call javaapi#class('StringToken', 'Token', [
   \ javaapi#method(0,'toString(', 'int)', 'String'),
   \ ])
 
-call javaapi#class('UnionToken', '', [
+call javaapi#class('UnionToken', 'Token', [
   \ javaapi#method(0,'toString(', 'int)', 'String'),
   \ ])
 

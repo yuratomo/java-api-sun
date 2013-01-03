@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.awt.util')
 
-call javaapi#class('IdentityArrayList<E>', '', [
+call javaapi#class('IdentityArrayList<E>', 'AbstractList<E>', [
   \ javaapi#method(0,'IdentityArrayList(', 'int)', 'public'),
   \ javaapi#method(0,'IdentityArrayList(', ')', 'public'),
   \ javaapi#method(0,'IdentityArrayList(', 'Collection<? extends E>)', 'public'),
@@ -48,7 +48,7 @@ call javaapi#class('ListItr', 'ListIterator<E>', [
   \ javaapi#method(0,'add(', 'E)', 'void'),
   \ ])
 
-call javaapi#class('IdentityLinkedList<E>', '', [
+call javaapi#class('IdentityLinkedList<E>', 'AbstractSequentialList<E>', [
   \ javaapi#method(0,'IdentityLinkedList(', ')', 'public'),
   \ javaapi#method(0,'IdentityLinkedList(', 'Collection<? extends E>)', 'public'),
   \ javaapi#method(0,'getFirst(', ')', 'E'),

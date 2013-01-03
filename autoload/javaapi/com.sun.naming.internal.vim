@@ -5,7 +5,7 @@ call javaapi#class('FactoryEnumeration', '', [
   \ javaapi#method(0,'hasMore(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('NamedWeakReference', '', [
+call javaapi#class('NamedWeakReference', 'WeakReference', [
   \ ])
 
 call javaapi#class('AppletParameter', '', [
@@ -67,7 +67,7 @@ call javaapi#class('InputStreamEnumeration', 'NamingEnumeration', [
   \ javaapi#method(0,'close(', ')', 'void'),
   \ ])
 
-call javaapi#class('VersionHelper12', '', [
+call javaapi#class('VersionHelper12', 'VersionHelper', [
   \ javaapi#method(0,'loadClass(', 'String) throws ClassNotFoundException', 'Class'),
   \ javaapi#method(0,'loadClass(', 'String, String) throws ClassNotFoundException, MalformedURLException', 'Class'),
   \ ])

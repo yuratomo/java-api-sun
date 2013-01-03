@@ -5,7 +5,7 @@ call javaapi#interface('Header', '', [
   \ javaapi#method(0,'getValue(', ')', 'String'),
   \ ])
 
-call javaapi#class('MessagingException', '', [
+call javaapi#class('MessagingException', 'Exception', [
   \ javaapi#method(0,'MessagingException(', ')', 'public'),
   \ javaapi#method(0,'MessagingException(', 'String)', 'public'),
   \ javaapi#method(0,'MessagingException(', 'String, Exception)', 'public'),
@@ -14,7 +14,7 @@ call javaapi#class('MessagingException', '', [
   \ javaapi#method(0,'getMessage(', ')', 'String'),
   \ ])
 
-call javaapi#interface('MultipartDataSource', '', [
+call javaapi#interface('MultipartDataSource', 'DataSource', [
   \ javaapi#method(0,'getCount(', ')', 'int'),
   \ javaapi#method(0,'getBodyPart(', 'int) throws MessagingException', 'MimeBodyPart'),
   \ ])

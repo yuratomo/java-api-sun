@@ -11,18 +11,18 @@ call javaapi#interface('Attachment', '', [
   \ javaapi#method(0,'writeTo(', 'SOAPMessage) throws SOAPException', 'void'),
   \ ])
 
-call javaapi#interface('AttachmentSet', '', [
+call javaapi#interface('AttachmentSet', 'Attachment>', [
   \ javaapi#method(0,'get(', 'String)', 'Attachment'),
   \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
   \ javaapi#method(0,'add(', 'Attachment)', 'void'),
   \ ])
 
-call javaapi#class('ExceptionHasMessage', '', [
+call javaapi#class('ExceptionHasMessage', 'JAXWSExceptionBase', [
   \ javaapi#method(0,'ExceptionHasMessage(', 'String, )', 'public'),
   \ javaapi#method(0,'getFaultMessage(', ')', 'Message'),
   \ ])
 
-call javaapi#class('FilterMessageImpl', '', [
+call javaapi#class('FilterMessageImpl', 'Message', [
   \ javaapi#method(0,'hasHeaders(', ')', 'boolean'),
   \ javaapi#method(0,'getHeaders(', ')', 'HeaderList'),
   \ javaapi#method(0,'getAttachments(', ')', 'AttachmentSet'),
@@ -80,7 +80,7 @@ call javaapi#class('2', 'Header>', [
   \ javaapi#method(0,'next(', ')', 'Object'),
   \ ])
 
-call javaapi#class('HeaderList', '', [
+call javaapi#class('HeaderList', 'Header>', [
   \ javaapi#method(0,'HeaderList(', ')', 'public'),
   \ javaapi#method(0,'HeaderList(', 'HeaderList)', 'public'),
   \ javaapi#method(0,'size(', ')', 'int'),
@@ -186,7 +186,7 @@ call javaapi#class('Messages', '', [
   \ javaapi#method(1,'create(', 'SOAPVersion, ProtocolException, QName)', 'Message'),
   \ ])
 
-call javaapi#class('Packet', '', [
+call javaapi#class('Packet', 'DistributedPropertySet', [
   \ javaapi#field(0,'wasTransportSecure', 'boolean'),
   \ javaapi#field(1,'INBOUND_TRANSPORT_HEADERS', 'String'),
   \ javaapi#field(1,'OUTBOUND_TRANSPORT_HEADERS', 'String'),

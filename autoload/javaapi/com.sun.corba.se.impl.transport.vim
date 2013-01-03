@@ -65,19 +65,19 @@ call javaapi#class('CorbaContactInfoListIteratorImpl', 'CorbaContactInfoListIter
   \ javaapi#method(0,'updateEffectiveTargetIOR(', 'IOR)', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'LongMonitoredAttributeBase', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'LongMonitoredAttributeBase', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'LongMonitoredAttributeBase', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ ])
 
-call javaapi#class('CorbaInboundConnectionCacheImpl', '', [
+call javaapi#class('CorbaInboundConnectionCacheImpl', 'CorbaConnectionCacheBase', [
   \ javaapi#method(0,'CorbaInboundConnectionCacheImpl(', 'ORB, Acceptor)', 'public'),
   \ javaapi#method(0,'get(', 'Acceptor)', 'Connection'),
   \ javaapi#method(0,'put(', 'Acceptor, Connection)', 'void'),
@@ -85,19 +85,19 @@ call javaapi#class('CorbaInboundConnectionCacheImpl', '', [
   \ javaapi#method(0,'values(', ')', 'Collection'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'LongMonitoredAttributeBase', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'LongMonitoredAttributeBase', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'LongMonitoredAttributeBase', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ ])
 
-call javaapi#class('CorbaOutboundConnectionCacheImpl', '', [
+call javaapi#class('CorbaOutboundConnectionCacheImpl', 'CorbaConnectionCacheBase', [
   \ javaapi#method(0,'CorbaOutboundConnectionCacheImpl(', 'ORB, ContactInfo)', 'public'),
   \ javaapi#method(0,'get(', 'ContactInfo)', 'Connection'),
   \ javaapi#method(0,'put(', 'ContactInfo, Connection)', 'void'),
@@ -201,7 +201,7 @@ call javaapi#class('SelectionKeyAndOp', '', [
   \ javaapi#method(0,'SelectionKeyAndOp(', 'SelectorImpl, SelectionKey, int)', 'public'),
   \ ])
 
-call javaapi#class('SelectorImpl', '', [
+call javaapi#class('SelectorImpl', 'Thread', [
   \ javaapi#method(0,'SelectorImpl(', 'ORB)', 'public'),
   \ javaapi#method(0,'setTimeout(', 'long)', 'void'),
   \ javaapi#method(0,'getTimeout(', ')', 'long'),
@@ -212,7 +212,7 @@ call javaapi#class('SelectorImpl', '', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('SharedCDRContactInfoImpl', '', [
+call javaapi#class('SharedCDRContactInfoImpl', 'CorbaContactInfoBase', [
   \ javaapi#method(0,'SharedCDRContactInfoImpl(', 'ORB, CorbaContactInfoList, IOR, short)', 'public'),
   \ javaapi#method(0,'getClientRequestDispatcher(', ')', 'ClientRequestDispatcher'),
   \ javaapi#method(0,'isConnectionBased(', ')', 'boolean'),
@@ -225,7 +225,7 @@ call javaapi#class('SharedCDRContactInfoImpl', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SocketOrChannelAcceptorImpl', '', [
+call javaapi#class('SocketOrChannelAcceptorImpl', 'EventHandlerBase', [
   \ javaapi#method(0,'SocketOrChannelAcceptorImpl(', 'ORB)', 'public'),
   \ javaapi#method(0,'SocketOrChannelAcceptorImpl(', 'ORB, int)', 'public'),
   \ javaapi#method(0,'SocketOrChannelAcceptorImpl(', 'ORB, int, String, String)', 'public'),
@@ -264,7 +264,7 @@ call javaapi#class('SocketOrChannelAcceptorImpl', '', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('SocketOrChannelConnectionImpl', '', [
+call javaapi#class('SocketOrChannelConnectionImpl', 'EventHandlerBase', [
   \ javaapi#field(1,'dprintWriteLocks', 'boolean'),
   \ javaapi#method(0,'getSocketChannel(', ')', 'SocketChannel'),
   \ javaapi#method(0,'SocketOrChannelConnectionImpl(', 'ORB, CorbaContactInfo, boolean, boolean, String, String, int)', 'public'),
@@ -341,7 +341,7 @@ call javaapi#class('SocketOrChannelConnectionImpl', '', [
   \ javaapi#method(0,'dprint(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('SocketOrChannelContactInfoImpl', '', [
+call javaapi#class('SocketOrChannelContactInfoImpl', 'CorbaContactInfoBase', [
   \ javaapi#method(0,'SocketOrChannelContactInfoImpl(', 'ORB, CorbaContactInfoList, String, String, int)', 'public'),
   \ javaapi#method(0,'SocketOrChannelContactInfoImpl(', 'ORB, CorbaContactInfoList, IOR, short, String, String, int)', 'public'),
   \ javaapi#method(0,'isConnectionBased(', ')', 'boolean'),

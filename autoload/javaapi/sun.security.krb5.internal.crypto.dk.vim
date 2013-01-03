@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.security.krb5.internal.crypto.dk')
 
-call javaapi#class('AesDkCrypto', '', [
+call javaapi#class('AesDkCrypto', 'DkCrypto', [
   \ javaapi#method(0,'AesDkCrypto(', 'int)', 'public'),
   \ javaapi#method(0,'stringToKey(', 'char[], String, byte[]) throws GeneralSecurityException', 'byte[]'),
   \ javaapi#method(0,'getChecksumLength(', ')', 'int'),
@@ -12,7 +12,7 @@ call javaapi#class('AesDkCrypto', '', [
   \ javaapi#method(1,'readBigEndian(', 'byte[], int, int)', 'int'),
   \ ])
 
-call javaapi#class('ArcFourCrypto', '', [
+call javaapi#class('ArcFourCrypto', 'DkCrypto', [
   \ javaapi#method(0,'ArcFourCrypto(', 'int)', 'public'),
   \ javaapi#method(0,'stringToKey(', 'char[]) throws GeneralSecurityException', 'byte[]'),
   \ javaapi#method(0,'getChecksumLength(', ')', 'int'),
@@ -25,7 +25,7 @@ call javaapi#class('ArcFourCrypto', '', [
   \ javaapi#method(0,'decryptRaw(', 'byte[], int, byte[], byte[], int, int, byte[]) throws GeneralSecurityException', 'byte[]'),
   \ ])
 
-call javaapi#class('Des3DkCrypto', '', [
+call javaapi#class('Des3DkCrypto', 'DkCrypto', [
   \ javaapi#method(0,'Des3DkCrypto(', ')', 'public'),
   \ javaapi#method(0,'stringToKey(', 'char[]) throws GeneralSecurityException', 'byte[]'),
   \ javaapi#method(0,'parityFix(', 'byte[]) throws GeneralSecurityException', 'byte[]'),

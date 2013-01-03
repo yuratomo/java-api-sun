@@ -16,10 +16,10 @@ call javaapi#interface('Connection', '', [
   \ javaapi#method(0,'getChannel(', ')', 'Channel'),
   \ ])
 
-call javaapi#class('ConnectionInputStream', '', [
+call javaapi#class('ConnectionInputStream', 'MarshalInputStream', [
   \ ])
 
-call javaapi#class('ConnectionOutputStream', '', [
+call javaapi#class('ConnectionOutputStream', 'MarshalOutputStream', [
   \ ])
 
 call javaapi#class('1', 'Runnable', [
@@ -41,7 +41,7 @@ call javaapi#class('1', 'Void>', [
 call javaapi#class('CleanRequest', '', [
   \ ])
 
-call javaapi#class('PhantomLiveRef', '', [
+call javaapi#class('PhantomLiveRef', 'PhantomReference', [
   \ javaapi#method(0,'PhantomLiveRef(', 'RefEntry, LiveRef)', 'public'),
   \ javaapi#method(0,'getRefEntry(', ')', 'RefEntry'),
   \ ])
@@ -83,6 +83,17 @@ call javaapi#class('LeaseInfo', '', [
 call javaapi#class('DGCImpl', 'DGC', [
   \ javaapi#method(0,'dirty(', 'ObjID[], long, Lease)', 'Lease'),
   \ javaapi#method(0,'clean(', 'ObjID[], long, VMID, boolean)', 'void'),
+  \ ])
+
+call javaapi#sun.rmi.transport.DGCImpl_Skel();('DGCImpl', '', [
+  \ javaapi#method(0,'dispatch(', 'Remote, RemoteCall, int, long) throws Exception', 'void'),
+  \ javaapi#method(0,'getOperations(', ')', 'Operation[]'),
+  \ ])
+
+call javaapi#sun.rmi.transport.DGCImpl_Stub();('DGCImpl', '', [
+  \ javaapi#method(0,'DGCImpl_Stub(', 'RemoteRef)', 'public'),
+  \ javaapi#method(0,'clean(', 'ObjID[], long, VMID, boolean) throws RemoteException', 'void'),
+  \ javaapi#method(0,'dirty(', 'ObjID[], long, Lease) throws RemoteException', 'Lease'),
   \ ])
 
 call javaapi#interface('Endpoint', '', [
@@ -197,7 +208,7 @@ call javaapi#class('TransportConstants', '', [
   \ javaapi#method(0,'TransportConstants(', ')', 'public'),
   \ ])
 
-call javaapi#class('WeakRef', '', [
+call javaapi#class('WeakRef', 'WeakReference', [
   \ javaapi#method(0,'WeakRef(', 'Object)', 'public'),
   \ javaapi#method(0,'WeakRef(', 'Object, ReferenceQueue)', 'public'),
   \ javaapi#method(0,'pin(', ')', 'void'),

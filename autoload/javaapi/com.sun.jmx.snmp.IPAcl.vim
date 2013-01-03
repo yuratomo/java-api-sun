@@ -45,7 +45,7 @@ call javaapi#class('AclEntryImpl', 'Serializable', [
   \ javaapi#method(0,'checkCommunity(', 'String)', 'boolean'),
   \ ])
 
-call javaapi#class('AclImpl', '', [
+call javaapi#class('AclImpl', 'OwnerImpl', [
   \ javaapi#method(0,'AclImpl(', 'PrincipalImpl, String)', 'public'),
   \ javaapi#method(0,'setName(', 'Principal, String) throws NotOwnerException', 'void'),
   \ javaapi#method(0,'getName(', ')', 'String'),
@@ -60,7 +60,7 @@ call javaapi#class('AclImpl', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('GroupImpl', '', [
+call javaapi#class('GroupImpl', 'PrincipalImpl', [
   \ javaapi#method(0,'GroupImpl(', ') throws UnknownHostException', 'public'),
   \ javaapi#method(0,'GroupImpl(', 'String) throws UnknownHostException', 'public'),
   \ javaapi#method(0,'addMember(', 'Principal)', 'boolean'),
@@ -72,7 +72,7 @@ call javaapi#class('GroupImpl', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('Host', '', [
+call javaapi#class('Host', 'SimpleNode', [
   \ javaapi#method(0,'Host(', 'int)', 'public'),
   \ javaapi#method(0,'Host(', 'Parser, int)', 'public'),
   \ javaapi#method(0,'buildAclEntries(', 'PrincipalImpl, AclImpl)', 'void'),
@@ -80,148 +80,148 @@ call javaapi#class('Host', '', [
   \ javaapi#method(0,'buildInformEntries(', 'Hashtable<InetAddress, Vector<String>>)', 'void'),
   \ ])
 
-call javaapi#class('JDMAccess', '', [
+call javaapi#class('JDMAccess', 'SimpleNode', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ ])
 
-call javaapi#class('JDMAclBlock', '', [
+call javaapi#class('JDMAclBlock', 'SimpleNode', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ javaapi#method(0,'buildTrapEntries(', 'Hashtable)', 'void'),
   \ javaapi#method(0,'buildInformEntries(', 'Hashtable)', 'void'),
   \ ])
 
-call javaapi#class('JDMAclItem', '', [
+call javaapi#class('JDMAclItem', 'SimpleNode', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ javaapi#method(0,'getAccess(', ')', 'JDMAccess'),
   \ javaapi#method(0,'getCommunities(', ')', 'JDMCommunities'),
   \ ])
 
-call javaapi#class('JDMCommunities', '', [
+call javaapi#class('JDMCommunities', 'SimpleNode', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ javaapi#method(0,'buildCommunities(', 'AclEntryImpl)', 'void'),
   \ ])
 
-call javaapi#class('JDMCommunity', '', [
+call javaapi#class('JDMCommunity', 'SimpleNode', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ javaapi#method(0,'getCommunity(', ')', 'String'),
   \ ])
 
-call javaapi#class('JDMEnterprise', '', [
+call javaapi#class('JDMEnterprise', 'SimpleNode', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ ])
 
-call javaapi#class('JDMHost', '', [
+call javaapi#class('JDMHost', 'SimpleNode', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ ])
 
-call javaapi#class('JDMHostInform', '', [
+call javaapi#class('JDMHostInform', 'SimpleNode', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ ])
 
-call javaapi#class('JDMHostName', '', [
+call javaapi#class('JDMHostName', 'Host', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ ])
 
-call javaapi#class('JDMHostTrap', '', [
+call javaapi#class('JDMHostTrap', 'SimpleNode', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ ])
 
-call javaapi#class('JDMInformBlock', '', [
+call javaapi#class('JDMInformBlock', 'SimpleNode', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ javaapi#method(0,'buildAclEntries(', 'PrincipalImpl, AclImpl)', 'void'),
   \ javaapi#method(0,'buildTrapEntries(', 'Hashtable)', 'void'),
   \ ])
 
-call javaapi#class('JDMInformCommunity', '', [
+call javaapi#class('JDMInformCommunity', 'SimpleNode', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ javaapi#method(0,'getCommunity(', ')', 'String'),
   \ ])
 
-call javaapi#class('JDMInformInterestedHost', '', [
+call javaapi#class('JDMInformInterestedHost', 'SimpleNode', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ ])
 
-call javaapi#class('JDMInformItem', '', [
+call javaapi#class('JDMInformItem', 'SimpleNode', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ javaapi#method(0,'getCommunity(', ')', 'JDMInformCommunity'),
   \ ])
 
-call javaapi#class('JDMIpAddress', '', [
+call javaapi#class('JDMIpAddress', 'Host', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ ])
 
-call javaapi#class('JDMIpMask', '', [
+call javaapi#class('JDMIpMask', 'Host', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ ])
 
-call javaapi#class('JDMIpV6Address', '', [
+call javaapi#class('JDMIpV6Address', 'JDMIpAddress', [
   \ javaapi#method(0,'JDMIpV6Address(', 'int)', 'public'),
   \ javaapi#method(0,'JDMIpV6Address(', 'Parser, int)', 'public'),
   \ ])
 
-call javaapi#class('JDMManagers', '', [
+call javaapi#class('JDMManagers', 'SimpleNode', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ ])
 
-call javaapi#class('JDMNetMask', '', [
+call javaapi#class('JDMNetMask', 'Host', [
   \ javaapi#method(0,'JDMNetMask(', 'int)', 'public'),
   \ javaapi#method(0,'JDMNetMask(', 'Parser, int)', 'public'),
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ ])
 
-call javaapi#class('JDMNetMaskV6', '', [
+call javaapi#class('JDMNetMaskV6', 'JDMNetMask', [
   \ javaapi#method(0,'JDMNetMaskV6(', 'int)', 'public'),
   \ javaapi#method(0,'JDMNetMaskV6(', 'Parser, int)', 'public'),
   \ ])
 
-call javaapi#class('JDMSecurityDefs', '', [
+call javaapi#class('JDMSecurityDefs', 'SimpleNode', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ ])
 
-call javaapi#class('JDMTrapBlock', '', [
+call javaapi#class('JDMTrapBlock', 'SimpleNode', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ javaapi#method(0,'buildAclEntries(', 'PrincipalImpl, AclImpl)', 'void'),
   \ javaapi#method(0,'buildInformEntries(', 'Hashtable)', 'void'),
   \ ])
 
-call javaapi#class('JDMTrapCommunity', '', [
+call javaapi#class('JDMTrapCommunity', 'SimpleNode', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ javaapi#method(0,'getCommunity(', ')', 'String'),
   \ ])
 
-call javaapi#class('JDMTrapInterestedHost', '', [
+call javaapi#class('JDMTrapInterestedHost', 'SimpleNode', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ ])
 
-call javaapi#class('JDMTrapItem', '', [
+call javaapi#class('JDMTrapItem', 'SimpleNode', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ javaapi#method(0,'getCommunity(', ')', 'JDMTrapCommunity'),
   \ ])
 
-call javaapi#class('JDMTrapNum', '', [
+call javaapi#class('JDMTrapNum', 'SimpleNode', [
   \ javaapi#method(1,'jjtCreate(', 'int)', 'Node'),
   \ javaapi#method(1,'jjtCreate(', 'Parser, int)', 'Node'),
   \ ])
@@ -229,7 +229,7 @@ call javaapi#class('JDMTrapNum', '', [
 call javaapi#class('JJTParserState', '', [
   \ ])
 
-call javaapi#class('NetMaskImpl', '', [
+call javaapi#class('NetMaskImpl', 'PrincipalImpl', [
   \ javaapi#method(0,'NetMaskImpl(', ') throws UnknownHostException', 'public'),
   \ javaapi#method(0,'NetMaskImpl(', 'String, int) throws UnknownHostException', 'public'),
   \ javaapi#method(0,'addMember(', 'Principal)', 'boolean'),
@@ -259,12 +259,12 @@ call javaapi#class('OwnerImpl', 'Serializable', [
   \ javaapi#method(0,'isOwner(', 'Principal)', 'boolean'),
   \ ])
 
-call javaapi#class('ParseError', '', [
+call javaapi#class('ParseError', 'Exception', [
   \ javaapi#method(0,'ParseError(', ')', 'public'),
   \ javaapi#method(0,'ParseError(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('ParseException', '', [
+call javaapi#class('ParseException', 'Exception', [
   \ javaapi#field(0,'currentToken', 'Token'),
   \ javaapi#field(0,'expectedTokenSequences', 'int[][]'),
   \ javaapi#field(0,'tokenImage', 'String[]'),
@@ -477,7 +477,7 @@ call javaapi#class('Token', '', [
   \ javaapi#method(1,'newToken(', 'int)', 'Token'),
   \ ])
 
-call javaapi#class('TokenMgrError', '', [
+call javaapi#class('TokenMgrError', 'Error', [
   \ javaapi#method(0,'getMessage(', ')', 'String'),
   \ javaapi#method(0,'TokenMgrError(', ')', 'public'),
   \ javaapi#method(0,'TokenMgrError(', 'String, int)', 'public'),

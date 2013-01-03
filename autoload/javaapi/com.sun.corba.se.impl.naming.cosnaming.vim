@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.corba.se.impl.naming.cosnaming')
 
-call javaapi#class('BindingIteratorImpl', '', [
+call javaapi#class('BindingIteratorImpl', 'BindingIteratorPOA', [
   \ javaapi#method(0,'BindingIteratorImpl(', 'ORB) throws Exception', 'public'),
   \ javaapi#method(0,'next_one(', 'BindingHolder)', 'boolean'),
   \ javaapi#method(0,'next_n(', 'int, BindingListHolder)', 'boolean'),
@@ -42,7 +42,7 @@ call javaapi#interface('NamingContextDataStore', '', [
   \ javaapi#method(0,'getNSPOA(', ')', 'POA'),
   \ ])
 
-call javaapi#class('NamingContextImpl', '', [
+call javaapi#class('NamingContextImpl', 'NamingContextExtPOA', [
   \ javaapi#field(1,'debug', 'boolean'),
   \ javaapi#method(0,'NamingContextImpl(', 'ORB, POA) throws Exception', 'public'),
   \ javaapi#method(0,'getNSPOA(', ')', 'POA'),
@@ -77,7 +77,7 @@ call javaapi#class('NamingUtils', '', [
   \ javaapi#method(1,'makeErrStream(', 'File) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('TransientBindingIterator', '', [
+call javaapi#class('TransientBindingIterator', 'BindingIteratorImpl', [
   \ javaapi#method(0,'TransientBindingIterator(', 'ORB, Hashtable, POA) throws Exception', 'public'),
   \ javaapi#method(0,'NextOne(', 'BindingHolder)', 'boolean'),
   \ javaapi#method(0,'Destroy(', ')', 'void'),
@@ -96,7 +96,7 @@ call javaapi#class('TransientNameService', '', [
   \ javaapi#method(0,'initialNamingContext(', ')', 'Object'),
   \ ])
 
-call javaapi#class('TransientNamingContext', '', [
+call javaapi#class('TransientNamingContext', 'NamingContextImpl', [
   \ javaapi#field(0,'localRoot', 'Object'),
   \ javaapi#method(0,'TransientNamingContext(', 'ORB, Object, POA) throws Exception', 'public'),
   \ javaapi#method(0,'Bind(', 'NameComponent, Object, BindingType) throws SystemException', 'void'),

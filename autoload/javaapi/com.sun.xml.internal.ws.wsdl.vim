@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.ws.wsdl')
 
-call javaapi#class('ActionBasedOperationFinder', '', [
+call javaapi#class('ActionBasedOperationFinder', 'WSDLOperationFinder', [
   \ javaapi#method(0,'ActionBasedOperationFinder(', 'WSDLPort, WSBinding, SEIModel)', 'public'),
   \ javaapi#method(0,'getWSDLOperationQName(', 'Packet) throws DispatchException', 'QName'),
   \ ])
@@ -11,7 +11,7 @@ call javaapi#class('ActionBasedOperationSignature', '', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('DispatchException', '', [
+call javaapi#class('DispatchException', 'Exception', [
   \ javaapi#field(0,'fault', 'Message'),
   \ javaapi#method(0,'DispatchException(', 'Message)', 'public'),
   \ ])
@@ -21,7 +21,7 @@ call javaapi#class('OperationDispatcher', '', [
   \ javaapi#method(0,'getWSDLOperationQName(', 'Packet) throws DispatchException', 'QName'),
   \ ])
 
-call javaapi#class('PayloadQNameBasedOperationFinder', '', [
+call javaapi#class('PayloadQNameBasedOperationFinder', 'WSDLOperationFinder', [
   \ javaapi#field(1,'EMPTY_PAYLOAD_LOCAL', 'String'),
   \ javaapi#field(1,'EMPTY_PAYLOAD_NSURI', 'String'),
   \ javaapi#field(1,'EMPTY_PAYLOAD', 'QName'),
@@ -33,7 +33,7 @@ call javaapi#interface('SDDocumentResolver', '', [
   \ javaapi#method(0,'resolve(', 'String)', 'SDDocument'),
   \ ])
 
-call javaapi#class('SOAPActionBasedOperationFinder', '', [
+call javaapi#class('SOAPActionBasedOperationFinder', 'WSDLOperationFinder', [
   \ javaapi#method(0,'SOAPActionBasedOperationFinder(', 'WSDLPort, WSBinding, SEIModel)', 'public'),
   \ javaapi#method(0,'getWSDLOperationQName(', 'Packet)', 'QName'),
   \ ])

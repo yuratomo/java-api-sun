@@ -15,12 +15,12 @@ call javaapi#class('CramMD5Base', '', [
   \ javaapi#method(0,'dispose(', ') throws SaslException', 'void'),
   \ ])
 
-call javaapi#class('CramMD5Client', '', [
+call javaapi#class('CramMD5Client', 'CramMD5Base', [
   \ javaapi#method(0,'hasInitialResponse(', ')', 'boolean'),
   \ javaapi#method(0,'evaluateChallenge(', 'byte[]) throws SaslException', 'byte[]'),
   \ ])
 
-call javaapi#class('CramMD5Server', '', [
+call javaapi#class('CramMD5Server', 'CramMD5Base', [
   \ javaapi#method(0,'evaluateResponse(', 'byte[]) throws SaslException', 'byte[]'),
   \ javaapi#method(0,'getAuthorizationID(', ')', 'String'),
   \ ])
@@ -52,7 +52,7 @@ call javaapi#class('1', 'Void>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('Provider', '', [
+call javaapi#class('Provider', 'Provider', [
   \ javaapi#method(0,'Provider(', ')', 'public'),
   \ ])
 

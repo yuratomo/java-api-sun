@@ -11,7 +11,7 @@ call javaapi#class('AccessorFactoryImpl', 'AccessorFactory', [
   \ javaapi#method(0,'createPropertyAccessor(', 'Class, Method, Method)', 'Accessor'),
   \ ])
 
-call javaapi#class('AnyTypeAdapter', '', [
+call javaapi#class('AnyTypeAdapter', 'Object>', [
   \ javaapi#method(0,'AnyTypeAdapter(', ')', 'public'),
   \ javaapi#method(0,'unmarshal(', 'Object)', 'Object'),
   \ javaapi#method(0,'marshal(', 'Object)', 'Object'),
@@ -110,7 +110,7 @@ call javaapi#class('IDResolver', '', [
   \ javaapi#method(0,'resolve(', 'String, Class) throws SAXException', 'Callable<?>'),
   \ ])
 
-call javaapi#interface('InternalAccessorFactory', '', [
+call javaapi#interface('InternalAccessorFactory', 'AccessorFactory', [
   \ javaapi#method(0,'createFieldAccessor(', 'Class, Field, boolean, boolean) throws JAXBException', 'Accessor'),
   \ ])
 
@@ -123,7 +123,7 @@ call javaapi#class('Util', '', [
   \ javaapi#method(1,'getSystemProperty(', 'String)', 'String'),
   \ ])
 
-call javaapi#interface('ValidationEventLocatorEx', '', [
+call javaapi#interface('ValidationEventLocatorEx', 'ValidationEventLocator', [
   \ javaapi#method(0,'getFieldName(', ')', 'String'),
   \ ])
 
@@ -138,7 +138,7 @@ call javaapi#class('WhiteSpaceProcessor', '', [
   \ javaapi#method(1,'isWhiteSpace(', 'char)', 'boolean'),
   \ ])
 
-call javaapi#interface('XmlAccessorFactory', '', [
+call javaapi#interface('XmlAccessorFactory', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'AccessorFactory>'),
   \ ])
 

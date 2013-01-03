@@ -10,7 +10,7 @@ call javaapi#interface('CheckedException', '', [
   \ javaapi#method(0,'getMessageName(', ')', 'String'),
   \ ])
 
-call javaapi#class('ExceptionType', '', [
+call javaapi#class('ExceptionType', 'ExceptionType>', [
   \ javaapi#field(1,'WSDLException', 'ExceptionType'),
   \ javaapi#field(1,'UserDefined', 'ExceptionType'),
   \ javaapi#method(1,'values(', ')', 'ExceptionType[]'),
@@ -31,7 +31,7 @@ call javaapi#interface('JavaMethod', '', [
   \ javaapi#method(0,'getResponsePayloadName(', ')', 'QName'),
   \ ])
 
-call javaapi#class('MEP', '', [
+call javaapi#class('MEP', 'MEP>', [
   \ javaapi#field(1,'REQUEST_RESPONSE', 'MEP'),
   \ javaapi#field(1,'ONE_WAY', 'MEP'),
   \ javaapi#field(1,'ASYNC_POLL', 'MEP'),
@@ -62,7 +62,7 @@ call javaapi#interface('Parameter', '', [
   \ javaapi#method(0,'getPartName(', ')', 'String'),
   \ ])
 
-call javaapi#class('Kind', '', [
+call javaapi#class('Kind', 'Kind>', [
   \ javaapi#field(1,'BODY', 'Kind'),
   \ javaapi#field(1,'HEADER', 'Kind'),
   \ javaapi#field(1,'UNBOUND', 'Kind'),

@@ -22,7 +22,7 @@ call javaapi#class('IIOPProxyImpl', 'IIOPProxy', [
   \ javaapi#method(0,'toStub(', 'Remote) throws NoSuchObjectException', 'Remote'),
   \ ])
 
-call javaapi#class('ProxyInputStream', '', [
+call javaapi#class('ProxyInputStream', 'InputStream', [
   \ javaapi#method(0,'ProxyInputStream(', 'InputStream)', 'public'),
   \ javaapi#method(0,'read_boolean(', ')', 'boolean'),
   \ javaapi#method(0,'read_char(', ')', 'char'),

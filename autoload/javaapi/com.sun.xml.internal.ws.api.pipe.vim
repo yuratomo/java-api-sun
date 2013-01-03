@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.ws.api.pipe')
 
-call javaapi#class('ClientPipeAssemblerContext', '', [
+call javaapi#class('ClientPipeAssemblerContext', 'ClientTubeAssemblerContext', [
   \ javaapi#method(0,'ClientPipeAssemblerContext(', 'EndpointAddress, WSDLPort, WSService, WSBinding)', 'public'),
   \ javaapi#method(0,'ClientPipeAssemblerContext(', 'EndpointAddress, WSDLPort, WSService, WSBinding, Container)', 'public'),
   \ javaapi#method(0,'createDumpPipe(', 'String, PrintStream, Pipe)', 'Pipe'),
@@ -133,7 +133,7 @@ call javaapi#interface('Pipe', '', [
   \ javaapi#method(0,'copy(', 'PipeCloner)', 'Pipe'),
   \ ])
 
-call javaapi#class('PipeCloner', '', [
+call javaapi#class('PipeCloner', 'TubeCloner', [
   \ javaapi#method(1,'clone(', 'Pipe)', 'Pipe'),
   \ javaapi#method(0,'copy(', 'T)', 'T'),
   \ javaapi#method(0,'add(', 'Pipe, Pipe)', 'void'),
@@ -151,11 +151,11 @@ call javaapi#class('PipelineAssemblerFactory', '', [
   \ javaapi#method(1,'create(', 'ClassLoader, BindingID)', 'PipelineAssembler'),
   \ ])
 
-call javaapi#interface('SOAPBindingCodec', '', [
+call javaapi#interface('SOAPBindingCodec', 'Codec', [
   \ javaapi#method(0,'getXMLCodec(', ')', 'StreamSOAPCodec'),
   \ ])
 
-call javaapi#class('ServerPipeAssemblerContext', '', [
+call javaapi#class('ServerPipeAssemblerContext', 'ServerTubeAssemblerContext', [
   \ javaapi#method(0,'ServerPipeAssemblerContext(', 'SEIModel, WSDLPort, WSEndpoint, Tube, boolean)', 'public'),
   \ javaapi#method(0,'createServerMUPipe(', 'Pipe)', 'Pipe'),
   \ javaapi#method(0,'createDumpPipe(', 'String, PrintStream, Pipe)', 'Pipe'),
@@ -185,7 +185,7 @@ call javaapi#class('ServerTubeAssemblerContext', '', [
   \ javaapi#method(0,'setCodec(', 'Codec)', 'void'),
   \ ])
 
-call javaapi#interface('StreamSOAPCodec', '', [
+call javaapi#interface('StreamSOAPCodec', 'Codec', [
   \ javaapi#method(0,'decode(', 'XMLStreamReader)', 'Message'),
   \ javaapi#method(0,'decode(', 'XMLStreamReader, AttachmentSet)', 'Message'),
   \ ])

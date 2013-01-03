@@ -1,11 +1,11 @@
 call javaapi#namespace('com.sun.xml.internal.bind.v2.runtime.unmarshaller')
 
-call javaapi#interface('AttributesEx', '', [
+call javaapi#interface('AttributesEx', 'Attributes', [
   \ javaapi#method(0,'getData(', 'int)', 'CharSequence'),
   \ javaapi#method(0,'getData(', 'String, String)', 'CharSequence'),
   \ ])
 
-call javaapi#class('AttributesExImpl', '', [
+call javaapi#class('AttributesExImpl', 'AttributesImpl', [
   \ javaapi#method(0,'AttributesExImpl(', ')', 'public'),
   \ javaapi#method(0,'getData(', 'int)', 'CharSequence'),
   \ javaapi#method(0,'getData(', 'String, String)', 'CharSequence'),
@@ -18,7 +18,7 @@ call javaapi#class('1', 'DataSource', [
   \ javaapi#method(0,'getOutputStream(', ')', 'OutputStream'),
   \ ])
 
-call javaapi#class('Base64Data', '', [
+call javaapi#class('Base64Data', 'Pcdata', [
   \ javaapi#method(0,'Base64Data(', ')', 'public'),
   \ javaapi#method(0,'set(', 'byte[], int, String)', 'void'),
   \ javaapi#method(0,'set(', 'byte[], String)', 'void'),
@@ -48,18 +48,18 @@ call javaapi#class('1', 'Callable', [
   \ javaapi#method(0,'call(', ') throws Exception', 'Object'),
   \ ])
 
-call javaapi#class('DefaultIDResolver', '', [
+call javaapi#class('DefaultIDResolver', 'IDResolver', [
   \ javaapi#method(0,'startDocument(', 'ValidationEventHandler) throws SAXException', 'void'),
   \ javaapi#method(0,'bind(', 'String, Object)', 'void'),
   \ javaapi#method(0,'resolve(', 'String, Class)', 'Callable'),
   \ ])
 
-call javaapi#class('DefaultValueLoaderDecorator', '', [
+call javaapi#class('DefaultValueLoaderDecorator', 'Loader', [
   \ javaapi#method(0,'DefaultValueLoaderDecorator(', 'Loader, String)', 'public'),
   \ javaapi#method(0,'startElement(', 'State, TagName) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('Discarder', '', [
+call javaapi#class('Discarder', 'Loader', [
   \ javaapi#field(1,'INSTANCE', 'Loader'),
   \ javaapi#method(0,'childElement(', 'State, TagName)', 'void'),
   \ ])
@@ -69,7 +69,7 @@ call javaapi#class('State', '', [
   \ javaapi#method(0,'getElement(', ')', 'Object'),
   \ ])
 
-call javaapi#class('DomLoader<ResultT', '', [
+call javaapi#class('DomLoader<ResultT', 'Result>', [
   \ javaapi#method(0,'DomLoader(', 'DomHandler<?, ResultT>)', 'public'),
   \ javaapi#method(0,'startElement(', 'State, TagName) throws SAXException', 'void'),
   \ javaapi#method(0,'childElement(', 'State, TagName) throws SAXException', 'void'),
@@ -85,12 +85,12 @@ call javaapi#class('CharSequenceImpl', 'CharSequence', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('FastInfosetConnector', '', [
+call javaapi#class('FastInfosetConnector', 'StAXConnector', [
   \ javaapi#method(0,'FastInfosetConnector(', 'StAXDocumentParser, XmlVisitor)', 'public'),
   \ javaapi#method(0,'bridge(', ') throws XMLStreamException', 'void'),
   \ ])
 
-call javaapi#class('IntArrayData', '', [
+call javaapi#class('IntArrayData', 'Pcdata', [
   \ javaapi#method(0,'IntArrayData(', 'int[], int, int)', 'public'),
   \ javaapi#method(0,'IntArrayData(', ')', 'public'),
   \ javaapi#method(0,'set(', 'int[], int, int)', 'void'),
@@ -101,7 +101,7 @@ call javaapi#class('IntArrayData', '', [
   \ javaapi#method(0,'writeTo(', 'UTF8XmlOutput) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('IntData', '', [
+call javaapi#class('IntData', 'Pcdata', [
   \ javaapi#method(0,'IntData(', ')', 'public'),
   \ javaapi#method(0,'reset(', 'int)', 'void'),
   \ javaapi#method(0,'toString(', ')', 'String'),
@@ -146,12 +146,12 @@ call javaapi#class('InterningXmlVisitor', 'XmlVisitor', [
   \ javaapi#method(0,'getPredictor(', ')', 'TextPredictor'),
   \ ])
 
-call javaapi#class('LeafPropertyLoader', '', [
+call javaapi#class('LeafPropertyLoader', 'Loader', [
   \ javaapi#method(0,'LeafPropertyLoader(', 'TransducedAccessor)', 'public'),
   \ javaapi#method(0,'text(', 'State, CharSequence) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('LeafPropertyXsiLoader', '', [
+call javaapi#class('LeafPropertyXsiLoader', 'Loader', [
   \ javaapi#method(0,'LeafPropertyXsiLoader(', 'Loader, TransducedAccessor, Accessor)', 'public'),
   \ javaapi#method(0,'startElement(', 'State, TagName) throws SAXException', 'void'),
   \ javaapi#method(0,'getExpectedChildElements(', ')', 'QName>'),
@@ -184,7 +184,7 @@ call javaapi#class('Snapshot', 'ValidationEventLocator', [
   \ javaapi#method(0,'getLocation(', ')', 'ValidationEventLocator'),
   \ ])
 
-call javaapi#interface('LocatorEx', '', [
+call javaapi#interface('LocatorEx', 'Locator', [
   \ javaapi#method(0,'getLocation(', ')', 'ValidationEventLocator'),
   \ ])
 
@@ -210,7 +210,7 @@ call javaapi#class('MTOMDecorator', 'XmlVisitor', [
   \ javaapi#method(0,'getPredictor(', ')', 'TextPredictor'),
   \ ])
 
-call javaapi#class('Messages', '', [
+call javaapi#class('Messages', 'Messages>', [
   \ javaapi#field(1,'UNRESOLVED_IDREF', 'Messages'),
   \ javaapi#field(1,'UNEXPECTED_ELEMENT', 'Messages'),
   \ javaapi#field(1,'UNEXPECTED_TEXT', 'Messages'),
@@ -229,7 +229,7 @@ call javaapi#interface('Patcher', '', [
   \ javaapi#method(0,'run(', ') throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('ProxyLoader', '', [
+call javaapi#class('ProxyLoader', 'Loader', [
   \ javaapi#method(0,'ProxyLoader(', ')', 'public'),
   \ javaapi#method(0,'startElement(', 'State, TagName) throws SAXException', 'void'),
   \ javaapi#method(0,'leaveElement(', 'State, TagName)', 'void'),
@@ -242,7 +242,7 @@ call javaapi#interface('Receiver', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('TagNameImpl', '', [
+call javaapi#class('TagNameImpl', 'TagName', [
   \ javaapi#method(0,'getQname(', ')', 'String'),
   \ ])
 
@@ -280,7 +280,7 @@ call javaapi#class('1', 'LocatorEx', [
   \ javaapi#method(0,'getSystemId(', ')', 'String'),
   \ ])
 
-call javaapi#class('TagNameImpl', '', [
+call javaapi#class('TagNameImpl', 'TagName', [
   \ javaapi#method(0,'getQname(', ')', 'String'),
   \ ])
 
@@ -288,12 +288,12 @@ call javaapi#class('StAXConnector', '', [
   \ javaapi#method(0,'bridge(', ') throws XMLStreamException', 'void'),
   \ ])
 
-call javaapi#class('StAXEventConnector', '', [
+call javaapi#class('StAXEventConnector', 'StAXConnector', [
   \ javaapi#method(0,'StAXEventConnector(', 'XMLEventReader, XmlVisitor)', 'public'),
   \ javaapi#method(0,'bridge(', ') throws XMLStreamException', 'void'),
   \ ])
 
-call javaapi#class('StAXExConnector', '', [
+call javaapi#class('StAXExConnector', 'StAXStreamConnector', [
   \ javaapi#method(0,'StAXExConnector(', 'XMLStreamReaderEx, XmlVisitor)', 'public'),
   \ ])
 
@@ -312,7 +312,7 @@ call javaapi#class('1', 'Attributes', [
   \ javaapi#method(0,'getValue(', 'String)', 'String'),
   \ ])
 
-call javaapi#class('StAXStreamConnector', '', [
+call javaapi#class('StAXStreamConnector', 'StAXConnector', [
   \ javaapi#method(1,'create(', 'XMLStreamReader, XmlVisitor)', 'StAXConnector'),
   \ javaapi#method(0,'bridge(', ') throws XMLStreamException', 'void'),
   \ javaapi#method(1,'getClassLoader(', ')', 'ClassLoader'),
@@ -321,7 +321,7 @@ call javaapi#class('StAXStreamConnector', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('StructureLoader', '', [
+call javaapi#class('StructureLoader', 'Loader', [
   \ javaapi#method(0,'StructureLoader(', 'ClassBeanInfoImpl)', 'public'),
   \ javaapi#method(0,'init(', 'JAXBContextImpl, ClassBeanInfoImpl, Accessor<?, Map<QName, String>>)', 'void'),
   \ javaapi#method(0,'startElement(', 'State, TagName) throws SAXException', 'void'),
@@ -346,12 +346,12 @@ call javaapi#class('TagName', '', [
   \ javaapi#method(0,'createQName(', ')', 'QName'),
   \ ])
 
-call javaapi#class('TextLoader', '', [
+call javaapi#class('TextLoader', 'Loader', [
   \ javaapi#method(0,'TextLoader(', 'Transducer)', 'public'),
   \ javaapi#method(0,'text(', 'State, CharSequence) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('UnmarshallerImpl', '', [
+call javaapi#class('UnmarshallerImpl', 'AbstractUnmarshallerImpl', [
   \ javaapi#field(0,'coordinator', 'UnmarshallingContext'),
   \ javaapi#field(1,'FACTORY', 'String'),
   \ javaapi#method(0,'UnmarshallerImpl(', 'JAXBContextImpl, AssociationMap)', 'public'),
@@ -393,13 +393,13 @@ call javaapi#class('UnmarshallerImpl', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('DefaultRootLoader', '', [
+call javaapi#class('DefaultRootLoader', 'Loader', [
   \ javaapi#method(0,'childElement(', 'State, TagName) throws SAXException', 'void'),
   \ javaapi#method(0,'getExpectedChildElements(', ')', 'QName>'),
   \ javaapi#method(0,'receive(', 'State, Object)', 'void'),
   \ ])
 
-call javaapi#class('ExpectedTypeRootLoader', '', [
+call javaapi#class('ExpectedTypeRootLoader', 'Loader', [
   \ javaapi#method(0,'childElement(', 'State, TagName)', 'void'),
   \ javaapi#method(0,'receive(', 'State, Object)', 'void'),
   \ ])
@@ -421,7 +421,7 @@ call javaapi#class('State', '', [
   \ javaapi#method(0,'getContext(', ')', 'UnmarshallingContext'),
   \ ])
 
-call javaapi#class('UnmarshallingContext', '', [
+call javaapi#class('UnmarshallingContext', 'Coordinator', [
   \ javaapi#field(0,'parent', 'UnmarshallerImpl'),
   \ javaapi#field(0,'classResolver', 'ClassResolver'),
   \ javaapi#field(0,'classLoader', 'ClassLoader'),
@@ -488,12 +488,12 @@ call javaapi#class('ValidatingUnmarshaller', 'TextPredictor', [
   \ javaapi#method(0,'expectText(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('ValuePropertyLoader', '', [
+call javaapi#class('ValuePropertyLoader', 'Loader', [
   \ javaapi#method(0,'ValuePropertyLoader(', 'TransducedAccessor)', 'public'),
   \ javaapi#method(0,'text(', 'State, CharSequence) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('WildcardLoader', '', [
+call javaapi#class('WildcardLoader', 'ProxyLoader', [
   \ javaapi#method(0,'WildcardLoader(', 'DomHandler, WildcardMode)', 'public'),
   \ ])
 
@@ -513,21 +513,21 @@ call javaapi#interface('XmlVisitor', '', [
   \ javaapi#method(0,'getPredictor(', ')', 'TextPredictor'),
   \ ])
 
-call javaapi#class('Array', '', [
+call javaapi#class('Array', 'XsiNilLoader', [
   \ javaapi#method(0,'Array(', 'Loader)', 'public'),
   \ ])
 
-call javaapi#class('Single', '', [
+call javaapi#class('Single', 'XsiNilLoader', [
   \ javaapi#method(0,'Single(', 'Loader, Accessor)', 'public'),
   \ ])
 
-call javaapi#class('XsiNilLoader', '', [
+call javaapi#class('XsiNilLoader', 'ProxyLoader', [
   \ javaapi#method(0,'XsiNilLoader(', 'Loader)', 'public'),
   \ javaapi#method(0,'getExpectedChildElements(', ')', 'QName>'),
   \ javaapi#method(0,'getExpectedAttributes(', ')', 'QName>'),
   \ ])
 
-call javaapi#class('XsiTypeLoader', '', [
+call javaapi#class('XsiTypeLoader', 'Loader', [
   \ javaapi#method(0,'XsiTypeLoader(', 'JaxBeanInfo)', 'public'),
   \ javaapi#method(0,'startElement(', 'State, TagName) throws SAXException', 'void'),
   \ javaapi#method(0,'getExpectedAttributes(', ')', 'QName>'),

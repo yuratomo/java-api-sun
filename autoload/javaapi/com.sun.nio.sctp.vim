@@ -14,7 +14,7 @@ call javaapi#class('Association', '', [
   \ javaapi#method(0,'maxOutboundStreams(', ')', 'int'),
   \ ])
 
-call javaapi#class('AssocChangeEvent', '', [
+call javaapi#class('AssocChangeEvent', 'AssocChangeEvent>', [
   \ javaapi#field(1,'COMM_UP', 'AssocChangeEvent'),
   \ javaapi#field(1,'COMM_LOST', 'AssocChangeEvent'),
   \ javaapi#field(1,'RESTART', 'AssocChangeEvent'),
@@ -29,24 +29,24 @@ call javaapi#class('AssociationChangeNotification', 'Notification', [
   \ javaapi#method(0,'event(', ')', 'AssocChangeEvent'),
   \ ])
 
-call javaapi#class('HandlerResult', '', [
+call javaapi#class('HandlerResult', 'HandlerResult>', [
   \ javaapi#field(1,'CONTINUE', 'HandlerResult'),
   \ javaapi#field(1,'RETURN', 'HandlerResult'),
   \ javaapi#method(1,'values(', ')', 'HandlerResult[]'),
   \ javaapi#method(1,'valueOf(', 'String)', 'HandlerResult'),
   \ ])
 
-call javaapi#class('IllegalReceiveException', '', [
+call javaapi#class('IllegalReceiveException', 'IllegalStateException', [
   \ javaapi#method(0,'IllegalReceiveException(', ')', 'public'),
   \ javaapi#method(0,'IllegalReceiveException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('IllegalUnbindException', '', [
+call javaapi#class('IllegalUnbindException', 'IllegalStateException', [
   \ javaapi#method(0,'IllegalUnbindException(', ')', 'public'),
   \ javaapi#method(0,'IllegalUnbindException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('InvalidStreamException', '', [
+call javaapi#class('InvalidStreamException', 'IllegalArgumentException', [
   \ javaapi#method(0,'InvalidStreamException(', ')', 'public'),
   \ javaapi#method(0,'InvalidStreamException(', 'String)', 'public'),
   \ ])
@@ -77,7 +77,7 @@ call javaapi#interface('NotificationHandler<T>', '', [
   \ javaapi#method(0,'handleNotification(', 'Notification, T)', 'HandlerResult'),
   \ ])
 
-call javaapi#class('AddressChangeEvent', '', [
+call javaapi#class('AddressChangeEvent', 'AddressChangeEvent>', [
   \ javaapi#field(1,'ADDR_AVAILABLE', 'AddressChangeEvent'),
   \ javaapi#field(1,'ADDR_UNREACHABLE', 'AddressChangeEvent'),
   \ javaapi#field(1,'ADDR_REMOVED', 'AddressChangeEvent'),
@@ -94,7 +94,7 @@ call javaapi#class('PeerAddressChangeNotification', 'Notification', [
   \ javaapi#method(0,'event(', ')', 'AddressChangeEvent'),
   \ ])
 
-call javaapi#class('SctpChannel', '', [
+call javaapi#class('SctpChannel', 'AbstractSelectableChannel', [
   \ javaapi#method(1,'open(', ') throws IOException', 'SctpChannel'),
   \ javaapi#method(1,'open(', 'SocketAddress, int, int) throws IOException', 'SctpChannel'),
   \ javaapi#method(0,'association(', ') throws IOException', 'Association'),
@@ -116,7 +116,7 @@ call javaapi#class('SctpChannel', '', [
   \ javaapi#method(0,'send(', 'ByteBuffer, MessageInfo) throws IOException', 'int'),
   \ ])
 
-call javaapi#class('SctpMultiChannel', '', [
+call javaapi#class('SctpMultiChannel', 'AbstractSelectableChannel', [
   \ javaapi#method(1,'open(', ') throws IOException', 'SctpMultiChannel'),
   \ javaapi#method(0,'associations(', ') throws IOException', 'Association>'),
   \ javaapi#method(0,'bind(', 'SocketAddress, int) throws IOException', 'SctpMultiChannel'),
@@ -135,7 +135,7 @@ call javaapi#class('SctpMultiChannel', '', [
   \ javaapi#method(0,'branch(', 'Association) throws IOException', 'SctpChannel'),
   \ ])
 
-call javaapi#class('SctpServerChannel', '', [
+call javaapi#class('SctpServerChannel', 'AbstractSelectableChannel', [
   \ javaapi#method(1,'open(', ') throws IOException', 'SctpServerChannel'),
   \ javaapi#method(0,'accept(', ') throws IOException', 'SctpChannel'),
   \ javaapi#method(0,'bind(', 'SocketAddress) throws IOException', 'SctpServerChannel'),
@@ -149,7 +149,7 @@ call javaapi#class('SctpServerChannel', '', [
   \ javaapi#method(0,'validOps(', ')', 'int'),
   \ ])
 
-call javaapi#interface('SctpSocketOption<T>', '', [
+call javaapi#interface('SctpSocketOption<T>', 'SocketOption<T>', [
   \ ])
 
 call javaapi#class('InitMaxStreams', '', [

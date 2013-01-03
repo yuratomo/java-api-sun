@@ -43,7 +43,7 @@ call javaapi#class('JSAdapter', 'Function', [
   \ javaapi#method(0,'setAdaptee(', 'Scriptable)', 'void'),
   \ ])
 
-call javaapi#class('JavaAdapter', '', [
+call javaapi#class('JavaAdapter', 'ScriptableObject', [
   \ javaapi#method(0,'getClassName(', ')', 'String'),
   \ javaapi#method(0,'call(', 'Context, Scriptable, Scriptable, Object[]) throws RhinoException', 'Object'),
   \ javaapi#method(0,'construct(', 'Context, Scriptable, Object[]) throws RhinoException', 'Scriptable'),
@@ -53,7 +53,7 @@ call javaapi#class('RhinoClassShutter', 'ClassShutter', [
   \ javaapi#method(0,'visibleToScripts(', 'String)', 'boolean'),
   \ ])
 
-call javaapi#class('RhinoCompiledScript', '', [
+call javaapi#class('RhinoCompiledScript', 'CompiledScript', [
   \ javaapi#method(0,'eval(', 'ScriptContext) throws ScriptException', 'Object'),
   \ javaapi#method(0,'getEngine(', ')', 'ScriptEngine'),
   \ ])
@@ -62,13 +62,13 @@ call javaapi#class('1', 'Object>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ContextFactory', [
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'InterfaceImplementor', [
   \ ])
 
-call javaapi#class('RhinoScriptEngine', '', [
+call javaapi#class('RhinoScriptEngine', 'AbstractScriptEngine', [
   \ javaapi#method(0,'RhinoScriptEngine(', ')', 'public'),
   \ javaapi#method(0,'eval(', 'Reader, ScriptContext) throws ScriptException', 'Object'),
   \ javaapi#method(0,'eval(', 'String, ScriptContext) throws ScriptException', 'Object'),
@@ -82,7 +82,7 @@ call javaapi#class('RhinoScriptEngine', '', [
   \ javaapi#method(0,'compile(', 'Reader) throws ScriptException', 'CompiledScript'),
   \ ])
 
-call javaapi#class('RhinoScriptEngineFactory', '', [
+call javaapi#class('RhinoScriptEngineFactory', 'ScriptEngineFactoryBase', [
   \ javaapi#method(0,'RhinoScriptEngineFactory(', ')', 'public'),
   \ javaapi#method(0,'getExtensions(', ')', 'String>'),
   \ javaapi#method(0,'getMimeTypes(', ')', 'String>'),
@@ -94,16 +94,16 @@ call javaapi#class('RhinoScriptEngineFactory', '', [
   \ javaapi#method(0,'getProgram(', ')', 'String'),
   \ ])
 
-call javaapi#class('RhinoTopLevel', '', [
+call javaapi#class('RhinoTopLevel', 'ImporterTopLevel', [
   \ javaapi#method(1,'bindings(', 'Context, Scriptable, Object[], Function)', 'Object'),
   \ javaapi#method(1,'scope(', 'Context, Scriptable, Object[], Function)', 'Object'),
   \ javaapi#method(1,'sync(', 'Context, Scriptable, Object[], Function)', 'Object'),
   \ ])
 
-call javaapi#class('RhinoJavaObject', '', [
+call javaapi#class('RhinoJavaObject', 'NativeJavaObject', [
   \ ])
 
-call javaapi#class('RhinoWrapFactory', '', [
+call javaapi#class('RhinoWrapFactory', 'WrapFactory', [
   \ javaapi#method(0,'wrapAsJavaObject(', 'Context, Scriptable, Object, Class)', 'Scriptable'),
   \ ])
 

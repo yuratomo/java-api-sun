@@ -6,7 +6,7 @@ call javaapi#class('BitFile', '', [
   \ javaapi#method(0,'writeBits(', 'int, int) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('BogusColorSpace', '', [
+call javaapi#class('BogusColorSpace', 'ColorSpace', [
   \ javaapi#method(0,'BogusColorSpace(', 'int)', 'public'),
   \ javaapi#method(0,'toRGB(', 'float[])', 'float[]'),
   \ javaapi#method(0,'fromRGB(', 'float[])', 'float[]'),
@@ -14,7 +14,7 @@ call javaapi#class('BogusColorSpace', '', [
   \ javaapi#method(0,'fromCIEXYZ(', 'float[])', 'float[]'),
   \ ])
 
-call javaapi#class('I18N', '', [
+call javaapi#class('I18N', 'I18NImpl', [
   \ javaapi#method(0,'I18N(', ')', 'public'),
   \ javaapi#method(1,'getString(', 'String)', 'String'),
   \ ])
@@ -42,7 +42,7 @@ call javaapi#class('ImageUtil', '', [
   \ javaapi#method(1,'imageIsContiguous(', 'RenderedImage)', 'boolean'),
   \ ])
 
-call javaapi#class('InputStreamAdapter', '', [
+call javaapi#class('InputStreamAdapter', 'InputStream', [
   \ javaapi#method(0,'InputStreamAdapter(', 'ImageInputStream)', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
@@ -92,16 +92,16 @@ call javaapi#class('ReaderUtil', '', [
   \ javaapi#method(1,'readMultiByteInteger(', 'ImageInputStream) throws IOException', 'int'),
   \ ])
 
-call javaapi#class('StandardMetadataFormat', '', [
+call javaapi#class('StandardMetadataFormat', 'IIOMetadataFormatImpl', [
   \ javaapi#method(0,'StandardMetadataFormat(', ')', 'public'),
   \ javaapi#method(0,'canNodeAppear(', 'String, ImageTypeSpecifier)', 'boolean'),
   \ ])
 
-call javaapi#class('StandardMetadataFormatResources', '', [
+call javaapi#class('StandardMetadataFormatResources', 'ListResourceBundle', [
   \ javaapi#method(0,'StandardMetadataFormatResources(', ')', 'public'),
   \ ])
 
-call javaapi#class('SubImageInputStream', '', [
+call javaapi#class('SubImageInputStream', 'ImageInputStreamImpl', [
   \ javaapi#method(0,'SubImageInputStream(', 'ImageInputStream, int) throws IOException', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),

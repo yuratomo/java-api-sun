@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xml.internal.security.signature')
 
-call javaapi#class('InvalidDigestValueException', '', [
+call javaapi#class('InvalidDigestValueException', 'XMLSignatureException', [
   \ javaapi#method(0,'InvalidDigestValueException(', ')', 'public'),
   \ javaapi#method(0,'InvalidDigestValueException(', 'String)', 'public'),
   \ javaapi#method(0,'InvalidDigestValueException(', 'String, Object[])', 'public'),
@@ -8,7 +8,7 @@ call javaapi#class('InvalidDigestValueException', '', [
   \ javaapi#method(0,'InvalidDigestValueException(', 'String, Object[], Exception)', 'public'),
   \ ])
 
-call javaapi#class('InvalidSignatureValueException', '', [
+call javaapi#class('InvalidSignatureValueException', 'XMLSignatureException', [
   \ javaapi#method(0,'InvalidSignatureValueException(', ')', 'public'),
   \ javaapi#method(0,'InvalidSignatureValueException(', 'String)', 'public'),
   \ javaapi#method(0,'InvalidSignatureValueException(', 'String, Object[])', 'public'),
@@ -16,7 +16,7 @@ call javaapi#class('InvalidSignatureValueException', '', [
   \ javaapi#method(0,'InvalidSignatureValueException(', 'String, Object[], Exception)', 'public'),
   \ ])
 
-call javaapi#class('Manifest', '', [
+call javaapi#class('Manifest', 'SignatureElementProxy', [
   \ javaapi#method(0,'Manifest(', 'Document)', 'public'),
   \ javaapi#method(0,'Manifest(', 'Element, String) throws XMLSecurityException', 'public'),
   \ javaapi#method(0,'addDocument(', 'String, String, Transforms, String, String, String) throws XMLSignatureException', 'void'),
@@ -39,7 +39,7 @@ call javaapi#class('Manifest', '', [
   \ javaapi#method(0,'getBaseLocalName(', ')', 'String'),
   \ ])
 
-call javaapi#class('MissingResourceFailureException', '', [
+call javaapi#class('MissingResourceFailureException', 'XMLSignatureException', [
   \ javaapi#method(0,'MissingResourceFailureException(', 'String, Reference)', 'public'),
   \ javaapi#method(0,'MissingResourceFailureException(', 'String, Object[], Reference)', 'public'),
   \ javaapi#method(0,'MissingResourceFailureException(', 'String, Exception, Reference)', 'public'),
@@ -53,7 +53,7 @@ call javaapi#interface('NodeFilter', '', [
   \ javaapi#method(0,'isNodeIncludeDO(', 'Node, int)', 'int'),
   \ ])
 
-call javaapi#class('ObjectContainer', '', [
+call javaapi#class('ObjectContainer', 'SignatureElementProxy', [
   \ javaapi#method(0,'ObjectContainer(', 'Document)', 'public'),
   \ javaapi#method(0,'ObjectContainer(', 'Element, String) throws XMLSecurityException', 'public'),
   \ javaapi#method(0,'setId(', 'String)', 'void'),
@@ -71,7 +71,7 @@ call javaapi#class('1', 'Boolean>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('Reference', '', [
+call javaapi#class('Reference', 'SignatureElementProxy', [
   \ javaapi#field(1,'CacheSignedNodes', 'boolean'),
   \ javaapi#field(1,'OBJECT_URI', 'String'),
   \ javaapi#field(1,'MANIFEST_URI', 'String'),
@@ -98,7 +98,7 @@ call javaapi#class('Reference', '', [
   \ javaapi#method(0,'getBaseLocalName(', ')', 'String'),
   \ ])
 
-call javaapi#class('ReferenceNotInitializedException', '', [
+call javaapi#class('ReferenceNotInitializedException', 'XMLSignatureException', [
   \ javaapi#method(0,'ReferenceNotInitializedException(', ')', 'public'),
   \ javaapi#method(0,'ReferenceNotInitializedException(', 'String)', 'public'),
   \ javaapi#method(0,'ReferenceNotInitializedException(', 'String, Object[])', 'public'),
@@ -106,7 +106,7 @@ call javaapi#class('ReferenceNotInitializedException', '', [
   \ javaapi#method(0,'ReferenceNotInitializedException(', 'String, Object[], Exception)', 'public'),
   \ ])
 
-call javaapi#class('SignatureProperties', '', [
+call javaapi#class('SignatureProperties', 'SignatureElementProxy', [
   \ javaapi#method(0,'SignatureProperties(', 'Document)', 'public'),
   \ javaapi#method(0,'SignatureProperties(', 'Element, String) throws XMLSecurityException', 'public'),
   \ javaapi#method(0,'getLength(', ')', 'int'),
@@ -117,7 +117,7 @@ call javaapi#class('SignatureProperties', '', [
   \ javaapi#method(0,'getBaseLocalName(', ')', 'String'),
   \ ])
 
-call javaapi#class('SignatureProperty', '', [
+call javaapi#class('SignatureProperty', 'SignatureElementProxy', [
   \ javaapi#method(0,'SignatureProperty(', 'Document, String)', 'public'),
   \ javaapi#method(0,'SignatureProperty(', 'Document, String, String)', 'public'),
   \ javaapi#method(0,'SignatureProperty(', 'Element, String) throws XMLSecurityException', 'public'),
@@ -129,7 +129,7 @@ call javaapi#class('SignatureProperty', '', [
   \ javaapi#method(0,'getBaseLocalName(', ')', 'String'),
   \ ])
 
-call javaapi#class('SignedInfo', '', [
+call javaapi#class('SignedInfo', 'Manifest', [
   \ javaapi#method(0,'SignedInfo(', 'Document) throws XMLSecurityException', 'public'),
   \ javaapi#method(0,'SignedInfo(', 'Document, String, String) throws XMLSecurityException', 'public'),
   \ javaapi#method(0,'SignedInfo(', 'Document, String, int, String) throws XMLSecurityException', 'public'),
@@ -147,7 +147,7 @@ call javaapi#class('SignedInfo', '', [
   \ javaapi#method(0,'getInclusiveNamespaces(', ')', 'String'),
   \ ])
 
-call javaapi#class('XMLSignature', '', [
+call javaapi#class('XMLSignature', 'SignatureElementProxy', [
   \ javaapi#field(1,'ALGO_ID_MAC_HMAC_SHA1', 'String'),
   \ javaapi#field(1,'ALGO_ID_SIGNATURE_DSA', 'String'),
   \ javaapi#field(1,'ALGO_ID_SIGNATURE_RSA', 'String'),
@@ -193,7 +193,7 @@ call javaapi#class('XMLSignature', '', [
   \ javaapi#method(0,'getBaseLocalName(', ')', 'String'),
   \ ])
 
-call javaapi#class('XMLSignatureException', '', [
+call javaapi#class('XMLSignatureException', 'XMLSecurityException', [
   \ javaapi#method(0,'XMLSignatureException(', ')', 'public'),
   \ javaapi#method(0,'XMLSignatureException(', 'String)', 'public'),
   \ javaapi#method(0,'XMLSignatureException(', 'String, Object[])', 'public'),

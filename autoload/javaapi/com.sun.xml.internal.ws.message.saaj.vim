@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.ws.message.saaj')
 
-call javaapi#class('SAAJHeader', '', [
+call javaapi#class('SAAJHeader', 'SOAPHeaderElement>', [
   \ javaapi#method(0,'SAAJHeader(', 'SOAPHeaderElement)', 'public'),
   \ javaapi#method(0,'getRole(', 'SOAPVersion)', 'String'),
   \ ])
@@ -25,7 +25,7 @@ call javaapi#class('SAAJAttachmentSet', 'AttachmentSet', [
   \ javaapi#method(0,'add(', 'Attachment)', 'void'),
   \ ])
 
-call javaapi#class('SAAJMessage', '', [
+call javaapi#class('SAAJMessage', 'Message', [
   \ javaapi#method(0,'SAAJMessage(', 'SOAPMessage)', 'public'),
   \ javaapi#method(0,'hasHeaders(', ')', 'boolean'),
   \ javaapi#method(0,'getHeaders(', ')', 'HeaderList'),

@@ -6,7 +6,7 @@ call javaapi#class('Base64', '', [
   \ javaapi#method(1,'decode(', 'String)', 'byte[]'),
   \ ])
 
-call javaapi#class('ByteListImpl', '', [
+call javaapi#class('ByteListImpl', 'AbstractList', [
   \ javaapi#method(0,'ByteListImpl(', 'byte[])', 'public'),
   \ javaapi#method(0,'getLength(', ')', 'int'),
   \ javaapi#method(0,'contains(', 'byte)', 'boolean'),

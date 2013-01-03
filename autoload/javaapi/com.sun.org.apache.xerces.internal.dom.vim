@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xerces.internal.dom')
 
-call javaapi#class('AttrImpl', '', [
+call javaapi#class('AttrImpl', 'NodeImpl', [
   \ javaapi#method(0,'setIdAttribute(', 'boolean)', 'void'),
   \ javaapi#method(0,'isId(', ')', 'boolean'),
   \ javaapi#method(0,'cloneNode(', 'boolean)', 'Node'),
@@ -35,7 +35,7 @@ call javaapi#class('AttrImpl', '', [
   \ javaapi#method(0,'setReadOnly(', 'boolean, boolean)', 'void'),
   \ ])
 
-call javaapi#class('AttrNSImpl', '', [
+call javaapi#class('AttrNSImpl', 'AttrImpl', [
   \ javaapi#method(0,'AttrNSImpl(', ')', 'public'),
   \ javaapi#method(0,'AttrNSImpl(', 'CoreDocumentImpl, String, String, String)', 'public'),
   \ javaapi#method(0,'setValues(', 'CoreDocumentImpl, String, String, String)', 'void'),
@@ -48,7 +48,7 @@ call javaapi#class('AttrNSImpl', '', [
   \ javaapi#method(0,'getTypeNamespace(', ')', 'String'),
   \ ])
 
-call javaapi#class('AttributeMap', '', [
+call javaapi#class('AttributeMap', 'NamedNodeMapImpl', [
   \ javaapi#method(0,'setNamedItem(', 'Node) throws DOMException', 'Node'),
   \ javaapi#method(0,'setNamedItemNS(', 'Node) throws DOMException', 'Node'),
   \ javaapi#method(0,'removeNamedItem(', 'String) throws DOMException', 'Node'),
@@ -56,7 +56,7 @@ call javaapi#class('AttributeMap', '', [
   \ javaapi#method(0,'cloneMap(', 'NodeImpl)', 'NamedNodeMapImpl'),
   \ ])
 
-call javaapi#class('CDATASectionImpl', '', [
+call javaapi#class('CDATASectionImpl', 'TextImpl', [
   \ javaapi#method(0,'CDATASectionImpl(', 'CoreDocumentImpl, String)', 'public'),
   \ javaapi#method(0,'getNodeType(', ')', 'short'),
   \ javaapi#method(0,'getNodeName(', ')', 'String'),
@@ -67,7 +67,7 @@ call javaapi#class('1', 'NodeList', [
   \ javaapi#method(0,'getLength(', ')', 'int'),
   \ ])
 
-call javaapi#class('CharacterDataImpl', '', [
+call javaapi#class('CharacterDataImpl', 'ChildNode', [
   \ javaapi#method(0,'CharacterDataImpl(', ')', 'public'),
   \ javaapi#method(0,'getChildNodes(', ')', 'NodeList'),
   \ javaapi#method(0,'getNodeValue(', ')', 'String'),
@@ -82,7 +82,7 @@ call javaapi#class('CharacterDataImpl', '', [
   \ javaapi#method(0,'substringData(', 'int, int) throws DOMException', 'String'),
   \ ])
 
-call javaapi#class('ChildNode', '', [
+call javaapi#class('ChildNode', 'NodeImpl', [
   \ javaapi#method(0,'ChildNode(', ')', 'public'),
   \ javaapi#method(0,'cloneNode(', 'boolean)', 'Node'),
   \ javaapi#method(0,'getParentNode(', ')', 'Node'),
@@ -90,7 +90,7 @@ call javaapi#class('ChildNode', '', [
   \ javaapi#method(0,'getPreviousSibling(', ')', 'Node'),
   \ ])
 
-call javaapi#class('CommentImpl', '', [
+call javaapi#class('CommentImpl', 'CharacterDataImpl', [
   \ javaapi#method(0,'CommentImpl(', 'CoreDocumentImpl, String)', 'public'),
   \ javaapi#method(0,'getNodeType(', ')', 'short'),
   \ javaapi#method(0,'getNodeName(', ')', 'String'),
@@ -109,7 +109,7 @@ call javaapi#class('CoreDOMImplementationImpl', 'DOMImplementationLS', [
   \ javaapi#method(0,'createLSOutput(', ')', 'LSOutput'),
   \ ])
 
-call javaapi#class('CoreDocumentImpl', '', [
+call javaapi#class('CoreDocumentImpl', 'ParentNode', [
   \ javaapi#method(0,'CoreDocumentImpl(', ')', 'public'),
   \ javaapi#method(0,'CoreDocumentImpl(', 'boolean)', 'public'),
   \ javaapi#method(0,'CoreDocumentImpl(', 'DocumentType)', 'public'),
@@ -189,7 +189,7 @@ call javaapi#class('CoreDocumentImpl', '', [
   \ javaapi#method(0,'getUserData(', 'Node, String)', 'Object'),
   \ ])
 
-call javaapi#class('DOMConfigurationImpl', '', [
+call javaapi#class('DOMConfigurationImpl', 'ParserConfigurationSettings', [
   \ javaapi#method(0,'parse(', 'XMLInputSource) throws XNIException, IOException', 'void'),
   \ javaapi#method(0,'setDocumentHandler(', 'XMLDocumentHandler)', 'void'),
   \ javaapi#method(0,'getDocumentHandler(', ')', 'XMLDocumentHandler'),
@@ -229,7 +229,7 @@ call javaapi#class('DOMErrorImpl', 'DOMError', [
   \ javaapi#method(0,'getRelatedData(', ')', 'Object'),
   \ ])
 
-call javaapi#class('DOMImplementationImpl', '', [
+call javaapi#class('DOMImplementationImpl', 'CoreDOMImplementationImpl', [
   \ javaapi#method(0,'DOMImplementationImpl(', ')', 'public'),
   \ javaapi#method(1,'getDOMImplementation(', ')', 'DOMImplementation'),
   \ javaapi#method(0,'hasFeature(', 'String, String)', 'boolean'),
@@ -385,7 +385,7 @@ call javaapi#class('DOMStringListImpl', 'DOMStringList', [
   \ javaapi#method(0,'add(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('DOMXSImplementationSourceImpl', '', [
+call javaapi#class('DOMXSImplementationSourceImpl', 'DOMImplementationSourceImpl', [
   \ javaapi#method(0,'DOMXSImplementationSourceImpl(', ')', 'public'),
   \ javaapi#method(0,'getDOMImplementation(', 'String)', 'DOMImplementation'),
   \ javaapi#method(0,'getDOMImplementationList(', 'String)', 'DOMImplementationList'),
@@ -398,23 +398,23 @@ call javaapi#class('DeepNodeListImpl', 'NodeList', [
   \ javaapi#method(0,'item(', 'int)', 'Node'),
   \ ])
 
-call javaapi#class('DeferredAttrImpl', '', [
+call javaapi#class('DeferredAttrImpl', 'AttrImpl', [
   \ javaapi#method(0,'getNodeIndex(', ')', 'int'),
   \ ])
 
-call javaapi#class('DeferredAttrNSImpl', '', [
+call javaapi#class('DeferredAttrNSImpl', 'AttrNSImpl', [
   \ javaapi#method(0,'getNodeIndex(', ')', 'int'),
   \ ])
 
-call javaapi#class('DeferredCDATASectionImpl', '', [
+call javaapi#class('DeferredCDATASectionImpl', 'CDATASectionImpl', [
   \ javaapi#method(0,'getNodeIndex(', ')', 'int'),
   \ ])
 
-call javaapi#class('DeferredCommentImpl', '', [
+call javaapi#class('DeferredCommentImpl', 'CommentImpl', [
   \ javaapi#method(0,'getNodeIndex(', ')', 'int'),
   \ ])
 
-call javaapi#class('DeferredDOMImplementationImpl', '', [
+call javaapi#class('DeferredDOMImplementationImpl', 'DOMImplementationImpl', [
   \ javaapi#method(0,'DeferredDOMImplementationImpl(', ')', 'public'),
   \ javaapi#method(1,'getDOMImplementation(', ')', 'DOMImplementation'),
   \ ])
@@ -429,7 +429,7 @@ call javaapi#class('IntVector', '', [
 call javaapi#class('RefCount', '', [
   \ ])
 
-call javaapi#class('DeferredDocumentImpl', '', [
+call javaapi#class('DeferredDocumentImpl', 'DocumentImpl', [
   \ javaapi#method(0,'DeferredDocumentImpl(', ')', 'public'),
   \ javaapi#method(0,'DeferredDocumentImpl(', 'boolean)', 'public'),
   \ javaapi#method(0,'DeferredDocumentImpl(', 'boolean, boolean)', 'public'),
@@ -492,48 +492,48 @@ call javaapi#class('DeferredDocumentImpl', '', [
   \ javaapi#method(0,'getNodeIndex(', ')', 'int'),
   \ ])
 
-call javaapi#class('DeferredDocumentTypeImpl', '', [
+call javaapi#class('DeferredDocumentTypeImpl', 'DocumentTypeImpl', [
   \ javaapi#method(0,'getNodeIndex(', ')', 'int'),
   \ ])
 
-call javaapi#class('DeferredElementDefinitionImpl', '', [
+call javaapi#class('DeferredElementDefinitionImpl', 'ElementDefinitionImpl', [
   \ javaapi#method(0,'getNodeIndex(', ')', 'int'),
   \ ])
 
-call javaapi#class('DeferredElementImpl', '', [
+call javaapi#class('DeferredElementImpl', 'ElementImpl', [
   \ javaapi#method(0,'getNodeIndex(', ')', 'int'),
   \ ])
 
-call javaapi#class('DeferredElementNSImpl', '', [
+call javaapi#class('DeferredElementNSImpl', 'ElementNSImpl', [
   \ javaapi#method(0,'getNodeIndex(', ')', 'int'),
   \ ])
 
-call javaapi#class('DeferredEntityImpl', '', [
+call javaapi#class('DeferredEntityImpl', 'EntityImpl', [
   \ javaapi#method(0,'getNodeIndex(', ')', 'int'),
   \ ])
 
-call javaapi#class('DeferredEntityReferenceImpl', '', [
+call javaapi#class('DeferredEntityReferenceImpl', 'EntityReferenceImpl', [
   \ javaapi#method(0,'getNodeIndex(', ')', 'int'),
   \ ])
 
-call javaapi#interface('DeferredNode', '', [
+call javaapi#interface('DeferredNode', 'Node', [
   \ javaapi#field(1,'TYPE_NODE', 'short'),
   \ javaapi#method(0,'getNodeIndex(', ')', 'int'),
   \ ])
 
-call javaapi#class('DeferredNotationImpl', '', [
+call javaapi#class('DeferredNotationImpl', 'NotationImpl', [
   \ javaapi#method(0,'getNodeIndex(', ')', 'int'),
   \ ])
 
-call javaapi#class('DeferredProcessingInstructionImpl', '', [
+call javaapi#class('DeferredProcessingInstructionImpl', 'ProcessingInstructionImpl', [
   \ javaapi#method(0,'getNodeIndex(', ')', 'int'),
   \ ])
 
-call javaapi#class('DeferredTextImpl', '', [
+call javaapi#class('DeferredTextImpl', 'TextImpl', [
   \ javaapi#method(0,'getNodeIndex(', ')', 'int'),
   \ ])
 
-call javaapi#class('DocumentFragmentImpl', '', [
+call javaapi#class('DocumentFragmentImpl', 'ParentNode', [
   \ javaapi#method(0,'DocumentFragmentImpl(', 'CoreDocumentImpl)', 'public'),
   \ javaapi#method(0,'DocumentFragmentImpl(', ')', 'public'),
   \ javaapi#method(0,'getNodeType(', ')', 'short'),
@@ -547,7 +547,7 @@ call javaapi#class('EnclosingAttr', 'Serializable', [
 call javaapi#class('LEntry', 'Serializable', [
   \ ])
 
-call javaapi#class('DocumentImpl', '', [
+call javaapi#class('DocumentImpl', 'CoreDocumentImpl', [
   \ javaapi#method(0,'DocumentImpl(', ')', 'public'),
   \ javaapi#method(0,'DocumentImpl(', 'boolean)', 'public'),
   \ javaapi#method(0,'DocumentImpl(', 'DocumentType)', 'public'),
@@ -562,7 +562,7 @@ call javaapi#class('DocumentImpl', '', [
   \ javaapi#method(0,'createEvent(', 'String) throws DOMException', 'Event'),
   \ ])
 
-call javaapi#class('DocumentTypeImpl', '', [
+call javaapi#class('DocumentTypeImpl', 'ParentNode', [
   \ javaapi#method(0,'DocumentTypeImpl(', 'CoreDocumentImpl, String)', 'public'),
   \ javaapi#method(0,'DocumentTypeImpl(', 'CoreDocumentImpl, String, String, String)', 'public'),
   \ javaapi#method(0,'getPublicId(', ')', 'String'),
@@ -584,7 +584,7 @@ call javaapi#class('DocumentTypeImpl', '', [
   \ javaapi#method(0,'getUserData(', 'String)', 'Object'),
   \ ])
 
-call javaapi#class('ElementDefinitionImpl', '', [
+call javaapi#class('ElementDefinitionImpl', 'ParentNode', [
   \ javaapi#method(0,'ElementDefinitionImpl(', 'CoreDocumentImpl, String)', 'public'),
   \ javaapi#method(0,'getNodeType(', ')', 'short'),
   \ javaapi#method(0,'getNodeName(', ')', 'String'),
@@ -592,7 +592,7 @@ call javaapi#class('ElementDefinitionImpl', '', [
   \ javaapi#method(0,'getAttributes(', ')', 'NamedNodeMap'),
   \ ])
 
-call javaapi#class('ElementImpl', '', [
+call javaapi#class('ElementImpl', 'ParentNode', [
   \ javaapi#method(0,'ElementImpl(', 'CoreDocumentImpl, String)', 'public'),
   \ javaapi#method(0,'getNodeType(', ')', 'short'),
   \ javaapi#method(0,'getNodeName(', ')', 'String'),
@@ -628,7 +628,7 @@ call javaapi#class('ElementImpl', '', [
   \ javaapi#method(0,'setReadOnly(', 'boolean, boolean)', 'void'),
   \ ])
 
-call javaapi#class('ElementNSImpl', '', [
+call javaapi#class('ElementNSImpl', 'ElementImpl', [
   \ javaapi#method(0,'getNamespaceURI(', ')', 'String'),
   \ javaapi#method(0,'getPrefix(', ')', 'String'),
   \ javaapi#method(0,'setPrefix(', 'String) throws DOMException', 'void'),
@@ -640,7 +640,7 @@ call javaapi#class('ElementNSImpl', '', [
   \ javaapi#method(0,'setType(', 'XSTypeDefinition)', 'void'),
   \ ])
 
-call javaapi#class('EntityImpl', '', [
+call javaapi#class('EntityImpl', 'ParentNode', [
   \ javaapi#method(0,'EntityImpl(', 'CoreDocumentImpl, String)', 'public'),
   \ javaapi#method(0,'getNodeType(', ')', 'short'),
   \ javaapi#method(0,'getNodeName(', ')', 'String'),
@@ -663,7 +663,7 @@ call javaapi#class('EntityImpl', '', [
   \ javaapi#method(0,'setBaseURI(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('EntityReferenceImpl', '', [
+call javaapi#class('EntityReferenceImpl', 'ParentNode', [
   \ javaapi#method(0,'EntityReferenceImpl(', 'CoreDocumentImpl, String)', 'public'),
   \ javaapi#method(0,'getNodeType(', ')', 'short'),
   \ javaapi#method(0,'getNodeName(', ')', 'String'),
@@ -775,7 +775,7 @@ call javaapi#class('NodeIteratorImpl', 'NodeIterator', [
 call javaapi#class('NodeListCache', 'Serializable', [
   \ ])
 
-call javaapi#class('NotationImpl', '', [
+call javaapi#class('NotationImpl', 'NodeImpl', [
   \ javaapi#method(0,'NotationImpl(', 'CoreDocumentImpl, String)', 'public'),
   \ javaapi#method(0,'getNodeType(', ')', 'short'),
   \ javaapi#method(0,'getNodeName(', ')', 'String'),
@@ -787,13 +787,13 @@ call javaapi#class('NotationImpl', '', [
   \ javaapi#method(0,'setBaseURI(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('ConfigurationError', '', [
+call javaapi#class('ConfigurationError', 'Error', [
   \ ])
 
 call javaapi#class('ObjectFactory', '', [
   \ ])
 
-call javaapi#class('PSVIAttrNSImpl', '', [
+call javaapi#class('PSVIAttrNSImpl', 'AttrNSImpl', [
   \ javaapi#method(0,'PSVIAttrNSImpl(', 'CoreDocumentImpl, String, String, String)', 'public'),
   \ javaapi#method(0,'PSVIAttrNSImpl(', 'CoreDocumentImpl, String, String)', 'public'),
   \ javaapi#method(0,'getSchemaDefault(', ')', 'String'),
@@ -812,14 +812,14 @@ call javaapi#class('PSVIAttrNSImpl', '', [
   \ javaapi#method(0,'getItemValueTypes(', ')', 'ShortList'),
   \ ])
 
-call javaapi#class('PSVIDOMImplementationImpl', '', [
+call javaapi#class('PSVIDOMImplementationImpl', 'CoreDOMImplementationImpl', [
   \ javaapi#method(0,'PSVIDOMImplementationImpl(', ')', 'public'),
   \ javaapi#method(1,'getDOMImplementation(', ')', 'DOMImplementation'),
   \ javaapi#method(0,'hasFeature(', 'String, String)', 'boolean'),
   \ javaapi#method(0,'createDocument(', 'String, String, DocumentType) throws DOMException', 'Document'),
   \ ])
 
-call javaapi#class('PSVIDocumentImpl', '', [
+call javaapi#class('PSVIDocumentImpl', 'DocumentImpl', [
   \ javaapi#method(0,'PSVIDocumentImpl(', ')', 'public'),
   \ javaapi#method(0,'PSVIDocumentImpl(', 'DocumentType)', 'public'),
   \ javaapi#method(0,'cloneNode(', 'boolean)', 'Node'),
@@ -831,7 +831,7 @@ call javaapi#class('PSVIDocumentImpl', '', [
   \ javaapi#method(0,'getDomConfig(', ')', 'DOMConfiguration'),
   \ ])
 
-call javaapi#class('PSVIElementNSImpl', '', [
+call javaapi#class('PSVIElementNSImpl', 'ElementNSImpl', [
   \ javaapi#method(0,'PSVIElementNSImpl(', 'CoreDocumentImpl, String, String, String)', 'public'),
   \ javaapi#method(0,'PSVIElementNSImpl(', 'CoreDocumentImpl, String, String)', 'public'),
   \ javaapi#method(0,'getSchemaDefault(', ')', 'String'),
@@ -861,7 +861,7 @@ call javaapi#class('1', 'NodeList', [
 call javaapi#class('UserDataRecord', 'Serializable', [
   \ ])
 
-call javaapi#class('ParentNode', '', [
+call javaapi#class('ParentNode', 'ChildNode', [
   \ javaapi#method(0,'ParentNode(', ')', 'public'),
   \ javaapi#method(0,'cloneNode(', 'boolean)', 'Node'),
   \ javaapi#method(0,'getOwnerDocument(', ')', 'Document'),
@@ -881,7 +881,7 @@ call javaapi#class('ParentNode', '', [
   \ javaapi#method(0,'setReadOnly(', 'boolean, boolean)', 'void'),
   \ ])
 
-call javaapi#class('ProcessingInstructionImpl', '', [
+call javaapi#class('ProcessingInstructionImpl', 'CharacterDataImpl', [
   \ javaapi#method(0,'ProcessingInstructionImpl(', 'CoreDocumentImpl, String, String)', 'public'),
   \ javaapi#method(0,'getNodeType(', ')', 'short'),
   \ javaapi#method(0,'getNodeName(', ')', 'String'),
@@ -891,7 +891,7 @@ call javaapi#class('ProcessingInstructionImpl', '', [
   \ javaapi#method(0,'getBaseURI(', ')', 'String'),
   \ ])
 
-call javaapi#class('RangeExceptionImpl', '', [
+call javaapi#class('RangeExceptionImpl', 'RangeException', [
   \ javaapi#method(0,'RangeExceptionImpl(', 'short, String)', 'public'),
   \ ])
 
@@ -959,7 +959,7 @@ call javaapi#class('8', 'PrivilegedAction', [
 call javaapi#class('SecuritySupport', '', [
   \ ])
 
-call javaapi#class('TextImpl', '', [
+call javaapi#class('TextImpl', 'CharacterDataImpl', [
   \ javaapi#method(0,'TextImpl(', ')', 'public'),
   \ javaapi#method(0,'TextImpl(', 'CoreDocumentImpl, String)', 'public'),
   \ javaapi#method(0,'setValues(', 'CoreDocumentImpl, String)', 'void'),

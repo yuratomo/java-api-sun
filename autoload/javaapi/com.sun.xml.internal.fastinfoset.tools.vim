@@ -1,33 +1,33 @@
 call javaapi#namespace('com.sun.xml.internal.fastinfoset.tools')
 
-call javaapi#class('FI_DOM_Or_XML_DOM_SAX_SAXEvent', '', [
+call javaapi#class('FI_DOM_Or_XML_DOM_SAX_SAXEvent', 'TransformInputOutput', [
   \ javaapi#method(0,'FI_DOM_Or_XML_DOM_SAX_SAXEvent(', ')', 'public'),
   \ javaapi#method(0,'parse(', 'InputStream, OutputStream, String) throws Exception', 'void'),
   \ javaapi#method(0,'parse(', 'InputStream, OutputStream) throws Exception', 'void'),
   \ javaapi#method(1,'main(', 'String[]) throws Exception', 'void'),
   \ ])
 
-call javaapi#class('FI_SAX_Or_XML_SAX_DOM_SAX_SAXEvent', '', [
+call javaapi#class('FI_SAX_Or_XML_SAX_DOM_SAX_SAXEvent', 'TransformInputOutput', [
   \ javaapi#method(0,'FI_SAX_Or_XML_SAX_DOM_SAX_SAXEvent(', ')', 'public'),
   \ javaapi#method(0,'parse(', 'InputStream, OutputStream, String) throws Exception', 'void'),
   \ javaapi#method(0,'parse(', 'InputStream, OutputStream) throws Exception', 'void'),
   \ javaapi#method(1,'main(', 'String[]) throws Exception', 'void'),
   \ ])
 
-call javaapi#class('FI_SAX_Or_XML_SAX_SAXEvent', '', [
+call javaapi#class('FI_SAX_Or_XML_SAX_SAXEvent', 'TransformInputOutput', [
   \ javaapi#method(0,'FI_SAX_Or_XML_SAX_SAXEvent(', ')', 'public'),
   \ javaapi#method(0,'parse(', 'InputStream, OutputStream, String) throws Exception', 'void'),
   \ javaapi#method(0,'parse(', 'InputStream, OutputStream) throws Exception', 'void'),
   \ javaapi#method(1,'main(', 'String[]) throws Exception', 'void'),
   \ ])
 
-call javaapi#class('FI_SAX_XML', '', [
+call javaapi#class('FI_SAX_XML', 'TransformInputOutput', [
   \ javaapi#method(0,'FI_SAX_XML(', ')', 'public'),
   \ javaapi#method(0,'parse(', 'InputStream, OutputStream) throws Exception', 'void'),
   \ javaapi#method(1,'main(', 'String[]) throws Exception', 'void'),
   \ ])
 
-call javaapi#class('FI_StAX_SAX_Or_XML_SAX_SAXEvent', '', [
+call javaapi#class('FI_StAX_SAX_Or_XML_SAX_SAXEvent', 'TransformInputOutput', [
   \ javaapi#method(0,'FI_StAX_SAX_Or_XML_SAX_SAXEvent(', ')', 'public'),
   \ javaapi#method(0,'parse(', 'InputStream, OutputStream) throws Exception', 'void'),
   \ javaapi#method(1,'main(', 'String[]) throws Exception', 'void'),
@@ -44,7 +44,7 @@ call javaapi#class('PrintTable', '', [
   \ javaapi#method(1,'main(', 'String[])', 'void'),
   \ ])
 
-call javaapi#class('SAX2StAXWriter', '', [
+call javaapi#class('SAX2StAXWriter', 'DefaultHandler', [
   \ javaapi#method(0,'SAX2StAXWriter(', 'XMLStreamWriter)', 'public'),
   \ javaapi#method(0,'getWriter(', ')', 'XMLStreamWriter'),
   \ javaapi#method(0,'startDocument(', ') throws SAXException', 'void'),
@@ -77,7 +77,7 @@ call javaapi#class('AttributeValueHolder', 'Comparable', [
   \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
   \ ])
 
-call javaapi#class('SAXEventSerializer', '', [
+call javaapi#class('SAXEventSerializer', 'DefaultHandler', [
   \ javaapi#method(0,'SAXEventSerializer(', 'OutputStream) throws IOException', 'public'),
   \ javaapi#method(0,'startDocument(', ') throws SAXException', 'void'),
   \ javaapi#method(0,'endDocument(', ') throws SAXException', 'void'),
@@ -116,7 +116,7 @@ call javaapi#class('TransformInputOutput', '', [
   \ javaapi#method(0,'parse(', 'InputStream, OutputStream, String) throws Exception', 'void'),
   \ ])
 
-call javaapi#class('VocabularyGenerator', '', [
+call javaapi#class('VocabularyGenerator', 'DefaultHandler', [
   \ javaapi#method(0,'VocabularyGenerator(', ')', 'public'),
   \ javaapi#method(0,'VocabularyGenerator(', 'SerializerVocabulary)', 'public'),
   \ javaapi#method(0,'VocabularyGenerator(', 'ParserVocabulary)', 'public'),
@@ -151,21 +151,21 @@ call javaapi#class('VocabularyGenerator', '', [
   \ javaapi#method(1,'getPrefixFromQualifiedName(', 'String)', 'String'),
   \ ])
 
-call javaapi#class('XML_DOM_FI', '', [
+call javaapi#class('XML_DOM_FI', 'TransformInputOutput', [
   \ javaapi#method(0,'XML_DOM_FI(', ')', 'public'),
   \ javaapi#method(0,'parse(', 'InputStream, OutputStream, String) throws Exception', 'void'),
   \ javaapi#method(0,'parse(', 'InputStream, OutputStream) throws Exception', 'void'),
   \ javaapi#method(1,'main(', 'String[]) throws Exception', 'void'),
   \ ])
 
-call javaapi#class('XML_DOM_SAX_FI', '', [
+call javaapi#class('XML_DOM_SAX_FI', 'TransformInputOutput', [
   \ javaapi#method(0,'XML_DOM_SAX_FI(', ')', 'public'),
   \ javaapi#method(0,'parse(', 'InputStream, OutputStream, String) throws Exception', 'void'),
   \ javaapi#method(0,'parse(', 'InputStream, OutputStream) throws Exception', 'void'),
   \ javaapi#method(1,'main(', 'String[]) throws Exception', 'void'),
   \ ])
 
-call javaapi#class('XML_SAX_FI', '', [
+call javaapi#class('XML_SAX_FI', 'TransformInputOutput', [
   \ javaapi#method(0,'XML_SAX_FI(', ')', 'public'),
   \ javaapi#method(0,'parse(', 'InputStream, OutputStream, String) throws Exception', 'void'),
   \ javaapi#method(0,'parse(', 'InputStream, OutputStream) throws Exception', 'void'),
@@ -173,7 +173,7 @@ call javaapi#class('XML_SAX_FI', '', [
   \ javaapi#method(1,'main(', 'String[]) throws Exception', 'void'),
   \ ])
 
-call javaapi#class('XML_SAX_StAX_FI', '', [
+call javaapi#class('XML_SAX_StAX_FI', 'TransformInputOutput', [
   \ javaapi#method(0,'XML_SAX_StAX_FI(', ')', 'public'),
   \ javaapi#method(0,'parse(', 'InputStream, OutputStream, String) throws Exception', 'void'),
   \ javaapi#method(0,'parse(', 'InputStream, OutputStream) throws Exception', 'void'),

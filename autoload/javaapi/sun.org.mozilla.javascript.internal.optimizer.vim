@@ -58,7 +58,7 @@ call javaapi#class('GeneratorState', '', [
   \ javaapi#field(0,'thisObj', 'Scriptable'),
   \ ])
 
-call javaapi#class('OptRuntime', '', [
+call javaapi#class('OptRuntime', 'ScriptRuntime', [
   \ javaapi#field(1,'zeroObj', 'Double'),
   \ javaapi#field(1,'oneObj', 'Double'),
   \ javaapi#field(1,'minusOneObj', 'Double'),
@@ -86,7 +86,7 @@ call javaapi#class('OptRuntime', '', [
   \ javaapi#method(1,'getGeneratorLocalsState(', 'Object)', 'Object[]'),
   \ ])
 
-call javaapi#class('OptTransformer', '', [
+call javaapi#class('OptTransformer', 'NodeTransformer', [
   \ ])
 
 call javaapi#class('Optimizer', '', [

@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.org.jvnet.fastinfoset.sax')
 
-call javaapi#interface('EncodingAlgorithmAttributes', '', [
+call javaapi#interface('EncodingAlgorithmAttributes', 'Attributes', [
   \ javaapi#method(0,'getAlgorithmURI(', 'int)', 'String'),
   \ javaapi#method(0,'getAlgorithmIndex(', 'int)', 'int'),
   \ javaapi#method(0,'getAlgorithmData(', 'int)', 'Object'),
@@ -13,11 +13,11 @@ call javaapi#interface('EncodingAlgorithmContentHandler', '', [
   \ javaapi#method(0,'object(', 'String, int, Object) throws SAXException', 'void'),
   \ ])
 
-call javaapi#interface('ExtendedContentHandler', '', [
+call javaapi#interface('ExtendedContentHandler', 'ContentHandler', [
   \ javaapi#method(0,'characters(', 'char[], int, int, boolean) throws SAXException', 'void'),
   \ ])
 
-call javaapi#interface('FastInfosetReader', '', [
+call javaapi#interface('FastInfosetReader', 'FastInfosetParser', [
   \ javaapi#field(1,'ENCODING_ALGORITHM_CONTENT_HANDLER_PROPERTY', 'String'),
   \ javaapi#field(1,'PRIMITIVE_TYPE_CONTENT_HANDLER_PROPERTY', 'String'),
   \ javaapi#method(0,'parse(', 'InputStream) throws IOException, FastInfosetException, SAXException', 'void'),
@@ -31,7 +31,7 @@ call javaapi#interface('FastInfosetReader', '', [
   \ javaapi#method(0,'getPrimitiveTypeContentHandler(', ')', 'PrimitiveTypeContentHandler'),
   \ ])
 
-call javaapi#interface('FastInfosetWriter', '', [
+call javaapi#interface('FastInfosetWriter', 'FastInfosetSerializer', [
   \ ])
 
 call javaapi#interface('PrimitiveTypeContentHandler', '', [

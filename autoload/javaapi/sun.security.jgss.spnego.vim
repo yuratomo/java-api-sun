@@ -1,12 +1,12 @@
 call javaapi#namespace('sun.security.jgss.spnego')
 
-call javaapi#class('NegTokenInit', '', [
+call javaapi#class('NegTokenInit', 'SpNegoToken', [
   \ javaapi#method(0,'NegTokenInit(', 'byte[]) throws GSSException', 'public'),
   \ javaapi#method(0,'getMechTypeList(', ')', 'Oid[]'),
   \ javaapi#method(0,'getMechToken(', ')', 'byte[]'),
   \ ])
 
-call javaapi#class('NegTokenTarg', '', [
+call javaapi#class('NegTokenTarg', 'SpNegoToken', [
   \ javaapi#method(0,'NegTokenTarg(', 'byte[]) throws GSSException', 'public'),
   \ javaapi#method(0,'getSupportedMech(', ')', 'Oid'),
   \ ])
@@ -86,7 +86,7 @@ call javaapi#class('SpNegoMechFactory', 'MechanismFactory', [
   \ javaapi#method(0,'getNameTypes(', ')', 'Oid[]'),
   \ ])
 
-call javaapi#class('NegoResult', '', [
+call javaapi#class('NegoResult', 'NegoResult>', [
   \ javaapi#field(1,'ACCEPT_COMPLETE', 'NegoResult'),
   \ javaapi#field(1,'ACCEPT_INCOMPLETE', 'NegoResult'),
   \ javaapi#field(1,'REJECT', 'NegoResult'),
@@ -94,7 +94,7 @@ call javaapi#class('NegoResult', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'NegoResult'),
   \ ])
 
-call javaapi#class('SpNegoToken', '', [
+call javaapi#class('SpNegoToken', 'GSSToken', [
   \ javaapi#field(1,'OID', 'ObjectIdentifier'),
   \ ])
 

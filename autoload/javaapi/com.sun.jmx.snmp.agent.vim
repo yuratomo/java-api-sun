@@ -17,11 +17,11 @@ call javaapi#class('LongList', '', [
   \ javaapi#method(0,'toArray(', ')', 'long[]'),
   \ ])
 
-call javaapi#class('SnmpEntryOid', '', [
+call javaapi#class('SnmpEntryOid', 'SnmpOid', [
   \ javaapi#method(0,'SnmpEntryOid(', 'long[], int)', 'public'),
   \ ])
 
-call javaapi#class('SnmpErrorHandlerAgent', '', [
+call javaapi#class('SnmpErrorHandlerAgent', 'SnmpMibAgent', [
   \ javaapi#method(0,'SnmpErrorHandlerAgent(', ')', 'public'),
   \ javaapi#method(0,'init(', ') throws IllegalAccessException', 'void'),
   \ javaapi#method(0,'preRegister(', 'MBeanServer, ObjectName) throws Exception', 'ObjectName'),
@@ -62,7 +62,7 @@ call javaapi#class('SnmpIndex', 'Serializable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SnmpMib', '', [
+call javaapi#class('SnmpMib', 'SnmpMibAgent', [
   \ javaapi#method(0,'SnmpMib(', ')', 'public'),
   \ javaapi#method(0,'registerTableMeta(', 'String, SnmpMibTable)', 'void'),
   \ javaapi#method(0,'getRegisteredTableMeta(', 'String)', 'SnmpMibTable'),
@@ -125,7 +125,7 @@ call javaapi#interface('SnmpMibAgentMBean', '', [
   \ javaapi#method(0,'getMibName(', ')', 'String'),
   \ ])
 
-call javaapi#class('SnmpMibEntry', '', [
+call javaapi#class('SnmpMibEntry', 'SnmpMibNode', [
   \ javaapi#method(0,'SnmpMibEntry(', ')', 'public'),
   \ javaapi#method(0,'isVariable(', 'long)', 'boolean'),
   \ javaapi#method(0,'isReadable(', 'long)', 'boolean'),
@@ -136,7 +136,7 @@ call javaapi#class('SnmpMibEntry', '', [
   \ javaapi#method(0,'check(', 'SnmpMibSubRequest, int) throws SnmpStatusException', 'void'),
   \ ])
 
-call javaapi#class('SnmpMibGroup', '', [
+call javaapi#class('SnmpMibGroup', 'SnmpMibOid', [
   \ javaapi#method(0,'SnmpMibGroup(', ')', 'public'),
   \ javaapi#method(0,'isTable(', 'long)', 'boolean'),
   \ javaapi#method(0,'isVariable(', 'long)', 'boolean'),
@@ -172,11 +172,11 @@ call javaapi#class('SnmpMibNode', 'Serializable', [
   \ javaapi#method(0,'getRootOid(', 'Vector<Integer>)', 'void'),
   \ ])
 
-call javaapi#class('NonSyncVector<E>', '', [
+call javaapi#class('NonSyncVector<E>', 'Vector<E>', [
   \ javaapi#method(0,'NonSyncVector(', 'SnmpMibOid, int)', 'public'),
   \ ])
 
-call javaapi#class('SnmpMibOid', '', [
+call javaapi#class('SnmpMibOid', 'SnmpMibNode', [
   \ javaapi#method(0,'SnmpMibOid(', ')', 'public'),
   \ javaapi#method(0,'get(', 'SnmpMibSubRequest, int) throws SnmpStatusException', 'void'),
   \ javaapi#method(0,'set(', 'SnmpMibSubRequest, int) throws SnmpStatusException', 'void'),
@@ -222,7 +222,7 @@ call javaapi#class('SnmpMibRequestImpl', 'SnmpMibRequest', [
   \ javaapi#method(0,'addVarBind(', 'SnmpVarBind)', 'void'),
   \ ])
 
-call javaapi#interface('SnmpMibSubRequest', '', [
+call javaapi#interface('SnmpMibSubRequest', 'SnmpMibRequest', [
   \ javaapi#method(0,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,'getSubList(', ')', 'SnmpVarBind>'),
   \ javaapi#method(0,'getEntryOid(', ')', 'SnmpOid'),
@@ -233,7 +233,7 @@ call javaapi#interface('SnmpMibSubRequest', '', [
   \ javaapi#method(0,'registerCheckException(', 'SnmpVarBind, SnmpStatusException) throws SnmpStatusException', 'void'),
   \ ])
 
-call javaapi#class('SnmpMibTable', '', [
+call javaapi#class('SnmpMibTable', 'SnmpMibNode', [
   \ javaapi#method(0,'SnmpMibTable(', 'SnmpMib)', 'public'),
   \ javaapi#method(0,'createNewEntry(', 'SnmpMibSubRequest, SnmpOid, int) throws SnmpStatusException', 'void'),
   \ javaapi#method(0,'isRegistrationRequired(', ')', 'boolean'),
@@ -337,11 +337,11 @@ call javaapi#interface('SnmpTableCallbackHandler', '', [
   \ javaapi#method(0,'removeEntryCb(', 'int, SnmpOid, ObjectName, Object, SnmpMibTable) throws SnmpStatusException', 'void'),
   \ ])
 
-call javaapi#interface('SnmpTableEntryFactory', '', [
+call javaapi#interface('SnmpTableEntryFactory', 'SnmpTableCallbackHandler', [
   \ javaapi#method(0,'createNewEntry(', 'SnmpMibSubRequest, SnmpOid, int, SnmpMibTable) throws SnmpStatusException', 'void'),
   \ ])
 
-call javaapi#class('SnmpTableEntryNotification', '', [
+call javaapi#class('SnmpTableEntryNotification', 'Notification', [
   \ javaapi#field(1,'SNMP_ENTRY_ADDED', 'String'),
   \ javaapi#field(1,'SNMP_ENTRY_REMOVED', 'String'),
   \ javaapi#method(0,'getEntry(', ')', 'Object'),

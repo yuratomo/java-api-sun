@@ -1,11 +1,11 @@
 call javaapi#namespace('com.sun.xml.internal.ws.message.source')
 
-call javaapi#class('PayloadSourceMessage', '', [
+call javaapi#class('PayloadSourceMessage', 'PayloadStreamReaderMessage', [
   \ javaapi#method(0,'PayloadSourceMessage(', 'HeaderList, Source, AttachmentSet, SOAPVersion)', 'public'),
   \ javaapi#method(0,'PayloadSourceMessage(', 'Source, SOAPVersion)', 'public'),
   \ ])
 
-call javaapi#class('ProtocolSourceMessage', '', [
+call javaapi#class('ProtocolSourceMessage', 'Message', [
   \ javaapi#method(0,'ProtocolSourceMessage(', 'Source, SOAPVersion)', 'public'),
   \ javaapi#method(0,'hasHeaders(', ')', 'boolean'),
   \ javaapi#method(0,'getHeaders(', ')', 'HeaderList'),

@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.rowset.providers')
 
-call javaapi#class('RIOptimisticProvider', '', [
+call javaapi#class('RIOptimisticProvider', 'SyncProvider', [
   \ javaapi#method(0,'RIOptimisticProvider(', ')', 'public'),
   \ javaapi#method(0,'getProviderID(', ')', 'String'),
   \ javaapi#method(0,'getRowSetWriter(', ')', 'RowSetWriter'),
@@ -13,7 +13,7 @@ call javaapi#class('RIOptimisticProvider', '', [
   \ javaapi#method(0,'getVendor(', ')', 'String'),
   \ ])
 
-call javaapi#class('RIXMLProvider', '', [
+call javaapi#class('RIXMLProvider', 'SyncProvider', [
   \ javaapi#method(0,'RIXMLProvider(', ')', 'public'),
   \ javaapi#method(0,'getProviderID(', ')', 'String'),
   \ javaapi#method(0,'setXmlReader(', 'XmlReader) throws SQLException', 'void'),

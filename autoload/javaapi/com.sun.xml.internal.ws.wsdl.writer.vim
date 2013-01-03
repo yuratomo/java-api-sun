@@ -4,11 +4,11 @@ call javaapi#interface('DocumentLocationResolver', '', [
   \ javaapi#method(0,'getLocationFor(', 'String, String)', 'String'),
   \ ])
 
-call javaapi#interface('UsingAddressing', '', [
+call javaapi#interface('UsingAddressing', 'StartWithExtensionsType', [
   \ javaapi#method(0,'required(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('W3CAddressingMetadataWSDLGeneratorExtension', '', [
+call javaapi#class('W3CAddressingMetadataWSDLGeneratorExtension', 'WSDLGeneratorExtension', [
   \ javaapi#method(0,'W3CAddressingMetadataWSDLGeneratorExtension(', ')', 'public'),
   \ javaapi#method(0,'start(', 'WSDLGenExtnContext)', 'void'),
   \ javaapi#method(0,'addOperationInputExtension(', 'TypedXmlWriter, JavaMethod)', 'void'),
@@ -16,7 +16,7 @@ call javaapi#class('W3CAddressingMetadataWSDLGeneratorExtension', '', [
   \ javaapi#method(0,'addOperationFaultExtension(', 'TypedXmlWriter, JavaMethod, CheckedException)', 'void'),
   \ ])
 
-call javaapi#class('W3CAddressingWSDLGeneratorExtension', '', [
+call javaapi#class('W3CAddressingWSDLGeneratorExtension', 'WSDLGeneratorExtension', [
   \ javaapi#method(0,'W3CAddressingWSDLGeneratorExtension(', ')', 'public'),
   \ javaapi#method(0,'start(', 'WSDLGenExtnContext)', 'void'),
   \ javaapi#method(0,'addOperationInputExtension(', 'TypedXmlWriter, JavaMethod)', 'void'),
@@ -42,7 +42,7 @@ call javaapi#class('CommentFilter', 'XmlSerializer', [
   \ javaapi#method(0,'flush(', ')', 'void'),
   \ ])
 
-call javaapi#class('JAXWSOutputSchemaResolver', '', [
+call javaapi#class('JAXWSOutputSchemaResolver', 'SchemaOutputResolver', [
   \ javaapi#method(0,'createOutput(', 'String, String) throws IOException', 'Result'),
   \ ])
 
@@ -53,7 +53,7 @@ call javaapi#class('WSDLGenerator', '', [
   \ javaapi#method(0,'createOutputFile(', 'String, String) throws IOException', 'Result'),
   \ ])
 
-call javaapi#class('WSDLGeneratorExtensionFacade', '', [
+call javaapi#class('WSDLGeneratorExtensionFacade', 'WSDLGeneratorExtension', [
   \ javaapi#method(0,'start(', 'WSDLGenExtnContext)', 'void'),
   \ javaapi#method(0,'end(', 'WSDLGenExtnContext)', 'void'),
   \ javaapi#method(0,'addDefinitionsExtension(', 'TypedXmlWriter)', 'void'),
@@ -74,7 +74,7 @@ call javaapi#class('WSDLGeneratorExtensionFacade', '', [
   \ javaapi#method(0,'addOperationFaultExtension(', 'TypedXmlWriter, JavaMethod, CheckedException)', 'void'),
   \ ])
 
-call javaapi#class('WSDLPatcher', '', [
+call javaapi#class('WSDLPatcher', 'XMLStreamReaderToXMLStreamWriter', [
   \ javaapi#method(0,'WSDLPatcher(', 'PortAddressResolver, DocumentLocationResolver)', 'public'),
   \ ])
 

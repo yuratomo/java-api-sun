@@ -13,7 +13,7 @@ call javaapi#interface('DynamicMethodMarshaller', '', [
   \ javaapi#method(0,'readException(', 'ApplicationException)', 'Exception'),
   \ ])
 
-call javaapi#interface('DynamicStub', '', [
+call javaapi#interface('DynamicStub', 'Object', [
   \ javaapi#method(0,'setDelegate(', 'Delegate)', 'void'),
   \ javaapi#method(0,'getDelegate(', ')', 'Delegate'),
   \ javaapi#method(0,'getORB(', ')', 'ORB'),

@@ -17,14 +17,14 @@ call javaapi#class('ConnectionMultiplexer', '', [
 call javaapi#class('MultiplexConnectionInfo', '', [
   \ ])
 
-call javaapi#class('MultiplexInputStream', '', [
+call javaapi#class('MultiplexInputStream', 'InputStream', [
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ javaapi#method(0,'available(', ') throws IOException', 'int'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('MultiplexOutputStream', '', [
+call javaapi#class('MultiplexOutputStream', 'OutputStream', [
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
   \ javaapi#method(0,'flush(', ') throws IOException', 'void'),
@@ -93,7 +93,7 @@ call javaapi#class('ConnectionHandler', 'Runnable', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('TCPTransport', '', [
+call javaapi#class('TCPTransport', 'Transport', [
   \ javaapi#method(0,'shedConnectionCaches(', ')', 'void'),
   \ javaapi#method(0,'getChannel(', 'Endpoint)', 'TCPChannel'),
   \ javaapi#method(0,'free(', 'Endpoint)', 'void'),

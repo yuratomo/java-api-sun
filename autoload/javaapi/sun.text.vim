@@ -1,40 +1,6 @@
 call javaapi#namespace('sun.text')
 
-call javaapi#class('UCompactIntArray', 'Cloneable', [
-  \ javaapi#method(0,'UCompactIntArray(', ')', 'public'),
-  \ javaapi#method(0,'UCompactIntArray(', 'int)', 'public'),
-  \ javaapi#method(0,'elementAt(', 'int)', 'int'),
-  \ javaapi#method(0,'setElementAt(', 'int, int)', 'void'),
-  \ javaapi#method(0,'compact(', ')', 'void'),
-  \ javaapi#method(0,'getKSize(', ')', 'int'),
-  \ ])
-
-call javaapi#class('IntHashtable', '', [
-  \ javaapi#method(0,'IntHashtable(', ')', 'public'),
-  \ javaapi#method(0,'IntHashtable(', 'int)', 'public'),
-  \ javaapi#method(0,'size(', ')', 'int'),
-  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,'put(', 'int, int)', 'void'),
-  \ javaapi#method(0,'get(', 'int)', 'int'),
-  \ javaapi#method(0,'remove(', 'int)', 'void'),
-  \ javaapi#method(0,'getDefaultValue(', ')', 'int'),
-  \ javaapi#method(0,'setDefaultValue(', 'int)', 'void'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'Object'),
-  \ javaapi#method(0,'putInternal(', 'int, int)', 'void'),
-  \ ])
-
-
-call javaapi#class('ComposedCharIter', '', [
-  \ javaapi#field(1,'DONE', 'int'),
-  \ javaapi#method(0,'ComposedCharIter(', ')', 'public'),
-  \ javaapi#method(0,'next(', ')', 'int'),
-  \ javaapi#method(0,'decomposition(', ')', 'String'),
-  \ ])
-
-
-call javaapi#class('CharArrayCodePointIterator', '', [
+call javaapi#class('CharArrayCodePointIterator', 'CodePointIterator', [
   \ javaapi#method(0,'CharArrayCodePointIterator(', 'char[])', 'public'),
   \ javaapi#method(0,'CharArrayCodePointIterator(', 'char[], int, int)', 'public'),
   \ javaapi#method(0,'setToStart(', ')', 'void'),
@@ -44,7 +10,7 @@ call javaapi#class('CharArrayCodePointIterator', '', [
   \ javaapi#method(0,'charIndex(', ')', 'int'),
   \ ])
 
-call javaapi#class('CharSequenceCodePointIterator', '', [
+call javaapi#class('CharSequenceCodePointIterator', 'CodePointIterator', [
   \ javaapi#method(0,'CharSequenceCodePointIterator(', 'CharSequence)', 'public'),
   \ javaapi#method(0,'setToStart(', ')', 'void'),
   \ javaapi#method(0,'setToLimit(', ')', 'void'),
@@ -53,7 +19,7 @@ call javaapi#class('CharSequenceCodePointIterator', '', [
   \ javaapi#method(0,'charIndex(', ')', 'int'),
   \ ])
 
-call javaapi#class('CharacterIteratorCodePointIterator', '', [
+call javaapi#class('CharacterIteratorCodePointIterator', 'CodePointIterator', [
   \ javaapi#method(0,'CharacterIteratorCodePointIterator(', 'CharacterIterator)', 'public'),
   \ javaapi#method(0,'setToStart(', ')', 'void'),
   \ javaapi#method(0,'setToLimit(', ')', 'void'),
@@ -108,5 +74,41 @@ call javaapi#class('SupplementaryCharacterData', 'Cloneable', [
   \ javaapi#method(0,'SupplementaryCharacterData(', 'int[])', 'public'),
   \ javaapi#method(0,'getValue(', 'int)', 'int'),
   \ javaapi#method(0,'getArray(', ')', 'int[]'),
+  \ ])
+
+call javaapi#namespace('sun.text')
+
+call javaapi#class('ComposedCharIter', '', [
+  \ javaapi#field(1,'DONE', 'int'),
+  \ javaapi#method(0,'ComposedCharIter(', ')', 'public'),
+  \ javaapi#method(0,'next(', ')', 'int'),
+  \ javaapi#method(0,'decomposition(', ')', 'String'),
+  \ ])
+
+call javaapi#namespace('sun.text')
+
+call javaapi#class('UCompactIntArray', 'Cloneable', [
+  \ javaapi#method(0,'UCompactIntArray(', ')', 'public'),
+  \ javaapi#method(0,'UCompactIntArray(', 'int)', 'public'),
+  \ javaapi#method(0,'elementAt(', 'int)', 'int'),
+  \ javaapi#method(0,'setElementAt(', 'int, int)', 'void'),
+  \ javaapi#method(0,'compact(', ')', 'void'),
+  \ javaapi#method(0,'getKSize(', ')', 'int'),
+  \ ])
+
+call javaapi#class('IntHashtable', '', [
+  \ javaapi#method(0,'IntHashtable(', ')', 'public'),
+  \ javaapi#method(0,'IntHashtable(', 'int)', 'public'),
+  \ javaapi#method(0,'size(', ')', 'int'),
+  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
+  \ javaapi#method(0,'put(', 'int, int)', 'void'),
+  \ javaapi#method(0,'get(', 'int)', 'int'),
+  \ javaapi#method(0,'remove(', 'int)', 'void'),
+  \ javaapi#method(0,'getDefaultValue(', ')', 'int'),
+  \ javaapi#method(0,'setDefaultValue(', 'int)', 'void'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'Object'),
+  \ javaapi#method(0,'putInternal(', 'int, int)', 'void'),
   \ ])
 

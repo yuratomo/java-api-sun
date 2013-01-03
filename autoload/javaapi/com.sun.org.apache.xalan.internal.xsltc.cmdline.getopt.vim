@@ -22,15 +22,15 @@ call javaapi#class('GetOpt', '', [
   \ javaapi#method(0,'getCmdArgs(', ')', 'String[]'),
   \ ])
 
-call javaapi#class('GetOptsException', '', [
+call javaapi#class('GetOptsException', 'Exception', [
   \ javaapi#method(0,'GetOptsException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('IllegalArgumentException', '', [
+call javaapi#class('IllegalArgumentException', 'GetOptsException', [
   \ javaapi#method(0,'IllegalArgumentException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('MissingOptArgException', '', [
+call javaapi#class('MissingOptArgException', 'GetOptsException', [
   \ javaapi#method(0,'MissingOptArgException(', 'String)', 'public'),
   \ ])
 

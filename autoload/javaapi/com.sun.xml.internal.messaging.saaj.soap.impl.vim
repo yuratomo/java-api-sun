@@ -1,12 +1,12 @@
 call javaapi#namespace('com.sun.xml.internal.messaging.saaj.soap.impl')
 
-call javaapi#class('BodyElementImpl', '', [
+call javaapi#class('BodyElementImpl', 'ElementImpl', [
   \ javaapi#method(0,'BodyElementImpl(', 'SOAPDocumentImpl, Name)', 'public'),
   \ javaapi#method(0,'BodyElementImpl(', 'SOAPDocumentImpl, QName)', 'public'),
   \ javaapi#method(0,'setParentElement(', 'SOAPElement) throws SOAPException', 'void'),
   \ ])
 
-call javaapi#class('BodyImpl', '', [
+call javaapi#class('BodyImpl', 'ElementImpl', [
   \ javaapi#method(0,'addFault(', ') throws SOAPException', 'SOAPFault'),
   \ javaapi#method(0,'addFault(', 'Name, String, Locale) throws SOAPException', 'SOAPFault'),
   \ javaapi#method(0,'addFault(', 'QName, String, Locale) throws SOAPException', 'SOAPFault'),
@@ -22,7 +22,7 @@ call javaapi#class('BodyImpl', '', [
   \ javaapi#method(0,'extractContentAsDocument(', ') throws SOAPException', 'Document'),
   \ ])
 
-call javaapi#class('CDATAImpl', '', [
+call javaapi#class('CDATAImpl', 'CDATASectionImpl', [
   \ javaapi#method(0,'CDATAImpl(', 'SOAPDocumentImpl, String)', 'public'),
   \ javaapi#method(0,'getValue(', ')', 'String'),
   \ javaapi#method(0,'setValue(', 'String)', 'void'),
@@ -33,7 +33,7 @@ call javaapi#class('CDATAImpl', '', [
   \ javaapi#method(0,'isComment(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('CommentImpl', '', [
+call javaapi#class('CommentImpl', 'CommentImpl', [
   \ javaapi#method(0,'CommentImpl(', 'SOAPDocumentImpl, String)', 'public'),
   \ javaapi#method(0,'getValue(', ')', 'String'),
   \ javaapi#method(0,'setValue(', 'String)', 'void'),
@@ -48,7 +48,7 @@ call javaapi#class('CommentImpl', '', [
   \ javaapi#method(0,'isElementContentWhitespace(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('DetailEntryImpl', '', [
+call javaapi#class('DetailEntryImpl', 'ElementImpl', [
   \ javaapi#method(0,'DetailEntryImpl(', 'SOAPDocumentImpl, Name)', 'public'),
   \ javaapi#method(0,'DetailEntryImpl(', 'SOAPDocumentImpl, QName)', 'public'),
   \ ])
@@ -59,7 +59,7 @@ call javaapi#class('1', 'Iterator', [
   \ javaapi#method(0,'remove(', ')', 'void'),
   \ ])
 
-call javaapi#class('DetailImpl', '', [
+call javaapi#class('DetailImpl', 'FaultElementImpl', [
   \ javaapi#method(0,'DetailImpl(', 'SOAPDocumentImpl, NameImpl)', 'public'),
   \ javaapi#method(0,'addDetailEntry(', 'Name) throws SOAPException', 'DetailEntry'),
   \ javaapi#method(0,'addDetailEntry(', 'QName) throws SOAPException', 'DetailEntry'),
@@ -113,7 +113,7 @@ call javaapi#class('AttributeManager', '', [
   \ javaapi#method(0,'clearNameAndValue(', ')', 'void'),
   \ ])
 
-call javaapi#class('ElementImpl', '', [
+call javaapi#class('ElementImpl', 'ElementNSImpl', [
   \ javaapi#field(1,'DSIG_NS', 'String'),
   \ javaapi#field(1,'XENC_NS', 'String'),
   \ javaapi#field(1,'WSU_NS', 'String'),
@@ -170,7 +170,7 @@ call javaapi#class('ElementImpl', '', [
   \ javaapi#method(0,'setAttributeNS(', 'String, String, String)', 'void'),
   \ ])
 
-call javaapi#class('EnvelopeImpl', '', [
+call javaapi#class('EnvelopeImpl', 'ElementImpl', [
   \ javaapi#method(0,'addHeader(', ') throws SOAPException', 'SOAPHeader'),
   \ javaapi#method(0,'addHeader(', 'String) throws SOAPException', 'SOAPHeader'),
   \ javaapi#method(0,'getHeader(', ') throws SOAPException', 'SOAPHeader'),
@@ -189,11 +189,11 @@ call javaapi#class('EnvelopeImpl', '', [
   \ javaapi#method(0,'setElementQName(', 'QName) throws SOAPException', 'SOAPElement'),
   \ ])
 
-call javaapi#class('FaultElementImpl', '', [
+call javaapi#class('FaultElementImpl', 'ElementImpl', [
   \ javaapi#method(0,'setElementQName(', 'QName) throws SOAPException', 'SOAPElement'),
   \ ])
 
-call javaapi#class('FaultImpl', '', [
+call javaapi#class('FaultImpl', 'ElementImpl', [
   \ javaapi#method(0,'setFaultCode(', 'String) throws SOAPException', 'void'),
   \ javaapi#method(0,'setFaultCode(', 'String, String, String) throws SOAPException', 'void'),
   \ javaapi#method(0,'setFaultCode(', 'Name) throws SOAPException', 'void'),
@@ -206,7 +206,7 @@ call javaapi#class('FaultImpl', '', [
   \ javaapi#method(0,'setElementQName(', 'QName) throws SOAPException', 'SOAPElement'),
   \ ])
 
-call javaapi#class('HeaderElementImpl', '', [
+call javaapi#class('HeaderElementImpl', 'ElementImpl', [
   \ javaapi#method(0,'HeaderElementImpl(', 'SOAPDocumentImpl, Name)', 'public'),
   \ javaapi#method(0,'HeaderElementImpl(', 'SOAPDocumentImpl, QName)', 'public'),
   \ javaapi#method(0,'setParentElement(', 'SOAPElement) throws SOAPException', 'void'),
@@ -220,7 +220,7 @@ call javaapi#class('HeaderElementImpl', '', [
   \ javaapi#method(0,'getRelay(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('HeaderImpl', '', [
+call javaapi#class('HeaderImpl', 'ElementImpl', [
   \ javaapi#method(0,'addHeaderElement(', 'Name) throws SOAPException', 'SOAPHeaderElement'),
   \ javaapi#method(0,'addHeaderElement(', 'QName) throws SOAPException', 'SOAPHeaderElement'),
   \ javaapi#method(0,'examineHeaderElements(', 'String)', 'Iterator'),
@@ -236,7 +236,7 @@ call javaapi#class('HeaderImpl', '', [
   \ javaapi#method(0,'setElementQName(', 'QName) throws SOAPException', 'SOAPElement'),
   \ ])
 
-call javaapi#class('TextImpl', '', [
+call javaapi#class('TextImpl', 'TextImpl', [
   \ javaapi#method(0,'TextImpl(', 'SOAPDocumentImpl, String)', 'public'),
   \ javaapi#method(0,'getValue(', ')', 'String'),
   \ javaapi#method(0,'setValue(', 'String)', 'void'),
@@ -247,7 +247,7 @@ call javaapi#class('TextImpl', '', [
   \ javaapi#method(0,'isComment(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('TreeException', '', [
+call javaapi#class('TreeException', 'RuntimeException', [
   \ javaapi#method(0,'TreeException(', 'String)', 'public'),
   \ ])
 

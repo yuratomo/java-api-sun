@@ -1,51 +1,51 @@
 call javaapi#namespace('com.sun.xml.internal.messaging.saaj.soap.name')
 
-call javaapi#class('Body1_1Name', '', [
+call javaapi#class('Body1_1Name', 'SOAP1_1Name', [
   \ ])
 
-call javaapi#class('Body1_2Name', '', [
+call javaapi#class('Body1_2Name', 'SOAP1_2Name', [
   \ ])
 
-call javaapi#class('CodeSubcode1_2Name', '', [
+call javaapi#class('CodeSubcode1_2Name', 'SOAP1_2Name', [
   \ ])
 
-call javaapi#class('Detail1_1Name', '', [
+call javaapi#class('Detail1_1Name', 'NameImpl', [
   \ ])
 
-call javaapi#class('Envelope1_1Name', '', [
+call javaapi#class('Envelope1_1Name', 'SOAP1_1Name', [
   \ ])
 
-call javaapi#class('Envelope1_2Name', '', [
+call javaapi#class('Envelope1_2Name', 'SOAP1_2Name', [
   \ ])
 
-call javaapi#class('Fault1_1Name', '', [
+call javaapi#class('Fault1_1Name', 'NameImpl', [
   \ ])
 
-call javaapi#class('Fault1_2Name', '', [
+call javaapi#class('Fault1_2Name', 'NameImpl', [
   \ ])
 
-call javaapi#class('FaultElement1_1Name', '', [
+call javaapi#class('FaultElement1_1Name', 'NameImpl', [
   \ ])
 
-call javaapi#class('Header1_1Name', '', [
+call javaapi#class('Header1_1Name', 'SOAP1_1Name', [
   \ ])
 
-call javaapi#class('Header1_2Name', '', [
+call javaapi#class('Header1_2Name', 'SOAP1_2Name', [
   \ ])
 
-call javaapi#class('NotUnderstood1_2Name', '', [
+call javaapi#class('NotUnderstood1_2Name', 'NameImpl', [
   \ ])
 
-call javaapi#class('SOAP1_1Name', '', [
+call javaapi#class('SOAP1_1Name', 'NameImpl', [
   \ ])
 
-call javaapi#class('SOAP1_2Name', '', [
+call javaapi#class('SOAP1_2Name', 'NameImpl', [
   \ ])
 
-call javaapi#class('SupportedEnvelope1_2Name', '', [
+call javaapi#class('SupportedEnvelope1_2Name', 'NameImpl', [
   \ ])
 
-call javaapi#class('Upgrade1_2Name', '', [
+call javaapi#class('Upgrade1_2Name', 'NameImpl', [
   \ ])
 
 call javaapi#class('NameImpl', 'Name', [

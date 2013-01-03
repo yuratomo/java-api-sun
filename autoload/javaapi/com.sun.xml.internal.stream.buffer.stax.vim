@@ -18,13 +18,13 @@ call javaapi#class('NamespaceContexHelper', 'NamespaceContextEx', [
   \ javaapi#method(0,'resetContexts(', ')', 'void'),
   \ ])
 
-call javaapi#class('StreamBufferCreator', '', [
+call javaapi#class('StreamBufferCreator', 'AbstractCreator', [
   \ javaapi#method(0,'getAttributeValuePrefixes(', ')', 'List'),
   \ javaapi#method(0,'isCheckAttributeValue(', ')', 'boolean'),
   \ javaapi#method(0,'setCheckAttributeValue(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('StreamReaderBufferCreator', '', [
+call javaapi#class('StreamReaderBufferCreator', 'StreamBufferCreator', [
   \ javaapi#method(0,'StreamReaderBufferCreator(', ')', 'public'),
   \ javaapi#method(0,'StreamReaderBufferCreator(', 'MutableXMLStreamBuffer)', 'public'),
   \ javaapi#method(0,'create(', 'XMLStreamReader) throws XMLStreamException', 'MutableXMLStreamBuffer'),
@@ -81,7 +81,7 @@ call javaapi#class('InternalNamespaceContext', 'NamespaceContextEx', [
   \ javaapi#method(0,'iterator(', ')', 'Binding>'),
   \ ])
 
-call javaapi#class('StreamReaderBufferProcessor', '', [
+call javaapi#class('StreamReaderBufferProcessor', 'AbstractProcessor', [
   \ javaapi#method(0,'StreamReaderBufferProcessor(', ')', 'public'),
   \ javaapi#method(0,'StreamReaderBufferProcessor(', 'XMLStreamBuffer) throws XMLStreamException', 'public'),
   \ javaapi#method(0,'setXMLStreamBuffer(', 'XMLStreamBuffer) throws XMLStreamException', 'void'),
@@ -138,7 +138,7 @@ call javaapi#class('StreamReaderBufferProcessor', '', [
   \ javaapi#method(0,'getNamespaceContext(', ')', 'NamespaceContext'),
   \ ])
 
-call javaapi#class('StreamWriterBufferCreator', '', [
+call javaapi#class('StreamWriterBufferCreator', 'StreamBufferCreator', [
   \ javaapi#method(0,'StreamWriterBufferCreator(', ')', 'public'),
   \ javaapi#method(0,'StreamWriterBufferCreator(', 'MutableXMLStreamBuffer)', 'public'),
   \ javaapi#method(0,'getProperty(', 'String) throws IllegalArgumentException', 'Object'),
@@ -180,7 +180,7 @@ call javaapi#class('StreamWriterBufferCreator', '', [
   \ javaapi#method(0,'getNamespaceContext(', ')', 'NamespaceContext'),
   \ ])
 
-call javaapi#class('StreamWriterBufferProcessor', '', [
+call javaapi#class('StreamWriterBufferProcessor', 'AbstractProcessor', [
   \ javaapi#method(0,'StreamWriterBufferProcessor(', ')', 'public'),
   \ javaapi#method(0,'StreamWriterBufferProcessor(', 'XMLStreamBuffer)', 'public'),
   \ javaapi#method(0,'StreamWriterBufferProcessor(', 'XMLStreamBuffer, boolean)', 'public'),

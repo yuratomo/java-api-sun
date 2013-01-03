@@ -7,7 +7,7 @@ call javaapi#class('FilesystemIterator', 'Iterator', [
   \ javaapi#method(0,'remove(', ')', 'void'),
   \ ])
 
-call javaapi#class('CertsInFilesystemDirectoryResolver', '', [
+call javaapi#class('CertsInFilesystemDirectoryResolver', 'StorageResolverSpi', [
   \ javaapi#method(0,'CertsInFilesystemDirectoryResolver(', 'String) throws StorageResolverException', 'public'),
   \ javaapi#method(0,'getIterator(', ')', 'Iterator'),
   \ javaapi#method(1,'main(', 'String[]) throws Exception', 'void'),
@@ -20,7 +20,7 @@ call javaapi#class('KeyStoreIterator', 'Iterator', [
   \ javaapi#method(0,'remove(', ')', 'void'),
   \ ])
 
-call javaapi#class('KeyStoreResolver', '', [
+call javaapi#class('KeyStoreResolver', 'StorageResolverSpi', [
   \ javaapi#method(0,'KeyStoreResolver(', 'KeyStore) throws StorageResolverException', 'public'),
   \ javaapi#method(0,'getIterator(', ')', 'Iterator'),
   \ javaapi#method(1,'main(', 'String[]) throws Exception', 'void'),
@@ -33,7 +33,7 @@ call javaapi#class('InternalIterator', 'Iterator', [
   \ javaapi#method(0,'remove(', ')', 'void'),
   \ ])
 
-call javaapi#class('SingleCertificateResolver', '', [
+call javaapi#class('SingleCertificateResolver', 'StorageResolverSpi', [
   \ javaapi#method(0,'SingleCertificateResolver(', 'X509Certificate)', 'public'),
   \ javaapi#method(0,'getIterator(', ')', 'Iterator'),
   \ ])

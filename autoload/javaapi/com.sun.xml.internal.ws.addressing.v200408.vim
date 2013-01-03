@@ -32,7 +32,7 @@ call javaapi#interface('MemberSubmissionAddressingConstants', '', [
   \ javaapi#field(1,'MEX_METADATA_DIALECT_VALUE', 'String'),
   \ ])
 
-call javaapi#class('MemberSubmissionWsaClientTube', '', [
+call javaapi#class('MemberSubmissionWsaClientTube', 'WsaClientTube', [
   \ javaapi#method(0,'MemberSubmissionWsaClientTube(', 'WSDLPort, WSBinding, Tube)', 'public'),
   \ javaapi#method(0,'MemberSubmissionWsaClientTube(', 'MemberSubmissionWsaClientTube, TubeCloner)', 'public'),
   \ javaapi#method(0,'copy(', 'TubeCloner)', 'MemberSubmissionWsaClientTube'),
@@ -41,7 +41,7 @@ call javaapi#class('MemberSubmissionWsaClientTube', '', [
   \ javaapi#method(0,'copy(', 'TubeCloner)', 'Tube'),
   \ ])
 
-call javaapi#class('MemberSubmissionWsaServerTube', '', [
+call javaapi#class('MemberSubmissionWsaServerTube', 'WsaServerTube', [
   \ javaapi#method(0,'MemberSubmissionWsaServerTube(', 'WSEndpoint, WSDLPort, WSBinding, Tube)', 'public'),
   \ javaapi#method(0,'MemberSubmissionWsaServerTube(', 'MemberSubmissionWsaServerTube, TubeCloner)', 'public'),
   \ javaapi#method(0,'copy(', 'TubeCloner)', 'MemberSubmissionWsaServerTube'),
@@ -63,7 +63,7 @@ call javaapi#class('ProblemHeaderQName', '', [
   \ javaapi#method(0,'ProblemHeaderQName(', 'QName)', 'public'),
   \ ])
 
-call javaapi#class('WsaTubeHelperImpl', '', [
+call javaapi#class('WsaTubeHelperImpl', 'WsaTubeHelper', [
   \ javaapi#method(0,'WsaTubeHelperImpl(', 'WSDLPort, SEIModel, WSBinding)', 'public'),
   \ javaapi#method(0,'getProblemActionDetail(', 'String, Element)', 'void'),
   \ javaapi#method(0,'getInvalidMapDetail(', 'QName, Element)', 'void'),

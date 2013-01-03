@@ -15,14 +15,14 @@ call javaapi#class('AbstractBasicFileAttributeView', 'DynamicFileAttributeView',
   \ javaapi#method(0,'readAttributes(', 'String[]) throws IOException', 'Object>'),
   \ ])
 
-call javaapi#class('AbstractFileSystemProvider', '', [
+call javaapi#class('AbstractFileSystemProvider', 'FileSystemProvider', [
   \ javaapi#method(0,'setAttribute(', 'Path, String, Object, ) throws IOException', 'void'),
   \ javaapi#method(0,'readAttributes(', 'Path, String, ) throws IOException', 'Object>'),
   \ javaapi#method(0,'delete(', 'Path) throws IOException', 'void'),
   \ javaapi#method(0,'deleteIfExists(', 'Path) throws IOException', 'boolean'),
   \ ])
 
-call javaapi#class('AbstractFileTypeDetector', '', [
+call javaapi#class('AbstractFileTypeDetector', 'FileTypeDetector', [
   \ javaapi#method(0,'probeContentType(', 'Path) throws IOException', 'String'),
   \ ])
 
@@ -54,7 +54,7 @@ call javaapi#class('2', '', [
 call javaapi#class('Request', '', [
   \ ])
 
-call javaapi#class('RequestType', '', [
+call javaapi#class('RequestType', 'RequestType>', [
   \ javaapi#field(1,'REGISTER', 'RequestType'),
   \ javaapi#field(1,'CANCEL', 'RequestType'),
   \ javaapi#field(1,'CLOSE', 'RequestType'),
@@ -78,7 +78,7 @@ call javaapi#class('Event<T>', 'WatchEvent<T>', [
   \ javaapi#method(0,'count(', ')', 'int'),
   \ ])
 
-call javaapi#class('State', '', [
+call javaapi#class('State', 'State>', [
   \ javaapi#field(1,'READY', 'State'),
   \ javaapi#field(1,'SIGNALLED', 'State'),
   \ javaapi#method(1,'values(', ')', 'State[]'),
@@ -92,7 +92,7 @@ call javaapi#class('AbstractWatchKey', 'WatchKey', [
   \ javaapi#method(0,'watchable(', ')', 'Watchable'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'AbstractWatchKey', [
   \ javaapi#method(0,'isValid(', ')', 'boolean'),
   \ javaapi#method(0,'cancel(', ')', 'void'),
   \ ])
@@ -159,7 +159,7 @@ call javaapi#class('1', 'Void>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('RegistryFileTypeDetector', '', [
+call javaapi#class('RegistryFileTypeDetector', 'AbstractFileTypeDetector', [
   \ javaapi#method(0,'RegistryFileTypeDetector(', ')', 'public'),
   \ javaapi#method(0,'implProbeContentType(', 'Path) throws IOException', 'String'),
   \ ])
@@ -167,7 +167,7 @@ call javaapi#class('RegistryFileTypeDetector', '', [
 call javaapi#class('Util', '', [
   \ ])
 
-call javaapi#class('WindowsAclFileAttributeView', '', [
+call javaapi#class('WindowsAclFileAttributeView', 'AbstractAclFileAttributeView', [
   \ javaapi#method(0,'getOwner(', ') throws IOException', 'UserPrincipal'),
   \ javaapi#method(0,'getAcl(', ') throws IOException', 'AclEntry>'),
   \ javaapi#method(0,'setOwner(', 'UserPrincipal) throws IOException', 'void'),
@@ -322,17 +322,17 @@ call javaapi#class('WindowsDirectoryStream', 'Path>', [
   \ javaapi#method(0,'iterator(', ')', 'Path>'),
   \ ])
 
-call javaapi#class('WindowsException', '', [
+call javaapi#class('WindowsException', 'Exception', [
   \ javaapi#method(0,'getMessage(', ')', 'String'),
   \ ])
 
-call javaapi#class('Basic', '', [
+call javaapi#class('Basic', 'AbstractBasicFileAttributeView', [
   \ javaapi#method(0,'readAttributes(', ') throws IOException', 'WindowsFileAttributes'),
   \ javaapi#method(0,'setTimes(', 'FileTime, FileTime, FileTime) throws IOException', 'void'),
   \ javaapi#method(0,'readAttributes(', ') throws IOException', 'BasicFileAttributes'),
   \ ])
 
-call javaapi#class('Dos', '', [
+call javaapi#class('Dos', 'Basic', [
   \ javaapi#method(0,'name(', ')', 'String'),
   \ javaapi#method(0,'setAttribute(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,'readAttributes(', 'String[]) throws IOException', 'Object>'),
@@ -362,7 +362,7 @@ call javaapi#class('WindowsFileAttributes', 'DosFileAttributes', [
   \ javaapi#method(0,'isSystem(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Cancellable', [
   \ javaapi#method(0,'cancelValue(', ')', 'int'),
   \ javaapi#method(0,'implRun(', ') throws IOException', 'void'),
   \ ])
@@ -370,7 +370,7 @@ call javaapi#class('1', '', [
 call javaapi#class('WindowsFileCopy', '', [
   \ ])
 
-call javaapi#class('WindowsFileStore', '', [
+call javaapi#class('WindowsFileStore', 'FileStore', [
   \ javaapi#method(0,'name(', ')', 'String'),
   \ javaapi#method(0,'type(', ')', 'String'),
   \ javaapi#method(0,'isReadOnly(', ')', 'boolean'),
@@ -401,7 +401,7 @@ call javaapi#class('FileStoreIterator', 'FileStore>', [
   \ javaapi#method(0,'next(', ')', 'Object'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'UserPrincipalLookupService', [
   \ javaapi#method(0,'lookupPrincipalByName(', 'String) throws IOException', 'UserPrincipal'),
   \ javaapi#method(0,'lookupPrincipalByGroupName(', 'String) throws IOException', 'GroupPrincipal'),
   \ ])
@@ -409,7 +409,7 @@ call javaapi#class('1', '', [
 call javaapi#class('LookupService', '', [
   \ ])
 
-call javaapi#class('WindowsFileSystem', '', [
+call javaapi#class('WindowsFileSystem', 'FileSystem', [
   \ javaapi#method(0,'provider(', ')', 'FileSystemProvider'),
   \ javaapi#method(0,'getSeparator(', ')', 'String'),
   \ javaapi#method(0,'isOpen(', ')', 'boolean'),
@@ -427,7 +427,7 @@ call javaapi#class('WindowsFileSystem', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('WindowsFileSystemProvider', '', [
+call javaapi#class('WindowsFileSystemProvider', 'AbstractFileSystemProvider', [
   \ javaapi#method(0,'WindowsFileSystemProvider(', ')', 'public'),
   \ javaapi#method(0,'getScheme(', ')', 'String'),
   \ javaapi#method(0,'newFileSystem(', 'URI, Map<String, ?>) throws IOException', 'FileSystem'),
@@ -511,7 +511,7 @@ call javaapi#class('WindowsNativeDispatcher', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('WindowsPathWithAttributes', '', [
+call javaapi#class('WindowsPathWithAttributes', 'WindowsPath', [
   \ javaapi#method(0,'get(', ')', 'BasicFileAttributes'),
   \ javaapi#method(0,'invalidate(', ')', 'void'),
   \ javaapi#method(0,'toRealPath(', 'LinkOption[]) throws IOException', 'Path'),
@@ -526,7 +526,7 @@ call javaapi#class('WindowsPathWithAttributes', '', [
   \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
   \ ])
 
-call javaapi#class('WindowsPath', '', [
+call javaapi#class('WindowsPath', 'AbstractPath', [
   \ javaapi#method(0,'getFileSystem(', ')', 'WindowsFileSystem'),
   \ javaapi#method(0,'getFileName(', ')', 'Path'),
   \ javaapi#method(0,'getParent(', ')', 'WindowsPath'),
@@ -566,7 +566,7 @@ call javaapi#class('Result', '', [
 call javaapi#class('WindowsPathParser', '', [
   \ ])
 
-call javaapi#class('WindowsPathType', '', [
+call javaapi#class('WindowsPathType', 'WindowsPathType>', [
   \ javaapi#field(1,'ABSOLUTE', 'WindowsPathType'),
   \ javaapi#field(1,'UNC', 'WindowsPathType'),
   \ javaapi#field(1,'RELATIVE', 'WindowsPathType'),
@@ -593,7 +593,7 @@ call javaapi#class('WindowsSecurityDescriptor', '', [
 call javaapi#class('WindowsUriSupport', '', [
   \ ])
 
-call javaapi#class('WindowsUserDefinedFileAttributeView', '', [
+call javaapi#class('WindowsUserDefinedFileAttributeView', 'AbstractUserDefinedFileAttributeView', [
   \ javaapi#method(0,'list(', ') throws IOException', 'String>'),
   \ javaapi#method(0,'size(', 'String) throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'String, ByteBuffer) throws IOException', 'int'),
@@ -601,7 +601,7 @@ call javaapi#class('WindowsUserDefinedFileAttributeView', '', [
   \ javaapi#method(0,'delete(', 'String) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('Group', '', [
+call javaapi#class('Group', 'User', [
   \ ])
 
 call javaapi#class('User', 'UserPrincipal', [
@@ -619,15 +619,15 @@ call javaapi#class('FileKey', '', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('Poller', '', [
+call javaapi#class('Poller', 'AbstractPoller', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('WindowsWatchKey', '', [
+call javaapi#class('WindowsWatchKey', 'AbstractWatchKey', [
   \ javaapi#method(0,'isValid(', ')', 'boolean'),
   \ javaapi#method(0,'cancel(', ')', 'void'),
   \ ])
 
-call javaapi#class('WindowsWatchService', '', [
+call javaapi#class('WindowsWatchService', 'AbstractWatchService', [
   \ ])
 

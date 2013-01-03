@@ -70,7 +70,7 @@ call javaapi#class('ParameterizedTypeImpl', 'ParameterizedType', [
   \ javaapi#method(0,'getRawType(', ')', 'Type'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Class>', [
   \ javaapi#method(0,'onClass(', 'Class, Class)', 'Type'),
   \ javaapi#method(0,'onParameterizdType(', 'ParameterizedType, Class)', 'Type'),
   \ javaapi#method(0,'onGenericArray(', 'GenericArrayType, Class)', 'Type'),
@@ -83,7 +83,7 @@ call javaapi#class('1', '', [
   \ javaapi#method(0,'onClass(', 'Class, Object)', 'Object'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'BinderArg>', [
   \ javaapi#method(0,'onClass(', 'Class, BinderArg)', 'Type'),
   \ javaapi#method(0,'onParameterizdType(', 'ParameterizedType, BinderArg)', 'Type'),
   \ javaapi#method(0,'onGenericArray(', 'GenericArrayType, BinderArg)', 'Type'),
@@ -96,7 +96,7 @@ call javaapi#class('2', '', [
   \ javaapi#method(0,'onClass(', 'Class, Object)', 'Object'),
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'Void>', [
   \ javaapi#method(0,'onClass(', 'Class, Void)', 'Class'),
   \ javaapi#method(0,'onParameterizdType(', 'ParameterizedType, Void)', 'Class'),
   \ javaapi#method(0,'onGenericArray(', 'GenericArrayType, Void)', 'Class'),

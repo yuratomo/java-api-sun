@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.ws.developer')
 
-call javaapi#class('BindingTypeFeature', '', [
+call javaapi#class('BindingTypeFeature', 'WebServiceFeature', [
   \ javaapi#field(1,'ID', 'String'),
   \ javaapi#method(0,'BindingTypeFeature(', 'String)', 'public'),
   \ javaapi#method(0,'getID(', ')', 'String'),
@@ -19,7 +19,7 @@ call javaapi#class('EPRRecipe', '', [
   \ javaapi#method(0,'addMetadata(', 'Iterable<? extends Source>)', 'EPRRecipe'),
   \ ])
 
-call javaapi#class('HttpConfigFeature', '', [
+call javaapi#class('HttpConfigFeature', 'WebServiceFeature', [
   \ javaapi#field(1,'ID', 'String'),
   \ javaapi#method(0,'HttpConfigFeature(', ')', 'public'),
   \ javaapi#method(0,'HttpConfigFeature(', 'CookieHandler)', 'public'),
@@ -55,20 +55,20 @@ call javaapi#interface('JAXWSProperties', '', [
   \ javaapi#field(1,'REST_BINDING', 'String'),
   \ ])
 
-call javaapi#class('Validation', '', [
+call javaapi#class('Validation', 'Validation>', [
   \ javaapi#field(1,'LAX', 'Validation'),
   \ javaapi#field(1,'STRICT', 'Validation'),
   \ javaapi#method(1,'values(', ')', 'Validation[]'),
   \ javaapi#method(1,'valueOf(', 'String)', 'Validation'),
   \ ])
 
-call javaapi#interface('MemberSubmissionAddressing', '', [
+call javaapi#interface('MemberSubmissionAddressing', 'Annotation', [
   \ javaapi#method(0,'enabled(', ')', 'boolean'),
   \ javaapi#method(0,'required(', ')', 'boolean'),
   \ javaapi#method(0,'validation(', ')', 'Validation'),
   \ ])
 
-call javaapi#class('MemberSubmissionAddressingFeature', '', [
+call javaapi#class('MemberSubmissionAddressingFeature', 'WebServiceFeature', [
   \ javaapi#field(1,'ID', 'String'),
   \ javaapi#field(1,'IS_REQUIRED', 'String'),
   \ javaapi#method(0,'MemberSubmissionAddressingFeature(', ')', 'public'),
@@ -99,12 +99,12 @@ call javaapi#class('Elements', '', [
   \ javaapi#method(0,'Elements(', ')', 'public'),
   \ ])
 
-call javaapi#class('ServiceNameType', '', [
+call javaapi#class('ServiceNameType', 'AttributedQName', [
   \ javaapi#field(0,'portName', 'String'),
   \ javaapi#method(0,'ServiceNameType(', ')', 'public'),
   \ ])
 
-call javaapi#class('MemberSubmissionEndpointReference', '', [
+call javaapi#class('MemberSubmissionEndpointReference', 'EndpointReference', [
   \ javaapi#field(0,'addr', 'Address'),
   \ javaapi#field(0,'referenceProperties', 'Elements'),
   \ javaapi#field(0,'referenceParameters', 'Elements'),
@@ -118,13 +118,13 @@ call javaapi#class('MemberSubmissionEndpointReference', '', [
   \ javaapi#method(0,'toWSDLSource(', ')', 'Source'),
   \ ])
 
-call javaapi#interface('SchemaValidation', '', [
+call javaapi#interface('SchemaValidation', 'Annotation', [
   \ javaapi#method(0,'handler(', ')', 'ValidationErrorHandler>'),
   \ javaapi#method(0,'inbound(', ')', 'boolean'),
   \ javaapi#method(0,'outbound(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('SchemaValidationFeature', '', [
+call javaapi#class('SchemaValidationFeature', 'WebServiceFeature', [
   \ javaapi#field(1,'ID', 'String'),
   \ javaapi#method(0,'SchemaValidationFeature(', ')', 'public'),
   \ javaapi#method(0,'SchemaValidationFeature(', 'Class<? extends ValidationErrorHandler>)', 'public'),
@@ -136,18 +136,18 @@ call javaapi#class('SchemaValidationFeature', '', [
   \ javaapi#method(0,'isOutbound(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('ServerSideException', '', [
+call javaapi#class('ServerSideException', 'Exception', [
   \ javaapi#method(0,'ServerSideException(', 'String, String)', 'public'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('StreamingAttachment', '', [
+call javaapi#interface('StreamingAttachment', 'Annotation', [
   \ javaapi#method(0,'dir(', ')', 'String'),
   \ javaapi#method(0,'parseEagerly(', ')', 'boolean'),
   \ javaapi#method(0,'memoryThreshold(', ')', 'long'),
   \ ])
 
-call javaapi#class('StreamingAttachmentFeature', '', [
+call javaapi#class('StreamingAttachmentFeature', 'WebServiceFeature', [
   \ javaapi#field(1,'ID', 'String'),
   \ javaapi#method(0,'StreamingAttachmentFeature(', ')', 'public'),
   \ javaapi#method(0,'StreamingAttachmentFeature(', 'String, boolean, long)', 'public'),
@@ -158,13 +158,13 @@ call javaapi#class('StreamingAttachmentFeature', '', [
   \ javaapi#method(0,'setMemoryThreshold(', 'long)', 'void'),
   \ ])
 
-call javaapi#class('StreamingDataHandler', '', [
+call javaapi#class('StreamingDataHandler', 'StreamingDataHandler', [
   \ javaapi#method(0,'StreamingDataHandler(', 'Object, String)', 'public'),
   \ javaapi#method(0,'StreamingDataHandler(', 'URL)', 'public'),
   \ javaapi#method(0,'StreamingDataHandler(', 'DataSource)', 'public'),
   \ ])
 
-call javaapi#interface('UsesJAXBContext', '', [
+call javaapi#interface('UsesJAXBContext', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'JAXBContextFactory>'),
   \ ])
 
@@ -172,7 +172,7 @@ call javaapi#class('1', 'JAXBContextFactory', [
   \ javaapi#method(0,'createJAXBContext(', 'SEIModel, List<Class>, List<TypeReference>) throws JAXBException', 'JAXBRIContext'),
   \ ])
 
-call javaapi#class('UsesJAXBContextFeature', '', [
+call javaapi#class('UsesJAXBContextFeature', 'WebServiceFeature', [
   \ javaapi#field(1,'ID', 'String'),
   \ javaapi#method(0,'UsesJAXBContextFeature(', 'Class<? extends JAXBContextFactory>)', 'public'),
   \ javaapi#method(0,'UsesJAXBContextFeature(', 'JAXBContextFactory)', 'public'),
@@ -186,7 +186,7 @@ call javaapi#class('ValidationErrorHandler', 'ErrorHandler', [
   \ javaapi#method(0,'setPacket(', 'Packet)', 'void'),
   \ ])
 
-call javaapi#interface('WSBindingProvider', '', [
+call javaapi#interface('WSBindingProvider', 'Closeable', [
   \ javaapi#method(0,'setOutboundHeaders(', 'List<Header>)', 'void'),
   \ javaapi#method(0,'setOutboundHeaders(', ')', 'void'),
   \ javaapi#method(0,'setOutboundHeaders(', ')', 'void'),

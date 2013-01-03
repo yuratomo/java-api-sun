@@ -33,7 +33,7 @@ call javaapi#class('NameService', '', [
   \ javaapi#method(0,'NewContext(', ') throws SystemException', 'NamingContext'),
   \ ])
 
-call javaapi#class('NamingContextImpl', '', [
+call javaapi#class('NamingContextImpl', 'NamingContextExtPOA', [
   \ javaapi#method(0,'NamingContextImpl(', 'ORB, String, NameService, ServantManagerImpl) throws Exception', 'public'),
   \ javaapi#method(0,'setRootNameService(', 'NameService)', 'void'),
   \ javaapi#method(0,'setORB(', 'ORB)', 'void'),
@@ -66,14 +66,14 @@ call javaapi#class('NamingContextImpl', '', [
   \ javaapi#method(0,'printSize(', ')', 'void'),
   \ ])
 
-call javaapi#class('PersistentBindingIterator', '', [
+call javaapi#class('PersistentBindingIterator', 'BindingIteratorImpl', [
   \ javaapi#method(0,'PersistentBindingIterator(', 'ORB, Hashtable, POA) throws Exception', 'public'),
   \ javaapi#method(0,'NextOne(', 'BindingHolder)', 'boolean'),
   \ javaapi#method(0,'Destroy(', ')', 'void'),
   \ javaapi#method(0,'RemainingElements(', ')', 'int'),
   \ ])
 
-call javaapi#class('ServantManagerImpl', '', [
+call javaapi#class('ServantManagerImpl', 'LocalObject', [
   \ javaapi#method(0,'preinvoke(', 'byte[], POA, String, CookieHolder) throws ForwardRequest', 'Servant'),
   \ javaapi#method(0,'postinvoke(', 'byte[], POA, String, Object, Servant)', 'void'),
   \ javaapi#method(0,'readInContext(', 'String)', 'NamingContextImpl'),

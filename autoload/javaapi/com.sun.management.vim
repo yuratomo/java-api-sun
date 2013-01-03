@@ -11,7 +11,7 @@ call javaapi#class('GarbageCollectionNotificationInfo', 'CompositeDataView', [
   \ javaapi#method(0,'toCompositeData(', 'CompositeType)', 'CompositeData'),
   \ ])
 
-call javaapi#interface('GarbageCollectorMXBean', '', [
+call javaapi#interface('GarbageCollectorMXBean', 'GarbageCollectorMXBean', [
   \ javaapi#method(0,'getLastGcInfo(', ')', 'GcInfo'),
   \ ])
 
@@ -35,7 +35,7 @@ call javaapi#class('GcInfo', 'CompositeDataView', [
   \ javaapi#method(0,'toCompositeData(', 'CompositeType)', 'CompositeData'),
   \ ])
 
-call javaapi#interface('HotSpotDiagnosticMXBean', '', [
+call javaapi#interface('HotSpotDiagnosticMXBean', 'PlatformManagedObject', [
   \ javaapi#method(0,'dumpHeap(', 'String, boolean) throws IOException', 'void'),
   \ javaapi#method(0,'getDiagnosticOptions(', ')', 'VMOption>'),
   \ javaapi#method(0,'getVMOption(', 'String)', 'VMOption'),
@@ -46,7 +46,7 @@ call javaapi#class('OSMBeanFactory', '', [
   \ javaapi#method(1,'getOperatingSystemMXBean(', 'VMManagement)', 'OperatingSystemMXBean'),
   \ ])
 
-call javaapi#class('OperatingSystem', '', [
+call javaapi#class('OperatingSystem', 'OperatingSystemImpl', [
   \ javaapi#method(0,'getCommittedVirtualMemorySize(', ')', 'long'),
   \ javaapi#method(0,'getTotalSwapSpaceSize(', ')', 'long'),
   \ javaapi#method(0,'getFreeSwapSpaceSize(', ')', 'long'),
@@ -57,7 +57,7 @@ call javaapi#class('OperatingSystem', '', [
   \ javaapi#method(0,'getProcessCpuLoad(', ')', 'double'),
   \ ])
 
-call javaapi#interface('OperatingSystemMXBean', '', [
+call javaapi#interface('OperatingSystemMXBean', 'OperatingSystemMXBean', [
   \ javaapi#method(0,'getCommittedVirtualMemorySize(', ')', 'long'),
   \ javaapi#method(0,'getTotalSwapSpaceSize(', ')', 'long'),
   \ javaapi#method(0,'getFreeSwapSpaceSize(', ')', 'long'),
@@ -68,7 +68,7 @@ call javaapi#interface('OperatingSystemMXBean', '', [
   \ javaapi#method(0,'getProcessCpuLoad(', ')', 'double'),
   \ ])
 
-call javaapi#interface('ThreadMXBean', '', [
+call javaapi#interface('ThreadMXBean', 'ThreadMXBean', [
   \ javaapi#method(0,'getThreadCpuTime(', 'long[])', 'long[]'),
   \ javaapi#method(0,'getThreadUserTime(', 'long[])', 'long[]'),
   \ javaapi#method(0,'getThreadAllocatedBytes(', 'long)', 'long'),
@@ -78,12 +78,12 @@ call javaapi#interface('ThreadMXBean', '', [
   \ javaapi#method(0,'setThreadAllocatedMemoryEnabled(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#interface('UnixOperatingSystemMXBean', '', [
+call javaapi#interface('UnixOperatingSystemMXBean', 'OperatingSystemMXBean', [
   \ javaapi#method(0,'getOpenFileDescriptorCount(', ')', 'long'),
   \ javaapi#method(0,'getMaxFileDescriptorCount(', ')', 'long'),
   \ ])
 
-call javaapi#class('Origin', '', [
+call javaapi#class('Origin', 'Origin>', [
   \ javaapi#field(1,'DEFAULT', 'Origin'),
   \ javaapi#field(1,'VM_CREATION', 'Origin'),
   \ javaapi#field(1,'ENVIRON_VAR', 'Origin'),

@@ -13,7 +13,7 @@ call javaapi#class('CertEntry', '', [
 call javaapi#class('KeyEntry', '', [
   \ ])
 
-call javaapi#class('PKCS12KeyStore', '', [
+call javaapi#class('PKCS12KeyStore', 'KeyStoreSpi', [
   \ javaapi#field(1,'VERSION_3', 'int'),
   \ javaapi#method(0,'PKCS12KeyStore(', ')', 'public'),
   \ javaapi#method(0,'engineGetKey(', 'String, char[]) throws NoSuchAlgorithmException, UnrecoverableKeyException', 'Key'),

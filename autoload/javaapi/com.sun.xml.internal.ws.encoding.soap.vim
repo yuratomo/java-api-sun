@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.ws.encoding.soap')
 
-call javaapi#class('DeserializationException', '', [
+call javaapi#class('DeserializationException', 'JAXWSExceptionBase', [
   \ javaapi#method(0,'DeserializationException(', 'String, )', 'public'),
   \ javaapi#method(0,'DeserializationException(', 'Throwable)', 'public'),
   \ javaapi#method(0,'DeserializationException(', 'Localizable)', 'public'),
@@ -65,7 +65,7 @@ call javaapi#class('SOAPConstants', '', [
   \ javaapi#method(0,'SOAPConstants(', ')', 'public'),
   \ ])
 
-call javaapi#class('SerializationException', '', [
+call javaapi#class('SerializationException', 'JAXWSExceptionBase', [
   \ javaapi#method(0,'SerializationException(', 'String, )', 'public'),
   \ javaapi#method(0,'SerializationException(', 'Localizable)', 'public'),
   \ javaapi#method(0,'SerializationException(', 'Throwable)', 'public'),

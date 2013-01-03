@@ -1,17 +1,17 @@
 call javaapi#namespace('com.sun.org.apache.xerces.internal.impl.dtd.models')
 
-call javaapi#class('CMAny', '', [
+call javaapi#class('CMAny', 'CMNode', [
   \ javaapi#method(0,'CMAny(', 'int, String, int)', 'public'),
   \ javaapi#method(0,'isNullable(', ')', 'boolean'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('CMBinOp', '', [
+call javaapi#class('CMBinOp', 'CMNode', [
   \ javaapi#method(0,'CMBinOp(', 'int, CMNode, CMNode)', 'public'),
   \ javaapi#method(0,'isNullable(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('CMLeaf', '', [
+call javaapi#class('CMLeaf', 'CMNode', [
   \ javaapi#method(0,'CMLeaf(', 'QName, int)', 'public'),
   \ javaapi#method(0,'CMLeaf(', 'QName)', 'public'),
   \ javaapi#method(0,'isNullable(', ')', 'boolean'),
@@ -43,7 +43,7 @@ call javaapi#class('CMStateSet', '', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('CMUniOp', '', [
+call javaapi#class('CMUniOp', 'CMNode', [
   \ javaapi#method(0,'CMUniOp(', 'int, CMNode)', 'public'),
   \ javaapi#method(0,'isNullable(', ')', 'boolean'),
   \ ])

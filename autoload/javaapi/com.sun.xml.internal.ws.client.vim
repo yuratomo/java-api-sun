@@ -7,12 +7,12 @@ call javaapi#class('AsyncInvoker', 'Runnable', [
   \ javaapi#method(0,'do_run(', ')', 'void'),
   \ ])
 
-call javaapi#class('1CallbackFuture<T>', '', [
+call javaapi#class('1CallbackFuture<T>', 'CompletedFuture<T>', [
   \ javaapi#method(0,'1CallbackFuture(', 'T, Throwable)', 'public'),
   \ javaapi#method(0,'getContext(', ')', 'Object>'),
   \ ])
 
-call javaapi#class('AsyncResponseImpl<T>', '', [
+call javaapi#class('AsyncResponseImpl<T>', 'FutureTask<T>', [
   \ javaapi#method(0,'AsyncResponseImpl(', 'Runnable, AsyncHandler<T>)', 'public'),
   \ javaapi#method(0,'run(', ')', 'void'),
   \ javaapi#method(0,'getContext(', ')', 'ResponseContext'),
@@ -21,7 +21,7 @@ call javaapi#class('AsyncResponseImpl<T>', '', [
   \ javaapi#method(0,'getContext(', ')', 'Map'),
   \ ])
 
-call javaapi#interface('BindingProviderProperties', '', [
+call javaapi#interface('BindingProviderProperties', 'JAXWSProperties', [
   \ javaapi#field(1,'HOSTNAME_VERIFICATION_PROPERTY', 'String'),
   \ javaapi#field(1,'HTTP_COOKIE_JAR', 'String'),
   \ javaapi#field(1,'REDIRECT_REQUEST_PROPERTY', 'String'),
@@ -30,15 +30,15 @@ call javaapi#interface('BindingProviderProperties', '', [
   \ javaapi#field(1,'JAXWS_CLIENT_HANDLE_PROPERTY', 'String'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ResourceLoader', [
   \ javaapi#method(0,'getResource(', 'String) throws MalformedURLException', 'URL'),
   \ ])
 
-call javaapi#class('ClientContainer', '', [
+call javaapi#class('ClientContainer', 'Container', [
   \ javaapi#method(0,'getSPI(', 'Class<T>)', 'T'),
   \ ])
 
-call javaapi#class('ClientSchemaValidationTube', '', [
+call javaapi#class('ClientSchemaValidationTube', 'AbstractSchemaValidationTube', [
   \ javaapi#method(0,'ClientSchemaValidationTube(', 'WSBinding, WSDLPort, Tube)', 'public'),
   \ javaapi#method(0,'copy(', 'TubeCloner)', 'AbstractTubeImpl'),
   \ javaapi#method(0,'processRequest(', 'Packet)', 'NextAction'),
@@ -46,14 +46,14 @@ call javaapi#class('ClientSchemaValidationTube', '', [
   \ javaapi#method(0,'copy(', 'TubeCloner)', 'Tube'),
   \ ])
 
-call javaapi#class('ClientTransportException', '', [
+call javaapi#class('ClientTransportException', 'JAXWSExceptionBase', [
   \ javaapi#method(0,'ClientTransportException(', 'Localizable)', 'public'),
   \ javaapi#method(0,'ClientTransportException(', 'Localizable, Throwable)', 'public'),
   \ javaapi#method(0,'ClientTransportException(', 'Throwable)', 'public'),
   \ javaapi#method(0,'getDefaultResourceBundleName(', ')', 'String'),
   \ ])
 
-call javaapi#class('ContentNegotiation', '', [
+call javaapi#class('ContentNegotiation', 'ContentNegotiation>', [
   \ javaapi#field(1,'none', 'ContentNegotiation'),
   \ javaapi#field(1,'pessimistic', 'ContentNegotiation'),
   \ javaapi#field(1,'optimistic', 'ContentNegotiation'),
@@ -78,17 +78,17 @@ call javaapi#class('1', 'HandlerResolver', [
   \ javaapi#method(0,'getHandlerChain(', 'PortInfo)', 'Handler>'),
   \ ])
 
-call javaapi#class('AnnotationConfigurator', '', [
+call javaapi#class('AnnotationConfigurator', 'HandlerConfigurator', [
   \ ])
 
-call javaapi#class('HandlerResolverImpl', '', [
+call javaapi#class('HandlerResolverImpl', 'HandlerConfigurator', [
   \ javaapi#method(0,'HandlerResolverImpl(', 'HandlerResolver)', 'public'),
   \ ])
 
 call javaapi#class('HandlerConfigurator', '', [
   \ ])
 
-call javaapi#class('MonitorRootClient', '', [
+call javaapi#class('MonitorRootClient', 'MonitorBase', [
   \ ])
 
 call javaapi#class('PortInfo', 'WSPortInfo', [
@@ -130,7 +130,7 @@ call javaapi#class('MapView', 'Object>', [
   \ javaapi#method(0,'put(', 'Object, Object)', 'Object'),
   \ ])
 
-call javaapi#class('RequestContext', '', [
+call javaapi#class('RequestContext', 'PropertySet', [
   \ javaapi#field(0,'contentNegotiation', 'ContentNegotiation'),
   \ javaapi#method(0,'getEndPointAddressString(', ')', 'String'),
   \ javaapi#method(0,'setEndPointAddressString(', 'String)', 'void'),
@@ -149,7 +149,7 @@ call javaapi#class('RequestContext', '', [
   \ javaapi#method(0,'copy(', ')', 'RequestContext'),
   \ ])
 
-call javaapi#class('ResponseContext', '', [
+call javaapi#class('ResponseContext', 'Object>', [
   \ javaapi#method(0,'ResponseContext(', 'Packet)', 'public'),
   \ javaapi#method(0,'containsKey(', 'Object)', 'boolean'),
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
@@ -173,14 +173,14 @@ call javaapi#class('1', 'Void>', [
 call javaapi#class('SCAnnotations', '', [
   \ ])
 
-call javaapi#class('SEIPortInfo', '', [
+call javaapi#class('SEIPortInfo', 'PortInfo', [
   \ javaapi#field(0,'sei', 'Class'),
   \ javaapi#field(0,'model', 'SOAPSEIModel'),
   \ javaapi#method(0,'SEIPortInfo(', 'WSServiceDelegate, Class, SOAPSEIModel, WSDLPort)', 'public'),
   \ javaapi#method(0,'createBinding(', 'WebServiceFeature[], Class<?>)', 'BindingImpl'),
   \ ])
 
-call javaapi#class('SenderException', '', [
+call javaapi#class('SenderException', 'JAXWSExceptionBase', [
   \ javaapi#method(0,'SenderException(', 'String, )', 'public'),
   \ javaapi#method(0,'SenderException(', 'Throwable)', 'public'),
   \ javaapi#method(0,'SenderException(', 'Localizable)', 'public'),
@@ -235,7 +235,7 @@ call javaapi#class('DaemonThreadFactory', 'ThreadFactory', [
   \ javaapi#method(0,'newThread(', 'Runnable)', 'Thread'),
   \ ])
 
-call javaapi#class('WSServiceDelegate', '', [
+call javaapi#class('WSServiceDelegate', 'WSService', [
   \ javaapi#method(0,'WSServiceDelegate(', 'URL, QName, Class<? extends Service>)', 'public'),
   \ javaapi#method(0,'WSServiceDelegate(', 'Source, QName, Class<? extends Service>)', 'public'),
   \ javaapi#method(0,'getExecutor(', ')', 'Executor'),

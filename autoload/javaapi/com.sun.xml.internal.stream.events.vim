@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.stream.events')
 
-call javaapi#class('AttributeImpl', '', [
+call javaapi#class('AttributeImpl', 'DummyEvent', [
   \ javaapi#method(0,'AttributeImpl(', ')', 'public'),
   \ javaapi#method(0,'AttributeImpl(', 'String, String)', 'public'),
   \ javaapi#method(0,'AttributeImpl(', 'String, String, String)', 'public'),
@@ -20,7 +20,7 @@ call javaapi#class('AttributeImpl', '', [
   \ javaapi#method(0,'isSpecified(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('CharacterEvent', '', [
+call javaapi#class('CharacterEvent', 'DummyEvent', [
   \ javaapi#method(0,'CharacterEvent(', ')', 'public'),
   \ javaapi#method(0,'CharacterEvent(', 'String)', 'public'),
   \ javaapi#method(0,'CharacterEvent(', 'String, boolean)', 'public'),
@@ -33,14 +33,14 @@ call javaapi#class('CharacterEvent', '', [
   \ javaapi#method(0,'isWhiteSpace(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('CommentEvent', '', [
+call javaapi#class('CommentEvent', 'DummyEvent', [
   \ javaapi#method(0,'CommentEvent(', ')', 'public'),
   \ javaapi#method(0,'CommentEvent(', 'String)', 'public'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'getText(', ')', 'String'),
   \ ])
 
-call javaapi#class('DTDEvent', '', [
+call javaapi#class('DTDEvent', 'DummyEvent', [
   \ javaapi#method(0,'DTDEvent(', ')', 'public'),
   \ javaapi#method(0,'DTDEvent(', 'String)', 'public'),
   \ javaapi#method(0,'setDocumentTypeDeclaration(', 'String)', 'void'),
@@ -84,12 +84,12 @@ call javaapi#class('DummyEvent', 'XMLEvent', [
   \ javaapi#method(0,'writeAsEncodedUnicode(', 'Writer) throws XMLStreamException', 'void'),
   \ ])
 
-call javaapi#class('EndDocumentEvent', '', [
+call javaapi#class('EndDocumentEvent', 'DummyEvent', [
   \ javaapi#method(0,'EndDocumentEvent(', ')', 'public'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('EndElementEvent', '', [
+call javaapi#class('EndElementEvent', 'DummyEvent', [
   \ javaapi#method(0,'EndElementEvent(', ')', 'public'),
   \ javaapi#method(0,'EndElementEvent(', 'String, String, String)', 'public'),
   \ javaapi#method(0,'EndElementEvent(', 'QName)', 'public'),
@@ -100,7 +100,7 @@ call javaapi#class('EndElementEvent', '', [
   \ javaapi#method(0,'nameAsString(', ')', 'String'),
   \ ])
 
-call javaapi#class('EntityDeclarationImpl', '', [
+call javaapi#class('EntityDeclarationImpl', 'DummyEvent', [
   \ javaapi#method(0,'EntityDeclarationImpl(', ')', 'public'),
   \ javaapi#method(0,'EntityDeclarationImpl(', 'String, String)', 'public'),
   \ javaapi#method(0,'EntityDeclarationImpl(', 'String, String, XMLResourceIdentifier)', 'public'),
@@ -118,7 +118,7 @@ call javaapi#class('EntityDeclarationImpl', '', [
   \ javaapi#method(0,'getReplacementText(', ')', 'String'),
   \ ])
 
-call javaapi#class('EntityReferenceEvent', '', [
+call javaapi#class('EntityReferenceEvent', 'DummyEvent', [
   \ javaapi#method(0,'EntityReferenceEvent(', ')', 'public'),
   \ javaapi#method(0,'EntityReferenceEvent(', 'String, EntityDeclaration)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'String'),
@@ -135,7 +135,7 @@ call javaapi#class('LocationImpl', 'Location', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('NamedEvent', '', [
+call javaapi#class('NamedEvent', 'DummyEvent', [
   \ javaapi#method(0,'NamedEvent(', ')', 'public'),
   \ javaapi#method(0,'NamedEvent(', 'QName)', 'public'),
   \ javaapi#method(0,'NamedEvent(', 'String, String, String)', 'public'),
@@ -146,7 +146,7 @@ call javaapi#class('NamedEvent', '', [
   \ javaapi#method(0,'getNamespace(', ')', 'String'),
   \ ])
 
-call javaapi#class('NamespaceImpl', '', [
+call javaapi#class('NamespaceImpl', 'AttributeImpl', [
   \ javaapi#method(0,'NamespaceImpl(', ')', 'public'),
   \ javaapi#method(0,'NamespaceImpl(', 'String)', 'public'),
   \ javaapi#method(0,'NamespaceImpl(', 'String, String)', 'public'),
@@ -157,7 +157,7 @@ call javaapi#class('NamespaceImpl', '', [
   \ javaapi#method(0,'isNamespace(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('NotationDeclarationImpl', '', [
+call javaapi#class('NotationDeclarationImpl', 'DummyEvent', [
   \ javaapi#method(0,'NotationDeclarationImpl(', ')', 'public'),
   \ javaapi#method(0,'NotationDeclarationImpl(', 'String, String, String)', 'public'),
   \ javaapi#method(0,'NotationDeclarationImpl(', 'XMLNotationDecl)', 'public'),
@@ -166,7 +166,7 @@ call javaapi#class('NotationDeclarationImpl', '', [
   \ javaapi#method(0,'getSystemId(', ')', 'String'),
   \ ])
 
-call javaapi#class('ProcessingInstructionEvent', '', [
+call javaapi#class('ProcessingInstructionEvent', 'DummyEvent', [
   \ javaapi#method(0,'ProcessingInstructionEvent(', ')', 'public'),
   \ javaapi#method(0,'ProcessingInstructionEvent(', 'String, String)', 'public'),
   \ javaapi#method(0,'ProcessingInstructionEvent(', 'String, String, Location)', 'public'),
@@ -177,7 +177,7 @@ call javaapi#class('ProcessingInstructionEvent', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('StartDocumentEvent', '', [
+call javaapi#class('StartDocumentEvent', 'DummyEvent', [
   \ javaapi#method(0,'StartDocumentEvent(', ')', 'public'),
   \ javaapi#method(0,'StartDocumentEvent(', 'String)', 'public'),
   \ javaapi#method(0,'StartDocumentEvent(', 'String, String)', 'public'),
@@ -197,7 +197,7 @@ call javaapi#class('StartDocumentEvent', '', [
   \ javaapi#method(0,'isStartDocument(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('StartElementEvent', '', [
+call javaapi#class('StartElementEvent', 'DummyEvent', [
   \ javaapi#method(0,'StartElementEvent(', 'String, String, String)', 'public'),
   \ javaapi#method(0,'StartElementEvent(', 'QName)', 'public'),
   \ javaapi#method(0,'StartElementEvent(', 'StartElement)', 'public'),
@@ -221,7 +221,7 @@ call javaapi#class('XMLEventAllocatorImpl', 'XMLEventAllocator', [
   \ javaapi#method(0,'newInstance(', ')', 'XMLEventAllocator'),
   \ ])
 
-call javaapi#class('XMLEventFactoryImpl', '', [
+call javaapi#class('XMLEventFactoryImpl', 'XMLEventFactory', [
   \ javaapi#method(0,'XMLEventFactoryImpl(', ')', 'public'),
   \ javaapi#method(0,'createAttribute(', 'String, String)', 'Attribute'),
   \ javaapi#method(0,'createAttribute(', 'QName, String)', 'Attribute'),

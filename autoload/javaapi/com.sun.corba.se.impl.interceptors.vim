@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.corba.se.impl.interceptors')
 
-call javaapi#class('CDREncapsCodec', '', [
+call javaapi#class('CDREncapsCodec', 'LocalObject', [
   \ javaapi#method(0,'CDREncapsCodec(', 'ORB, int, int)', 'public'),
   \ javaapi#method(0,'encode(', 'Any) throws InvalidTypeForEncoding', 'byte[]'),
   \ javaapi#method(0,'decode(', 'byte[]) throws FormatMismatch', 'Any'),
@@ -8,7 +8,7 @@ call javaapi#class('CDREncapsCodec', '', [
   \ javaapi#method(0,'decode_value(', 'byte[], TypeCode) throws FormatMismatch, TypeMismatch', 'Any'),
   \ ])
 
-call javaapi#class('ClientRequestInfoImpl', '', [
+call javaapi#class('ClientRequestInfoImpl', 'RequestInfoImpl', [
   \ javaapi#method(0,'target(', ')', 'Object'),
   \ javaapi#method(0,'effective_target(', ')', 'Object'),
   \ javaapi#method(0,'effective_profile(', ')', 'TaggedProfile'),
@@ -32,12 +32,12 @@ call javaapi#class('ClientRequestInfoImpl', '', [
   \ javaapi#method(0,'connection(', ')', 'Connection'),
   \ ])
 
-call javaapi#class('CodecFactoryImpl', '', [
+call javaapi#class('CodecFactoryImpl', 'LocalObject', [
   \ javaapi#method(0,'CodecFactoryImpl(', 'ORB)', 'public'),
   \ javaapi#method(0,'create_codec(', 'Encoding) throws UnknownEncoding', 'Codec'),
   \ ])
 
-call javaapi#class('IORInfoImpl', '', [
+call javaapi#class('IORInfoImpl', 'LocalObject', [
   \ javaapi#method(0,'get_effective_policy(', 'int)', 'Policy'),
   \ javaapi#method(0,'add_ior_component(', 'TaggedComponent)', 'void'),
   \ javaapi#method(0,'add_ior_component_to_profile(', 'TaggedComponent, int)', 'void'),
@@ -56,7 +56,7 @@ call javaapi#class('InterceptorInvoker', '', [
 call javaapi#class('InterceptorList', '', [
   \ ])
 
-call javaapi#class('ORBInitInfoImpl', '', [
+call javaapi#class('ORBInitInfoImpl', 'LocalObject', [
   \ javaapi#field(1,'STAGE_PRE_INIT', 'int'),
   \ javaapi#field(1,'STAGE_POST_INIT', 'int'),
   \ javaapi#field(1,'STAGE_CLOSED', 'int'),
@@ -76,21 +76,21 @@ call javaapi#class('ORBInitInfoImpl', '', [
   \ javaapi#method(0,'register_policy_factory(', 'int, PolicyFactory)', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ThreadLocal', [
   \ ])
 
-call javaapi#class('PICurrent', '', [
+call javaapi#class('PICurrent', 'LocalObject', [
   \ javaapi#method(0,'set_slot(', 'int, Any) throws InvalidSlot', 'void'),
   \ javaapi#method(0,'get_slot(', 'int) throws InvalidSlot', 'Any'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ThreadLocal', [
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'ThreadLocal', [
   \ ])
 
-call javaapi#class('RequestInfoStack', '', [
+call javaapi#class('RequestInfoStack', 'Stack', [
   \ javaapi#field(0,'disableCount', 'int'),
   \ ])
 
@@ -162,7 +162,7 @@ call javaapi#class('PINoOpHandlerImpl', 'PIHandler', [
   \ javaapi#method(0,'allocateServerRequestId(', ')', 'int'),
   \ ])
 
-call javaapi#class('RequestInfoImpl', '', [
+call javaapi#class('RequestInfoImpl', 'LocalObject', [
   \ javaapi#method(0,'RequestInfoImpl(', 'ORB)', 'public'),
   \ javaapi#method(0,'request_id(', ')', 'int'),
   \ javaapi#method(0,'operation(', ')', 'String'),
@@ -187,7 +187,7 @@ call javaapi#class('1', '', [
 call javaapi#class('AddReplyServiceContextCommand', '', [
   \ ])
 
-call javaapi#class('ServerRequestInfoImpl', '', [
+call javaapi#class('ServerRequestInfoImpl', 'RequestInfoImpl', [
   \ javaapi#method(0,'sending_exception(', ')', 'Any'),
   \ javaapi#method(0,'object_id(', ')', 'byte[]'),
   \ javaapi#method(0,'server_id(', ')', 'String'),

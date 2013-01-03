@@ -28,7 +28,7 @@ call javaapi#class('ESSCertId', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('EncodingException', '', [
+call javaapi#class('EncodingException', 'Exception', [
   \ javaapi#method(0,'EncodingException(', ')', 'public'),
   \ javaapi#method(0,'EncodingException(', 'String)', 'public'),
   \ ])
@@ -181,7 +181,7 @@ call javaapi#class('PKCS9Attributes', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ParsingException', '', [
+call javaapi#class('ParsingException', 'IOException', [
   \ javaapi#method(0,'ParsingException(', ')', 'public'),
   \ javaapi#method(0,'ParsingException(', 'String)', 'public'),
   \ ])

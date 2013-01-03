@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.glassfish.external.arc')
 
-call javaapi#class('Stability', '', [
+call javaapi#class('Stability', 'Stability>', [
   \ javaapi#field(1,'COMMITTED', 'Stability'),
   \ javaapi#field(1,'UNCOMMITTED', 'Stability'),
   \ javaapi#field(1,'VOLATILE', 'Stability'),
@@ -13,7 +13,7 @@ call javaapi#class('Stability', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('Taxonomy', '', [
+call javaapi#interface('Taxonomy', 'Annotation', [
   \ javaapi#method(0,'stability(', ')', 'Stability'),
   \ javaapi#method(0,'description(', ')', 'String'),
   \ ])

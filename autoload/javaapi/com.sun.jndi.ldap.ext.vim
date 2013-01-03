@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.jndi.ldap.ext')
 
-call javaapi#class('StartTlsResponseImpl', '', [
+call javaapi#class('StartTlsResponseImpl', 'StartTlsResponse', [
   \ javaapi#method(0,'StartTlsResponseImpl(', ')', 'public'),
   \ javaapi#method(0,'setEnabledCipherSuites(', 'String[])', 'void'),
   \ javaapi#method(0,'setHostnameVerifier(', 'HostnameVerifier)', 'void'),

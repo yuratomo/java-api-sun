@@ -4,7 +4,7 @@ call javaapi#class('Element', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('TOA', '', [
+call javaapi#interface('TOA', 'ObjectAdapter', [
   \ javaapi#method(0,'connect(', 'Object)', 'void'),
   \ javaapi#method(0,'disconnect(', 'Object)', 'void'),
   \ ])
@@ -19,7 +19,7 @@ call javaapi#class('TOAFactory', 'ObjectAdapterFactory', [
   \ javaapi#method(0,'getORB(', ')', 'ORB'),
   \ ])
 
-call javaapi#class('TOAImpl', '', [
+call javaapi#class('TOAImpl', 'ObjectAdapterBase', [
   \ javaapi#method(0,'TOAImpl(', 'ORB, TransientObjectManager, String)', 'public'),
   \ javaapi#method(0,'getObjectCopierFactory(', ')', 'ObjectCopierFactory'),
   \ javaapi#method(0,'getLocalServant(', 'byte[])', 'Object'),

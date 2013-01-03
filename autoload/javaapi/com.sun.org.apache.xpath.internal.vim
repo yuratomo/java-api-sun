@@ -66,7 +66,7 @@ call javaapi#class('Expression', 'XPathVisitable', [
   \ javaapi#method(0,'getColumnNumber(', ')', 'int'),
   \ ])
 
-call javaapi#interface('ExpressionNode', '', [
+call javaapi#interface('ExpressionNode', 'SourceLocator', [
   \ javaapi#method(0,'exprSetParent(', 'ExpressionNode)', 'void'),
   \ javaapi#method(0,'exprGetParent(', ')', 'ExpressionNode'),
   \ javaapi#method(0,'exprAddChild(', 'ExpressionNode, int)', 'void'),
@@ -86,7 +86,7 @@ call javaapi#interface('ExtensionsProvider', '', [
   \ javaapi#method(0,'extFunction(', 'FuncExtFunction, Vector) throws TransformerException', 'Object'),
   \ ])
 
-call javaapi#class('FoundIndex', '', [
+call javaapi#class('FoundIndex', 'RuntimeException', [
   \ javaapi#method(0,'FoundIndex(', ')', 'public'),
   \ ])
 
@@ -153,7 +153,7 @@ call javaapi#class('NodeSet', 'ContextNodeList', [
   \ javaapi#method(0,'indexOf(', 'Node)', 'int'),
   \ ])
 
-call javaapi#class('NodeSetDTM', '', [
+call javaapi#class('NodeSetDTM', 'NodeVector', [
   \ javaapi#method(0,'NodeSetDTM(', 'DTMManager)', 'public'),
   \ javaapi#method(0,'NodeSetDTM(', 'int, int, DTMManager)', 'public'),
   \ javaapi#method(0,'NodeSetDTM(', 'NodeSetDTM)', 'public'),
@@ -316,7 +316,7 @@ call javaapi#class('XPathExpressionContext', 'ExpressionContext', [
   \ javaapi#method(0,'getVariableOrParam(', 'QName) throws TransformerException', 'XObject'),
   \ ])
 
-call javaapi#class('XPathContext', '', [
+call javaapi#class('XPathContext', 'DTMManager', [
   \ javaapi#field(0,'m_primaryReader', 'XMLReader'),
   \ javaapi#field(1,'RECURSIONLIMIT', 'int'),
   \ javaapi#method(0,'getDTMManager(', ')', 'DTMManager'),
@@ -400,7 +400,7 @@ call javaapi#class('XPathContext', '', [
   \ javaapi#method(0,'getDTMXRTreeFrag(', 'int)', 'DTMXRTreeFrag'),
   \ ])
 
-call javaapi#class('XPathException', '', [
+call javaapi#class('XPathException', 'TransformerException', [
   \ javaapi#method(0,'getStylesheetNode(', ')', 'Object'),
   \ javaapi#method(0,'setStylesheetNode(', 'Object)', 'void'),
   \ javaapi#method(0,'XPathException(', 'String, ExpressionNode)', 'public'),
@@ -419,7 +419,7 @@ call javaapi#interface('XPathFactory', '', [
   \ javaapi#method(0,'create(', 'String, SourceLocator, PrefixResolver, int)', 'XPath'),
   \ ])
 
-call javaapi#class('XPathProcessorException', '', [
+call javaapi#class('XPathProcessorException', 'XPathException', [
   \ javaapi#method(0,'XPathProcessorException(', 'String)', 'public'),
   \ javaapi#method(0,'XPathProcessorException(', 'String, Exception)', 'public'),
   \ ])

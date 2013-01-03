@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xml.internal.dtm.ref.sax2dtm')
 
-call javaapi#class('SAX2DTM', '', [
+call javaapi#class('SAX2DTM', 'DTMDefaultBaseIterators', [
   \ javaapi#method(0,'SAX2DTM(', 'DTMManager, Source, int, DTMWSFilter, XMLStringFactory, boolean)', 'public'),
   \ javaapi#method(0,'SAX2DTM(', 'DTMManager, Source, int, DTMWSFilter, XMLStringFactory, boolean, int, boolean, boolean)', 'public'),
   \ javaapi#method(0,'setUseSourceLocation(', 'boolean)', 'void'),
@@ -69,7 +69,7 @@ call javaapi#class('SAX2DTM', '', [
   \ javaapi#method(0,'getFixedNames(', 'int)', 'String'),
   \ ])
 
-call javaapi#class('AncestorIterator', '', [
+call javaapi#class('AncestorIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'AncestorIterator(', 'SAX2DTM2)', 'public'),
   \ javaapi#method(0,'getStartNode(', ')', 'int'),
   \ javaapi#method(0,'isReverse(', ')', 'boolean'),
@@ -81,45 +81,45 @@ call javaapi#class('AncestorIterator', '', [
   \ javaapi#method(0,'gotoMark(', ')', 'void'),
   \ ])
 
-call javaapi#class('AttributeIterator', '', [
+call javaapi#class('AttributeIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'AttributeIterator(', 'SAX2DTM2)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('ChildrenIterator', '', [
+call javaapi#class('ChildrenIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'ChildrenIterator(', 'SAX2DTM2)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('DescendantIterator', '', [
+call javaapi#class('DescendantIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'DescendantIterator(', 'SAX2DTM2)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ javaapi#method(0,'reset(', ')', 'DTMAxisIterator'),
   \ ])
 
-call javaapi#class('FollowingIterator', '', [
+call javaapi#class('FollowingIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'FollowingIterator(', 'SAX2DTM2)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('FollowingSiblingIterator', '', [
+call javaapi#class('FollowingSiblingIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'FollowingSiblingIterator(', 'SAX2DTM2)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('ParentIterator', '', [
+call javaapi#class('ParentIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'ParentIterator(', 'SAX2DTM2)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'setNodeType(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('PrecedingIterator', '', [
+call javaapi#class('PrecedingIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'PrecedingIterator(', 'SAX2DTM2)', 'public'),
   \ javaapi#method(0,'isReverse(', ')', 'boolean'),
   \ javaapi#method(0,'cloneIterator(', ')', 'DTMAxisIterator'),
@@ -130,70 +130,70 @@ call javaapi#class('PrecedingIterator', '', [
   \ javaapi#method(0,'gotoMark(', ')', 'void'),
   \ ])
 
-call javaapi#class('PrecedingSiblingIterator', '', [
+call javaapi#class('PrecedingSiblingIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'PrecedingSiblingIterator(', 'SAX2DTM2)', 'public'),
   \ javaapi#method(0,'isReverse(', ')', 'boolean'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('TypedAncestorIterator', '', [
+call javaapi#class('TypedAncestorIterator', 'AncestorIterator', [
   \ javaapi#method(0,'TypedAncestorIterator(', 'SAX2DTM2, int)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'getNodeByPosition(', 'int)', 'int'),
   \ javaapi#method(0,'getLast(', ')', 'int'),
   \ ])
 
-call javaapi#class('TypedAttributeIterator', '', [
+call javaapi#class('TypedAttributeIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'TypedAttributeIterator(', 'SAX2DTM2, int)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('TypedChildrenIterator', '', [
+call javaapi#class('TypedChildrenIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'TypedChildrenIterator(', 'SAX2DTM2, int)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ javaapi#method(0,'getNodeByPosition(', 'int)', 'int'),
   \ ])
 
-call javaapi#class('TypedDescendantIterator', '', [
+call javaapi#class('TypedDescendantIterator', 'DescendantIterator', [
   \ javaapi#method(0,'TypedDescendantIterator(', 'SAX2DTM2, int)', 'public'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('TypedFollowingIterator', '', [
+call javaapi#class('TypedFollowingIterator', 'FollowingIterator', [
   \ javaapi#method(0,'TypedFollowingIterator(', 'SAX2DTM2, int)', 'public'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('TypedFollowingSiblingIterator', '', [
+call javaapi#class('TypedFollowingSiblingIterator', 'FollowingSiblingIterator', [
   \ javaapi#method(0,'TypedFollowingSiblingIterator(', 'SAX2DTM2, int)', 'public'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('TypedPrecedingIterator', '', [
+call javaapi#class('TypedPrecedingIterator', 'PrecedingIterator', [
   \ javaapi#method(0,'TypedPrecedingIterator(', 'SAX2DTM2, int)', 'public'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('TypedPrecedingSiblingIterator', '', [
+call javaapi#class('TypedPrecedingSiblingIterator', 'PrecedingSiblingIterator', [
   \ javaapi#method(0,'TypedPrecedingSiblingIterator(', 'SAX2DTM2, int)', 'public'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ javaapi#method(0,'getLast(', ')', 'int'),
   \ ])
 
-call javaapi#class('TypedRootIterator', '', [
+call javaapi#class('TypedRootIterator', 'RootIterator', [
   \ javaapi#method(0,'TypedRootIterator(', 'SAX2DTM2, int)', 'public'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('TypedSingletonIterator', '', [
+call javaapi#class('TypedSingletonIterator', 'SingletonIterator', [
   \ javaapi#method(0,'TypedSingletonIterator(', 'SAX2DTM2, int)', 'public'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('SAX2DTM2', '', [
+call javaapi#class('SAX2DTM2', 'SAX2DTM', [
   \ javaapi#method(0,'SAX2DTM2(', 'DTMManager, Source, int, DTMWSFilter, XMLStringFactory, boolean)', 'public'),
   \ javaapi#method(0,'SAX2DTM2(', 'DTMManager, Source, int, DTMWSFilter, XMLStringFactory, boolean, int, boolean, boolean, boolean)', 'public'),
   \ javaapi#method(0,'_exptype(', 'int)', 'int'),
@@ -222,7 +222,7 @@ call javaapi#class('SAX2DTM2', '', [
   \ javaapi#method(0,'getNodeValue(', 'int)', 'String'),
   \ ])
 
-call javaapi#class('SAX2RTFDTM', '', [
+call javaapi#class('SAX2RTFDTM', 'SAX2DTM', [
   \ javaapi#method(0,'SAX2RTFDTM(', 'DTMManager, Source, int, DTMWSFilter, XMLStringFactory, boolean)', 'public'),
   \ javaapi#method(0,'getDocument(', ')', 'int'),
   \ javaapi#method(0,'getDocumentRoot(', 'int)', 'int'),

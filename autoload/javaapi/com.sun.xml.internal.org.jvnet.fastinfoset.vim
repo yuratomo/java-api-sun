@@ -8,7 +8,7 @@ call javaapi#interface('EncodingAlgorithm', '', [
   \ javaapi#method(0,'convertToCharacters(', 'Object, StringBuffer) throws EncodingAlgorithmException', 'void'),
   \ ])
 
-call javaapi#class('EncodingAlgorithmException', '', [
+call javaapi#class('EncodingAlgorithmException', 'FastInfosetException', [
   \ javaapi#method(0,'EncodingAlgorithmException(', 'String)', 'public'),
   \ javaapi#method(0,'EncodingAlgorithmException(', 'String, Exception)', 'public'),
   \ javaapi#method(0,'EncodingAlgorithmException(', 'Exception)', 'public'),
@@ -34,7 +34,7 @@ call javaapi#class('ExternalVocabulary', '', [
   \ javaapi#method(0,'ExternalVocabulary(', 'String, Vocabulary)', 'public'),
   \ ])
 
-call javaapi#class('FastInfosetException', '', [
+call javaapi#class('FastInfosetException', 'Exception', [
   \ javaapi#method(0,'FastInfosetException(', 'String)', 'public'),
   \ javaapi#method(0,'FastInfosetException(', 'String, Exception)', 'public'),
   \ javaapi#method(0,'FastInfosetException(', 'Exception)', 'public'),
@@ -60,7 +60,7 @@ call javaapi#interface('FastInfosetParser', '', [
   \ javaapi#method(0,'getForceStreamClose(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('FastInfosetResult', '', [
+call javaapi#class('FastInfosetResult', 'SAXResult', [
   \ javaapi#method(0,'FastInfosetResult(', 'OutputStream)', 'public'),
   \ javaapi#method(0,'getHandler(', ')', 'ContentHandler'),
   \ javaapi#method(0,'getLexicalHandler(', ')', 'LexicalHandler'),
@@ -115,7 +115,7 @@ call javaapi#interface('FastInfosetSerializer', '', [
   \ javaapi#method(0,'setOutputStream(', 'OutputStream)', 'void'),
   \ ])
 
-call javaapi#class('FastInfosetSource', '', [
+call javaapi#class('FastInfosetSource', 'SAXSource', [
   \ javaapi#method(0,'FastInfosetSource(', 'InputStream)', 'public'),
   \ javaapi#method(0,'getXMLReader(', ')', 'XMLReader'),
   \ javaapi#method(0,'getInputStream(', ')', 'InputStream'),

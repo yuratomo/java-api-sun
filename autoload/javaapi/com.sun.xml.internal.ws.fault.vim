@@ -6,7 +6,7 @@ call javaapi#class('CodeType', '', [
 call javaapi#class('DetailType', '', [
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'NamespacePrefixMapper', [
   \ javaapi#method(0,'getPreferredPrefix(', 'String, String, boolean)', 'String'),
   \ ])
 
@@ -32,10 +32,10 @@ call javaapi#class('ExceptionBean', '', [
 call javaapi#class('ReasonType', '', [
   \ ])
 
-call javaapi#class('SOAP11Fault', '', [
+call javaapi#class('SOAP11Fault', 'SOAPFaultBuilder', [
   \ ])
 
-call javaapi#class('SOAP12Fault', '', [
+call javaapi#class('SOAP12Fault', 'SOAPFaultBuilder', [
   \ ])
 
 call javaapi#class('1', '', [

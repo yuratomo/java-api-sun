@@ -1,11 +1,5 @@
 call javaapi#namespace('sun.net.www.protocol.http')
 
-call javaapi#class('Handler', '', [
-  \ javaapi#method(0,'Handler(', ')', 'public'),
-  \ javaapi#method(0,'Handler(', 'String, int)', 'public'),
-  \ ])
-
-
 call javaapi#interface('AuthCache', '', [
   \ javaapi#method(0,'put(', 'String, AuthCacheValue)', 'void'),
   \ javaapi#method(0,'get(', 'String, String)', 'AuthCacheValue'),
@@ -20,7 +14,7 @@ call javaapi#class('AuthCacheImpl', 'AuthCache', [
   \ javaapi#method(0,'remove(', 'String, AuthCacheValue)', 'void'),
   \ ])
 
-call javaapi#class('Type', '', [
+call javaapi#class('Type', 'Type>', [
   \ javaapi#field(1,'Proxy', 'Type'),
   \ javaapi#field(1,'Server', 'Type'),
   \ javaapi#method(1,'values(', ')', 'Type[]'),
@@ -31,7 +25,7 @@ call javaapi#class('AuthCacheValue', 'Serializable', [
   \ javaapi#method(1,'setAuthCache(', 'AuthCache)', 'void'),
   \ ])
 
-call javaapi#class('AuthScheme', '', [
+call javaapi#class('AuthScheme', 'AuthScheme>', [
   \ javaapi#field(1,'BASIC', 'AuthScheme'),
   \ javaapi#field(1,'DIGEST', 'AuthScheme'),
   \ javaapi#field(1,'NTLM', 'AuthScheme'),
@@ -55,7 +49,7 @@ call javaapi#class('AuthenticationHeader', '', [
   \ javaapi#method(0,'isPresent(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('AuthenticationInfo', '', [
+call javaapi#class('AuthenticationInfo', 'AuthCacheValue', [
   \ javaapi#field(1,'SERVER_AUTHENTICATION', 'char'),
   \ javaapi#field(1,'PROXY_AUTHENTICATION', 'char'),
   \ javaapi#method(0,'credentials(', ')', 'PasswordAuthentication'),
@@ -78,10 +72,10 @@ call javaapi#class('AuthenticationInfo', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('BasicBASE64Encoder', '', [
+call javaapi#class('BasicBASE64Encoder', 'BASE64Encoder', [
   \ ])
 
-call javaapi#class('BasicAuthentication', '', [
+call javaapi#class('BasicAuthentication', 'AuthenticationInfo', [
   \ javaapi#method(0,'BasicAuthentication(', 'boolean, String, int, String, PasswordAuthentication)', 'public'),
   \ javaapi#method(0,'BasicAuthentication(', 'boolean, String, int, String, String)', 'public'),
   \ javaapi#method(0,'BasicAuthentication(', 'boolean, URL, String, PasswordAuthentication)', 'public'),
@@ -95,7 +89,7 @@ call javaapi#class('BasicAuthentication', '', [
 call javaapi#class('Parameters', 'Serializable', [
   \ ])
 
-call javaapi#class('DigestAuthentication', '', [
+call javaapi#class('DigestAuthentication', 'AuthenticationInfo', [
   \ javaapi#method(0,'DigestAuthentication(', 'boolean, URL, String, String, PasswordAuthentication, Parameters)', 'public'),
   \ javaapi#method(0,'DigestAuthentication(', 'boolean, String, int, String, String, PasswordAuthentication, Parameters)', 'public'),
   \ javaapi#method(0,'supportsPreemptiveAuthorization(', ')', 'boolean'),
@@ -106,7 +100,7 @@ call javaapi#class('DigestAuthentication', '', [
   \ javaapi#method(0,'checkResponse(', 'String, String, String) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('EmptyInputStream', '', [
+call javaapi#class('EmptyInputStream', 'InputStream', [
   \ javaapi#method(0,'available(', ')', 'int'),
   \ javaapi#method(0,'read(', ')', 'int'),
   \ ])
@@ -168,7 +162,7 @@ call javaapi#class('7', 'InetAddress>', [
 call javaapi#class('8', '', [
   \ ])
 
-call javaapi#class('ErrorStream', '', [
+call javaapi#class('ErrorStream', 'InputStream', [
   \ javaapi#method(1,'getErrorStream(', 'InputStream, long, HttpClient)', 'InputStream'),
   \ javaapi#method(0,'available(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
@@ -177,7 +171,7 @@ call javaapi#class('ErrorStream', '', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('HttpInputStream', '', [
+call javaapi#class('HttpInputStream', 'FilterInputStream', [
   \ javaapi#method(0,'HttpInputStream(', 'HttpURLConnection, InputStream)', 'public'),
   \ javaapi#method(0,'HttpInputStream(', 'HttpURLConnection, InputStream, CacheRequest)', 'public'),
   \ javaapi#method(0,'mark(', 'int)', 'void'),
@@ -189,14 +183,14 @@ call javaapi#class('HttpInputStream', '', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('StreamingOutputStream', '', [
+call javaapi#class('StreamingOutputStream', 'FilterOutputStream', [
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[]) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('TunnelState', '', [
+call javaapi#class('TunnelState', 'TunnelState>', [
   \ javaapi#field(1,'NONE', 'TunnelState'),
   \ javaapi#field(1,'SETUP', 'TunnelState'),
   \ javaapi#field(1,'TUNNELING', 'TunnelState'),
@@ -204,7 +198,7 @@ call javaapi#class('TunnelState', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'TunnelState'),
   \ ])
 
-call javaapi#class('HttpURLConnection', '', [
+call javaapi#class('HttpURLConnection', 'HttpURLConnection', [
   \ javaapi#field(1,'userAgent', 'String'),
   \ javaapi#method(1,'getHttpLogger(', ')', 'PlatformLogger'),
   \ javaapi#method(0,'authObj(', ')', 'Object'),
@@ -239,10 +233,10 @@ call javaapi#class('NTLMAuthenticationProxy', '', [
   \ javaapi#method(1,'isTrustedSite(', 'URL)', 'boolean'),
   \ ])
 
-call javaapi#class('B64Encoder', '', [
+call javaapi#class('B64Encoder', 'BASE64Encoder', [
   \ ])
 
-call javaapi#class('NegotiateAuthentication', '', [
+call javaapi#class('NegotiateAuthentication', 'AuthenticationInfo', [
   \ javaapi#method(0,'NegotiateAuthentication(', 'HttpCallerInfo)', 'public'),
   \ javaapi#method(0,'supportsPreemptiveAuthorization(', ')', 'boolean'),
   \ javaapi#method(1,'isSupported(', 'HttpCallerInfo)', 'boolean'),
@@ -255,5 +249,12 @@ call javaapi#class('Negotiator', '', [
   \ javaapi#method(0,'Negotiator(', ')', 'public'),
   \ javaapi#method(0,'firstToken(', ') throws IOException', 'byte[]'),
   \ javaapi#method(0,'nextToken(', 'byte[]) throws IOException', 'byte[]'),
+  \ ])
+
+call javaapi#namespace('sun.net.www.protocol.http')
+
+call javaapi#class('Handler', 'URLStreamHandler', [
+  \ javaapi#method(0,'Handler(', ')', 'public'),
+  \ javaapi#method(0,'Handler(', 'String, int)', 'public'),
   \ ])
 

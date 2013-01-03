@@ -3,10 +3,10 @@ call javaapi#namespace('com.sun.xml.internal.txw2')
 call javaapi#class('Attribute', '', [
   \ ])
 
-call javaapi#class('Cdata', '', [
+call javaapi#class('Cdata', 'Text', [
   \ ])
 
-call javaapi#class('Comment', '', [
+call javaapi#class('Comment', 'Content', [
   \ javaapi#method(0,'Comment(', 'Document, NamespaceResolver, Object)', 'public'),
   \ ])
 
@@ -77,7 +77,7 @@ call javaapi#class('5', 'QName>', [
   \ javaapi#method(0,'print(', 'Object, NamespaceResolver, StringBuilder)', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'AbstractList', [
   \ javaapi#method(0,'get(', 'int)', 'DatatypeWriter<?>'),
   \ javaapi#method(0,'size(', ')', 'int'),
   \ javaapi#method(0,'get(', 'int)', 'Object'),
@@ -103,19 +103,19 @@ call javaapi#class('Document', '', [
   \ javaapi#method(0,'addDatatypeWriter(', 'DatatypeWriter<?>)', 'void'),
   \ ])
 
-call javaapi#class('EndDocument', '', [
+call javaapi#class('EndDocument', 'Content', [
   \ ])
 
-call javaapi#class('EndTag', '', [
+call javaapi#class('EndTag', 'Content', [
   \ ])
 
-call javaapi#class('IllegalAnnotationException', '', [
+call javaapi#class('IllegalAnnotationException', 'TxwException', [
   \ javaapi#method(0,'IllegalAnnotationException(', 'String)', 'public'),
   \ javaapi#method(0,'IllegalAnnotationException(', 'Throwable)', 'public'),
   \ javaapi#method(0,'IllegalAnnotationException(', 'String, Throwable)', 'public'),
   \ ])
 
-call javaapi#class('IllegalSignatureException', '', [
+call javaapi#class('IllegalSignatureException', 'TxwException', [
   \ javaapi#method(0,'IllegalSignatureException(', 'String)', 'public'),
   \ javaapi#method(0,'IllegalSignatureException(', 'String, Throwable)', 'public'),
   \ javaapi#method(0,'IllegalSignatureException(', 'Throwable)', 'public'),
@@ -149,13 +149,13 @@ call javaapi#class('NamespaceSupport', '', [
   \ javaapi#method(0,'isNamespaceDeclUris(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('Pcdata', '', [
+call javaapi#class('Pcdata', 'Text', [
   \ ])
 
-call javaapi#class('StartDocument', '', [
+call javaapi#class('StartDocument', 'Content', [
   \ ])
 
-call javaapi#class('StartTag', '', [
+call javaapi#class('StartTag', 'Content', [
   \ javaapi#method(0,'StartTag(', 'ContainerElement, String, String)', 'public'),
   \ javaapi#method(0,'StartTag(', 'Document, String, String)', 'public'),
   \ javaapi#method(0,'addAttribute(', 'String, String, Object)', 'void'),
@@ -169,10 +169,10 @@ call javaapi#class('TXW', '', [
   \ javaapi#method(1,'create(', 'QName, Class<T>, XmlSerializer)', 'T'),
   \ ])
 
-call javaapi#class('Text', '', [
+call javaapi#class('Text', 'Content', [
   \ ])
 
-call javaapi#class('TxwException', '', [
+call javaapi#class('TxwException', 'RuntimeException', [
   \ javaapi#method(0,'TxwException(', 'String)', 'public'),
   \ javaapi#method(0,'TxwException(', 'Throwable)', 'public'),
   \ javaapi#method(0,'TxwException(', 'String, Throwable)', 'public'),

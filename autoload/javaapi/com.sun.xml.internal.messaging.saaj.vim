@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.messaging.saaj')
 
-call javaapi#class('SOAPExceptionImpl', '', [
+call javaapi#class('SOAPExceptionImpl', 'SOAPException', [
   \ javaapi#method(0,'SOAPExceptionImpl(', ')', 'public'),
   \ javaapi#method(0,'SOAPExceptionImpl(', 'String)', 'public'),
   \ javaapi#method(0,'SOAPExceptionImpl(', 'String, Throwable)', 'public'),

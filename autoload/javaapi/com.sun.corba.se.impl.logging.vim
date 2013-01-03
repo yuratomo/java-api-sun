@@ -4,7 +4,7 @@ call javaapi#class('1', 'LogWrapperFactory', [
   \ javaapi#method(0,'create(', 'Logger)', 'LogWrapperBase'),
   \ ])
 
-call javaapi#class('ActivationSystemException', '', [
+call javaapi#class('ActivationSystemException', 'LogWrapperBase', [
   \ javaapi#field(1,'CANNOT_READ_REPOSITORY_DB', 'int'),
   \ javaapi#field(1,'CANNOT_ADD_INITIAL_NAMING', 'int'),
   \ javaapi#field(1,'CANNOT_WRITE_REPOSITORY_DB', 'int'),
@@ -49,7 +49,7 @@ call javaapi#class('1', 'LogWrapperFactory', [
   \ javaapi#method(0,'create(', 'Logger)', 'LogWrapperBase'),
   \ ])
 
-call javaapi#class('IORSystemException', '', [
+call javaapi#class('IORSystemException', 'LogWrapperBase', [
   \ javaapi#field(1,'ORT_NOT_INITIALIZED', 'int'),
   \ javaapi#field(1,'NULL_POA', 'int'),
   \ javaapi#field(1,'BAD_MAGIC', 'int'),
@@ -134,7 +134,7 @@ call javaapi#class('1', 'LogWrapperFactory', [
   \ javaapi#method(0,'create(', 'Logger)', 'LogWrapperBase'),
   \ ])
 
-call javaapi#class('InterceptorsSystemException', '', [
+call javaapi#class('InterceptorsSystemException', 'LogWrapperBase', [
   \ javaapi#field(1,'TYPE_OUT_OF_RANGE', 'int'),
   \ javaapi#field(1,'NAME_NULL', 'int'),
   \ javaapi#field(1,'RIR_INVALID_PRE_INIT', 'int'),
@@ -299,7 +299,7 @@ call javaapi#class('1', 'LogWrapperFactory', [
   \ javaapi#method(0,'create(', 'Logger)', 'LogWrapperBase'),
   \ ])
 
-call javaapi#class('NamingSystemException', '', [
+call javaapi#class('NamingSystemException', 'LogWrapperBase', [
   \ javaapi#field(1,'TRANSIENT_NAME_SERVER_BAD_PORT', 'int'),
   \ javaapi#field(1,'TRANSIENT_NAME_SERVER_BAD_HOST', 'int'),
   \ javaapi#field(1,'OBJECT_IS_NULL', 'int'),
@@ -424,7 +424,7 @@ call javaapi#class('1', 'LogWrapperFactory', [
   \ javaapi#method(0,'create(', 'Logger)', 'LogWrapperBase'),
   \ ])
 
-call javaapi#class('OMGSystemException', '', [
+call javaapi#class('OMGSystemException', 'LogWrapperBase', [
   \ javaapi#field(1,'IDL_CONTEXT_NOT_FOUND', 'int'),
   \ javaapi#field(1,'NO_MATCHING_IDL_CONTEXT', 'int'),
   \ javaapi#field(1,'DEP_PREVENT_DESTRUCTION', 'int'),
@@ -1089,7 +1089,7 @@ call javaapi#class('1', 'LogWrapperFactory', [
   \ javaapi#method(0,'create(', 'Logger)', 'LogWrapperBase'),
   \ ])
 
-call javaapi#class('ORBUtilSystemException', '', [
+call javaapi#class('ORBUtilSystemException', 'LogWrapperBase', [
   \ javaapi#field(1,'ADAPTER_ID_NOT_AVAILABLE', 'int'),
   \ javaapi#field(1,'SERVER_ID_NOT_AVAILABLE', 'int'),
   \ javaapi#field(1,'ORB_ID_NOT_AVAILABLE', 'int'),
@@ -2589,7 +2589,7 @@ call javaapi#class('1', 'LogWrapperFactory', [
   \ javaapi#method(0,'create(', 'Logger)', 'LogWrapperBase'),
   \ ])
 
-call javaapi#class('POASystemException', '', [
+call javaapi#class('POASystemException', 'LogWrapperBase', [
   \ javaapi#field(1,'SERVANT_MANAGER_ALREADY_SET', 'int'),
   \ javaapi#field(1,'DESTROY_DEADLOCK', 'int'),
   \ javaapi#field(1,'SERVANT_ORB', 'int'),
@@ -2954,7 +2954,7 @@ call javaapi#class('1', 'LogWrapperFactory', [
   \ javaapi#method(0,'create(', 'Logger)', 'LogWrapperBase'),
   \ ])
 
-call javaapi#class('UtilSystemException', '', [
+call javaapi#class('UtilSystemException', 'LogWrapperBase', [
   \ javaapi#field(1,'STUB_FACTORY_COULD_NOT_MAKE_STUB', 'int'),
   \ javaapi#field(1,'ERROR_IN_MAKE_STUB_FROM_REPOSITORY_ID', 'int'),
   \ javaapi#field(1,'CLASS_CAST_EXCEPTION_IN_LOAD_STUB', 'int'),

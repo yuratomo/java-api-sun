@@ -23,7 +23,7 @@ call javaapi#class('1', 'ResourceContext', [
   \ javaapi#method(0,'unregistered(', ')', 'void'),
   \ ])
 
-call javaapi#interface('ResourceContext', '', [
+call javaapi#interface('ResourceContext', 'RegistrationContext', [
   \ javaapi#field(1,'NONE', 'ResourceContext'),
   \ javaapi#method(0,'done(', ')', 'void'),
   \ ])
@@ -68,7 +68,7 @@ call javaapi#class('DefaultMBeanServerInterceptor', 'MBeanServerInterceptor', [
   \ javaapi#method(0,'getClassLoaderRepository(', ')', 'ClassLoaderRepository'),
   \ ])
 
-call javaapi#interface('MBeanServerInterceptor', '', [
+call javaapi#interface('MBeanServerInterceptor', 'MBeanServer', [
   \ javaapi#method(0,'instantiate(', 'String) throws ReflectionException, MBeanException', 'Object'),
   \ javaapi#method(0,'instantiate(', 'String, ObjectName) throws ReflectionException, MBeanException, InstanceNotFoundException', 'Object'),
   \ javaapi#method(0,'instantiate(', 'String, Object[], String[]) throws ReflectionException, MBeanException', 'Object'),

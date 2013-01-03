@@ -39,7 +39,7 @@ call javaapi#class('ElementPSVImpl', 'ElementPSVI', [
   \ javaapi#method(0,'reset(', ')', 'void'),
   \ ])
 
-call javaapi#class('BuiltinAttrDecl', '', [
+call javaapi#class('BuiltinAttrDecl', 'XSAttributeDecl', [
   \ javaapi#method(0,'BuiltinAttrDecl(', 'String, String, XSSimpleType, short)', 'public'),
   \ javaapi#method(0,'setValues(', 'String, String, XSSimpleType, short, short, ValidatedInfo, XSComplexTypeDecl)', 'void'),
   \ javaapi#method(0,'reset(', ')', 'void'),
@@ -47,7 +47,7 @@ call javaapi#class('BuiltinAttrDecl', '', [
   \ javaapi#method(0,'getNamespaceItem(', ')', 'XSNamespaceItem'),
   \ ])
 
-call javaapi#class('BuiltinSchemaGrammar', '', [
+call javaapi#class('BuiltinSchemaGrammar', 'SchemaGrammar', [
   \ javaapi#method(0,'BuiltinSchemaGrammar(', 'int, short)', 'public'),
   \ javaapi#method(0,'getGrammarDescription(', ')', 'XMLGrammarDescription'),
   \ javaapi#method(0,'setImportedGrammars(', 'Vector)', 'void'),
@@ -73,7 +73,7 @@ call javaapi#class('BuiltinSchemaGrammar', '', [
   \ javaapi#method(0,'addDocument(', 'Object, String)', 'void'),
   \ ])
 
-call javaapi#class('Schema4Annotations', '', [
+call javaapi#class('Schema4Annotations', 'SchemaGrammar', [
   \ javaapi#field(1,'INSTANCE', 'Schema4Annotations'),
   \ javaapi#method(0,'getGrammarDescription(', ')', 'XMLGrammarDescription'),
   \ javaapi#method(0,'setImportedGrammars(', 'Vector)', 'void'),
@@ -99,7 +99,7 @@ call javaapi#class('Schema4Annotations', '', [
   \ javaapi#method(0,'addDocument(', 'Object, String)', 'void'),
   \ ])
 
-call javaapi#class('XSAnyType', '', [
+call javaapi#class('XSAnyType', 'XSComplexTypeDecl', [
   \ javaapi#method(0,'XSAnyType(', ')', 'public'),
   \ javaapi#method(0,'setValues(', 'String, String, XSTypeDefinition, short, short, short, short, boolean, XSAttributeGroupDecl, XSSimpleType, XSParticleDecl)', 'void'),
   \ javaapi#method(0,'setName(', 'String)', 'void'),
@@ -185,7 +185,7 @@ call javaapi#class('SchemaGrammar', 'XSNamespaceItem', [
   \ javaapi#method(0,'isImmutable(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('SchemaNamespaceSupport', '', [
+call javaapi#class('SchemaNamespaceSupport', 'NamespaceSupport', [
   \ javaapi#method(0,'SchemaNamespaceSupport(', ')', 'public'),
   \ javaapi#method(0,'SchemaNamespaceSupport(', 'SchemaNamespaceSupport)', 'public'),
   \ javaapi#method(0,'setEffectiveContext(', 'String[])', 'void'),
@@ -370,7 +370,7 @@ call javaapi#class('SubstitutionGroupHandler', '', [
   \ javaapi#method(0,'getSubstitutionGroup(', 'XSElementDecl)', 'XSElementDecl[]'),
   \ ])
 
-call javaapi#class('XMLSchemaException', '', [
+call javaapi#class('XMLSchemaException', 'Exception', [
   \ javaapi#method(0,'XMLSchemaException(', 'String, Object[])', 'public'),
   \ javaapi#method(0,'getKey(', ')', 'String'),
   \ javaapi#method(0,'getArgs(', ')', 'Object[]'),
@@ -422,13 +422,13 @@ call javaapi#class('XMLSchemaLoader', 'DOMConfiguration', [
   \ javaapi#method(0,'setParameter(', 'String, Object) throws DOMException', 'void'),
   \ ])
 
-call javaapi#class('KeyRefValueStore', '', [
+call javaapi#class('KeyRefValueStore', 'ValueStoreBase', [
   \ javaapi#method(0,'KeyRefValueStore(', 'XMLSchemaValidator, KeyRef, KeyValueStore)', 'public'),
   \ javaapi#method(0,'endDocumentFragment(', ')', 'void'),
   \ javaapi#method(0,'endDocument(', ')', 'void'),
   \ ])
 
-call javaapi#class('KeyValueStore', '', [
+call javaapi#class('KeyValueStore', 'ValueStoreBase', [
   \ javaapi#method(0,'KeyValueStore(', 'XMLSchemaValidator, UniqueOrKey)', 'public'),
   \ ])
 
@@ -451,7 +451,7 @@ call javaapi#class('ShortVector', '', [
   \ javaapi#method(0,'contains(', 'short)', 'boolean'),
   \ ])
 
-call javaapi#class('UniqueValueStore', '', [
+call javaapi#class('UniqueValueStore', 'ValueStoreBase', [
   \ javaapi#method(0,'UniqueValueStore(', 'XMLSchemaValidator, UniqueOrKey)', 'public'),
   \ ])
 
@@ -690,7 +690,7 @@ call javaapi#class('XSConstraints', '', [
   \ javaapi#method(1,'overlapUPA(', 'Object, Object, SubstitutionGroupHandler)', 'boolean'),
   \ ])
 
-call javaapi#class('XSDDescription', '', [
+call javaapi#class('XSDDescription', 'XMLResourceIdentifierImpl', [
   \ javaapi#field(1,'CONTEXT_INITIALIZE', 'short'),
   \ javaapi#field(1,'CONTEXT_INCLUDE', 'short'),
   \ javaapi#field(1,'CONTEXT_REDEFINE', 'short'),
@@ -809,7 +809,7 @@ call javaapi#class('XSGroupDecl', 'XSModelGroupDefinition', [
   \ javaapi#method(0,'getNamespaceItem(', ')', 'XSNamespaceItem'),
   \ ])
 
-call javaapi#class('XSImplementationImpl', '', [
+call javaapi#class('XSImplementationImpl', 'CoreDOMImplementationImpl', [
   \ javaapi#method(0,'XSImplementationImpl(', ')', 'public'),
   \ javaapi#method(1,'getDOMImplementation(', ')', 'DOMImplementation'),
   \ javaapi#method(0,'hasFeature(', 'String, String)', 'boolean'),
@@ -817,7 +817,7 @@ call javaapi#class('XSImplementationImpl', '', [
   \ javaapi#method(0,'getRecognizedVersions(', ')', 'StringList'),
   \ ])
 
-call javaapi#class('XSGrammarMerger', '', [
+call javaapi#class('XSGrammarMerger', 'XSGrammarPool', [
   \ javaapi#method(0,'XSGrammarMerger(', ')', 'public'),
   \ javaapi#method(0,'putGrammar(', 'Grammar)', 'void'),
   \ javaapi#method(0,'containsGrammar(', 'XMLGrammarDescription)', 'boolean'),
@@ -882,7 +882,7 @@ call javaapi#class('XSNamespaceItemListIterator', 'ListIterator', [
   \ javaapi#method(0,'add(', 'Object)', 'void'),
   \ ])
 
-call javaapi#class('XSModelImpl', '', [
+call javaapi#class('XSModelImpl', 'AbstractList', [
   \ javaapi#method(0,'XSModelImpl(', 'SchemaGrammar[])', 'public'),
   \ javaapi#method(0,'XSModelImpl(', 'SchemaGrammar[], short)', 'public'),
   \ javaapi#method(0,'getNamespaces(', ')', 'StringList'),

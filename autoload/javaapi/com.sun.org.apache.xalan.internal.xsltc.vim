@@ -64,7 +64,7 @@ call javaapi#interface('DOMCache', '', [
   \ javaapi#method(0,'retrieveDocument(', 'String, String, Translet)', 'DOM'),
   \ ])
 
-call javaapi#interface('DOMEnhancedForDTM', '', [
+call javaapi#interface('DOMEnhancedForDTM', 'DOM', [
   \ javaapi#method(0,'getMapping(', 'String[], String[], int[])', 'short[]'),
   \ javaapi#method(0,'getReverseMapping(', 'String[], String[], int[])', 'int[]'),
   \ javaapi#method(0,'getNamespaceMapping(', 'String[])', 'short[]'),
@@ -76,7 +76,7 @@ call javaapi#interface('DOMEnhancedForDTM', '', [
   \ javaapi#method(0,'getElementById(', 'String)', 'int'),
   \ ])
 
-call javaapi#interface('NodeIterator', '', [
+call javaapi#interface('NodeIterator', 'Cloneable', [
   \ javaapi#field(1,'END', 'int'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ javaapi#method(0,'reset(', ')', 'NodeIterator'),
@@ -113,7 +113,7 @@ call javaapi#interface('Translet', '', [
   \ javaapi#method(0,'getNamespaceArray(', ')', 'String[]'),
   \ ])
 
-call javaapi#class('TransletException', '', [
+call javaapi#class('TransletException', 'SAXException', [
   \ javaapi#method(0,'TransletException(', ')', 'public'),
   \ javaapi#method(0,'TransletException(', 'Exception)', 'public'),
   \ javaapi#method(0,'TransletException(', 'String)', 'public'),

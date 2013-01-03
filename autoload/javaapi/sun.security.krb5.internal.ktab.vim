@@ -45,11 +45,11 @@ call javaapi#class('KeyTabEntry', 'KeyTabConstants', [
   \ javaapi#method(0,'getTimeStamp(', ')', 'KerberosTime'),
   \ ])
 
-call javaapi#class('KeyTabInputStream', '', [
+call javaapi#class('KeyTabInputStream', 'KrbDataInputStream', [
   \ javaapi#method(0,'KeyTabInputStream(', 'InputStream)', 'public'),
   \ ])
 
-call javaapi#class('KeyTabOutputStream', '', [
+call javaapi#class('KeyTabOutputStream', 'KrbDataOutputStream', [
   \ javaapi#field(0,'version', 'int'),
   \ javaapi#method(0,'KeyTabOutputStream(', 'OutputStream)', 'public'),
   \ javaapi#method(0,'writeVersion(', 'int) throws IOException', 'void'),

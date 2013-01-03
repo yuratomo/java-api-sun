@@ -1,25 +1,25 @@
 call javaapi#namespace('com.sun.java.swing.plaf.motif')
 
-call javaapi#class('BevelBorder', '', [
+call javaapi#class('BevelBorder', 'AbstractBorder', [
   \ javaapi#method(0,'BevelBorder(', 'boolean, Color, Color)', 'public'),
   \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
   \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
   \ javaapi#method(0,'isOpaque(', 'Component)', 'boolean'),
   \ ])
 
-call javaapi#class('ButtonBorder', '', [
+call javaapi#class('ButtonBorder', 'AbstractBorder', [
   \ javaapi#method(0,'ButtonBorder(', 'Color, Color, Color, Color)', 'public'),
   \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
   \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
   \ ])
 
-call javaapi#class('FocusBorder', '', [
+call javaapi#class('FocusBorder', 'AbstractBorder', [
   \ javaapi#method(0,'FocusBorder(', 'Color, Color)', 'public'),
   \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
   \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
   \ ])
 
-call javaapi#class('FrameBorder', '', [
+call javaapi#class('FrameBorder', 'AbstractBorder', [
   \ javaapi#field(1,'BORDER_SIZE', 'int'),
   \ javaapi#method(0,'FrameBorder(', 'JComponent)', 'public'),
   \ javaapi#method(0,'setComponent(', 'JComponent)', 'void'),
@@ -28,7 +28,7 @@ call javaapi#class('FrameBorder', '', [
   \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('InternalFrameBorder', '', [
+call javaapi#class('InternalFrameBorder', 'FrameBorder', [
   \ javaapi#field(1,'CORNER_SIZE', 'int'),
   \ javaapi#method(0,'InternalFrameBorder(', 'JInternalFrame)', 'public'),
   \ javaapi#method(0,'setFrame(', 'JInternalFrame)', 'void'),
@@ -36,19 +36,19 @@ call javaapi#class('InternalFrameBorder', '', [
   \ javaapi#method(0,'resizePartWidth(', ')', 'int'),
   \ ])
 
-call javaapi#class('MenuBarBorder', '', [
+call javaapi#class('MenuBarBorder', 'ButtonBorder', [
   \ javaapi#method(0,'MenuBarBorder(', 'Color, Color, Color, Color)', 'public'),
   \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
   \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
   \ ])
 
-call javaapi#class('MotifPopupMenuBorder', '', [
+call javaapi#class('MotifPopupMenuBorder', 'AbstractBorder', [
   \ javaapi#method(0,'MotifPopupMenuBorder(', 'Font, Color, Color, Color, Color)', 'public'),
   \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
   \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
   \ ])
 
-call javaapi#class('ToggleButtonBorder', '', [
+call javaapi#class('ToggleButtonBorder', 'ButtonBorder', [
   \ javaapi#method(0,'ToggleButtonBorder(', 'Color, Color, Color, Color)', 'public'),
   \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
   \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
@@ -59,11 +59,11 @@ call javaapi#class('MotifBorders', '', [
   \ javaapi#method(1,'drawBezel(', 'Graphics, int, int, int, int, boolean, boolean, Color, Color, Color, Color)', 'void'),
   \ ])
 
-call javaapi#class('MotifButtonListener', '', [
+call javaapi#class('MotifButtonListener', 'BasicButtonListener', [
   \ javaapi#method(0,'MotifButtonListener(', 'AbstractButton)', 'public'),
   \ ])
 
-call javaapi#class('MotifButtonUI', '', [
+call javaapi#class('MotifButtonUI', 'BasicButtonUI', [
   \ javaapi#method(0,'MotifButtonUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'installDefaults(', 'AbstractButton)', 'void'),
@@ -84,12 +84,12 @@ call javaapi#class('MouseInputHandler', 'MouseInputListener', [
   \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('MotifCheckBoxMenuItemUI', '', [
+call javaapi#class('MotifCheckBoxMenuItemUI', 'BasicCheckBoxMenuItemUI', [
   \ javaapi#method(0,'MotifCheckBoxMenuItemUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ ])
 
-call javaapi#class('MotifCheckBoxUI', '', [
+call javaapi#class('MotifCheckBoxUI', 'MotifRadioButtonUI', [
   \ javaapi#method(0,'MotifCheckBoxUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getPropertyPrefix(', ')', 'String'),
@@ -100,7 +100,7 @@ call javaapi#class('1', 'Runnable', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('ComboBoxLayoutManager', '', [
+call javaapi#class('ComboBoxLayoutManager', 'ComboBoxLayoutManager', [
   \ javaapi#method(0,'ComboBoxLayoutManager(', 'MotifComboBoxUI)', 'public'),
   \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
   \ ])
@@ -112,23 +112,23 @@ call javaapi#class('MotifComboBoxArrowIcon', 'Serializable', [
   \ javaapi#method(0,'getIconHeight(', ')', 'int'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'MouseMotionAdapter', [
   \ ])
 
-call javaapi#class('InvocationKeyHandler', '', [
+call javaapi#class('InvocationKeyHandler', 'InvocationKeyHandler', [
   \ ])
 
-call javaapi#class('MotifComboPopup', '', [
+call javaapi#class('MotifComboPopup', 'BasicComboPopup', [
   \ javaapi#method(0,'MotifComboPopup(', 'MotifComboBoxUI, JComboBox)', 'public'),
   \ javaapi#method(0,'createListMouseMotionListener(', ')', 'MouseMotionListener'),
   \ javaapi#method(0,'createKeyListener(', ')', 'KeyListener'),
   \ ])
 
-call javaapi#class('MotifPropertyChangeListener', '', [
+call javaapi#class('MotifPropertyChangeListener', 'PropertyChangeHandler', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('MotifComboBoxUI', '', [
+call javaapi#class('MotifComboBoxUI', 'BasicComboBoxUI', [
   \ javaapi#method(0,'MotifComboBoxUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
@@ -143,7 +143,7 @@ call javaapi#class('DesktopIconActionListener', 'ActionListener', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('DesktopIconMouseListener', '', [
+call javaapi#class('DesktopIconMouseListener', 'MouseAdapter', [
   \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
   \ ])
 
@@ -160,7 +160,7 @@ call javaapi#class('2', 'MouseListener', [
   \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('IconButton', '', [
+call javaapi#class('IconButton', 'JButton', [
   \ javaapi#method(0,'isFocusTraversable(', ')', 'boolean'),
   \ ])
 
@@ -177,14 +177,14 @@ call javaapi#class('2', 'MouseListener', [
   \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('IconLabel', '', [
+call javaapi#class('IconLabel', 'JPanel', [
   \ javaapi#method(0,'isFocusTraversable(', ')', 'boolean'),
   \ javaapi#method(0,'getMinimumSize(', ')', 'Dimension'),
   \ javaapi#method(0,'getPreferredSize(', ')', 'Dimension'),
   \ javaapi#method(0,'paint(', 'Graphics)', 'void'),
   \ ])
 
-call javaapi#class('MotifDesktopIconUI', '', [
+call javaapi#class('MotifDesktopIconUI', 'BasicDesktopIconUI', [
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'MotifDesktopIconUI(', ')', 'public'),
   \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
@@ -197,11 +197,11 @@ call javaapi#class('MotifDesktopIconUI', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('DragPane', '', [
+call javaapi#class('DragPane', 'JComponent', [
   \ javaapi#method(0,'paint(', 'Graphics)', 'void'),
   \ ])
 
-call javaapi#class('MotifDesktopManager', '', [
+call javaapi#class('MotifDesktopManager', 'DefaultDesktopManager', [
   \ javaapi#method(0,'setBoundsForFrame(', 'JComponent, int, int, int, int)', 'void'),
   \ javaapi#method(0,'beginDraggingFrame(', 'JComponent)', 'void'),
   \ javaapi#method(0,'dragFrame(', 'JComponent, int, int)', 'void'),
@@ -212,13 +212,13 @@ call javaapi#class('MotifDesktopManager', '', [
   \ javaapi#method(0,'iconifyFrame(', 'JInternalFrame)', 'void'),
   \ ])
 
-call javaapi#class('MotifDesktopPaneUI', '', [
+call javaapi#class('MotifDesktopPaneUI', 'BasicDesktopPaneUI', [
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'MotifDesktopPaneUI(', ')', 'public'),
   \ javaapi#method(0,'getInsets(', 'JComponent)', 'Insets'),
   \ ])
 
-call javaapi#class('MotifEditorPaneUI', '', [
+call javaapi#class('MotifEditorPaneUI', 'BasicEditorPaneUI', [
   \ javaapi#method(0,'MotifEditorPaneUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ ])
@@ -227,51 +227,51 @@ call javaapi#class('1', 'PropertyChangeListener', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('10', '', [
+call javaapi#class('10', 'MouseAdapter', [
   \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'JPanel', [
   \ javaapi#method(0,'getInsets(', ')', 'Insets'),
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'JTextField', [
   \ javaapi#method(0,'getMaximumSize(', ')', 'Dimension'),
   \ ])
 
-call javaapi#class('4', '', [
+call javaapi#class('4', 'JComboBox', [
   \ javaapi#method(0,'getMaximumSize(', ')', 'Dimension'),
   \ ])
 
-call javaapi#class('5', '', [
+call javaapi#class('5', 'JTextField', [
   \ javaapi#method(0,'getMaximumSize(', ')', 'Dimension'),
   \ ])
 
-call javaapi#class('6', '', [
+call javaapi#class('6', 'JButton', [
   \ javaapi#method(0,'getMaximumSize(', ')', 'Dimension'),
   \ ])
 
-call javaapi#class('7', '', [
+call javaapi#class('7', 'JButton', [
   \ javaapi#method(0,'getMaximumSize(', ')', 'Dimension'),
   \ ])
 
-call javaapi#class('8', '', [
+call javaapi#class('8', 'JButton', [
   \ javaapi#method(0,'getMaximumSize(', ')', 'Dimension'),
   \ ])
 
-call javaapi#class('9', '', [
+call javaapi#class('9', 'JButton', [
   \ javaapi#method(0,'getMaximumSize(', ')', 'Dimension'),
   \ ])
 
-call javaapi#class('DirectoryCellRenderer', '', [
+call javaapi#class('DirectoryCellRenderer', 'DefaultListCellRenderer', [
   \ javaapi#method(0,'getListCellRendererComponent(', 'JList, Object, int, boolean, boolean)', 'Component'),
   \ ])
 
-call javaapi#class('FileCellRenderer', '', [
+call javaapi#class('FileCellRenderer', 'DefaultListCellRenderer', [
   \ javaapi#method(0,'getListCellRendererComponent(', 'JList, Object, int, boolean, boolean)', 'Component'),
   \ ])
 
-call javaapi#class('FilterComboBoxModel', '', [
+call javaapi#class('FilterComboBoxModel', 'AbstractListModel', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ javaapi#method(0,'setSelectedItem(', 'Object)', 'void'),
   \ javaapi#method(0,'getSelectedItem(', ')', 'Object'),
@@ -279,12 +279,12 @@ call javaapi#class('FilterComboBoxModel', '', [
   \ javaapi#method(0,'getElementAt(', 'int)', 'Object'),
   \ ])
 
-call javaapi#class('FilterComboBoxRenderer', '', [
+call javaapi#class('FilterComboBoxRenderer', 'DefaultListCellRenderer', [
   \ javaapi#method(0,'FilterComboBoxRenderer(', 'MotifFileChooserUI)', 'public'),
   \ javaapi#method(0,'getListCellRendererComponent(', 'JList, Object, int, boolean, boolean)', 'Component'),
   \ ])
 
-call javaapi#class('MotifDirectoryListModel', '', [
+call javaapi#class('MotifDirectoryListModel', 'AbstractListModel', [
   \ javaapi#method(0,'MotifDirectoryListModel(', 'MotifFileChooserUI)', 'public'),
   \ javaapi#method(0,'getSize(', ')', 'int'),
   \ javaapi#method(0,'getElementAt(', 'int)', 'Object'),
@@ -294,7 +294,7 @@ call javaapi#class('MotifDirectoryListModel', '', [
   \ javaapi#method(0,'contentsChanged(', 'ListDataEvent)', 'void'),
   \ ])
 
-call javaapi#class('MotifFileListModel', '', [
+call javaapi#class('MotifFileListModel', 'AbstractListModel', [
   \ javaapi#method(0,'MotifFileListModel(', 'MotifFileChooserUI)', 'public'),
   \ javaapi#method(0,'getSize(', ')', 'int'),
   \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
@@ -306,7 +306,7 @@ call javaapi#class('MotifFileListModel', '', [
   \ javaapi#method(0,'contentsChanged(', 'ListDataEvent)', 'void'),
   \ ])
 
-call javaapi#class('MotifFileChooserUI', '', [
+call javaapi#class('MotifFileChooserUI', 'BasicFileChooserUI', [
   \ javaapi#method(0,'MotifFileChooserUI(', 'JFileChooser)', 'public'),
   \ javaapi#method(0,'getFileName(', ')', 'String'),
   \ javaapi#method(0,'setFileName(', 'String)', 'void'),
@@ -380,11 +380,11 @@ call javaapi#class('1', 'ActionListener', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'MouseAdapter', [
   \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('FrameButton', '', [
+call javaapi#class('FrameButton', 'JButton', [
   \ javaapi#method(0,'isFocusTraversable(', ')', 'boolean'),
   \ javaapi#method(0,'requestFocus(', ')', 'void'),
   \ javaapi#method(0,'getMinimumSize(', ')', 'Dimension'),
@@ -392,15 +392,15 @@ call javaapi#class('FrameButton', '', [
   \ javaapi#method(0,'paintComponent(', 'Graphics)', 'void'),
   \ ])
 
-call javaapi#class('MaximizeButton', '', [
+call javaapi#class('MaximizeButton', 'FrameButton', [
   \ javaapi#method(0,'paintComponent(', 'Graphics)', 'void'),
   \ ])
 
-call javaapi#class('MinimizeButton', '', [
+call javaapi#class('MinimizeButton', 'FrameButton', [
   \ javaapi#method(0,'paintComponent(', 'Graphics)', 'void'),
   \ ])
 
-call javaapi#class('SystemButton', '', [
+call javaapi#class('SystemButton', 'FrameButton', [
   \ javaapi#method(0,'isFocusTraversable(', ')', 'boolean'),
   \ javaapi#method(0,'requestFocus(', ')', 'void'),
   \ javaapi#method(0,'paintComponent(', 'Graphics)', 'void'),
@@ -419,11 +419,11 @@ call javaapi#class('2', 'MouseListener', [
   \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('Title', '', [
+call javaapi#class('Title', 'FrameButton', [
   \ javaapi#method(0,'paintComponent(', 'Graphics)', 'void'),
   \ ])
 
-call javaapi#class('MotifInternalFrameTitlePane', '', [
+call javaapi#class('MotifInternalFrameTitlePane', 'BasicInternalFrameTitlePane', [
   \ javaapi#field(1,'BUTTON_SIZE', 'int'),
   \ javaapi#method(0,'MotifInternalFrameTitlePane(', 'JInternalFrame)', 'public'),
   \ javaapi#method(0,'paintComponent(', 'Graphics)', 'void'),
@@ -436,22 +436,22 @@ call javaapi#class('MotifInternalFrameTitlePane', '', [
   \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('MotifInternalFrameUI', '', [
+call javaapi#class('MotifInternalFrameUI', 'BasicInternalFrameUI', [
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'MotifInternalFrameUI(', 'JInternalFrame)', 'public'),
   \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
@@ -459,7 +459,7 @@ call javaapi#class('MotifInternalFrameUI', '', [
   \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
   \ ])
 
-call javaapi#class('MotifLabelUI', '', [
+call javaapi#class('MotifLabelUI', 'BasicLabelUI', [
   \ javaapi#method(0,'MotifLabelUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ ])
@@ -512,7 +512,7 @@ call javaapi#class('9', 'LazyValue', [
   \ javaapi#method(0,'createValue(', 'UIDefaults)', 'Object'),
   \ ])
 
-call javaapi#class('MotifLookAndFeel', '', [
+call javaapi#class('MotifLookAndFeel', 'BasicLookAndFeel', [
   \ javaapi#method(0,'MotifLookAndFeel(', ')', 'public'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getID(', ')', 'String'),
@@ -521,7 +521,7 @@ call javaapi#class('MotifLookAndFeel', '', [
   \ javaapi#method(0,'isSupportedLookAndFeel(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('MotifMenuBarUI', '', [
+call javaapi#class('MotifMenuBarUI', 'BasicMenuBarUI', [
   \ javaapi#method(0,'MotifMenuBarUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ ])
@@ -540,12 +540,12 @@ call javaapi#class('MouseInputHandler', 'MouseInputListener', [
   \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('MotifMenuItemUI', '', [
+call javaapi#class('MotifMenuItemUI', 'BasicMenuItemUI', [
   \ javaapi#method(0,'MotifMenuItemUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ ])
 
-call javaapi#class('MotifMenuMouseListener', '', [
+call javaapi#class('MotifMenuMouseListener', 'MouseAdapter', [
   \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
   \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
   \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
@@ -557,7 +557,7 @@ call javaapi#class('MotifMenuMouseMotionListener', 'MouseMotionListener', [
   \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('MotifChangeHandler', '', [
+call javaapi#class('MotifChangeHandler', 'ChangeHandler', [
   \ javaapi#method(0,'MotifChangeHandler(', 'MotifMenuUI, JMenu, MotifMenuUI)', 'public'),
   \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
   \ ])
@@ -572,28 +572,28 @@ call javaapi#class('MouseInputHandler', 'MouseInputListener', [
   \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('MotifMenuUI', '', [
+call javaapi#class('MotifMenuUI', 'BasicMenuUI', [
   \ javaapi#method(0,'MotifMenuUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'JPanel', [
   \ javaapi#method(0,'getPreferredSize(', ')', 'Dimension'),
   \ javaapi#method(0,'paint(', 'Graphics)', 'void'),
   \ ])
 
-call javaapi#class('MotifOptionPaneUI', '', [
+call javaapi#class('MotifOptionPaneUI', 'BasicOptionPaneUI', [
   \ javaapi#method(0,'MotifOptionPaneUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getMinimumOptionPaneSize(', ')', 'Dimension'),
   \ ])
 
-call javaapi#class('MotifPasswordFieldUI', '', [
+call javaapi#class('MotifPasswordFieldUI', 'BasicPasswordFieldUI', [
   \ javaapi#method(0,'MotifPasswordFieldUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ ])
 
-call javaapi#class('MotifPopupMenuSeparatorUI', '', [
+call javaapi#class('MotifPopupMenuSeparatorUI', 'MotifSeparatorUI', [
   \ javaapi#method(0,'MotifPopupMenuSeparatorUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
@@ -604,14 +604,14 @@ call javaapi#class('1', 'ChangeListener', [
   \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('MotifPopupMenuUI', '', [
+call javaapi#class('MotifPopupMenuUI', 'BasicPopupMenuUI', [
   \ javaapi#method(0,'MotifPopupMenuUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
   \ javaapi#method(0,'isPopupTrigger(', 'MouseEvent)', 'boolean'),
   \ ])
 
-call javaapi#class('MotifProgressBarUI', '', [
+call javaapi#class('MotifProgressBarUI', 'BasicProgressBarUI', [
   \ javaapi#method(0,'MotifProgressBarUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ ])
@@ -630,18 +630,18 @@ call javaapi#class('MouseInputHandler', 'MouseInputListener', [
   \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('MotifRadioButtonMenuItemUI', '', [
+call javaapi#class('MotifRadioButtonMenuItemUI', 'BasicRadioButtonMenuItemUI', [
   \ javaapi#method(0,'MotifRadioButtonMenuItemUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ ])
 
-call javaapi#class('MotifRadioButtonUI', '', [
+call javaapi#class('MotifRadioButtonUI', 'BasicRadioButtonUI', [
   \ javaapi#method(0,'MotifRadioButtonUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'installDefaults(', 'AbstractButton)', 'void'),
   \ ])
 
-call javaapi#class('MotifScrollBarButton', '', [
+call javaapi#class('MotifScrollBarButton', 'BasicArrowButton', [
   \ javaapi#method(0,'MotifScrollBarButton(', 'int)', 'public'),
   \ javaapi#method(0,'getPreferredSize(', ')', 'Dimension'),
   \ javaapi#method(0,'getMinimumSize(', ')', 'Dimension'),
@@ -650,7 +650,7 @@ call javaapi#class('MotifScrollBarButton', '', [
   \ javaapi#method(0,'paint(', 'Graphics)', 'void'),
   \ ])
 
-call javaapi#class('MotifScrollBarUI', '', [
+call javaapi#class('MotifScrollBarUI', 'BasicScrollBarUI', [
   \ javaapi#method(0,'MotifScrollBarUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
@@ -662,17 +662,17 @@ call javaapi#class('1', 'PropertyChangeListener', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('MotifScrollPaneUI', '', [
+call javaapi#class('MotifScrollPaneUI', 'BasicScrollPaneUI', [
   \ javaapi#method(0,'MotifScrollPaneUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ ])
 
-call javaapi#class('MotifSeparatorUI', '', [
+call javaapi#class('MotifSeparatorUI', 'BasicSeparatorUI', [
   \ javaapi#method(0,'MotifSeparatorUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ ])
 
-call javaapi#class('MotifSliderUI', '', [
+call javaapi#class('MotifSliderUI', 'BasicSliderUI', [
   \ javaapi#method(0,'MotifSliderUI(', 'JSlider)', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getPreferredHorizontalSize(', ')', 'Dimension'),
@@ -687,12 +687,12 @@ call javaapi#class('MotifSliderUI', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('MotifMouseHandler', '', [
+call javaapi#class('MotifMouseHandler', 'MouseHandler', [
   \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
   \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('MotifSplitPaneDivider', '', [
+call javaapi#class('MotifSplitPaneDivider', 'BasicSplitPaneDivider', [
   \ javaapi#field(1,'minimumThumbSize', 'int'),
   \ javaapi#field(1,'defaultDividerSize', 'int'),
   \ javaapi#method(0,'MotifSplitPaneDivider(', 'BasicSplitPaneUI)', 'public'),
@@ -702,33 +702,33 @@ call javaapi#class('MotifSplitPaneDivider', '', [
   \ javaapi#method(0,'setBasicSplitPaneUI(', 'BasicSplitPaneUI)', 'void'),
   \ ])
 
-call javaapi#class('MotifSplitPaneUI', '', [
+call javaapi#class('MotifSplitPaneUI', 'BasicSplitPaneUI', [
   \ javaapi#method(0,'MotifSplitPaneUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'createDefaultDivider(', ')', 'BasicSplitPaneDivider'),
   \ ])
 
-call javaapi#class('MotifTabbedPaneUI', '', [
+call javaapi#class('MotifTabbedPaneUI', 'BasicTabbedPaneUI', [
   \ javaapi#method(0,'MotifTabbedPaneUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ ])
 
-call javaapi#class('MotifTextAreaUI', '', [
+call javaapi#class('MotifTextAreaUI', 'BasicTextAreaUI', [
   \ javaapi#method(0,'MotifTextAreaUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ ])
 
-call javaapi#class('MotifTextFieldUI', '', [
+call javaapi#class('MotifTextFieldUI', 'BasicTextFieldUI', [
   \ javaapi#method(0,'MotifTextFieldUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ ])
 
-call javaapi#class('MotifTextPaneUI', '', [
+call javaapi#class('MotifTextPaneUI', 'BasicTextPaneUI', [
   \ javaapi#method(0,'MotifTextPaneUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ ])
 
-call javaapi#class('MotifCaret', '', [
+call javaapi#class('MotifCaret', 'DefaultCaret', [
   \ javaapi#method(0,'MotifCaret(', ')', 'public'),
   \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
   \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
@@ -740,7 +740,7 @@ call javaapi#class('MotifTextUI', '', [
   \ javaapi#method(1,'createCaret(', ')', 'Caret'),
   \ ])
 
-call javaapi#class('MotifToggleButtonUI', '', [
+call javaapi#class('MotifToggleButtonUI', 'BasicToggleButtonUI', [
   \ javaapi#method(0,'MotifToggleButtonUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'installDefaults(', 'AbstractButton)', 'void'),
@@ -754,12 +754,12 @@ call javaapi#class('TreeLeafIcon', 'Serializable', [
   \ javaapi#method(0,'getIconHeight(', ')', 'int'),
   \ ])
 
-call javaapi#class('MotifTreeCellRenderer', '', [
+call javaapi#class('MotifTreeCellRenderer', 'DefaultTreeCellRenderer', [
   \ javaapi#method(0,'MotifTreeCellRenderer(', ')', 'public'),
   \ javaapi#method(1,'loadLeafIcon(', ')', 'Icon'),
   \ ])
 
-call javaapi#class('MotifCollapsedIcon', '', [
+call javaapi#class('MotifCollapsedIcon', 'MotifExpandedIcon', [
   \ javaapi#method(0,'MotifCollapsedIcon(', ')', 'public'),
   \ javaapi#method(1,'createCollapsedIcon(', ')', 'Icon'),
   \ javaapi#method(0,'paintIcon(', 'Component, Graphics, int, int)', 'void'),
@@ -773,7 +773,7 @@ call javaapi#class('MotifExpandedIcon', 'Serializable', [
   \ javaapi#method(0,'getIconHeight(', ')', 'int'),
   \ ])
 
-call javaapi#class('MotifTreeUI', '', [
+call javaapi#class('MotifTreeUI', 'BasicTreeUI', [
   \ javaapi#method(0,'MotifTreeUI(', ')', 'public'),
   \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),

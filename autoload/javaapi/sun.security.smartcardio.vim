@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.security.smartcardio')
 
-call javaapi#class('State', '', [
+call javaapi#class('State', 'State>', [
   \ javaapi#field(1,'OK', 'State'),
   \ javaapi#field(1,'REMOVED', 'State'),
   \ javaapi#field(1,'DISCONNECTED', 'State'),
@@ -8,7 +8,7 @@ call javaapi#class('State', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'State'),
   \ ])
 
-call javaapi#class('CardImpl', '', [
+call javaapi#class('CardImpl', 'Card', [
   \ javaapi#method(0,'getATR(', ')', 'ATR'),
   \ javaapi#method(0,'getProtocol(', ')', 'String'),
   \ javaapi#method(0,'getBasicChannel(', ')', 'CardChannel'),
@@ -20,7 +20,7 @@ call javaapi#class('CardImpl', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ChannelImpl', '', [
+call javaapi#class('ChannelImpl', 'CardChannel', [
   \ javaapi#method(0,'getCard(', ')', 'Card'),
   \ javaapi#method(0,'getChannelNumber(', ')', 'int'),
   \ javaapi#method(0,'transmit(', 'CommandAPDU) throws CardException', 'ResponseAPDU'),
@@ -29,11 +29,11 @@ call javaapi#class('ChannelImpl', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('PCSC', '', [
+call javaapi#class('PCSC', 'PlatformPCSC', [
   \ javaapi#method(1,'toString(', 'byte[])', 'String'),
   \ ])
 
-call javaapi#class('PCSCException', '', [
+call javaapi#class('PCSCException', 'Exception', [
   \ ])
 
 call javaapi#class('1', '', [
@@ -42,7 +42,7 @@ call javaapi#class('1', '', [
 call javaapi#class('ReaderState', '', [
   \ ])
 
-call javaapi#class('PCSCTerminals', '', [
+call javaapi#class('PCSCTerminals', 'CardTerminals', [
   \ javaapi#method(0,'list(', 'State) throws CardException', 'CardTerminal>'),
   \ javaapi#method(0,'waitForChange(', 'long) throws CardException', 'boolean'),
   \ ])
@@ -55,15 +55,15 @@ call javaapi#class('1', 'Void>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('Factory', '', [
+call javaapi#class('Factory', 'TerminalFactorySpi', [
   \ javaapi#method(0,'Factory(', 'Object) throws PCSCException', 'public'),
   \ ])
 
-call javaapi#class('SunPCSC', '', [
+call javaapi#class('SunPCSC', 'Provider', [
   \ javaapi#method(0,'SunPCSC(', ')', 'public'),
   \ ])
 
-call javaapi#class('TerminalImpl', '', [
+call javaapi#class('TerminalImpl', 'CardTerminal', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'connect(', 'String) throws CardException', 'Card'),
   \ javaapi#method(0,'isCardPresent(', ') throws CardException', 'boolean'),

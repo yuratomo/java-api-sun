@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xpath.internal.compiler')
 
-call javaapi#class('Compiler', '', [
+call javaapi#class('Compiler', 'OpMap', [
   \ javaapi#method(0,'Compiler(', 'ErrorListener, SourceLocator, FunctionTable)', 'public'),
   \ javaapi#method(0,'Compiler(', ')', 'public'),
   \ javaapi#method(0,'compile(', 'int) throws TransformerException', 'Expression'),
@@ -105,7 +105,7 @@ call javaapi#class('Keywords', '', [
 call javaapi#class('Lexer', '', [
   \ ])
 
-call javaapi#class('ConfigurationError', '', [
+call javaapi#class('ConfigurationError', 'Error', [
   \ ])
 
 call javaapi#class('ObjectFactory', '', [
@@ -253,7 +253,7 @@ call javaapi#class('8', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('SecuritySupport12', '', [
+call javaapi#class('SecuritySupport12', 'SecuritySupport', [
   \ ])
 
 call javaapi#class('XPathDumper', '', [

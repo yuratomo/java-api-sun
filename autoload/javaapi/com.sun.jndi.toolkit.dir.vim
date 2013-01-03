@@ -27,7 +27,7 @@ call javaapi#class('DirSearch', '', [
   \ javaapi#method(1,'search(', 'DirContext, String, Object[], SearchControls) throws NamingException', 'NamingEnumeration'),
   \ ])
 
-call javaapi#class('FlatBindings', '', [
+call javaapi#class('FlatBindings', 'FlatNames', [
   \ javaapi#method(0,'next(', ') throws NamingException', 'Object'),
   \ ])
 
@@ -39,7 +39,7 @@ call javaapi#class('FlatNames', 'NamingEnumeration', [
   \ javaapi#method(0,'close(', ')', 'void'),
   \ ])
 
-call javaapi#class('HierContextEnumerator', '', [
+call javaapi#class('HierContextEnumerator', 'ContextEnumerator', [
   \ javaapi#method(0,'HierContextEnumerator(', 'HierMemDirCtx, Context, int) throws NamingException', 'public'),
   \ ])
 
@@ -113,7 +113,7 @@ call javaapi#class('1', 'Enumeration', [
   \ javaapi#method(0,'nextElement(', ')', 'Object'),
   \ ])
 
-call javaapi#class('HierarchicalName', '', [
+call javaapi#class('HierarchicalName', 'CompoundName', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ javaapi#method(0,'getPrefix(', 'int)', 'Name'),
   \ javaapi#method(0,'getSuffix(', 'int)', 'Name'),
@@ -150,7 +150,7 @@ call javaapi#class('NotFilter', 'StringFilter', [
   \ javaapi#method(0,'check(', 'Attributes) throws NamingException', 'boolean'),
   \ ])
 
-call javaapi#interface('StringFilter', '', [
+call javaapi#interface('StringFilter', 'AttrFilter', [
   \ javaapi#method(0,'parse(', ') throws InvalidSearchFilterException', 'void'),
   \ ])
 

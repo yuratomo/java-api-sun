@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.org.mozilla.javascript.internal.xmlimpl')
 
-call javaapi#class('Namespace', '', [
+call javaapi#class('Namespace', 'IdScriptableObject', [
   \ javaapi#method(0,'exportAsJSClass(', 'boolean)', 'void'),
   \ javaapi#method(0,'uri(', ')', 'String'),
   \ javaapi#method(0,'prefix(', ')', 'String'),
@@ -13,7 +13,7 @@ call javaapi#class('Namespace', '', [
   \ javaapi#method(0,'execIdCall(', 'IdFunctionObject, Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ ])
 
-call javaapi#class('QName', '', [
+call javaapi#class('QName', 'IdScriptableObject', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'localName(', ')', 'String'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
@@ -23,7 +23,7 @@ call javaapi#class('QName', '', [
   \ javaapi#method(0,'execIdCall(', 'IdFunctionObject, Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ ])
 
-call javaapi#class('XML', '', [
+call javaapi#class('XML', 'XMLObjectImpl', [
   \ javaapi#method(0,'get(', 'int, Scriptable)', 'Object'),
   \ javaapi#method(0,'has(', 'int, Scriptable)', 'boolean'),
   \ javaapi#method(0,'put(', 'int, Scriptable, Object)', 'void'),
@@ -34,12 +34,12 @@ call javaapi#class('XML', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('XMLCtor', '', [
+call javaapi#class('XMLCtor', 'IdFunctionObject', [
   \ javaapi#method(0,'execIdCall(', 'IdFunctionObject, Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ javaapi#method(0,'hasInstance(', 'Scriptable)', 'boolean'),
   \ ])
 
-call javaapi#class('XMLLibImpl', '', [
+call javaapi#class('XMLLibImpl', 'XMLLib', [
   \ javaapi#method(1,'toDomNode(', 'Object)', 'Node'),
   \ javaapi#method(1,'init(', 'Context, Scriptable, boolean)', 'void'),
   \ javaapi#method(0,'setIgnoreComments(', 'boolean)', 'void'),
@@ -60,7 +60,7 @@ call javaapi#class('XMLLibImpl', '', [
   \ javaapi#method(0,'nameRef(', 'Context, Object, Object, Scriptable, int)', 'Ref'),
   \ ])
 
-call javaapi#class('XMLList', '', [
+call javaapi#class('XMLList', 'XMLObjectImpl', [
   \ javaapi#method(0,'getClassName(', ')', 'String'),
   \ javaapi#method(0,'get(', 'int, Scriptable)', 'Object'),
   \ javaapi#method(0,'has(', 'int, Scriptable)', 'boolean'),
@@ -74,7 +74,7 @@ call javaapi#class('XMLList', '', [
   \ javaapi#method(0,'construct(', 'Context, Scriptable, Object[])', 'Scriptable'),
   \ ])
 
-call javaapi#class('XMLName', '', [
+call javaapi#class('XMLName', 'Ref', [
   \ javaapi#method(0,'has(', 'Context)', 'boolean'),
   \ javaapi#method(0,'get(', 'Context)', 'Object'),
   \ javaapi#method(0,'set(', 'Context, Object)', 'Object'),
@@ -82,7 +82,7 @@ call javaapi#class('XMLName', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('XMLObjectImpl', '', [
+call javaapi#class('XMLObjectImpl', 'XMLObject', [
   \ javaapi#method(0,'get(', 'String, Scriptable)', 'Object'),
   \ javaapi#method(0,'has(', 'String, Scriptable)', 'boolean'),
   \ javaapi#method(0,'put(', 'String, Scriptable, Object)', 'void'),
@@ -106,22 +106,22 @@ call javaapi#class('XMLObjectImpl', '', [
   \ javaapi#method(0,'execIdCall(', 'IdFunctionObject, Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ ])
 
-call javaapi#class('XMLWithScope', '', [
+call javaapi#class('XMLWithScope', 'NativeWith', [
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Filter', [
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'Filter', [
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'Filter', [
   \ ])
 
-call javaapi#class('4', '', [
+call javaapi#class('4', 'Filter', [
   \ ])
 
-call javaapi#class('5', '', [
+call javaapi#class('5', 'Filter', [
   \ ])
 
 call javaapi#class('Filter', '', [

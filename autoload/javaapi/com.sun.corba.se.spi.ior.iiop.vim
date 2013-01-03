@@ -1,10 +1,10 @@
 call javaapi#namespace('com.sun.corba.se.spi.ior.iiop')
 
-call javaapi#interface('AlternateIIOPAddressComponent', '', [
+call javaapi#interface('AlternateIIOPAddressComponent', 'TaggedComponent', [
   \ javaapi#method(0,'getAddress(', ')', 'IIOPAddress'),
   \ ])
 
-call javaapi#interface('CodeSetsComponent', '', [
+call javaapi#interface('CodeSetsComponent', 'TaggedComponent', [
   \ javaapi#method(0,'getCodeSetComponentInfo(', ')', 'CodeSetComponentInfo'),
   \ ])
 
@@ -39,44 +39,44 @@ call javaapi#class('GIOPVersion', '', [
   \ javaapi#method(0,'write(', 'OutputStream)', 'void'),
   \ ])
 
-call javaapi#interface('IIOPAddress', '', [
+call javaapi#interface('IIOPAddress', 'Writeable', [
   \ javaapi#method(0,'getHost(', ')', 'String'),
   \ javaapi#method(0,'getPort(', ')', 'int'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'EncapsulationFactoryBase', [
   \ javaapi#method(0,'readContents(', 'InputStream)', 'Identifiable'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'EncapsulationFactoryBase', [
   \ javaapi#method(0,'readContents(', 'InputStream)', 'Identifiable'),
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'EncapsulationFactoryBase', [
   \ javaapi#method(0,'readContents(', 'InputStream)', 'Identifiable'),
   \ ])
 
-call javaapi#class('4', '', [
+call javaapi#class('4', 'EncapsulationFactoryBase', [
   \ javaapi#method(0,'readContents(', 'InputStream)', 'Identifiable'),
   \ ])
 
-call javaapi#class('5', '', [
+call javaapi#class('5', 'EncapsulationFactoryBase', [
   \ javaapi#method(0,'readContents(', 'InputStream)', 'Identifiable'),
   \ ])
 
-call javaapi#class('6', '', [
+call javaapi#class('6', 'EncapsulationFactoryBase', [
   \ javaapi#method(0,'readContents(', 'InputStream)', 'Identifiable'),
   \ ])
 
-call javaapi#class('7', '', [
+call javaapi#class('7', 'EncapsulationFactoryBase', [
   \ javaapi#method(0,'readContents(', 'InputStream)', 'Identifiable'),
   \ ])
 
-call javaapi#class('8', '', [
+call javaapi#class('8', 'EncapsulationFactoryBase', [
   \ javaapi#method(0,'readContents(', 'InputStream)', 'Identifiable'),
   \ ])
 
-call javaapi#class('9', '', [
+call javaapi#class('9', 'EncapsulationFactoryBase', [
   \ javaapi#method(0,'readContents(', 'InputStream)', 'Identifiable'),
   \ ])
 
@@ -104,31 +104,31 @@ call javaapi#class('IIOPFactories', '', [
   \ javaapi#method(1,'makeIIOPAddress(', 'InputStream)', 'IIOPAddress'),
   \ ])
 
-call javaapi#interface('IIOPProfile', '', [
+call javaapi#interface('IIOPProfile', 'TaggedProfile', [
   \ javaapi#method(0,'getORBVersion(', ')', 'ORBVersion'),
   \ javaapi#method(0,'getServant(', ')', 'Object'),
   \ javaapi#method(0,'getGIOPVersion(', ')', 'GIOPVersion'),
   \ javaapi#method(0,'getCodebase(', ')', 'String'),
   \ ])
 
-call javaapi#interface('IIOPProfileTemplate', '', [
+call javaapi#interface('IIOPProfileTemplate', 'TaggedProfileTemplate', [
   \ javaapi#method(0,'getGIOPVersion(', ')', 'GIOPVersion'),
   \ javaapi#method(0,'getPrimaryAddress(', ')', 'IIOPAddress'),
   \ ])
 
-call javaapi#interface('JavaCodebaseComponent', '', [
+call javaapi#interface('JavaCodebaseComponent', 'TaggedComponent', [
   \ javaapi#method(0,'getURLs(', ')', 'String'),
   \ ])
 
-call javaapi#interface('MaxStreamFormatVersionComponent', '', [
+call javaapi#interface('MaxStreamFormatVersionComponent', 'TaggedComponent', [
   \ javaapi#method(0,'getMaxStreamFormatVersion(', ')', 'byte'),
   \ ])
 
-call javaapi#interface('ORBTypeComponent', '', [
+call javaapi#interface('ORBTypeComponent', 'TaggedComponent', [
   \ javaapi#method(0,'getORBType(', ')', 'int'),
   \ ])
 
-call javaapi#interface('RequestPartitioningComponent', '', [
+call javaapi#interface('RequestPartitioningComponent', 'TaggedComponent', [
   \ javaapi#method(0,'getRequestPartitioningId(', ')', 'int'),
   \ ])
 

@@ -4,11 +4,11 @@ call javaapi#interface('Grammar', '', [
   \ javaapi#method(0,'getGrammarDescription(', ')', 'XMLGrammarDescription'),
   \ ])
 
-call javaapi#interface('XMLDTDDescription', '', [
+call javaapi#interface('XMLDTDDescription', 'XMLGrammarDescription', [
   \ javaapi#method(0,'getRootName(', ')', 'String'),
   \ ])
 
-call javaapi#interface('XMLGrammarDescription', '', [
+call javaapi#interface('XMLGrammarDescription', 'XMLResourceIdentifier', [
   \ javaapi#field(1,'XML_SCHEMA', 'String'),
   \ javaapi#field(1,'XML_DTD', 'String'),
   \ javaapi#method(0,'getGrammarType(', ')', 'String'),
@@ -39,7 +39,7 @@ call javaapi#interface('XMLGrammarPool', '', [
   \ javaapi#method(0,'clear(', ')', 'void'),
   \ ])
 
-call javaapi#interface('XMLSchemaDescription', '', [
+call javaapi#interface('XMLSchemaDescription', 'XMLGrammarDescription', [
   \ javaapi#field(1,'CONTEXT_INCLUDE', 'short'),
   \ javaapi#field(1,'CONTEXT_REDEFINE', 'short'),
   \ javaapi#field(1,'CONTEXT_IMPORT', 'short'),
@@ -56,7 +56,7 @@ call javaapi#interface('XMLSchemaDescription', '', [
   \ javaapi#method(0,'getAttributes(', ')', 'XMLAttributes'),
   \ ])
 
-call javaapi#interface('XSGrammar', '', [
+call javaapi#interface('XSGrammar', 'Grammar', [
   \ javaapi#method(0,'toXSModel(', ')', 'XSModel'),
   \ javaapi#method(0,'toXSModel(', 'XSGrammar[])', 'XSModel'),
   \ ])

@@ -5,14 +5,14 @@ call javaapi#class('ClientPipelineHook', '', [
   \ javaapi#method(0,'createSecurityPipe(', 'ClientPipeAssemblerContext, Pipe)', 'Pipe'),
   \ ])
 
-call javaapi#class('SelectOptimalEncodingFeature', '', [
+call javaapi#class('SelectOptimalEncodingFeature', 'WebServiceFeature', [
   \ javaapi#field(1,'ID', 'String'),
   \ javaapi#method(0,'SelectOptimalEncodingFeature(', ')', 'public'),
   \ javaapi#method(0,'SelectOptimalEncodingFeature(', 'boolean)', 'public'),
   \ javaapi#method(0,'getID(', ')', 'String'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ServiceInterceptor', [
   \ javaapi#method(0,'preCreateBinding(', 'WSPortInfo, Class<?>, WSFeatureList)', 'WebServiceFeature>'),
   \ javaapi#method(0,'postCreateProxy(', 'WSBindingProvider, Class<?>)', 'void'),
   \ javaapi#method(0,'postCreateDispatch(', 'WSBindingProvider)', 'void'),
@@ -26,7 +26,7 @@ call javaapi#class('ServiceInterceptor', '', [
   \ javaapi#method(1,'aggregate(', ')', 'ServiceInterceptor'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ServiceInterceptorFactory>>', [
   \ ])
 
 call javaapi#class('ServiceInterceptorFactory', '', [
@@ -37,7 +37,7 @@ call javaapi#class('ServiceInterceptorFactory', '', [
   \ javaapi#method(1,'unregisterForThread(', 'ServiceInterceptorFactory)', 'boolean'),
   \ ])
 
-call javaapi#interface('WSPortInfo', '', [
+call javaapi#interface('WSPortInfo', 'PortInfo', [
   \ javaapi#method(0,'getOwner(', ')', 'WSService'),
   \ javaapi#method(0,'getBindingId(', ')', 'BindingID'),
   \ javaapi#method(0,'getEndpointAddress(', ')', 'EndpointAddress'),

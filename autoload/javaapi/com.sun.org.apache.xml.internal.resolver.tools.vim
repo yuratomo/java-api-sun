@@ -39,7 +39,7 @@ call javaapi#class('ResolvingParser', 'EntityResolver', [
   \ javaapi#method(0,'resolveEntity(', 'String, String)', 'InputSource'),
   \ ])
 
-call javaapi#class('ResolvingXMLFilter', '', [
+call javaapi#class('ResolvingXMLFilter', 'XMLFilterImpl', [
   \ javaapi#field(1,'suppressExplanation', 'boolean'),
   \ javaapi#method(0,'ResolvingXMLFilter(', ')', 'public'),
   \ javaapi#method(0,'ResolvingXMLFilter(', 'XMLReader)', 'public'),
@@ -55,7 +55,7 @@ call javaapi#class('ResolvingXMLFilter', '', [
   \ javaapi#method(0,'processingInstruction(', 'String, String) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('ResolvingXMLReader', '', [
+call javaapi#class('ResolvingXMLReader', 'ResolvingXMLFilter', [
   \ javaapi#field(1,'namespaceAware', 'boolean'),
   \ javaapi#field(1,'validating', 'boolean'),
   \ javaapi#method(0,'ResolvingXMLReader(', ')', 'public'),

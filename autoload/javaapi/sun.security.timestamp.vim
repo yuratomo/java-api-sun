@@ -15,7 +15,7 @@ call javaapi#class('TSRequest', '', [
   \ javaapi#method(0,'encode(', ') throws IOException', 'byte[]'),
   \ ])
 
-call javaapi#class('TimestampException', '', [
+call javaapi#class('TimestampException', 'IOException', [
   \ ])
 
 call javaapi#class('TSResponse', '', [

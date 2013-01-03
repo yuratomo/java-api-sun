@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xml.internal.security.keys.keyresolver')
 
-call javaapi#class('InvalidKeyResolverException', '', [
+call javaapi#class('InvalidKeyResolverException', 'XMLSecurityException', [
   \ javaapi#method(0,'InvalidKeyResolverException(', ')', 'public'),
   \ javaapi#method(0,'InvalidKeyResolverException(', 'String)', 'public'),
   \ javaapi#method(0,'InvalidKeyResolverException(', 'String, Object[])', 'public'),
@@ -33,7 +33,7 @@ call javaapi#class('KeyResolver', '', [
   \ javaapi#method(1,'iterator(', ')', 'Iterator'),
   \ ])
 
-call javaapi#class('KeyResolverException', '', [
+call javaapi#class('KeyResolverException', 'XMLSecurityException', [
   \ javaapi#method(0,'KeyResolverException(', ')', 'public'),
   \ javaapi#method(0,'KeyResolverException(', 'String)', 'public'),
   \ javaapi#method(0,'KeyResolverException(', 'String, Object[])', 'public'),

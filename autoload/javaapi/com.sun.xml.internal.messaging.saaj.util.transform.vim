@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.messaging.saaj.util.transform')
 
-call javaapi#class('EfficientStreamingTransformer', '', [
+call javaapi#class('EfficientStreamingTransformer', 'Transformer', [
   \ javaapi#method(0,'clearParameters(', ')', 'void'),
   \ javaapi#method(0,'getErrorListener(', ')', 'ErrorListener'),
   \ javaapi#method(0,'getOutputProperties(', ')', 'Properties'),

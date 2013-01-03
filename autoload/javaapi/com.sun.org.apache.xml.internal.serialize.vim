@@ -97,7 +97,7 @@ call javaapi#class('Encodings', '', [
   \ javaapi#method(0,'Encodings(', ')', 'public'),
   \ ])
 
-call javaapi#class('HTMLSerializer', '', [
+call javaapi#class('HTMLSerializer', 'BaseMarkupSerializer', [
   \ javaapi#field(1,'XHTMLNamespace', 'String'),
   \ javaapi#method(0,'HTMLSerializer(', ')', 'public'),
   \ javaapi#method(0,'HTMLSerializer(', 'OutputFormat)', 'public'),
@@ -131,7 +131,7 @@ call javaapi#class('HTMLdtd', '', [
   \ javaapi#method(1,'fromChar(', 'int)', 'String'),
   \ ])
 
-call javaapi#class('IndentPrinter', '', [
+call javaapi#class('IndentPrinter', 'Printer', [
   \ javaapi#method(0,'IndentPrinter(', 'Writer, OutputFormat)', 'public'),
   \ javaapi#method(0,'enterDTD(', ')', 'void'),
   \ javaapi#method(0,'leaveDTD(', ')', 'String'),
@@ -168,7 +168,7 @@ call javaapi#class('Method', '', [
   \ javaapi#method(0,'Method(', ')', 'public'),
   \ ])
 
-call javaapi#class('ConfigurationError', '', [
+call javaapi#class('ConfigurationError', 'Error', [
   \ ])
 
 call javaapi#class('ObjectFactory', '', [
@@ -317,13 +317,13 @@ call javaapi#class('SerializerFactory', '', [
   \ javaapi#method(0,'makeSerializer(', 'OutputStream, OutputFormat) throws UnsupportedEncodingException', 'Serializer'),
   \ ])
 
-call javaapi#class('SerializerFactoryImpl', '', [
+call javaapi#class('SerializerFactoryImpl', 'SerializerFactory', [
   \ javaapi#method(0,'makeSerializer(', 'OutputFormat)', 'Serializer'),
   \ javaapi#method(0,'makeSerializer(', 'Writer, OutputFormat)', 'Serializer'),
   \ javaapi#method(0,'makeSerializer(', 'OutputStream, OutputFormat) throws UnsupportedEncodingException', 'Serializer'),
   \ ])
 
-call javaapi#class('TextSerializer', '', [
+call javaapi#class('TextSerializer', 'BaseMarkupSerializer', [
   \ javaapi#method(0,'TextSerializer(', ')', 'public'),
   \ javaapi#method(0,'setOutputFormat(', 'OutputFormat)', 'void'),
   \ javaapi#method(0,'startElement(', 'String, String, String, Attributes) throws SAXException', 'void'),
@@ -337,7 +337,7 @@ call javaapi#class('TextSerializer', '', [
   \ javaapi#method(0,'characters(', 'char[], int, int) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('XHTMLSerializer', '', [
+call javaapi#class('XHTMLSerializer', 'HTMLSerializer', [
   \ javaapi#method(0,'XHTMLSerializer(', ')', 'public'),
   \ javaapi#method(0,'XHTMLSerializer(', 'OutputFormat)', 'public'),
   \ javaapi#method(0,'XHTMLSerializer(', 'Writer, OutputFormat)', 'public'),
@@ -345,7 +345,7 @@ call javaapi#class('XHTMLSerializer', '', [
   \ javaapi#method(0,'setOutputFormat(', 'OutputFormat)', 'void'),
   \ ])
 
-call javaapi#class('XML11Serializer', '', [
+call javaapi#class('XML11Serializer', 'XMLSerializer', [
   \ javaapi#method(0,'XML11Serializer(', ')', 'public'),
   \ javaapi#method(0,'XML11Serializer(', 'OutputFormat)', 'public'),
   \ javaapi#method(0,'XML11Serializer(', 'Writer, OutputFormat)', 'public'),
@@ -354,7 +354,7 @@ call javaapi#class('XML11Serializer', '', [
   \ javaapi#method(0,'reset(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('XMLSerializer', '', [
+call javaapi#class('XMLSerializer', 'BaseMarkupSerializer', [
   \ javaapi#method(0,'XMLSerializer(', ')', 'public'),
   \ javaapi#method(0,'XMLSerializer(', 'OutputFormat)', 'public'),
   \ javaapi#method(0,'XMLSerializer(', 'Writer, OutputFormat)', 'public'),

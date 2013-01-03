@@ -8,7 +8,7 @@ call javaapi#class('ClientHandler', 'Runnable', [
   \ javaapi#method(0,'doRun(', ')', 'void'),
   \ ])
 
-call javaapi#class('CommunicationException', '', [
+call javaapi#class('CommunicationException', 'JMRuntimeException', [
   \ javaapi#method(0,'CommunicationException(', 'Throwable)', 'public'),
   \ javaapi#method(0,'CommunicationException(', 'Throwable, String)', 'public'),
   \ javaapi#method(0,'CommunicationException(', 'String)', 'public'),
@@ -58,7 +58,7 @@ call javaapi#interface('CommunicatorServerMBean', '', [
   \ javaapi#method(0,'getProtocol(', ')', 'String'),
   \ ])
 
-call javaapi#class('SendQ', '', [
+call javaapi#class('SendQ', 'SnmpInformRequest>', [
   \ javaapi#method(0,'addRequest(', 'SnmpInformRequest)', 'void'),
   \ javaapi#method(0,'waitUntilReady(', ')', 'boolean'),
   \ javaapi#method(0,'getAllOutstandingRequest(', 'long)', 'Vector'),
@@ -67,7 +67,7 @@ call javaapi#class('SendQ', '', [
   \ javaapi#method(0,'removeRequest(', 'long)', 'SnmpInformRequest'),
   \ ])
 
-call javaapi#class('SnmpAdaptorServer', '', [
+call javaapi#class('SnmpAdaptorServer', 'CommunicatorServer', [
   \ javaapi#method(0,'SnmpAdaptorServer(', ')', 'public'),
   \ javaapi#method(0,'SnmpAdaptorServer(', 'int)', 'public'),
   \ javaapi#method(0,'SnmpAdaptorServer(', 'InetAddressAcl)', 'public'),
@@ -154,7 +154,7 @@ call javaapi#class('SnmpAdaptorServer', '', [
   \ javaapi#method(1,'mapErrorStatus(', 'int, int, int)', 'int'),
   \ ])
 
-call javaapi#interface('SnmpAdaptorServerMBean', '', [
+call javaapi#interface('SnmpAdaptorServerMBean', 'CommunicatorServerMBean', [
   \ javaapi#method(0,'getInetAddressAcl(', ')', 'InetAddressAcl'),
   \ javaapi#method(0,'getTrapPort(', ')', 'Integer'),
   \ javaapi#method(0,'setTrapPort(', 'Integer)', 'void'),
@@ -217,7 +217,7 @@ call javaapi#interface('SnmpAdaptorServerMBean', '', [
   \ javaapi#method(0,'snmpInformRequest(', 'SnmpPeer, SnmpInformHandler, SnmpOid, SnmpVarBindList) throws IllegalStateException, IOException, SnmpStatusException', 'SnmpInformRequest'),
   \ ])
 
-call javaapi#interface('SnmpInformHandler', '', [
+call javaapi#interface('SnmpInformHandler', 'SnmpDefinitions', [
   \ javaapi#method(0,'processSnmpPollData(', 'SnmpInformRequest, int, int, SnmpVarBindList)', 'void'),
   \ javaapi#method(0,'processSnmpPollTimeout(', 'SnmpInformRequest)', 'void'),
   \ javaapi#method(0,'processSnmpInternalError(', 'SnmpInformRequest, String)', 'void'),
@@ -288,7 +288,7 @@ call javaapi#class('SnmpRequestCounter', '', [
   \ javaapi#method(0,'getNewId(', ')', 'int'),
   \ ])
 
-call javaapi#class('SnmpRequestHandler', '', [
+call javaapi#class('SnmpRequestHandler', 'ClientHandler', [
   \ javaapi#method(0,'SnmpRequestHandler(', 'SnmpAdaptorServer, int, DatagramSocket, DatagramPacket, SnmpMibTree, Vector, Object, SnmpPduFactory, SnmpUserDataFactory, MBeanServer, ObjectName)', 'public'),
   \ javaapi#method(0,'doRun(', ')', 'void'),
   \ ])
@@ -298,7 +298,7 @@ call javaapi#class('SnmpResponseHandler', '', [
   \ javaapi#method(0,'processDatagram(', 'DatagramPacket)', 'void'),
   \ ])
 
-call javaapi#class('SnmpSendServer', '', [
+call javaapi#class('SnmpSendServer', 'Thread', [
   \ javaapi#method(0,'SnmpSendServer(', 'ThreadGroup, SnmpQManager)', 'public'),
   \ javaapi#method(0,'stopSendServer(', ')', 'void'),
   \ javaapi#method(0,'run(', ')', 'void'),
@@ -321,15 +321,15 @@ call javaapi#class('SnmpSocket', 'Runnable', [
   \ javaapi#method(0,'finalize(', ')', 'void'),
   \ ])
 
-call javaapi#class('SnmpSubBulkRequestHandler', '', [
+call javaapi#class('SnmpSubBulkRequestHandler', 'SnmpSubRequestHandler', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('SnmpSubNextRequestHandler', '', [
+call javaapi#class('SnmpSubNextRequestHandler', 'SnmpSubRequestHandler', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('NonSyncVector<E>', '', [
+call javaapi#class('NonSyncVector<E>', 'Vector<E>', [
   \ javaapi#method(0,'NonSyncVector(', 'SnmpSubRequestHandler, int)', 'public'),
   \ ])
 
@@ -337,13 +337,13 @@ call javaapi#class('SnmpSubRequestHandler', 'Runnable', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('SnmpTimerServer', '', [
+call javaapi#class('SnmpTimerServer', 'Thread', [
   \ javaapi#method(0,'SnmpTimerServer(', 'ThreadGroup, SnmpQManager)', 'public'),
   \ javaapi#method(0,'stopTimerServer(', ')', 'void'),
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('WaitQ', '', [
+call javaapi#class('WaitQ', 'SnmpInformRequest>', [
   \ javaapi#method(0,'addWaiting(', 'SnmpInformRequest)', 'void'),
   \ javaapi#method(0,'waitUntilReady(', ')', 'boolean'),
   \ javaapi#method(0,'getTimeoutRequests(', ')', 'SnmpInformRequest'),

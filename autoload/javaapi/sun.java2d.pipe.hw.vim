@@ -13,14 +13,14 @@ call javaapi#class('AccelDeviceEventNotifier', '', [
   \ javaapi#method(1,'removeListener(', 'AccelDeviceEventListener)', 'void'),
   \ ])
 
-call javaapi#interface('AccelGraphicsConfig', '', [
+call javaapi#interface('AccelGraphicsConfig', 'BufferedContextProvider', [
   \ javaapi#method(0,'createCompatibleVolatileImage(', 'int, int, int, int)', 'VolatileImage'),
   \ javaapi#method(0,'getContextCapabilities(', ')', 'ContextCapabilities'),
   \ javaapi#method(0,'addDeviceEventListener(', 'AccelDeviceEventListener)', 'void'),
   \ javaapi#method(0,'removeDeviceEventListener(', 'AccelDeviceEventListener)', 'void'),
   \ ])
 
-call javaapi#interface('AccelSurface', '', [
+call javaapi#interface('AccelSurface', 'Surface', [
   \ javaapi#field(1,'UNDEFINED', 'int'),
   \ javaapi#field(1,'WINDOW', 'int'),
   \ javaapi#field(1,'RT_PLAIN', 'int'),
@@ -37,7 +37,7 @@ call javaapi#interface('AccelSurface', '', [
   \ javaapi#method(0,'getNativeBounds(', ')', 'Rectangle'),
   \ ])
 
-call javaapi#class('AccelTypedVolatileImage', '', [
+call javaapi#class('AccelTypedVolatileImage', 'SunVolatileImage', [
   \ javaapi#method(0,'AccelTypedVolatileImage(', 'GraphicsConfiguration, int, int, int, int)', 'public'),
   \ javaapi#method(0,'createGraphics(', ')', 'Graphics2D'),
   \ ])
@@ -61,7 +61,7 @@ call javaapi#class('ContextCapabilities', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('VSyncType', '', [
+call javaapi#class('VSyncType', 'VSyncType>', [
   \ javaapi#field(1,'VSYNC_DEFAULT', 'VSyncType'),
   \ javaapi#field(1,'VSYNC_ON', 'VSyncType'),
   \ javaapi#field(1,'VSYNC_OFF', 'VSyncType'),
@@ -70,7 +70,7 @@ call javaapi#class('VSyncType', '', [
   \ javaapi#method(0,'id(', ')', 'int'),
   \ ])
 
-call javaapi#class('ExtendedBufferCapabilities', '', [
+call javaapi#class('ExtendedBufferCapabilities', 'BufferCapabilities', [
   \ javaapi#method(0,'ExtendedBufferCapabilities(', 'BufferCapabilities)', 'public'),
   \ javaapi#method(0,'ExtendedBufferCapabilities(', 'ImageCapabilities, ImageCapabilities, FlipContents)', 'public'),
   \ javaapi#method(0,'ExtendedBufferCapabilities(', 'ImageCapabilities, ImageCapabilities, FlipContents, VSyncType)', 'public'),

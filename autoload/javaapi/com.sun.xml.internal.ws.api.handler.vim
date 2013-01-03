@@ -1,10 +1,10 @@
 call javaapi#namespace('com.sun.xml.internal.ws.api.handler')
 
-call javaapi#interface('MessageHandler<C', '', [
+call javaapi#interface('MessageHandler<C', 'MessageHandlerContext>', [
   \ javaapi#method(0,'getHeaders(', ')', 'QName>'),
   \ ])
 
-call javaapi#interface('MessageHandlerContext', '', [
+call javaapi#interface('MessageHandlerContext', 'MessageContext', [
   \ javaapi#method(0,'getMessage(', ')', 'Message'),
   \ javaapi#method(0,'setMessage(', 'Message)', 'void'),
   \ javaapi#method(0,'getRoles(', ')', 'String>'),

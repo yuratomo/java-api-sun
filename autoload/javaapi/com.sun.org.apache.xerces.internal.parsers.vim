@@ -1,10 +1,10 @@
 call javaapi#namespace('com.sun.org.apache.xerces.internal.parsers')
 
-call javaapi#class('Abort', '', [
+call javaapi#class('Abort', 'RuntimeException', [
   \ javaapi#method(0,'fillInStackTrace(', ')', 'Throwable'),
   \ ])
 
-call javaapi#class('AbstractDOMParser', '', [
+call javaapi#class('AbstractDOMParser', 'AbstractXMLDocumentParser', [
   \ javaapi#method(0,'getDocument(', ')', 'Document'),
   \ javaapi#method(0,'dropDocumentReferences(', ')', 'void'),
   \ javaapi#method(0,'reset(', ') throws XNIException', 'void'),
@@ -45,12 +45,12 @@ call javaapi#class('AbstractDOMParser', '', [
   \ javaapi#method(0,'abort(', ')', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'LocatorImpl', [
   \ javaapi#method(0,'getXMLVersion(', ')', 'String'),
   \ javaapi#method(0,'getEncoding(', ')', 'String'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'LocatorImpl', [
   \ javaapi#method(0,'getXMLVersion(', ')', 'String'),
   \ javaapi#method(0,'getEncoding(', ')', 'String'),
   \ ])
@@ -88,7 +88,7 @@ call javaapi#class('LocatorProxy', 'Locator2', [
   \ javaapi#method(0,'getEncoding(', ')', 'String'),
   \ ])
 
-call javaapi#class('AbstractSAXParser', '', [
+call javaapi#class('AbstractSAXParser', 'AbstractXMLDocumentParser', [
   \ javaapi#method(0,'startDocument(', 'XMLLocator, String, NamespaceContext, Augmentations) throws XNIException', 'void'),
   \ javaapi#method(0,'xmlDecl(', 'String, String, String, Augmentations) throws XNIException', 'void'),
   \ javaapi#method(0,'doctypeDecl(', 'String, String, String, Augmentations) throws XNIException', 'void'),
@@ -136,7 +136,7 @@ call javaapi#class('AbstractSAXParser', '', [
   \ javaapi#method(0,'getAttributePSVIByName(', 'String, String)', 'AttributePSVI'),
   \ ])
 
-call javaapi#class('AbstractXMLDocumentParser', '', [
+call javaapi#class('AbstractXMLDocumentParser', 'XMLParser', [
   \ javaapi#method(0,'startDocument(', 'XMLLocator, String, NamespaceContext, Augmentations) throws XNIException', 'void'),
   \ javaapi#method(0,'xmlDecl(', 'String, String, String, Augmentations) throws XNIException', 'void'),
   \ javaapi#method(0,'doctypeDecl(', 'String, String, String, Augmentations) throws XNIException', 'void'),
@@ -188,7 +188,7 @@ call javaapi#class('AbstractXMLDocumentParser', '', [
   \ javaapi#method(0,'getDTDContentModelSource(', ')', 'XMLDTDContentModelSource'),
   \ ])
 
-call javaapi#class('BasicParserConfiguration', '', [
+call javaapi#class('BasicParserConfiguration', 'ParserConfigurationSettings', [
   \ javaapi#method(0,'parse(', 'XMLInputSource) throws XNIException, IOException', 'void'),
   \ javaapi#method(0,'setDocumentHandler(', 'XMLDocumentHandler)', 'void'),
   \ javaapi#method(0,'getDocumentHandler(', ')', 'XMLDocumentHandler'),
@@ -206,7 +206,7 @@ call javaapi#class('BasicParserConfiguration', '', [
   \ javaapi#method(0,'getLocale(', ')', 'Locale'),
   \ ])
 
-call javaapi#class('ShadowedGrammarPool', '', [
+call javaapi#class('ShadowedGrammarPool', 'XMLGrammarPoolImpl', [
   \ javaapi#method(0,'ShadowedGrammarPool(', 'XMLGrammarPool)', 'public'),
   \ javaapi#method(0,'retrieveInitialGrammarSet(', 'String)', 'Grammar[]'),
   \ javaapi#method(0,'retrieveGrammar(', 'XMLGrammarDescription)', 'Grammar'),
@@ -237,7 +237,7 @@ call javaapi#class('CachingParserPool', '', [
   \ javaapi#method(0,'createSAXParser(', ')', 'SAXParser'),
   \ ])
 
-call javaapi#class('DOMParser', '', [
+call javaapi#class('DOMParser', 'AbstractDOMParser', [
   \ javaapi#method(0,'DOMParser(', 'XMLParserConfiguration)', 'public'),
   \ javaapi#method(0,'DOMParser(', ')', 'public'),
   \ javaapi#method(0,'DOMParser(', 'SymbolTable)', 'public'),
@@ -310,7 +310,7 @@ call javaapi#class('AbortHandler', 'XMLDTDContentModelHandler', [
   \ javaapi#method(0,'getDTDContentModelSource(', ')', 'XMLDTDContentModelSource'),
   \ ])
 
-call javaapi#class('DOMParserImpl', '', [
+call javaapi#class('DOMParserImpl', 'AbstractDOMParser', [
   \ javaapi#method(0,'DOMParserImpl(', 'String, String)', 'public'),
   \ javaapi#method(0,'DOMParserImpl(', 'XMLParserConfiguration)', 'public'),
   \ javaapi#method(0,'DOMParserImpl(', 'SymbolTable)', 'public'),
@@ -332,7 +332,7 @@ call javaapi#class('DOMParserImpl', '', [
   \ javaapi#method(0,'startElement(', 'QName, XMLAttributes, Augmentations)', 'void'),
   \ ])
 
-call javaapi#class('DTDConfiguration', '', [
+call javaapi#class('DTDConfiguration', 'BasicParserConfiguration', [
   \ javaapi#method(0,'DTDConfiguration(', ')', 'public'),
   \ javaapi#method(0,'DTDConfiguration(', 'SymbolTable)', 'public'),
   \ javaapi#method(0,'DTDConfiguration(', 'SymbolTable, XMLGrammarPool)', 'public'),
@@ -346,7 +346,7 @@ call javaapi#class('DTDConfiguration', '', [
   \ javaapi#method(0,'parse(', 'XMLInputSource) throws XNIException, IOException', 'void'),
   \ ])
 
-call javaapi#class('DTDParser', '', [
+call javaapi#class('DTDParser', 'XMLGrammarParser', [
   \ javaapi#method(0,'DTDParser(', 'SymbolTable)', 'public'),
   \ javaapi#method(0,'getDTDGrammar(', ')', 'DTDGrammar'),
   \ javaapi#method(0,'startEntity(', 'String, String, String, String) throws XNIException', 'void'),
@@ -378,14 +378,14 @@ call javaapi#class('DTDParser', '', [
   \ javaapi#method(0,'endContentModel(', ') throws XNIException', 'void'),
   \ ])
 
-call javaapi#class('IntegratedParserConfiguration', '', [
+call javaapi#class('IntegratedParserConfiguration', 'StandardParserConfiguration', [
   \ javaapi#method(0,'IntegratedParserConfiguration(', ')', 'public'),
   \ javaapi#method(0,'IntegratedParserConfiguration(', 'SymbolTable)', 'public'),
   \ javaapi#method(0,'IntegratedParserConfiguration(', 'SymbolTable, XMLGrammarPool)', 'public'),
   \ javaapi#method(0,'IntegratedParserConfiguration(', 'SymbolTable, XMLGrammarPool, XMLComponentManager)', 'public'),
   \ ])
 
-call javaapi#class('NonValidatingConfiguration', '', [
+call javaapi#class('NonValidatingConfiguration', 'BasicParserConfiguration', [
   \ javaapi#method(0,'NonValidatingConfiguration(', ')', 'public'),
   \ javaapi#method(0,'NonValidatingConfiguration(', 'SymbolTable)', 'public'),
   \ javaapi#method(0,'NonValidatingConfiguration(', 'SymbolTable, XMLGrammarPool)', 'public'),
@@ -401,20 +401,20 @@ call javaapi#class('NonValidatingConfiguration', '', [
   \ javaapi#method(0,'parse(', 'XMLInputSource) throws XNIException, IOException', 'void'),
   \ ])
 
-call javaapi#class('ConfigurationError', '', [
+call javaapi#class('ConfigurationError', 'Error', [
   \ ])
 
 call javaapi#class('ObjectFactory', '', [
   \ ])
 
-call javaapi#class('SAXParser', '', [
+call javaapi#class('SAXParser', 'AbstractSAXParser', [
   \ javaapi#method(0,'SAXParser(', 'XMLParserConfiguration)', 'public'),
   \ javaapi#method(0,'SAXParser(', ')', 'public'),
   \ javaapi#method(0,'SAXParser(', 'SymbolTable)', 'public'),
   \ javaapi#method(0,'SAXParser(', 'SymbolTable, XMLGrammarPool)', 'public'),
   \ ])
 
-call javaapi#class('SecurityConfiguration', '', [
+call javaapi#class('SecurityConfiguration', 'XIncludeAwareParserConfiguration', [
   \ javaapi#method(0,'SecurityConfiguration(', ')', 'public'),
   \ javaapi#method(0,'SecurityConfiguration(', 'SymbolTable)', 'public'),
   \ javaapi#method(0,'SecurityConfiguration(', 'SymbolTable, XMLGrammarPool)', 'public'),
@@ -456,14 +456,14 @@ call javaapi#class('8', 'PrivilegedAction', [
 call javaapi#class('SecuritySupport', '', [
   \ ])
 
-call javaapi#class('StandardParserConfiguration', '', [
+call javaapi#class('StandardParserConfiguration', 'DTDConfiguration', [
   \ javaapi#method(0,'StandardParserConfiguration(', ')', 'public'),
   \ javaapi#method(0,'StandardParserConfiguration(', 'SymbolTable)', 'public'),
   \ javaapi#method(0,'StandardParserConfiguration(', 'SymbolTable, XMLGrammarPool)', 'public'),
   \ javaapi#method(0,'StandardParserConfiguration(', 'SymbolTable, XMLGrammarPool, XMLComponentManager)', 'public'),
   \ ])
 
-call javaapi#class('XIncludeAwareParserConfiguration', '', [
+call javaapi#class('XIncludeAwareParserConfiguration', 'XML11Configuration', [
   \ javaapi#method(0,'XIncludeAwareParserConfiguration(', ')', 'public'),
   \ javaapi#method(0,'XIncludeAwareParserConfiguration(', 'SymbolTable)', 'public'),
   \ javaapi#method(0,'XIncludeAwareParserConfiguration(', 'SymbolTable, XMLGrammarPool)', 'public'),
@@ -472,7 +472,7 @@ call javaapi#class('XIncludeAwareParserConfiguration', '', [
   \ javaapi#method(0,'setFeature(', 'String, boolean) throws XMLConfigurationException', 'void'),
   \ ])
 
-call javaapi#class('XIncludeParserConfiguration', '', [
+call javaapi#class('XIncludeParserConfiguration', 'XML11Configuration', [
   \ javaapi#method(0,'XIncludeParserConfiguration(', ')', 'public'),
   \ javaapi#method(0,'XIncludeParserConfiguration(', 'SymbolTable)', 'public'),
   \ javaapi#method(0,'XIncludeParserConfiguration(', 'SymbolTable, XMLGrammarPool)', 'public'),
@@ -483,7 +483,7 @@ call javaapi#class('XIncludeParserConfiguration', '', [
 call javaapi#interface('XML11Configurable', '', [
   \ ])
 
-call javaapi#class('XML11Configuration', '', [
+call javaapi#class('XML11Configuration', 'ParserConfigurationSettings', [
   \ javaapi#method(0,'XML11Configuration(', ')', 'public'),
   \ javaapi#method(0,'XML11Configuration(', 'SymbolTable)', 'public'),
   \ javaapi#method(0,'XML11Configuration(', 'SymbolTable, XMLGrammarPool)', 'public'),
@@ -510,7 +510,7 @@ call javaapi#class('XML11Configuration', '', [
   \ javaapi#method(0,'getLocale(', ')', 'Locale'),
   \ ])
 
-call javaapi#class('XML11DTDConfiguration', '', [
+call javaapi#class('XML11DTDConfiguration', 'ParserConfigurationSettings', [
   \ javaapi#method(0,'XML11DTDConfiguration(', ')', 'public'),
   \ javaapi#method(0,'XML11DTDConfiguration(', 'SymbolTable)', 'public'),
   \ javaapi#method(0,'XML11DTDConfiguration(', 'SymbolTable, XMLGrammarPool)', 'public'),
@@ -536,7 +536,7 @@ call javaapi#class('XML11DTDConfiguration', '', [
   \ javaapi#method(0,'getLocale(', ')', 'Locale'),
   \ ])
 
-call javaapi#class('XML11NonValidatingConfiguration', '', [
+call javaapi#class('XML11NonValidatingConfiguration', 'ParserConfigurationSettings', [
   \ javaapi#method(0,'XML11NonValidatingConfiguration(', ')', 'public'),
   \ javaapi#method(0,'XML11NonValidatingConfiguration(', 'SymbolTable)', 'public'),
   \ javaapi#method(0,'XML11NonValidatingConfiguration(', 'SymbolTable, XMLGrammarPool)', 'public'),
@@ -562,14 +562,14 @@ call javaapi#class('XML11NonValidatingConfiguration', '', [
   \ javaapi#method(0,'getLocale(', ')', 'Locale'),
   \ ])
 
-call javaapi#class('XMLDocumentParser', '', [
+call javaapi#class('XMLDocumentParser', 'AbstractXMLDocumentParser', [
   \ javaapi#method(0,'XMLDocumentParser(', ')', 'public'),
   \ javaapi#method(0,'XMLDocumentParser(', 'XMLParserConfiguration)', 'public'),
   \ javaapi#method(0,'XMLDocumentParser(', 'SymbolTable)', 'public'),
   \ javaapi#method(0,'XMLDocumentParser(', 'SymbolTable, XMLGrammarPool)', 'public'),
   \ ])
 
-call javaapi#class('XMLGrammarCachingConfiguration', '', [
+call javaapi#class('XMLGrammarCachingConfiguration', 'XIncludeAwareParserConfiguration', [
   \ javaapi#field(1,'BIG_PRIME', 'int'),
   \ javaapi#method(0,'XMLGrammarCachingConfiguration(', ')', 'public'),
   \ javaapi#method(0,'XMLGrammarCachingConfiguration(', 'SymbolTable)', 'public'),
@@ -582,7 +582,7 @@ call javaapi#class('XMLGrammarCachingConfiguration', '', [
   \ javaapi#method(0,'parseGrammar(', 'String, XMLInputSource) throws XNIException, IOException', 'Grammar'),
   \ ])
 
-call javaapi#class('XMLGrammarParser', '', [
+call javaapi#class('XMLGrammarParser', 'XMLParser', [
   \ ])
 
 call javaapi#class('XMLGrammarPreparser', '', [
@@ -610,7 +610,7 @@ call javaapi#class('XMLParser', '', [
   \ javaapi#method(0,'parse(', 'XMLInputSource) throws XNIException, IOException', 'void'),
   \ ])
 
-call javaapi#class('XPointerParserConfiguration', '', [
+call javaapi#class('XPointerParserConfiguration', 'XML11Configuration', [
   \ javaapi#method(0,'XPointerParserConfiguration(', ')', 'public'),
   \ javaapi#method(0,'XPointerParserConfiguration(', 'SymbolTable)', 'public'),
   \ javaapi#method(0,'XPointerParserConfiguration(', 'SymbolTable, XMLGrammarPool)', 'public'),

@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xerces.internal.xpointer')
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Scanner', [
   \ ])
 
 call javaapi#class('Scanner', '', [
@@ -47,7 +47,7 @@ call javaapi#class('XPointerErrorHandler', 'XMLErrorHandler', [
   \ javaapi#method(0,'fatalError(', 'String, String, XMLParseException) throws XNIException', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Scanner', [
   \ ])
 
 call javaapi#class('Scanner', '', [
@@ -56,7 +56,7 @@ call javaapi#class('Scanner', '', [
 call javaapi#class('Tokens', '', [
   \ ])
 
-call javaapi#class('XPointerHandler', '', [
+call javaapi#class('XPointerHandler', 'XIncludeHandler', [
   \ javaapi#method(0,'XPointerHandler(', ')', 'public'),
   \ javaapi#method(0,'XPointerHandler(', 'SymbolTable, XMLErrorHandler, XMLErrorReporter)', 'public'),
   \ javaapi#method(0,'parseXPointer(', 'String) throws XNIException', 'void'),

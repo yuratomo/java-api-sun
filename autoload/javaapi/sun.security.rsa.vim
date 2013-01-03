@@ -11,7 +11,7 @@ call javaapi#class('RSACore', '', [
   \ javaapi#method(1,'rsa(', 'byte[], RSAPrivateKey) throws BadPaddingException', 'byte[]'),
   \ ])
 
-call javaapi#class('RSAKeyFactory', '', [
+call javaapi#class('RSAKeyFactory', 'KeyFactorySpi', [
   \ javaapi#field(1,'MIN_MODLEN', 'int'),
   \ javaapi#field(1,'MAX_MODLEN', 'int'),
   \ javaapi#field(1,'MAX_MODLEN_RESTRICT_EXP', 'int'),
@@ -21,7 +21,7 @@ call javaapi#class('RSAKeyFactory', '', [
   \ javaapi#method(1,'checkKeyLengths(', 'int, BigInteger, int, int) throws InvalidKeyException', 'void'),
   \ ])
 
-call javaapi#class('RSAKeyPairGenerator', '', [
+call javaapi#class('RSAKeyPairGenerator', 'KeyPairGeneratorSpi', [
   \ javaapi#method(0,'RSAKeyPairGenerator(', ')', 'public'),
   \ javaapi#method(0,'initialize(', 'int, SecureRandom)', 'void'),
   \ javaapi#method(0,'initialize(', 'AlgorithmParameterSpec, SecureRandom) throws InvalidAlgorithmParameterException', 'void'),
@@ -43,7 +43,7 @@ call javaapi#class('RSAPadding', '', [
   \ javaapi#method(0,'unpad(', 'byte[]) throws BadPaddingException', 'byte[]'),
   \ ])
 
-call javaapi#class('RSAPrivateCrtKeyImpl', '', [
+call javaapi#class('RSAPrivateCrtKeyImpl', 'PKCS8Key', [
   \ javaapi#method(1,'newKey(', 'byte[]) throws InvalidKeyException', 'RSAPrivateKey'),
   \ javaapi#method(0,'getAlgorithm(', ')', 'String'),
   \ javaapi#method(0,'getModulus(', ')', 'BigInteger'),
@@ -57,14 +57,14 @@ call javaapi#class('RSAPrivateCrtKeyImpl', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('RSAPrivateKeyImpl', '', [
+call javaapi#class('RSAPrivateKeyImpl', 'PKCS8Key', [
   \ javaapi#method(0,'getAlgorithm(', ')', 'String'),
   \ javaapi#method(0,'getModulus(', ')', 'BigInteger'),
   \ javaapi#method(0,'getPrivateExponent(', ')', 'BigInteger'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('RSAPublicKeyImpl', '', [
+call javaapi#class('RSAPublicKeyImpl', 'X509Key', [
   \ javaapi#method(0,'RSAPublicKeyImpl(', 'BigInteger, BigInteger) throws InvalidKeyException', 'public'),
   \ javaapi#method(0,'RSAPublicKeyImpl(', 'byte[]) throws InvalidKeyException', 'public'),
   \ javaapi#method(0,'getAlgorithm(', ')', 'String'),
@@ -73,31 +73,31 @@ call javaapi#class('RSAPublicKeyImpl', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('MD2withRSA', '', [
+call javaapi#class('MD2withRSA', 'RSASignature', [
   \ javaapi#method(0,'MD2withRSA(', ')', 'public'),
   \ ])
 
-call javaapi#class('MD5withRSA', '', [
+call javaapi#class('MD5withRSA', 'RSASignature', [
   \ javaapi#method(0,'MD5withRSA(', ')', 'public'),
   \ ])
 
-call javaapi#class('SHA1withRSA', '', [
+call javaapi#class('SHA1withRSA', 'RSASignature', [
   \ javaapi#method(0,'SHA1withRSA(', ')', 'public'),
   \ ])
 
-call javaapi#class('SHA256withRSA', '', [
+call javaapi#class('SHA256withRSA', 'RSASignature', [
   \ javaapi#method(0,'SHA256withRSA(', ')', 'public'),
   \ ])
 
-call javaapi#class('SHA384withRSA', '', [
+call javaapi#class('SHA384withRSA', 'RSASignature', [
   \ javaapi#method(0,'SHA384withRSA(', ')', 'public'),
   \ ])
 
-call javaapi#class('SHA512withRSA', '', [
+call javaapi#class('SHA512withRSA', 'RSASignature', [
   \ javaapi#method(0,'SHA512withRSA(', ')', 'public'),
   \ ])
 
-call javaapi#class('RSASignature', '', [
+call javaapi#class('RSASignature', 'SignatureSpi', [
   \ javaapi#method(1,'encodeSignature(', 'ObjectIdentifier, byte[]) throws IOException', 'byte[]'),
   \ javaapi#method(1,'decodeSignature(', 'ObjectIdentifier, byte[]) throws IOException', 'byte[]'),
   \ ])

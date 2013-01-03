@@ -28,7 +28,7 @@ call javaapi#class('AttributesImpl', 'Attributes', [
   \ javaapi#method(0,'setValue(', 'int, String)', 'void'),
   \ ])
 
-call javaapi#class('ValidationEventLocatorExImpl', '', [
+call javaapi#class('ValidationEventLocatorExImpl', 'ValidationEventLocatorImpl', [
   \ javaapi#method(0,'ValidationEventLocatorExImpl(', 'Object, String)', 'public'),
   \ javaapi#method(0,'getFieldName(', ')', 'String'),
   \ javaapi#method(0,'toString(', ')', 'String'),

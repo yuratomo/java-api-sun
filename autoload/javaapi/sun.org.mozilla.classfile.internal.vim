@@ -222,7 +222,7 @@ call javaapi#class('ClassFileField', '', [
 call javaapi#class('ClassFileMethod', '', [
   \ ])
 
-call javaapi#class('ClassFileFormatException', '', [
+call javaapi#class('ClassFileFormatException', 'RuntimeException', [
   \ ])
 
 call javaapi#class('StackMapTable', '', [

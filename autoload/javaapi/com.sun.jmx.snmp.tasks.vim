@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.jmx.snmp.tasks')
 
-call javaapi#interface('Task', '', [
+call javaapi#interface('Task', 'Runnable', [
   \ javaapi#method(0,'cancel(', ')', 'void'),
   \ ])
 
@@ -8,7 +8,7 @@ call javaapi#interface('TaskServer', '', [
   \ javaapi#method(0,'submitTask(', 'Task)', 'void'),
   \ ])
 
-call javaapi#class('ExecutorThread', '', [
+call javaapi#class('ExecutorThread', 'Thread', [
   \ javaapi#method(0,'ExecutorThread(', 'ThreadService)', 'public'),
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])

@@ -7,13 +7,13 @@ call javaapi#class('KeyStores', '', [
   \ javaapi#method(1,'getTrustedCerts(', 'KeyStore)', 'X509Certificate>'),
   \ ])
 
-call javaapi#class('PKIXValidator', '', [
+call javaapi#class('PKIXValidator', 'Validator', [
   \ javaapi#method(0,'getTrustedCertificates(', ')', 'X509Certificate>'),
   \ javaapi#method(0,'getCertPathLength(', ')', 'int'),
   \ javaapi#method(0,'getParameters(', ')', 'PKIXBuilderParameters'),
   \ ])
 
-call javaapi#class('SimpleValidator', '', [
+call javaapi#class('SimpleValidator', 'Validator', [
   \ javaapi#method(0,'getTrustedCertificates(', ')', 'X509Certificate>'),
   \ ])
 
@@ -38,7 +38,7 @@ call javaapi#class('Validator', '', [
   \ javaapi#method(0,'setValidationDate(', 'Date)', 'void'),
   \ ])
 
-call javaapi#class('ValidatorException', '', [
+call javaapi#class('ValidatorException', 'CertificateException', [
   \ javaapi#field(1,'T_NO_TRUST_ANCHOR', 'Object'),
   \ javaapi#field(1,'T_EE_EXTENSIONS', 'Object'),
   \ javaapi#field(1,'T_CA_EXTENSIONS', 'Object'),

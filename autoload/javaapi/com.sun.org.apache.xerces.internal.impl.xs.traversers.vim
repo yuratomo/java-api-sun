@@ -3,7 +3,7 @@ call javaapi#namespace('com.sun.org.apache.xerces.internal.impl.xs.traversers')
 call javaapi#class('Container', '', [
   \ ])
 
-call javaapi#class('LargeContainer', '', [
+call javaapi#class('LargeContainer', 'Container', [
   \ ])
 
 call javaapi#class('OneAttr', '', [
@@ -31,7 +31,7 @@ call javaapi#class('SchemaContentHandler', 'ContentHandler', [
   \ javaapi#method(0,'reset(', 'SchemaDOMParser, SymbolTable, boolean, boolean)', 'void'),
   \ ])
 
-call javaapi#class('SmallContainer', '', [
+call javaapi#class('SmallContainer', 'Container', [
   \ ])
 
 call javaapi#class('StAXSchemaParser', '', [
@@ -96,14 +96,14 @@ call javaapi#class('XSAttributeChecker', '', [
   \ javaapi#method(0,'resolveNamespace(', 'Element, Attr[], SchemaNamespaceSupport)', 'void'),
   \ ])
 
-call javaapi#class('XSDAbstractIDConstraintTraverser', '', [
+call javaapi#class('XSDAbstractIDConstraintTraverser', 'XSDAbstractTraverser', [
   \ javaapi#method(0,'XSDAbstractIDConstraintTraverser(', 'XSDHandler, XSAttributeChecker)', 'public'),
   \ ])
 
 call javaapi#class('ParticleArray', '', [
   \ ])
 
-call javaapi#class('XSDAbstractParticleTraverser', '', [
+call javaapi#class('XSDAbstractParticleTraverser', 'XSDAbstractTraverser', [
   \ ])
 
 call javaapi#class('FacetInfo', '', [
@@ -112,29 +112,29 @@ call javaapi#class('FacetInfo', '', [
 call javaapi#class('XSDAbstractTraverser', '', [
   \ ])
 
-call javaapi#class('XSDAttributeGroupTraverser', '', [
+call javaapi#class('XSDAttributeGroupTraverser', 'XSDAbstractTraverser', [
   \ ])
 
-call javaapi#class('XSDAttributeTraverser', '', [
+call javaapi#class('XSDAttributeTraverser', 'XSDAbstractTraverser', [
   \ javaapi#method(0,'XSDAttributeTraverser(', 'XSDHandler, XSAttributeChecker)', 'public'),
   \ ])
 
-call javaapi#class('ComplexTypeRecoverableError', '', [
+call javaapi#class('ComplexTypeRecoverableError', 'Exception', [
   \ ])
 
-call javaapi#class('XSDComplexTypeTraverser', '', [
+call javaapi#class('XSDComplexTypeTraverser', 'XSDAbstractParticleTraverser', [
   \ ])
 
-call javaapi#class('XSDElementTraverser', '', [
+call javaapi#class('XSDElementTraverser', 'XSDAbstractTraverser', [
   \ ])
 
-call javaapi#class('XSDGroupTraverser', '', [
+call javaapi#class('XSDGroupTraverser', 'XSDAbstractParticleTraverser', [
   \ ])
 
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('SAX2XNIUtil', '', [
+call javaapi#class('SAX2XNIUtil', 'ErrorHandlerWrapper', [
   \ javaapi#method(1,'createXMLParseException0(', 'SAXParseException)', 'XMLParseException'),
   \ javaapi#method(1,'createXNIException0(', 'SAXException)', 'XNIException'),
   \ ])
@@ -173,21 +173,21 @@ call javaapi#class('XSDHandler', '', [
   \ javaapi#method(0,'setGenerateSyntheticAnnotations(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('XSDKeyrefTraverser', '', [
+call javaapi#class('XSDKeyrefTraverser', 'XSDAbstractIDConstraintTraverser', [
   \ javaapi#method(0,'XSDKeyrefTraverser(', 'XSDHandler, XSAttributeChecker)', 'public'),
   \ ])
 
-call javaapi#class('XSDNotationTraverser', '', [
+call javaapi#class('XSDNotationTraverser', 'XSDAbstractTraverser', [
   \ ])
 
-call javaapi#class('XSDSimpleTypeTraverser', '', [
+call javaapi#class('XSDSimpleTypeTraverser', 'XSDAbstractTraverser', [
   \ ])
 
-call javaapi#class('XSDUniqueOrKeyTraverser', '', [
+call javaapi#class('XSDUniqueOrKeyTraverser', 'XSDAbstractIDConstraintTraverser', [
   \ javaapi#method(0,'XSDUniqueOrKeyTraverser(', 'XSDHandler, XSAttributeChecker)', 'public'),
   \ ])
 
-call javaapi#class('XSDWildcardTraverser', '', [
+call javaapi#class('XSDWildcardTraverser', 'XSDAbstractTraverser', [
   \ ])
 
 call javaapi#class('XSDocumentInfo', '', [

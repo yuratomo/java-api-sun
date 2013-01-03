@@ -16,7 +16,7 @@ call javaapi#class('Agent', '', [
   \ javaapi#method(1,'getText(', 'String, )', 'String'),
   \ ])
 
-call javaapi#class('AgentConfigurationError', '', [
+call javaapi#class('AgentConfigurationError', 'Error', [
   \ javaapi#field(1,'AGENT_EXCEPTION', 'String'),
   \ javaapi#field(1,'CONFIG_FILE_NOT_FOUND', 'String'),
   \ javaapi#field(1,'CONFIG_FILE_OPEN_FAILED', 'String'),
@@ -101,7 +101,7 @@ call javaapi#class('FileSystem', '', [
   \ javaapi#method(0,'isAccessUserOnly(', 'File) throws IOException', 'boolean'),
   \ ])
 
-call javaapi#class('FileSystemImpl', '', [
+call javaapi#class('FileSystemImpl', 'FileSystem', [
   \ javaapi#method(0,'FileSystemImpl(', ')', 'public'),
   \ javaapi#method(0,'supportsFileSecurity(', 'File) throws IOException', 'boolean'),
   \ javaapi#method(0,'isAccessUserOnly(', 'File) throws IOException', 'boolean'),
@@ -115,7 +115,7 @@ call javaapi#class('1', 'GcInfoBuilder>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('GarbageCollectionNotifInfoCompositeData', '', [
+call javaapi#class('GarbageCollectionNotifInfoCompositeData', 'LazyCompositeData', [
   \ javaapi#method(0,'GarbageCollectionNotifInfoCompositeData(', 'GarbageCollectionNotificationInfo)', 'public'),
   \ javaapi#method(0,'getGarbageCollectionNotifInfo(', ')', 'GarbageCollectionNotificationInfo'),
   \ javaapi#method(1,'toCompositeData(', 'GarbageCollectionNotificationInfo)', 'CompositeData'),
@@ -126,7 +126,7 @@ call javaapi#class('GarbageCollectionNotifInfoCompositeData', '', [
   \ javaapi#method(1,'validateCompositeData(', 'CompositeData)', 'void'),
   \ ])
 
-call javaapi#class('GarbageCollectorImpl', '', [
+call javaapi#class('GarbageCollectorImpl', 'MemoryManagerImpl', [
   \ javaapi#method(0,'getCollectionCount(', ')', 'long'),
   \ javaapi#method(0,'getCollectionTime(', ')', 'long'),
   \ javaapi#method(0,'getLastGcInfo(', ')', 'GcInfo'),
@@ -151,7 +151,7 @@ call javaapi#class('2', 'Object[]>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('GcInfoCompositeData', '', [
+call javaapi#class('GcInfoCompositeData', 'LazyCompositeData', [
   \ javaapi#method(0,'GcInfoCompositeData(', 'GcInfo, GcInfoBuilder, Object[])', 'public'),
   \ javaapi#method(0,'getGcInfo(', ')', 'GcInfo'),
   \ javaapi#method(1,'toCompositeData(', 'GcInfo)', 'CompositeData'),
@@ -285,7 +285,7 @@ call javaapi#class('LazyCompositeData', 'Serializable', [
   \ javaapi#method(0,'values(', ')', 'Collection'),
   \ ])
 
-call javaapi#class('LockDataConverter', '', [
+call javaapi#class('LockDataConverter', 'StandardMBean', [
   \ javaapi#method(0,'setLockInfo(', 'LockInfo)', 'void'),
   \ javaapi#method(0,'getLockInfo(', ')', 'LockInfo'),
   \ javaapi#method(0,'setLockedSynchronizers(', 'LockInfo[])', 'void'),
@@ -320,7 +320,7 @@ call javaapi#class('3', 'Void>', [
   \ javaapi#method(0,'run(', ') throws Exception', 'Object'),
   \ ])
 
-call javaapi#interface('LoggingMXBean', '', [
+call javaapi#interface('LoggingMXBean', 'LoggingMXBean', [
   \ ])
 
 call javaapi#class('PlatformLoggingImpl', 'LoggingMXBean', [
@@ -354,10 +354,10 @@ call javaapi#class('ManagementFactoryHelper', '', [
   \ javaapi#method(1,'toThreadState(', 'int)', 'State'),
   \ ])
 
-call javaapi#class('ArrayMXBeanType', '', [
+call javaapi#class('ArrayMXBeanType', 'MappedMXBeanType', [
   \ ])
 
-call javaapi#class('BasicMXBeanType', '', [
+call javaapi#class('BasicMXBeanType', 'MappedMXBeanType', [
   \ ])
 
 call javaapi#class('1', 'Method>', [
@@ -370,26 +370,26 @@ call javaapi#class('2', 'Method[]>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('CompositeDataMXBeanType', '', [
+call javaapi#class('CompositeDataMXBeanType', 'MappedMXBeanType', [
   \ ])
 
-call javaapi#class('EnumMXBeanType', '', [
+call javaapi#class('EnumMXBeanType', 'MappedMXBeanType', [
   \ ])
 
-call javaapi#class('GenericArrayMXBeanType', '', [
+call javaapi#class('GenericArrayMXBeanType', 'ArrayMXBeanType', [
   \ ])
 
-call javaapi#class('InProgress', '', [
+call javaapi#class('InProgress', 'OpenType', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'isValue(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('ListMXBeanType', '', [
+call javaapi#class('ListMXBeanType', 'MappedMXBeanType', [
   \ ])
 
-call javaapi#class('MapMXBeanType', '', [
+call javaapi#class('MapMXBeanType', 'MappedMXBeanType', [
   \ ])
 
 call javaapi#class('MappedMXBeanType', '', [
@@ -399,7 +399,7 @@ call javaapi#class('MappedMXBeanType', '', [
   \ javaapi#method(1,'toOpenTypeData(', 'Object, Type) throws OpenDataException', 'Object'),
   \ ])
 
-call javaapi#class('MemoryImpl', '', [
+call javaapi#class('MemoryImpl', 'NotificationEmitterSupport', [
   \ javaapi#method(0,'getObjectPendingFinalizationCount(', ')', 'int'),
   \ javaapi#method(0,'gc(', ')', 'void'),
   \ javaapi#method(0,'getHeapMemoryUsage(', ')', 'MemoryUsage'),
@@ -410,7 +410,7 @@ call javaapi#class('MemoryImpl', '', [
   \ javaapi#method(0,'getObjectName(', ')', 'ObjectName'),
   \ ])
 
-call javaapi#class('MemoryManagerImpl', '', [
+call javaapi#class('MemoryManagerImpl', 'NotificationEmitterSupport', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'isValid(', ')', 'boolean'),
   \ javaapi#method(0,'getMemoryPoolNames(', ')', 'String[]'),
@@ -418,7 +418,7 @@ call javaapi#class('MemoryManagerImpl', '', [
   \ javaapi#method(0,'getObjectName(', ')', 'ObjectName'),
   \ ])
 
-call javaapi#class('MemoryNotifInfoCompositeData', '', [
+call javaapi#class('MemoryNotifInfoCompositeData', 'LazyCompositeData', [
   \ javaapi#method(0,'getMemoryNotifInfo(', ')', 'MemoryNotificationInfo'),
   \ javaapi#method(1,'toCompositeData(', 'MemoryNotificationInfo)', 'CompositeData'),
   \ javaapi#method(1,'getPoolName(', 'CompositeData)', 'String'),
@@ -427,10 +427,10 @@ call javaapi#class('MemoryNotifInfoCompositeData', '', [
   \ javaapi#method(1,'validateCompositeData(', 'CompositeData)', 'void'),
   \ ])
 
-call javaapi#class('CollectionSensor', '', [
+call javaapi#class('CollectionSensor', 'Sensor', [
   \ ])
 
-call javaapi#class('PoolSensor', '', [
+call javaapi#class('PoolSensor', 'Sensor', [
   \ ])
 
 call javaapi#class('MemoryPoolImpl', 'MemoryPoolMXBean', [
@@ -455,7 +455,7 @@ call javaapi#class('MemoryPoolImpl', 'MemoryPoolMXBean', [
   \ javaapi#method(0,'getObjectName(', ')', 'ObjectName'),
   \ ])
 
-call javaapi#class('MemoryUsageCompositeData', '', [
+call javaapi#class('MemoryUsageCompositeData', 'LazyCompositeData', [
   \ javaapi#method(0,'getMemoryUsage(', ')', 'MemoryUsage'),
   \ javaapi#method(1,'toCompositeData(', 'MemoryUsage)', 'CompositeData'),
   \ javaapi#method(1,'getInit(', 'CompositeData)', 'long'),
@@ -472,7 +472,7 @@ call javaapi#class('MethodInfo', 'Serializable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('MonitorInfoCompositeData', '', [
+call javaapi#class('MonitorInfoCompositeData', 'LazyCompositeData', [
   \ javaapi#method(0,'getMonitorInfo(', ')', 'MonitorInfo'),
   \ javaapi#method(1,'toCompositeData(', 'MonitorInfo)', 'CompositeData'),
   \ javaapi#method(1,'getClassName(', 'CompositeData)', 'String'),
@@ -536,7 +536,7 @@ call javaapi#class('Sensor', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('StackTraceElementCompositeData', '', [
+call javaapi#class('StackTraceElementCompositeData', 'LazyCompositeData', [
   \ javaapi#method(0,'getStackTraceElement(', ')', 'StackTraceElement'),
   \ javaapi#method(1,'from(', 'CompositeData)', 'StackTraceElement'),
   \ javaapi#method(1,'toCompositeData(', 'StackTraceElement)', 'CompositeData'),
@@ -581,7 +581,7 @@ call javaapi#class('ThreadImpl', 'ThreadMXBean', [
   \ javaapi#method(0,'getObjectName(', ')', 'ObjectName'),
   \ ])
 
-call javaapi#class('ThreadInfoCompositeData', '', [
+call javaapi#class('ThreadInfoCompositeData', 'LazyCompositeData', [
   \ javaapi#method(0,'getThreadInfo(', ')', 'ThreadInfo'),
   \ javaapi#method(0,'isCurrentVersion(', ')', 'boolean'),
   \ javaapi#method(1,'getInstance(', 'CompositeData)', 'ThreadInfoCompositeData'),
@@ -727,7 +727,7 @@ call javaapi#class('VMManagementImpl', 'VMManagement', [
   \ javaapi#method(0,'getInternalCounters(', 'String)', 'Counter>'),
   \ ])
 
-call javaapi#class('VMOptionCompositeData', '', [
+call javaapi#class('VMOptionCompositeData', 'LazyCompositeData', [
   \ javaapi#method(0,'getVMOption(', ')', 'VMOption'),
   \ javaapi#method(1,'toCompositeData(', 'VMOption)', 'CompositeData'),
   \ javaapi#method(1,'getName(', 'CompositeData)', 'String'),

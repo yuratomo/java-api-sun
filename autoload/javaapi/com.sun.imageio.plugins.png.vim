@@ -8,7 +8,7 @@ call javaapi#class('CRC', '', [
   \ javaapi#method(0,'getValue(', ')', 'int'),
   \ ])
 
-call javaapi#class('ChunkStream', '', [
+call javaapi#class('ChunkStream', 'ImageOutputStreamImpl', [
   \ javaapi#method(0,'ChunkStream(', 'int, ImageOutputStream) throws IOException', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
@@ -17,7 +17,7 @@ call javaapi#class('ChunkStream', '', [
   \ javaapi#method(0,'finish(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('IDATOutputStream', '', [
+call javaapi#class('IDATOutputStream', 'ImageOutputStreamImpl', [
   \ javaapi#method(0,'IDATOutputStream(', 'ImageOutputStream, int) throws IOException', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
@@ -34,7 +34,7 @@ call javaapi#class('PNGImageDataEnumeration', 'InputStream>', [
   \ javaapi#method(0,'nextElement(', ')', 'Object'),
   \ ])
 
-call javaapi#class('PNGImageReader', '', [
+call javaapi#class('PNGImageReader', 'ImageReader', [
   \ javaapi#method(0,'PNGImageReader(', 'ImageReaderSpi)', 'public'),
   \ javaapi#method(0,'setInput(', 'Object, boolean, boolean)', 'void'),
   \ javaapi#method(0,'getNumImages(', 'boolean) throws IIOException', 'int'),
@@ -49,18 +49,18 @@ call javaapi#class('PNGImageReader', '', [
   \ javaapi#method(0,'reset(', ')', 'void'),
   \ ])
 
-call javaapi#class('PNGImageReaderSpi', '', [
+call javaapi#class('PNGImageReaderSpi', 'ImageReaderSpi', [
   \ javaapi#method(0,'PNGImageReaderSpi(', ')', 'public'),
   \ javaapi#method(0,'getDescription(', 'Locale)', 'String'),
   \ javaapi#method(0,'canDecodeInput(', 'Object) throws IOException', 'boolean'),
   \ javaapi#method(0,'createReaderInstance(', 'Object)', 'ImageReader'),
   \ ])
 
-call javaapi#class('PNGImageWriteParam', '', [
+call javaapi#class('PNGImageWriteParam', 'ImageWriteParam', [
   \ javaapi#method(0,'PNGImageWriteParam(', 'Locale)', 'public'),
   \ ])
 
-call javaapi#class('PNGImageWriter', '', [
+call javaapi#class('PNGImageWriter', 'ImageWriter', [
   \ javaapi#method(0,'PNGImageWriter(', 'ImageWriterSpi)', 'public'),
   \ javaapi#method(0,'setOutput(', 'Object)', 'void'),
   \ javaapi#method(0,'getDefaultWriteParam(', ')', 'ImageWriteParam'),
@@ -71,14 +71,14 @@ call javaapi#class('PNGImageWriter', '', [
   \ javaapi#method(0,'write(', 'IIOMetadata, IIOImage, ImageWriteParam) throws IIOException', 'void'),
   \ ])
 
-call javaapi#class('PNGImageWriterSpi', '', [
+call javaapi#class('PNGImageWriterSpi', 'ImageWriterSpi', [
   \ javaapi#method(0,'PNGImageWriterSpi(', ')', 'public'),
   \ javaapi#method(0,'canEncodeImage(', 'ImageTypeSpecifier)', 'boolean'),
   \ javaapi#method(0,'getDescription(', 'Locale)', 'String'),
   \ javaapi#method(0,'createWriterInstance(', 'Object)', 'ImageWriter'),
   \ ])
 
-call javaapi#class('PNGMetadata', '', [
+call javaapi#class('PNGMetadata', 'IIOMetadata', [
   \ javaapi#field(1,'nativeMetadataFormatName', 'String'),
   \ javaapi#field(1,'IHDR_colorTypeNames', 'String[]'),
   \ javaapi#field(1,'IHDR_numChannels', 'int[]'),
@@ -195,12 +195,12 @@ call javaapi#class('PNGMetadata', '', [
   \ javaapi#method(0,'reset(', ')', 'void'),
   \ ])
 
-call javaapi#class('PNGMetadataFormat', '', [
+call javaapi#class('PNGMetadataFormat', 'IIOMetadataFormatImpl', [
   \ javaapi#method(0,'canNodeAppear(', 'String, ImageTypeSpecifier)', 'boolean'),
   \ javaapi#method(1,'getInstance(', ')', 'IIOMetadataFormat'),
   \ ])
 
-call javaapi#class('PNGMetadataFormatResources', '', [
+call javaapi#class('PNGMetadataFormatResources', 'ListResourceBundle', [
   \ javaapi#method(0,'PNGMetadataFormatResources(', ')', 'public'),
   \ ])
 

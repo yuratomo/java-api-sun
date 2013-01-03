@@ -10,38 +10,38 @@ call javaapi#class('AddressingDispositionHelper', '', [
   \ javaapi#method(1,'write(', 'OutputStream, short)', 'void'),
   \ ])
 
-call javaapi#interface('CancelRequestMessage', '', [
+call javaapi#interface('CancelRequestMessage', 'Message', [
   \ javaapi#field(1,'CANCEL_REQ_MSG_SIZE', 'int'),
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
   \ ])
 
-call javaapi#class('CancelRequestMessage_1_0', '', [
+call javaapi#class('CancelRequestMessage_1_0', 'Message_1_0', [
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,'read(', 'InputStream)', 'void'),
   \ javaapi#method(0,'write(', 'OutputStream)', 'void'),
   \ javaapi#method(0,'callback(', 'MessageHandler) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('CancelRequestMessage_1_1', '', [
+call javaapi#class('CancelRequestMessage_1_1', 'Message_1_1', [
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,'read(', 'InputStream)', 'void'),
   \ javaapi#method(0,'write(', 'OutputStream)', 'void'),
   \ javaapi#method(0,'callback(', 'MessageHandler) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('CancelRequestMessage_1_2', '', [
+call javaapi#class('CancelRequestMessage_1_2', 'Message_1_1', [
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,'read(', 'InputStream)', 'void'),
   \ javaapi#method(0,'write(', 'OutputStream)', 'void'),
   \ javaapi#method(0,'callback(', 'MessageHandler) throws IOException', 'void'),
   \ ])
 
-call javaapi#interface('FragmentMessage', '', [
+call javaapi#interface('FragmentMessage', 'Message', [
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,'getHeaderLength(', ')', 'int'),
   \ ])
 
-call javaapi#class('FragmentMessage_1_1', '', [
+call javaapi#class('FragmentMessage_1_1', 'Message_1_1', [
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,'getHeaderLength(', ')', 'int'),
   \ javaapi#method(0,'read(', 'InputStream)', 'void'),
@@ -49,7 +49,7 @@ call javaapi#class('FragmentMessage_1_1', '', [
   \ javaapi#method(0,'callback(', 'MessageHandler) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('FragmentMessage_1_2', '', [
+call javaapi#class('FragmentMessage_1_2', 'Message_1_2', [
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,'getHeaderLength(', ')', 'int'),
   \ javaapi#method(0,'read(', 'InputStream)', 'void'),
@@ -78,7 +78,7 @@ call javaapi#interface('KeyAddr', '', [
   \ javaapi#field(1,'value', 'short'),
   \ ])
 
-call javaapi#interface('LocateReplyMessage', '', [
+call javaapi#interface('LocateReplyMessage', 'LocateReplyOrReplyMessage', [
   \ javaapi#field(1,'UNKNOWN_OBJECT', 'int'),
   \ javaapi#field(1,'OBJECT_HERE', 'int'),
   \ javaapi#field(1,'OBJECT_FORWARD', 'int'),
@@ -87,7 +87,7 @@ call javaapi#interface('LocateReplyMessage', '', [
   \ javaapi#field(1,'LOC_NEEDS_ADDRESSING_MODE', 'int'),
   \ ])
 
-call javaapi#class('LocateReplyMessage_1_0', '', [
+call javaapi#class('LocateReplyMessage_1_0', 'Message_1_0', [
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,'getReplyStatus(', ')', 'int'),
   \ javaapi#method(0,'getAddrDisposition(', ')', 'short'),
@@ -99,7 +99,7 @@ call javaapi#class('LocateReplyMessage_1_0', '', [
   \ javaapi#method(0,'callback(', 'MessageHandler) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('LocateReplyMessage_1_1', '', [
+call javaapi#class('LocateReplyMessage_1_1', 'Message_1_1', [
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,'getReplyStatus(', ')', 'int'),
   \ javaapi#method(0,'getAddrDisposition(', ')', 'short'),
@@ -111,7 +111,7 @@ call javaapi#class('LocateReplyMessage_1_1', '', [
   \ javaapi#method(0,'callback(', 'MessageHandler) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('LocateReplyMessage_1_2', '', [
+call javaapi#class('LocateReplyMessage_1_2', 'Message_1_2', [
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,'getReplyStatus(', ')', 'int'),
   \ javaapi#method(0,'getAddrDisposition(', ')', 'short'),
@@ -123,7 +123,7 @@ call javaapi#class('LocateReplyMessage_1_2', '', [
   \ javaapi#method(0,'callback(', 'MessageHandler) throws IOException', 'void'),
   \ ])
 
-call javaapi#interface('LocateReplyOrReplyMessage', '', [
+call javaapi#interface('LocateReplyOrReplyMessage', 'Message', [
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,'getReplyStatus(', ')', 'int'),
   \ javaapi#method(0,'getSystemException(', 'String)', 'SystemException'),
@@ -131,20 +131,12 @@ call javaapi#interface('LocateReplyOrReplyMessage', '', [
   \ javaapi#method(0,'getAddrDisposition(', ')', 'short'),
   \ ])
 
-call javaapi#interface('LocateRequestMessage', '', [
+call javaapi#interface('LocateRequestMessage', 'Message', [
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,'getObjectKey(', ')', 'ObjectKey'),
   \ ])
 
-call javaapi#class('LocateRequestMessage_1_0', '', [
-  \ javaapi#method(0,'getRequestId(', ')', 'int'),
-  \ javaapi#method(0,'getObjectKey(', ')', 'ObjectKey'),
-  \ javaapi#method(0,'read(', 'InputStream)', 'void'),
-  \ javaapi#method(0,'write(', 'OutputStream)', 'void'),
-  \ javaapi#method(0,'callback(', 'MessageHandler) throws IOException', 'void'),
-  \ ])
-
-call javaapi#class('LocateRequestMessage_1_1', '', [
+call javaapi#class('LocateRequestMessage_1_0', 'Message_1_0', [
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,'getObjectKey(', ')', 'ObjectKey'),
   \ javaapi#method(0,'read(', 'InputStream)', 'void'),
@@ -152,7 +144,15 @@ call javaapi#class('LocateRequestMessage_1_1', '', [
   \ javaapi#method(0,'callback(', 'MessageHandler) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('LocateRequestMessage_1_2', '', [
+call javaapi#class('LocateRequestMessage_1_1', 'Message_1_1', [
+  \ javaapi#method(0,'getRequestId(', ')', 'int'),
+  \ javaapi#method(0,'getObjectKey(', ')', 'ObjectKey'),
+  \ javaapi#method(0,'read(', 'InputStream)', 'void'),
+  \ javaapi#method(0,'write(', 'OutputStream)', 'void'),
+  \ javaapi#method(0,'callback(', 'MessageHandler) throws IOException', 'void'),
+  \ ])
+
+call javaapi#class('LocateRequestMessage_1_2', 'Message_1_2', [
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,'getObjectKey(', ')', 'ObjectKey'),
   \ javaapi#method(0,'read(', 'InputStream)', 'void'),
@@ -245,7 +245,7 @@ call javaapi#interface('MessageHandler', '', [
   \ javaapi#method(0,'handleInput(', 'CancelRequestMessage) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('Message_1_0', '', [
+call javaapi#class('Message_1_0', 'MessageBase', [
   \ javaapi#method(0,'getGIOPVersion(', ')', 'GIOPVersion'),
   \ javaapi#method(0,'getType(', ')', 'int'),
   \ javaapi#method(0,'getSize(', ')', 'int'),
@@ -257,7 +257,7 @@ call javaapi#class('Message_1_0', '', [
   \ javaapi#method(0,'write(', 'OutputStream)', 'void'),
   \ ])
 
-call javaapi#class('Message_1_1', '', [
+call javaapi#class('Message_1_1', 'MessageBase', [
   \ javaapi#method(0,'getGIOPVersion(', ')', 'GIOPVersion'),
   \ javaapi#method(0,'getType(', ')', 'int'),
   \ javaapi#method(0,'getSize(', ')', 'int'),
@@ -270,7 +270,7 @@ call javaapi#class('Message_1_1', '', [
   \ javaapi#method(0,'write(', 'OutputStream)', 'void'),
   \ ])
 
-call javaapi#class('Message_1_2', '', [
+call javaapi#class('Message_1_2', 'Message_1_1', [
   \ javaapi#method(0,'unmarshalRequestID(', 'ByteBuffer)', 'void'),
   \ javaapi#method(0,'write(', 'OutputStream)', 'void'),
   \ ])
@@ -283,7 +283,7 @@ call javaapi#interface('ReferenceAddr', '', [
   \ javaapi#field(1,'value', 'short'),
   \ ])
 
-call javaapi#interface('ReplyMessage', '', [
+call javaapi#interface('ReplyMessage', 'LocateReplyOrReplyMessage', [
   \ javaapi#field(1,'NO_EXCEPTION', 'int'),
   \ javaapi#field(1,'USER_EXCEPTION', 'int'),
   \ javaapi#field(1,'SYSTEM_EXCEPTION', 'int'),
@@ -295,7 +295,7 @@ call javaapi#interface('ReplyMessage', '', [
   \ javaapi#method(0,'setIOR(', 'IOR)', 'void'),
   \ ])
 
-call javaapi#class('ReplyMessage_1_0', '', [
+call javaapi#class('ReplyMessage_1_0', 'Message_1_0', [
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,'getReplyStatus(', ')', 'int'),
   \ javaapi#method(0,'getAddrDisposition(', ')', 'short'),
@@ -310,7 +310,7 @@ call javaapi#class('ReplyMessage_1_0', '', [
   \ javaapi#method(0,'callback(', 'MessageHandler) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('ReplyMessage_1_1', '', [
+call javaapi#class('ReplyMessage_1_1', 'Message_1_1', [
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,'getReplyStatus(', ')', 'int'),
   \ javaapi#method(0,'getAddrDisposition(', ')', 'short'),
@@ -325,7 +325,7 @@ call javaapi#class('ReplyMessage_1_1', '', [
   \ javaapi#method(0,'callback(', 'MessageHandler) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('ReplyMessage_1_2', '', [
+call javaapi#class('ReplyMessage_1_2', 'Message_1_2', [
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,'getReplyStatus(', ')', 'int'),
   \ javaapi#method(0,'getAddrDisposition(', ')', 'short'),
@@ -340,7 +340,7 @@ call javaapi#class('ReplyMessage_1_2', '', [
   \ javaapi#method(0,'callback(', 'MessageHandler) throws IOException', 'void'),
   \ ])
 
-call javaapi#interface('RequestMessage', '', [
+call javaapi#interface('RequestMessage', 'Message', [
   \ javaapi#field(1,'RESPONSE_EXPECTED_BIT', 'byte'),
   \ javaapi#method(0,'getServiceContexts(', ')', 'ServiceContexts'),
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
@@ -352,7 +352,7 @@ call javaapi#interface('RequestMessage', '', [
   \ javaapi#method(0,'setThreadPoolToUse(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('RequestMessage_1_0', '', [
+call javaapi#class('RequestMessage_1_0', 'Message_1_0', [
   \ javaapi#method(0,'getServiceContexts(', ')', 'ServiceContexts'),
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,'isResponseExpected(', ')', 'boolean'),
@@ -366,7 +366,7 @@ call javaapi#class('RequestMessage_1_0', '', [
   \ javaapi#method(0,'callback(', 'MessageHandler) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('RequestMessage_1_1', '', [
+call javaapi#class('RequestMessage_1_1', 'Message_1_1', [
   \ javaapi#method(0,'getServiceContexts(', ')', 'ServiceContexts'),
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,'isResponseExpected(', ')', 'boolean'),
@@ -379,7 +379,7 @@ call javaapi#class('RequestMessage_1_1', '', [
   \ javaapi#method(0,'callback(', 'MessageHandler) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('RequestMessage_1_2', '', [
+call javaapi#class('RequestMessage_1_2', 'Message_1_2', [
   \ javaapi#method(0,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,'isResponseExpected(', ')', 'boolean'),
   \ javaapi#method(0,'getReserved(', ')', 'byte[]'),

@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.security.krb5.internal')
 
-call javaapi#class('APOptions', '', [
+call javaapi#class('APOptions', 'KerberosFlags', [
   \ javaapi#method(0,'APOptions(', ')', 'public'),
   \ javaapi#method(0,'APOptions(', 'int) throws Asn1Exception', 'public'),
   \ javaapi#method(0,'APOptions(', 'int, byte[]) throws Asn1Exception', 'public'),
@@ -31,13 +31,13 @@ call javaapi#class('APReq', '', [
   \ javaapi#method(0,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
   \ ])
 
-call javaapi#class('ASRep', '', [
+call javaapi#class('ASRep', 'KDCRep', [
   \ javaapi#method(0,'ASRep(', 'PAData[], Realm, PrincipalName, Ticket, EncryptedData) throws IOException', 'public'),
   \ javaapi#method(0,'ASRep(', 'byte[]) throws Asn1Exception, RealmException, KrbApErrException, IOException', 'public'),
   \ javaapi#method(0,'ASRep(', 'DerValue) throws Asn1Exception, RealmException, KrbApErrException, IOException', 'public'),
   \ ])
 
-call javaapi#class('ASReq', '', [
+call javaapi#class('ASReq', 'KDCReq', [
   \ javaapi#method(0,'ASReq(', 'PAData[], KDCReqBody) throws IOException', 'public'),
   \ javaapi#method(0,'ASReq(', 'byte[]) throws Asn1Exception, KrbException, IOException', 'public'),
   \ javaapi#method(0,'ASReq(', 'DerValue) throws Asn1Exception, KrbException, IOException', 'public'),
@@ -136,7 +136,7 @@ call javaapi#class('EncAPRepPart', '', [
   \ javaapi#method(0,'getSeqNumber(', ')', 'Integer'),
   \ ])
 
-call javaapi#class('EncASRepPart', '', [
+call javaapi#class('EncASRepPart', 'EncKDCRepPart', [
   \ javaapi#method(0,'EncASRepPart(', 'EncryptionKey, LastReq, int, KerberosTime, TicketFlags, KerberosTime, KerberosTime, KerberosTime, KerberosTime, Realm, PrincipalName, HostAddresses)', 'public'),
   \ javaapi#method(0,'EncASRepPart(', 'byte[]) throws Asn1Exception, IOException, KrbException', 'public'),
   \ javaapi#method(0,'EncASRepPart(', 'DerValue) throws Asn1Exception, IOException, KrbException', 'public'),
@@ -186,7 +186,7 @@ call javaapi#class('EncKrbPrivPart', '', [
   \ javaapi#method(0,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
   \ ])
 
-call javaapi#class('EncTGSRepPart', '', [
+call javaapi#class('EncTGSRepPart', 'EncKDCRepPart', [
   \ javaapi#method(0,'EncTGSRepPart(', 'EncryptionKey, LastReq, int, KerberosTime, TicketFlags, KerberosTime, KerberosTime, KerberosTime, KerberosTime, Realm, PrincipalName, HostAddresses)', 'public'),
   \ javaapi#method(0,'EncTGSRepPart(', 'byte[]) throws Asn1Exception, IOException, KrbException', 'public'),
   \ javaapi#method(0,'EncTGSRepPart(', 'DerValue) throws Asn1Exception, IOException, KrbException', 'public'),
@@ -241,7 +241,7 @@ call javaapi#class('HostAddresses', 'Cloneable', [
   \ javaapi#method(0,'HostAddresses(', 'InetAddress[])', 'public'),
   \ ])
 
-call javaapi#class('KDCOptions', '', [
+call javaapi#class('KDCOptions', 'KerberosFlags', [
   \ javaapi#field(0,'KDC_OPT_PROXIABLE', 'int'),
   \ javaapi#field(0,'KDC_OPT_RENEWABLE_OK', 'int'),
   \ javaapi#field(0,'KDC_OPT_FORWARDABLE', 'int'),
@@ -370,7 +370,7 @@ call javaapi#class('KRBSafeBody', '', [
   \ javaapi#method(1,'parse(', 'DerInputStream, byte, boolean) throws Asn1Exception, IOException', 'KRBSafeBody'),
   \ ])
 
-call javaapi#class('KdcErrException', '', [
+call javaapi#class('KdcErrException', 'KrbException', [
   \ javaapi#method(0,'KdcErrException(', 'int)', 'public'),
   \ javaapi#method(0,'KdcErrException(', 'int, String)', 'public'),
   \ ])
@@ -593,7 +593,7 @@ call javaapi#class('Krb5', '', [
   \ javaapi#method(1,'getErrorMessage(', 'int)', 'String'),
   \ ])
 
-call javaapi#class('KrbApErrException', '', [
+call javaapi#class('KrbApErrException', 'KrbException', [
   \ javaapi#method(0,'KrbApErrException(', 'int)', 'public'),
   \ javaapi#method(0,'KrbApErrException(', 'int, String)', 'public'),
   \ ])
@@ -616,7 +616,7 @@ call javaapi#class('KrbCredInfo', '', [
   \ javaapi#method(0,'clone(', ')', 'Object'),
   \ ])
 
-call javaapi#class('KrbErrException', '', [
+call javaapi#class('KrbErrException', 'KrbException', [
   \ javaapi#method(0,'KrbErrException(', 'int)', 'public'),
   \ javaapi#method(0,'KrbErrException(', 'int, String)', 'public'),
   \ ])
@@ -646,7 +646,7 @@ call javaapi#class('LocalSeqNumber', 'SeqNumber', [
   \ javaapi#method(0,'step(', ')', 'int'),
   \ ])
 
-call javaapi#class('LoginOptions', '', [
+call javaapi#class('LoginOptions', 'KDCOptions', [
   \ javaapi#field(1,'RESERVED', 'int'),
   \ javaapi#field(1,'FORWARDABLE', 'int'),
   \ javaapi#field(1,'PROXIABLE', 'int'),
@@ -709,19 +709,19 @@ call javaapi#interface('SeqNumber', '', [
   \ javaapi#method(0,'step(', ')', 'int'),
   \ ])
 
-call javaapi#class('TCPClient', '', [
+call javaapi#class('TCPClient', 'NetClient', [
   \ javaapi#method(0,'send(', 'byte[]) throws IOException', 'void'),
   \ javaapi#method(0,'receive(', ') throws IOException', 'byte[]'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('TGSRep', '', [
+call javaapi#class('TGSRep', 'KDCRep', [
   \ javaapi#method(0,'TGSRep(', 'PAData[], Realm, PrincipalName, Ticket, EncryptedData) throws IOException', 'public'),
   \ javaapi#method(0,'TGSRep(', 'byte[]) throws Asn1Exception, RealmException, KrbApErrException, IOException', 'public'),
   \ javaapi#method(0,'TGSRep(', 'DerValue) throws Asn1Exception, RealmException, KrbApErrException, IOException', 'public'),
   \ ])
 
-call javaapi#class('TGSReq', '', [
+call javaapi#class('TGSReq', 'KDCReq', [
   \ javaapi#method(0,'TGSReq(', 'PAData[], KDCReqBody) throws IOException', 'public'),
   \ javaapi#method(0,'TGSReq(', 'byte[]) throws Asn1Exception, IOException, KrbException', 'public'),
   \ javaapi#method(0,'TGSReq(', 'DerValue) throws Asn1Exception, IOException, KrbException', 'public'),
@@ -740,7 +740,7 @@ call javaapi#class('Ticket', 'Cloneable', [
   \ javaapi#method(1,'parse(', 'DerInputStream, byte, boolean) throws Asn1Exception, IOException, RealmException, KrbApErrException', 'Ticket'),
   \ ])
 
-call javaapi#class('TicketFlags', '', [
+call javaapi#class('TicketFlags', 'KerberosFlags', [
   \ javaapi#method(0,'TicketFlags(', ')', 'public'),
   \ javaapi#method(0,'TicketFlags(', 'boolean[]) throws Asn1Exception', 'public'),
   \ javaapi#method(0,'TicketFlags(', 'int, byte[]) throws Asn1Exception', 'public'),
@@ -761,7 +761,7 @@ call javaapi#class('TransitedEncoding', '', [
   \ javaapi#method(1,'parse(', 'DerInputStream, byte, boolean) throws Asn1Exception, IOException', 'TransitedEncoding'),
   \ ])
 
-call javaapi#class('UDPClient', '', [
+call javaapi#class('UDPClient', 'NetClient', [
   \ javaapi#method(0,'send(', 'byte[]) throws IOException', 'void'),
   \ javaapi#method(0,'receive(', ') throws IOException', 'byte[]'),
   \ javaapi#method(0,'close(', ')', 'void'),

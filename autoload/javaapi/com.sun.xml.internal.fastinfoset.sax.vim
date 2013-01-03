@@ -60,7 +60,7 @@ call javaapi#class('LexicalHandlerImpl', 'LexicalHandler', [
   \ javaapi#method(0,'endCDATA(', ')', 'void'),
   \ ])
 
-call javaapi#class('SAXDocumentParser', '', [
+call javaapi#class('SAXDocumentParser', 'Decoder', [
   \ javaapi#method(0,'SAXDocumentParser(', ')', 'public'),
   \ javaapi#method(0,'getFeature(', 'String) throws SAXNotRecognizedException, SAXNotSupportedException', 'boolean'),
   \ javaapi#method(0,'setFeature(', 'String, boolean) throws SAXNotRecognizedException, SAXNotSupportedException', 'void'),
@@ -88,7 +88,7 @@ call javaapi#class('SAXDocumentParser', '', [
   \ javaapi#method(0,'parse(', ') throws FastInfosetException, IOException', 'void'),
   \ ])
 
-call javaapi#class('SAXDocumentSerializer', '', [
+call javaapi#class('SAXDocumentSerializer', 'Encoder', [
   \ javaapi#method(0,'SAXDocumentSerializer(', ')', 'public'),
   \ javaapi#method(0,'reset(', ')', 'void'),
   \ javaapi#method(0,'startDocument(', ') throws SAXException', 'void'),
@@ -124,7 +124,7 @@ call javaapi#class('SAXDocumentSerializer', '', [
   \ javaapi#method(0,'characters(', 'char[], int, int, boolean) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('SAXDocumentSerializerWithPrefixMapping', '', [
+call javaapi#class('SAXDocumentSerializerWithPrefixMapping', 'SAXDocumentSerializer', [
   \ javaapi#method(0,'SAXDocumentSerializerWithPrefixMapping(', 'Map)', 'public'),
   \ javaapi#method(0,'startPrefixMapping(', 'String, String) throws SAXException', 'void'),
   \ ])

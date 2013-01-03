@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.servicetag')
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Thread', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
@@ -15,11 +15,11 @@ call javaapi#class('Installer', '', [
   \ javaapi#method(1,'main(', 'String[])', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Thread', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('LinuxSystemEnvironment', '', [
+call javaapi#class('LinuxSystemEnvironment', 'SystemEnvironment', [
   \ ])
 
 call javaapi#class('RegistrationData', '', [
@@ -77,7 +77,7 @@ call javaapi#class('ServiceTag', '', [
 call javaapi#class('SolarisServiceTag', '', [
   \ ])
 
-call javaapi#class('SolarisSystemEnvironment', '', [
+call javaapi#class('SolarisSystemEnvironment', 'SystemEnvironment', [
   \ ])
 
 call javaapi#class('SunConnection', '', [
@@ -106,7 +106,7 @@ call javaapi#class('SystemEnvironment', '', [
   \ javaapi#method(0,'getCpuManufacturer(', ')', 'String'),
   \ ])
 
-call javaapi#class('UnauthorizedAccessException', '', [
+call javaapi#class('UnauthorizedAccessException', 'RuntimeException', [
   \ javaapi#method(0,'UnauthorizedAccessException(', ')', 'public'),
   \ javaapi#method(0,'UnauthorizedAccessException(', 'String)', 'public'),
   \ ])
@@ -114,6 +114,6 @@ call javaapi#class('UnauthorizedAccessException', '', [
 call javaapi#class('Util', '', [
   \ ])
 
-call javaapi#class('WindowsSystemEnvironment', '', [
+call javaapi#class('WindowsSystemEnvironment', 'SystemEnvironment', [
   \ ])
 

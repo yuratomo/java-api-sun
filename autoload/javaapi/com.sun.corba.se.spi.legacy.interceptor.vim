@@ -13,7 +13,7 @@ call javaapi#interface('RequestInfoExt', '', [
   \ javaapi#method(0,'connection(', ')', 'Connection'),
   \ ])
 
-call javaapi#class('UnknownType', '', [
+call javaapi#class('UnknownType', 'Exception', [
   \ javaapi#method(0,'UnknownType(', ')', 'public'),
   \ javaapi#method(0,'UnknownType(', 'String)', 'public'),
   \ ])

@@ -1,28 +1,28 @@
 call javaapi#namespace('sun.management.counter.perf')
 
-call javaapi#class('ByteArrayCounterSnapshot', '', [
+call javaapi#class('ByteArrayCounterSnapshot', 'AbstractCounter', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ javaapi#method(0,'byteArrayValue(', ')', 'byte[]'),
   \ javaapi#method(0,'byteAt(', 'int)', 'byte'),
   \ ])
 
-call javaapi#class('InstrumentationException', '', [
+call javaapi#class('InstrumentationException', 'RuntimeException', [
   \ javaapi#method(0,'InstrumentationException(', ')', 'public'),
   \ javaapi#method(0,'InstrumentationException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('LongArrayCounterSnapshot', '', [
+call javaapi#class('LongArrayCounterSnapshot', 'AbstractCounter', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ javaapi#method(0,'longArrayValue(', ')', 'long[]'),
   \ javaapi#method(0,'longAt(', 'int)', 'long'),
   \ ])
 
-call javaapi#class('LongCounterSnapshot', '', [
+call javaapi#class('LongCounterSnapshot', 'AbstractCounter', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ javaapi#method(0,'longValue(', ')', 'long'),
   \ ])
 
-call javaapi#class('PerfByteArrayCounter', '', [
+call javaapi#class('PerfByteArrayCounter', 'AbstractCounter', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ javaapi#method(0,'byteArrayValue(', ')', 'byte[]'),
   \ javaapi#method(0,'byteAt(', 'int)', 'byte'),
@@ -69,18 +69,18 @@ call javaapi#class('PerfInstrumentation', '', [
   \ javaapi#method(0,'findByPattern(', 'String)', 'Counter>'),
   \ ])
 
-call javaapi#class('PerfLongArrayCounter', '', [
+call javaapi#class('PerfLongArrayCounter', 'AbstractCounter', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ javaapi#method(0,'longArrayValue(', ')', 'long[]'),
   \ javaapi#method(0,'longAt(', 'int)', 'long'),
   \ ])
 
-call javaapi#class('PerfLongCounter', '', [
+call javaapi#class('PerfLongCounter', 'AbstractCounter', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ javaapi#method(0,'longValue(', ')', 'long'),
   \ ])
 
-call javaapi#class('PerfStringCounter', '', [
+call javaapi#class('PerfStringCounter', 'PerfByteArrayCounter', [
   \ javaapi#method(0,'isVector(', ')', 'boolean'),
   \ javaapi#method(0,'getVectorLength(', ')', 'int'),
   \ javaapi#method(0,'getValue(', ')', 'Object'),
@@ -103,7 +103,7 @@ call javaapi#class('Prologue', '', [
   \ javaapi#method(0,'isAccessible(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('StringCounterSnapshot', '', [
+call javaapi#class('StringCounterSnapshot', 'AbstractCounter', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ javaapi#method(0,'stringValue(', ')', 'String'),
   \ ])

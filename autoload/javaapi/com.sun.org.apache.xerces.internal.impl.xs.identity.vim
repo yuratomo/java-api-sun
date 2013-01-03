@@ -1,10 +1,10 @@
 call javaapi#namespace('com.sun.org.apache.xerces.internal.impl.xs.identity')
 
-call javaapi#class('Matcher', '', [
+call javaapi#class('Matcher', 'XPathMatcher', [
   \ javaapi#method(0,'Matcher(', 'Field, XPath, FieldActivator, ValueStore)', 'public'),
   \ ])
 
-call javaapi#class('XPath', '', [
+call javaapi#class('XPath', 'XPath', [
   \ javaapi#method(0,'XPath(', 'String, SymbolTable, NamespaceContext) throws XPathException', 'public'),
   \ ])
 
@@ -46,13 +46,13 @@ call javaapi#class('IdentityConstraint', 'XSIDCDefinition', [
   \ javaapi#method(0,'addAnnotation(', 'XSAnnotationImpl)', 'void'),
   \ ])
 
-call javaapi#class('KeyRef', '', [
+call javaapi#class('KeyRef', 'IdentityConstraint', [
   \ javaapi#method(0,'KeyRef(', 'String, String, String, UniqueOrKey)', 'public'),
   \ javaapi#method(0,'getKey(', ')', 'UniqueOrKey'),
   \ javaapi#method(0,'getRefKey(', ')', 'XSIDCDefinition'),
   \ ])
 
-call javaapi#class('Matcher', '', [
+call javaapi#class('Matcher', 'XPathMatcher', [
   \ javaapi#method(0,'Matcher(', 'Selector, XPath, FieldActivator, int)', 'public'),
   \ javaapi#method(0,'startDocumentFragment(', ')', 'void'),
   \ javaapi#method(0,'startElement(', 'QName, XMLAttributes)', 'void'),
@@ -61,7 +61,7 @@ call javaapi#class('Matcher', '', [
   \ javaapi#method(0,'getInitialDepth(', ')', 'int'),
   \ ])
 
-call javaapi#class('XPath', '', [
+call javaapi#class('XPath', 'XPath', [
   \ javaapi#method(0,'XPath(', 'String, SymbolTable, NamespaceContext) throws XPathException', 'public'),
   \ ])
 
@@ -73,7 +73,7 @@ call javaapi#class('Selector', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('UniqueOrKey', '', [
+call javaapi#class('UniqueOrKey', 'IdentityConstraint', [
   \ javaapi#method(0,'UniqueOrKey(', 'String, String, String, short)', 'public'),
   \ ])
 

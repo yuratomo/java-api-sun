@@ -1,21 +1,21 @@
 call javaapi#namespace('com.sun.xml.internal.ws.api')
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Impl', [
   \ javaapi#method(0,'createEncoder(', 'WSBinding)', 'Codec'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'Impl', [
   \ javaapi#method(0,'createEncoder(', 'WSBinding)', 'Codec'),
   \ ])
 
-call javaapi#class('Impl', '', [
+call javaapi#class('Impl', 'BindingID', [
   \ javaapi#method(0,'Impl(', 'SOAPVersion, String, boolean)', 'public'),
   \ javaapi#method(0,'getSOAPVersion(', ')', 'SOAPVersion'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'canGenerateWSDL(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('SOAPHTTPImpl', '', [
+call javaapi#class('SOAPHTTPImpl', 'Impl', [
   \ javaapi#method(0,'SOAPHTTPImpl(', 'SOAPVersion, String, boolean)', 'public'),
   \ javaapi#method(0,'SOAPHTTPImpl(', 'SOAPVersion, String, boolean, boolean)', 'public'),
   \ javaapi#method(0,'createEncoder(', 'WSBinding)', 'Codec'),
@@ -52,7 +52,7 @@ call javaapi#class('BindingIDFactory', '', [
   \ javaapi#method(0,'parse(', 'String) throws WebServiceException', 'BindingID'),
   \ ])
 
-call javaapi#class('DistributedPropertySet', '', [
+call javaapi#class('DistributedPropertySet', 'PropertySet', [
   \ javaapi#method(0,'DistributedPropertySet(', ')', 'public'),
   \ javaapi#method(0,'addSatellite(', 'PropertySet)', 'void'),
   \ javaapi#method(0,'removeSatellite(', 'PropertySet)', 'void'),
@@ -79,7 +79,7 @@ call javaapi#class('EndpointAddress', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('FeatureConstructor', '', [
+call javaapi#interface('FeatureConstructor', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'String[]'),
   \ ])
 
@@ -88,7 +88,7 @@ call javaapi#class('1', 'PropertyMap>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'Object>', [
   \ javaapi#method(0,'entrySet(', ')', 'Object>>'),
   \ ])
 
@@ -120,11 +120,11 @@ call javaapi#class('MethodAccessor', 'Accessor', [
   \ javaapi#method(0,'set(', 'PropertySet, Object)', 'void'),
   \ ])
 
-call javaapi#interface('Property', '', [
+call javaapi#interface('Property', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'String[]'),
   \ ])
 
-call javaapi#class('PropertyMap', '', [
+call javaapi#class('PropertyMap', 'Accessor>', [
   \ ])
 
 call javaapi#class('PropertySet', '', [
@@ -141,7 +141,7 @@ call javaapi#class('ResourceLoader', '', [
   \ javaapi#method(0,'getResource(', 'String) throws MalformedURLException', 'URL'),
   \ ])
 
-call javaapi#class('SOAPVersion', '', [
+call javaapi#class('SOAPVersion', 'SOAPVersion>', [
   \ javaapi#field(1,'SOAP_11', 'SOAPVersion'),
   \ javaapi#field(1,'SOAP_12', 'SOAPVersion'),
   \ javaapi#field(0,'httpBindingId', 'String'),
@@ -163,7 +163,7 @@ call javaapi#class('SOAPVersion', '', [
   \ javaapi#method(1,'fromNsUri(', 'String)', 'SOAPVersion'),
   \ ])
 
-call javaapi#interface('WSBinding', '', [
+call javaapi#interface('WSBinding', 'Binding', [
   \ javaapi#method(0,'getSOAPVersion(', ')', 'SOAPVersion'),
   \ javaapi#method(0,'getAddressingVersion(', ')', 'AddressingVersion'),
   \ javaapi#method(0,'getBindingId(', ')', 'BindingID'),
@@ -173,7 +173,7 @@ call javaapi#interface('WSBinding', '', [
   \ javaapi#method(0,'getFeatures(', ')', 'WSFeatureList'),
   \ ])
 
-call javaapi#interface('WSFeatureList', '', [
+call javaapi#interface('WSFeatureList', 'WebServiceFeature>', [
   \ javaapi#method(0,'isEnabled(', 'Class<? extends WebServiceFeature>)', 'boolean'),
   \ javaapi#method(0,'get(', 'Class<F>)', 'F'),
   \ javaapi#method(0,'toArray(', ')', 'WebServiceFeature[]'),
@@ -192,7 +192,7 @@ call javaapi#class('InitParams', '', [
   \ javaapi#method(0,'getContainer(', ')', 'Container'),
   \ ])
 
-call javaapi#class('WSService', '', [
+call javaapi#class('WSService', 'ServiceDelegate', [
   \ javaapi#method(0,'getPort(', 'WSEndpointReference, Class<T>, )', 'T'),
   \ javaapi#method(0,'createDispatch(', 'QName, WSEndpointReference, Class<T>, Mode, )', 'Dispatch<T>'),
   \ javaapi#method(0,'createDispatch(', 'QName, WSEndpointReference, JAXBContext, Mode, )', 'Object>'),

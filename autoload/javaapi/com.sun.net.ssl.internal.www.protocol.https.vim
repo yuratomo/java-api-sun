@@ -1,15 +1,15 @@
 call javaapi#namespace('com.sun.net.ssl.internal.www.protocol.https')
 
-call javaapi#class('DelegateHttpsURLConnection', '', [
+call javaapi#class('DelegateHttpsURLConnection', 'AbstractDelegateHttpsURLConnection', [
   \ javaapi#field(0,'httpsURLConnection', 'HttpsURLConnection'),
   \ ])
 
-call javaapi#class('Handler', '', [
+call javaapi#class('Handler', 'Handler', [
   \ javaapi#method(0,'Handler(', ')', 'public'),
   \ javaapi#method(0,'Handler(', 'String, int)', 'public'),
   \ ])
 
-call javaapi#class('HttpsURLConnectionOldImpl', '', [
+call javaapi#class('HttpsURLConnectionOldImpl', 'HttpsURLConnection', [
   \ javaapi#method(0,'connect(', ') throws IOException', 'void'),
   \ javaapi#method(0,'getCipherSuite(', ')', 'String'),
   \ javaapi#method(0,'getLocalCertificates(', ')', 'Certificate[]'),

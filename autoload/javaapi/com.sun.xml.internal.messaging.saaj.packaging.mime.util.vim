@@ -7,7 +7,7 @@ call javaapi#class('ASCIIUtility', '', [
   \ javaapi#method(1,'getBytes(', 'InputStream) throws IOException', 'byte[]'),
   \ ])
 
-call javaapi#class('BASE64DecoderStream', '', [
+call javaapi#class('BASE64DecoderStream', 'FilterInputStream', [
   \ javaapi#method(0,'BASE64DecoderStream(', 'InputStream)', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
@@ -16,7 +16,7 @@ call javaapi#class('BASE64DecoderStream', '', [
   \ javaapi#method(1,'decode(', 'byte[])', 'byte[]'),
   \ ])
 
-call javaapi#class('BASE64EncoderStream', '', [
+call javaapi#class('BASE64EncoderStream', 'FilterOutputStream', [
   \ javaapi#method(0,'BASE64EncoderStream(', 'OutputStream, int)', 'public'),
   \ javaapi#method(0,'BASE64EncoderStream(', 'OutputStream)', 'public'),
   \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
@@ -27,12 +27,12 @@ call javaapi#class('BASE64EncoderStream', '', [
   \ javaapi#method(1,'encode(', 'byte[])', 'byte[]'),
   \ ])
 
-call javaapi#class('BEncoderStream', '', [
+call javaapi#class('BEncoderStream', 'BASE64EncoderStream', [
   \ javaapi#method(0,'BEncoderStream(', 'OutputStream)', 'public'),
   \ javaapi#method(1,'encodedLength(', 'byte[])', 'int'),
   \ ])
 
-call javaapi#class('LineInputStream', '', [
+call javaapi#class('LineInputStream', 'FilterInputStream', [
   \ javaapi#method(0,'LineInputStream(', 'InputStream)', 'public'),
   \ javaapi#method(0,'readLine(', ') throws IOException', 'String'),
   \ ])
@@ -44,18 +44,18 @@ call javaapi#class('OutputUtil', '', [
   \ javaapi#method(1,'writeln(', 'OutputStream) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('QDecoderStream', '', [
+call javaapi#class('QDecoderStream', 'QPDecoderStream', [
   \ javaapi#method(0,'QDecoderStream(', 'InputStream)', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ ])
 
-call javaapi#class('QEncoderStream', '', [
+call javaapi#class('QEncoderStream', 'QPEncoderStream', [
   \ javaapi#method(0,'QEncoderStream(', 'OutputStream, boolean)', 'public'),
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(1,'encodedLength(', 'byte[], boolean)', 'int'),
   \ ])
 
-call javaapi#class('QPDecoderStream', '', [
+call javaapi#class('QPDecoderStream', 'FilterInputStream', [
   \ javaapi#method(0,'QPDecoderStream(', 'InputStream)', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
@@ -63,7 +63,7 @@ call javaapi#class('QPDecoderStream', '', [
   \ javaapi#method(0,'available(', ') throws IOException', 'int'),
   \ ])
 
-call javaapi#class('QPEncoderStream', '', [
+call javaapi#class('QPEncoderStream', 'FilterOutputStream', [
   \ javaapi#method(0,'QPEncoderStream(', 'OutputStream, int)', 'public'),
   \ javaapi#method(0,'QPEncoderStream(', 'OutputStream)', 'public'),
   \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
@@ -73,7 +73,7 @@ call javaapi#class('QPEncoderStream', '', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('UUDecoderStream', '', [
+call javaapi#class('UUDecoderStream', 'FilterInputStream', [
   \ javaapi#method(0,'UUDecoderStream(', 'InputStream)', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
@@ -83,7 +83,7 @@ call javaapi#class('UUDecoderStream', '', [
   \ javaapi#method(0,'getMode(', ') throws IOException', 'int'),
   \ ])
 
-call javaapi#class('UUEncoderStream', '', [
+call javaapi#class('UUEncoderStream', 'FilterOutputStream', [
   \ javaapi#method(0,'UUEncoderStream(', 'OutputStream)', 'public'),
   \ javaapi#method(0,'UUEncoderStream(', 'OutputStream, String)', 'public'),
   \ javaapi#method(0,'UUEncoderStream(', 'OutputStream, String, int)', 'public'),

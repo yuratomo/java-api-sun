@@ -29,7 +29,7 @@ call javaapi#interface('AMXMBeanInterface', '', [
   \ javaapi#method(0,'getChildren(', ')', 'AMXMBeanInterface[]'),
   \ ])
 
-call javaapi#interface('AMXMetadata', '', [
+call javaapi#interface('AMXMetadata', 'Annotation', [
   \ javaapi#method(0,'isSingleton(', ')', 'boolean'),
   \ javaapi#method(0,'group(', ')', 'String'),
   \ javaapi#method(0,'subTypes(', ')', 'String[]'),
@@ -39,26 +39,26 @@ call javaapi#interface('AMXMetadata', '', [
   \ javaapi#method(0,'type(', ')', 'String'),
   \ ])
 
-call javaapi#interface('Description', '', [
+call javaapi#interface('Description', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'String'),
   \ javaapi#method(0,'key(', ')', 'String'),
   \ ])
 
-call javaapi#interface('DescriptorFields', '', [
+call javaapi#interface('DescriptorFields', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'String[]'),
   \ ])
 
-call javaapi#interface('DescriptorKey', '', [
+call javaapi#interface('DescriptorKey', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'String'),
   \ javaapi#method(0,'omitIfDefault(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('GmbalException', '', [
+call javaapi#class('GmbalException', 'RuntimeException', [
   \ javaapi#method(0,'GmbalException(', 'String)', 'public'),
   \ javaapi#method(0,'GmbalException(', 'String, Throwable)', 'public'),
   \ ])
 
-call javaapi#interface('GmbalMBean', '', [
+call javaapi#interface('GmbalMBean', 'NotificationEmitter', [
   \ ])
 
 call javaapi#class('GmbalMBeanNOPImpl', 'GmbalMBean', [
@@ -75,7 +75,7 @@ call javaapi#class('GmbalMBeanNOPImpl', 'GmbalMBean', [
   \ javaapi#method(0,'getNotificationInfo(', ')', 'MBeanNotificationInfo[]'),
   \ ])
 
-call javaapi#class('Impact', '', [
+call javaapi#class('Impact', 'Impact>', [
   \ javaapi#field(1,'INFO', 'Impact'),
   \ javaapi#field(1,'ACTION', 'Impact'),
   \ javaapi#field(1,'ACTION_INFO', 'Impact'),
@@ -84,32 +84,32 @@ call javaapi#class('Impact', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'Impact'),
   \ ])
 
-call javaapi#interface('IncludeSubclass', '', [
+call javaapi#interface('IncludeSubclass', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'Class[]'),
   \ ])
 
-call javaapi#interface('InheritedAttribute', '', [
+call javaapi#interface('InheritedAttribute', 'Annotation', [
   \ javaapi#method(0,'description(', ')', 'String'),
   \ javaapi#method(0,'id(', ')', 'String'),
   \ javaapi#method(0,'methodName(', ')', 'String'),
   \ ])
 
-call javaapi#interface('InheritedAttributes', '', [
+call javaapi#interface('InheritedAttributes', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'InheritedAttribute[]'),
   \ ])
 
-call javaapi#interface('ManagedAttribute', '', [
+call javaapi#interface('ManagedAttribute', 'Annotation', [
   \ javaapi#method(0,'id(', ')', 'String'),
   \ ])
 
-call javaapi#interface('ManagedData', '', [
+call javaapi#interface('ManagedData', 'Annotation', [
   \ javaapi#method(0,'name(', ')', 'String'),
   \ ])
 
-call javaapi#interface('ManagedObject', '', [
+call javaapi#interface('ManagedObject', 'Annotation', [
   \ ])
 
-call javaapi#class('RegistrationDebugLevel', '', [
+call javaapi#class('RegistrationDebugLevel', 'RegistrationDebugLevel>', [
   \ javaapi#field(1,'NONE', 'RegistrationDebugLevel'),
   \ javaapi#field(1,'NORMAL', 'RegistrationDebugLevel'),
   \ javaapi#field(1,'FINE', 'RegistrationDebugLevel'),
@@ -117,7 +117,7 @@ call javaapi#class('RegistrationDebugLevel', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'RegistrationDebugLevel'),
   \ ])
 
-call javaapi#interface('ManagedObjectManager', '', [
+call javaapi#interface('ManagedObjectManager', 'Closeable', [
   \ javaapi#method(0,'suspendJMXRegistration(', ')', 'void'),
   \ javaapi#method(0,'resumeJMXRegistration(', ')', 'void'),
   \ javaapi#method(0,'isManagedObject(', 'Object)', 'boolean'),
@@ -194,15 +194,15 @@ call javaapi#class('ManagedObjectManagerNOPImpl', 'ManagedObjectManager', [
   \ javaapi#method(0,'setJMXRegistrationDebug(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#interface('ManagedOperation', '', [
+call javaapi#interface('ManagedOperation', 'Annotation', [
   \ javaapi#method(0,'id(', ')', 'String'),
   \ javaapi#method(0,'impact(', ')', 'Impact'),
   \ ])
 
-call javaapi#interface('NameValue', '', [
+call javaapi#interface('NameValue', 'Annotation', [
   \ ])
 
-call javaapi#interface('ParameterNames', '', [
+call javaapi#interface('ParameterNames', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'String[]'),
   \ ])
 

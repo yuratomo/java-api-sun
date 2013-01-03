@@ -5,7 +5,7 @@ call javaapi#class('1', 'Void>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('ConfigFile', '', [
+call javaapi#class('ConfigFile', 'Configuration', [
   \ javaapi#method(0,'ConfigFile(', ')', 'public'),
   \ javaapi#method(0,'ConfigFile(', 'URI)', 'public'),
   \ javaapi#method(0,'getAppConfigurationEntry(', 'String)', 'AppConfigurationEntry[]'),

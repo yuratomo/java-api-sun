@@ -4,7 +4,7 @@ call javaapi#interface('CharacterNodeHandler', '', [
   \ javaapi#method(0,'characters(', 'Node) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('DOM2DTM', '', [
+call javaapi#class('DOM2DTM', 'DTMDefaultBaseIterators', [
   \ javaapi#method(0,'DOM2DTM(', 'DTMManager, DOMSource, int, DTMWSFilter, XMLStringFactory, boolean)', 'public'),
   \ javaapi#method(0,'getNumberOfNodes(', ')', 'int'),
   \ javaapi#method(0,'getNode(', 'int)', 'Node'),

@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.org.mozilla.javascript.internal')
 
-call javaapi#class('Arguments', '', [
+call javaapi#class('Arguments', 'IdScriptableObject', [
   \ javaapi#method(0,'Arguments(', 'NativeCall)', 'public'),
   \ javaapi#method(0,'getClassName(', ')', 'String'),
   \ javaapi#method(0,'has(', 'int, Scriptable)', 'boolean'),
@@ -10,7 +10,7 @@ call javaapi#class('Arguments', '', [
   \ javaapi#method(0,'defineOwnProperty(', 'Context, Object, ScriptableObject)', 'void'),
   \ ])
 
-call javaapi#class('BaseFunction', '', [
+call javaapi#class('BaseFunction', 'IdScriptableObject', [
   \ javaapi#method(0,'BaseFunction(', ')', 'public'),
   \ javaapi#method(0,'BaseFunction(', 'Scriptable, Scriptable)', 'public'),
   \ javaapi#method(0,'getClassName(', ')', 'String'),
@@ -29,7 +29,7 @@ call javaapi#class('BaseFunction', '', [
 call javaapi#class('BeanProperty', '', [
   \ ])
 
-call javaapi#class('BoundFunction', '', [
+call javaapi#class('BoundFunction', 'BaseFunction', [
   \ javaapi#method(0,'BoundFunction(', 'Context, Scriptable, Callable, Scriptable, Object[])', 'public'),
   \ javaapi#method(0,'call(', 'Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ javaapi#method(0,'construct(', 'Context, Scriptable, Object[])', 'Scriptable'),
@@ -57,7 +57,7 @@ call javaapi#interface('ClassShutter', '', [
   \ javaapi#method(0,'visibleToScripts(', 'String)', 'boolean'),
   \ ])
 
-call javaapi#class('CodeGenerator', '', [
+call javaapi#class('CodeGenerator', 'Icode', [
   \ javaapi#method(0,'compile(', 'CompilerEnvirons, ScriptNode, String, boolean)', 'InterpreterData'),
   \ ])
 
@@ -303,12 +303,12 @@ call javaapi#class('ContextFactory', '', [
   \ javaapi#method(0,'enterContext(', 'Context)', 'Context'),
   \ ])
 
-call javaapi#interface('ContextListener', '', [
+call javaapi#interface('ContextListener', 'Listener', [
   \ javaapi#method(0,'contextEntered(', 'Context)', 'void'),
   \ javaapi#method(0,'contextExited(', 'Context)', 'void'),
   \ ])
 
-call javaapi#class('ContinuationPending', '', [
+call javaapi#class('ContinuationPending', 'RuntimeException', [
   \ javaapi#method(0,'getContinuation(', ')', 'Object'),
   \ javaapi#method(0,'setApplicationState(', 'Object)', 'void'),
   \ javaapi#method(0,'getApplicationState(', ')', 'Object'),
@@ -333,7 +333,7 @@ call javaapi#class('DefaultErrorReporter', 'ErrorReporter', [
   \ javaapi#method(0,'runtimeError(', 'String, String, int, String, int)', 'EvaluatorException'),
   \ ])
 
-call javaapi#class('DefiningClassLoader', '', [
+call javaapi#class('DefiningClassLoader', 'ClassLoader', [
   \ javaapi#method(0,'DefiningClassLoader(', ')', 'public'),
   \ javaapi#method(0,'DefiningClassLoader(', 'ClassLoader)', 'public'),
   \ javaapi#method(0,'defineClass(', 'String, byte[])', 'Class<?>'),
@@ -366,7 +366,7 @@ call javaapi#class('Delegator', 'Function', [
   \ javaapi#method(0,'construct(', 'Context, Scriptable, Object[])', 'Scriptable'),
   \ ])
 
-call javaapi#class('EcmaError', '', [
+call javaapi#class('EcmaError', 'RhinoException', [
   \ javaapi#method(0,'EcmaError(', 'Scriptable, String, int, int, String)', 'public'),
   \ javaapi#method(0,'details(', ')', 'String'),
   \ javaapi#method(0,'getName(', ')', 'String'),
@@ -395,7 +395,7 @@ call javaapi#interface('Evaluator', '', [
   \ javaapi#method(0,'setEvalScriptFlag(', 'Script)', 'void'),
   \ ])
 
-call javaapi#class('EvaluatorException', '', [
+call javaapi#class('EvaluatorException', 'RhinoException', [
   \ javaapi#method(0,'EvaluatorException(', 'String)', 'public'),
   \ javaapi#method(0,'EvaluatorException(', 'String, String, int)', 'public'),
   \ javaapi#method(0,'EvaluatorException(', 'String, String, int, String, int)', 'public'),
@@ -405,16 +405,16 @@ call javaapi#class('EvaluatorException', '', [
   \ javaapi#method(0,'getLineSource(', ')', 'String'),
   \ ])
 
-call javaapi#class('FieldAndMethods', '', [
+call javaapi#class('FieldAndMethods', 'NativeJavaMethod', [
   \ javaapi#method(0,'getDefaultValue(', 'Class<?>)', 'Object'),
   \ ])
 
-call javaapi#interface('Function', '', [
+call javaapi#interface('Function', 'Callable', [
   \ javaapi#method(0,'call(', 'Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ javaapi#method(0,'construct(', 'Context, Scriptable, Object[])', 'Scriptable'),
   \ ])
 
-call javaapi#class('FunctionObject', '', [
+call javaapi#class('FunctionObject', 'BaseFunction', [
   \ javaapi#field(1,'JAVA_UNSUPPORTED_TYPE', 'int'),
   \ javaapi#field(1,'JAVA_STRING_TYPE', 'int'),
   \ javaapi#field(1,'JAVA_INT_TYPE', 'int'),
@@ -440,7 +440,7 @@ call javaapi#interface('GeneratedClassLoader', '', [
   \ javaapi#method(0,'linkClass(', 'Class<?>)', 'void'),
   \ ])
 
-call javaapi#class('IRFactory', '', [
+call javaapi#class('IRFactory', 'Parser', [
   \ javaapi#method(0,'IRFactory(', ')', 'public'),
   \ javaapi#method(0,'IRFactory(', 'CompilerEnvirons)', 'public'),
   \ javaapi#method(0,'IRFactory(', 'CompilerEnvirons, ErrorReporter)', 'public'),
@@ -455,7 +455,7 @@ call javaapi#interface('IdFunctionCall', '', [
   \ javaapi#method(0,'execIdCall(', 'IdFunctionObject, Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ ])
 
-call javaapi#class('IdFunctionObject', '', [
+call javaapi#class('IdFunctionObject', 'BaseFunction', [
   \ javaapi#method(0,'IdFunctionObject(', 'IdFunctionCall, Object, int, int)', 'public'),
   \ javaapi#method(0,'IdFunctionObject(', 'IdFunctionCall, Object, int, String, int, Scriptable)', 'public'),
   \ javaapi#method(0,'initFunction(', 'String, Scriptable)', 'void'),
@@ -476,7 +476,7 @@ call javaapi#class('IdFunctionObject', '', [
 call javaapi#class('PrototypeValues', 'Serializable', [
   \ ])
 
-call javaapi#class('IdScriptableObject', '', [
+call javaapi#class('IdScriptableObject', 'ScriptableObject', [
   \ javaapi#method(0,'IdScriptableObject(', ')', 'public'),
   \ javaapi#method(0,'IdScriptableObject(', 'Scriptable, Scriptable)', 'public'),
   \ javaapi#method(0,'has(', 'String, Scriptable)', 'boolean'),
@@ -495,7 +495,7 @@ call javaapi#class('IdScriptableObject', '', [
   \ javaapi#method(0,'defineOwnProperty(', 'Context, Object, ScriptableObject)', 'void'),
   \ ])
 
-call javaapi#class('ImporterTopLevel', '', [
+call javaapi#class('ImporterTopLevel', 'IdScriptableObject', [
   \ javaapi#method(0,'ImporterTopLevel(', ')', 'public'),
   \ javaapi#method(0,'ImporterTopLevel(', 'Context)', 'public'),
   \ javaapi#method(0,'ImporterTopLevel(', 'Context, boolean)', 'public'),
@@ -516,7 +516,7 @@ call javaapi#class('InterfaceAdapter', '', [
   \ javaapi#method(0,'invoke(', 'ContextFactory, Object, Scriptable, Method, Object[])', 'Object'),
   \ ])
 
-call javaapi#class('InterpretedFunction', '', [
+call javaapi#class('InterpretedFunction', 'NativeFunction', [
   \ javaapi#method(0,'getFunctionName(', ')', 'String'),
   \ javaapi#method(0,'call(', 'Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ javaapi#method(0,'exec(', 'Context, Scriptable)', 'Object'),
@@ -538,7 +538,7 @@ call javaapi#class('ContinuationJump', 'Serializable', [
 call javaapi#class('GeneratorState', '', [
   \ ])
 
-call javaapi#class('Interpreter', '', [
+call javaapi#class('Interpreter', 'Icode', [
   \ javaapi#method(0,'Interpreter(', ')', 'public'),
   \ javaapi#method(0,'compile(', 'CompilerEnvirons, ScriptNode, String, boolean)', 'Object'),
   \ javaapi#method(0,'createScriptObject(', 'Object, Object)', 'Script'),
@@ -606,7 +606,7 @@ call javaapi#class('MethodSignature', '', [
 call javaapi#class('JavaMembers', '', [
   \ ])
 
-call javaapi#class('JavaScriptException', '', [
+call javaapi#class('JavaScriptException', 'RhinoException', [
   \ javaapi#method(0,'JavaScriptException(', 'Object)', 'public'),
   \ javaapi#method(0,'JavaScriptException(', 'Object, String, int)', 'public'),
   \ javaapi#method(0,'details(', ')', 'String'),
@@ -668,7 +668,7 @@ call javaapi#class('3', 'ListIterator', [
   \ javaapi#method(0,'set(', 'Object)', 'void'),
   \ ])
 
-call javaapi#class('NativeArray', '', [
+call javaapi#class('NativeArray', 'IdScriptableObject', [
   \ javaapi#method(0,'NativeArray(', 'long)', 'public'),
   \ javaapi#method(0,'NativeArray(', 'Object[])', 'public'),
   \ javaapi#method(0,'getClassName(', ')', 'String'),
@@ -710,18 +710,18 @@ call javaapi#class('NativeArray', '', [
   \ javaapi#method(0,'subList(', 'int, int)', 'List'),
   \ ])
 
-call javaapi#class('NativeBoolean', '', [
+call javaapi#class('NativeBoolean', 'IdScriptableObject', [
   \ javaapi#method(0,'getClassName(', ')', 'String'),
   \ javaapi#method(0,'getDefaultValue(', 'Class<?>)', 'Object'),
   \ javaapi#method(0,'execIdCall(', 'IdFunctionObject, Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ ])
 
-call javaapi#class('NativeCall', '', [
+call javaapi#class('NativeCall', 'IdScriptableObject', [
   \ javaapi#method(0,'getClassName(', ')', 'String'),
   \ javaapi#method(0,'execIdCall(', 'IdFunctionObject, Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ ])
 
-call javaapi#class('NativeContinuation', '', [
+call javaapi#class('NativeContinuation', 'IdScriptableObject', [
   \ javaapi#method(0,'NativeContinuation(', ')', 'public'),
   \ javaapi#method(1,'init(', 'Context, Scriptable, boolean)', 'void'),
   \ javaapi#method(0,'getImplementation(', ')', 'Object'),
@@ -733,13 +733,13 @@ call javaapi#class('NativeContinuation', '', [
   \ javaapi#method(0,'execIdCall(', 'IdFunctionObject, Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ ])
 
-call javaapi#class('NativeDate', '', [
+call javaapi#class('NativeDate', 'IdScriptableObject', [
   \ javaapi#method(0,'getClassName(', ')', 'String'),
   \ javaapi#method(0,'getDefaultValue(', 'Class<?>)', 'Object'),
   \ javaapi#method(0,'execIdCall(', 'IdFunctionObject, Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ ])
 
-call javaapi#class('NativeError', '', [
+call javaapi#class('NativeError', 'IdScriptableObject', [
   \ javaapi#method(0,'getClassName(', ')', 'String'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'execIdCall(', 'IdFunctionObject, Context, Scriptable, Scriptable, Object[])', 'Object'),
@@ -748,7 +748,7 @@ call javaapi#class('NativeError', '', [
   \ javaapi#method(0,'setStack(', 'Object)', 'void'),
   \ ])
 
-call javaapi#class('NativeFunction', '', [
+call javaapi#class('NativeFunction', 'BaseFunction', [
   \ javaapi#method(0,'NativeFunction(', ')', 'public'),
   \ javaapi#method(0,'initScriptFunction(', 'Context, Scriptable)', 'void'),
   \ javaapi#method(0,'getLength(', ')', 'int'),
@@ -767,11 +767,11 @@ call javaapi#class('CloseGeneratorAction', 'ContextAction', [
   \ javaapi#method(0,'run(', 'Context)', 'Object'),
   \ ])
 
-call javaapi#class('GeneratorClosedException', '', [
+call javaapi#class('GeneratorClosedException', 'RuntimeException', [
   \ javaapi#method(0,'GeneratorClosedException(', ')', 'public'),
   \ ])
 
-call javaapi#class('NativeGenerator', '', [
+call javaapi#class('NativeGenerator', 'IdScriptableObject', [
   \ javaapi#field(1,'GENERATOR_SEND', 'int'),
   \ javaapi#field(1,'GENERATOR_THROW', 'int'),
   \ javaapi#field(1,'GENERATOR_CLOSE', 'int'),
@@ -788,7 +788,7 @@ call javaapi#class('NativeGlobal', 'IdFunctionCall', [
   \ javaapi#method(1,'constructError(', 'Context, String, String, Scriptable, String, int, int, String)', 'EcmaError'),
   \ ])
 
-call javaapi#class('StopIteration', '', [
+call javaapi#class('StopIteration', 'NativeObject', [
   \ javaapi#method(0,'getClassName(', ')', 'String'),
   \ javaapi#method(0,'hasInstance(', 'Scriptable)', 'boolean'),
   \ ])
@@ -798,7 +798,7 @@ call javaapi#class('WrappedJavaIterator', '', [
   \ javaapi#method(0,'__iterator__(', 'boolean)', 'Object'),
   \ ])
 
-call javaapi#class('NativeIterator', '', [
+call javaapi#class('NativeIterator', 'IdScriptableObject', [
   \ javaapi#field(1,'ITERATOR_PROPERTY_NAME', 'String'),
   \ javaapi#method(1,'getStopIterationObject(', 'Scriptable)', 'Object'),
   \ javaapi#method(0,'getClassName(', ')', 'String'),
@@ -808,14 +808,14 @@ call javaapi#class('NativeIterator', '', [
 call javaapi#class('StringifyState', '', [
   \ ])
 
-call javaapi#class('NativeJSON', '', [
+call javaapi#class('NativeJSON', 'IdScriptableObject', [
   \ javaapi#method(0,'getClassName(', ')', 'String'),
   \ javaapi#method(0,'execIdCall(', 'IdFunctionObject, Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ javaapi#method(1,'parse(', 'Context, Scriptable, String, Callable)', 'Object'),
   \ javaapi#method(1,'stringify(', 'Context, Scriptable, Object, Object, Object)', 'Object'),
   \ ])
 
-call javaapi#class('NativeJavaArray', '', [
+call javaapi#class('NativeJavaArray', 'NativeJavaObject', [
   \ javaapi#method(0,'getClassName(', ')', 'String'),
   \ javaapi#method(1,'wrap(', 'Scriptable, Object)', 'NativeJavaArray'),
   \ javaapi#method(0,'unwrap(', ')', 'Object'),
@@ -832,7 +832,7 @@ call javaapi#class('NativeJavaArray', '', [
   \ javaapi#method(0,'getPrototype(', ')', 'Scriptable'),
   \ ])
 
-call javaapi#class('NativeJavaClass', '', [
+call javaapi#class('NativeJavaClass', 'NativeJavaObject', [
   \ javaapi#method(0,'NativeJavaClass(', ')', 'public'),
   \ javaapi#method(0,'NativeJavaClass(', 'Scriptable, Class<?>)', 'public'),
   \ javaapi#method(0,'getClassName(', ')', 'String'),
@@ -848,14 +848,14 @@ call javaapi#class('NativeJavaClass', '', [
   \ javaapi#method(0,'hasInstance(', 'Scriptable)', 'boolean'),
   \ ])
 
-call javaapi#class('NativeJavaConstructor', '', [
+call javaapi#class('NativeJavaConstructor', 'BaseFunction', [
   \ javaapi#method(0,'NativeJavaConstructor(', 'MemberBox)', 'public'),
   \ javaapi#method(0,'call(', 'Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ javaapi#method(0,'getFunctionName(', ')', 'String'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('NativeJavaMethod', '', [
+call javaapi#class('NativeJavaMethod', 'BaseFunction', [
   \ javaapi#method(0,'NativeJavaMethod(', 'Method, String)', 'public'),
   \ javaapi#method(0,'getFunctionName(', ')', 'String'),
   \ javaapi#method(0,'toString(', ')', 'String'),
@@ -888,7 +888,7 @@ call javaapi#class('NativeJavaObject', 'Serializable', [
   \ javaapi#method(1,'coerceType(', 'Class<?>, Object)', 'Object'),
   \ ])
 
-call javaapi#class('NativeJavaPackage', '', [
+call javaapi#class('NativeJavaPackage', 'ScriptableObject', [
   \ javaapi#method(0,'NativeJavaPackage(', 'String, ClassLoader)', 'public'),
   \ javaapi#method(0,'NativeJavaPackage(', 'String)', 'public'),
   \ javaapi#method(0,'getClassName(', ')', 'String'),
@@ -904,19 +904,19 @@ call javaapi#class('NativeJavaPackage', '', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('NativeJavaTopPackage', '', [
+call javaapi#class('NativeJavaTopPackage', 'NativeJavaPackage', [
   \ javaapi#method(0,'call(', 'Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ javaapi#method(0,'construct(', 'Context, Scriptable, Object[])', 'Scriptable'),
   \ javaapi#method(1,'init(', 'Context, Scriptable, boolean)', 'void'),
   \ javaapi#method(0,'execIdCall(', 'IdFunctionObject, Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ ])
 
-call javaapi#class('NativeMath', '', [
+call javaapi#class('NativeMath', 'IdScriptableObject', [
   \ javaapi#method(0,'getClassName(', ')', 'String'),
   \ javaapi#method(0,'execIdCall(', 'IdFunctionObject, Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ ])
 
-call javaapi#class('NativeNumber', '', [
+call javaapi#class('NativeNumber', 'IdScriptableObject', [
   \ javaapi#method(0,'getClassName(', ')', 'String'),
   \ javaapi#method(0,'execIdCall(', 'IdFunctionObject, Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ javaapi#method(0,'toString(', ')', 'String'),
@@ -938,7 +938,7 @@ call javaapi#class('1', 'Object>>', [
   \ javaapi#method(0,'next(', ')', 'Object'),
   \ ])
 
-call javaapi#class('EntrySet', '', [
+call javaapi#class('EntrySet', 'Object>>', [
   \ javaapi#method(0,'iterator(', ')', 'Object>>'),
   \ javaapi#method(0,'size(', ')', 'int'),
   \ ])
@@ -949,7 +949,7 @@ call javaapi#class('1', 'Object>', [
   \ javaapi#method(0,'remove(', ')', 'void'),
   \ ])
 
-call javaapi#class('KeySet', '', [
+call javaapi#class('KeySet', 'Object>', [
   \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
   \ javaapi#method(0,'iterator(', ')', 'Object>'),
   \ javaapi#method(0,'size(', ')', 'int'),
@@ -961,12 +961,12 @@ call javaapi#class('1', 'Object>', [
   \ javaapi#method(0,'remove(', ')', 'void'),
   \ ])
 
-call javaapi#class('ValueCollection', '', [
+call javaapi#class('ValueCollection', 'Object>', [
   \ javaapi#method(0,'iterator(', ')', 'Object>'),
   \ javaapi#method(0,'size(', ')', 'int'),
   \ ])
 
-call javaapi#class('NativeObject', '', [
+call javaapi#class('NativeObject', 'IdScriptableObject', [
   \ javaapi#method(0,'NativeObject(', ')', 'public'),
   \ javaapi#method(0,'getClassName(', ')', 'String'),
   \ javaapi#method(0,'toString(', ')', 'String'),
@@ -982,7 +982,7 @@ call javaapi#class('NativeObject', '', [
   \ javaapi#method(0,'clear(', ')', 'void'),
   \ ])
 
-call javaapi#class('NativeScript', '', [
+call javaapi#class('NativeScript', 'BaseFunction', [
   \ javaapi#method(0,'getClassName(', ')', 'String'),
   \ javaapi#method(0,'call(', 'Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ javaapi#method(0,'construct(', 'Context, Scriptable, Object[])', 'Scriptable'),
@@ -991,7 +991,7 @@ call javaapi#class('NativeScript', '', [
   \ javaapi#method(0,'execIdCall(', 'IdFunctionObject, Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ ])
 
-call javaapi#class('NativeString', '', [
+call javaapi#class('NativeString', 'IdScriptableObject', [
   \ javaapi#method(0,'getClassName(', ')', 'String'),
   \ javaapi#method(0,'execIdCall(', 'IdFunctionObject, Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ javaapi#method(0,'toString(', ')', 'String'),
@@ -1192,7 +1192,7 @@ call javaapi#class('1', '', [
 call javaapi#class('ConditionData', '', [
   \ ])
 
-call javaapi#class('ParserException', '', [
+call javaapi#class('ParserException', 'RuntimeException', [
   \ ])
 
 call javaapi#class('PerFunctionVariables', '', [
@@ -1220,7 +1220,7 @@ call javaapi#class('3', 'Object>', [
   \ javaapi#method(0,'run(', ') throws Exception', 'Object'),
   \ ])
 
-call javaapi#class('Loader', '', [
+call javaapi#class('Loader', 'SecureClassLoader', [
   \ javaapi#method(0,'defineClass(', 'String, byte[])', 'Class<?>'),
   \ javaapi#method(0,'linkClass(', 'Class<?>)', 'void'),
   \ ])
@@ -1230,7 +1230,7 @@ call javaapi#class('SecureCaller', '', [
   \ javaapi#method(0,'call(', 'Callable, Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ ])
 
-call javaapi#class('PolicySecurityController', '', [
+call javaapi#class('PolicySecurityController', 'SecurityController', [
   \ javaapi#method(0,'PolicySecurityController(', ')', 'public'),
   \ javaapi#method(0,'getStaticSecurityDomainClassInternal(', ')', 'Class<?>'),
   \ javaapi#method(0,'createClassLoader(', 'ClassLoader, Object)', 'GeneratedClassLoader'),
@@ -1246,7 +1246,7 @@ call javaapi#class('Ref', 'Serializable', [
   \ javaapi#method(0,'delete(', 'Context)', 'boolean'),
   \ ])
 
-call javaapi#interface('RefCallable', '', [
+call javaapi#interface('RefCallable', 'Callable', [
   \ javaapi#method(0,'refCall(', 'Context, Scriptable, Object[])', 'Ref'),
   \ ])
 
@@ -1262,7 +1262,7 @@ call javaapi#interface('RegExpProxy', '', [
   \ javaapi#method(0,'js_split(', 'Context, Scriptable, String, Object[])', 'Object'),
   \ ])
 
-call javaapi#class('RhinoException', '', [
+call javaapi#class('RhinoException', 'RuntimeException', [
   \ javaapi#method(0,'getMessage(', ')', 'String'),
   \ javaapi#method(0,'details(', ')', 'String'),
   \ javaapi#method(0,'sourceName(', ')', 'String'),
@@ -1282,7 +1282,7 @@ call javaapi#class('RhinoException', '', [
   \ javaapi#method(1,'useMozillaStackStyle(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('RhinoSecurityManager', '', [
+call javaapi#class('RhinoSecurityManager', 'SecurityManager', [
   \ javaapi#method(0,'RhinoSecurityManager(', ')', 'public'),
   \ ])
 
@@ -1290,7 +1290,7 @@ call javaapi#interface('Script', '', [
   \ javaapi#method(0,'exec(', 'Context, Scriptable)', 'Object'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'BaseFunction', [
   \ javaapi#method(0,'call(', 'Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ javaapi#method(0,'getLength(', ')', 'int'),
   \ ])
@@ -1542,7 +1542,7 @@ call javaapi#interface('Scriptable', '', [
   \ javaapi#method(0,'hasInstance(', 'Scriptable)', 'boolean'),
   \ ])
 
-call javaapi#class('GetterSlot', '', [
+call javaapi#class('GetterSlot', 'Slot', [
   \ ])
 
 call javaapi#class('Slot', 'Serializable', [
@@ -1645,7 +1645,7 @@ call javaapi#class('3', 'Object>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('SecureClassLoaderImpl', '', [
+call javaapi#class('SecureClassLoaderImpl', 'SecureClassLoader', [
   \ ])
 
 call javaapi#class('SecureCaller', '', [
@@ -1692,20 +1692,20 @@ call javaapi#class('SecurityUtilities', '', [
   \ javaapi#method(1,'getScriptProtectionDomain(', ')', 'ProtectionDomain'),
   \ ])
 
-call javaapi#class('SpecialRef', '', [
+call javaapi#class('SpecialRef', 'Ref', [
   \ javaapi#method(0,'get(', 'Context)', 'Object'),
   \ javaapi#method(0,'set(', 'Context, Object)', 'Object'),
   \ javaapi#method(0,'has(', 'Context)', 'boolean'),
   \ javaapi#method(0,'delete(', 'Context)', 'boolean'),
   \ ])
 
-call javaapi#class('Synchronizer', '', [
+call javaapi#class('Synchronizer', 'Delegator', [
   \ javaapi#method(0,'Synchronizer(', 'Scriptable)', 'public'),
   \ javaapi#method(0,'Synchronizer(', 'Scriptable, Object)', 'public'),
   \ javaapi#method(0,'call(', 'Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ ])
 
-call javaapi#class('CommentType', '', [
+call javaapi#class('CommentType', 'CommentType>', [
   \ javaapi#field(1,'LINE', 'CommentType'),
   \ javaapi#field(1,'BLOCK_COMMENT', 'CommentType'),
   \ javaapi#field(1,'JSDOC', 'CommentType'),
@@ -1941,7 +1941,7 @@ call javaapi#class('WrapFactory', '', [
   \ javaapi#method(0,'setJavaPrimitiveWrap(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('WrappedException', '', [
+call javaapi#class('WrappedException', 'EvaluatorException', [
   \ javaapi#method(0,'WrappedException(', 'Throwable)', 'public'),
   \ javaapi#method(0,'getWrappedException(', ')', 'Throwable'),
   \ javaapi#method(0,'unwrap(', ')', 'Object'),

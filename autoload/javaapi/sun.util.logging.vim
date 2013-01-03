@@ -50,7 +50,7 @@ call javaapi#class('1', 'Boolean>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('JavaLogger', '', [
+call javaapi#class('JavaLogger', 'LoggerProxy', [
   \ javaapi#method(0,'isLoggable(', 'int)', 'boolean'),
   \ ])
 

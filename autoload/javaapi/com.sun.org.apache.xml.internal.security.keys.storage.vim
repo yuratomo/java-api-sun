@@ -20,7 +20,7 @@ call javaapi#class('StorageResolver', '', [
   \ javaapi#method(0,'next(', ')', 'X509Certificate'),
   \ ])
 
-call javaapi#class('StorageResolverException', '', [
+call javaapi#class('StorageResolverException', 'XMLSecurityException', [
   \ javaapi#method(0,'StorageResolverException(', ')', 'public'),
   \ javaapi#method(0,'StorageResolverException(', 'String)', 'public'),
   \ javaapi#method(0,'StorageResolverException(', 'String, Object[])', 'public'),

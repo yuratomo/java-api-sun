@@ -1,32 +1,32 @@
 call javaapi#namespace('com.sun.beans.decoder')
 
-call javaapi#class('AccessorElementHandler', '', [
+call javaapi#class('AccessorElementHandler', 'ElementHandler', [
   \ javaapi#method(0,'addAttribute(', 'String, String)', 'void'),
   \ ])
 
-call javaapi#class('ArrayElementHandler', '', [
+call javaapi#class('ArrayElementHandler', 'NewElementHandler', [
   \ javaapi#method(0,'addAttribute(', 'String, String)', 'void'),
   \ javaapi#method(0,'startElement(', ')', 'void'),
   \ ])
 
-call javaapi#class('BooleanElementHandler', '', [
+call javaapi#class('BooleanElementHandler', 'StringElementHandler', [
   \ javaapi#method(0,'getValue(', 'String)', 'Object'),
   \ ])
 
-call javaapi#class('ByteElementHandler', '', [
+call javaapi#class('ByteElementHandler', 'StringElementHandler', [
   \ javaapi#method(0,'getValue(', 'String)', 'Object'),
   \ ])
 
-call javaapi#class('CharElementHandler', '', [
+call javaapi#class('CharElementHandler', 'StringElementHandler', [
   \ javaapi#method(0,'addAttribute(', 'String, String)', 'void'),
   \ javaapi#method(0,'getValue(', 'String)', 'Object'),
   \ ])
 
-call javaapi#class('ClassElementHandler', '', [
+call javaapi#class('ClassElementHandler', 'StringElementHandler', [
   \ javaapi#method(0,'getValue(', 'String)', 'Object'),
   \ ])
 
-call javaapi#class('DocumentHandler', '', [
+call javaapi#class('DocumentHandler', 'DefaultHandler', [
   \ javaapi#method(0,'DocumentHandler(', ')', 'public'),
   \ javaapi#method(0,'getClassLoader(', ')', 'ClassLoader'),
   \ javaapi#method(0,'setClassLoader(', 'ClassLoader)', 'void'),
@@ -49,7 +49,7 @@ call javaapi#class('DocumentHandler', '', [
   \ javaapi#method(0,'findClass(', 'String)', 'Class<?>'),
   \ ])
 
-call javaapi#class('DoubleElementHandler', '', [
+call javaapi#class('DoubleElementHandler', 'StringElementHandler', [
   \ javaapi#method(0,'getValue(', 'String)', 'Object'),
   \ ])
 
@@ -63,62 +63,62 @@ call javaapi#class('ElementHandler', '', [
   \ javaapi#method(0,'addCharacter(', 'char)', 'void'),
   \ ])
 
-call javaapi#class('FalseElementHandler', '', [
+call javaapi#class('FalseElementHandler', 'NullElementHandler', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ ])
 
-call javaapi#class('FieldElementHandler', '', [
+call javaapi#class('FieldElementHandler', 'AccessorElementHandler', [
   \ javaapi#method(0,'addAttribute(', 'String, String)', 'void'),
   \ ])
 
-call javaapi#class('FloatElementHandler', '', [
+call javaapi#class('FloatElementHandler', 'StringElementHandler', [
   \ javaapi#method(0,'getValue(', 'String)', 'Object'),
   \ ])
 
-call javaapi#class('IntElementHandler', '', [
+call javaapi#class('IntElementHandler', 'StringElementHandler', [
   \ javaapi#method(0,'getValue(', 'String)', 'Object'),
   \ ])
 
-call javaapi#class('JavaElementHandler', '', [
+call javaapi#class('JavaElementHandler', 'ElementHandler', [
   \ javaapi#method(0,'addAttribute(', 'String, String)', 'void'),
   \ ])
 
-call javaapi#class('LongElementHandler', '', [
+call javaapi#class('LongElementHandler', 'StringElementHandler', [
   \ javaapi#method(0,'getValue(', 'String)', 'Object'),
   \ ])
 
-call javaapi#class('MethodElementHandler', '', [
+call javaapi#class('MethodElementHandler', 'NewElementHandler', [
   \ javaapi#method(0,'addAttribute(', 'String, String)', 'void'),
   \ ])
 
-call javaapi#class('NewElementHandler', '', [
+call javaapi#class('NewElementHandler', 'ElementHandler', [
   \ javaapi#method(0,'addAttribute(', 'String, String)', 'void'),
   \ ])
 
-call javaapi#class('NullElementHandler', '', [
+call javaapi#class('NullElementHandler', 'ElementHandler', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ javaapi#method(0,'isVoid(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('ObjectElementHandler', '', [
+call javaapi#class('ObjectElementHandler', 'NewElementHandler', [
   \ javaapi#method(0,'addAttribute(', 'String, String)', 'void'),
   \ javaapi#method(0,'startElement(', ')', 'void'),
   \ ])
 
-call javaapi#class('PropertyElementHandler', '', [
+call javaapi#class('PropertyElementHandler', 'AccessorElementHandler', [
   \ javaapi#method(0,'addAttribute(', 'String, String)', 'void'),
   \ ])
 
-call javaapi#class('ShortElementHandler', '', [
+call javaapi#class('ShortElementHandler', 'StringElementHandler', [
   \ javaapi#method(0,'getValue(', 'String)', 'Object'),
   \ ])
 
-call javaapi#class('StringElementHandler', '', [
+call javaapi#class('StringElementHandler', 'ElementHandler', [
   \ javaapi#method(0,'StringElementHandler(', ')', 'public'),
   \ javaapi#method(0,'addCharacter(', 'char)', 'void'),
   \ ])
 
-call javaapi#class('TrueElementHandler', '', [
+call javaapi#class('TrueElementHandler', 'NullElementHandler', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ ])
 
@@ -132,10 +132,10 @@ call javaapi#class('ValueObjectImpl', 'ValueObject', [
   \ javaapi#method(0,'isVoid(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('VarElementHandler', '', [
+call javaapi#class('VarElementHandler', 'ElementHandler', [
   \ javaapi#method(0,'addAttribute(', 'String, String)', 'void'),
   \ ])
 
-call javaapi#class('VoidElementHandler', '', [
+call javaapi#class('VoidElementHandler', 'ObjectElementHandler', [
   \ ])
 

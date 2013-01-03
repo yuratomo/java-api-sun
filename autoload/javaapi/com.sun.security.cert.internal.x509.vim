@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.security.cert.internal.x509')
 
-call javaapi#class('X509V1CertImpl', '', [
+call javaapi#class('X509V1CertImpl', 'X509Certificate', [
   \ javaapi#method(0,'X509V1CertImpl(', ')', 'public'),
   \ javaapi#method(0,'X509V1CertImpl(', 'byte[]) throws CertificateException', 'public'),
   \ javaapi#method(0,'X509V1CertImpl(', 'InputStream) throws CertificateException', 'public'),

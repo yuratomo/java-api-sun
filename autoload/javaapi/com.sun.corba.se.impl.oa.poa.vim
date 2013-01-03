@@ -1,40 +1,40 @@
 call javaapi#namespace('com.sun.corba.se.impl.oa.poa')
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'StateImpl', [
   \ javaapi#method(0,'postAction(', 'FSM)', 'void'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'StateImpl', [
   \ javaapi#method(0,'preAction(', 'FSM)', 'void'),
   \ javaapi#method(0,'postAction(', 'FSM)', 'void'),
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'ActionBase', [
   \ javaapi#method(0,'doIt(', 'FSM, Input)', 'void'),
   \ ])
 
-call javaapi#class('4', '', [
+call javaapi#class('4', 'ActionBase', [
   \ javaapi#method(0,'doIt(', 'FSM, Input)', 'void'),
   \ ])
 
-call javaapi#class('5', '', [
+call javaapi#class('5', 'ActionBase', [
   \ javaapi#method(0,'doIt(', 'FSM, Input)', 'void'),
   \ ])
 
-call javaapi#class('6', '', [
+call javaapi#class('6', 'ActionBase', [
   \ javaapi#method(0,'doIt(', 'FSM, Input)', 'void'),
   \ ])
 
-call javaapi#class('7', '', [
+call javaapi#class('7', 'GuardBase', [
   \ javaapi#method(0,'evaluate(', 'FSM, Input)', 'Result'),
   \ ])
 
-call javaapi#class('CounterGuard', '', [
+call javaapi#class('CounterGuard', 'GuardBase', [
   \ javaapi#method(0,'CounterGuard(', 'int)', 'public'),
   \ javaapi#method(0,'evaluate(', 'FSM, Input)', 'Result'),
   \ ])
 
-call javaapi#class('AOMEntry', '', [
+call javaapi#class('AOMEntry', 'FSMImpl', [
   \ javaapi#field(1,'INVALID', 'State'),
   \ javaapi#field(1,'INCARN', 'State'),
   \ javaapi#field(1,'VALID', 'State'),
@@ -88,7 +88,7 @@ call javaapi#class('DelegateImpl', 'Delegate', [
   \ javaapi#method(0,'get_interface_def(', 'Servant)', 'Object'),
   \ ])
 
-call javaapi#class('IdAssignmentPolicyImpl', '', [
+call javaapi#class('IdAssignmentPolicyImpl', 'LocalObject', [
   \ javaapi#method(0,'IdAssignmentPolicyImpl(', 'IdAssignmentPolicyValue)', 'public'),
   \ javaapi#method(0,'value(', ')', 'IdAssignmentPolicyValue'),
   \ javaapi#method(0,'policy_type(', ')', 'int'),
@@ -97,7 +97,7 @@ call javaapi#class('IdAssignmentPolicyImpl', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('IdUniquenessPolicyImpl', '', [
+call javaapi#class('IdUniquenessPolicyImpl', 'LocalObject', [
   \ javaapi#method(0,'IdUniquenessPolicyImpl(', 'IdUniquenessPolicyValue)', 'public'),
   \ javaapi#method(0,'value(', ')', 'IdUniquenessPolicyValue'),
   \ javaapi#method(0,'policy_type(', ')', 'int'),
@@ -106,7 +106,7 @@ call javaapi#class('IdUniquenessPolicyImpl', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ImplicitActivationPolicyImpl', '', [
+call javaapi#class('ImplicitActivationPolicyImpl', 'LocalObject', [
   \ javaapi#method(0,'ImplicitActivationPolicyImpl(', 'ImplicitActivationPolicyValue)', 'public'),
   \ javaapi#method(0,'value(', ')', 'ImplicitActivationPolicyValue'),
   \ javaapi#method(0,'policy_type(', ')', 'int'),
@@ -115,7 +115,7 @@ call javaapi#class('ImplicitActivationPolicyImpl', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('LifespanPolicyImpl', '', [
+call javaapi#class('LifespanPolicyImpl', 'LocalObject', [
   \ javaapi#method(0,'LifespanPolicyImpl(', 'LifespanPolicyValue)', 'public'),
   \ javaapi#method(0,'value(', ')', 'LifespanPolicyValue'),
   \ javaapi#method(0,'policy_type(', ')', 'int'),
@@ -124,14 +124,14 @@ call javaapi#class('LifespanPolicyImpl', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('MultipleObjectMap', '', [
+call javaapi#class('MultipleObjectMap', 'ActiveObjectMap', [
   \ javaapi#method(0,'MultipleObjectMap(', 'POAImpl)', 'public'),
   \ javaapi#method(0,'getKey(', 'AOMEntry) throws WrongPolicy', 'Key'),
   \ javaapi#method(0,'hasMultipleIDs(', 'AOMEntry)', 'boolean'),
   \ javaapi#method(0,'clear(', ')', 'void'),
   \ ])
 
-call javaapi#class('POACurrent', '', [
+call javaapi#class('POACurrent', 'ObjectImpl', [
   \ javaapi#method(0,'POACurrent(', 'ORB)', 'public'),
   \ javaapi#method(0,'_ids(', ')', 'String[]'),
   \ javaapi#method(0,'get_POA(', ') throws NoContext', 'POA'),
@@ -164,17 +164,17 @@ call javaapi#class('POAFactory', 'ObjectAdapterFactory', [
   \ javaapi#method(0,'getORB(', ')', 'ORB'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ThreadLocal', [
   \ ])
 
-call javaapi#class('DestroyThread', '', [
+call javaapi#class('DestroyThread', 'Thread', [
   \ javaapi#method(0,'DestroyThread(', 'boolean, boolean)', 'public'),
   \ javaapi#method(0,'doIt(', 'POAImpl, boolean)', 'void'),
   \ javaapi#method(0,'run(', ')', 'void'),
   \ javaapi#method(0,'performDestroy(', 'POAImpl, Set)', 'void'),
   \ ])
 
-call javaapi#class('POAImpl', '', [
+call javaapi#class('POAImpl', 'ObjectAdapterBase', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'create_POA(', 'String, POAManager, Policy[]) throws AdapterAlreadyExists, InvalidPolicy', 'POA'),
   \ javaapi#method(0,'find_POA(', 'String, boolean) throws AdapterNonExistent', 'POA'),
@@ -223,7 +223,7 @@ call javaapi#class('POAManagerDeactivator', 'Runnable', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('POAManagerImpl', '', [
+call javaapi#class('POAManagerImpl', 'LocalObject', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'getManagerId(', ')', 'int'),
   \ javaapi#method(0,'getORTState(', ')', 'short'),
@@ -262,7 +262,7 @@ call javaapi#class('POAPolicyMediatorBase', 'POAPolicyMediator', [
   \ javaapi#method(0,'newSystemId(', ') throws WrongPolicy', 'byte[]'),
   \ ])
 
-call javaapi#class('POAPolicyMediatorBase_R', '', [
+call javaapi#class('POAPolicyMediatorBase_R', 'POAPolicyMediatorBase', [
   \ javaapi#method(0,'returnServant(', ')', 'void'),
   \ javaapi#method(0,'clearAOM(', ')', 'void'),
   \ javaapi#method(0,'activateObject(', 'byte[], Servant) throws WrongPolicy, ServantAlreadyActive, ObjectAlreadyActive', 'void'),
@@ -274,7 +274,7 @@ call javaapi#class('POAPolicyMediatorBase_R', '', [
 call javaapi#class('POAPolicyMediatorFactory', '', [
   \ ])
 
-call javaapi#class('POAPolicyMediatorImpl_NR_UDS', '', [
+call javaapi#class('POAPolicyMediatorImpl_NR_UDS', 'POAPolicyMediatorBase', [
   \ javaapi#method(0,'returnServant(', ')', 'void'),
   \ javaapi#method(0,'etherealizeAll(', ')', 'void'),
   \ javaapi#method(0,'clearAOM(', ')', 'void'),
@@ -288,7 +288,7 @@ call javaapi#class('POAPolicyMediatorImpl_NR_UDS', '', [
   \ javaapi#method(0,'idToServant(', 'byte[]) throws WrongPolicy, ObjectNotActive', 'Servant'),
   \ ])
 
-call javaapi#class('POAPolicyMediatorImpl_NR_USM', '', [
+call javaapi#class('POAPolicyMediatorImpl_NR_USM', 'POAPolicyMediatorBase', [
   \ javaapi#method(0,'returnServant(', ')', 'void'),
   \ javaapi#method(0,'etherealizeAll(', ')', 'void'),
   \ javaapi#method(0,'clearAOM(', ')', 'void'),
@@ -302,7 +302,7 @@ call javaapi#class('POAPolicyMediatorImpl_NR_USM', '', [
   \ javaapi#method(0,'idToServant(', 'byte[]) throws WrongPolicy, ObjectNotActive', 'Servant'),
   \ ])
 
-call javaapi#class('POAPolicyMediatorImpl_R_AOM', '', [
+call javaapi#class('POAPolicyMediatorImpl_R_AOM', 'POAPolicyMediatorBase_R', [
   \ javaapi#method(0,'etherealizeAll(', ')', 'void'),
   \ javaapi#method(0,'getServantManager(', ') throws WrongPolicy', 'ServantManager'),
   \ javaapi#method(0,'setServantManager(', 'ServantManager) throws WrongPolicy', 'void'),
@@ -311,7 +311,7 @@ call javaapi#class('POAPolicyMediatorImpl_R_AOM', '', [
   \ javaapi#method(0,'idToServant(', 'byte[]) throws WrongPolicy, ObjectNotActive', 'Servant'),
   \ ])
 
-call javaapi#class('POAPolicyMediatorImpl_R_UDS', '', [
+call javaapi#class('POAPolicyMediatorImpl_R_UDS', 'POAPolicyMediatorBase_R', [
   \ javaapi#method(0,'etherealizeAll(', ')', 'void'),
   \ javaapi#method(0,'getServantManager(', ') throws WrongPolicy', 'ServantManager'),
   \ javaapi#method(0,'setServantManager(', 'ServantManager) throws WrongPolicy', 'void'),
@@ -320,12 +320,12 @@ call javaapi#class('POAPolicyMediatorImpl_R_UDS', '', [
   \ javaapi#method(0,'idToServant(', 'byte[]) throws WrongPolicy, ObjectNotActive', 'Servant'),
   \ ])
 
-call javaapi#class('Etherealizer', '', [
+call javaapi#class('Etherealizer', 'Thread', [
   \ javaapi#method(0,'Etherealizer(', 'POAPolicyMediatorImpl_R_USM, POAPolicyMediatorImpl_R_USM, Key, AOMEntry, Servant, boolean)', 'public'),
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('POAPolicyMediatorImpl_R_USM', '', [
+call javaapi#class('POAPolicyMediatorImpl_R_USM', 'POAPolicyMediatorBase_R', [
   \ javaapi#method(0,'returnServant(', ')', 'void'),
   \ javaapi#method(0,'etherealizeAll(', ')', 'void'),
   \ javaapi#method(0,'getServantManager(', ') throws WrongPolicy', 'ServantManager'),
@@ -359,7 +359,7 @@ call javaapi#class('Policies', '', [
   \ javaapi#method(0,'getCopierId(', ')', 'int'),
   \ ])
 
-call javaapi#class('RequestProcessingPolicyImpl', '', [
+call javaapi#class('RequestProcessingPolicyImpl', 'LocalObject', [
   \ javaapi#method(0,'RequestProcessingPolicyImpl(', 'RequestProcessingPolicyValue)', 'public'),
   \ javaapi#method(0,'value(', ')', 'RequestProcessingPolicyValue'),
   \ javaapi#method(0,'policy_type(', ')', 'int'),
@@ -368,7 +368,7 @@ call javaapi#class('RequestProcessingPolicyImpl', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ServantRetentionPolicyImpl', '', [
+call javaapi#class('ServantRetentionPolicyImpl', 'LocalObject', [
   \ javaapi#method(0,'ServantRetentionPolicyImpl(', 'ServantRetentionPolicyValue)', 'public'),
   \ javaapi#method(0,'value(', ')', 'ServantRetentionPolicyValue'),
   \ javaapi#method(0,'policy_type(', ')', 'int'),
@@ -377,14 +377,14 @@ call javaapi#class('ServantRetentionPolicyImpl', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SingleObjectMap', '', [
+call javaapi#class('SingleObjectMap', 'ActiveObjectMap', [
   \ javaapi#method(0,'SingleObjectMap(', 'POAImpl)', 'public'),
   \ javaapi#method(0,'getKey(', 'AOMEntry) throws WrongPolicy', 'Key'),
   \ javaapi#method(0,'hasMultipleIDs(', 'AOMEntry)', 'boolean'),
   \ javaapi#method(0,'clear(', ')', 'void'),
   \ ])
 
-call javaapi#class('ThreadPolicyImpl', '', [
+call javaapi#class('ThreadPolicyImpl', 'LocalObject', [
   \ javaapi#method(0,'ThreadPolicyImpl(', 'ThreadPolicyValue)', 'public'),
   \ javaapi#method(0,'value(', ')', 'ThreadPolicyValue'),
   \ javaapi#method(0,'policy_type(', ')', 'int'),

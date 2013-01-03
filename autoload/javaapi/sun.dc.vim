@@ -16,7 +16,7 @@ call javaapi#class('FillAdapter', 'PathConsumer', [
   \ javaapi#method(0,'getCPathConsumer(', ')', 'long'),
   \ ])
 
-call javaapi#class('DuctusRenderingEngine', '', [
+call javaapi#class('DuctusRenderingEngine', 'RenderingEngine', [
   \ javaapi#method(0,'DuctusRenderingEngine(', ')', 'public'),
   \ javaapi#method(0,'createStrokedShape(', 'Shape, float, int, int, float, float[], float)', 'Shape'),
   \ javaapi#method(0,'strokeTo(', 'Shape, AffineTransform, BasicStroke, boolean, boolean, boolean, PathConsumer2D)', 'void'),

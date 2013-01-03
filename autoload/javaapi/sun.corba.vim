@@ -35,7 +35,7 @@ call javaapi#class('Bridge', '', [
   \ javaapi#method(0,'newConstructorForSerialization(', 'Class, Constructor)', 'Constructor'),
   \ ])
 
-call javaapi#class('BridgePermission', '', [
+call javaapi#class('BridgePermission', 'BasicPermission', [
   \ javaapi#method(0,'BridgePermission(', 'String)', 'public'),
   \ javaapi#method(0,'BridgePermission(', 'String, String)', 'public'),
   \ ])

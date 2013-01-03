@@ -1,15 +1,15 @@
 call javaapi#namespace('com.sun.corba.se.impl.corba')
 
-call javaapi#class('AnyInputStream', '', [
+call javaapi#class('AnyInputStream', 'EncapsInputStream', [
   \ javaapi#method(0,'AnyInputStream(', 'EncapsInputStream)', 'public'),
   \ ])
 
-call javaapi#class('AnyOutputStream', '', [
+call javaapi#class('AnyOutputStream', 'EncapsOutputStream', [
   \ javaapi#method(0,'AnyOutputStream(', 'ORB)', 'public'),
   \ javaapi#method(0,'create_input_stream(', ')', 'InputStream'),
   \ ])
 
-call javaapi#class('AnyImpl', '', [
+call javaapi#class('AnyImpl', 'Any', [
   \ javaapi#method(0,'AnyImpl(', 'ORB)', 'public'),
   \ javaapi#method(0,'AnyImpl(', 'ORB, Any)', 'public'),
   \ javaapi#method(0,'type(', ')', 'TypeCode'),
@@ -85,12 +85,12 @@ call javaapi#class('AsynchInvoke', 'Runnable', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('CORBAObjectImpl', '', [
+call javaapi#class('CORBAObjectImpl', 'ObjectImpl', [
   \ javaapi#method(0,'CORBAObjectImpl(', ')', 'public'),
   \ javaapi#method(0,'_ids(', ')', 'String[]'),
   \ ])
 
-call javaapi#class('ContextImpl', '', [
+call javaapi#class('ContextImpl', 'Context', [
   \ javaapi#method(0,'ContextImpl(', 'ORB)', 'public'),
   \ javaapi#method(0,'ContextImpl(', 'Context)', 'public'),
   \ javaapi#method(0,'context_name(', ')', 'String'),
@@ -102,7 +102,7 @@ call javaapi#class('ContextImpl', '', [
   \ javaapi#method(0,'get_values(', 'String, int, String)', 'NVList'),
   \ ])
 
-call javaapi#class('ContextListImpl', '', [
+call javaapi#class('ContextListImpl', 'ContextList', [
   \ javaapi#method(0,'ContextListImpl(', 'ORB)', 'public'),
   \ javaapi#method(0,'count(', ')', 'int'),
   \ javaapi#method(0,'add(', 'String)', 'void'),
@@ -110,14 +110,14 @@ call javaapi#class('ContextListImpl', '', [
   \ javaapi#method(0,'remove(', 'int) throws Bounds', 'void'),
   \ ])
 
-call javaapi#class('EnvironmentImpl', '', [
+call javaapi#class('EnvironmentImpl', 'Environment', [
   \ javaapi#method(0,'EnvironmentImpl(', ')', 'public'),
   \ javaapi#method(0,'exception(', ')', 'Exception'),
   \ javaapi#method(0,'exception(', 'Exception)', 'void'),
   \ javaapi#method(0,'clear(', ')', 'void'),
   \ ])
 
-call javaapi#class('ExceptionListImpl', '', [
+call javaapi#class('ExceptionListImpl', 'ExceptionList', [
   \ javaapi#method(0,'ExceptionListImpl(', ')', 'public'),
   \ javaapi#method(0,'count(', ')', 'int'),
   \ javaapi#method(0,'add(', 'TypeCode)', 'void'),
@@ -125,7 +125,7 @@ call javaapi#class('ExceptionListImpl', '', [
   \ javaapi#method(0,'remove(', 'int) throws Bounds', 'void'),
   \ ])
 
-call javaapi#class('NVListImpl', '', [
+call javaapi#class('NVListImpl', 'NVList', [
   \ javaapi#method(0,'NVListImpl(', 'ORB)', 'public'),
   \ javaapi#method(0,'NVListImpl(', 'ORB, int)', 'public'),
   \ javaapi#method(0,'count(', ')', 'int'),
@@ -136,7 +136,7 @@ call javaapi#class('NVListImpl', '', [
   \ javaapi#method(0,'remove(', 'int) throws Bounds', 'void'),
   \ ])
 
-call javaapi#class('NamedValueImpl', '', [
+call javaapi#class('NamedValueImpl', 'NamedValue', [
   \ javaapi#method(0,'NamedValueImpl(', 'ORB)', 'public'),
   \ javaapi#method(0,'NamedValueImpl(', 'ORB, String, Any, int)', 'public'),
   \ javaapi#method(0,'name(', ')', 'String'),
@@ -144,13 +144,13 @@ call javaapi#class('NamedValueImpl', '', [
   \ javaapi#method(0,'flags(', ')', 'int'),
   \ ])
 
-call javaapi#class('PrincipalImpl', '', [
+call javaapi#class('PrincipalImpl', 'Principal', [
   \ javaapi#method(0,'PrincipalImpl(', ')', 'public'),
   \ javaapi#method(0,'name(', 'byte[])', 'void'),
   \ javaapi#method(0,'name(', ')', 'byte[]'),
   \ ])
 
-call javaapi#class('RequestImpl', '', [
+call javaapi#class('RequestImpl', 'Request', [
   \ javaapi#method(0,'RequestImpl(', 'ORB, Object, Context, String, NVList, NamedValue, ExceptionList, ContextList)', 'public'),
   \ javaapi#method(0,'target(', ')', 'Object'),
   \ javaapi#method(0,'operation(', ')', 'String'),
@@ -178,7 +178,7 @@ call javaapi#class('RequestImpl', '', [
   \ javaapi#method(0,'unmarshalReply(', 'InputStream)', 'void'),
   \ ])
 
-call javaapi#class('ServerRequestImpl', '', [
+call javaapi#class('ServerRequestImpl', 'ServerRequest', [
   \ javaapi#method(0,'ServerRequestImpl(', 'CorbaMessageMediator, ORB)', 'public'),
   \ javaapi#method(0,'operation(', ')', 'String'),
   \ javaapi#method(0,'arguments(', 'NVList)', 'void'),
@@ -200,7 +200,7 @@ call javaapi#interface('TypeCodeFactory', '', [
   \ javaapi#method(0,'getTypeCodeForClass(', 'Class)', 'TypeCodeImpl'),
   \ ])
 
-call javaapi#class('TypeCodeImpl', '', [
+call javaapi#class('TypeCodeImpl', 'TypeCode', [
   \ javaapi#method(0,'TypeCodeImpl(', 'ORB)', 'public'),
   \ javaapi#method(0,'TypeCodeImpl(', 'ORB, TypeCode)', 'public'),
   \ javaapi#method(0,'TypeCodeImpl(', 'ORB, int)', 'public'),

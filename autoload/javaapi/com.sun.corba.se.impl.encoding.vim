@@ -64,7 +64,7 @@ call javaapi#class('BufferManagerWriteCollectIterator', 'Iterator', [
   \ javaapi#method(0,'remove(', ')', 'void'),
   \ ])
 
-call javaapi#class('BufferManagerWriteCollect', '', [
+call javaapi#class('BufferManagerWriteCollect', 'BufferManagerWrite', [
   \ javaapi#method(0,'sentFragment(', ')', 'boolean'),
   \ javaapi#method(0,'getBufferSize(', ')', 'int'),
   \ javaapi#method(0,'overflow(', 'ByteBufferWithInfo)', 'void'),
@@ -72,7 +72,7 @@ call javaapi#class('BufferManagerWriteCollect', '', [
   \ javaapi#method(0,'close(', ')', 'void'),
   \ ])
 
-call javaapi#class('BufferManagerWriteGrow', '', [
+call javaapi#class('BufferManagerWriteGrow', 'BufferManagerWrite', [
   \ javaapi#method(0,'sentFragment(', ')', 'boolean'),
   \ javaapi#method(0,'getBufferSize(', ')', 'int'),
   \ javaapi#method(0,'overflow(', 'ByteBufferWithInfo)', 'void'),
@@ -80,7 +80,7 @@ call javaapi#class('BufferManagerWriteGrow', '', [
   \ javaapi#method(0,'close(', ')', 'void'),
   \ ])
 
-call javaapi#class('BufferManagerWriteStream', '', [
+call javaapi#class('BufferManagerWriteStream', 'BufferManagerWrite', [
   \ javaapi#method(0,'sentFragment(', ')', 'boolean'),
   \ javaapi#method(0,'getBufferSize(', ')', 'int'),
   \ javaapi#method(0,'overflow(', 'ByteBufferWithInfo)', 'void'),
@@ -115,7 +115,7 @@ call javaapi#class('ByteBufferWithInfo', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('CDRInputObject', '', [
+call javaapi#class('CDRInputObject', 'CDRInputStream', [
   \ javaapi#method(0,'CDRInputObject(', 'ORB, CorbaConnection, ByteBuffer, Message)', 'public'),
   \ javaapi#method(0,'getConnection(', ')', 'CorbaConnection'),
   \ javaapi#method(0,'getMessageHeader(', ')', 'Message'),
@@ -129,7 +129,7 @@ call javaapi#class('InputStreamFactory', '', [
   \ javaapi#method(1,'newInputStream(', 'ORB, GIOPVersion, byte)', 'CDRInputStreamBase'),
   \ ])
 
-call javaapi#class('CDRInputStream', '', [
+call javaapi#class('CDRInputStream', 'InputStream', [
   \ javaapi#method(0,'CDRInputStream(', ')', 'public'),
   \ javaapi#method(0,'CDRInputStream(', 'CDRInputStream)', 'public'),
   \ javaapi#method(0,'CDRInputStream(', 'ORB, ByteBuffer, int, boolean, GIOPVersion, byte, BufferManagerRead)', 'public'),
@@ -219,7 +219,7 @@ call javaapi#class('CDRInputStream', '', [
   \ javaapi#method(0,'end_value(', ')', 'void'),
   \ ])
 
-call javaapi#class('CDRInputStreamBase', '', [
+call javaapi#class('CDRInputStreamBase', 'InputStream', [
   \ javaapi#method(0,'setParent(', 'CDRInputStream)', 'void'),
   \ javaapi#method(0,'init(', 'ORB, ByteBuffer, int, boolean, BufferManagerRead)', 'void'),
   \ javaapi#method(0,'read_boolean(', ')', 'boolean'),
@@ -311,7 +311,7 @@ call javaapi#class('StreamMemento', '', [
   \ javaapi#method(0,'StreamMemento(', 'CDRInputStream_1_0)', 'public'),
   \ ])
 
-call javaapi#class('CDRInputStream_1_0', '', [
+call javaapi#class('CDRInputStream_1_0', 'CDRInputStreamBase', [
   \ javaapi#method(0,'CDRInputStream_1_0(', ')', 'public'),
   \ javaapi#method(0,'dup(', ')', 'CDRInputStreamBase'),
   \ javaapi#method(0,'init(', 'ORB, ByteBuffer, int, boolean, BufferManagerRead)', 'void'),
@@ -405,11 +405,11 @@ call javaapi#class('CDRInputStream_1_0', '', [
   \ javaapi#method(0,'setParent(', 'CDRInputStream)', 'void'),
   \ ])
 
-call javaapi#class('FragmentableStreamMemento', '', [
+call javaapi#class('FragmentableStreamMemento', 'StreamMemento', [
   \ javaapi#method(0,'FragmentableStreamMemento(', 'CDRInputStream_1_1)', 'public'),
   \ ])
 
-call javaapi#class('CDRInputStream_1_1', '', [
+call javaapi#class('CDRInputStream_1_1', 'CDRInputStream_1_0', [
   \ javaapi#method(0,'CDRInputStream_1_1(', ')', 'public'),
   \ javaapi#method(0,'getGIOPVersion(', ')', 'GIOPVersion'),
   \ javaapi#method(0,'dup(', ')', 'CDRInputStreamBase'),
@@ -419,7 +419,7 @@ call javaapi#class('CDRInputStream_1_1', '', [
   \ javaapi#method(0,'read_wstring(', ')', 'String'),
   \ ])
 
-call javaapi#class('CDRInputStream_1_2', '', [
+call javaapi#class('CDRInputStream_1_2', 'CDRInputStream_1_1', [
   \ javaapi#method(0,'CDRInputStream_1_2(', ')', 'public'),
   \ javaapi#method(0,'mark(', 'int)', 'void'),
   \ javaapi#method(0,'reset(', ')', 'void'),
@@ -429,7 +429,7 @@ call javaapi#class('CDRInputStream_1_2', '', [
   \ javaapi#method(0,'read_wstring(', ')', 'String'),
   \ ])
 
-call javaapi#class('CDROutputObject', '', [
+call javaapi#class('CDROutputObject', 'CorbaOutputObject', [
   \ javaapi#method(0,'CDROutputObject(', 'ORB, MessageMediator, Message, byte)', 'public'),
   \ javaapi#method(0,'CDROutputObject(', 'ORB, MessageMediator, Message, byte, int)', 'public'),
   \ javaapi#method(0,'CDROutputObject(', 'ORB, CorbaMessageMediator, GIOPVersion, CorbaConnection, Message, byte)', 'public'),
@@ -446,7 +446,7 @@ call javaapi#class('OutputStreamFactory', '', [
   \ javaapi#method(1,'newOutputStream(', 'ORB, GIOPVersion, byte)', 'CDROutputStreamBase'),
   \ ])
 
-call javaapi#class('CDROutputStream', '', [
+call javaapi#class('CDROutputStream', 'OutputStream', [
   \ javaapi#method(0,'CDROutputStream(', 'ORB, GIOPVersion, byte, boolean, BufferManagerWrite, byte, boolean)', 'public'),
   \ javaapi#method(0,'CDROutputStream(', 'ORB, GIOPVersion, byte, boolean, BufferManagerWrite, byte)', 'public'),
   \ javaapi#method(0,'create_input_stream(', ')', 'InputStream'),
@@ -517,7 +517,7 @@ call javaapi#class('CDROutputStream', '', [
   \ javaapi#method(0,'end_value(', ')', 'void'),
   \ ])
 
-call javaapi#class('CDROutputStreamBase', '', [
+call javaapi#class('CDROutputStreamBase', 'OutputStream', [
   \ javaapi#method(0,'setParent(', 'CDROutputStream)', 'void'),
   \ javaapi#method(0,'init(', 'ORB, BufferManagerWrite, byte)', 'void'),
   \ javaapi#method(0,'write_boolean(', 'boolean)', 'void'),
@@ -589,7 +589,7 @@ call javaapi#class('1', 'PrivilegedExceptionAction', [
   \ javaapi#method(0,'run(', ') throws NoSuchMethodException', 'Object'),
   \ ])
 
-call javaapi#class('CDROutputStream_1_0', '', [
+call javaapi#class('CDROutputStream_1_0', 'CDROutputStreamBase', [
   \ javaapi#method(0,'CDROutputStream_1_0(', ')', 'public'),
   \ javaapi#method(0,'init(', 'ORB, boolean, BufferManagerWrite, byte, boolean)', 'void'),
   \ javaapi#method(0,'init(', 'ORB, boolean, BufferManagerWrite, byte)', 'void'),
@@ -669,7 +669,7 @@ call javaapi#class('CDROutputStream_1_0', '', [
   \ javaapi#method(0,'setParent(', 'CDROutputStream)', 'void'),
   \ ])
 
-call javaapi#class('CDROutputStream_1_1', '', [
+call javaapi#class('CDROutputStream_1_1', 'CDROutputStream_1_0', [
   \ javaapi#method(0,'CDROutputStream_1_1(', ')', 'public'),
   \ javaapi#method(0,'get_offset(', ')', 'int'),
   \ javaapi#method(0,'getGIOPVersion(', ')', 'GIOPVersion'),
@@ -677,7 +677,7 @@ call javaapi#class('CDROutputStream_1_1', '', [
   \ javaapi#method(0,'write_wstring(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('CDROutputStream_1_2', '', [
+call javaapi#class('CDROutputStream_1_2', 'CDROutputStream_1_1', [
   \ javaapi#method(0,'CDROutputStream_1_2(', ')', 'public'),
   \ javaapi#method(0,'write_octet(', 'byte)', 'void'),
   \ javaapi#method(0,'write_short(', 'short)', 'void'),
@@ -689,7 +689,7 @@ call javaapi#class('CDROutputStream_1_2', '', [
   \ javaapi#method(0,'write_wstring(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('CachedCodeBase', '', [
+call javaapi#class('CachedCodeBase', '_CodeBaseImplBase', [
   \ javaapi#method(0,'CachedCodeBase(', 'CorbaConnection)', 'public'),
   \ javaapi#method(0,'get_ir(', ')', 'Repository'),
   \ javaapi#method(0,'implementation(', 'String)', 'String'),
@@ -699,7 +699,7 @@ call javaapi#class('CachedCodeBase', '', [
   \ javaapi#method(0,'bases(', 'String)', 'String[]'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ThreadLocal', [
   \ javaapi#method(0,'initialValue(', ')', 'Object'),
   \ ])
 
@@ -766,7 +766,7 @@ call javaapi#class('CTBConverter', '', [
 call javaapi#class('CodeSetConversionHolder', '', [
   \ ])
 
-call javaapi#class('JavaBTCConverter', '', [
+call javaapi#class('JavaBTCConverter', 'BTCConverter', [
   \ javaapi#method(0,'JavaBTCConverter(', 'CodeSetConversion, Entry)', 'public'),
   \ javaapi#method(0,'isFixedWidthEncoding(', ')', 'boolean'),
   \ javaapi#method(0,'getFixedCharWidth(', ')', 'int'),
@@ -774,7 +774,7 @@ call javaapi#class('JavaBTCConverter', '', [
   \ javaapi#method(0,'getChars(', 'byte[], int, int)', 'char[]'),
   \ ])
 
-call javaapi#class('JavaCTBConverter', '', [
+call javaapi#class('JavaCTBConverter', 'CTBConverter', [
   \ javaapi#method(0,'JavaCTBConverter(', 'CodeSetConversion, Entry, int)', 'public'),
   \ javaapi#method(0,'getMaxBytesPerChar(', ')', 'float'),
   \ javaapi#method(0,'convert(', 'char)', 'void'),
@@ -785,12 +785,12 @@ call javaapi#class('JavaCTBConverter', '', [
   \ javaapi#method(0,'getBytes(', ')', 'byte[]'),
   \ ])
 
-call javaapi#class('UTF16BTCConverter', '', [
+call javaapi#class('UTF16BTCConverter', 'JavaBTCConverter', [
   \ javaapi#method(0,'UTF16BTCConverter(', 'CodeSetConversion, boolean)', 'public'),
   \ javaapi#method(0,'getChars(', 'byte[], int, int)', 'char[]'),
   \ ])
 
-call javaapi#class('UTF16CTBConverter', '', [
+call javaapi#class('UTF16CTBConverter', 'JavaCTBConverter', [
   \ javaapi#method(0,'UTF16CTBConverter(', 'CodeSetConversion)', 'public'),
   \ javaapi#method(0,'UTF16CTBConverter(', 'CodeSetConversion, boolean)', 'public'),
   \ ])
@@ -804,7 +804,7 @@ call javaapi#class('CodeSetConversion', '', [
   \ javaapi#method(1,'impl(', ')', 'CodeSetConversion'),
   \ ])
 
-call javaapi#class('EncapsInputStream', '', [
+call javaapi#class('EncapsInputStream', 'CDRInputStream', [
   \ javaapi#method(0,'EncapsInputStream(', 'ORB, byte[], int, boolean, GIOPVersion)', 'public'),
   \ javaapi#method(0,'EncapsInputStream(', 'ORB, ByteBuffer, int, boolean, GIOPVersion)', 'public'),
   \ javaapi#method(0,'EncapsInputStream(', 'ORB, byte[], int)', 'public'),
@@ -815,7 +815,7 @@ call javaapi#class('EncapsInputStream', '', [
   \ javaapi#method(0,'getCodeBase(', ')', 'CodeBase'),
   \ ])
 
-call javaapi#class('EncapsOutputStream', '', [
+call javaapi#class('EncapsOutputStream', 'CDROutputStream', [
   \ javaapi#method(0,'EncapsOutputStream(', 'ORB)', 'public'),
   \ javaapi#method(0,'EncapsOutputStream(', 'ORB, GIOPVersion)', 'public'),
   \ javaapi#method(0,'EncapsOutputStream(', 'ORB, boolean)', 'public'),
@@ -827,13 +827,13 @@ call javaapi#class('1', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('MarshalObjectInputStream', '', [
+call javaapi#class('MarshalObjectInputStream', 'ObjectInputStream', [
   \ ])
 
-call javaapi#class('_ByteArrayInputStream', '', [
+call javaapi#class('_ByteArrayInputStream', 'ByteArrayInputStream', [
   \ ])
 
-call javaapi#class('IDLJavaSerializationInputStream', '', [
+call javaapi#class('IDLJavaSerializationInputStream', 'CDRInputStreamBase', [
   \ javaapi#method(0,'IDLJavaSerializationInputStream(', 'byte)', 'public'),
   \ javaapi#method(0,'init(', 'ORB, ByteBuffer, int, boolean, BufferManagerRead)', 'void'),
   \ javaapi#method(0,'read_boolean(', ')', 'boolean'),
@@ -922,13 +922,13 @@ call javaapi#class('1', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('MarshalObjectOutputStream', '', [
+call javaapi#class('MarshalObjectOutputStream', 'ObjectOutputStream', [
   \ ])
 
-call javaapi#class('_ByteArrayOutputStream', '', [
+call javaapi#class('_ByteArrayOutputStream', 'ByteArrayOutputStream', [
   \ ])
 
-call javaapi#class('IDLJavaSerializationOutputStream', '', [
+call javaapi#class('IDLJavaSerializationOutputStream', 'CDROutputStreamBase', [
   \ javaapi#method(0,'IDLJavaSerializationOutputStream(', 'byte)', 'public'),
   \ javaapi#method(0,'init(', 'ORB, boolean, BufferManagerWrite, byte, boolean)', 'void'),
   \ javaapi#method(0,'write_boolean(', 'boolean)', 'void'),
@@ -1118,7 +1118,7 @@ call javaapi#interface('RestorableInputStream', '', [
   \ javaapi#method(0,'restoreInternalState(', 'Object)', 'void'),
   \ ])
 
-call javaapi#class('TypeCodeInputStream', '', [
+call javaapi#class('TypeCodeInputStream', 'EncapsInputStream', [
   \ javaapi#method(0,'TypeCodeInputStream(', 'ORB, byte[], int)', 'public'),
   \ javaapi#method(0,'TypeCodeInputStream(', 'ORB, byte[], int, boolean, GIOPVersion)', 'public'),
   \ javaapi#method(0,'TypeCodeInputStream(', 'ORB, ByteBuffer, int, boolean, GIOPVersion)', 'public'),
@@ -1131,7 +1131,7 @@ call javaapi#class('TypeCodeInputStream', '', [
   \ javaapi#method(0,'printTypeMap(', ')', 'void'),
   \ ])
 
-call javaapi#class('TypeCodeOutputStream', '', [
+call javaapi#class('TypeCodeOutputStream', 'EncapsOutputStream', [
   \ javaapi#method(0,'TypeCodeOutputStream(', 'ORB)', 'public'),
   \ javaapi#method(0,'TypeCodeOutputStream(', 'ORB, boolean)', 'public'),
   \ javaapi#method(0,'create_input_stream(', ')', 'InputStream'),
@@ -1149,7 +1149,7 @@ call javaapi#class('TypeCodeOutputStream', '', [
   \ javaapi#method(0,'printTypeMap(', ')', 'void'),
   \ ])
 
-call javaapi#interface('TypeCodeReader', '', [
+call javaapi#interface('TypeCodeReader', 'MarshalInputStream', [
   \ javaapi#method(0,'addTypeCodeAtPosition(', 'TypeCodeImpl, int)', 'void'),
   \ javaapi#method(0,'getTypeCodeAtPosition(', 'int)', 'TypeCodeImpl'),
   \ javaapi#method(0,'setEnclosingInputStream(', 'InputStream)', 'void'),
@@ -1159,7 +1159,7 @@ call javaapi#interface('TypeCodeReader', '', [
   \ javaapi#method(0,'printTypeMap(', ')', 'void'),
   \ ])
 
-call javaapi#class('WrapperInputStream', '', [
+call javaapi#class('WrapperInputStream', 'InputStream', [
   \ javaapi#method(0,'WrapperInputStream(', 'CDRInputStream)', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[]) throws IOException', 'int'),

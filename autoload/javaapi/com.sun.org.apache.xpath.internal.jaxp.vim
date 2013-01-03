@@ -18,7 +18,7 @@ call javaapi#class('JAXPPrefixResolver', 'PrefixResolver', [
   \ javaapi#method(0,'getNamespaceForPrefix(', 'String, Node)', 'String'),
   \ ])
 
-call javaapi#class('JAXPVariableStack', '', [
+call javaapi#class('JAXPVariableStack', 'VariableStack', [
   \ javaapi#method(0,'JAXPVariableStack(', 'XPathVariableResolver)', 'public'),
   \ javaapi#method(0,'getVariableOrParam(', 'XPathContext, QName) throws TransformerException, IllegalArgumentException', 'XObject'),
   \ ])
@@ -32,7 +32,7 @@ call javaapi#class('XPathExpressionImpl', 'XPathExpression', [
   \ javaapi#method(0,'evaluate(', 'InputSource) throws XPathExpressionException', 'String'),
   \ ])
 
-call javaapi#class('XPathFactoryImpl', '', [
+call javaapi#class('XPathFactoryImpl', 'XPathFactory', [
   \ javaapi#method(0,'XPathFactoryImpl(', ')', 'public'),
   \ javaapi#method(0,'isObjectModelSupported(', 'String)', 'boolean'),
   \ javaapi#method(0,'newXPath(', ')', 'XPath'),

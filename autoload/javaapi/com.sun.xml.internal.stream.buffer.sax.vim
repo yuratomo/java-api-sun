@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.stream.buffer.sax')
 
-call javaapi#class('DefaultWithLexicalHandler', '', [
+call javaapi#class('DefaultWithLexicalHandler', 'DefaultHandler', [
   \ javaapi#method(0,'DefaultWithLexicalHandler(', ')', 'public'),
   \ javaapi#method(0,'comment(', 'char[], int, int) throws SAXException', 'void'),
   \ javaapi#method(0,'startDTD(', 'String, String, String) throws SAXException', 'void'),
@@ -25,7 +25,7 @@ call javaapi#class('Properties', '', [
   \ javaapi#method(0,'Properties(', ')', 'public'),
   \ ])
 
-call javaapi#class('SAXBufferCreator', '', [
+call javaapi#class('SAXBufferCreator', 'AbstractCreator', [
   \ javaapi#method(0,'SAXBufferCreator(', ')', 'public'),
   \ javaapi#method(0,'SAXBufferCreator(', 'MutableXMLStreamBuffer)', 'public'),
   \ javaapi#method(0,'create(', 'XMLReader, InputStream) throws IOException, SAXException', 'MutableXMLStreamBuffer'),
@@ -57,7 +57,7 @@ call javaapi#class('SAXBufferCreator', '', [
   \ javaapi#method(0,'fatalError(', 'SAXParseException) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('SAXBufferProcessor', '', [
+call javaapi#class('SAXBufferProcessor', 'AbstractProcessor', [
   \ javaapi#method(0,'SAXBufferProcessor(', ')', 'public'),
   \ javaapi#method(0,'SAXBufferProcessor(', 'XMLStreamBuffer)', 'public'),
   \ javaapi#method(0,'SAXBufferProcessor(', 'XMLStreamBuffer, boolean)', 'public'),

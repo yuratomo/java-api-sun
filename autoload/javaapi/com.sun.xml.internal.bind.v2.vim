@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.bind.v2')
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Constructor>>>', [
   \ javaapi#method(0,'initialValue(', ')', 'Constructor>>'),
   \ javaapi#method(0,'initialValue(', ')', 'Object'),
   \ ])
@@ -22,7 +22,7 @@ call javaapi#class('ContextFactory', '', [
   \ javaapi#method(1,'createContext(', 'String, ClassLoader, Map<String, Object>) throws JAXBException', 'JAXBContext'),
   \ ])
 
-call javaapi#class('Messages', '', [
+call javaapi#class('Messages', 'Messages>', [
   \ javaapi#field(1,'ILLEGAL_ENTRY', 'Messages'),
   \ javaapi#field(1,'ERROR_LOADING_CLASS', 'Messages'),
   \ javaapi#field(1,'INVALID_PROPERTY_VALUE', 'Messages'),

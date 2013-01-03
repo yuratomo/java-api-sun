@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.jmx.snmp.internal')
 
-call javaapi#interface('SnmpAccessControlModel', '', [
+call javaapi#interface('SnmpAccessControlModel', 'SnmpModel', [
   \ javaapi#method(0,'checkAccess(', 'int, String, int, int, int, byte[], SnmpOid) throws SnmpStatusException', 'void'),
   \ javaapi#method(0,'checkPduAccess(', 'int, String, int, int, int, byte[], SnmpPdu) throws SnmpStatusException', 'void'),
   \ javaapi#method(0,'enableSnmpV1V2SetRequest(', ')', 'boolean'),
@@ -8,7 +8,7 @@ call javaapi#interface('SnmpAccessControlModel', '', [
   \ javaapi#method(0,'isSnmpV1V2SetRequestAuthorized(', ')', 'boolean'),
   \ ])
 
-call javaapi#interface('SnmpAccessControlSubSystem', '', [
+call javaapi#interface('SnmpAccessControlSubSystem', 'SnmpSubSystem', [
   \ javaapi#method(0,'checkPduAccess(', 'int, String, int, int, int, byte[], SnmpPdu) throws SnmpStatusException, SnmpUnknownAccContrModelException', 'void'),
   \ javaapi#method(0,'checkAccess(', 'int, String, int, int, int, byte[], SnmpOid) throws SnmpStatusException, SnmpUnknownAccContrModelException', 'void'),
   \ ])
@@ -108,7 +108,7 @@ call javaapi#interface('SnmpModel', '', [
 call javaapi#interface('SnmpModelLcd', '', [
   \ ])
 
-call javaapi#interface('SnmpMsgProcessingModel', '', [
+call javaapi#interface('SnmpMsgProcessingModel', 'SnmpModel', [
   \ javaapi#method(0,'getOutgoingRequest(', 'SnmpPduFactory)', 'SnmpOutgoingRequest'),
   \ javaapi#method(0,'getIncomingRequest(', 'SnmpPduFactory)', 'SnmpIncomingRequest'),
   \ javaapi#method(0,'getIncomingResponse(', 'SnmpPduFactory)', 'SnmpIncomingResponse'),
@@ -121,7 +121,7 @@ call javaapi#interface('SnmpMsgProcessingModel', '', [
   \ javaapi#method(0,'getMsgTranslator(', ')', 'SnmpMsgTranslator'),
   \ ])
 
-call javaapi#interface('SnmpMsgProcessingSubSystem', '', [
+call javaapi#interface('SnmpMsgProcessingSubSystem', 'SnmpSubSystem', [
   \ javaapi#method(0,'setSecuritySubSystem(', 'SnmpSecuritySubSystem)', 'void'),
   \ javaapi#method(0,'getSecuritySubSystem(', ')', 'SnmpSecuritySubSystem'),
   \ javaapi#method(0,'getIncomingRequest(', 'int, SnmpPduFactory) throws SnmpUnknownMsgProcModelException', 'SnmpIncomingRequest'),
@@ -144,7 +144,7 @@ call javaapi#interface('SnmpOutgoingRequest', '', [
 call javaapi#interface('SnmpSecurityCache', '', [
   \ ])
 
-call javaapi#interface('SnmpSecurityModel', '', [
+call javaapi#interface('SnmpSecurityModel', 'SnmpModel', [
   \ javaapi#method(0,'generateRequestMsg(', 'SnmpSecurityCache, int, int, int, byte, int, SnmpSecurityParameters, byte[], byte[], byte[], int, byte[]) throws SnmpTooBigException, SnmpStatusException, SnmpSecurityException', 'int'),
   \ javaapi#method(0,'generateResponseMsg(', 'SnmpSecurityCache, int, int, int, byte, int, SnmpSecurityParameters, byte[], byte[], byte[], int, byte[]) throws SnmpTooBigException, SnmpStatusException, SnmpSecurityException', 'int'),
   \ javaapi#method(0,'processIncomingRequest(', 'SnmpSecurityCache, int, int, int, byte, int, byte[], byte[], byte[], byte[], byte[], SnmpDecryptedPdu) throws SnmpStatusException, SnmpSecurityException', 'SnmpSecurityParameters'),
@@ -153,7 +153,7 @@ call javaapi#interface('SnmpSecurityModel', '', [
   \ javaapi#method(0,'releaseSecurityCache(', 'SnmpSecurityCache)', 'void'),
   \ ])
 
-call javaapi#interface('SnmpSecuritySubSystem', '', [
+call javaapi#interface('SnmpSecuritySubSystem', 'SnmpSubSystem', [
   \ javaapi#method(0,'createSecurityCache(', 'int) throws SnmpUnknownSecModelException', 'SnmpSecurityCache'),
   \ javaapi#method(0,'releaseSecurityCache(', 'int, SnmpSecurityCache) throws SnmpUnknownSecModelException', 'void'),
   \ javaapi#method(0,'generateRequestMsg(', 'SnmpSecurityCache, int, int, int, byte, int, SnmpSecurityParameters, byte[], byte[], byte[], int, byte[]) throws SnmpTooBigException, SnmpStatusException, SnmpSecurityException, SnmpUnknownSecModelException', 'int'),

@@ -15,12 +15,12 @@ call javaapi#class('AbstractCounter', 'Counter', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('ByteArrayCounter', '', [
+call javaapi#interface('ByteArrayCounter', 'Counter', [
   \ javaapi#method(0,'byteArrayValue(', ')', 'byte[]'),
   \ javaapi#method(0,'byteAt(', 'int)', 'byte'),
   \ ])
 
-call javaapi#interface('Counter', '', [
+call javaapi#interface('Counter', 'Serializable', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getUnits(', ')', 'Units'),
   \ javaapi#method(0,'getVariability(', ')', 'Variability'),
@@ -31,16 +31,16 @@ call javaapi#interface('Counter', '', [
   \ javaapi#method(0,'getFlags(', ')', 'int'),
   \ ])
 
-call javaapi#interface('LongArrayCounter', '', [
+call javaapi#interface('LongArrayCounter', 'Counter', [
   \ javaapi#method(0,'longArrayValue(', ')', 'long[]'),
   \ javaapi#method(0,'longAt(', 'int)', 'long'),
   \ ])
 
-call javaapi#interface('LongCounter', '', [
+call javaapi#interface('LongCounter', 'Counter', [
   \ javaapi#method(0,'longValue(', ')', 'long'),
   \ ])
 
-call javaapi#interface('StringCounter', '', [
+call javaapi#interface('StringCounter', 'Counter', [
   \ javaapi#method(0,'stringValue(', ')', 'String'),
   \ ])
 

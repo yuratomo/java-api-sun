@@ -20,11 +20,11 @@ call javaapi#class('BindingImpl', 'WSBinding', [
   \ javaapi#method(0,'getFeatures(', ')', 'WSFeatureList'),
   \ ])
 
-call javaapi#class('HTTPBindingImpl', '', [
+call javaapi#class('HTTPBindingImpl', 'BindingImpl', [
   \ javaapi#method(0,'setHandlerChain(', 'List<Handler>)', 'void'),
   \ ])
 
-call javaapi#class('SOAPBindingImpl', '', [
+call javaapi#class('SOAPBindingImpl', 'BindingImpl', [
   \ javaapi#field(1,'X_SOAP12HTTP_BINDING', 'String'),
   \ javaapi#method(0,'setPortKnownHeaders(', 'Set<QName>)', 'void'),
   \ javaapi#method(0,'understandsHeader(', 'QName)', 'boolean'),

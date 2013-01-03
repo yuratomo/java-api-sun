@@ -5,7 +5,7 @@ call javaapi#class('PolicyMapKeyConverter', '', [
   \ javaapi#method(0,'getPolicyMapKey(', 'WsdlBindingSubject)', 'PolicyMapKey'),
   \ ])
 
-call javaapi#class('WsdlMessageType', '', [
+call javaapi#class('WsdlMessageType', 'WsdlMessageType>', [
   \ javaapi#field(1,'NO_MESSAGE', 'WsdlMessageType'),
   \ javaapi#field(1,'INPUT', 'WsdlMessageType'),
   \ javaapi#field(1,'OUTPUT', 'WsdlMessageType'),
@@ -14,7 +14,7 @@ call javaapi#class('WsdlMessageType', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'WsdlMessageType'),
   \ ])
 
-call javaapi#class('WsdlNameScope', '', [
+call javaapi#class('WsdlNameScope', 'WsdlNameScope>', [
   \ javaapi#field(1,'SERVICE', 'WsdlNameScope'),
   \ javaapi#field(1,'ENDPOINT', 'WsdlNameScope'),
   \ javaapi#field(1,'OPERATION', 'WsdlNameScope'),

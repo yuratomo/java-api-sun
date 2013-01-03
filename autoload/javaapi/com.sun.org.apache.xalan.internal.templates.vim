@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xalan.internal.templates')
 
-call javaapi#class('Constants', '', [
+call javaapi#class('Constants', 'Constants', [
   \ javaapi#field(1,'ELEMNAME_UNDEFINED', 'int'),
   \ javaapi#field(1,'ELEMNAME_WITHPARAM', 'int'),
   \ javaapi#field(1,'ELEMNAME_ADDATTRIBUTE', 'int'),

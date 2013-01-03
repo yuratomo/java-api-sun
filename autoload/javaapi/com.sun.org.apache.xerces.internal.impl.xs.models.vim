@@ -29,22 +29,22 @@ call javaapi#class('XSAllCM', 'XSCMValidator', [
   \ javaapi#method(0,'checkMinMaxBounds(', ')', 'ArrayList'),
   \ ])
 
-call javaapi#class('XSCMBinOp', '', [
+call javaapi#class('XSCMBinOp', 'CMNode', [
   \ javaapi#method(0,'XSCMBinOp(', 'int, CMNode, CMNode)', 'public'),
   \ javaapi#method(0,'isNullable(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('XSCMLeaf', '', [
+call javaapi#class('XSCMLeaf', 'CMNode', [
   \ javaapi#method(0,'XSCMLeaf(', 'int, Object, int, int)', 'public'),
   \ javaapi#method(0,'isNullable(', ')', 'boolean'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('XSCMRepeatingLeaf', '', [
+call javaapi#class('XSCMRepeatingLeaf', 'XSCMLeaf', [
   \ javaapi#method(0,'XSCMRepeatingLeaf(', 'int, Object, int, int, int, int)', 'public'),
   \ ])
 
-call javaapi#class('XSCMUniOp', '', [
+call javaapi#class('XSCMUniOp', 'CMNode', [
   \ javaapi#method(0,'XSCMUniOp(', 'int, CMNode)', 'public'),
   \ javaapi#method(0,'isNullable(', ')', 'boolean'),
   \ javaapi#method(0,'setUserData(', 'Object)', 'void'),

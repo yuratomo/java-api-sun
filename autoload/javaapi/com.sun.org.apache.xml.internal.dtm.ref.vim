@@ -26,7 +26,7 @@ call javaapi#interface('CoroutineParser', '', [
   \ javaapi#method(0,'init(', 'CoroutineManager, int, XMLReader)', 'void'),
   \ ])
 
-call javaapi#class('CustomStringPool', '', [
+call javaapi#class('CustomStringPool', 'DTMStringPool', [
   \ javaapi#field(1,'NULL', 'int'),
   \ javaapi#method(0,'CustomStringPool(', ')', 'public'),
   \ javaapi#method(0,'removeAllElements(', ')', 'void'),
@@ -34,7 +34,7 @@ call javaapi#class('CustomStringPool', '', [
   \ javaapi#method(0,'stringToIndex(', 'String)', 'int'),
   \ ])
 
-call javaapi#class('DTMAxisIterNodeList', '', [
+call javaapi#class('DTMAxisIterNodeList', 'DTMNodeListBase', [
   \ javaapi#method(0,'DTMAxisIterNodeList(', 'DTM, DTMAxisIterator)', 'public'),
   \ javaapi#method(0,'getDTMAxisIterator(', ')', 'DTMAxisIterator'),
   \ javaapi#method(0,'item(', 'int)', 'Node'),
@@ -56,7 +56,7 @@ call javaapi#class('DTMAxisIteratorBase', 'DTMAxisIterator', [
   \ javaapi#method(0,'getNodeByPosition(', 'int)', 'int'),
   \ ])
 
-call javaapi#class('DTMChildIterNodeList', '', [
+call javaapi#class('DTMChildIterNodeList', 'DTMNodeListBase', [
   \ javaapi#method(0,'DTMChildIterNodeList(', 'DTM, int)', 'public'),
   \ javaapi#method(0,'item(', 'int)', 'Node'),
   \ javaapi#method(0,'getLength(', ')', 'int'),
@@ -138,7 +138,7 @@ call javaapi#class('DTMDefaultBase', 'DTM', [
   \ javaapi#method(0,'getDTMIDs(', ')', 'SuballocatedIntVector'),
   \ ])
 
-call javaapi#class('AncestorIterator', '', [
+call javaapi#class('AncestorIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'AncestorIterator(', 'DTMDefaultBaseIterators)', 'public'),
   \ javaapi#method(0,'getStartNode(', ')', 'int'),
   \ javaapi#method(0,'isReverse(', ')', 'boolean'),
@@ -150,74 +150,74 @@ call javaapi#class('AncestorIterator', '', [
   \ javaapi#method(0,'gotoMark(', ')', 'void'),
   \ ])
 
-call javaapi#class('AttributeIterator', '', [
+call javaapi#class('AttributeIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'AttributeIterator(', 'DTMDefaultBaseIterators)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('ChildrenIterator', '', [
+call javaapi#class('ChildrenIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'ChildrenIterator(', 'DTMDefaultBaseIterators)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('DescendantIterator', '', [
+call javaapi#class('DescendantIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'DescendantIterator(', 'DTMDefaultBaseIterators)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ javaapi#method(0,'reset(', ')', 'DTMAxisIterator'),
   \ ])
 
-call javaapi#class('FollowingIterator', '', [
+call javaapi#class('FollowingIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'FollowingIterator(', 'DTMDefaultBaseIterators)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('FollowingSiblingIterator', '', [
+call javaapi#class('FollowingSiblingIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'FollowingSiblingIterator(', 'DTMDefaultBaseIterators)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('InternalAxisIteratorBase', '', [
+call javaapi#class('InternalAxisIteratorBase', 'DTMAxisIteratorBase', [
   \ javaapi#method(0,'InternalAxisIteratorBase(', 'DTMDefaultBaseIterators)', 'public'),
   \ javaapi#method(0,'setMark(', ')', 'void'),
   \ javaapi#method(0,'gotoMark(', ')', 'void'),
   \ ])
 
-call javaapi#class('NamespaceAttributeIterator', '', [
+call javaapi#class('NamespaceAttributeIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'NamespaceAttributeIterator(', 'DTMDefaultBaseIterators, int)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('NamespaceChildrenIterator', '', [
+call javaapi#class('NamespaceChildrenIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'NamespaceChildrenIterator(', 'DTMDefaultBaseIterators, int)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('NamespaceIterator', '', [
+call javaapi#class('NamespaceIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'NamespaceIterator(', 'DTMDefaultBaseIterators)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('NthDescendantIterator', '', [
+call javaapi#class('NthDescendantIterator', 'DescendantIterator', [
   \ javaapi#method(0,'NthDescendantIterator(', 'DTMDefaultBaseIterators, int)', 'public'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('ParentIterator', '', [
+call javaapi#class('ParentIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'ParentIterator(', 'DTMDefaultBaseIterators)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'setNodeType(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('PrecedingIterator', '', [
+call javaapi#class('PrecedingIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'PrecedingIterator(', 'DTMDefaultBaseIterators)', 'public'),
   \ javaapi#method(0,'isReverse(', ')', 'boolean'),
   \ javaapi#method(0,'cloneIterator(', ')', 'DTMAxisIterator'),
@@ -228,20 +228,20 @@ call javaapi#class('PrecedingIterator', '', [
   \ javaapi#method(0,'gotoMark(', ')', 'void'),
   \ ])
 
-call javaapi#class('PrecedingSiblingIterator', '', [
+call javaapi#class('PrecedingSiblingIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'PrecedingSiblingIterator(', 'DTMDefaultBaseIterators)', 'public'),
   \ javaapi#method(0,'isReverse(', ')', 'boolean'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('RootIterator', '', [
+call javaapi#class('RootIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'RootIterator(', 'DTMDefaultBaseIterators)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('SingletonIterator', '', [
+call javaapi#class('SingletonIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'SingletonIterator(', 'DTMDefaultBaseIterators)', 'public'),
   \ javaapi#method(0,'SingletonIterator(', 'DTMDefaultBaseIterators, int)', 'public'),
   \ javaapi#method(0,'SingletonIterator(', 'DTMDefaultBaseIterators, int, boolean)', 'public'),
@@ -250,64 +250,64 @@ call javaapi#class('SingletonIterator', '', [
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('TypedAncestorIterator', '', [
+call javaapi#class('TypedAncestorIterator', 'AncestorIterator', [
   \ javaapi#method(0,'TypedAncestorIterator(', 'DTMDefaultBaseIterators, int)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ ])
 
-call javaapi#class('TypedAttributeIterator', '', [
+call javaapi#class('TypedAttributeIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'TypedAttributeIterator(', 'DTMDefaultBaseIterators, int)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('TypedChildrenIterator', '', [
+call javaapi#class('TypedChildrenIterator', 'InternalAxisIteratorBase', [
   \ javaapi#method(0,'TypedChildrenIterator(', 'DTMDefaultBaseIterators, int)', 'public'),
   \ javaapi#method(0,'setStartNode(', 'int)', 'DTMAxisIterator'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('TypedDescendantIterator', '', [
+call javaapi#class('TypedDescendantIterator', 'DescendantIterator', [
   \ javaapi#method(0,'TypedDescendantIterator(', 'DTMDefaultBaseIterators, int)', 'public'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('TypedFollowingIterator', '', [
+call javaapi#class('TypedFollowingIterator', 'FollowingIterator', [
   \ javaapi#method(0,'TypedFollowingIterator(', 'DTMDefaultBaseIterators, int)', 'public'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('TypedFollowingSiblingIterator', '', [
+call javaapi#class('TypedFollowingSiblingIterator', 'FollowingSiblingIterator', [
   \ javaapi#method(0,'TypedFollowingSiblingIterator(', 'DTMDefaultBaseIterators, int)', 'public'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('TypedNamespaceIterator', '', [
+call javaapi#class('TypedNamespaceIterator', 'NamespaceIterator', [
   \ javaapi#method(0,'TypedNamespaceIterator(', 'DTMDefaultBaseIterators, int)', 'public'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('TypedPrecedingIterator', '', [
+call javaapi#class('TypedPrecedingIterator', 'PrecedingIterator', [
   \ javaapi#method(0,'TypedPrecedingIterator(', 'DTMDefaultBaseIterators, int)', 'public'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('TypedPrecedingSiblingIterator', '', [
+call javaapi#class('TypedPrecedingSiblingIterator', 'PrecedingSiblingIterator', [
   \ javaapi#method(0,'TypedPrecedingSiblingIterator(', 'DTMDefaultBaseIterators, int)', 'public'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('TypedRootIterator', '', [
+call javaapi#class('TypedRootIterator', 'RootIterator', [
   \ javaapi#method(0,'TypedRootIterator(', 'DTMDefaultBaseIterators, int)', 'public'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('TypedSingletonIterator', '', [
+call javaapi#class('TypedSingletonIterator', 'SingletonIterator', [
   \ javaapi#method(0,'TypedSingletonIterator(', 'DTMDefaultBaseIterators, int)', 'public'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ ])
 
-call javaapi#class('DTMDefaultBaseIterators', '', [
+call javaapi#class('DTMDefaultBaseIterators', 'DTMDefaultBaseTraversers', [
   \ javaapi#method(0,'DTMDefaultBaseIterators(', 'DTMManager, Source, int, DTMWSFilter, XMLStringFactory, boolean)', 'public'),
   \ javaapi#method(0,'DTMDefaultBaseIterators(', 'DTMManager, Source, int, DTMWSFilter, XMLStringFactory, boolean, int, boolean, boolean)', 'public'),
   \ javaapi#method(0,'getTypedAxisIterator(', 'int, int)', 'DTMAxisIterator'),
@@ -317,120 +317,120 @@ call javaapi#class('DTMDefaultBaseIterators', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('AllFromNodeTraverser', '', [
+call javaapi#class('AllFromNodeTraverser', 'DescendantOrSelfTraverser', [
   \ javaapi#method(0,'next(', 'int, int)', 'int'),
   \ ])
 
-call javaapi#class('AllFromRootTraverser', '', [
+call javaapi#class('AllFromRootTraverser', 'AllFromNodeTraverser', [
   \ javaapi#method(0,'first(', 'int)', 'int'),
   \ javaapi#method(0,'first(', 'int, int)', 'int'),
   \ javaapi#method(0,'next(', 'int, int)', 'int'),
   \ javaapi#method(0,'next(', 'int, int, int)', 'int'),
   \ ])
 
-call javaapi#class('AncestorOrSelfTraverser', '', [
+call javaapi#class('AncestorOrSelfTraverser', 'AncestorTraverser', [
   \ javaapi#method(0,'first(', 'int)', 'int'),
   \ javaapi#method(0,'first(', 'int, int)', 'int'),
   \ ])
 
-call javaapi#class('AncestorTraverser', '', [
+call javaapi#class('AncestorTraverser', 'DTMAxisTraverser', [
   \ javaapi#method(0,'next(', 'int, int)', 'int'),
   \ javaapi#method(0,'next(', 'int, int, int)', 'int'),
   \ ])
 
-call javaapi#class('AttributeTraverser', '', [
+call javaapi#class('AttributeTraverser', 'DTMAxisTraverser', [
   \ javaapi#method(0,'next(', 'int, int)', 'int'),
   \ javaapi#method(0,'next(', 'int, int, int)', 'int'),
   \ ])
 
-call javaapi#class('ChildTraverser', '', [
-  \ javaapi#method(0,'first(', 'int)', 'int'),
-  \ javaapi#method(0,'first(', 'int, int)', 'int'),
-  \ javaapi#method(0,'next(', 'int, int)', 'int'),
-  \ javaapi#method(0,'next(', 'int, int, int)', 'int'),
-  \ ])
-
-call javaapi#class('DescendantFromRootTraverser', '', [
-  \ javaapi#method(0,'first(', 'int)', 'int'),
-  \ javaapi#method(0,'first(', 'int, int)', 'int'),
-  \ ])
-
-call javaapi#class('DescendantOrSelfFromRootTraverser', '', [
-  \ javaapi#method(0,'first(', 'int)', 'int'),
-  \ javaapi#method(0,'first(', 'int, int)', 'int'),
-  \ ])
-
-call javaapi#class('DescendantOrSelfTraverser', '', [
-  \ javaapi#method(0,'first(', 'int)', 'int'),
-  \ ])
-
-call javaapi#class('DescendantTraverser', '', [
-  \ javaapi#method(0,'first(', 'int, int)', 'int'),
-  \ javaapi#method(0,'next(', 'int, int)', 'int'),
-  \ javaapi#method(0,'next(', 'int, int, int)', 'int'),
-  \ ])
-
-call javaapi#class('FollowingSiblingTraverser', '', [
-  \ javaapi#method(0,'next(', 'int, int)', 'int'),
-  \ javaapi#method(0,'next(', 'int, int, int)', 'int'),
-  \ ])
-
-call javaapi#class('FollowingTraverser', '', [
+call javaapi#class('ChildTraverser', 'DTMAxisTraverser', [
   \ javaapi#method(0,'first(', 'int)', 'int'),
   \ javaapi#method(0,'first(', 'int, int)', 'int'),
   \ javaapi#method(0,'next(', 'int, int)', 'int'),
   \ javaapi#method(0,'next(', 'int, int, int)', 'int'),
   \ ])
 
-call javaapi#class('IndexedDTMAxisTraverser', '', [
+call javaapi#class('DescendantFromRootTraverser', 'DescendantTraverser', [
+  \ javaapi#method(0,'first(', 'int)', 'int'),
+  \ javaapi#method(0,'first(', 'int, int)', 'int'),
   \ ])
 
-call javaapi#class('NamespaceDeclsTraverser', '', [
+call javaapi#class('DescendantOrSelfFromRootTraverser', 'DescendantTraverser', [
+  \ javaapi#method(0,'first(', 'int)', 'int'),
+  \ javaapi#method(0,'first(', 'int, int)', 'int'),
+  \ ])
+
+call javaapi#class('DescendantOrSelfTraverser', 'DescendantTraverser', [
+  \ javaapi#method(0,'first(', 'int)', 'int'),
+  \ ])
+
+call javaapi#class('DescendantTraverser', 'IndexedDTMAxisTraverser', [
+  \ javaapi#method(0,'first(', 'int, int)', 'int'),
   \ javaapi#method(0,'next(', 'int, int)', 'int'),
   \ javaapi#method(0,'next(', 'int, int, int)', 'int'),
   \ ])
 
-call javaapi#class('NamespaceTraverser', '', [
+call javaapi#class('FollowingSiblingTraverser', 'DTMAxisTraverser', [
   \ javaapi#method(0,'next(', 'int, int)', 'int'),
   \ javaapi#method(0,'next(', 'int, int, int)', 'int'),
   \ ])
 
-call javaapi#class('ParentTraverser', '', [
+call javaapi#class('FollowingTraverser', 'DescendantTraverser', [
   \ javaapi#method(0,'first(', 'int)', 'int'),
   \ javaapi#method(0,'first(', 'int, int)', 'int'),
   \ javaapi#method(0,'next(', 'int, int)', 'int'),
   \ javaapi#method(0,'next(', 'int, int, int)', 'int'),
   \ ])
 
-call javaapi#class('PrecedingAndAncestorTraverser', '', [
+call javaapi#class('IndexedDTMAxisTraverser', 'DTMAxisTraverser', [
+  \ ])
+
+call javaapi#class('NamespaceDeclsTraverser', 'DTMAxisTraverser', [
   \ javaapi#method(0,'next(', 'int, int)', 'int'),
   \ javaapi#method(0,'next(', 'int, int, int)', 'int'),
   \ ])
 
-call javaapi#class('PrecedingSiblingTraverser', '', [
+call javaapi#class('NamespaceTraverser', 'DTMAxisTraverser', [
   \ javaapi#method(0,'next(', 'int, int)', 'int'),
   \ javaapi#method(0,'next(', 'int, int, int)', 'int'),
   \ ])
 
-call javaapi#class('PrecedingTraverser', '', [
-  \ javaapi#method(0,'next(', 'int, int)', 'int'),
-  \ javaapi#method(0,'next(', 'int, int, int)', 'int'),
-  \ ])
-
-call javaapi#class('RootTraverser', '', [
-  \ javaapi#method(0,'first(', 'int, int)', 'int'),
-  \ javaapi#method(0,'next(', 'int, int)', 'int'),
-  \ javaapi#method(0,'next(', 'int, int, int)', 'int'),
-  \ ])
-
-call javaapi#class('SelfTraverser', '', [
+call javaapi#class('ParentTraverser', 'DTMAxisTraverser', [
   \ javaapi#method(0,'first(', 'int)', 'int'),
   \ javaapi#method(0,'first(', 'int, int)', 'int'),
   \ javaapi#method(0,'next(', 'int, int)', 'int'),
   \ javaapi#method(0,'next(', 'int, int, int)', 'int'),
   \ ])
 
-call javaapi#class('DTMDefaultBaseTraversers', '', [
+call javaapi#class('PrecedingAndAncestorTraverser', 'DTMAxisTraverser', [
+  \ javaapi#method(0,'next(', 'int, int)', 'int'),
+  \ javaapi#method(0,'next(', 'int, int, int)', 'int'),
+  \ ])
+
+call javaapi#class('PrecedingSiblingTraverser', 'DTMAxisTraverser', [
+  \ javaapi#method(0,'next(', 'int, int)', 'int'),
+  \ javaapi#method(0,'next(', 'int, int, int)', 'int'),
+  \ ])
+
+call javaapi#class('PrecedingTraverser', 'DTMAxisTraverser', [
+  \ javaapi#method(0,'next(', 'int, int)', 'int'),
+  \ javaapi#method(0,'next(', 'int, int, int)', 'int'),
+  \ ])
+
+call javaapi#class('RootTraverser', 'AllFromRootTraverser', [
+  \ javaapi#method(0,'first(', 'int, int)', 'int'),
+  \ javaapi#method(0,'next(', 'int, int)', 'int'),
+  \ javaapi#method(0,'next(', 'int, int, int)', 'int'),
+  \ ])
+
+call javaapi#class('SelfTraverser', 'DTMAxisTraverser', [
+  \ javaapi#method(0,'first(', 'int)', 'int'),
+  \ javaapi#method(0,'first(', 'int, int)', 'int'),
+  \ javaapi#method(0,'next(', 'int, int)', 'int'),
+  \ javaapi#method(0,'next(', 'int, int, int)', 'int'),
+  \ ])
+
+call javaapi#class('DTMDefaultBaseTraversers', 'DTMDefaultBase', [
   \ javaapi#method(0,'DTMDefaultBaseTraversers(', 'DTMManager, Source, int, DTMWSFilter, XMLStringFactory, boolean)', 'public'),
   \ javaapi#method(0,'DTMDefaultBaseTraversers(', 'DTMManager, Source, int, DTMWSFilter, XMLStringFactory, boolean, int, boolean, boolean)', 'public'),
   \ javaapi#method(0,'getAxisTraverser(', 'int)', 'DTMAxisTraverser'),
@@ -536,7 +536,7 @@ call javaapi#class('DTMDocumentImpl', 'LexicalHandler', [
   \ javaapi#method(0,'migrateTo(', 'DTMManager)', 'void'),
   \ ])
 
-call javaapi#class('DTMManagerDefault', '', [
+call javaapi#class('DTMManagerDefault', 'DTMManager', [
   \ javaapi#method(0,'addDTM(', 'DTM, int)', 'void'),
   \ javaapi#method(0,'addDTM(', 'DTM, int, int)', 'void'),
   \ javaapi#method(0,'getFirstFreeDTMID(', ')', 'int'),
@@ -556,7 +556,7 @@ call javaapi#class('DTMManagerDefault', '', [
   \ javaapi#method(0,'getExpandedNameTable(', 'DTM)', 'ExpandedNameTable'),
   \ ])
 
-call javaapi#class('DTMException', '', [
+call javaapi#class('DTMException', 'DOMException', [
   \ javaapi#method(0,'DTMException(', 'DTMNamedNodeMap, short, String)', 'public'),
   \ javaapi#method(0,'DTMException(', 'DTMNamedNodeMap, short)', 'public'),
   \ ])
@@ -585,7 +585,7 @@ call javaapi#class('DTMNodeIterator', 'NodeIterator', [
   \ javaapi#method(0,'previousNode(', ')', 'Node'),
   \ ])
 
-call javaapi#class('DTMNodeList', '', [
+call javaapi#class('DTMNodeList', 'DTMNodeListBase', [
   \ javaapi#method(0,'DTMNodeList(', 'DTMIterator)', 'public'),
   \ javaapi#method(0,'getDTMIterator(', ')', 'DTMIterator'),
   \ javaapi#method(0,'item(', 'int)', 'Node'),
@@ -732,7 +732,7 @@ call javaapi#class('DTMNodeProxy', 'DocumentFragment', [
   \ javaapi#method(0,'setXmlVersion(', 'String) throws DOMException', 'void'),
   \ ])
 
-call javaapi#class('DTMSafeStringPool', '', [
+call javaapi#class('DTMSafeStringPool', 'DTMStringPool', [
   \ javaapi#method(0,'DTMSafeStringPool(', ')', 'public'),
   \ javaapi#method(0,'removeAllElements(', ')', 'void'),
   \ javaapi#method(0,'indexToString(', 'int) throws ArrayIndexOutOfBoundsException', 'String'),
@@ -824,7 +824,7 @@ call javaapi#interface('IncrementalSAXSource', '', [
   \ javaapi#method(0,'startParse(', 'InputSource) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('StopException', '', [
+call javaapi#class('StopException', 'RuntimeException', [
   \ ])
 
 call javaapi#class('IncrementalSAXSource_Filter', 'Runnable', [
@@ -891,7 +891,7 @@ call javaapi#class('NodeLocator', 'SourceLocator', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ConfigurationError', '', [
+call javaapi#class('ConfigurationError', 'Error', [
   \ ])
 
 call javaapi#class('ObjectFactory', '', [
@@ -932,6 +932,6 @@ call javaapi#class('8', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('SecuritySupport12', '', [
+call javaapi#class('SecuritySupport12', 'SecuritySupport', [
   \ ])
 

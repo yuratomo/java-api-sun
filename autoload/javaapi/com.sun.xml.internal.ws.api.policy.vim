@@ -1,22 +1,22 @@
 call javaapi#namespace('com.sun.xml.internal.ws.api.policy')
 
-call javaapi#class('AlternativeSelector', '', [
+call javaapi#class('AlternativeSelector', 'EffectiveAlternativeSelector', [
   \ javaapi#method(0,'AlternativeSelector(', ')', 'public'),
   \ javaapi#method(1,'doSelection(', 'EffectivePolicyModifier) throws PolicyException', 'void'),
   \ ])
 
-call javaapi#class('SourceModelCreator', '', [
+call javaapi#class('SourceModelCreator', 'PolicySourceModelCreator', [
   \ ])
 
-call javaapi#class('ModelGenerator', '', [
+call javaapi#class('ModelGenerator', 'PolicyModelGenerator', [
   \ javaapi#method(1,'getGenerator(', ')', 'PolicyModelGenerator'),
   \ ])
 
-call javaapi#class('ModelTranslator', '', [
+call javaapi#class('ModelTranslator', 'PolicyModelTranslator', [
   \ javaapi#method(1,'getTranslator(', ') throws PolicyException', 'ModelTranslator'),
   \ ])
 
-call javaapi#class('ModelUnmarshaller', '', [
+call javaapi#class('ModelUnmarshaller', 'XmlPolicyModelUnmarshaller', [
   \ javaapi#method(1,'getUnmarshaller(', ')', 'ModelUnmarshaller'),
   \ ])
 
@@ -48,12 +48,12 @@ call javaapi#class('PolicyResolverFactory', '', [
   \ javaapi#method(1,'create(', ')', 'PolicyResolver'),
   \ ])
 
-call javaapi#class('SourceModel', '', [
+call javaapi#class('SourceModel', 'PolicySourceModel', [
   \ javaapi#method(1,'createSourceModel(', 'NamespaceVersion)', 'PolicySourceModel'),
   \ javaapi#method(1,'createSourceModel(', 'NamespaceVersion, String, String)', 'PolicySourceModel'),
   \ ])
 
-call javaapi#class('ValidationProcessor', '', [
+call javaapi#class('ValidationProcessor', 'AssertionValidationProcessor', [
   \ javaapi#method(1,'getInstance(', ') throws PolicyException', 'ValidationProcessor'),
   \ ])
 

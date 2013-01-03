@@ -5,22 +5,22 @@ call javaapi#class('CommandLine', '', [
   \ javaapi#method(1,'parse(', 'String[]) throws IOException', 'String[]'),
   \ ])
 
-call javaapi#class('JarException', '', [
+call javaapi#class('JarException', 'IOException', [
   \ javaapi#method(0,'JarException(', ')', 'public'),
   \ javaapi#method(0,'JarException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('JarImageSource', '', [
+call javaapi#class('JarImageSource', 'URLImageSource', [
   \ javaapi#method(0,'JarImageSource(', 'URL, String)', 'public'),
   \ javaapi#method(0,'JarImageSource(', 'URL, String, String)', 'public'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ZipEntry>', [
   \ javaapi#method(0,'add(', 'ZipEntry)', 'boolean'),
   \ javaapi#method(0,'add(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('CRC32OutputStream', '', [
+call javaapi#class('CRC32OutputStream', 'OutputStream', [
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
   \ javaapi#method(0,'updateEntry(', 'ZipEntry)', 'void'),

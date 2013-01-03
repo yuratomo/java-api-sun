@@ -39,7 +39,7 @@ call javaapi#interface('ObjectCopierFactory', '', [
   \ javaapi#method(0,'make(', ')', 'ObjectCopier'),
   \ ])
 
-call javaapi#class('ReflectiveCopyException', '', [
+call javaapi#class('ReflectiveCopyException', 'Exception', [
   \ javaapi#method(0,'ReflectiveCopyException(', ')', 'public'),
   \ javaapi#method(0,'ReflectiveCopyException(', 'String)', 'public'),
   \ javaapi#method(0,'ReflectiveCopyException(', 'String, Throwable)', 'public'),

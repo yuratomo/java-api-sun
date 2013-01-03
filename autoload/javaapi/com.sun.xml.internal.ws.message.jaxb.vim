@@ -1,13 +1,13 @@
 call javaapi#namespace('com.sun.xml.internal.ws.message.jaxb')
 
-call javaapi#class('AttachmentMarshallerImpl', '', [
+call javaapi#class('AttachmentMarshallerImpl', 'AttachmentMarshaller', [
   \ javaapi#method(0,'AttachmentMarshallerImpl(', 'AttachmentSet)', 'public'),
   \ javaapi#method(0,'addMtomAttachment(', 'DataHandler, String, String)', 'String'),
   \ javaapi#method(0,'addMtomAttachment(', 'byte[], int, int, String, String, String)', 'String'),
   \ javaapi#method(0,'addSwaRefAttachment(', 'DataHandler)', 'String'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'XMLFilterImpl', [
   \ javaapi#method(0,'getFeature(', 'String) throws SAXNotRecognizedException', 'boolean'),
   \ javaapi#method(0,'setFeature(', 'String, boolean) throws SAXNotRecognizedException', 'void'),
   \ javaapi#method(0,'getProperty(', 'String) throws SAXNotRecognizedException', 'Object'),
@@ -17,11 +17,11 @@ call javaapi#class('1', '', [
   \ javaapi#method(0,'parse(', ') throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('JAXBBridgeSource', '', [
+call javaapi#class('JAXBBridgeSource', 'SAXSource', [
   \ javaapi#method(0,'JAXBBridgeSource(', 'Bridge, Object)', 'public'),
   \ ])
 
-call javaapi#class('JAXBHeader', '', [
+call javaapi#class('JAXBHeader', 'AbstractHeaderImpl', [
   \ javaapi#method(0,'JAXBHeader(', 'JAXBRIContext, Object)', 'public'),
   \ javaapi#method(0,'JAXBHeader(', 'Bridge, Object)', 'public'),
   \ javaapi#method(0,'getNamespaceURI(', ')', 'String'),
@@ -35,7 +35,7 @@ call javaapi#class('JAXBHeader', '', [
   \ javaapi#method(0,'writeTo(', 'ContentHandler, ErrorHandler) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('JAXBMessage', '', [
+call javaapi#class('JAXBMessage', 'AbstractMessageImpl', [
   \ javaapi#method(1,'create(', 'JAXBRIContext, Object, SOAPVersion, HeaderList, AttachmentSet)', 'Message'),
   \ javaapi#method(1,'create(', 'JAXBRIContext, Object, SOAPVersion)', 'Message'),
   \ javaapi#method(1,'create(', 'Bridge, Object, SOAPVersion)', 'Message'),
@@ -52,7 +52,7 @@ call javaapi#class('JAXBMessage', '', [
   \ javaapi#method(0,'copy(', ')', 'Message'),
   \ ])
 
-call javaapi#class('MarshallerBridge', '', [
+call javaapi#class('MarshallerBridge', 'Bridge', [
   \ javaapi#method(0,'MarshallerBridge(', 'JAXBRIContext)', 'public'),
   \ javaapi#method(0,'marshal(', 'Marshaller, Object, XMLStreamWriter) throws JAXBException', 'void'),
   \ javaapi#method(0,'marshal(', 'Marshaller, Object, OutputStream, NamespaceContext) throws JAXBException', 'void'),

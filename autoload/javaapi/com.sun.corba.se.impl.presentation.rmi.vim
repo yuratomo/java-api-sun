@@ -1,76 +1,76 @@
 call javaapi#namespace('com.sun.corba.se.impl.presentation.rmi')
 
-call javaapi#class('DynamicAccessPermission', '', [
+call javaapi#class('DynamicAccessPermission', 'BasicPermission', [
   \ javaapi#method(0,'DynamicAccessPermission(', 'String)', 'public'),
   \ javaapi#method(0,'DynamicAccessPermission(', 'String, String)', 'public'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ReaderWriterBase', [
   \ javaapi#method(0,'read(', 'InputStream)', 'Object'),
   \ javaapi#method(0,'write(', 'OutputStream, Object)', 'void'),
   \ ])
 
-call javaapi#class('10', '', [
+call javaapi#class('10', 'ReaderWriterBase', [
   \ javaapi#method(0,'read(', 'InputStream)', 'Object'),
   \ javaapi#method(0,'write(', 'OutputStream, Object)', 'void'),
   \ ])
 
-call javaapi#class('11', '', [
+call javaapi#class('11', 'ReaderWriterBase', [
   \ javaapi#method(0,'read(', 'InputStream)', 'Object'),
   \ javaapi#method(0,'write(', 'OutputStream, Object)', 'void'),
   \ ])
 
-call javaapi#class('12', '', [
+call javaapi#class('12', 'ReaderWriterBase', [
   \ javaapi#method(0,'read(', 'InputStream)', 'Object'),
   \ javaapi#method(0,'write(', 'OutputStream, Object)', 'void'),
   \ ])
 
-call javaapi#class('13', '', [
+call javaapi#class('13', 'ReaderWriterBase', [
   \ javaapi#method(0,'read(', 'InputStream)', 'Object'),
   \ javaapi#method(0,'write(', 'OutputStream, Object)', 'void'),
   \ ])
 
-call javaapi#class('14', '', [
+call javaapi#class('14', 'ReaderWriterBase', [
   \ javaapi#method(0,'read(', 'InputStream)', 'Object'),
   \ javaapi#method(0,'write(', 'OutputStream, Object)', 'void'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'ReaderWriterBase', [
   \ javaapi#method(0,'read(', 'InputStream)', 'Object'),
   \ javaapi#method(0,'write(', 'OutputStream, Object)', 'void'),
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'ReaderWriterBase', [
   \ javaapi#method(0,'read(', 'InputStream)', 'Object'),
   \ javaapi#method(0,'write(', 'OutputStream, Object)', 'void'),
   \ ])
 
-call javaapi#class('4', '', [
+call javaapi#class('4', 'ReaderWriterBase', [
   \ javaapi#method(0,'read(', 'InputStream)', 'Object'),
   \ javaapi#method(0,'write(', 'OutputStream, Object)', 'void'),
   \ ])
 
-call javaapi#class('5', '', [
+call javaapi#class('5', 'ReaderWriterBase', [
   \ javaapi#method(0,'read(', 'InputStream)', 'Object'),
   \ javaapi#method(0,'write(', 'OutputStream, Object)', 'void'),
   \ ])
 
-call javaapi#class('6', '', [
+call javaapi#class('6', 'ReaderWriterBase', [
   \ javaapi#method(0,'read(', 'InputStream)', 'Object'),
   \ javaapi#method(0,'write(', 'OutputStream, Object)', 'void'),
   \ ])
 
-call javaapi#class('7', '', [
+call javaapi#class('7', 'ReaderWriterBase', [
   \ javaapi#method(0,'read(', 'InputStream)', 'Object'),
   \ javaapi#method(0,'write(', 'OutputStream, Object)', 'void'),
   \ ])
 
-call javaapi#class('8', '', [
+call javaapi#class('8', 'ReaderWriterBase', [
   \ javaapi#method(0,'read(', 'InputStream)', 'Object'),
   \ javaapi#method(0,'write(', 'OutputStream, Object)', 'void'),
   \ ])
 
-call javaapi#class('9', '', [
+call javaapi#class('9', 'ReaderWriterBase', [
   \ javaapi#method(0,'read(', 'InputStream)', 'Object'),
   \ javaapi#method(0,'write(', 'OutputStream, Object)', 'void'),
   \ ])
@@ -100,7 +100,7 @@ call javaapi#class('DynamicMethodMarshallerImpl', 'DynamicMethodMarshaller', [
   \ javaapi#method(0,'readException(', 'ApplicationException)', 'Exception'),
   \ ])
 
-call javaapi#class('DynamicStubImpl', '', [
+call javaapi#class('DynamicStubImpl', 'ObjectImpl', [
   \ javaapi#method(0,'setSelf(', 'DynamicStub)', 'void'),
   \ javaapi#method(0,'getSelf(', ')', 'DynamicStub'),
   \ javaapi#method(0,'DynamicStubImpl(', 'String[])', 'public'),
@@ -134,13 +134,13 @@ call javaapi#class('ExceptionRWBase', 'ExceptionRW', [
   \ javaapi#method(0,'getId(', ')', 'String'),
   \ ])
 
-call javaapi#class('ExceptionRWIDLImpl', '', [
+call javaapi#class('ExceptionRWIDLImpl', 'ExceptionRWBase', [
   \ javaapi#method(0,'ExceptionRWIDLImpl(', 'ExceptionHandlerImpl, Class)', 'public'),
   \ javaapi#method(0,'write(', 'OutputStream, Exception)', 'void'),
   \ javaapi#method(0,'read(', 'InputStream)', 'Exception'),
   \ ])
 
-call javaapi#class('ExceptionRWRMIImpl', '', [
+call javaapi#class('ExceptionRWRMIImpl', 'ExceptionRWBase', [
   \ javaapi#method(0,'ExceptionRWRMIImpl(', 'ExceptionHandlerImpl, Class)', 'public'),
   \ javaapi#method(0,'write(', 'OutputStream, Exception)', 'void'),
   \ javaapi#method(0,'read(', 'InputStream)', 'Exception'),
@@ -190,7 +190,7 @@ call javaapi#class('IDLType', '', [
   \ javaapi#method(0,'hasModule(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('IDLTypeException', '', [
+call javaapi#class('IDLTypeException', 'Exception', [
   \ javaapi#method(0,'IDLTypeException(', ')', 'public'),
   \ javaapi#method(0,'IDLTypeException(', 'String)', 'public'),
   \ ])
@@ -220,7 +220,7 @@ call javaapi#class('IDLTypesUtil', '', [
   \ javaapi#method(0,'getSpecialCaseIDLTypeMapping(', 'Class)', 'IDLType'),
   \ ])
 
-call javaapi#class('CustomCompositeInvocationHandlerImpl', '', [
+call javaapi#class('CustomCompositeInvocationHandlerImpl', 'CompositeInvocationHandlerImpl', [
   \ javaapi#method(0,'setProxy(', 'Proxy)', 'void'),
   \ javaapi#method(0,'getProxy(', ')', 'Proxy'),
   \ javaapi#method(0,'CustomCompositeInvocationHandlerImpl(', 'InvocationHandlerFactoryImpl, DynamicStub)', 'public'),
@@ -262,7 +262,7 @@ call javaapi#class('PresentationManagerImpl', 'PresentationManager', [
   \ javaapi#method(0,'useDynamicStubs(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('ReflectiveTie', '', [
+call javaapi#class('ReflectiveTie', 'Servant', [
   \ javaapi#method(0,'ReflectiveTie(', 'PresentationManager, ORBUtilSystemException)', 'public'),
   \ javaapi#method(0,'_all_interfaces(', 'POA, byte[])', 'String[]'),
   \ javaapi#method(0,'setTarget(', 'Remote)', 'void'),
@@ -283,7 +283,7 @@ call javaapi#class('StubFactoryBase', 'StubFactory', [
   \ javaapi#method(0,'getTypeIds(', ')', 'String[]'),
   \ ])
 
-call javaapi#class('StubFactoryDynamicBase', '', [
+call javaapi#class('StubFactoryDynamicBase', 'StubFactoryBase', [
   \ javaapi#method(0,'StubFactoryDynamicBase(', 'ClassData, ClassLoader)', 'public'),
   \ javaapi#method(0,'makeStub(', ')', 'Object'),
   \ ])
@@ -293,7 +293,7 @@ call javaapi#class('StubFactoryFactoryBase', 'StubFactoryFactory', [
   \ javaapi#method(0,'getStubName(', 'String)', 'String'),
   \ ])
 
-call javaapi#class('StubFactoryFactoryDynamicBase', '', [
+call javaapi#class('StubFactoryFactoryDynamicBase', 'StubFactoryFactoryBase', [
   \ javaapi#method(0,'StubFactoryFactoryDynamicBase(', ')', 'public'),
   \ javaapi#method(0,'createStubFactory(', 'String, boolean, String, Class, ClassLoader)', 'StubFactory'),
   \ javaapi#method(0,'makeDynamicStubFactory(', 'PresentationManager, ClassData, ClassLoader)', 'StubFactory'),
@@ -301,24 +301,24 @@ call javaapi#class('StubFactoryFactoryDynamicBase', '', [
   \ javaapi#method(0,'createsDynamicStubs(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('StubFactoryFactoryProxyImpl', '', [
+call javaapi#class('StubFactoryFactoryProxyImpl', 'StubFactoryFactoryDynamicBase', [
   \ javaapi#method(0,'StubFactoryFactoryProxyImpl(', ')', 'public'),
   \ javaapi#method(0,'makeDynamicStubFactory(', 'PresentationManager, ClassData, ClassLoader)', 'StubFactory'),
   \ ])
 
-call javaapi#class('StubFactoryFactoryStaticImpl', '', [
+call javaapi#class('StubFactoryFactoryStaticImpl', 'StubFactoryFactoryBase', [
   \ javaapi#method(0,'StubFactoryFactoryStaticImpl(', ')', 'public'),
   \ javaapi#method(0,'createStubFactory(', 'String, boolean, String, Class, ClassLoader)', 'StubFactory'),
   \ javaapi#method(0,'getTie(', 'Class)', 'Tie'),
   \ javaapi#method(0,'createsDynamicStubs(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('StubFactoryProxyImpl', '', [
+call javaapi#class('StubFactoryProxyImpl', 'StubFactoryDynamicBase', [
   \ javaapi#method(0,'StubFactoryProxyImpl(', 'ClassData, ClassLoader)', 'public'),
   \ javaapi#method(0,'makeStub(', ')', 'Object'),
   \ ])
 
-call javaapi#class('StubFactoryStaticImpl', '', [
+call javaapi#class('StubFactoryStaticImpl', 'StubFactoryBase', [
   \ javaapi#method(0,'StubFactoryStaticImpl(', 'Class)', 'public'),
   \ javaapi#method(0,'makeStub(', ')', 'Object'),
   \ ])

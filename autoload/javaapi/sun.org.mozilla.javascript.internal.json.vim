@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.org.mozilla.javascript.internal.json')
 
-call javaapi#class('ParseException', '', [
+call javaapi#class('ParseException', 'Exception', [
   \ ])
 
 call javaapi#class('JsonParser', '', [

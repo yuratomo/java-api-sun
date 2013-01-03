@@ -6,7 +6,7 @@ call javaapi#class('AbstractQNameValidator', 'PolicyAssertionValidator', [
   \ javaapi#method(0,'validateServerSide(', 'PolicyAssertion)', 'Fitness'),
   \ ])
 
-call javaapi#class('AssertionCreationException', '', [
+call javaapi#class('AssertionCreationException', 'PolicyException', [
   \ javaapi#method(0,'AssertionCreationException(', 'AssertionData, String)', 'public'),
   \ javaapi#method(0,'AssertionCreationException(', 'AssertionData, String, Throwable)', 'public'),
   \ javaapi#method(0,'AssertionCreationException(', 'AssertionData, Throwable)', 'public'),
@@ -18,7 +18,7 @@ call javaapi#interface('PolicyAssertionCreator', '', [
   \ javaapi#method(0,'createAssertion(', 'AssertionData, Collection<PolicyAssertion>, AssertionSet, PolicyAssertionCreator) throws AssertionCreationException', 'PolicyAssertion'),
   \ ])
 
-call javaapi#class('Fitness', '', [
+call javaapi#class('Fitness', 'Fitness>', [
   \ javaapi#field(1,'UNKNOWN', 'Fitness'),
   \ javaapi#field(1,'INVALID', 'Fitness'),
   \ javaapi#field(1,'UNSUPPORTED', 'Fitness'),

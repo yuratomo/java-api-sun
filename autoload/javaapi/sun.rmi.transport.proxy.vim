@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.rmi.transport.proxy')
 
-call javaapi#class('CGIClientException', '', [
+call javaapi#class('CGIClientException', 'Exception', [
   \ javaapi#method(0,'CGIClientException(', 'String)', 'public'),
   \ ])
 
@@ -33,7 +33,7 @@ call javaapi#class('CGIPingCommand', 'CGICommandHandler', [
   \ javaapi#method(0,'execute(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('CGIServerException', '', [
+call javaapi#class('CGIServerException', 'Exception', [
   \ javaapi#method(0,'CGIServerException(', 'String)', 'public'),
   \ ])
 
@@ -42,14 +42,14 @@ call javaapi#class('CGITryHostnameCommand', 'CGICommandHandler', [
   \ javaapi#method(0,'execute(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('HttpAwareServerSocket', '', [
+call javaapi#class('HttpAwareServerSocket', 'ServerSocket', [
   \ javaapi#method(0,'HttpAwareServerSocket(', 'int) throws IOException', 'public'),
   \ javaapi#method(0,'HttpAwareServerSocket(', 'int, int) throws IOException', 'public'),
   \ javaapi#method(0,'accept(', ') throws IOException', 'Socket'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('HttpInputStream', '', [
+call javaapi#class('HttpInputStream', 'FilterInputStream', [
   \ javaapi#method(0,'HttpInputStream(', 'InputStream) throws IOException', 'public'),
   \ javaapi#method(0,'available(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
@@ -59,12 +59,12 @@ call javaapi#class('HttpInputStream', '', [
   \ javaapi#method(0,'skip(', 'long) throws IOException', 'long'),
   \ ])
 
-call javaapi#class('HttpOutputStream', '', [
+call javaapi#class('HttpOutputStream', 'ByteArrayOutputStream', [
   \ javaapi#method(0,'HttpOutputStream(', 'OutputStream)', 'public'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('HttpReceiveSocket', '', [
+call javaapi#class('HttpReceiveSocket', 'WrappedSocket', [
   \ javaapi#method(0,'HttpReceiveSocket(', 'Socket, InputStream, OutputStream) throws IOException', 'public'),
   \ javaapi#method(0,'isReusable(', ')', 'boolean'),
   \ javaapi#method(0,'getInetAddress(', ')', 'InetAddress'),
@@ -83,7 +83,7 @@ call javaapi#class('HttpReceiveSocket', '', [
   \ javaapi#method(0,'getLocalAddress(', ')', 'InetAddress'),
   \ ])
 
-call javaapi#class('HttpSendInputStream', '', [
+call javaapi#class('HttpSendInputStream', 'FilterInputStream', [
   \ javaapi#method(0,'HttpSendInputStream(', 'InputStream, HttpSendSocket) throws IOException', 'public'),
   \ javaapi#method(0,'deactivate(', ')', 'void'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
@@ -96,7 +96,7 @@ call javaapi#class('HttpSendInputStream', '', [
   \ javaapi#method(0,'markSupported(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('HttpSendOutputStream', '', [
+call javaapi#class('HttpSendOutputStream', 'FilterOutputStream', [
   \ javaapi#method(0,'HttpSendOutputStream(', 'OutputStream, HttpSendSocket) throws IOException', 'public'),
   \ javaapi#method(0,'deactivate(', ')', 'void'),
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
@@ -105,7 +105,7 @@ call javaapi#class('HttpSendOutputStream', '', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('HttpSendSocket', '', [
+call javaapi#class('HttpSendSocket', 'Socket', [
   \ javaapi#method(0,'HttpSendSocket(', 'String, int, URL) throws IOException', 'public'),
   \ javaapi#method(0,'HttpSendSocket(', 'String, int) throws IOException', 'public'),
   \ javaapi#method(0,'HttpSendSocket(', 'InetAddress, int) throws IOException', 'public'),
@@ -128,19 +128,19 @@ call javaapi#class('HttpSendSocket', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('RMIDirectSocketFactory', '', [
+call javaapi#class('RMIDirectSocketFactory', 'RMISocketFactory', [
   \ javaapi#method(0,'RMIDirectSocketFactory(', ')', 'public'),
   \ javaapi#method(0,'createSocket(', 'String, int) throws IOException', 'Socket'),
   \ javaapi#method(0,'createServerSocket(', 'int) throws IOException', 'ServerSocket'),
   \ ])
 
-call javaapi#class('RMIHttpToCGISocketFactory', '', [
+call javaapi#class('RMIHttpToCGISocketFactory', 'RMISocketFactory', [
   \ javaapi#method(0,'RMIHttpToCGISocketFactory(', ')', 'public'),
   \ javaapi#method(0,'createSocket(', 'String, int) throws IOException', 'Socket'),
   \ javaapi#method(0,'createServerSocket(', 'int) throws IOException', 'ServerSocket'),
   \ ])
 
-call javaapi#class('RMIHttpToPortSocketFactory', '', [
+call javaapi#class('RMIHttpToPortSocketFactory', 'RMISocketFactory', [
   \ javaapi#method(0,'RMIHttpToPortSocketFactory(', ')', 'public'),
   \ javaapi#method(0,'createSocket(', 'String, int) throws IOException', 'Socket'),
   \ javaapi#method(0,'createServerSocket(', 'int) throws IOException', 'ServerSocket'),
@@ -150,7 +150,7 @@ call javaapi#class('AsyncConnector', 'Runnable', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('RMIMasterSocketFactory', '', [
+call javaapi#class('RMIMasterSocketFactory', 'RMISocketFactory', [
   \ javaapi#method(0,'RMIMasterSocketFactory(', ')', 'public'),
   \ javaapi#method(0,'createSocket(', 'String, int) throws IOException', 'Socket'),
   \ javaapi#method(0,'createServerSocket(', 'int) throws IOException', 'ServerSocket'),
@@ -160,7 +160,7 @@ call javaapi#interface('RMISocketInfo', '', [
   \ javaapi#method(0,'isReusable(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('WrappedSocket', '', [
+call javaapi#class('WrappedSocket', 'Socket', [
   \ javaapi#method(0,'WrappedSocket(', 'Socket, InputStream, OutputStream) throws IOException', 'public'),
   \ javaapi#method(0,'getInetAddress(', ')', 'InetAddress'),
   \ javaapi#method(0,'getLocalAddress(', ')', 'InetAddress'),

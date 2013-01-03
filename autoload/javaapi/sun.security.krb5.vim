@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.security.krb5')
 
-call javaapi#class('Asn1Exception', '', [
+call javaapi#class('Asn1Exception', 'KrbException', [
   \ javaapi#method(0,'Asn1Exception(', 'int)', 'public'),
   \ ])
 
@@ -165,7 +165,7 @@ call javaapi#class('1', 'String>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('BpType', '', [
+call javaapi#class('BpType', 'BpType>', [
   \ javaapi#field(1,'NONE', 'BpType'),
   \ javaapi#field(1,'TRY_LAST', 'BpType'),
   \ javaapi#field(1,'TRY_LESS', 'BpType'),
@@ -211,14 +211,14 @@ call javaapi#class('KrbApReq', '', [
 call javaapi#class('KrbAppMessage', '', [
   \ ])
 
-call javaapi#class('KrbAsRep', '', [
+call javaapi#class('KrbAsRep', 'KrbKdcRep', [
   \ ])
 
 call javaapi#class('KrbAsReq', '', [
   \ javaapi#method(0,'KrbAsReq(', 'EncryptionKey, KDCOptions, PrincipalName, PrincipalName, KerberosTime, KerberosTime, KerberosTime, int[], HostAddresses) throws KrbException, IOException', 'public'),
   \ ])
 
-call javaapi#class('State', '', [
+call javaapi#class('State', 'State>', [
   \ javaapi#field(1,'INIT', 'State'),
   \ javaapi#field(1,'REQ_OK', 'State'),
   \ javaapi#field(1,'DESTROYED', 'State'),
@@ -246,11 +246,11 @@ call javaapi#class('KrbCred', '', [
   \ javaapi#method(0,'getMessage(', ')', 'byte[]'),
   \ ])
 
-call javaapi#class('KrbCryptoException', '', [
+call javaapi#class('KrbCryptoException', 'KrbException', [
   \ javaapi#method(0,'KrbCryptoException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('KrbException', '', [
+call javaapi#class('KrbException', 'Exception', [
   \ javaapi#method(0,'KrbException(', 'String)', 'public'),
   \ javaapi#method(0,'KrbException(', 'int)', 'public'),
   \ javaapi#method(0,'KrbException(', 'int, String)', 'public'),
@@ -272,12 +272,12 @@ call javaapi#class('KrbException', '', [
 call javaapi#class('KrbKdcRep', '', [
   \ ])
 
-call javaapi#class('KrbPriv', '', [
+call javaapi#class('KrbPriv', 'KrbAppMessage', [
   \ javaapi#method(0,'getMessage(', ') throws KrbException', 'byte[]'),
   \ javaapi#method(0,'getData(', ')', 'byte[]'),
   \ ])
 
-call javaapi#class('KrbSafe', '', [
+call javaapi#class('KrbSafe', 'KrbAppMessage', [
   \ javaapi#method(0,'KrbSafe(', 'byte[], Credentials, EncryptionKey, KerberosTime, SeqNumber, HostAddress, HostAddress) throws KrbException, IOException', 'public'),
   \ javaapi#method(0,'KrbSafe(', 'byte[], Credentials, EncryptionKey, SeqNumber, HostAddress, HostAddress, boolean, boolean) throws KrbException, IOException', 'public'),
   \ javaapi#method(0,'getMessage(', ')', 'byte[]'),
@@ -291,7 +291,7 @@ call javaapi#class('SrvRecord', 'Comparable', [
 call javaapi#class('KrbServiceLocator', '', [
   \ ])
 
-call javaapi#class('KrbTgsRep', '', [
+call javaapi#class('KrbTgsRep', 'KrbKdcRep', [
   \ javaapi#method(0,'getCreds(', ')', 'Credentials'),
   \ ])
 
@@ -361,13 +361,13 @@ call javaapi#class('Realm', 'Cloneable', [
   \ javaapi#method(1,'getRealmsList(', 'String, String) throws KrbException', 'String[]'),
   \ ])
 
-call javaapi#class('RealmException', '', [
+call javaapi#class('RealmException', 'KrbException', [
   \ javaapi#method(0,'RealmException(', 'int)', 'public'),
   \ javaapi#method(0,'RealmException(', 'String)', 'public'),
   \ javaapi#method(0,'RealmException(', 'int, String)', 'public'),
   \ ])
 
-call javaapi#class('ServiceName', '', [
+call javaapi#class('ServiceName', 'PrincipalName', [
   \ javaapi#method(0,'ServiceName(', 'String, int) throws RealmException', 'public'),
   \ javaapi#method(0,'ServiceName(', 'String) throws RealmException', 'public'),
   \ javaapi#method(0,'ServiceName(', 'String, String) throws RealmException', 'public'),

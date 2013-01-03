@@ -32,25 +32,25 @@ call javaapi#class('NTSid', 'Serializable', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('NTSidDomainPrincipal', '', [
+call javaapi#class('NTSidDomainPrincipal', 'NTSid', [
   \ javaapi#method(0,'NTSidDomainPrincipal(', 'String)', 'public'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('NTSidGroupPrincipal', '', [
+call javaapi#class('NTSidGroupPrincipal', 'NTSid', [
   \ javaapi#method(0,'NTSidGroupPrincipal(', 'String)', 'public'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('NTSidPrimaryGroupPrincipal', '', [
+call javaapi#class('NTSidPrimaryGroupPrincipal', 'NTSid', [
   \ javaapi#method(0,'NTSidPrimaryGroupPrincipal(', 'String)', 'public'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('NTSidUserPrincipal', '', [
+call javaapi#class('NTSidUserPrincipal', 'NTSid', [
   \ javaapi#method(0,'NTSidUserPrincipal(', 'String)', 'public'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
@@ -83,7 +83,7 @@ call javaapi#class('PolicyEntry', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('PolicyFile', '', [
+call javaapi#class('PolicyFile', 'Policy', [
   \ javaapi#method(0,'PolicyFile(', ')', 'public'),
   \ javaapi#method(0,'refresh(', ')', 'void'),
   \ javaapi#method(0,'getPermissions(', 'Subject, CodeSource)', 'PermissionCollection'),
@@ -108,7 +108,7 @@ call javaapi#class('GrantEntry', '', [
   \ javaapi#method(0,'write(', 'PrintWriter)', 'void'),
   \ ])
 
-call javaapi#class('ParsingException', '', [
+call javaapi#class('ParsingException', 'GeneralSecurityException', [
   \ javaapi#method(0,'ParsingException(', 'String)', 'public'),
   \ javaapi#method(0,'ParsingException(', 'int, String)', 'public'),
   \ javaapi#method(0,'ParsingException(', 'int, String, String)', 'public'),
@@ -148,7 +148,7 @@ call javaapi#class('PolicyParser', '', [
   \ javaapi#method(1,'main(', 'String[]) throws Exception', 'void'),
   \ ])
 
-call javaapi#class('PolicyPermissions', '', [
+call javaapi#class('PolicyPermissions', 'PermissionCollection', [
   \ javaapi#method(0,'add(', 'Permission)', 'void'),
   \ javaapi#method(0,'implies(', 'Permission)', 'boolean'),
   \ javaapi#method(0,'elements(', ')', 'Permission>'),
@@ -218,7 +218,7 @@ call javaapi#class('3', 'String>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('SubjectCodeSource', '', [
+call javaapi#class('SubjectCodeSource', 'CodeSource', [
   \ javaapi#method(0,'implies(', 'CodeSource)', 'boolean'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),

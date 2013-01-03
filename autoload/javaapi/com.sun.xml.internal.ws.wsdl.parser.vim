@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.ws.wsdl.parser')
 
-call javaapi#class('DelegatingParserExtension', '', [
+call javaapi#class('DelegatingParserExtension', 'WSDLParserExtension', [
   \ javaapi#method(0,'DelegatingParserExtension(', 'WSDLParserExtension)', 'public'),
   \ javaapi#method(0,'start(', 'WSDLParserExtensionContext)', 'void'),
   \ javaapi#method(0,'serviceAttributes(', 'WSDLService, XMLStreamReader)', 'void'),
@@ -46,7 +46,7 @@ call javaapi#interface('ErrorHandler', '', [
   \ javaapi#method(0,'error(', 'Throwable)', 'void'),
   \ ])
 
-call javaapi#class('FoolProofParserExtension', '', [
+call javaapi#class('FoolProofParserExtension', 'DelegatingParserExtension', [
   \ javaapi#method(0,'FoolProofParserExtension(', 'WSDLParserExtension)', 'public'),
   \ javaapi#method(0,'serviceElements(', 'WSDLService, XMLStreamReader)', 'boolean'),
   \ javaapi#method(0,'portElements(', 'WSDLPort, XMLStreamReader)', 'boolean'),
@@ -70,7 +70,7 @@ call javaapi#class('Builder', 'ErrorHandler', [
   \ javaapi#method(0,'check(', ') throws InaccessibleWSDLException', 'void'),
   \ ])
 
-call javaapi#class('InaccessibleWSDLException', '', [
+call javaapi#class('InaccessibleWSDLException', 'WebServiceException', [
   \ javaapi#method(0,'InaccessibleWSDLException(', 'List<Throwable>)', 'public'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'getErrors(', ')', 'Throwable>'),
@@ -84,7 +84,7 @@ call javaapi#interface('MIMEConstants', '', [
   \ javaapi#field(1,'QNAME_MIME_XML', 'QName'),
   \ ])
 
-call javaapi#class('MemberSubmissionAddressingWSDLParserExtension', '', [
+call javaapi#class('MemberSubmissionAddressingWSDLParserExtension', 'W3CAddressingWSDLParserExtension', [
   \ javaapi#method(0,'MemberSubmissionAddressingWSDLParserExtension(', ')', 'public'),
   \ javaapi#method(0,'bindingElements(', 'WSDLBoundPortType, XMLStreamReader)', 'boolean'),
   \ javaapi#method(0,'portElements(', 'WSDLPort, XMLStreamReader)', 'boolean'),
@@ -108,11 +108,11 @@ call javaapi#class('ParserUtil', '', [
   \ javaapi#method(1,'failWithLocalName(', 'String, XMLStreamReader, String)', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'FilterInputStream', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('BindingMode', '', [
+call javaapi#class('BindingMode', 'BindingMode>', [
   \ javaapi#field(1,'INPUT', 'BindingMode'),
   \ javaapi#field(1,'OUTPUT', 'BindingMode'),
   \ javaapi#field(1,'FAULT', 'BindingMode'),
@@ -148,14 +148,14 @@ call javaapi#interface('SOAPConstants', '', [
   \ javaapi#field(1,'QNAME_MUSTUNDERSTAND', 'QName'),
   \ ])
 
-call javaapi#class('W3CAddressingMetadataWSDLParserExtension', '', [
+call javaapi#class('W3CAddressingMetadataWSDLParserExtension', 'W3CAddressingWSDLParserExtension', [
   \ javaapi#method(0,'W3CAddressingMetadataWSDLParserExtension(', ')', 'public'),
   \ javaapi#method(0,'bindingElements(', 'WSDLBoundPortType, XMLStreamReader)', 'boolean'),
   \ javaapi#method(0,'portElements(', 'WSDLPort, XMLStreamReader)', 'boolean'),
   \ javaapi#method(0,'bindingOperationElements(', 'WSDLBoundOperation, XMLStreamReader)', 'boolean'),
   \ ])
 
-call javaapi#class('W3CAddressingWSDLParserExtension', '', [
+call javaapi#class('W3CAddressingWSDLParserExtension', 'WSDLParserExtension', [
   \ javaapi#method(0,'W3CAddressingWSDLParserExtension(', ')', 'public'),
   \ javaapi#method(0,'bindingElements(', 'WSDLBoundPortType, XMLStreamReader)', 'boolean'),
   \ javaapi#method(0,'portElements(', 'WSDLPort, XMLStreamReader)', 'boolean'),
@@ -204,7 +204,7 @@ call javaapi#class('WSDLParserExtensionContextImpl', 'WSDLParserExtensionContext
   \ javaapi#method(0,'getPolicyResolver(', ')', 'PolicyResolver'),
   \ ])
 
-call javaapi#class('WSDLParserExtensionFacade', '', [
+call javaapi#class('WSDLParserExtensionFacade', 'WSDLParserExtension', [
   \ javaapi#method(0,'start(', 'WSDLParserExtensionContext)', 'void'),
   \ javaapi#method(0,'serviceElements(', 'WSDLService, XMLStreamReader)', 'boolean'),
   \ javaapi#method(0,'serviceAttributes(', 'WSDLService, XMLStreamReader)', 'void'),

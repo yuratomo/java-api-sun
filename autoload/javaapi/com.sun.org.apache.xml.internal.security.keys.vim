@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xml.internal.security.keys')
 
-call javaapi#class('ContentHandlerAlreadyRegisteredException', '', [
+call javaapi#class('ContentHandlerAlreadyRegisteredException', 'XMLSecurityException', [
   \ javaapi#method(0,'ContentHandlerAlreadyRegisteredException(', ')', 'public'),
   \ javaapi#method(0,'ContentHandlerAlreadyRegisteredException(', 'String)', 'public'),
   \ javaapi#method(0,'ContentHandlerAlreadyRegisteredException(', 'String, Object[])', 'public'),
@@ -8,7 +8,7 @@ call javaapi#class('ContentHandlerAlreadyRegisteredException', '', [
   \ javaapi#method(0,'ContentHandlerAlreadyRegisteredException(', 'String, Object[], Exception)', 'public'),
   \ ])
 
-call javaapi#class('KeyInfo', '', [
+call javaapi#class('KeyInfo', 'SignatureElementProxy', [
   \ javaapi#method(0,'KeyInfo(', 'Document)', 'public'),
   \ javaapi#method(0,'KeyInfo(', 'Element, String) throws XMLSecurityException', 'public'),
   \ javaapi#method(0,'setId(', 'String)', 'void'),

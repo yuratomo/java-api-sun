@@ -1,42 +1,42 @@
 call javaapi#namespace('sun.tracing')
 
-call javaapi#class('MultiplexProbe', '', [
+call javaapi#class('MultiplexProbe', 'ProbeSkeleton', [
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
   \ javaapi#method(0,'uncheckedTrigger(', 'Object[])', 'void'),
   \ ])
 
-call javaapi#class('MultiplexProvider', '', [
+call javaapi#class('MultiplexProvider', 'ProviderSkeleton', [
   \ javaapi#method(0,'dispose(', ')', 'void'),
   \ ])
 
-call javaapi#class('MultiplexProviderFactory', '', [
+call javaapi#class('MultiplexProviderFactory', 'ProviderFactory', [
   \ javaapi#method(0,'MultiplexProviderFactory(', 'Set<ProviderFactory>)', 'public'),
   \ javaapi#method(0,'createProvider(', 'Class<T>)', 'T'),
   \ ])
 
-call javaapi#class('NullProbe', '', [
+call javaapi#class('NullProbe', 'ProbeSkeleton', [
   \ javaapi#method(0,'NullProbe(', 'Class<?>[])', 'public'),
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
   \ javaapi#method(0,'uncheckedTrigger(', 'Object[])', 'void'),
   \ ])
 
-call javaapi#class('NullProvider', '', [
+call javaapi#class('NullProvider', 'ProviderSkeleton', [
   \ ])
 
-call javaapi#class('NullProviderFactory', '', [
+call javaapi#class('NullProviderFactory', 'ProviderFactory', [
   \ javaapi#method(0,'NullProviderFactory(', ')', 'public'),
   \ javaapi#method(0,'createProvider(', 'Class<T>)', 'T'),
   \ ])
 
-call javaapi#class('PrintStreamProbe', '', [
+call javaapi#class('PrintStreamProbe', 'ProbeSkeleton', [
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
   \ javaapi#method(0,'uncheckedTrigger(', 'Object[])', 'void'),
   \ ])
 
-call javaapi#class('PrintStreamProvider', '', [
+call javaapi#class('PrintStreamProvider', 'ProviderSkeleton', [
   \ ])
 
-call javaapi#class('PrintStreamProviderFactory', '', [
+call javaapi#class('PrintStreamProviderFactory', 'ProviderFactory', [
   \ javaapi#method(0,'PrintStreamProviderFactory(', 'PrintStream)', 'public'),
   \ javaapi#method(0,'createProvider(', 'Class<T>)', 'T'),
   \ ])

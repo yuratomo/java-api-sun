@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xpath.internal.res')
 
-call javaapi#class('XPATHErrorResources', '', [
+call javaapi#class('XPATHErrorResources', 'ListResourceBundle', [
   \ javaapi#field(1,'ERROR0000', 'String'),
   \ javaapi#field(1,'ER_CURRENT_NOT_ALLOWED_IN_MATCH', 'String'),
   \ javaapi#field(1,'ER_CURRENT_TAKES_NO_ARGS', 'String'),
@@ -156,7 +156,7 @@ call javaapi#class('XPATHErrorResources', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 
-call javaapi#class('XPATHErrorResources_de', '', [
+call javaapi#class('XPATHErrorResources_de', 'ListResourceBundle', [
   \ javaapi#field(1,'ERROR0000', 'String'),
   \ javaapi#field(1,'ER_CURRENT_NOT_ALLOWED_IN_MATCH', 'String'),
   \ javaapi#field(1,'ER_CURRENT_TAKES_NO_ARGS', 'String'),
@@ -312,11 +312,11 @@ call javaapi#class('XPATHErrorResources_de', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 
-call javaapi#class('XPATHErrorResources_en', '', [
+call javaapi#class('XPATHErrorResources_en', 'XPATHErrorResources', [
   \ javaapi#method(0,'XPATHErrorResources_en(', ')', 'public'),
   \ ])
 
-call javaapi#class('XPATHErrorResources_es', '', [
+call javaapi#class('XPATHErrorResources_es', 'ListResourceBundle', [
   \ javaapi#field(1,'ERROR0000', 'String'),
   \ javaapi#field(1,'ER_CURRENT_NOT_ALLOWED_IN_MATCH', 'String'),
   \ javaapi#field(1,'ER_CURRENT_TAKES_NO_ARGS', 'String'),
@@ -472,7 +472,7 @@ call javaapi#class('XPATHErrorResources_es', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 
-call javaapi#class('XPATHErrorResources_fr', '', [
+call javaapi#class('XPATHErrorResources_fr', 'ListResourceBundle', [
   \ javaapi#field(1,'ERROR0000', 'String'),
   \ javaapi#field(1,'ER_CURRENT_NOT_ALLOWED_IN_MATCH', 'String'),
   \ javaapi#field(1,'ER_CURRENT_TAKES_NO_ARGS', 'String'),
@@ -628,7 +628,7 @@ call javaapi#class('XPATHErrorResources_fr', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 
-call javaapi#class('XPATHErrorResources_it', '', [
+call javaapi#class('XPATHErrorResources_it', 'ListResourceBundle', [
   \ javaapi#field(1,'ERROR0000', 'String'),
   \ javaapi#field(1,'ER_CURRENT_NOT_ALLOWED_IN_MATCH', 'String'),
   \ javaapi#field(1,'ER_CURRENT_TAKES_NO_ARGS', 'String'),
@@ -784,7 +784,7 @@ call javaapi#class('XPATHErrorResources_it', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 
-call javaapi#class('XPATHErrorResources_ja', '', [
+call javaapi#class('XPATHErrorResources_ja', 'ListResourceBundle', [
   \ javaapi#field(1,'ERROR0000', 'String'),
   \ javaapi#field(1,'ER_CURRENT_NOT_ALLOWED_IN_MATCH', 'String'),
   \ javaapi#field(1,'ER_CURRENT_TAKES_NO_ARGS', 'String'),
@@ -940,7 +940,7 @@ call javaapi#class('XPATHErrorResources_ja', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 
-call javaapi#class('XPATHErrorResources_ko', '', [
+call javaapi#class('XPATHErrorResources_ko', 'ListResourceBundle', [
   \ javaapi#field(1,'ERROR0000', 'String'),
   \ javaapi#field(1,'ER_CURRENT_NOT_ALLOWED_IN_MATCH', 'String'),
   \ javaapi#field(1,'ER_CURRENT_TAKES_NO_ARGS', 'String'),
@@ -1096,7 +1096,7 @@ call javaapi#class('XPATHErrorResources_ko', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 
-call javaapi#class('XPATHErrorResources_pt_BR', '', [
+call javaapi#class('XPATHErrorResources_pt_BR', 'ListResourceBundle', [
   \ javaapi#field(1,'ERROR0000', 'String'),
   \ javaapi#field(1,'ER_CURRENT_NOT_ALLOWED_IN_MATCH', 'String'),
   \ javaapi#field(1,'ER_CURRENT_TAKES_NO_ARGS', 'String'),
@@ -1252,7 +1252,7 @@ call javaapi#class('XPATHErrorResources_pt_BR', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 
-call javaapi#class('XPATHErrorResources_sv', '', [
+call javaapi#class('XPATHErrorResources_sv', 'ListResourceBundle', [
   \ javaapi#field(1,'ERROR0000', 'String'),
   \ javaapi#field(1,'ER_CURRENT_NOT_ALLOWED_IN_MATCH', 'String'),
   \ javaapi#field(1,'ER_CURRENT_TAKES_NO_ARGS', 'String'),
@@ -1408,7 +1408,7 @@ call javaapi#class('XPATHErrorResources_sv', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 
-call javaapi#class('XPATHErrorResources_zh_CN', '', [
+call javaapi#class('XPATHErrorResources_zh_CN', 'ListResourceBundle', [
   \ javaapi#field(1,'ERROR0000', 'String'),
   \ javaapi#field(1,'ER_CURRENT_NOT_ALLOWED_IN_MATCH', 'String'),
   \ javaapi#field(1,'ER_CURRENT_TAKES_NO_ARGS', 'String'),
@@ -1564,7 +1564,7 @@ call javaapi#class('XPATHErrorResources_zh_CN', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 
-call javaapi#class('XPATHErrorResources_zh_TW', '', [
+call javaapi#class('XPATHErrorResources_zh_TW', 'ListResourceBundle', [
   \ javaapi#field(1,'ERROR0000', 'String'),
   \ javaapi#field(1,'ER_CURRENT_NOT_ALLOWED_IN_MATCH', 'String'),
   \ javaapi#field(1,'ER_CURRENT_TAKES_NO_ARGS', 'String'),
@@ -1720,7 +1720,7 @@ call javaapi#class('XPATHErrorResources_zh_TW', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 
-call javaapi#class('XPATHMessages', '', [
+call javaapi#class('XPATHMessages', 'XMLMessages', [
   \ javaapi#method(0,'XPATHMessages(', ')', 'public'),
   \ javaapi#method(1,'createXPATHMessage(', 'String, Object[])', 'String'),
   \ javaapi#method(1,'createXPATHWarning(', 'String, Object[])', 'String'),

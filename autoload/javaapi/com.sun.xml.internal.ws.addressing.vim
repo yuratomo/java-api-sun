@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.ws.addressing')
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'XMLStreamWriterFilter', [
   \ javaapi#method(0,'writeStartElement(', 'String, String, String) throws XMLStreamException', 'void'),
   \ javaapi#method(0,'writeStartElement(', 'String, String) throws XMLStreamException', 'void'),
   \ javaapi#method(0,'writeStartElement(', 'String) throws XMLStreamException', 'void'),
@@ -110,7 +110,7 @@ call javaapi#class('W3CAddressingMetadataConstants', '', [
   \ javaapi#method(0,'W3CAddressingMetadataConstants(', ')', 'public'),
   \ ])
 
-call javaapi#class('W3CWsaClientTube', '', [
+call javaapi#class('W3CWsaClientTube', 'WsaClientTube', [
   \ javaapi#method(0,'W3CWsaClientTube(', 'WSDLPort, WSBinding, Tube)', 'public'),
   \ javaapi#method(0,'W3CWsaClientTube(', 'WsaClientTube, TubeCloner)', 'public'),
   \ javaapi#method(0,'copy(', 'TubeCloner)', 'W3CWsaClientTube'),
@@ -122,7 +122,7 @@ call javaapi#class('W3CWsaClientTube', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('W3CWsaServerTube', '', [
+call javaapi#class('W3CWsaServerTube', 'WsaServerTube', [
   \ javaapi#method(0,'W3CWsaServerTube(', 'WSEndpoint, WSDLPort, WSBinding, Tube)', 'public'),
   \ javaapi#method(0,'W3CWsaServerTube(', 'W3CWsaServerTube, TubeCloner)', 'public'),
   \ javaapi#method(0,'copy(', 'TubeCloner)', 'W3CWsaServerTube'),
@@ -131,7 +131,7 @@ call javaapi#class('W3CWsaServerTube', '', [
   \ javaapi#method(0,'copy(', 'TubeCloner)', 'Tube'),
   \ ])
 
-call javaapi#class('WSEPRExtension', '', [
+call javaapi#class('WSEPRExtension', 'EPRExtension', [
   \ javaapi#method(0,'WSEPRExtension(', 'XMLStreamBuffer, QName)', 'public'),
   \ javaapi#method(0,'readAsXMLStreamReader(', ') throws XMLStreamException', 'XMLStreamReader'),
   \ javaapi#method(0,'getQName(', ')', 'QName'),
@@ -142,7 +142,7 @@ call javaapi#class('WsaActionUtil', '', [
   \ javaapi#method(1,'getDefaultFaultAction(', 'JavaMethod, CheckedException)', 'String'),
   \ ])
 
-call javaapi#class('WsaClientTube', '', [
+call javaapi#class('WsaClientTube', 'WsaTube', [
   \ javaapi#method(0,'WsaClientTube(', 'WSDLPort, WSBinding, Tube)', 'public'),
   \ javaapi#method(0,'WsaClientTube(', 'WsaClientTube, TubeCloner)', 'public'),
   \ javaapi#method(0,'copy(', 'TubeCloner)', 'WsaClientTube'),
@@ -153,14 +153,14 @@ call javaapi#class('WsaClientTube', '', [
   \ javaapi#method(0,'copy(', 'TubeCloner)', 'Tube'),
   \ ])
 
-call javaapi#class('WsaPropertyBag', '', [
+call javaapi#class('WsaPropertyBag', 'PropertySet', [
   \ javaapi#method(0,'getTo(', ') throws XMLStreamException', 'String'),
   \ javaapi#method(0,'getFrom(', ') throws XMLStreamException', 'WSEndpointReference'),
   \ javaapi#method(0,'getAction(', ')', 'String'),
   \ javaapi#method(0,'getMessageID(', ')', 'String'),
   \ ])
 
-call javaapi#class('WsaServerTube', '', [
+call javaapi#class('WsaServerTube', 'WsaTube', [
   \ javaapi#field(1,'REQUEST_MESSAGE_ID', 'String'),
   \ javaapi#method(0,'WsaServerTube(', 'WSEndpoint, WSDLPort, WSBinding, Tube)', 'public'),
   \ javaapi#method(0,'WsaServerTube(', 'WsaServerTube, TubeCloner)', 'public'),
@@ -172,7 +172,7 @@ call javaapi#class('WsaServerTube', '', [
   \ javaapi#method(0,'copy(', 'TubeCloner)', 'Tube'),
   \ ])
 
-call javaapi#class('WsaTube', '', [
+call javaapi#class('WsaTube', 'AbstractFilterTubeImpl', [
   \ javaapi#method(0,'WsaTube(', 'WSDLPort, WSBinding, Tube)', 'public'),
   \ javaapi#method(0,'WsaTube(', 'WsaTube, TubeCloner)', 'public'),
   \ javaapi#method(0,'processException(', 'Throwable)', 'NextAction'),
@@ -193,7 +193,7 @@ call javaapi#class('WsaTubeHelper', '', [
   \ javaapi#method(0,'getMapRequiredDetail(', 'QName, Element)', 'void'),
   \ ])
 
-call javaapi#class('WsaTubeHelperImpl', '', [
+call javaapi#class('WsaTubeHelperImpl', 'WsaTubeHelper', [
   \ javaapi#method(0,'WsaTubeHelperImpl(', 'WSDLPort, SEIModel, WSBinding)', 'public'),
   \ javaapi#method(0,'getProblemActionDetail(', 'String, Element)', 'void'),
   \ javaapi#method(0,'getInvalidMapDetail(', 'QName, Element)', 'void'),

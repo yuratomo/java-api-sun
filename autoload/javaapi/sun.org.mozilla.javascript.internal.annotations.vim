@@ -1,21 +1,21 @@
 call javaapi#namespace('sun.org.mozilla.javascript.internal.annotations')
 
-call javaapi#interface('JSConstructor', '', [
+call javaapi#interface('JSConstructor', 'Annotation', [
   \ ])
 
-call javaapi#interface('JSFunction', '', [
+call javaapi#interface('JSFunction', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'String'),
   \ ])
 
-call javaapi#interface('JSGetter', '', [
+call javaapi#interface('JSGetter', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'String'),
   \ ])
 
-call javaapi#interface('JSSetter', '', [
+call javaapi#interface('JSSetter', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'String'),
   \ ])
 
-call javaapi#interface('JSStaticFunction', '', [
+call javaapi#interface('JSStaticFunction', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'String'),
   \ ])
 

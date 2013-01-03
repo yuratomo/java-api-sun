@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.ws.transport.http.client')
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'FilterInputStream', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
@@ -8,7 +8,7 @@ call javaapi#class('HttpClientVerifier', 'HostnameVerifier', [
   \ javaapi#method(0,'verify(', 'String, SSLSession)', 'boolean'),
   \ ])
 
-call javaapi#class('WSChunkedOuputStream', '', [
+call javaapi#class('WSChunkedOuputStream', 'FilterOutputStream', [
   \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
   \ ])
 
@@ -17,13 +17,13 @@ call javaapi#class('HttpClientTransport', '', [
   \ javaapi#method(0,'getHeaders(', ')', 'String>>'),
   \ ])
 
-call javaapi#class('HttpResponseProperties', '', [
+call javaapi#class('HttpResponseProperties', 'PropertySet', [
   \ javaapi#method(0,'HttpResponseProperties(', 'HttpClientTransport)', 'public'),
   \ javaapi#method(0,'getResponseHeaders(', ')', 'String>>'),
   \ javaapi#method(0,'getResponseCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('HttpTransportPipe', '', [
+call javaapi#class('HttpTransportPipe', 'AbstractTubeImpl', [
   \ javaapi#field(1,'dump', 'boolean'),
   \ javaapi#method(0,'HttpTransportPipe(', 'Codec, WSBinding)', 'public'),
   \ javaapi#method(0,'processException(', 'Throwable)', 'NextAction'),

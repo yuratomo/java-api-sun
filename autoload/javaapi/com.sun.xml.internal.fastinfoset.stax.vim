@@ -21,7 +21,7 @@ call javaapi#class('NamespaceContextImpl', 'NamespaceContext', [
   \ javaapi#method(0,'getPrefixes(', 'String)', 'Iterator'),
   \ ])
 
-call javaapi#class('StAXDocumentParser', '', [
+call javaapi#class('StAXDocumentParser', 'Decoder', [
   \ javaapi#method(0,'StAXDocumentParser(', ')', 'public'),
   \ javaapi#method(0,'StAXDocumentParser(', 'InputStream)', 'public'),
   \ javaapi#method(0,'StAXDocumentParser(', 'InputStream, StAXManager)', 'public'),
@@ -100,7 +100,7 @@ call javaapi#class('StAXDocumentParser', '', [
   \ javaapi#method(0,'setManager(', 'StAXManager)', 'void'),
   \ ])
 
-call javaapi#class('StAXDocumentSerializer', '', [
+call javaapi#class('StAXDocumentSerializer', 'Encoder', [
   \ javaapi#method(0,'StAXDocumentSerializer(', ')', 'public'),
   \ javaapi#method(0,'StAXDocumentSerializer(', 'OutputStream)', 'public'),
   \ javaapi#method(0,'StAXDocumentSerializer(', 'OutputStream, StAXManager)', 'public'),

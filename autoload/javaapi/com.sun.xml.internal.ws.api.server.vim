@@ -4,17 +4,17 @@ call javaapi#class('1', 'CompletionCallback', [
   \ javaapi#method(0,'onCompletion(', 'Packet)', 'void'),
   \ ])
 
-call javaapi#class('CodecPool', '', [
+call javaapi#class('CodecPool', 'Codec>', [
   \ ])
 
 call javaapi#class('AbstractServerAsyncTransport<T>', '', [
   \ javaapi#method(0,'AbstractServerAsyncTransport(', 'WSEndpoint)', 'public'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Pool<TK>', [
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'Pool<TK>', [
   \ ])
 
 call javaapi#class('Toolkit', '', [
@@ -23,7 +23,7 @@ call javaapi#class('Toolkit', '', [
   \ javaapi#method(0,'Toolkit(', 'Adapter)', 'public'),
   \ ])
 
-call javaapi#class('Adapter<TK', '', [
+call javaapi#class('Adapter<TK', 'Toolkit>', [
   \ javaapi#method(0,'reconfigure(', ')', 'void'),
   \ javaapi#method(0,'getSPI(', 'Class<T>)', 'T'),
   \ javaapi#method(0,'getEndpoint(', ')', 'WSEndpoint<?>'),
@@ -44,7 +44,7 @@ call javaapi#interface('BoundEndpoint', '', [
   \ javaapi#method(0,'getAddress(', 'String)', 'URI'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Container', [
   \ javaapi#method(0,'getSPI(', 'Class<T>)', 'T'),
   \ ])
 
@@ -53,7 +53,7 @@ call javaapi#class('Container', '', [
   \ javaapi#method(0,'getSPI(', 'Class<T>)', 'T'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ContainerResolver', [
   \ javaapi#method(0,'getContainer(', ')', 'Container'),
   \ ])
 
@@ -69,7 +69,7 @@ call javaapi#interface('DocumentAddressResolver', '', [
   \ javaapi#method(0,'getRelativeAddressFor(', 'SDDocument, SDDocument)', 'String'),
   \ ])
 
-call javaapi#interface('EndpointAwareCodec', '', [
+call javaapi#interface('EndpointAwareCodec', 'Codec', [
   \ javaapi#method(0,'setEndpoint(', 'WSEndpoint)', 'void'),
   \ ])
 
@@ -98,7 +98,7 @@ call javaapi#class('HttpEndpoint', '', [
   \ javaapi#method(0,'stop(', ')', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Invoker', [
   \ javaapi#method(0,'start(', 'WSWebServiceContext, WSEndpoint)', 'void'),
   \ javaapi#method(0,'dispose(', ')', 'void'),
   \ javaapi#method(0,'invoke(', 'Packet, Method, ) throws InvocationTargetException, IllegalAccessException', 'Object'),
@@ -120,7 +120,7 @@ call javaapi#class('InstanceResolver<T>', '', [
   \ javaapi#method(0,'createInvoker(', ')', 'Invoker'),
   \ ])
 
-call javaapi#interface('InstanceResolverAnnotation', '', [
+call javaapi#interface('InstanceResolverAnnotation', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'InstanceResolver>'),
   \ ])
 
@@ -151,11 +151,11 @@ call javaapi#class('ResourceInjector', '', [
   \ javaapi#method(0,'inject(', 'WSWebServiceContext, Object)', 'void'),
   \ ])
 
-call javaapi#interface('Schema', '', [
+call javaapi#interface('Schema', 'SDDocument', [
   \ javaapi#method(0,'getTargetNamespace(', ')', 'String'),
   \ ])
 
-call javaapi#interface('WSDL', '', [
+call javaapi#interface('WSDL', 'SDDocument', [
   \ javaapi#method(0,'getTargetNamespace(', ')', 'String'),
   \ javaapi#method(0,'hasPortType(', ')', 'boolean'),
   \ javaapi#method(0,'hasService(', ')', 'boolean'),
@@ -176,13 +176,13 @@ call javaapi#interface('SDDocumentFilter', '', [
   \ javaapi#method(0,'filter(', 'SDDocument, XMLStreamWriter) throws XMLStreamException, IOException', 'XMLStreamWriter'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'SDDocumentSource', [
   \ javaapi#method(0,'read(', 'XMLInputFactory) throws IOException, XMLStreamException', 'XMLStreamReader'),
   \ javaapi#method(0,'read(', ') throws IOException, XMLStreamException', 'XMLStreamReader'),
   \ javaapi#method(0,'getSystemId(', ')', 'URL'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'SDDocumentSource', [
   \ javaapi#method(0,'read(', 'XMLInputFactory) throws XMLStreamException', 'XMLStreamReader'),
   \ javaapi#method(0,'read(', ') throws XMLStreamException', 'XMLStreamReader'),
   \ javaapi#method(0,'getSystemId(', ')', 'URL'),
@@ -203,7 +203,7 @@ call javaapi#class('ServerPipelineHook', '', [
   \ javaapi#method(0,'createSecurityPipe(', 'ServerPipeAssemblerContext, Pipe)', 'Pipe'),
   \ ])
 
-call javaapi#interface('ServiceDefinition', '', [
+call javaapi#interface('ServiceDefinition', 'SDDocument>', [
   \ javaapi#method(0,'getPrimary(', ')', 'SDDocument'),
   \ javaapi#method(0,'addFilter(', 'SDDocumentFilter)', 'void'),
   \ ])
@@ -249,11 +249,11 @@ call javaapi#class('WSEndpoint<T>', '', [
   \ javaapi#method(1,'getDefaultPortName(', 'QName, Class)', 'QName'),
   \ ])
 
-call javaapi#interface('WSWebServiceContext', '', [
+call javaapi#interface('WSWebServiceContext', 'WebServiceContext', [
   \ javaapi#method(0,'getRequestPacket(', ')', 'Packet'),
   \ ])
 
-call javaapi#class('WebModule', '', [
+call javaapi#class('WebModule', 'Module', [
   \ javaapi#method(0,'WebModule(', ')', 'public'),
   \ javaapi#method(0,'getContextPath(', ')', 'String'),
   \ ])

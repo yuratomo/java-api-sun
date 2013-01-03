@@ -24,7 +24,7 @@ call javaapi#class('StringArrayWrapper', '', [
   \ javaapi#method(0,'getLength(', ')', 'int'),
   \ ])
 
-call javaapi#class('XResourceBundle', '', [
+call javaapi#class('XResourceBundle', 'ListResourceBundle', [
   \ javaapi#field(1,'ERROR_RESOURCES', 'String'),
   \ javaapi#field(1,'XSLT_RESOURCE', 'String'),
   \ javaapi#field(1,'LANG_BUNDLE_NAME', 'String'),
@@ -48,73 +48,73 @@ call javaapi#class('XResourceBundle', '', [
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('XResourceBundleBase', '', [
+call javaapi#class('XResourceBundleBase', 'ListResourceBundle', [
   \ javaapi#method(0,'XResourceBundleBase(', ')', 'public'),
   \ javaapi#method(0,'getMessageKey(', 'int)', 'String'),
   \ javaapi#method(0,'getWarningKey(', 'int)', 'String'),
   \ ])
 
-call javaapi#class('XResources_de', '', [
+call javaapi#class('XResources_de', 'XResourceBundle', [
   \ javaapi#method(0,'XResources_de(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('XResources_en', '', [
+call javaapi#class('XResources_en', 'XResourceBundle', [
   \ javaapi#method(0,'XResources_en(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('XResources_es', '', [
+call javaapi#class('XResources_es', 'XResourceBundle', [
   \ javaapi#method(0,'XResources_es(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('XResources_fr', '', [
+call javaapi#class('XResources_fr', 'XResourceBundle', [
   \ javaapi#method(0,'XResources_fr(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('XResources_it', '', [
+call javaapi#class('XResources_it', 'XResourceBundle', [
   \ javaapi#method(0,'XResources_it(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('XResources_ja_JP_A', '', [
+call javaapi#class('XResources_ja_JP_A', 'XResourceBundle', [
   \ javaapi#method(0,'XResources_ja_JP_A(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('XResources_ja_JP_HA', '', [
+call javaapi#class('XResources_ja_JP_HA', 'XResourceBundle', [
   \ javaapi#method(0,'XResources_ja_JP_HA(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('XResources_ja_JP_HI', '', [
+call javaapi#class('XResources_ja_JP_HI', 'XResourceBundle', [
   \ javaapi#method(0,'XResources_ja_JP_HI(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('XResources_ja_JP_I', '', [
+call javaapi#class('XResources_ja_JP_I', 'XResourceBundle', [
   \ javaapi#method(0,'XResources_ja_JP_I(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('XResources_ko', '', [
+call javaapi#class('XResources_ko', 'XResourceBundle', [
   \ javaapi#method(0,'XResources_ko(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('XResources_sv', '', [
+call javaapi#class('XResources_sv', 'XResourceBundle', [
   \ javaapi#method(0,'XResources_sv(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('XResources_zh_CN', '', [
+call javaapi#class('XResources_zh_CN', 'XResourceBundle', [
   \ javaapi#method(0,'XResources_zh_CN(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('XResources_zh_TW', '', [
+call javaapi#class('XResources_zh_TW', 'XResourceBundle', [
   \ javaapi#method(0,'XResources_zh_TW(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])

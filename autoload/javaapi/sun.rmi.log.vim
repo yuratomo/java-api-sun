@@ -10,7 +10,7 @@ call javaapi#class('LogHandler', '', [
   \ javaapi#method(0,'applyUpdate(', 'Object, Object) throws Exception', 'Object'),
   \ ])
 
-call javaapi#class('LogInputStream', '', [
+call javaapi#class('LogInputStream', 'InputStream', [
   \ javaapi#method(0,'LogInputStream(', 'InputStream, int) throws IOException', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[]) throws IOException', 'int'),
@@ -20,7 +20,7 @@ call javaapi#class('LogInputStream', '', [
   \ javaapi#method(0,'close(', ')', 'void'),
   \ ])
 
-call javaapi#class('LogOutputStream', '', [
+call javaapi#class('LogOutputStream', 'OutputStream', [
   \ javaapi#method(0,'LogOutputStream(', 'RandomAccessFile) throws IOException', 'public'),
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[]) throws IOException', 'void'),
@@ -33,7 +33,7 @@ call javaapi#class('1', 'ClassLoader>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('LogFile', '', [
+call javaapi#class('LogFile', 'RandomAccessFile', [
   \ javaapi#method(0,'LogFile(', 'String, String) throws FileNotFoundException, IOException', 'public'),
   \ ])
 

@@ -35,7 +35,7 @@ call javaapi#class('AugmentationsItemsContainer', '', [
   \ javaapi#method(0,'expand(', ')', 'AugmentationsItemsContainer'),
   \ ])
 
-call javaapi#class('LargeContainer', '', [
+call javaapi#class('LargeContainer', 'AugmentationsItemsContainer', [
   \ javaapi#method(0,'getItem(', 'Object)', 'Object'),
   \ javaapi#method(0,'putItem(', 'Object, Object)', 'Object'),
   \ javaapi#method(0,'removeItem(', 'Object)', 'Object'),
@@ -51,7 +51,7 @@ call javaapi#class('SmallContainerKeyEnumeration', 'Enumeration', [
   \ javaapi#method(0,'nextElement(', ')', 'Object'),
   \ ])
 
-call javaapi#class('SmallContainer', '', [
+call javaapi#class('SmallContainer', 'AugmentationsItemsContainer', [
   \ javaapi#method(0,'keys(', ')', 'Enumeration'),
   \ javaapi#method(0,'getItem(', 'Object)', 'Object'),
   \ javaapi#method(0,'putItem(', 'Object, Object)', 'Object'),
@@ -96,7 +96,7 @@ call javaapi#class('DOMErrorHandlerWrapper', 'DOMErrorHandler', [
   \ javaapi#method(0,'handleError(', 'DOMError)', 'boolean'),
   \ ])
 
-call javaapi#class('DOMInputSource', '', [
+call javaapi#class('DOMInputSource', 'XMLInputSource', [
   \ javaapi#method(0,'DOMInputSource(', ')', 'public'),
   \ javaapi#method(0,'DOMInputSource(', 'Node)', 'public'),
   \ javaapi#method(0,'DOMInputSource(', 'Node, String)', 'public'),
@@ -251,7 +251,7 @@ call javaapi#class('FeatureState', '', [
   \ javaapi#method(0,'isExceptional(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('HTTPInputSource', '', [
+call javaapi#class('HTTPInputSource', 'XMLInputSource', [
   \ javaapi#method(0,'HTTPInputSource(', 'String, String, String)', 'public'),
   \ javaapi#method(0,'HTTPInputSource(', 'XMLResourceIdentifier)', 'public'),
   \ javaapi#method(0,'HTTPInputSource(', 'String, String, String, InputStream, String)', 'public'),
@@ -407,7 +407,7 @@ call javaapi#class('SAX2XNI', 'XMLDocumentSource', [
   \ javaapi#method(0,'setDocumentLocator(', 'Locator)', 'void'),
   \ ])
 
-call javaapi#class('SAXInputSource', '', [
+call javaapi#class('SAXInputSource', 'XMLInputSource', [
   \ javaapi#method(0,'SAXInputSource(', ')', 'public'),
   \ javaapi#method(0,'SAXInputSource(', 'InputSource)', 'public'),
   \ javaapi#method(0,'SAXInputSource(', 'XMLReader, InputSource)', 'public'),
@@ -452,7 +452,7 @@ call javaapi#class('SecurityManager', '', [
   \ javaapi#method(0,'setElementAttrLimit(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('ShadowedSymbolTable', '', [
+call javaapi#class('ShadowedSymbolTable', 'SymbolTable', [
   \ javaapi#method(0,'ShadowedSymbolTable(', 'SymbolTable)', 'public'),
   \ javaapi#method(0,'addSymbol(', 'String)', 'String'),
   \ javaapi#method(0,'addSymbol(', 'char[], int, int)', 'String'),
@@ -460,7 +460,7 @@ call javaapi#class('ShadowedSymbolTable', '', [
   \ javaapi#method(0,'hash(', 'char[], int, int)', 'int'),
   \ ])
 
-call javaapi#class('StAXInputSource', '', [
+call javaapi#class('StAXInputSource', 'XMLInputSource', [
   \ javaapi#method(0,'StAXInputSource(', 'XMLStreamReader)', 'public'),
   \ javaapi#method(0,'StAXInputSource(', 'XMLStreamReader, boolean)', 'public'),
   \ javaapi#method(0,'StAXInputSource(', 'XMLEventReader)', 'public'),
@@ -486,7 +486,7 @@ call javaapi#class('StAXLocationWrapper', 'XMLLocator', [
   \ javaapi#method(0,'getXMLVersion(', ')', 'String'),
   \ ])
 
-call javaapi#class('Status', '', [
+call javaapi#class('Status', 'Status>', [
   \ javaapi#field(1,'SET', 'Status'),
   \ javaapi#field(1,'UNKNOWN', 'Status'),
   \ javaapi#field(1,'RECOGNIZED', 'Status'),
@@ -539,7 +539,7 @@ call javaapi#class('SymbolTable', '', [
   \ javaapi#method(0,'containsSymbol(', 'char[], int, int)', 'boolean'),
   \ ])
 
-call javaapi#class('SynchronizedSymbolTable', '', [
+call javaapi#class('SynchronizedSymbolTable', 'SymbolTable', [
   \ javaapi#method(0,'SynchronizedSymbolTable(', 'SymbolTable)', 'public'),
   \ javaapi#method(0,'SynchronizedSymbolTable(', ')', 'public'),
   \ javaapi#method(0,'SynchronizedSymbolTable(', 'int)', 'public'),
@@ -585,7 +585,7 @@ call javaapi#class('TypeInfoImpl', 'TypeInfo', [
   \ javaapi#method(1,'getDTDTypeInfo(', 'String)', 'TypeInfo'),
   \ ])
 
-call javaapi#class('MalformedURIException', '', [
+call javaapi#class('MalformedURIException', 'IOException', [
   \ javaapi#method(0,'MalformedURIException(', ')', 'public'),
   \ javaapi#method(0,'MalformedURIException(', 'String)', 'public'),
   \ ])
@@ -720,7 +720,7 @@ call javaapi#class('XMLAttributesImpl', 'XMLBufferListener', [
   \ javaapi#method(0,'refresh(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('XMLAttributesIteratorImpl', '', [
+call javaapi#class('XMLAttributesIteratorImpl', 'XMLAttributesImpl', [
   \ javaapi#method(0,'XMLAttributesIteratorImpl(', ')', 'public'),
   \ javaapi#method(0,'hasNext(', ')', 'boolean'),
   \ javaapi#method(0,'next(', ')', 'Object'),
@@ -808,7 +808,7 @@ call javaapi#class('XMLDocumentFilterImpl', 'XMLDocumentFilter', [
   \ javaapi#method(0,'xmlDecl(', 'String, String, String, Augmentations) throws XNIException', 'void'),
   \ ])
 
-call javaapi#class('XMLEntityDescriptionImpl', '', [
+call javaapi#class('XMLEntityDescriptionImpl', 'XMLResourceIdentifierImpl', [
   \ javaapi#method(0,'XMLEntityDescriptionImpl(', ')', 'public'),
   \ javaapi#method(0,'XMLEntityDescriptionImpl(', 'String, String, String, String, String)', 'public'),
   \ javaapi#method(0,'XMLEntityDescriptionImpl(', 'String, String, String, String, String, String)', 'public'),
@@ -880,7 +880,7 @@ call javaapi#class('XMLResourceIdentifierImpl', 'XMLResourceIdentifier', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('XMLStringBuffer', '', [
+call javaapi#class('XMLStringBuffer', 'XMLString', [
   \ javaapi#field(1,'DEFAULT_SIZE', 'int'),
   \ javaapi#method(0,'XMLStringBuffer(', ')', 'public'),
   \ javaapi#method(0,'XMLStringBuffer(', 'int)', 'public'),

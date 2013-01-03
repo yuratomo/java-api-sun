@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.security.ntlm')
 
-call javaapi#class('Client', '', [
+call javaapi#class('Client', 'NTLM', [
   \ javaapi#method(0,'Client(', 'String, String, String, String, char[]) throws NTLMException', 'public'),
   \ javaapi#method(0,'type1(', ')', 'byte[]'),
   \ javaapi#method(0,'type3(', 'byte[], byte[]) throws NTLMException', 'byte[]'),
@@ -21,7 +21,7 @@ call javaapi#class('NTLM', '', [
   \ javaapi#method(0,'debug(', 'byte[])', 'void'),
   \ ])
 
-call javaapi#class('NTLMException', '', [
+call javaapi#class('NTLMException', 'GeneralSecurityException', [
   \ javaapi#field(1,'PACKET_READ_ERROR', 'int'),
   \ javaapi#field(1,'NO_DOMAIN_INFO', 'int'),
   \ javaapi#field(1,'USER_UNKNOWN', 'int'),
@@ -32,7 +32,7 @@ call javaapi#class('NTLMException', '', [
   \ javaapi#method(0,'errorCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('Server', '', [
+call javaapi#class('Server', 'NTLM', [
   \ javaapi#method(0,'Server(', 'String, String) throws NTLMException', 'public'),
   \ javaapi#method(0,'type2(', 'byte[], byte[]) throws NTLMException', 'byte[]'),
   \ javaapi#method(0,'verify(', 'byte[], byte[]) throws NTLMException', 'String[]'),
@@ -41,7 +41,7 @@ call javaapi#class('Server', '', [
   \ javaapi#method(0,'debug(', 'String, Object[])', 'void'),
   \ ])
 
-call javaapi#class('Version', '', [
+call javaapi#class('Version', 'Version>', [
   \ javaapi#field(1,'NTLM', 'Version'),
   \ javaapi#field(1,'NTLM2', 'Version'),
   \ javaapi#field(1,'NTLMv2', 'Version'),

@@ -20,7 +20,7 @@ call javaapi#interface('BMPConstants', '', [
   \ javaapi#field(1,'compressionTypeNames', 'String[]'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'EmbeddedProgressAdapter', [
   \ javaapi#method(0,'imageProgress(', 'ImageReader, float)', 'void'),
   \ ])
 
@@ -59,7 +59,7 @@ call javaapi#class('EmbeddedProgressAdapter', 'IIOReadProgressListener', [
   \ javaapi#method(0,'readAborted(', 'ImageReader)', 'void'),
   \ ])
 
-call javaapi#class('BMPImageReader', '', [
+call javaapi#class('BMPImageReader', 'ImageReader', [
   \ javaapi#method(0,'BMPImageReader(', 'ImageReaderSpi)', 'public'),
   \ javaapi#method(0,'setInput(', 'Object, boolean, boolean)', 'void'),
   \ javaapi#method(0,'getNumImages(', 'boolean) throws IOException', 'int'),
@@ -77,7 +77,7 @@ call javaapi#class('BMPImageReader', '', [
   \ javaapi#method(0,'reset(', ')', 'void'),
   \ ])
 
-call javaapi#class('BMPImageReaderSpi', '', [
+call javaapi#class('BMPImageReaderSpi', 'ImageReaderSpi', [
   \ javaapi#method(0,'BMPImageReaderSpi(', ')', 'public'),
   \ javaapi#method(0,'onRegistration(', 'ServiceRegistry, Class<?>)', 'void'),
   \ javaapi#method(0,'getDescription(', 'Locale)', 'String'),
@@ -85,7 +85,7 @@ call javaapi#class('BMPImageReaderSpi', '', [
   \ javaapi#method(0,'createReaderInstance(', 'Object) throws IIOException', 'ImageReader'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'IIOWriteProgressAdapter', [
   \ javaapi#method(0,'imageProgress(', 'ImageWriter, float)', 'void'),
   \ ])
 
@@ -103,7 +103,7 @@ call javaapi#class('IIOWriteProgressAdapter', 'IIOWriteProgressListener', [
   \ javaapi#method(0,'writeAborted(', 'ImageWriter)', 'void'),
   \ ])
 
-call javaapi#class('BMPImageWriter', '', [
+call javaapi#class('BMPImageWriter', 'ImageWriter', [
   \ javaapi#method(0,'BMPImageWriter(', 'ImageWriterSpi)', 'public'),
   \ javaapi#method(0,'setOutput(', 'Object)', 'void'),
   \ javaapi#method(0,'getDefaultWriteParam(', ')', 'ImageWriteParam'),
@@ -116,7 +116,7 @@ call javaapi#class('BMPImageWriter', '', [
   \ javaapi#method(0,'reset(', ')', 'void'),
   \ ])
 
-call javaapi#class('BMPImageWriterSpi', '', [
+call javaapi#class('BMPImageWriterSpi', 'ImageWriterSpi', [
   \ javaapi#method(0,'BMPImageWriterSpi(', ')', 'public'),
   \ javaapi#method(0,'getDescription(', 'Locale)', 'String'),
   \ javaapi#method(0,'onRegistration(', 'ServiceRegistry, Class<?>)', 'void'),
@@ -124,7 +124,7 @@ call javaapi#class('BMPImageWriterSpi', '', [
   \ javaapi#method(0,'createWriterInstance(', 'Object) throws IIOException', 'ImageWriter'),
   \ ])
 
-call javaapi#class('BMPMetadata', '', [
+call javaapi#class('BMPMetadata', 'IIOMetadata', [
   \ javaapi#field(1,'nativeMetadataFormatName', 'String'),
   \ javaapi#field(0,'bmpVersion', 'String'),
   \ javaapi#field(0,'width', 'int'),
@@ -168,12 +168,12 @@ call javaapi#class('BMPMetadata', '', [
   \ javaapi#method(0,'reset(', ')', 'void'),
   \ ])
 
-call javaapi#class('BMPMetadataFormat', '', [
+call javaapi#class('BMPMetadataFormat', 'IIOMetadataFormatImpl', [
   \ javaapi#method(0,'canNodeAppear(', 'String, ImageTypeSpecifier)', 'boolean'),
   \ javaapi#method(1,'getInstance(', ')', 'IIOMetadataFormat'),
   \ ])
 
-call javaapi#class('BMPMetadataFormatResources', '', [
+call javaapi#class('BMPMetadataFormatResources', 'ListResourceBundle', [
   \ javaapi#method(0,'BMPMetadataFormatResources(', ')', 'public'),
   \ ])
 

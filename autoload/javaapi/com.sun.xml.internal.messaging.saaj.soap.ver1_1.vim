@@ -1,32 +1,32 @@
 call javaapi#namespace('com.sun.xml.internal.messaging.saaj.soap.ver1_1')
 
-call javaapi#class('Body1_1Impl', '', [
+call javaapi#class('Body1_1Impl', 'BodyImpl', [
   \ javaapi#method(0,'Body1_1Impl(', 'SOAPDocumentImpl, String)', 'public'),
   \ javaapi#method(0,'addSOAP12Fault(', 'QName, String, Locale)', 'SOAPFault'),
   \ ])
 
-call javaapi#class('BodyElement1_1Impl', '', [
+call javaapi#class('BodyElement1_1Impl', 'BodyElementImpl', [
   \ javaapi#method(0,'BodyElement1_1Impl(', 'SOAPDocumentImpl, Name)', 'public'),
   \ javaapi#method(0,'BodyElement1_1Impl(', 'SOAPDocumentImpl, QName)', 'public'),
   \ javaapi#method(0,'setElementQName(', 'QName) throws SOAPException', 'SOAPElement'),
   \ ])
 
-call javaapi#class('Detail1_1Impl', '', [
+call javaapi#class('Detail1_1Impl', 'DetailImpl', [
   \ javaapi#method(0,'Detail1_1Impl(', 'SOAPDocumentImpl, String)', 'public'),
   \ javaapi#method(0,'Detail1_1Impl(', 'SOAPDocumentImpl)', 'public'),
   \ ])
 
-call javaapi#class('DetailEntry1_1Impl', '', [
+call javaapi#class('DetailEntry1_1Impl', 'DetailEntryImpl', [
   \ javaapi#method(0,'DetailEntry1_1Impl(', 'SOAPDocumentImpl, Name)', 'public'),
   \ javaapi#method(0,'DetailEntry1_1Impl(', 'SOAPDocumentImpl, QName)', 'public'),
   \ javaapi#method(0,'setElementQName(', 'QName) throws SOAPException', 'SOAPElement'),
   \ ])
 
-call javaapi#class('Envelope1_1Impl', '', [
+call javaapi#class('Envelope1_1Impl', 'EnvelopeImpl', [
   \ javaapi#method(0,'Envelope1_1Impl(', 'SOAPDocumentImpl, String)', 'public'),
   \ ])
 
-call javaapi#class('Fault1_1Impl', '', [
+call javaapi#class('Fault1_1Impl', 'FaultImpl', [
   \ javaapi#method(0,'Fault1_1Impl(', 'SOAPDocumentImpl, String)', 'public'),
   \ javaapi#method(0,'getFaultCode(', ')', 'String'),
   \ javaapi#method(0,'getFaultCodeAsName(', ')', 'Name'),
@@ -51,7 +51,7 @@ call javaapi#class('Fault1_1Impl', '', [
   \ javaapi#method(0,'setFaultActor(', 'String) throws SOAPException', 'void'),
   \ ])
 
-call javaapi#class('FaultElement1_1Impl', '', [
+call javaapi#class('FaultElement1_1Impl', 'FaultElementImpl', [
   \ javaapi#method(0,'FaultElement1_1Impl(', 'SOAPDocumentImpl, NameImpl)', 'public'),
   \ javaapi#method(0,'FaultElement1_1Impl(', 'SOAPDocumentImpl, QName)', 'public'),
   \ javaapi#method(0,'FaultElement1_1Impl(', 'SOAPDocumentImpl, String)', 'public'),
@@ -59,18 +59,18 @@ call javaapi#class('FaultElement1_1Impl', '', [
   \ javaapi#method(0,'setElementQName(', 'QName) throws SOAPException', 'SOAPElement'),
   \ ])
 
-call javaapi#class('Header1_1Impl', '', [
+call javaapi#class('Header1_1Impl', 'HeaderImpl', [
   \ javaapi#method(0,'Header1_1Impl(', 'SOAPDocumentImpl, String)', 'public'),
   \ javaapi#method(0,'addNotUnderstoodHeaderElement(', 'QName) throws SOAPException', 'SOAPHeaderElement'),
   \ ])
 
-call javaapi#class('HeaderElement1_1Impl', '', [
+call javaapi#class('HeaderElement1_1Impl', 'HeaderElementImpl', [
   \ javaapi#method(0,'HeaderElement1_1Impl(', 'SOAPDocumentImpl, Name)', 'public'),
   \ javaapi#method(0,'HeaderElement1_1Impl(', 'SOAPDocumentImpl, QName)', 'public'),
   \ javaapi#method(0,'setElementQName(', 'QName) throws SOAPException', 'SOAPElement'),
   \ ])
 
-call javaapi#class('Message1_1Impl', '', [
+call javaapi#class('Message1_1Impl', 'MessageImpl', [
   \ javaapi#method(0,'Message1_1Impl(', ')', 'public'),
   \ javaapi#method(0,'Message1_1Impl(', 'boolean, boolean)', 'public'),
   \ javaapi#method(0,'Message1_1Impl(', 'SOAPMessage)', 'public'),
@@ -83,21 +83,21 @@ call javaapi#class('Message1_1Impl', '', [
   \ javaapi#method(0,'setCharset(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('SOAPFactory1_1Impl', '', [
+call javaapi#class('SOAPFactory1_1Impl', 'SOAPFactoryImpl', [
   \ javaapi#method(0,'SOAPFactory1_1Impl(', ')', 'public'),
   \ javaapi#method(0,'createDetail(', ') throws SOAPException', 'Detail'),
   \ javaapi#method(0,'createFault(', 'String, QName) throws SOAPException', 'SOAPFault'),
   \ javaapi#method(0,'createFault(', ') throws SOAPException', 'SOAPFault'),
   \ ])
 
-call javaapi#class('SOAPMessageFactory1_1Impl', '', [
+call javaapi#class('SOAPMessageFactory1_1Impl', 'MessageFactoryImpl', [
   \ javaapi#method(0,'SOAPMessageFactory1_1Impl(', ')', 'public'),
   \ javaapi#method(0,'createMessage(', ') throws SOAPException', 'SOAPMessage'),
   \ javaapi#method(0,'createMessage(', 'boolean, boolean) throws SOAPException', 'SOAPMessage'),
   \ javaapi#method(0,'createMessage(', 'MimeHeaders, InputStream) throws IOException, SOAPExceptionImpl', 'SOAPMessage'),
   \ ])
 
-call javaapi#class('SOAPPart1_1Impl', '', [
+call javaapi#class('SOAPPart1_1Impl', 'SOAPPartImpl', [
   \ javaapi#method(0,'SOAPPart1_1Impl(', ')', 'public'),
   \ javaapi#method(0,'SOAPPart1_1Impl(', 'MessageImpl)', 'public'),
   \ ])

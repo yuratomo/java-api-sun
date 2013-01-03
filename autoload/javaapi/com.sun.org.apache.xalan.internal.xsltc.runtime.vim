@@ -70,10 +70,10 @@ call javaapi#class('Attributes', 'AttributeList', [
   \ javaapi#method(0,'getValue(', 'String)', 'String'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'StringBuilder>', [
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'StringBuffer>', [
   \ ])
 
 call javaapi#class('3', 'NodeList', [
@@ -192,72 +192,72 @@ call javaapi#interface('Constants', '', [
   \ javaapi#field(1,'XMLNS_URI', 'String'),
   \ ])
 
-call javaapi#class('ErrorMessages', '', [
+call javaapi#class('ErrorMessages', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_ca', '', [
+call javaapi#class('ErrorMessages_ca', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_ca(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_cs', '', [
+call javaapi#class('ErrorMessages_cs', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_cs(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_de', '', [
+call javaapi#class('ErrorMessages_de', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_de(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_es', '', [
+call javaapi#class('ErrorMessages_es', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_es(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_fr', '', [
+call javaapi#class('ErrorMessages_fr', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_fr(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_it', '', [
+call javaapi#class('ErrorMessages_it', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_it(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_ja', '', [
+call javaapi#class('ErrorMessages_ja', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_ja(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_ko', '', [
+call javaapi#class('ErrorMessages_ko', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_ko(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_pt_BR', '', [
+call javaapi#class('ErrorMessages_pt_BR', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_pt_BR(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_sk', '', [
+call javaapi#class('ErrorMessages_sk', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_sk(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_sv', '', [
+call javaapi#class('ErrorMessages_sv', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_sv(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_zh_CN', '', [
+call javaapi#class('ErrorMessages_zh_CN', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_zh_CN(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_zh_TW', '', [
+call javaapi#class('ErrorMessages_zh_TW', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_zh_TW(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
@@ -298,7 +298,7 @@ call javaapi#class('Node', '', [
   \ javaapi#method(0,'Node(', 'int, int)', 'public'),
   \ ])
 
-call javaapi#class('ConfigurationError', '', [
+call javaapi#class('ConfigurationError', 'Error', [
   \ ])
 
 call javaapi#class('ObjectFactory', '', [
@@ -359,10 +359,10 @@ call javaapi#class('8', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('SecuritySupport12', '', [
+call javaapi#class('SecuritySupport12', 'SecuritySupport', [
   \ ])
 
-call javaapi#class('StringValueHandler', '', [
+call javaapi#class('StringValueHandler', 'EmptySerializer', [
   \ javaapi#method(0,'StringValueHandler(', ')', 'public'),
   \ javaapi#method(0,'characters(', 'char[], int, int) throws SAXException', 'void'),
   \ javaapi#method(0,'getValue(', ')', 'String'),

@@ -1,10 +1,10 @@
 call javaapi#namespace('com.sun.org.apache.xpath.internal.axes')
 
-call javaapi#class('AttributeIterator', '', [
+call javaapi#class('AttributeIterator', 'ChildTestIterator', [
   \ javaapi#method(0,'getAxis(', ')', 'int'),
   \ ])
 
-call javaapi#class('AxesWalker', '', [
+call javaapi#class('AxesWalker', 'PredicatedNodeTest', [
   \ javaapi#method(0,'AxesWalker(', 'LocPathIterator, int)', 'public'),
   \ javaapi#method(0,'wi(', ')', 'WalkingIterator'),
   \ javaapi#method(0,'init(', 'Compiler, int, int) throws TransformerException', 'void'),
@@ -30,18 +30,18 @@ call javaapi#class('AxesWalker', '', [
   \ javaapi#method(0,'deepEquals(', 'Expression)', 'boolean'),
   \ ])
 
-call javaapi#class('BasicTestIterator', '', [
+call javaapi#class('BasicTestIterator', 'LocPathIterator', [
   \ javaapi#method(0,'nextNode(', ')', 'int'),
   \ javaapi#method(0,'cloneWithReset(', ') throws CloneNotSupportedException', 'DTMIterator'),
   \ ])
 
-call javaapi#class('ChildIterator', '', [
+call javaapi#class('ChildIterator', 'LocPathIterator', [
   \ javaapi#method(0,'asNode(', 'XPathContext) throws TransformerException', 'int'),
   \ javaapi#method(0,'nextNode(', ')', 'int'),
   \ javaapi#method(0,'getAxis(', ')', 'int'),
   \ ])
 
-call javaapi#class('ChildTestIterator', '', [
+call javaapi#class('ChildTestIterator', 'BasicTestIterator', [
   \ javaapi#method(0,'ChildTestIterator(', 'DTMAxisTraverser)', 'public'),
   \ javaapi#method(0,'cloneWithReset(', ') throws CloneNotSupportedException', 'DTMIterator'),
   \ javaapi#method(0,'setRoot(', 'int, Object)', 'void'),
@@ -64,7 +64,7 @@ call javaapi#interface('ContextNodeList', '', [
   \ javaapi#method(0,'setLast(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('DescendantIterator', '', [
+call javaapi#class('DescendantIterator', 'LocPathIterator', [
   \ javaapi#method(0,'DescendantIterator(', ')', 'public'),
   \ javaapi#method(0,'cloneWithReset(', ') throws CloneNotSupportedException', 'DTMIterator'),
   \ javaapi#method(0,'nextNode(', ')', 'int'),
@@ -80,7 +80,7 @@ call javaapi#class('filterExprOwner', 'ExpressionOwner', [
   \ javaapi#method(0,'setExpression(', 'Expression)', 'void'),
   \ ])
 
-call javaapi#class('FilterExprIterator', '', [
+call javaapi#class('FilterExprIterator', 'BasicTestIterator', [
   \ javaapi#method(0,'FilterExprIterator(', ')', 'public'),
   \ javaapi#method(0,'FilterExprIterator(', 'Expression)', 'public'),
   \ javaapi#method(0,'setRoot(', 'int, Object)', 'void'),
@@ -99,7 +99,7 @@ call javaapi#class('filterExprOwner', 'ExpressionOwner', [
   \ javaapi#method(0,'setExpression(', 'Expression)', 'void'),
   \ ])
 
-call javaapi#class('FilterExprIteratorSimple', '', [
+call javaapi#class('FilterExprIteratorSimple', 'LocPathIterator', [
   \ javaapi#method(0,'FilterExprIteratorSimple(', ')', 'public'),
   \ javaapi#method(0,'FilterExprIteratorSimple(', 'Expression)', 'public'),
   \ javaapi#method(0,'setRoot(', 'int, Object)', 'void'),
@@ -121,7 +121,7 @@ call javaapi#class('filterExprOwner', 'ExpressionOwner', [
   \ javaapi#method(0,'setExpression(', 'Expression)', 'void'),
   \ ])
 
-call javaapi#class('FilterExprWalker', '', [
+call javaapi#class('FilterExprWalker', 'AxesWalker', [
   \ javaapi#method(0,'FilterExprWalker(', 'WalkingIterator)', 'public'),
   \ javaapi#method(0,'init(', 'Compiler, int, int) throws TransformerException', 'void'),
   \ javaapi#method(0,'detach(', ')', 'void'),
@@ -140,7 +140,7 @@ call javaapi#class('FilterExprWalker', '', [
   \ javaapi#method(0,'deepEquals(', 'Expression)', 'boolean'),
   \ ])
 
-call javaapi#class('HasPositionalPredChecker', '', [
+call javaapi#class('HasPositionalPredChecker', 'XPathVisitor', [
   \ javaapi#method(0,'HasPositionalPredChecker(', ')', 'public'),
   \ javaapi#method(1,'check(', 'LocPathIterator)', 'boolean'),
   \ javaapi#method(0,'visitFunction(', 'ExpressionOwner, Function)', 'boolean'),
@@ -154,7 +154,7 @@ call javaapi#class('IteratorPool', 'Serializable', [
   \ javaapi#method(0,'freeInstance(', 'DTMIterator)', 'void'),
   \ ])
 
-call javaapi#class('LocPathIterator', '', [
+call javaapi#class('LocPathIterator', 'PredicatedNodeTest', [
   \ javaapi#field(0,'m_lastFetched', 'int'),
   \ javaapi#method(0,'getAnalysisBits(', ')', 'int'),
   \ javaapi#method(0,'setEnvironment(', 'Object)', 'void'),
@@ -203,7 +203,7 @@ call javaapi#class('LocPathIterator', '', [
   \ javaapi#method(0,'getLastPos(', 'XPathContext)', 'int'),
   \ ])
 
-call javaapi#class('MatchPatternIterator', '', [
+call javaapi#class('MatchPatternIterator', 'LocPathIterator', [
   \ javaapi#method(0,'setRoot(', 'int, Object)', 'void'),
   \ javaapi#method(0,'detach(', ')', 'void'),
   \ javaapi#method(0,'nextNode(', ')', 'int'),
@@ -213,7 +213,7 @@ call javaapi#class('MatchPatternIterator', '', [
 call javaapi#class('IteratorCache', '', [
   \ ])
 
-call javaapi#class('NodeSequence', '', [
+call javaapi#class('NodeSequence', 'XObject', [
   \ javaapi#method(0,'hasCache(', ')', 'boolean'),
   \ javaapi#method(0,'setIter(', 'DTMIterator)', 'void'),
   \ javaapi#method(0,'getContainedIter(', ')', 'DTMIterator'),
@@ -248,7 +248,7 @@ call javaapi#class('NodeSequence', '', [
   \ javaapi#method(0,'fixupVariables(', 'Vector, int)', 'void'),
   \ ])
 
-call javaapi#class('OneStepIterator', '', [
+call javaapi#class('OneStepIterator', 'ChildTestIterator', [
   \ javaapi#method(0,'OneStepIterator(', 'DTMAxisIterator, int) throws TransformerException', 'public'),
   \ javaapi#method(0,'setRoot(', 'int, Object)', 'void'),
   \ javaapi#method(0,'detach(', ')', 'void'),
@@ -261,7 +261,7 @@ call javaapi#class('OneStepIterator', '', [
   \ javaapi#method(0,'deepEquals(', 'Expression)', 'boolean'),
   \ ])
 
-call javaapi#class('OneStepIteratorForward', '', [
+call javaapi#class('OneStepIteratorForward', 'ChildTestIterator', [
   \ javaapi#method(0,'OneStepIteratorForward(', 'int)', 'public'),
   \ javaapi#method(0,'setRoot(', 'int, Object)', 'void'),
   \ javaapi#method(0,'getAxis(', ')', 'int'),
@@ -277,7 +277,7 @@ call javaapi#class('PredOwner', 'ExpressionOwner', [
   \ javaapi#method(0,'setExpression(', 'Expression)', 'void'),
   \ ])
 
-call javaapi#class('PredicatedNodeTest', '', [
+call javaapi#class('PredicatedNodeTest', 'NodeTest', [
   \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'Object'),
   \ javaapi#method(0,'getPredicateCount(', ')', 'int'),
   \ javaapi#method(0,'setPredicateCount(', 'int)', 'void'),
@@ -298,11 +298,11 @@ call javaapi#class('PredicatedNodeTest', '', [
   \ javaapi#method(0,'deepEquals(', 'Expression)', 'boolean'),
   \ ])
 
-call javaapi#class('RTFIterator', '', [
+call javaapi#class('RTFIterator', 'NodeSetDTM', [
   \ javaapi#method(0,'RTFIterator(', 'int, DTMManager)', 'public'),
   \ ])
 
-call javaapi#class('ReverseAxesWalker', '', [
+call javaapi#class('ReverseAxesWalker', 'AxesWalker', [
   \ javaapi#method(0,'setRoot(', 'int)', 'void'),
   \ javaapi#method(0,'detach(', ')', 'void'),
   \ javaapi#method(0,'isReverseAxes(', ')', 'boolean'),
@@ -310,7 +310,7 @@ call javaapi#class('ReverseAxesWalker', '', [
   \ javaapi#method(0,'isDocOrdered(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('SelfIteratorNoPredicate', '', [
+call javaapi#class('SelfIteratorNoPredicate', 'LocPathIterator', [
   \ javaapi#method(0,'SelfIteratorNoPredicate(', ') throws TransformerException', 'public'),
   \ javaapi#method(0,'nextNode(', ')', 'int'),
   \ javaapi#method(0,'asNode(', 'XPathContext) throws TransformerException', 'int'),
@@ -322,7 +322,7 @@ call javaapi#interface('SubContextList', '', [
   \ javaapi#method(0,'getProximityPosition(', 'XPathContext)', 'int'),
   \ ])
 
-call javaapi#class('UnionChildIterator', '', [
+call javaapi#class('UnionChildIterator', 'ChildTestIterator', [
   \ javaapi#method(0,'UnionChildIterator(', ')', 'public'),
   \ javaapi#method(0,'addNodeTest(', 'PredicatedNodeTest)', 'void'),
   \ javaapi#method(0,'fixupVariables(', 'Vector, int)', 'void'),
@@ -334,7 +334,7 @@ call javaapi#class('iterOwner', 'ExpressionOwner', [
   \ javaapi#method(0,'setExpression(', 'Expression)', 'void'),
   \ ])
 
-call javaapi#class('UnionPathIterator', '', [
+call javaapi#class('UnionPathIterator', 'LocPathIterator', [
   \ javaapi#method(0,'UnionPathIterator(', ')', 'public'),
   \ javaapi#method(0,'setRoot(', 'int, Object)', 'void'),
   \ javaapi#method(0,'addIterator(', 'DTMIterator)', 'void'),
@@ -416,7 +416,7 @@ call javaapi#class('WalkerFactory', '', [
   \ javaapi#method(1,'getStepCount(', 'int)', 'int'),
   \ ])
 
-call javaapi#class('WalkingIterator', '', [
+call javaapi#class('WalkingIterator', 'LocPathIterator', [
   \ javaapi#method(0,'WalkingIterator(', 'PrefixResolver)', 'public'),
   \ javaapi#method(0,'getAnalysisBits(', ')', 'int'),
   \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'Object'),
@@ -435,7 +435,7 @@ call javaapi#class('WalkingIterator', '', [
   \ javaapi#method(0,'deepEquals(', 'Expression)', 'boolean'),
   \ ])
 
-call javaapi#class('WalkingIteratorSorted', '', [
+call javaapi#class('WalkingIteratorSorted', 'WalkingIterator', [
   \ javaapi#method(0,'WalkingIteratorSorted(', 'PrefixResolver)', 'public'),
   \ javaapi#method(0,'isDocOrdered(', ')', 'boolean'),
   \ javaapi#method(0,'fixupVariables(', 'Vector, int)', 'void'),

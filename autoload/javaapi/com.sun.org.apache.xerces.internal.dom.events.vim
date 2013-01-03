@@ -23,7 +23,7 @@ call javaapi#class('EventImpl', 'Event', [
   \ javaapi#method(0,'preventDefault(', ')', 'void'),
   \ ])
 
-call javaapi#class('MutationEventImpl', '', [
+call javaapi#class('MutationEventImpl', 'EventImpl', [
   \ javaapi#field(0,'attrChange', 'short'),
   \ javaapi#field(1,'DOM_SUBTREE_MODIFIED', 'String'),
   \ javaapi#field(1,'DOM_NODE_INSERTED', 'String'),

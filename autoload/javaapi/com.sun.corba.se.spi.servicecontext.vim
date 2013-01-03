@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.corba.se.spi.servicecontext')
 
-call javaapi#class('CodeSetServiceContext', '', [
+call javaapi#class('CodeSetServiceContext', 'ServiceContext', [
   \ javaapi#field(1,'SERVICE_CONTEXT_ID', 'int'),
   \ javaapi#method(0,'CodeSetServiceContext(', 'CodeSetContext)', 'public'),
   \ javaapi#method(0,'CodeSetServiceContext(', 'InputStream, GIOPVersion)', 'public'),
@@ -10,7 +10,7 @@ call javaapi#class('CodeSetServiceContext', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('MaxStreamFormatVersionServiceContext', '', [
+call javaapi#class('MaxStreamFormatVersionServiceContext', 'ServiceContext', [
   \ javaapi#field(1,'singleton', 'MaxStreamFormatVersionServiceContext'),
   \ javaapi#field(1,'SERVICE_CONTEXT_ID', 'int'),
   \ javaapi#method(0,'MaxStreamFormatVersionServiceContext(', ')', 'public'),
@@ -22,7 +22,7 @@ call javaapi#class('MaxStreamFormatVersionServiceContext', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ORBVersionServiceContext', '', [
+call javaapi#class('ORBVersionServiceContext', 'ServiceContext', [
   \ javaapi#field(1,'SERVICE_CONTEXT_ID', 'int'),
   \ javaapi#method(0,'ORBVersionServiceContext(', ')', 'public'),
   \ javaapi#method(0,'ORBVersionServiceContext(', 'ORBVersion)', 'public'),
@@ -33,7 +33,7 @@ call javaapi#class('ORBVersionServiceContext', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SendingContextServiceContext', '', [
+call javaapi#class('SendingContextServiceContext', 'ServiceContext', [
   \ javaapi#field(1,'SERVICE_CONTEXT_ID', 'int'),
   \ javaapi#method(0,'SendingContextServiceContext(', 'IOR)', 'public'),
   \ javaapi#method(0,'SendingContextServiceContext(', 'InputStream, GIOPVersion)', 'public'),
@@ -74,7 +74,7 @@ call javaapi#class('ServiceContexts', '', [
   \ javaapi#method(0,'get(', 'Integer)', 'ServiceContext'),
   \ ])
 
-call javaapi#class('UEInfoServiceContext', '', [
+call javaapi#class('UEInfoServiceContext', 'ServiceContext', [
   \ javaapi#field(1,'SERVICE_CONTEXT_ID', 'int'),
   \ javaapi#method(0,'UEInfoServiceContext(', 'Throwable)', 'public'),
   \ javaapi#method(0,'UEInfoServiceContext(', 'InputStream, GIOPVersion)', 'public'),
@@ -84,7 +84,7 @@ call javaapi#class('UEInfoServiceContext', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('UnknownServiceContext', '', [
+call javaapi#class('UnknownServiceContext', 'ServiceContext', [
   \ javaapi#method(0,'UnknownServiceContext(', 'int, byte[])', 'public'),
   \ javaapi#method(0,'UnknownServiceContext(', 'int, InputStream)', 'public'),
   \ javaapi#method(0,'getId(', ')', 'int'),

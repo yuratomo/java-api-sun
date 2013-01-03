@@ -19,14 +19,14 @@ call javaapi#class('KerberosString', '', [
   \ javaapi#method(0,'toDerValue(', ') throws IOException', 'DerValue'),
   \ ])
 
-call javaapi#class('KrbDataInputStream', '', [
+call javaapi#class('KrbDataInputStream', 'BufferedInputStream', [
   \ javaapi#method(0,'setNativeByteOrder(', ')', 'void'),
   \ javaapi#method(0,'KrbDataInputStream(', 'InputStream)', 'public'),
   \ javaapi#method(0,'read(', 'int) throws IOException', 'int'),
   \ javaapi#method(0,'readVersion(', ') throws IOException', 'int'),
   \ ])
 
-call javaapi#class('KrbDataOutputStream', '', [
+call javaapi#class('KrbDataOutputStream', 'BufferedOutputStream', [
   \ javaapi#method(0,'KrbDataOutputStream(', 'OutputStream)', 'public'),
   \ javaapi#method(0,'write32(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write16(', 'int) throws IOException', 'void'),

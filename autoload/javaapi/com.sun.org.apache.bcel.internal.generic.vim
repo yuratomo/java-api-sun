@@ -1,50 +1,50 @@
 call javaapi#namespace('com.sun.org.apache.bcel.internal.generic')
 
-call javaapi#class('AALOAD', '', [
+call javaapi#class('AALOAD', 'ArrayInstruction', [
   \ javaapi#method(0,'AALOAD(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('AASTORE', '', [
+call javaapi#class('AASTORE', 'ArrayInstruction', [
   \ javaapi#method(0,'AASTORE(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('ACONST_NULL', '', [
+call javaapi#class('ACONST_NULL', 'Instruction', [
   \ javaapi#method(0,'ACONST_NULL(', ')', 'public'),
   \ javaapi#method(0,'getType(', 'ConstantPoolGen)', 'Type'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('ALOAD', '', [
+call javaapi#class('ALOAD', 'LoadInstruction', [
   \ javaapi#method(0,'ALOAD(', 'int)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('ANEWARRAY', '', [
+call javaapi#class('ANEWARRAY', 'CPInstruction', [
   \ javaapi#method(0,'ANEWARRAY(', 'int)', 'public'),
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ javaapi#method(0,'getLoadClassType(', 'ConstantPoolGen)', 'ObjectType'),
   \ ])
 
-call javaapi#class('ARETURN', '', [
+call javaapi#class('ARETURN', 'ReturnInstruction', [
   \ javaapi#method(0,'ARETURN(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('ARRAYLENGTH', '', [
+call javaapi#class('ARRAYLENGTH', 'Instruction', [
   \ javaapi#method(0,'ARRAYLENGTH(', ')', 'public'),
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('ASTORE', '', [
+call javaapi#class('ASTORE', 'StoreInstruction', [
   \ javaapi#method(0,'ASTORE(', 'int)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('ATHROW', '', [
+call javaapi#class('ATHROW', 'Instruction', [
   \ javaapi#method(0,'ATHROW(', ')', 'public'),
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
@@ -53,16 +53,16 @@ call javaapi#class('ATHROW', '', [
 call javaapi#interface('AllocationInstruction', '', [
   \ ])
 
-call javaapi#class('ArithmeticInstruction', '', [
+call javaapi#class('ArithmeticInstruction', 'Instruction', [
   \ javaapi#method(0,'getType(', 'ConstantPoolGen)', 'Type'),
   \ ])
 
-call javaapi#class('ArrayInstruction', '', [
+call javaapi#class('ArrayInstruction', 'Instruction', [
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ javaapi#method(0,'getType(', 'ConstantPoolGen)', 'Type'),
   \ ])
 
-call javaapi#class('ArrayType', '', [
+call javaapi#class('ArrayType', 'ReferenceType', [
   \ javaapi#method(0,'ArrayType(', 'byte, int)', 'public'),
   \ javaapi#method(0,'ArrayType(', 'String, int)', 'public'),
   \ javaapi#method(0,'ArrayType(', 'Type, int)', 'public'),
@@ -73,17 +73,17 @@ call javaapi#class('ArrayType', '', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('BALOAD', '', [
+call javaapi#class('BALOAD', 'ArrayInstruction', [
   \ javaapi#method(0,'BALOAD(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('BASTORE', '', [
+call javaapi#class('BASTORE', 'ArrayInstruction', [
   \ javaapi#method(0,'BASTORE(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('BIPUSH', '', [
+call javaapi#class('BIPUSH', 'Instruction', [
   \ javaapi#method(0,'BIPUSH(', 'byte)', 'public'),
   \ javaapi#method(0,'dump(', 'DataOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,'toString(', 'boolean)', 'String'),
@@ -92,17 +92,17 @@ call javaapi#class('BIPUSH', '', [
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('BREAKPOINT', '', [
+call javaapi#class('BREAKPOINT', 'Instruction', [
   \ javaapi#method(0,'BREAKPOINT(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('BasicType', '', [
+call javaapi#class('BasicType', 'Type', [
   \ javaapi#method(1,'getType(', 'byte)', 'BasicType'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('BranchHandle', '', [
+call javaapi#class('BranchHandle', 'InstructionHandle', [
   \ javaapi#method(0,'getPosition(', ')', 'int'),
   \ javaapi#method(0,'setTarget(', 'InstructionHandle)', 'void'),
   \ javaapi#method(0,'updateTarget(', 'InstructionHandle, InstructionHandle)', 'void'),
@@ -110,7 +110,7 @@ call javaapi#class('BranchHandle', '', [
   \ javaapi#method(0,'setInstruction(', 'Instruction)', 'void'),
   \ ])
 
-call javaapi#class('BranchInstruction', '', [
+call javaapi#class('BranchInstruction', 'Instruction', [
   \ javaapi#method(0,'dump(', 'DataOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,'toString(', 'boolean)', 'String'),
   \ javaapi#method(0,'getIndex(', ')', 'int'),
@@ -120,24 +120,24 @@ call javaapi#class('BranchInstruction', '', [
   \ javaapi#method(0,'containsTarget(', 'InstructionHandle)', 'boolean'),
   \ ])
 
-call javaapi#class('CALOAD', '', [
+call javaapi#class('CALOAD', 'ArrayInstruction', [
   \ javaapi#method(0,'CALOAD(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('CASTORE', '', [
+call javaapi#class('CASTORE', 'ArrayInstruction', [
   \ javaapi#method(0,'CASTORE(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('CHECKCAST', '', [
+call javaapi#class('CHECKCAST', 'CPInstruction', [
   \ javaapi#method(0,'CHECKCAST(', 'int)', 'public'),
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ javaapi#method(0,'getLoadClassType(', 'ConstantPoolGen)', 'ObjectType'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('CPInstruction', '', [
+call javaapi#class('CPInstruction', 'Instruction', [
   \ javaapi#method(0,'dump(', 'DataOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,'toString(', 'boolean)', 'String'),
   \ javaapi#method(0,'toString(', 'ConstantPool)', 'String'),
@@ -146,7 +146,7 @@ call javaapi#class('CPInstruction', '', [
   \ javaapi#method(0,'getType(', 'ConstantPoolGen)', 'Type'),
   \ ])
 
-call javaapi#class('ClassGen', '', [
+call javaapi#class('ClassGen', 'AccessFlags', [
   \ javaapi#method(0,'ClassGen(', 'String, String, String, int, String[], ConstantPoolGen)', 'public'),
   \ javaapi#method(0,'ClassGen(', 'String, String, String, int, String[])', 'public'),
   \ javaapi#method(0,'ClassGen(', 'JavaClass)', 'public'),
@@ -194,7 +194,7 @@ call javaapi#class('ClassGen', '', [
   \ javaapi#method(0,'clone(', ')', 'Object'),
   \ ])
 
-call javaapi#class('ClassGenException', '', [
+call javaapi#class('ClassGenException', 'RuntimeException', [
   \ javaapi#method(0,'ClassGenException(', ')', 'public'),
   \ javaapi#method(0,'ClassGenException(', 'String)', 'public'),
   \ ])
@@ -268,129 +268,129 @@ call javaapi#class('ConstantPoolGen', 'Serializable', [
   \ javaapi#method(0,'addConstant(', 'Constant, ConstantPoolGen)', 'int'),
   \ ])
 
-call javaapi#interface('ConstantPushInstruction', '', [
+call javaapi#interface('ConstantPushInstruction', 'TypedInstruction', [
   \ javaapi#method(0,'getValue(', ')', 'Number'),
   \ ])
 
-call javaapi#class('ConversionInstruction', '', [
+call javaapi#class('ConversionInstruction', 'Instruction', [
   \ javaapi#method(0,'getType(', 'ConstantPoolGen)', 'Type'),
   \ ])
 
-call javaapi#class('D2F', '', [
+call javaapi#class('D2F', 'ConversionInstruction', [
   \ javaapi#method(0,'D2F(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('D2I', '', [
+call javaapi#class('D2I', 'ConversionInstruction', [
   \ javaapi#method(0,'D2I(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('D2L', '', [
+call javaapi#class('D2L', 'ConversionInstruction', [
   \ javaapi#method(0,'D2L(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('DADD', '', [
+call javaapi#class('DADD', 'ArithmeticInstruction', [
   \ javaapi#method(0,'DADD(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('DALOAD', '', [
+call javaapi#class('DALOAD', 'ArrayInstruction', [
   \ javaapi#method(0,'DALOAD(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('DASTORE', '', [
+call javaapi#class('DASTORE', 'ArrayInstruction', [
   \ javaapi#method(0,'DASTORE(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('DCMPG', '', [
+call javaapi#class('DCMPG', 'Instruction', [
   \ javaapi#method(0,'DCMPG(', ')', 'public'),
   \ javaapi#method(0,'getType(', 'ConstantPoolGen)', 'Type'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('DCMPL', '', [
+call javaapi#class('DCMPL', 'Instruction', [
   \ javaapi#method(0,'DCMPL(', ')', 'public'),
   \ javaapi#method(0,'getType(', 'ConstantPoolGen)', 'Type'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('DCONST', '', [
+call javaapi#class('DCONST', 'Instruction', [
   \ javaapi#method(0,'DCONST(', 'double)', 'public'),
   \ javaapi#method(0,'getValue(', ')', 'Number'),
   \ javaapi#method(0,'getType(', 'ConstantPoolGen)', 'Type'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('DDIV', '', [
+call javaapi#class('DDIV', 'ArithmeticInstruction', [
   \ javaapi#method(0,'DDIV(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('DLOAD', '', [
+call javaapi#class('DLOAD', 'LoadInstruction', [
   \ javaapi#method(0,'DLOAD(', 'int)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('DMUL', '', [
+call javaapi#class('DMUL', 'ArithmeticInstruction', [
   \ javaapi#method(0,'DMUL(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('DNEG', '', [
+call javaapi#class('DNEG', 'ArithmeticInstruction', [
   \ javaapi#method(0,'DNEG(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('DREM', '', [
+call javaapi#class('DREM', 'ArithmeticInstruction', [
   \ javaapi#method(0,'DREM(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('DRETURN', '', [
+call javaapi#class('DRETURN', 'ReturnInstruction', [
   \ javaapi#method(0,'DRETURN(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('DSTORE', '', [
+call javaapi#class('DSTORE', 'StoreInstruction', [
   \ javaapi#method(0,'DSTORE(', 'int)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('DSUB', '', [
+call javaapi#class('DSUB', 'ArithmeticInstruction', [
   \ javaapi#method(0,'DSUB(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('DUP', '', [
+call javaapi#class('DUP', 'StackInstruction', [
   \ javaapi#method(0,'DUP(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('DUP2', '', [
+call javaapi#class('DUP2', 'StackInstruction', [
   \ javaapi#method(0,'DUP2(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('DUP2_X1', '', [
+call javaapi#class('DUP2_X1', 'StackInstruction', [
   \ javaapi#method(0,'DUP2_X1(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('DUP2_X2', '', [
+call javaapi#class('DUP2_X2', 'StackInstruction', [
   \ javaapi#method(0,'DUP2_X2(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('DUP_X1', '', [
+call javaapi#class('DUP_X1', 'StackInstruction', [
   \ javaapi#method(0,'DUP_X1(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('DUP_X2', '', [
+call javaapi#class('DUP_X2', 'StackInstruction', [
   \ javaapi#method(0,'DUP_X2(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
@@ -583,96 +583,96 @@ call javaapi#interface('ExceptionThrower', '', [
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ ])
 
-call javaapi#class('F2D', '', [
+call javaapi#class('F2D', 'ConversionInstruction', [
   \ javaapi#method(0,'F2D(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('F2I', '', [
+call javaapi#class('F2I', 'ConversionInstruction', [
   \ javaapi#method(0,'F2I(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('F2L', '', [
+call javaapi#class('F2L', 'ConversionInstruction', [
   \ javaapi#method(0,'F2L(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('FADD', '', [
+call javaapi#class('FADD', 'ArithmeticInstruction', [
   \ javaapi#method(0,'FADD(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('FALOAD', '', [
+call javaapi#class('FALOAD', 'ArrayInstruction', [
   \ javaapi#method(0,'FALOAD(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('FASTORE', '', [
+call javaapi#class('FASTORE', 'ArrayInstruction', [
   \ javaapi#method(0,'FASTORE(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('FCMPG', '', [
+call javaapi#class('FCMPG', 'Instruction', [
   \ javaapi#method(0,'FCMPG(', ')', 'public'),
   \ javaapi#method(0,'getType(', 'ConstantPoolGen)', 'Type'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('FCMPL', '', [
+call javaapi#class('FCMPL', 'Instruction', [
   \ javaapi#method(0,'FCMPL(', ')', 'public'),
   \ javaapi#method(0,'getType(', 'ConstantPoolGen)', 'Type'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('FCONST', '', [
+call javaapi#class('FCONST', 'Instruction', [
   \ javaapi#method(0,'FCONST(', 'float)', 'public'),
   \ javaapi#method(0,'getValue(', ')', 'Number'),
   \ javaapi#method(0,'getType(', 'ConstantPoolGen)', 'Type'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('FDIV', '', [
+call javaapi#class('FDIV', 'ArithmeticInstruction', [
   \ javaapi#method(0,'FDIV(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('FLOAD', '', [
+call javaapi#class('FLOAD', 'LoadInstruction', [
   \ javaapi#method(0,'FLOAD(', 'int)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('FMUL', '', [
+call javaapi#class('FMUL', 'ArithmeticInstruction', [
   \ javaapi#method(0,'FMUL(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('FNEG', '', [
+call javaapi#class('FNEG', 'ArithmeticInstruction', [
   \ javaapi#method(0,'FNEG(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('FREM', '', [
+call javaapi#class('FREM', 'ArithmeticInstruction', [
   \ javaapi#method(0,'FREM(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('FRETURN', '', [
+call javaapi#class('FRETURN', 'ReturnInstruction', [
   \ javaapi#method(0,'FRETURN(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('FSTORE', '', [
+call javaapi#class('FSTORE', 'StoreInstruction', [
   \ javaapi#method(0,'FSTORE(', 'int)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('FSUB', '', [
+call javaapi#class('FSUB', 'ArithmeticInstruction', [
   \ javaapi#method(0,'FSUB(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('FieldGen', '', [
+call javaapi#class('FieldGen', 'FieldGenOrMethodGen', [
   \ javaapi#method(0,'FieldGen(', 'int, Type, String, ConstantPoolGen)', 'public'),
   \ javaapi#method(0,'FieldGen(', 'Field, ConstantPoolGen)', 'public'),
   \ javaapi#method(0,'setInitValue(', 'String)', 'void'),
@@ -695,7 +695,7 @@ call javaapi#class('FieldGen', '', [
   \ javaapi#method(0,'copy(', 'ConstantPoolGen)', 'FieldGen'),
   \ ])
 
-call javaapi#class('FieldGenOrMethodGen', '', [
+call javaapi#class('FieldGenOrMethodGen', 'AccessFlags', [
   \ javaapi#method(0,'setType(', 'Type)', 'void'),
   \ javaapi#method(0,'getType(', ')', 'Type'),
   \ javaapi#method(0,'getName(', ')', 'String'),
@@ -710,7 +710,7 @@ call javaapi#class('FieldGenOrMethodGen', '', [
   \ javaapi#method(0,'clone(', ')', 'Object'),
   \ ])
 
-call javaapi#class('FieldInstruction', '', [
+call javaapi#class('FieldInstruction', 'FieldOrMethod', [
   \ javaapi#method(0,'toString(', 'ConstantPool)', 'String'),
   \ javaapi#method(0,'getType(', 'ConstantPoolGen)', 'Type'),
   \ javaapi#method(0,'getFieldType(', 'ConstantPoolGen)', 'Type'),
@@ -721,7 +721,7 @@ call javaapi#interface('FieldObserver', '', [
   \ javaapi#method(0,'notify(', 'FieldGen)', 'void'),
   \ ])
 
-call javaapi#class('FieldOrMethod', '', [
+call javaapi#class('FieldOrMethod', 'CPInstruction', [
   \ javaapi#method(0,'getSignature(', 'ConstantPoolGen)', 'String'),
   \ javaapi#method(0,'getName(', 'ConstantPoolGen)', 'String'),
   \ javaapi#method(0,'getClassName(', 'ConstantPoolGen)', 'String'),
@@ -729,195 +729,195 @@ call javaapi#class('FieldOrMethod', '', [
   \ javaapi#method(0,'getLoadClassType(', 'ConstantPoolGen)', 'ObjectType'),
   \ ])
 
-call javaapi#class('GETFIELD', '', [
+call javaapi#class('GETFIELD', 'FieldInstruction', [
   \ javaapi#method(0,'GETFIELD(', 'int)', 'public'),
   \ javaapi#method(0,'produceStack(', 'ConstantPoolGen)', 'int'),
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('GETSTATIC', '', [
+call javaapi#class('GETSTATIC', 'FieldInstruction', [
   \ javaapi#method(0,'GETSTATIC(', 'int)', 'public'),
   \ javaapi#method(0,'produceStack(', 'ConstantPoolGen)', 'int'),
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('GOTO', '', [
+call javaapi#class('GOTO', 'GotoInstruction', [
   \ javaapi#method(0,'GOTO(', 'InstructionHandle)', 'public'),
   \ javaapi#method(0,'dump(', 'DataOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('GOTO_W', '', [
+call javaapi#class('GOTO_W', 'GotoInstruction', [
   \ javaapi#method(0,'GOTO_W(', 'InstructionHandle)', 'public'),
   \ javaapi#method(0,'dump(', 'DataOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('GotoInstruction', '', [
+call javaapi#class('GotoInstruction', 'BranchInstruction', [
   \ ])
 
-call javaapi#class('I2B', '', [
+call javaapi#class('I2B', 'ConversionInstruction', [
   \ javaapi#method(0,'I2B(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('I2C', '', [
+call javaapi#class('I2C', 'ConversionInstruction', [
   \ javaapi#method(0,'I2C(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('I2D', '', [
+call javaapi#class('I2D', 'ConversionInstruction', [
   \ javaapi#method(0,'I2D(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('I2F', '', [
+call javaapi#class('I2F', 'ConversionInstruction', [
   \ javaapi#method(0,'I2F(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('I2L', '', [
+call javaapi#class('I2L', 'ConversionInstruction', [
   \ javaapi#method(0,'I2L(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('I2S', '', [
+call javaapi#class('I2S', 'ConversionInstruction', [
   \ javaapi#method(0,'I2S(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IADD', '', [
+call javaapi#class('IADD', 'ArithmeticInstruction', [
   \ javaapi#method(0,'IADD(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IALOAD', '', [
+call javaapi#class('IALOAD', 'ArrayInstruction', [
   \ javaapi#method(0,'IALOAD(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IAND', '', [
+call javaapi#class('IAND', 'ArithmeticInstruction', [
   \ javaapi#method(0,'IAND(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IASTORE', '', [
+call javaapi#class('IASTORE', 'ArrayInstruction', [
   \ javaapi#method(0,'IASTORE(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('ICONST', '', [
+call javaapi#class('ICONST', 'Instruction', [
   \ javaapi#method(0,'ICONST(', 'int)', 'public'),
   \ javaapi#method(0,'getValue(', ')', 'Number'),
   \ javaapi#method(0,'getType(', 'ConstantPoolGen)', 'Type'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IDIV', '', [
+call javaapi#class('IDIV', 'ArithmeticInstruction', [
   \ javaapi#method(0,'IDIV(', ')', 'public'),
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IFEQ', '', [
+call javaapi#class('IFEQ', 'IfInstruction', [
   \ javaapi#method(0,'IFEQ(', 'InstructionHandle)', 'public'),
   \ javaapi#method(0,'negate(', ')', 'IfInstruction'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IFGE', '', [
+call javaapi#class('IFGE', 'IfInstruction', [
   \ javaapi#method(0,'IFGE(', 'InstructionHandle)', 'public'),
   \ javaapi#method(0,'negate(', ')', 'IfInstruction'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IFGT', '', [
+call javaapi#class('IFGT', 'IfInstruction', [
   \ javaapi#method(0,'IFGT(', 'InstructionHandle)', 'public'),
   \ javaapi#method(0,'negate(', ')', 'IfInstruction'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IFLE', '', [
+call javaapi#class('IFLE', 'IfInstruction', [
   \ javaapi#method(0,'IFLE(', 'InstructionHandle)', 'public'),
   \ javaapi#method(0,'negate(', ')', 'IfInstruction'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IFLT', '', [
+call javaapi#class('IFLT', 'IfInstruction', [
   \ javaapi#method(0,'IFLT(', 'InstructionHandle)', 'public'),
   \ javaapi#method(0,'negate(', ')', 'IfInstruction'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IFNE', '', [
+call javaapi#class('IFNE', 'IfInstruction', [
   \ javaapi#method(0,'IFNE(', 'InstructionHandle)', 'public'),
   \ javaapi#method(0,'negate(', ')', 'IfInstruction'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IFNONNULL', '', [
+call javaapi#class('IFNONNULL', 'IfInstruction', [
   \ javaapi#method(0,'IFNONNULL(', 'InstructionHandle)', 'public'),
   \ javaapi#method(0,'negate(', ')', 'IfInstruction'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IFNULL', '', [
+call javaapi#class('IFNULL', 'IfInstruction', [
   \ javaapi#method(0,'IFNULL(', 'InstructionHandle)', 'public'),
   \ javaapi#method(0,'negate(', ')', 'IfInstruction'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IF_ACMPEQ', '', [
+call javaapi#class('IF_ACMPEQ', 'IfInstruction', [
   \ javaapi#method(0,'IF_ACMPEQ(', 'InstructionHandle)', 'public'),
   \ javaapi#method(0,'negate(', ')', 'IfInstruction'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IF_ACMPNE', '', [
+call javaapi#class('IF_ACMPNE', 'IfInstruction', [
   \ javaapi#method(0,'IF_ACMPNE(', 'InstructionHandle)', 'public'),
   \ javaapi#method(0,'negate(', ')', 'IfInstruction'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IF_ICMPEQ', '', [
+call javaapi#class('IF_ICMPEQ', 'IfInstruction', [
   \ javaapi#method(0,'IF_ICMPEQ(', 'InstructionHandle)', 'public'),
   \ javaapi#method(0,'negate(', ')', 'IfInstruction'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IF_ICMPGE', '', [
+call javaapi#class('IF_ICMPGE', 'IfInstruction', [
   \ javaapi#method(0,'IF_ICMPGE(', 'InstructionHandle)', 'public'),
   \ javaapi#method(0,'negate(', ')', 'IfInstruction'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IF_ICMPGT', '', [
+call javaapi#class('IF_ICMPGT', 'IfInstruction', [
   \ javaapi#method(0,'IF_ICMPGT(', 'InstructionHandle)', 'public'),
   \ javaapi#method(0,'negate(', ')', 'IfInstruction'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IF_ICMPLE', '', [
+call javaapi#class('IF_ICMPLE', 'IfInstruction', [
   \ javaapi#method(0,'IF_ICMPLE(', 'InstructionHandle)', 'public'),
   \ javaapi#method(0,'negate(', ')', 'IfInstruction'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IF_ICMPLT', '', [
+call javaapi#class('IF_ICMPLT', 'IfInstruction', [
   \ javaapi#method(0,'IF_ICMPLT(', 'InstructionHandle)', 'public'),
   \ javaapi#method(0,'negate(', ')', 'IfInstruction'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IF_ICMPNE', '', [
+call javaapi#class('IF_ICMPNE', 'IfInstruction', [
   \ javaapi#method(0,'IF_ICMPNE(', 'InstructionHandle)', 'public'),
   \ javaapi#method(0,'negate(', ')', 'IfInstruction'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IINC', '', [
+call javaapi#class('IINC', 'LocalVariableInstruction', [
   \ javaapi#method(0,'IINC(', 'int, int)', 'public'),
   \ javaapi#method(0,'dump(', 'DataOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,'toString(', 'boolean)', 'String'),
@@ -928,39 +928,39 @@ call javaapi#class('IINC', '', [
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('ILOAD', '', [
+call javaapi#class('ILOAD', 'LoadInstruction', [
   \ javaapi#method(0,'ILOAD(', 'int)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IMPDEP1', '', [
+call javaapi#class('IMPDEP1', 'Instruction', [
   \ javaapi#method(0,'IMPDEP1(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IMPDEP2', '', [
+call javaapi#class('IMPDEP2', 'Instruction', [
   \ javaapi#method(0,'IMPDEP2(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IMUL', '', [
+call javaapi#class('IMUL', 'ArithmeticInstruction', [
   \ javaapi#method(0,'IMUL(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('INEG', '', [
+call javaapi#class('INEG', 'ArithmeticInstruction', [
   \ javaapi#method(0,'INEG(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('INSTANCEOF', '', [
+call javaapi#class('INSTANCEOF', 'CPInstruction', [
   \ javaapi#method(0,'INSTANCEOF(', 'int)', 'public'),
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ javaapi#method(0,'getLoadClassType(', 'ConstantPoolGen)', 'ObjectType'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('INVOKEINTERFACE', '', [
+call javaapi#class('INVOKEINTERFACE', 'InvokeInstruction', [
   \ javaapi#method(0,'INVOKEINTERFACE(', 'int, int)', 'public'),
   \ javaapi#method(0,'dump(', 'DataOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,'getCount(', ')', 'int'),
@@ -970,71 +970,71 @@ call javaapi#class('INVOKEINTERFACE', '', [
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('INVOKESPECIAL', '', [
+call javaapi#class('INVOKESPECIAL', 'InvokeInstruction', [
   \ javaapi#method(0,'INVOKESPECIAL(', 'int)', 'public'),
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('INVOKESTATIC', '', [
+call javaapi#class('INVOKESTATIC', 'InvokeInstruction', [
   \ javaapi#method(0,'INVOKESTATIC(', 'int)', 'public'),
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('INVOKEVIRTUAL', '', [
+call javaapi#class('INVOKEVIRTUAL', 'InvokeInstruction', [
   \ javaapi#method(0,'INVOKEVIRTUAL(', 'int)', 'public'),
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IOR', '', [
+call javaapi#class('IOR', 'ArithmeticInstruction', [
   \ javaapi#method(0,'IOR(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IREM', '', [
+call javaapi#class('IREM', 'ArithmeticInstruction', [
   \ javaapi#method(0,'IREM(', ')', 'public'),
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IRETURN', '', [
+call javaapi#class('IRETURN', 'ReturnInstruction', [
   \ javaapi#method(0,'IRETURN(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('ISHL', '', [
+call javaapi#class('ISHL', 'ArithmeticInstruction', [
   \ javaapi#method(0,'ISHL(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('ISHR', '', [
+call javaapi#class('ISHR', 'ArithmeticInstruction', [
   \ javaapi#method(0,'ISHR(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('ISTORE', '', [
+call javaapi#class('ISTORE', 'StoreInstruction', [
   \ javaapi#method(0,'ISTORE(', 'int)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('ISUB', '', [
+call javaapi#class('ISUB', 'ArithmeticInstruction', [
   \ javaapi#method(0,'ISUB(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IUSHR', '', [
+call javaapi#class('IUSHR', 'ArithmeticInstruction', [
   \ javaapi#method(0,'IUSHR(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IXOR', '', [
+call javaapi#class('IXOR', 'ArithmeticInstruction', [
   \ javaapi#method(0,'IXOR(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('IfInstruction', '', [
+call javaapi#class('IfInstruction', 'BranchInstruction', [
   \ javaapi#method(0,'negate(', ')', 'IfInstruction'),
   \ ])
 
@@ -1339,7 +1339,7 @@ call javaapi#interface('InstructionTargeter', '', [
   \ javaapi#method(0,'updateTarget(', 'InstructionHandle, InstructionHandle)', 'void'),
   \ ])
 
-call javaapi#class('InvokeInstruction', '', [
+call javaapi#class('InvokeInstruction', 'FieldOrMethod', [
   \ javaapi#method(0,'toString(', 'ConstantPool)', 'String'),
   \ javaapi#method(0,'consumeStack(', 'ConstantPoolGen)', 'int'),
   \ javaapi#method(0,'produceStack(', 'ConstantPoolGen)', 'int'),
@@ -1349,72 +1349,72 @@ call javaapi#class('InvokeInstruction', '', [
   \ javaapi#method(0,'getArgumentTypes(', 'ConstantPoolGen)', 'Type[]'),
   \ ])
 
-call javaapi#class('JSR', '', [
+call javaapi#class('JSR', 'JsrInstruction', [
   \ javaapi#method(0,'JSR(', 'InstructionHandle)', 'public'),
   \ javaapi#method(0,'dump(', 'DataOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('JSR_W', '', [
+call javaapi#class('JSR_W', 'JsrInstruction', [
   \ javaapi#method(0,'JSR_W(', 'InstructionHandle)', 'public'),
   \ javaapi#method(0,'dump(', 'DataOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('JsrInstruction', '', [
+call javaapi#class('JsrInstruction', 'BranchInstruction', [
   \ javaapi#method(0,'getType(', 'ConstantPoolGen)', 'Type'),
   \ javaapi#method(0,'physicalSuccessor(', ')', 'InstructionHandle'),
   \ ])
 
-call javaapi#class('L2D', '', [
+call javaapi#class('L2D', 'ConversionInstruction', [
   \ javaapi#method(0,'L2D(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('L2F', '', [
+call javaapi#class('L2F', 'ConversionInstruction', [
   \ javaapi#method(0,'L2F(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('L2I', '', [
+call javaapi#class('L2I', 'ConversionInstruction', [
   \ javaapi#method(0,'L2I(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LADD', '', [
+call javaapi#class('LADD', 'ArithmeticInstruction', [
   \ javaapi#method(0,'LADD(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LALOAD', '', [
+call javaapi#class('LALOAD', 'ArrayInstruction', [
   \ javaapi#method(0,'LALOAD(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LAND', '', [
+call javaapi#class('LAND', 'ArithmeticInstruction', [
   \ javaapi#method(0,'LAND(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LASTORE', '', [
+call javaapi#class('LASTORE', 'ArrayInstruction', [
   \ javaapi#method(0,'LASTORE(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LCMP', '', [
+call javaapi#class('LCMP', 'Instruction', [
   \ javaapi#method(0,'LCMP(', ')', 'public'),
   \ javaapi#method(0,'getType(', 'ConstantPoolGen)', 'Type'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LCONST', '', [
+call javaapi#class('LCONST', 'Instruction', [
   \ javaapi#method(0,'LCONST(', 'long)', 'public'),
   \ javaapi#method(0,'getValue(', ')', 'Number'),
   \ javaapi#method(0,'getType(', 'ConstantPoolGen)', 'Type'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LDC', '', [
+call javaapi#class('LDC', 'CPInstruction', [
   \ javaapi#method(0,'LDC(', 'int)', 'public'),
   \ javaapi#method(0,'dump(', 'DataOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,'setIndex(', 'int)', 'void'),
@@ -1424,86 +1424,86 @@ call javaapi#class('LDC', '', [
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LDC2_W', '', [
+call javaapi#class('LDC2_W', 'CPInstruction', [
   \ javaapi#method(0,'LDC2_W(', 'int)', 'public'),
   \ javaapi#method(0,'getType(', 'ConstantPoolGen)', 'Type'),
   \ javaapi#method(0,'getValue(', 'ConstantPoolGen)', 'Number'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LDC_W', '', [
+call javaapi#class('LDC_W', 'LDC', [
   \ javaapi#method(0,'LDC_W(', 'int)', 'public'),
   \ ])
 
-call javaapi#class('LDIV', '', [
+call javaapi#class('LDIV', 'ArithmeticInstruction', [
   \ javaapi#method(0,'LDIV(', ')', 'public'),
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LLOAD', '', [
+call javaapi#class('LLOAD', 'LoadInstruction', [
   \ javaapi#method(0,'LLOAD(', 'int)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LMUL', '', [
+call javaapi#class('LMUL', 'ArithmeticInstruction', [
   \ javaapi#method(0,'LMUL(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LNEG', '', [
+call javaapi#class('LNEG', 'ArithmeticInstruction', [
   \ javaapi#method(0,'LNEG(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LOOKUPSWITCH', '', [
+call javaapi#class('LOOKUPSWITCH', 'Select', [
   \ javaapi#method(0,'LOOKUPSWITCH(', 'int[], InstructionHandle[], InstructionHandle)', 'public'),
   \ javaapi#method(0,'dump(', 'DataOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LOR', '', [
+call javaapi#class('LOR', 'ArithmeticInstruction', [
   \ javaapi#method(0,'LOR(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LREM', '', [
+call javaapi#class('LREM', 'ArithmeticInstruction', [
   \ javaapi#method(0,'LREM(', ')', 'public'),
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LRETURN', '', [
+call javaapi#class('LRETURN', 'ReturnInstruction', [
   \ javaapi#method(0,'LRETURN(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LSHL', '', [
+call javaapi#class('LSHL', 'ArithmeticInstruction', [
   \ javaapi#method(0,'LSHL(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LSHR', '', [
+call javaapi#class('LSHR', 'ArithmeticInstruction', [
   \ javaapi#method(0,'LSHR(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LSTORE', '', [
+call javaapi#class('LSTORE', 'StoreInstruction', [
   \ javaapi#method(0,'LSTORE(', 'int)', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LSUB', '', [
+call javaapi#class('LSUB', 'ArithmeticInstruction', [
   \ javaapi#method(0,'LSUB(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LUSHR', '', [
+call javaapi#class('LUSHR', 'ArithmeticInstruction', [
   \ javaapi#method(0,'LUSHR(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('LXOR', '', [
+call javaapi#class('LXOR', 'ArithmeticInstruction', [
   \ javaapi#method(0,'LXOR(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
@@ -1525,7 +1525,7 @@ call javaapi#interface('LoadClass', '', [
   \ javaapi#method(0,'getType(', 'ConstantPoolGen)', 'Type'),
   \ ])
 
-call javaapi#class('LoadInstruction', '', [
+call javaapi#class('LoadInstruction', 'LocalVariableInstruction', [
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
@@ -1549,7 +1549,7 @@ call javaapi#class('LocalVariableGen', 'Serializable', [
   \ javaapi#method(0,'clone(', ')', 'Object'),
   \ ])
 
-call javaapi#class('LocalVariableInstruction', '', [
+call javaapi#class('LocalVariableInstruction', 'Instruction', [
   \ javaapi#method(0,'dump(', 'DataOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,'toString(', 'boolean)', 'String'),
   \ javaapi#method(0,'getIndex(', ')', 'int'),
@@ -1558,19 +1558,19 @@ call javaapi#class('LocalVariableInstruction', '', [
   \ javaapi#method(0,'getType(', 'ConstantPoolGen)', 'Type'),
   \ ])
 
-call javaapi#class('MONITORENTER', '', [
+call javaapi#class('MONITORENTER', 'Instruction', [
   \ javaapi#method(0,'MONITORENTER(', ')', 'public'),
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('MONITOREXIT', '', [
+call javaapi#class('MONITOREXIT', 'Instruction', [
   \ javaapi#method(0,'MONITOREXIT(', ')', 'public'),
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('MULTIANEWARRAY', '', [
+call javaapi#class('MULTIANEWARRAY', 'CPInstruction', [
   \ javaapi#method(0,'MULTIANEWARRAY(', 'int, short)', 'public'),
   \ javaapi#method(0,'dump(', 'DataOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,'getDimensions(', ')', 'short'),
@@ -1590,7 +1590,7 @@ call javaapi#class('BranchStack', '', [
 call javaapi#class('BranchTarget', '', [
   \ ])
 
-call javaapi#class('MethodGen', '', [
+call javaapi#class('MethodGen', 'FieldGenOrMethodGen', [
   \ javaapi#method(0,'MethodGen(', 'int, Type, Type[], String[], String, String, InstructionList, ConstantPoolGen)', 'public'),
   \ javaapi#method(0,'MethodGen(', 'Method, String, ConstantPoolGen)', 'public'),
   \ javaapi#method(0,'addLocalVariable(', 'String, Type, int, InstructionHandle, InstructionHandle)', 'LocalVariableGen'),
@@ -1652,14 +1652,14 @@ call javaapi#interface('MethodObserver', '', [
   \ javaapi#method(0,'notify(', 'MethodGen)', 'void'),
   \ ])
 
-call javaapi#class('NEW', '', [
+call javaapi#class('NEW', 'CPInstruction', [
   \ javaapi#method(0,'NEW(', 'int)', 'public'),
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ javaapi#method(0,'getLoadClassType(', 'ConstantPoolGen)', 'ObjectType'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('NEWARRAY', '', [
+call javaapi#class('NEWARRAY', 'Instruction', [
   \ javaapi#method(0,'NEWARRAY(', 'byte)', 'public'),
   \ javaapi#method(0,'NEWARRAY(', 'BasicType)', 'public'),
   \ javaapi#method(0,'dump(', 'DataOutputStream) throws IOException', 'void'),
@@ -1670,7 +1670,7 @@ call javaapi#class('NEWARRAY', '', [
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('NOP', '', [
+call javaapi#class('NOP', 'Instruction', [
   \ javaapi#method(0,'NOP(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
@@ -1682,7 +1682,7 @@ call javaapi#interface('NamedAndTyped', '', [
   \ javaapi#method(0,'setType(', 'Type)', 'void'),
   \ ])
 
-call javaapi#class('ObjectType', '', [
+call javaapi#class('ObjectType', 'ReferenceType', [
   \ javaapi#method(0,'ObjectType(', 'String)', 'public'),
   \ javaapi#method(0,'getClassName(', ')', 'String'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
@@ -1693,12 +1693,12 @@ call javaapi#class('ObjectType', '', [
   \ javaapi#method(0,'accessibleTo(', 'ObjectType)', 'boolean'),
   \ ])
 
-call javaapi#class('POP', '', [
+call javaapi#class('POP', 'StackInstruction', [
   \ javaapi#method(0,'POP(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('POP2', '', [
+call javaapi#class('POP2', 'StackInstruction', [
   \ javaapi#method(0,'POP2(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
@@ -1718,27 +1718,27 @@ call javaapi#class('PUSH', 'InstructionConstants', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('PUTFIELD', '', [
+call javaapi#class('PUTFIELD', 'FieldInstruction', [
   \ javaapi#method(0,'PUTFIELD(', 'int)', 'public'),
   \ javaapi#method(0,'consumeStack(', 'ConstantPoolGen)', 'int'),
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('PUTSTATIC', '', [
+call javaapi#class('PUTSTATIC', 'FieldInstruction', [
   \ javaapi#method(0,'PUTSTATIC(', 'int)', 'public'),
   \ javaapi#method(0,'consumeStack(', 'ConstantPoolGen)', 'int'),
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#interface('PopInstruction', '', [
+call javaapi#interface('PopInstruction', 'StackConsumer', [
   \ ])
 
-call javaapi#interface('PushInstruction', '', [
+call javaapi#interface('PushInstruction', 'StackProducer', [
   \ ])
 
-call javaapi#class('RET', '', [
+call javaapi#class('RET', 'Instruction', [
   \ javaapi#method(0,'RET(', 'int)', 'public'),
   \ javaapi#method(0,'dump(', 'DataOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,'getIndex(', ')', 'int'),
@@ -1748,42 +1748,42 @@ call javaapi#class('RET', '', [
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('RETURN', '', [
+call javaapi#class('RETURN', 'ReturnInstruction', [
   \ javaapi#method(0,'RETURN(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('ReferenceType', '', [
+call javaapi#class('ReferenceType', 'Type', [
   \ javaapi#method(0,'isCastableTo(', 'Type)', 'boolean'),
   \ javaapi#method(0,'isAssignmentCompatibleWith(', 'Type)', 'boolean'),
   \ javaapi#method(0,'getFirstCommonSuperclass(', 'ReferenceType)', 'ReferenceType'),
   \ javaapi#method(0,'firstCommonSuperclass(', 'ReferenceType)', 'ReferenceType'),
   \ ])
 
-call javaapi#class('ReturnInstruction', '', [
+call javaapi#class('ReturnInstruction', 'Instruction', [
   \ javaapi#method(0,'getType(', ')', 'Type'),
   \ javaapi#method(0,'getExceptions(', ')', 'Class[]'),
   \ javaapi#method(0,'getType(', 'ConstantPoolGen)', 'Type'),
   \ ])
 
-call javaapi#class('ReturnaddressType', '', [
+call javaapi#class('ReturnaddressType', 'Type', [
   \ javaapi#field(1,'NO_TARGET', 'ReturnaddressType'),
   \ javaapi#method(0,'ReturnaddressType(', 'InstructionHandle)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getTarget(', ')', 'InstructionHandle'),
   \ ])
 
-call javaapi#class('SALOAD', '', [
+call javaapi#class('SALOAD', 'ArrayInstruction', [
   \ javaapi#method(0,'SALOAD(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('SASTORE', '', [
+call javaapi#class('SASTORE', 'ArrayInstruction', [
   \ javaapi#method(0,'SASTORE(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('SIPUSH', '', [
+call javaapi#class('SIPUSH', 'Instruction', [
   \ javaapi#method(0,'SIPUSH(', 'short)', 'public'),
   \ javaapi#method(0,'dump(', 'DataOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,'toString(', 'boolean)', 'String'),
@@ -1792,7 +1792,7 @@ call javaapi#class('SIPUSH', '', [
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('SWAP', '', [
+call javaapi#class('SWAP', 'StackInstruction', [
   \ javaapi#method(0,'SWAP(', ')', 'public'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
@@ -1804,7 +1804,7 @@ call javaapi#class('SWITCH', 'CompoundInstruction', [
   \ javaapi#method(0,'getInstruction(', ')', 'Instruction'),
   \ ])
 
-call javaapi#class('Select', '', [
+call javaapi#class('Select', 'BranchInstruction', [
   \ javaapi#method(0,'dump(', 'DataOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,'toString(', 'boolean)', 'String'),
   \ javaapi#method(0,'setTarget(', 'int, InstructionHandle)', 'void'),
@@ -1819,7 +1819,7 @@ call javaapi#interface('StackConsumer', '', [
   \ javaapi#method(0,'consumeStack(', 'ConstantPoolGen)', 'int'),
   \ ])
 
-call javaapi#class('StackInstruction', '', [
+call javaapi#class('StackInstruction', 'Instruction', [
   \ javaapi#method(0,'getType(', 'ConstantPoolGen)', 'Type'),
   \ ])
 
@@ -1827,24 +1827,24 @@ call javaapi#interface('StackProducer', '', [
   \ javaapi#method(0,'produceStack(', 'ConstantPoolGen)', 'int'),
   \ ])
 
-call javaapi#class('StoreInstruction', '', [
+call javaapi#class('StoreInstruction', 'LocalVariableInstruction', [
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('TABLESWITCH', '', [
+call javaapi#class('TABLESWITCH', 'Select', [
   \ javaapi#method(0,'TABLESWITCH(', 'int[], InstructionHandle[], InstructionHandle)', 'public'),
   \ javaapi#method(0,'dump(', 'DataOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,'accept(', 'Visitor)', 'void'),
   \ ])
 
-call javaapi#class('TargetLostException', '', [
+call javaapi#class('TargetLostException', 'Exception', [
   \ javaapi#method(0,'getTargets(', ')', 'InstructionHandle[]'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ReferenceType', [
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'Type', [
   \ ])
 
 call javaapi#class('Type', 'Serializable', [

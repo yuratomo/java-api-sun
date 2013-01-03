@@ -3,7 +3,7 @@ call javaapi#namespace('sun.util.locale')
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('Cache', '', [
+call javaapi#class('Cache', 'BaseLocale>', [
   \ javaapi#method(0,'Cache(', ')', 'public'),
   \ ])
 
@@ -126,7 +126,7 @@ call javaapi#class('LocaleExtensions', '', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('CacheEntry<K,V>', '', [
+call javaapi#class('CacheEntry<K,V>', 'SoftReference<V>', [
   \ ])
 
 call javaapi#class('LocaleObjectCache<K,V>', '', [
@@ -135,7 +135,7 @@ call javaapi#class('LocaleObjectCache<K,V>', '', [
   \ javaapi#method(0,'get(', 'K)', 'V'),
   \ ])
 
-call javaapi#class('LocaleSyntaxException', '', [
+call javaapi#class('LocaleSyntaxException', 'Exception', [
   \ javaapi#method(0,'LocaleSyntaxException(', 'String)', 'public'),
   \ javaapi#method(0,'LocaleSyntaxException(', 'String, int)', 'public'),
   \ javaapi#method(0,'getErrorIndex(', ')', 'int'),
@@ -168,7 +168,7 @@ call javaapi#class('StringTokenIterator', '', [
   \ javaapi#method(0,'setText(', 'String)', 'StringTokenIterator'),
   \ ])
 
-call javaapi#class('UnicodeLocaleExtension', '', [
+call javaapi#class('UnicodeLocaleExtension', 'Extension', [
   \ javaapi#field(1,'SINGLETON', 'char'),
   \ javaapi#field(1,'CA_JAPANESE', 'UnicodeLocaleExtension'),
   \ javaapi#field(1,'NU_THAI', 'UnicodeLocaleExtension'),

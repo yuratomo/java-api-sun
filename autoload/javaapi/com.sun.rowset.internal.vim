@@ -26,7 +26,7 @@ call javaapi#class('CachedRowSetWriter', 'Serializable', [
   \ javaapi#method(0,'rollback(', 'Savepoint) throws SQLException', 'void'),
   \ ])
 
-call javaapi#class('InsertRow', '', [
+call javaapi#class('InsertRow', 'BaseRow', [
   \ javaapi#method(0,'InsertRow(', 'int)', 'public'),
   \ javaapi#method(0,'isCompleteRow(', 'RowSetMetaData) throws SQLException', 'boolean'),
   \ javaapi#method(0,'initInsertRow(', ')', 'void'),
@@ -34,7 +34,7 @@ call javaapi#class('InsertRow', '', [
   \ javaapi#method(0,'setColumnObject(', 'int, Object)', 'void'),
   \ ])
 
-call javaapi#class('Row', '', [
+call javaapi#class('Row', 'BaseRow', [
   \ javaapi#method(0,'Row(', 'int)', 'public'),
   \ javaapi#method(0,'Row(', 'int, Object[])', 'public'),
   \ javaapi#method(0,'initColumnObject(', 'int, Object)', 'void'),
@@ -54,7 +54,7 @@ call javaapi#class('Row', '', [
   \ javaapi#method(0,'getCurrentRow(', ')', 'BaseRow'),
   \ ])
 
-call javaapi#class('SyncResolverImpl', '', [
+call javaapi#class('SyncResolverImpl', 'CachedRowSetImpl', [
   \ javaapi#method(0,'SyncResolverImpl(', ') throws SQLException', 'public'),
   \ javaapi#method(0,'getStatus(', ')', 'int'),
   \ javaapi#method(0,'getConflictValue(', 'int) throws SQLException', 'Object'),
@@ -267,7 +267,7 @@ call javaapi#class('WebRowSetXmlWriter', 'Serializable', [
   \ javaapi#method(0,'writeData(', 'RowSetInternal)', 'boolean'),
   \ ])
 
-call javaapi#class('XmlErrorHandler', '', [
+call javaapi#class('XmlErrorHandler', 'DefaultHandler', [
   \ javaapi#field(0,'errorCounter', 'int'),
   \ javaapi#method(0,'XmlErrorHandler(', ')', 'public'),
   \ javaapi#method(0,'error(', 'SAXParseException) throws SAXException', 'void'),
@@ -275,7 +275,7 @@ call javaapi#class('XmlErrorHandler', '', [
   \ javaapi#method(0,'warning(', 'SAXParseException) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('XmlReaderContentHandler', '', [
+call javaapi#class('XmlReaderContentHandler', 'DefaultHandler', [
   \ javaapi#method(0,'XmlReaderContentHandler(', 'RowSet)', 'public'),
   \ javaapi#method(0,'startDocument(', ') throws SAXException', 'void'),
   \ javaapi#method(0,'endDocument(', ') throws SAXException', 'void'),

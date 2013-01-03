@@ -197,7 +197,7 @@ call javaapi#class('XMLString', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('XNIException', '', [
+call javaapi#class('XNIException', 'RuntimeException', [
   \ javaapi#method(0,'XNIException(', 'String)', 'public'),
   \ javaapi#method(0,'XNIException(', 'Exception)', 'public'),
   \ javaapi#method(0,'XNIException(', 'String, Exception)', 'public'),

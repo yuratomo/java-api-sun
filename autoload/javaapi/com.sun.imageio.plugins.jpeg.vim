@@ -1,24 +1,24 @@
 call javaapi#namespace('com.sun.imageio.plugins.jpeg')
 
-call javaapi#class('AdobeMarkerSegment', '', [
+call javaapi#class('AdobeMarkerSegment', 'MarkerSegment', [
   \ ])
 
-call javaapi#class('COMMarkerSegment', '', [
+call javaapi#class('COMMarkerSegment', 'MarkerSegment', [
   \ ])
 
 call javaapi#class('Htable', 'Cloneable', [
   \ ])
 
-call javaapi#class('DHTMarkerSegment', '', [
+call javaapi#class('DHTMarkerSegment', 'MarkerSegment', [
   \ ])
 
 call javaapi#class('Qtable', 'Cloneable', [
   \ ])
 
-call javaapi#class('DQTMarkerSegment', '', [
+call javaapi#class('DQTMarkerSegment', 'MarkerSegment', [
   \ ])
 
-call javaapi#class('DRIMarkerSegment', '', [
+call javaapi#class('DRIMarkerSegment', 'MarkerSegment', [
   \ ])
 
 call javaapi#class('ImageTypeIterator', 'ImageTypeSpecifier>', [
@@ -39,13 +39,13 @@ call javaapi#class('ImageTypeProducer', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('ICCMarkerSegment', '', [
+call javaapi#class('ICCMarkerSegment', 'MarkerSegment', [
   \ ])
 
-call javaapi#class('IllegalThumbException', '', [
+call javaapi#class('IllegalThumbException', 'Exception', [
   \ ])
 
-call javaapi#class('JFIFExtensionMarkerSegment', '', [
+call javaapi#class('JFIFExtensionMarkerSegment', 'MarkerSegment', [
   \ ])
 
 call javaapi#class('JFIFThumb', 'Cloneable', [
@@ -63,19 +63,19 @@ call javaapi#class('ThumbnailReadListener', 'IIOReadProgressListener', [
   \ javaapi#method(0,'readAborted(', 'ImageReader)', 'void'),
   \ ])
 
-call javaapi#class('JFIFThumbJPEG', '', [
+call javaapi#class('JFIFThumbJPEG', 'JFIFThumb', [
   \ ])
 
-call javaapi#class('JFIFThumbPalette', '', [
+call javaapi#class('JFIFThumbPalette', 'JFIFThumbUncompressed', [
   \ ])
 
-call javaapi#class('JFIFThumbRGB', '', [
+call javaapi#class('JFIFThumbRGB', 'JFIFThumbUncompressed', [
   \ ])
 
-call javaapi#class('JFIFThumbUncompressed', '', [
+call javaapi#class('JFIFThumbUncompressed', 'JFIFThumb', [
   \ ])
 
-call javaapi#class('JFIFMarkerSegment', '', [
+call javaapi#class('JFIFMarkerSegment', 'MarkerSegment', [
   \ ])
 
 call javaapi#class('JCS', '', [
@@ -173,16 +173,16 @@ call javaapi#class('JPEG', '', [
 call javaapi#class('JPEGBuffer', '', [
   \ ])
 
-call javaapi#class('JPEGImageMetadataFormat', '', [
+call javaapi#class('JPEGImageMetadataFormat', 'JPEGMetadataFormat', [
   \ javaapi#method(0,'canNodeAppear(', 'String, ImageTypeSpecifier)', 'boolean'),
   \ javaapi#method(1,'getInstance(', ')', 'IIOMetadataFormat'),
   \ ])
 
-call javaapi#class('JPEGImageMetadataFormatResources', '', [
+call javaapi#class('JPEGImageMetadataFormatResources', 'JPEGMetadataFormatResources', [
   \ javaapi#method(0,'JPEGImageMetadataFormatResources(', ')', 'public'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ImageTypeProducer', [
   \ ])
 
 call javaapi#class('JPEGReaderDisposerRecord', 'DisposerRecord', [
@@ -190,7 +190,7 @@ call javaapi#class('JPEGReaderDisposerRecord', 'DisposerRecord', [
   \ javaapi#method(0,'dispose(', ')', 'void'),
   \ ])
 
-call javaapi#class('JPEGImageReader', '', [
+call javaapi#class('JPEGImageReader', 'ImageReader', [
   \ javaapi#method(0,'JPEGImageReader(', 'ImageReaderSpi)', 'public'),
   \ javaapi#method(0,'setInput(', 'Object, boolean, boolean)', 'void'),
   \ javaapi#method(0,'getNumImages(', 'boolean) throws IOException', 'int'),
@@ -214,11 +214,11 @@ call javaapi#class('JPEGImageReader', '', [
   \ javaapi#method(0,'dispose(', ')', 'void'),
   \ ])
 
-call javaapi#class('JPEGImageReaderResources', '', [
+call javaapi#class('JPEGImageReaderResources', 'ListResourceBundle', [
   \ javaapi#method(0,'JPEGImageReaderResources(', ')', 'public'),
   \ ])
 
-call javaapi#class('JPEGImageReaderSpi', '', [
+call javaapi#class('JPEGImageReaderSpi', 'ImageReaderSpi', [
   \ javaapi#method(0,'JPEGImageReaderSpi(', ')', 'public'),
   \ javaapi#method(0,'getDescription(', 'Locale)', 'String'),
   \ javaapi#method(0,'canDecodeInput(', 'Object) throws IOException', 'boolean'),
@@ -230,7 +230,7 @@ call javaapi#class('JPEGWriterDisposerRecord', 'DisposerRecord', [
   \ javaapi#method(0,'dispose(', ')', 'void'),
   \ ])
 
-call javaapi#class('JPEGImageWriter', '', [
+call javaapi#class('JPEGImageWriter', 'ImageWriter', [
   \ javaapi#method(0,'JPEGImageWriter(', 'ImageWriterSpi)', 'public'),
   \ javaapi#method(0,'setOutput(', 'Object)', 'void'),
   \ javaapi#method(0,'getDefaultWriteParam(', ')', 'ImageWriteParam'),
@@ -250,11 +250,11 @@ call javaapi#class('JPEGImageWriter', '', [
   \ javaapi#method(0,'dispose(', ')', 'void'),
   \ ])
 
-call javaapi#class('JPEGImageWriterResources', '', [
+call javaapi#class('JPEGImageWriterResources', 'ListResourceBundle', [
   \ javaapi#method(0,'JPEGImageWriterResources(', ')', 'public'),
   \ ])
 
-call javaapi#class('JPEGImageWriterSpi', '', [
+call javaapi#class('JPEGImageWriterSpi', 'ImageWriterSpi', [
   \ javaapi#method(0,'JPEGImageWriterSpi(', ')', 'public'),
   \ javaapi#method(0,'getDescription(', 'Locale)', 'String'),
   \ javaapi#method(0,'isFormatLossless(', ')', 'boolean'),
@@ -262,7 +262,7 @@ call javaapi#class('JPEGImageWriterSpi', '', [
   \ javaapi#method(0,'createWriterInstance(', 'Object) throws IIOException', 'ImageWriter'),
   \ ])
 
-call javaapi#class('JPEGMetadata', '', [
+call javaapi#class('JPEGMetadata', 'IIOMetadata', [
   \ javaapi#method(0,'getAsTree(', 'String)', 'Node'),
   \ javaapi#method(0,'isReadOnly(', ')', 'boolean'),
   \ javaapi#method(0,'mergeTree(', 'String, Node) throws IIOInvalidTreeException', 'void'),
@@ -271,19 +271,19 @@ call javaapi#class('JPEGMetadata', '', [
   \ javaapi#method(0,'print(', ')', 'void'),
   \ ])
 
-call javaapi#class('JPEGMetadataFormat', '', [
+call javaapi#class('JPEGMetadataFormat', 'IIOMetadataFormatImpl', [
   \ javaapi#method(0,'canNodeAppear(', 'String, ImageTypeSpecifier)', 'boolean'),
   \ ])
 
-call javaapi#class('JPEGMetadataFormatResources', '', [
+call javaapi#class('JPEGMetadataFormatResources', 'ListResourceBundle', [
   \ ])
 
-call javaapi#class('JPEGStreamMetadataFormat', '', [
+call javaapi#class('JPEGStreamMetadataFormat', 'JPEGMetadataFormat', [
   \ javaapi#method(1,'getInstance(', ')', 'IIOMetadataFormat'),
   \ javaapi#method(0,'canNodeAppear(', 'String, ImageTypeSpecifier)', 'boolean'),
   \ ])
 
-call javaapi#class('JPEGStreamMetadataFormatResources', '', [
+call javaapi#class('JPEGStreamMetadataFormatResources', 'JPEGMetadataFormatResources', [
   \ javaapi#method(0,'JPEGStreamMetadataFormatResources(', ')', 'public'),
   \ ])
 
@@ -293,12 +293,12 @@ call javaapi#class('MarkerSegment', 'Cloneable', [
 call javaapi#class('ComponentSpec', 'Cloneable', [
   \ ])
 
-call javaapi#class('SOFMarkerSegment', '', [
+call javaapi#class('SOFMarkerSegment', 'MarkerSegment', [
   \ ])
 
 call javaapi#class('ScanComponentSpec', 'Cloneable', [
   \ ])
 
-call javaapi#class('SOSMarkerSegment', '', [
+call javaapi#class('SOSMarkerSegment', 'MarkerSegment', [
   \ ])
 

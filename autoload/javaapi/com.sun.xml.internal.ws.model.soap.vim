@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.ws.model.soap')
 
-call javaapi#class('SOAPBindingImpl', '', [
+call javaapi#class('SOAPBindingImpl', 'SOAPBinding', [
   \ javaapi#method(0,'SOAPBindingImpl(', ')', 'public'),
   \ javaapi#method(0,'SOAPBindingImpl(', 'SOAPBinding)', 'public'),
   \ javaapi#method(0,'setStyle(', 'Style)', 'void'),

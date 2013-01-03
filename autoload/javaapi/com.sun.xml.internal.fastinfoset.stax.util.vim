@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.fastinfoset.stax.util')
 
-call javaapi#class('StAXFilteredParser', '', [
+call javaapi#class('StAXFilteredParser', 'StAXParserWrapper', [
   \ javaapi#method(0,'StAXFilteredParser(', ')', 'public'),
   \ javaapi#method(0,'StAXFilteredParser(', 'XMLStreamReader, StreamFilter)', 'public'),
   \ javaapi#method(0,'setFilter(', 'StreamFilter)', 'void'),

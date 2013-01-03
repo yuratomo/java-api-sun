@@ -81,66 +81,66 @@ call javaapi#class('MsgKey', '', [
   \ javaapi#method(0,'MsgKey(', ')', 'public'),
   \ ])
 
-call javaapi#class('SerializerMessages', '', [
+call javaapi#class('SerializerMessages', 'ListResourceBundle', [
   \ javaapi#method(0,'SerializerMessages(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('SerializerMessages_ca', '', [
+call javaapi#class('SerializerMessages_ca', 'ListResourceBundle', [
   \ javaapi#method(0,'SerializerMessages_ca(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('SerializerMessages_cs', '', [
+call javaapi#class('SerializerMessages_cs', 'ListResourceBundle', [
   \ javaapi#method(0,'SerializerMessages_cs(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('SerializerMessages_de', '', [
+call javaapi#class('SerializerMessages_de', 'ListResourceBundle', [
   \ javaapi#method(0,'SerializerMessages_de(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('SerializerMessages_en', '', [
+call javaapi#class('SerializerMessages_en', 'SerializerMessages', [
   \ javaapi#method(0,'SerializerMessages_en(', ')', 'public'),
   \ ])
 
-call javaapi#class('SerializerMessages_es', '', [
+call javaapi#class('SerializerMessages_es', 'ListResourceBundle', [
   \ javaapi#method(0,'SerializerMessages_es(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('SerializerMessages_fr', '', [
+call javaapi#class('SerializerMessages_fr', 'ListResourceBundle', [
   \ javaapi#method(0,'SerializerMessages_fr(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('SerializerMessages_it', '', [
+call javaapi#class('SerializerMessages_it', 'ListResourceBundle', [
   \ javaapi#method(0,'SerializerMessages_it(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('SerializerMessages_ja', '', [
+call javaapi#class('SerializerMessages_ja', 'ListResourceBundle', [
   \ javaapi#method(0,'SerializerMessages_ja(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('SerializerMessages_ko', '', [
+call javaapi#class('SerializerMessages_ko', 'ListResourceBundle', [
   \ javaapi#method(0,'SerializerMessages_ko(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('SerializerMessages_sv', '', [
+call javaapi#class('SerializerMessages_sv', 'ListResourceBundle', [
   \ javaapi#method(0,'SerializerMessages_sv(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('SerializerMessages_zh_CN', '', [
+call javaapi#class('SerializerMessages_zh_CN', 'ListResourceBundle', [
   \ javaapi#method(0,'SerializerMessages_zh_CN(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('SerializerMessages_zh_TW', '', [
+call javaapi#class('SerializerMessages_zh_TW', 'ListResourceBundle', [
   \ javaapi#method(0,'SerializerMessages_zh_TW(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
@@ -166,7 +166,7 @@ call javaapi#class('SystemIDResolver', '', [
   \ javaapi#method(1,'getAbsoluteURI(', 'String, String) throws TransformerException', 'String'),
   \ ])
 
-call javaapi#class('MalformedURIException', '', [
+call javaapi#class('MalformedURIException', 'IOException', [
   \ javaapi#method(0,'MalformedURIException(', ')', 'public'),
   \ javaapi#method(0,'MalformedURIException(', 'String)', 'public'),
   \ ])
@@ -208,7 +208,7 @@ call javaapi#class('Utils', '', [
   \ javaapi#method(0,'Utils(', ')', 'public'),
   \ ])
 
-call javaapi#class('WrappedRuntimeException', '', [
+call javaapi#class('WrappedRuntimeException', 'RuntimeException', [
   \ javaapi#method(0,'WrappedRuntimeException(', 'Exception)', 'public'),
   \ javaapi#method(0,'WrappedRuntimeException(', 'String, Exception)', 'public'),
   \ javaapi#method(0,'getException(', ')', 'Exception'),

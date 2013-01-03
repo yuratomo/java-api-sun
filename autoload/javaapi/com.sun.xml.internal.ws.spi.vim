@@ -10,7 +10,7 @@ call javaapi#class('2', 'JAXBContext>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('ProviderImpl', '', [
+call javaapi#class('ProviderImpl', 'Provider', [
   \ javaapi#field(1,'INSTANCE', 'ProviderImpl'),
   \ javaapi#method(0,'ProviderImpl(', ')', 'public'),
   \ javaapi#method(0,'createEndpoint(', 'String, Object)', 'Endpoint'),

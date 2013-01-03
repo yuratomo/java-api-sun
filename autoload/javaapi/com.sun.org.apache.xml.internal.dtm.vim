@@ -114,7 +114,7 @@ call javaapi#interface('DTM', '', [
   \ javaapi#method(0,'migrateTo(', 'DTMManager)', 'void'),
   \ ])
 
-call javaapi#interface('DTMAxisIterator', '', [
+call javaapi#interface('DTMAxisIterator', 'Cloneable', [
   \ javaapi#field(1,'END', 'int'),
   \ javaapi#method(0,'next(', ')', 'int'),
   \ javaapi#method(0,'reset(', ')', 'DTMAxisIterator'),
@@ -138,7 +138,7 @@ call javaapi#class('DTMAxisTraverser', '', [
   \ javaapi#method(0,'next(', 'int, int, int)', 'int'),
   \ ])
 
-call javaapi#class('DTMConfigurationException', '', [
+call javaapi#class('DTMConfigurationException', 'DTMException', [
   \ javaapi#method(0,'DTMConfigurationException(', ')', 'public'),
   \ javaapi#method(0,'DTMConfigurationException(', 'String)', 'public'),
   \ javaapi#method(0,'DTMConfigurationException(', 'Throwable)', 'public'),
@@ -147,12 +147,12 @@ call javaapi#class('DTMConfigurationException', '', [
   \ javaapi#method(0,'DTMConfigurationException(', 'String, SourceLocator, Throwable)', 'public'),
   \ ])
 
-call javaapi#class('DTMDOMException', '', [
+call javaapi#class('DTMDOMException', 'DOMException', [
   \ javaapi#method(0,'DTMDOMException(', 'short, String)', 'public'),
   \ javaapi#method(0,'DTMDOMException(', 'short)', 'public'),
   \ ])
 
-call javaapi#class('DTMException', '', [
+call javaapi#class('DTMException', 'RuntimeException', [
   \ javaapi#method(0,'getLocator(', ')', 'SourceLocator'),
   \ javaapi#method(0,'setLocator(', 'SourceLocator)', 'void'),
   \ javaapi#method(0,'getException(', ')', 'Throwable'),
@@ -256,7 +256,7 @@ call javaapi#interface('DTMWSFilter', '', [
   \ javaapi#method(0,'getShouldStripSpace(', 'int, DTM)', 'short'),
   \ ])
 
-call javaapi#class('ConfigurationError', '', [
+call javaapi#class('ConfigurationError', 'Error', [
   \ ])
 
 call javaapi#class('ObjectFactory', '', [
@@ -297,6 +297,6 @@ call javaapi#class('8', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('SecuritySupport12', '', [
+call javaapi#class('SecuritySupport12', 'SecuritySupport', [
   \ ])
 

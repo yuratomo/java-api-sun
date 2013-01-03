@@ -19,14 +19,14 @@ call javaapi#interface('XMLComponentManager', '', [
   \ javaapi#method(0,'getPropertyState(', 'String)', 'PropertyState'),
   \ ])
 
-call javaapi#class('XMLConfigurationException', '', [
+call javaapi#class('XMLConfigurationException', 'XNIException', [
   \ javaapi#method(0,'XMLConfigurationException(', 'Status, String)', 'public'),
   \ javaapi#method(0,'XMLConfigurationException(', 'Status, String, String)', 'public'),
   \ javaapi#method(0,'getType(', ')', 'Status'),
   \ javaapi#method(0,'getIdentifier(', ')', 'String'),
   \ ])
 
-call javaapi#interface('XMLDTDContentModelFilter', '', [
+call javaapi#interface('XMLDTDContentModelFilter', 'XMLDTDContentModelSource', [
   \ ])
 
 call javaapi#interface('XMLDTDContentModelSource', '', [
@@ -34,10 +34,10 @@ call javaapi#interface('XMLDTDContentModelSource', '', [
   \ javaapi#method(0,'getDTDContentModelHandler(', ')', 'XMLDTDContentModelHandler'),
   \ ])
 
-call javaapi#interface('XMLDTDFilter', '', [
+call javaapi#interface('XMLDTDFilter', 'XMLDTDSource', [
   \ ])
 
-call javaapi#interface('XMLDTDScanner', '', [
+call javaapi#interface('XMLDTDScanner', 'XMLDTDContentModelSource', [
   \ javaapi#method(0,'setInputSource(', 'XMLInputSource) throws IOException', 'void'),
   \ javaapi#method(0,'scanDTDInternalSubset(', 'boolean, boolean, boolean) throws IOException, XNIException', 'boolean'),
   \ javaapi#method(0,'scanDTDExternalSubset(', 'boolean) throws IOException, XNIException', 'boolean'),
@@ -48,10 +48,10 @@ call javaapi#interface('XMLDTDSource', '', [
   \ javaapi#method(0,'getDTDHandler(', ')', 'XMLDTDHandler'),
   \ ])
 
-call javaapi#interface('XMLDocumentFilter', '', [
+call javaapi#interface('XMLDocumentFilter', 'XMLDocumentSource', [
   \ ])
 
-call javaapi#interface('XMLDocumentScanner', '', [
+call javaapi#interface('XMLDocumentScanner', 'XMLDocumentSource', [
   \ javaapi#method(0,'setInputSource(', 'XMLInputSource) throws IOException', 'void'),
   \ javaapi#method(0,'scanDocument(', 'boolean) throws IOException, XNIException', 'boolean'),
   \ javaapi#method(0,'next(', ') throws XNIException, IOException', 'int'),
@@ -91,7 +91,7 @@ call javaapi#class('XMLInputSource', '', [
   \ javaapi#method(0,'getEncoding(', ')', 'String'),
   \ ])
 
-call javaapi#class('XMLParseException', '', [
+call javaapi#class('XMLParseException', 'XNIException', [
   \ javaapi#method(0,'XMLParseException(', 'XMLLocator, String)', 'public'),
   \ javaapi#method(0,'XMLParseException(', 'XMLLocator, String, Exception)', 'public'),
   \ javaapi#method(0,'getPublicId(', ')', 'String'),
@@ -104,7 +104,7 @@ call javaapi#class('XMLParseException', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('XMLParserConfiguration', '', [
+call javaapi#interface('XMLParserConfiguration', 'XMLComponentManager', [
   \ javaapi#method(0,'parse(', 'XMLInputSource) throws XNIException, IOException', 'void'),
   \ javaapi#method(0,'addRecognizedFeatures(', 'String[])', 'void'),
   \ javaapi#method(0,'setFeature(', 'String, boolean) throws XMLConfigurationException', 'void'),
@@ -126,7 +126,7 @@ call javaapi#interface('XMLParserConfiguration', '', [
   \ javaapi#method(0,'getLocale(', ')', 'Locale'),
   \ ])
 
-call javaapi#interface('XMLPullParserConfiguration', '', [
+call javaapi#interface('XMLPullParserConfiguration', 'XMLParserConfiguration', [
   \ javaapi#method(0,'setInputSource(', 'XMLInputSource) throws XMLConfigurationException, IOException', 'void'),
   \ javaapi#method(0,'parse(', 'boolean) throws XNIException, IOException', 'boolean'),
   \ javaapi#method(0,'cleanup(', ')', 'void'),

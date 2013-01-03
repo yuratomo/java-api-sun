@@ -47,7 +47,7 @@ call javaapi#class('ConnectionEventListener', 'ConnectionEventListener', [
   \ javaapi#method(0,'connectionCheckOut(', 'ConnectionEvent) throws SQLException', 'void'),
   \ ])
 
-call javaapi#class('ConnectionHandler', '', [
+call javaapi#class('ConnectionHandler', 'JdbcOdbcConnection', [
   \ javaapi#method(0,'ConnectionHandler(', 'JdbcOdbc, long, JdbcOdbcDriverInterface)', 'public'),
   \ javaapi#method(0,'close(', ')', 'void'),
   \ javaapi#method(0,'isClosed(', ') throws SQLException', 'boolean'),
@@ -59,12 +59,12 @@ call javaapi#class('ConnectionHandler', '', [
   \ javaapi#method(0,'finalize(', ')', 'void'),
   \ ])
 
-call javaapi#class('ConnectionPool', '', [
+call javaapi#class('ConnectionPool', 'ObjectPool', [
   \ javaapi#method(0,'ConnectionPool(', 'String)', 'public'),
   \ javaapi#method(0,'setConnectionDetails(', 'Properties)', 'void'),
   \ ])
 
-call javaapi#class('ConnectionPoolDataSource', '', [
+call javaapi#class('ConnectionPoolDataSource', 'CommonDataSource', [
   \ javaapi#method(0,'ConnectionPoolDataSource(', ')', 'public'),
   \ javaapi#method(0,'ConnectionPoolDataSource(', 'String)', 'public'),
   \ javaapi#method(0,'getConnection(', ') throws SQLException', 'Connection'),
@@ -99,7 +99,7 @@ call javaapi#class('ConnectionPoolFactory', '', [
   \ javaapi#method(1,'removePool(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('DataSource', '', [
+call javaapi#class('DataSource', 'CommonDataSource', [
   \ javaapi#method(0,'DataSource(', ')', 'public'),
   \ javaapi#method(0,'getConnection(', ') throws SQLException', 'Connection'),
   \ javaapi#method(0,'getConnection(', 'String, String) throws SQLException', 'Connection'),
@@ -143,7 +143,7 @@ call javaapi#class('PoolProperties', '', [
   \ javaapi#method(0,'set(', 'String, int)', 'void'),
   \ ])
 
-call javaapi#class('PoolWorker', '', [
+call javaapi#class('PoolWorker', 'Thread', [
   \ javaapi#method(0,'PoolWorker(', 'ObjectPool)', 'public'),
   \ javaapi#method(0,'start(', ')', 'void'),
   \ javaapi#method(0,'release(', ')', 'void'),

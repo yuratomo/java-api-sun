@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.ws.transport')
 
-call javaapi#class('DeferredTransportPipe', '', [
+call javaapi#class('DeferredTransportPipe', 'AbstractTubeImpl', [
   \ javaapi#method(0,'DeferredTransportPipe(', 'ClassLoader, ClientTubeAssemblerContext)', 'public'),
   \ javaapi#method(0,'DeferredTransportPipe(', 'DeferredTransportPipe, TubeCloner)', 'public'),
   \ javaapi#method(0,'processException(', 'Throwable)', 'NextAction'),
@@ -20,7 +20,7 @@ call javaapi#class('InsensitiveComparator', 'String>', [
   \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
   \ ])
 
-call javaapi#class('Headers', '', [
+call javaapi#class('Headers', 'String>>', [
   \ javaapi#method(0,'Headers(', ')', 'public'),
   \ javaapi#method(0,'add(', 'String, String)', 'void'),
   \ javaapi#method(0,'getFirst(', 'String)', 'String'),

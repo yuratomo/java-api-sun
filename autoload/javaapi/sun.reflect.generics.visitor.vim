@@ -42,7 +42,7 @@ call javaapi#interface('TypeTreeVisitor<T>', '', [
   \ javaapi#method(0,'visitVoidDescriptor(', 'VoidDescriptor)', 'void'),
   \ ])
 
-call javaapi#interface('Visitor<T>', '', [
+call javaapi#interface('Visitor<T>', 'TypeTreeVisitor<T>', [
   \ javaapi#method(0,'visitClassSignature(', 'ClassSignature)', 'void'),
   \ javaapi#method(0,'visitMethodTypeSignature(', 'MethodTypeSignature)', 'void'),
   \ ])

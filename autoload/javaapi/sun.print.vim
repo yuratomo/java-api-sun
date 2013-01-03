@@ -1,16 +1,5 @@
 call javaapi#namespace('sun.print')
 
-call javaapi#class('PrinterGraphicsConfig', '', [
-  \ javaapi#method(0,'PrinterGraphicsConfig(', 'String, AffineTransform, int, int)', 'public'),
-  \ javaapi#method(0,'getDevice(', ')', 'GraphicsDevice'),
-  \ javaapi#method(0,'getColorModel(', ')', 'ColorModel'),
-  \ javaapi#method(0,'getColorModel(', 'int)', 'ColorModel'),
-  \ javaapi#method(0,'getDefaultTransform(', ')', 'AffineTransform'),
-  \ javaapi#method(0,'getNormalizingTransform(', ')', 'AffineTransform'),
-  \ javaapi#method(0,'getBounds(', ')', 'Rectangle'),
-  \ ])
-
-
 call javaapi#interface('AttributeUpdater', '', [
   \ javaapi#method(0,'getUpdatedAttributes(', ')', 'PrintServiceAttributeSet'),
   \ ])
@@ -23,7 +12,7 @@ call javaapi#interface('BackgroundServiceLookup', '', [
   \ javaapi#method(0,'getServicesInbackground(', 'BackgroundLookupListener)', 'void'),
   \ ])
 
-call javaapi#class('CustomMediaSizeName', '', [
+call javaapi#class('CustomMediaSizeName', 'MediaSizeName', [
   \ javaapi#method(0,'CustomMediaSizeName(', 'String)', 'public'),
   \ javaapi#method(0,'CustomMediaSizeName(', 'String, String, float, float)', 'public'),
   \ javaapi#method(0,'getChoiceName(', ')', 'String'),
@@ -32,7 +21,7 @@ call javaapi#class('CustomMediaSizeName', '', [
   \ javaapi#method(0,'getSuperEnumTable(', ')', 'Media[]'),
   \ ])
 
-call javaapi#class('CustomMediaTray', '', [
+call javaapi#class('CustomMediaTray', 'MediaTray', [
   \ javaapi#method(0,'CustomMediaTray(', 'String, String)', 'public'),
   \ javaapi#method(0,'getChoiceName(', ')', 'String'),
   \ javaapi#method(0,'getSuperEnumTable(', ')', 'Media[]'),
@@ -55,7 +44,7 @@ call javaapi#class('OpenBook', 'Pageable', [
   \ javaapi#method(0,'getPrintable(', 'int) throws IndexOutOfBoundsException', 'Printable'),
   \ ])
 
-call javaapi#class('PSPathGraphics', '', [
+call javaapi#class('PSPathGraphics', 'PathGraphics', [
   \ javaapi#method(0,'create(', ')', 'Graphics'),
   \ javaapi#method(0,'fill(', 'Shape, Color)', 'void'),
   \ javaapi#method(0,'drawString(', 'String, int, int)', 'void'),
@@ -107,7 +96,7 @@ call javaapi#class('PrinterSpooler', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('PSPrinterJob', '', [
+call javaapi#class('PSPrinterJob', 'RasterPrinterJob', [
   \ javaapi#method(0,'PSPrinterJob(', ')', 'public'),
   \ javaapi#method(0,'printDialog(', ') throws HeadlessException', 'boolean'),
   \ ])
@@ -125,7 +114,7 @@ call javaapi#class('PSStreamPrintJob', 'CancelablePrintJob', [
   \ javaapi#method(0,'cancel(', ') throws PrintException', 'void'),
   \ ])
 
-call javaapi#class('PSStreamPrintService', '', [
+call javaapi#class('PSStreamPrintService', 'StreamPrintService', [
   \ javaapi#method(0,'PSStreamPrintService(', 'OutputStream)', 'public'),
   \ javaapi#method(0,'getOutputFormat(', ')', 'String'),
   \ javaapi#method(0,'getSupportedDocFlavors(', ')', 'DocFlavor[]'),
@@ -149,7 +138,7 @@ call javaapi#class('PSStreamPrintService', '', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('PSStreamPrinterFactory', '', [
+call javaapi#class('PSStreamPrinterFactory', 'StreamPrintServiceFactory', [
   \ javaapi#method(0,'PSStreamPrinterFactory(', ')', 'public'),
   \ javaapi#method(0,'getOutputFormat(', ')', 'String'),
   \ javaapi#method(0,'getSupportedDocFlavors(', ')', 'DocFlavor[]'),
@@ -165,7 +154,7 @@ call javaapi#class('PageableDoc', 'Doc', [
   \ javaapi#method(0,'getStreamForBytes(', ') throws IOException', 'InputStream'),
   \ ])
 
-call javaapi#class('PathGraphics', '', [
+call javaapi#class('PathGraphics', 'ProxyGraphics2D', [
   \ javaapi#method(0,'canDoRedraws(', ')', 'boolean'),
   \ javaapi#method(0,'redrawRegion(', 'Rectangle2D, double, double, Shape, AffineTransform) throws PrinterException', 'void'),
   \ javaapi#method(0,'drawLine(', 'int, int, int, int)', 'void'),
@@ -208,7 +197,7 @@ call javaapi#class('ImageWaiter', 'ImageObserver', [
   \ javaapi#method(0,'imageUpdate(', 'Image, int, int, int, int, int)', 'boolean'),
   \ ])
 
-call javaapi#class('PeekGraphics', '', [
+call javaapi#class('PeekGraphics', 'Graphics2D', [
   \ javaapi#method(0,'PeekGraphics(', 'Graphics2D, PrinterJob)', 'public'),
   \ javaapi#method(0,'getDelegate(', ')', 'Graphics2D'),
   \ javaapi#method(0,'setDelegate(', 'Graphics2D)', 'void'),
@@ -311,7 +300,7 @@ call javaapi#class('PeekMetrics', '', [
 call javaapi#class('MessageQ', '', [
   \ ])
 
-call javaapi#class('PrintJob2D', '', [
+call javaapi#class('PrintJob2D', 'PrintJob', [
   \ javaapi#method(0,'PrintJob2D(', 'Frame, String, Properties)', 'public'),
   \ javaapi#method(0,'PrintJob2D(', 'Frame, String, JobAttributes, PageAttributes)', 'public'),
   \ javaapi#method(0,'printDialog(', ')', 'boolean'),
@@ -327,16 +316,16 @@ call javaapi#class('PrintJob2D', '', [
   \ javaapi#method(1,'unMapMedia(', 'MediaSizeName)', 'MediaType'),
   \ ])
 
-call javaapi#class('PrintJobAttributeException', '', [
+call javaapi#class('PrintJobAttributeException', 'PrintException', [
   \ javaapi#method(0,'getUnsupportedAttributes(', ')', 'Class[]'),
   \ javaapi#method(0,'getUnsupportedValues(', ')', 'Attribute[]'),
   \ ])
 
-call javaapi#class('PrintJobFlavorException', '', [
+call javaapi#class('PrintJobFlavorException', 'PrintException', [
   \ javaapi#method(0,'getUnsupportedFlavors(', ')', 'DocFlavor[]'),
   \ ])
 
-call javaapi#class('PrinterGraphicsDevice', '', [
+call javaapi#class('PrinterGraphicsDevice', 'GraphicsDevice', [
   \ javaapi#method(0,'getType(', ')', 'int'),
   \ javaapi#method(0,'getIDstring(', ')', 'String'),
   \ javaapi#method(0,'getConfigurations(', ')', 'GraphicsConfiguration[]'),
@@ -345,7 +334,7 @@ call javaapi#class('PrinterGraphicsDevice', '', [
   \ javaapi#method(0,'getFullScreenWindow(', ')', 'Window'),
   \ ])
 
-call javaapi#class('ProxyGraphics', '', [
+call javaapi#class('ProxyGraphics', 'Graphics', [
   \ javaapi#method(0,'ProxyGraphics(', 'Graphics)', 'public'),
   \ javaapi#method(0,'create(', ')', 'Graphics'),
   \ javaapi#method(0,'create(', 'int, int, int, int)', 'Graphics'),
@@ -399,7 +388,7 @@ call javaapi#class('ProxyGraphics', '', [
   \ javaapi#method(0,'getClipBounds(', 'Rectangle)', 'Rectangle'),
   \ ])
 
-call javaapi#class('ProxyGraphics2D', '', [
+call javaapi#class('ProxyGraphics2D', 'Graphics2D', [
   \ javaapi#method(0,'ProxyGraphics2D(', 'Graphics2D, PrinterJob)', 'public'),
   \ javaapi#method(0,'getDelegate(', ')', 'Graphics2D'),
   \ javaapi#method(0,'setDelegate(', 'Graphics2D)', 'void'),
@@ -477,7 +466,7 @@ call javaapi#class('ProxyGraphics2D', '', [
   \ javaapi#method(0,'clip(', 'Shape)', 'void'),
   \ ])
 
-call javaapi#class('ProxyPrintGraphics', '', [
+call javaapi#class('ProxyPrintGraphics', 'ProxyGraphics', [
   \ javaapi#method(0,'ProxyPrintGraphics(', 'Graphics, PrintJob)', 'public'),
   \ javaapi#method(0,'getPrintJob(', ')', 'PrintJob'),
   \ javaapi#method(0,'create(', ')', 'Graphics'),
@@ -505,7 +494,7 @@ call javaapi#class('4', 'PrivilegedAction', [
 call javaapi#class('GraphicsState', '', [
   \ ])
 
-call javaapi#class('RasterPrinterJob', '', [
+call javaapi#class('RasterPrinterJob', 'PrinterJob', [
   \ javaapi#field(1,'forcePDL', 'boolean'),
   \ javaapi#field(1,'forceRaster', 'boolean'),
   \ javaapi#field(1,'shapeTextProp', 'boolean'),
@@ -535,15 +524,15 @@ call javaapi#class('RasterPrinterJob', '', [
   \ javaapi#method(0,'checkAllowedToPrintToFile(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'WindowAdapter', [
   \ javaapi#method(0,'windowClosing(', 'WindowEvent)', 'void'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'WindowAdapter', [
   \ javaapi#method(0,'windowClosing(', 'WindowEvent)', 'void'),
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
@@ -555,25 +544,25 @@ call javaapi#class('5', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('AppearancePanel', '', [
+call javaapi#class('AppearancePanel', 'JPanel', [
   \ javaapi#method(0,'AppearancePanel(', 'ServiceDialog)', 'public'),
   \ javaapi#method(0,'updateInfo(', ')', 'void'),
   \ ])
 
-call javaapi#class('ChromaticityPanel', '', [
+call javaapi#class('ChromaticityPanel', 'JPanel', [
   \ javaapi#method(0,'ChromaticityPanel(', 'ServiceDialog)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'updateInfo(', ')', 'void'),
   \ ])
 
-call javaapi#class('CopiesPanel', '', [
+call javaapi#class('CopiesPanel', 'JPanel', [
   \ javaapi#method(0,'CopiesPanel(', 'ServiceDialog)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
   \ javaapi#method(0,'updateInfo(', ')', 'void'),
   \ ])
 
-call javaapi#class('GeneralPanel', '', [
+call javaapi#class('GeneralPanel', 'JPanel', [
   \ javaapi#method(0,'GeneralPanel(', 'ServiceDialog)', 'public'),
   \ javaapi#method(0,'isPrintToFileRequested(', ')', 'boolean'),
   \ javaapi#method(0,'updateInfo(', ')', 'void'),
@@ -583,7 +572,7 @@ call javaapi#class('1', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('IconRadioButton', '', [
+call javaapi#class('IconRadioButton', 'JPanel', [
   \ javaapi#method(0,'IconRadioButton(', 'ServiceDialog, String, String, boolean, ButtonGroup, ActionListener)', 'public'),
   \ javaapi#method(0,'addActionListener(', 'ActionListener)', 'void'),
   \ javaapi#method(0,'isSameAs(', 'Object)', 'boolean'),
@@ -592,7 +581,7 @@ call javaapi#class('IconRadioButton', '', [
   \ javaapi#method(0,'setSelected(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('JobAttributesPanel', '', [
+call javaapi#class('JobAttributesPanel', 'JPanel', [
   \ javaapi#method(0,'JobAttributesPanel(', 'ServiceDialog)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
@@ -601,7 +590,7 @@ call javaapi#class('JobAttributesPanel', '', [
   \ javaapi#method(0,'updateInfo(', ')', 'void'),
   \ ])
 
-call javaapi#class('MarginsPanel', '', [
+call javaapi#class('MarginsPanel', 'JPanel', [
   \ javaapi#method(0,'MarginsPanel(', 'ServiceDialog)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
@@ -610,25 +599,25 @@ call javaapi#class('MarginsPanel', '', [
   \ javaapi#method(0,'updateInfo(', ')', 'void'),
   \ ])
 
-call javaapi#class('MediaPanel', '', [
+call javaapi#class('MediaPanel', 'JPanel', [
   \ javaapi#method(0,'MediaPanel(', 'ServiceDialog)', 'public'),
   \ javaapi#method(0,'itemStateChanged(', 'ItemEvent)', 'void'),
   \ javaapi#method(0,'addMediaListener(', 'MarginsPanel)', 'void'),
   \ javaapi#method(0,'updateInfo(', ')', 'void'),
   \ ])
 
-call javaapi#class('OrientationPanel', '', [
+call javaapi#class('OrientationPanel', 'JPanel', [
   \ javaapi#method(0,'OrientationPanel(', 'ServiceDialog)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'updateInfo(', ')', 'void'),
   \ ])
 
-call javaapi#class('PageSetupPanel', '', [
+call javaapi#class('PageSetupPanel', 'JPanel', [
   \ javaapi#method(0,'PageSetupPanel(', 'ServiceDialog)', 'public'),
   \ javaapi#method(0,'updateInfo(', ')', 'void'),
   \ ])
 
-call javaapi#class('PrintRangePanel', '', [
+call javaapi#class('PrintRangePanel', 'JPanel', [
   \ javaapi#method(0,'PrintRangePanel(', 'ServiceDialog)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
@@ -636,7 +625,7 @@ call javaapi#class('PrintRangePanel', '', [
   \ javaapi#method(0,'updateInfo(', ')', 'void'),
   \ ])
 
-call javaapi#class('PrintServicePanel', '', [
+call javaapi#class('PrintServicePanel', 'JPanel', [
   \ javaapi#method(0,'PrintServicePanel(', 'ServiceDialog)', 'public'),
   \ javaapi#method(0,'isPrintToFileSelected(', ')', 'boolean'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
@@ -647,23 +636,23 @@ call javaapi#class('PrintServicePanel', '', [
   \ javaapi#method(0,'updateInfo(', ')', 'void'),
   \ ])
 
-call javaapi#class('QualityPanel', '', [
+call javaapi#class('QualityPanel', 'JPanel', [
   \ javaapi#method(0,'QualityPanel(', 'ServiceDialog)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'updateInfo(', ')', 'void'),
   \ ])
 
-call javaapi#class('SidesPanel', '', [
+call javaapi#class('SidesPanel', 'JPanel', [
   \ javaapi#method(0,'SidesPanel(', 'ServiceDialog)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'updateInfo(', ')', 'void'),
   \ ])
 
-call javaapi#class('ValidatingFileChooser', '', [
+call javaapi#class('ValidatingFileChooser', 'JFileChooser', [
   \ javaapi#method(0,'approveSelection(', ')', 'void'),
   \ ])
 
-call javaapi#class('ServiceDialog', '', [
+call javaapi#class('ServiceDialog', 'JDialog', [
   \ javaapi#field(1,'WAITING', 'int'),
   \ javaapi#field(1,'APPROVE', 'int'),
   \ javaapi#field(1,'CANCEL', 'int'),
@@ -681,7 +670,7 @@ call javaapi#class('ServiceDialog', '', [
   \ javaapi#method(1,'showNoPrintService(', 'GraphicsConfiguration)', 'void'),
   \ ])
 
-call javaapi#class('ServiceNotifier', '', [
+call javaapi#class('ServiceNotifier', 'Thread', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
@@ -716,11 +705,11 @@ call javaapi#interface('SunPrinterJobService', '', [
   \ javaapi#method(0,'usesClass(', 'Class)', 'boolean'),
   \ ])
 
-call javaapi#class('Win32MediaSize', '', [
+call javaapi#class('Win32MediaSize', 'MediaSizeName', [
   \ javaapi#method(0,'Win32MediaSize(', 'String, int)', 'public'),
   \ ])
 
-call javaapi#class('Win32MediaTray', '', [
+call javaapi#class('Win32MediaTray', 'MediaTray', [
   \ javaapi#field(0,'winID', 'int'),
   \ ])
 
@@ -768,11 +757,11 @@ call javaapi#class('Win32PrintService', 'SunPrinterJobService', [
   \ javaapi#method(0,'usesClass(', 'Class)', 'boolean'),
   \ ])
 
-call javaapi#class('PrinterChangeListener', '', [
+call javaapi#class('PrinterChangeListener', 'Thread', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('Win32PrintServiceLookup', '', [
+call javaapi#class('Win32PrintServiceLookup', 'PrintServiceLookup', [
   \ javaapi#method(1,'getWin32PrintLUS(', ')', 'Win32PrintServiceLookup'),
   \ javaapi#method(0,'Win32PrintServiceLookup(', ')', 'public'),
   \ javaapi#method(0,'getPrintServices(', ')', 'PrintService[]'),
@@ -780,5 +769,17 @@ call javaapi#class('Win32PrintServiceLookup', '', [
   \ javaapi#method(0,'getPrintServices(', 'DocFlavor, AttributeSet)', 'PrintService[]'),
   \ javaapi#method(0,'getMultiDocPrintServices(', 'DocFlavor[], AttributeSet)', 'MultiDocPrintService[]'),
   \ javaapi#method(0,'getDefaultPrintService(', ')', 'PrintService'),
+  \ ])
+
+call javaapi#namespace('sun.print')
+
+call javaapi#class('PrinterGraphicsConfig', 'GraphicsConfiguration', [
+  \ javaapi#method(0,'PrinterGraphicsConfig(', 'String, AffineTransform, int, int)', 'public'),
+  \ javaapi#method(0,'getDevice(', ')', 'GraphicsDevice'),
+  \ javaapi#method(0,'getColorModel(', ')', 'ColorModel'),
+  \ javaapi#method(0,'getColorModel(', 'int)', 'ColorModel'),
+  \ javaapi#method(0,'getDefaultTransform(', ')', 'AffineTransform'),
+  \ javaapi#method(0,'getNormalizingTransform(', ')', 'AffineTransform'),
+  \ javaapi#method(0,'getBounds(', ')', 'Rectangle'),
   \ ])
 

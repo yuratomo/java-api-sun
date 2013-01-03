@@ -16,7 +16,7 @@ call javaapi#class('ActivatableRef', 'RemoteRef', [
   \ javaapi#method(0,'remoteEquals(', 'RemoteRef)', 'boolean'),
   \ ])
 
-call javaapi#class('ActivatableServerRef', '', [
+call javaapi#class('ActivatableServerRef', 'UnicastServerRef2', [
   \ javaapi#method(0,'ActivatableServerRef(', 'ActivationID, int)', 'public'),
   \ javaapi#method(0,'ActivatableServerRef(', 'ActivationID, int, RMIClientSocketFactory, RMIServerSocketFactory)', 'public'),
   \ javaapi#method(0,'getRefClass(', 'ObjectOutput)', 'String'),
@@ -43,12 +43,12 @@ call javaapi#class('4', 'Void>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('ActLogHandler', '', [
+call javaapi#class('ActLogHandler', 'LogHandler', [
   \ javaapi#method(0,'initialSnapshot(', ')', 'Object'),
   \ javaapi#method(0,'applyUpdate(', 'Object, Object) throws Exception', 'Object'),
   \ ])
 
-call javaapi#class('ActivationMonitorImpl', '', [
+call javaapi#class('ActivationMonitorImpl', 'UnicastRemoteObject', [
   \ javaapi#method(0,'inactiveObject(', 'ActivationID) throws UnknownObjectException, RemoteException', 'void'),
   \ javaapi#method(0,'activeObject(', 'ActivationID, MarshalledObject<? extends Remote>) throws UnknownObjectException, RemoteException', 'void'),
   \ javaapi#method(0,'inactiveGroup(', 'ActivationGroupID, long) throws UnknownGroupException, RemoteException', 'void'),
@@ -58,7 +58,7 @@ call javaapi#class('ActivationServerSocketFactory', 'RMIServerSocketFactory', [
   \ javaapi#method(0,'createServerSocket(', 'int) throws IOException', 'ServerSocket'),
   \ ])
 
-call javaapi#class('ActivationSystemImpl', '', [
+call javaapi#class('ActivationSystemImpl', 'RemoteServer', [
   \ javaapi#method(0,'registerObject(', 'ActivationDesc) throws ActivationException, UnknownGroupException, RemoteException', 'ActivationID'),
   \ javaapi#method(0,'unregisterObject(', 'ActivationID) throws ActivationException, UnknownObjectException, RemoteException', 'void'),
   \ javaapi#method(0,'registerGroup(', 'ActivationGroupDesc) throws ActivationException, RemoteException', 'ActivationGroupID'),
@@ -71,7 +71,20 @@ call javaapi#class('ActivationSystemImpl', '', [
   \ javaapi#method(0,'shutdown(', ') throws AccessException', 'void'),
   \ ])
 
-call javaapi#class('ActivatorImpl', '', [
+call javaapi#sun.rmi.server.Activation$ActivationSystemImpl_Stub(java.rmi.server.RemoteRef);('ActivationSystemImpl', '', [
+  \ javaapi#method(0,'activeGroup(', 'ActivationGroupID, ActivationInstantiator, long) throws RemoteException, ActivationException, UnknownGroupException', 'ActivationMonitor'),
+  \ javaapi#method(0,'getActivationDesc(', 'ActivationID) throws RemoteException, ActivationException, UnknownObjectException', 'ActivationDesc'),
+  \ javaapi#method(0,'getActivationGroupDesc(', 'ActivationGroupID) throws RemoteException, ActivationException, UnknownGroupException', 'ActivationGroupDesc'),
+  \ javaapi#method(0,'registerGroup(', 'ActivationGroupDesc) throws RemoteException, ActivationException', 'ActivationGroupID'),
+  \ javaapi#method(0,'registerObject(', 'ActivationDesc) throws RemoteException, ActivationException, UnknownGroupException', 'ActivationID'),
+  \ javaapi#method(0,'setActivationDesc(', 'ActivationID, ActivationDesc) throws RemoteException, ActivationException, UnknownGroupException, UnknownObjectException', 'ActivationDesc'),
+  \ javaapi#method(0,'setActivationGroupDesc(', 'ActivationGroupID, ActivationGroupDesc) throws RemoteException, ActivationException, UnknownGroupException', 'ActivationGroupDesc'),
+  \ javaapi#method(0,'shutdown(', ') throws RemoteException', 'void'),
+  \ javaapi#method(0,'unregisterGroup(', 'ActivationGroupID) throws RemoteException, ActivationException, UnknownGroupException', 'void'),
+  \ javaapi#method(0,'unregisterObject(', 'ActivationID) throws RemoteException, ActivationException, UnknownObjectException', 'void'),
+  \ ])
+
+call javaapi#class('ActivatorImpl', 'RemoteServer', [
   \ javaapi#method(0,'activate(', 'ActivationID, boolean) throws ActivationException, UnknownObjectException, RemoteException', 'Remote>'),
   \ ])
 
@@ -90,7 +103,7 @@ call javaapi#class('DefaultExecPolicy', '', [
   \ javaapi#method(0,'checkExecCommand(', 'ActivationGroupDesc, String[]) throws SecurityException', 'void'),
   \ ])
 
-call javaapi#class('DelayedAcceptServerSocket', '', [
+call javaapi#class('DelayedAcceptServerSocket', 'ServerSocket', [
   \ javaapi#method(0,'bind(', 'SocketAddress) throws IOException', 'void'),
   \ javaapi#method(0,'bind(', 'SocketAddress, int) throws IOException', 'void'),
   \ javaapi#method(0,'getInetAddress(', ')', 'InetAddress'),
@@ -110,49 +123,49 @@ call javaapi#class('DelayedAcceptServerSocket', '', [
   \ javaapi#method(0,'getReceiveBufferSize(', ') throws SocketException', 'int'),
   \ ])
 
-call javaapi#class('Watchdog', '', [
+call javaapi#class('Watchdog', 'Thread', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
 call javaapi#class('GroupEntry', 'Serializable', [
   \ ])
 
-call javaapi#class('LogGroupIncarnation', '', [
+call javaapi#class('LogGroupIncarnation', 'LogRecord', [
   \ ])
 
 call javaapi#class('LogRecord', 'Serializable', [
   \ ])
 
-call javaapi#class('LogRegisterGroup', '', [
+call javaapi#class('LogRegisterGroup', 'LogRecord', [
   \ ])
 
-call javaapi#class('LogRegisterObject', '', [
+call javaapi#class('LogRegisterObject', 'LogRecord', [
   \ ])
 
-call javaapi#class('LogUnregisterGroup', '', [
+call javaapi#class('LogUnregisterGroup', 'LogRecord', [
   \ ])
 
-call javaapi#class('LogUnregisterObject', '', [
+call javaapi#class('LogUnregisterObject', 'LogRecord', [
   \ ])
 
-call javaapi#class('LogUpdateDesc', '', [
+call javaapi#class('LogUpdateDesc', 'LogRecord', [
   \ ])
 
-call javaapi#class('LogUpdateGroupDesc', '', [
+call javaapi#class('LogUpdateGroupDesc', 'LogRecord', [
   \ ])
 
 call javaapi#class('ObjectEntry', 'Serializable', [
   \ ])
 
-call javaapi#class('Shutdown', '', [
+call javaapi#class('Shutdown', 'Thread', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('ShutdownHook', '', [
+call javaapi#class('ShutdownHook', 'Thread', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('SystemRegistryImpl', '', [
+call javaapi#class('SystemRegistryImpl', 'RegistryImpl', [
   \ javaapi#method(0,'lookup(', 'String) throws RemoteException, NotBoundException', 'Remote'),
   \ javaapi#method(0,'list(', ') throws RemoteException', 'String[]'),
   \ javaapi#method(0,'bind(', 'String, Remote) throws RemoteException, AlreadyBoundException, AccessException', 'void'),
@@ -176,7 +189,7 @@ call javaapi#class('ServerSocketFactoryImpl', 'RMIServerSocketFactory', [
   \ javaapi#method(0,'createServerSocket(', 'int) throws IOException', 'ServerSocket'),
   \ ])
 
-call javaapi#class('ActivationGroupImpl', '', [
+call javaapi#class('ActivationGroupImpl', 'ActivationGroup', [
   \ javaapi#method(0,'ActivationGroupImpl(', 'ActivationGroupID, MarshalledObject<?>) throws RemoteException', 'public'),
   \ javaapi#method(0,'newInstance(', 'ActivationID, ActivationDesc) throws ActivationException, RemoteException', 'Remote>'),
   \ javaapi#method(0,'inactiveObject(', 'ActivationID) throws ActivationException, UnknownObjectException, RemoteException', 'boolean'),
@@ -192,7 +205,7 @@ call javaapi#interface('Dispatcher', '', [
   \ javaapi#method(0,'dispatch(', 'Remote, RemoteCall) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('InactiveGroupException', '', [
+call javaapi#class('InactiveGroupException', 'ActivationException', [
   \ javaapi#method(0,'InactiveGroupException(', 'String)', 'public'),
   \ ])
 
@@ -206,12 +219,12 @@ call javaapi#class('2', 'PermissionCollection>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('Loader', '', [
+call javaapi#class('Loader', 'URLClassLoader', [
   \ javaapi#method(0,'getClassAnnotation(', ')', 'String'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('LoaderEntry', '', [
+call javaapi#class('LoaderEntry', 'Loader>', [
   \ javaapi#field(0,'key', 'LoaderKey'),
   \ javaapi#field(0,'removed', 'boolean'),
   \ javaapi#method(0,'LoaderEntry(', 'LoaderKey, Loader)', 'public'),
@@ -233,7 +246,7 @@ call javaapi#class('LoaderHandler', '', [
   \ javaapi#method(1,'addPermissionsForURLs(', 'URL[], PermissionCollection, boolean)', 'void'),
   \ ])
 
-call javaapi#class('MarshalInputStream', '', [
+call javaapi#class('MarshalInputStream', 'ObjectInputStream', [
   \ javaapi#method(0,'MarshalInputStream(', 'InputStream) throws IOException, StreamCorruptedException', 'public'),
   \ javaapi#method(0,'getDoneCallback(', 'Object)', 'Runnable'),
   \ javaapi#method(0,'setDoneCallback(', 'Object, Runnable)', 'void'),
@@ -246,7 +259,7 @@ call javaapi#class('1', 'Void>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('MarshalOutputStream', '', [
+call javaapi#class('MarshalOutputStream', 'ObjectOutputStream', [
   \ javaapi#method(0,'MarshalOutputStream(', 'OutputStream) throws IOException', 'public'),
   \ javaapi#method(0,'MarshalOutputStream(', 'OutputStream, int) throws IOException', 'public'),
   \ ])
@@ -273,7 +286,7 @@ call javaapi#class('UnicastRef', 'RemoteRef', [
   \ javaapi#method(0,'remoteEquals(', 'RemoteRef)', 'boolean'),
   \ ])
 
-call javaapi#class('UnicastRef2', '', [
+call javaapi#class('UnicastRef2', 'UnicastRef', [
   \ javaapi#method(0,'UnicastRef2(', ')', 'public'),
   \ javaapi#method(0,'UnicastRef2(', 'LiveRef)', 'public'),
   \ javaapi#method(0,'getRefClass(', 'ObjectOutput)', 'String'),
@@ -286,10 +299,10 @@ call javaapi#class('1', 'Void>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('HashToMethod_Maps', '', [
+call javaapi#class('HashToMethod_Maps', 'Method>>', [
   \ ])
 
-call javaapi#class('UnicastServerRef', '', [
+call javaapi#class('UnicastServerRef', 'UnicastRef', [
   \ javaapi#field(1,'logCalls', 'boolean'),
   \ javaapi#field(1,'callLog', 'Log'),
   \ javaapi#method(0,'UnicastServerRef(', ')', 'public'),
@@ -308,7 +321,7 @@ call javaapi#class('UnicastServerRef', '', [
   \ javaapi#method(0,'readExternal(', 'ObjectInput) throws IOException, ClassNotFoundException', 'void'),
   \ ])
 
-call javaapi#class('UnicastServerRef2', '', [
+call javaapi#class('UnicastServerRef2', 'UnicastServerRef', [
   \ javaapi#method(0,'UnicastServerRef2(', ')', 'public'),
   \ javaapi#method(0,'UnicastServerRef2(', 'LiveRef)', 'public'),
   \ javaapi#method(0,'UnicastServerRef2(', 'int, RMIClientSocketFactory, RMIServerSocketFactory)', 'public'),

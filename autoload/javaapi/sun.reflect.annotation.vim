@@ -34,10 +34,10 @@ call javaapi#class('AnnotationType', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('AnnotationTypeMismatchExceptionProxy', '', [
+call javaapi#class('AnnotationTypeMismatchExceptionProxy', 'ExceptionProxy', [
   \ ])
 
-call javaapi#class('EnumConstantNotPresentExceptionProxy', '', [
+call javaapi#class('EnumConstantNotPresentExceptionProxy', 'ExceptionProxy', [
   \ javaapi#method(0,'EnumConstantNotPresentExceptionProxy(', 'Class<? extends Enum>, String)', 'public'),
   \ ])
 
@@ -45,7 +45,7 @@ call javaapi#class('ExceptionProxy', 'Serializable', [
   \ javaapi#method(0,'ExceptionProxy(', ')', 'public'),
   \ ])
 
-call javaapi#class('TypeNotPresentExceptionProxy', '', [
+call javaapi#class('TypeNotPresentExceptionProxy', 'ExceptionProxy', [
   \ javaapi#method(0,'TypeNotPresentExceptionProxy(', 'String, Throwable)', 'public'),
   \ ])
 

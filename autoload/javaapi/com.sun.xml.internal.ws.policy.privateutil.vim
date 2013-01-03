@@ -194,7 +194,7 @@ call javaapi#class('LocalizationMessages', '', [
   \ javaapi#method(1,'WSP_0049_PARENT_MODEL_CAN_NOT_BE_CHANGED(', ')', 'String'),
   \ ])
 
-call javaapi#class('PolicyLogger', '', [
+call javaapi#class('PolicyLogger', 'Logger', [
   \ javaapi#method(1,'getLogger(', 'Class<?>)', 'PolicyLogger'),
   \ ])
 
@@ -260,10 +260,10 @@ call javaapi#class('Text', '', [
 call javaapi#class('PolicyUtils', '', [
   \ ])
 
-call javaapi#class('RuntimePolicyUtilsException', '', [
+call javaapi#class('RuntimePolicyUtilsException', 'RuntimeException', [
   \ ])
 
-call javaapi#class('ServiceConfigurationError', '', [
+call javaapi#class('ServiceConfigurationError', 'Error', [
   \ javaapi#method(0,'ServiceConfigurationError(', 'String)', 'public'),
   \ javaapi#method(0,'ServiceConfigurationError(', 'Throwable)', 'public'),
   \ ])

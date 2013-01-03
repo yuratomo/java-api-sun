@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.fastinfoset.algorithm')
 
-call javaapi#class('BASE64EncodingAlgorithm', '', [
+call javaapi#class('BASE64EncodingAlgorithm', 'BuiltInEncodingAlgorithm', [
   \ javaapi#method(0,'BASE64EncodingAlgorithm(', ')', 'public'),
   \ javaapi#method(0,'decodeFromBytes(', 'byte[], int, int) throws EncodingAlgorithmException', 'Object'),
   \ javaapi#method(0,'decodeFromInputStream(', 'InputStream) throws IOException', 'Object'),
@@ -17,7 +17,7 @@ call javaapi#class('1', 'WordListener', [
   \ javaapi#method(0,'word(', 'int, int)', 'void'),
   \ ])
 
-call javaapi#class('BooleanEncodingAlgorithm', '', [
+call javaapi#class('BooleanEncodingAlgorithm', 'BuiltInEncodingAlgorithm', [
   \ javaapi#method(0,'BooleanEncodingAlgorithm(', ')', 'public'),
   \ javaapi#method(0,'getPrimtiveLengthFromOctetLength(', 'int) throws EncodingAlgorithmException', 'int'),
   \ javaapi#method(0,'getOctetLengthFromPrimitiveLength(', 'int)', 'int'),
@@ -74,7 +74,7 @@ call javaapi#class('1', 'WordListener', [
   \ javaapi#method(0,'word(', 'int, int)', 'void'),
   \ ])
 
-call javaapi#class('DoubleEncodingAlgorithm', '', [
+call javaapi#class('DoubleEncodingAlgorithm', 'IEEE754FloatingPointEncodingAlgorithm', [
   \ javaapi#method(0,'DoubleEncodingAlgorithm(', ')', 'public'),
   \ javaapi#method(0,'getPrimtiveLengthFromOctetLength(', 'int) throws EncodingAlgorithmException', 'int'),
   \ javaapi#method(0,'getOctetLengthFromPrimitiveLength(', 'int)', 'int'),
@@ -96,7 +96,7 @@ call javaapi#class('1', 'WordListener', [
   \ javaapi#method(0,'word(', 'int, int)', 'void'),
   \ ])
 
-call javaapi#class('FloatEncodingAlgorithm', '', [
+call javaapi#class('FloatEncodingAlgorithm', 'IEEE754FloatingPointEncodingAlgorithm', [
   \ javaapi#method(0,'FloatEncodingAlgorithm(', ')', 'public'),
   \ javaapi#method(0,'getPrimtiveLengthFromOctetLength(', 'int) throws EncodingAlgorithmException', 'int'),
   \ javaapi#method(0,'getOctetLengthFromPrimitiveLength(', 'int)', 'int'),
@@ -114,7 +114,7 @@ call javaapi#class('FloatEncodingAlgorithm', '', [
   \ javaapi#method(0,'generateArrayFromList(', 'List)', 'float[]'),
   \ ])
 
-call javaapi#class('HexadecimalEncodingAlgorithm', '', [
+call javaapi#class('HexadecimalEncodingAlgorithm', 'BuiltInEncodingAlgorithm', [
   \ javaapi#method(0,'HexadecimalEncodingAlgorithm(', ')', 'public'),
   \ javaapi#method(0,'decodeFromBytes(', 'byte[], int, int) throws EncodingAlgorithmException', 'Object'),
   \ javaapi#method(0,'decodeFromInputStream(', 'InputStream) throws IOException', 'Object'),
@@ -126,7 +126,7 @@ call javaapi#class('HexadecimalEncodingAlgorithm', '', [
   \ javaapi#method(0,'encodeToBytes(', 'Object, int, int, byte[], int)', 'void'),
   \ ])
 
-call javaapi#class('IEEE754FloatingPointEncodingAlgorithm', '', [
+call javaapi#class('IEEE754FloatingPointEncodingAlgorithm', 'BuiltInEncodingAlgorithm', [
   \ javaapi#field(1,'FLOAT_SIZE', 'int'),
   \ javaapi#field(1,'DOUBLE_SIZE', 'int'),
   \ javaapi#field(1,'FLOAT_MAX_CHARACTER_SIZE', 'int'),
@@ -138,7 +138,7 @@ call javaapi#class('1', 'WordListener', [
   \ javaapi#method(0,'word(', 'int, int)', 'void'),
   \ ])
 
-call javaapi#class('IntEncodingAlgorithm', '', [
+call javaapi#class('IntEncodingAlgorithm', 'IntegerEncodingAlgorithm', [
   \ javaapi#method(0,'IntEncodingAlgorithm(', ')', 'public'),
   \ javaapi#method(0,'getPrimtiveLengthFromOctetLength(', 'int) throws EncodingAlgorithmException', 'int'),
   \ javaapi#method(0,'getOctetLengthFromPrimitiveLength(', 'int)', 'int'),
@@ -156,7 +156,7 @@ call javaapi#class('IntEncodingAlgorithm', '', [
   \ javaapi#method(0,'generateArrayFromList(', 'List)', 'int[]'),
   \ ])
 
-call javaapi#class('IntegerEncodingAlgorithm', '', [
+call javaapi#class('IntegerEncodingAlgorithm', 'BuiltInEncodingAlgorithm', [
   \ javaapi#field(1,'SHORT_SIZE', 'int'),
   \ javaapi#field(1,'INT_SIZE', 'int'),
   \ javaapi#field(1,'LONG_SIZE', 'int'),
@@ -170,7 +170,7 @@ call javaapi#class('1', 'WordListener', [
   \ javaapi#method(0,'word(', 'int, int)', 'void'),
   \ ])
 
-call javaapi#class('LongEncodingAlgorithm', '', [
+call javaapi#class('LongEncodingAlgorithm', 'IntegerEncodingAlgorithm', [
   \ javaapi#method(0,'LongEncodingAlgorithm(', ')', 'public'),
   \ javaapi#method(0,'getPrimtiveLengthFromOctetLength(', 'int) throws EncodingAlgorithmException', 'int'),
   \ javaapi#method(0,'getOctetLengthFromPrimitiveLength(', 'int)', 'int'),
@@ -192,7 +192,7 @@ call javaapi#class('1', 'WordListener', [
   \ javaapi#method(0,'word(', 'int, int)', 'void'),
   \ ])
 
-call javaapi#class('ShortEncodingAlgorithm', '', [
+call javaapi#class('ShortEncodingAlgorithm', 'IntegerEncodingAlgorithm', [
   \ javaapi#method(0,'ShortEncodingAlgorithm(', ')', 'public'),
   \ javaapi#method(0,'getPrimtiveLengthFromOctetLength(', 'int) throws EncodingAlgorithmException', 'int'),
   \ javaapi#method(0,'getOctetLengthFromPrimitiveLength(', 'int)', 'int'),
@@ -214,7 +214,7 @@ call javaapi#class('1', 'WordListener', [
   \ javaapi#method(0,'word(', 'int, int)', 'void'),
   \ ])
 
-call javaapi#class('UUIDEncodingAlgorithm', '', [
+call javaapi#class('UUIDEncodingAlgorithm', 'LongEncodingAlgorithm', [
   \ javaapi#method(0,'UUIDEncodingAlgorithm(', ')', 'public'),
   \ javaapi#method(0,'getPrimtiveLengthFromOctetLength(', 'int) throws EncodingAlgorithmException', 'int'),
   \ javaapi#method(0,'convertFromCharacters(', 'char[], int, int)', 'Object'),

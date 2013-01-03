@@ -22,13 +22,13 @@ call javaapi#class('AdaptiveCoding', 'CodingMethod', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ValueStream', [
   \ javaapi#method(0,'putInt(', 'int, int)', 'void'),
   \ javaapi#method(0,'putRef(', 'int, Entry)', 'void'),
   \ javaapi#method(0,'encodeBCI(', 'int)', 'int'),
   \ ])
 
-call javaapi#class('FormatException', '', [
+call javaapi#class('FormatException', 'IOException', [
   \ javaapi#method(0,'FormatException(', 'String, int, String, String)', 'public'),
   \ javaapi#method(0,'FormatException(', 'String, int, String)', 'public'),
   \ ])
@@ -129,12 +129,12 @@ call javaapi#class('Band', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'FilterInputStream', [
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ ])
 
-call javaapi#class('ByteBand', '', [
+call javaapi#class('ByteBand', 'Band', [
   \ javaapi#method(0,'ByteBand(', 'BandStructure, String)', 'public'),
   \ javaapi#method(0,'capacity(', ')', 'int'),
   \ javaapi#method(0,'destroy(', ')', 'void'),
@@ -152,7 +152,7 @@ call javaapi#class('ByteBand', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ByteCounter', '', [
+call javaapi#class('ByteCounter', 'FilterOutputStream', [
   \ javaapi#method(0,'ByteCounter(', 'OutputStream)', 'public'),
   \ javaapi#method(0,'getCount(', ')', 'long'),
   \ javaapi#method(0,'setCount(', 'long)', 'void'),
@@ -161,7 +161,7 @@ call javaapi#class('ByteCounter', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('CPRefBand', '', [
+call javaapi#class('CPRefBand', 'ValueBand', [
   \ javaapi#method(0,'CPRefBand(', 'BandStructure, String, Coding, byte, boolean)', 'public'),
   \ javaapi#method(0,'CPRefBand(', 'BandStructure, String, Coding, byte)', 'public'),
   \ javaapi#method(0,'CPRefBand(', 'BandStructure, String, Coding, Object)', 'public'),
@@ -174,7 +174,7 @@ call javaapi#class('CPRefBand', '', [
   \ javaapi#method(0,'getRef(', 'byte)', 'Entry'),
   \ ])
 
-call javaapi#class('IntBand', '', [
+call javaapi#class('IntBand', 'ValueBand', [
   \ javaapi#method(0,'IntBand(', 'BandStructure, String, Coding)', 'public'),
   \ javaapi#method(0,'putInt(', 'int)', 'void'),
   \ javaapi#method(0,'getInt(', ')', 'int'),
@@ -182,7 +182,7 @@ call javaapi#class('IntBand', '', [
   \ javaapi#method(0,'getIntCount(', 'int)', 'int'),
   \ ])
 
-call javaapi#class('MultiBand', '', [
+call javaapi#class('MultiBand', 'Band', [
   \ javaapi#method(0,'init(', ')', 'Band'),
   \ javaapi#method(0,'capacity(', ')', 'int'),
   \ javaapi#method(0,'setCapacity(', 'int)', 'void'),
@@ -191,7 +191,7 @@ call javaapi#class('MultiBand', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ValueBand', '', [
+call javaapi#class('ValueBand', 'Band', [
   \ javaapi#method(0,'capacity(', ')', 'int'),
   \ javaapi#method(0,'length(', ')', 'int'),
   \ javaapi#method(0,'doneDisbursing(', ')', 'void'),
@@ -222,13 +222,13 @@ call javaapi#class('BandStructure', '', [
   \ javaapi#method(0,'chooseCoding(', 'int[], int, int, Coding, String, int[])', 'CodingMethod'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'FilterInputStream', [
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'skip(', 'long) throws IOException', 'long'),
   \ ])
 
-call javaapi#class('ClassFormatException', '', [
+call javaapi#class('ClassFormatException', 'IOException', [
   \ javaapi#method(0,'ClassFormatException(', 'String)', 'public'),
   \ javaapi#method(0,'ClassFormatException(', 'String, Throwable)', 'public'),
   \ ])
@@ -241,7 +241,7 @@ call javaapi#class('ClassReader', '', [
 call javaapi#class('ClassWriter', '', [
   \ ])
 
-call javaapi#class('Code', '', [
+call javaapi#class('Code', 'Holder', [
   \ javaapi#method(0,'Code(', 'Method)', 'public'),
   \ javaapi#method(0,'getMethod(', ')', 'Method'),
   \ javaapi#method(0,'thisClass(', ')', 'Class'),
@@ -305,7 +305,7 @@ call javaapi#class('Choice', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('Sizer', '', [
+call javaapi#class('Sizer', 'OutputStream', [
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
   \ javaapi#method(0,'reset(', ')', 'void'),
@@ -334,14 +334,14 @@ call javaapi#interface('CodingMethod', '', [
   \ javaapi#method(0,'getMetaCoding(', 'Coding)', 'byte[]'),
   \ ])
 
-call javaapi#class('ClassEntry', '', [
+call javaapi#class('ClassEntry', 'Entry', [
   \ javaapi#method(0,'getRef(', 'int)', 'Entry'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
   \ javaapi#method(0,'stringValue(', ')', 'String'),
   \ ])
 
-call javaapi#class('DescriptorEntry', '', [
+call javaapi#class('DescriptorEntry', 'Entry', [
   \ javaapi#method(0,'getRef(', 'int)', 'Entry'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
@@ -364,7 +364,7 @@ call javaapi#class('Entry', 'Comparable', [
   \ javaapi#method(0,'stringValue(', ')', 'String'),
   \ ])
 
-call javaapi#class('Index', '', [
+call javaapi#class('Index', 'AbstractList', [
   \ javaapi#method(0,'size(', ')', 'int'),
   \ javaapi#method(0,'get(', 'int)', 'Object'),
   \ javaapi#method(0,'getEntry(', 'int)', 'Entry'),
@@ -393,11 +393,11 @@ call javaapi#class('IndexGroup', '', [
   \ javaapi#method(0,'haveNumbers(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('LiteralEntry', '', [
+call javaapi#class('LiteralEntry', 'Entry', [
   \ javaapi#method(0,'literalValue(', ')', 'Comparable'),
   \ ])
 
-call javaapi#class('MemberEntry', '', [
+call javaapi#class('MemberEntry', 'Entry', [
   \ javaapi#method(0,'getRef(', 'int)', 'Entry'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
@@ -405,7 +405,7 @@ call javaapi#class('MemberEntry', '', [
   \ javaapi#method(0,'isMethod(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('NumberEntry', '', [
+call javaapi#class('NumberEntry', 'LiteralEntry', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
   \ javaapi#method(0,'numberValue(', ')', 'Number'),
@@ -413,7 +413,7 @@ call javaapi#class('NumberEntry', '', [
   \ javaapi#method(0,'stringValue(', ')', 'String'),
   \ ])
 
-call javaapi#class('SignatureEntry', '', [
+call javaapi#class('SignatureEntry', 'Entry', [
   \ javaapi#method(0,'getRef(', 'int)', 'Entry'),
   \ javaapi#method(0,'asUtf8Entry(', ')', 'Utf8Entry'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
@@ -425,7 +425,7 @@ call javaapi#class('SignatureEntry', '', [
   \ javaapi#method(0,'prettyString(', ')', 'String'),
   \ ])
 
-call javaapi#class('StringEntry', '', [
+call javaapi#class('StringEntry', 'LiteralEntry', [
   \ javaapi#method(0,'getRef(', 'int)', 'Entry'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
@@ -433,7 +433,7 @@ call javaapi#class('StringEntry', '', [
   \ javaapi#method(0,'stringValue(', ')', 'String'),
   \ ])
 
-call javaapi#class('Utf8Entry', '', [
+call javaapi#class('Utf8Entry', 'Entry', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
   \ javaapi#method(0,'stringValue(', ')', 'String'),
@@ -785,7 +785,7 @@ call javaapi#class('Driver', '', [
   \ javaapi#method(1,'main(', 'String[]) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('DriverResource', '', [
+call javaapi#class('DriverResource', 'ListResourceBundle', [
   \ javaapi#field(1,'VERSION', 'String'),
   \ javaapi#field(1,'BAD_ARGUMENT', 'String'),
   \ javaapi#field(1,'BAD_OPTION', 'String'),
@@ -850,7 +850,7 @@ call javaapi#class('Itr', 'Iterator', [
   \ javaapi#method(0,'next(', ')', 'Object'),
   \ ])
 
-call javaapi#class('Fixups', '', [
+call javaapi#class('Fixups', 'AbstractCollection', [
   \ javaapi#field(1,'U2_FORMAT', 'int'),
   \ javaapi#field(1,'U1_FORMAT', 'int'),
   \ javaapi#method(0,'size(', ')', 'int'),
@@ -907,10 +907,10 @@ call javaapi#class('Histogram', '', [
   \ javaapi#method(1,'makeByteHistogram(', 'InputStream) throws IOException', 'Histogram'),
   \ ])
 
-call javaapi#class('FormatException', '', [
+call javaapi#class('FormatException', 'IOException', [
   \ ])
 
-call javaapi#class('LookupSwitch', '', [
+call javaapi#class('LookupSwitch', 'Switch', [
   \ javaapi#method(0,'getCaseCount(', ')', 'int'),
   \ javaapi#method(0,'getCaseValue(', 'int)', 'int'),
   \ javaapi#method(0,'getCaseLabel(', 'int)', 'int'),
@@ -919,7 +919,7 @@ call javaapi#class('LookupSwitch', '', [
   \ javaapi#method(0,'setCaseLabel(', 'int, int)', 'void'),
   \ ])
 
-call javaapi#class('Switch', '', [
+call javaapi#class('Switch', 'Instruction', [
   \ javaapi#method(0,'getCaseCount(', ')', 'int'),
   \ javaapi#method(0,'getCaseValue(', 'int)', 'int'),
   \ javaapi#method(0,'getCaseLabel(', 'int)', 'int'),
@@ -959,7 +959,7 @@ call javaapi#class('Switch', '', [
   \ javaapi#method(0,'getBC(', ')', 'int'),
   \ ])
 
-call javaapi#class('TableSwitch', '', [
+call javaapi#class('TableSwitch', 'Switch', [
   \ javaapi#method(0,'getLowCase(', ')', 'int'),
   \ javaapi#method(0,'getHighCase(', ')', 'int'),
   \ javaapi#method(0,'getCaseCount(', ')', 'int'),
@@ -1029,13 +1029,13 @@ call javaapi#class('1', 'Comparator', [
   \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
   \ ])
 
-call javaapi#class('Field', '', [
+call javaapi#class('Field', 'Member', [
   \ javaapi#method(0,'Field(', 'Class, int, DescriptorEntry)', 'public'),
   \ javaapi#method(0,'getLiteralTag(', ')', 'byte'),
   \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
   \ ])
 
-call javaapi#class('Member', '', [
+call javaapi#class('Member', 'Holder', [
   \ javaapi#method(0,'thisClass(', ')', 'Class'),
   \ javaapi#method(0,'getDescriptor(', ')', 'DescriptorEntry'),
   \ javaapi#method(0,'getName(', ')', 'String'),
@@ -1043,7 +1043,7 @@ call javaapi#class('Member', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('Method', '', [
+call javaapi#class('Method', 'Member', [
   \ javaapi#method(0,'Method(', 'Class, int, DescriptorEntry)', 'public'),
   \ javaapi#method(0,'trimToSize(', ')', 'void'),
   \ javaapi#method(0,'getArgumentSize(', ')', 'int'),
@@ -1051,7 +1051,7 @@ call javaapi#class('Method', '', [
   \ javaapi#method(0,'strip(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('Class', '', [
+call javaapi#class('Class', 'Holder', [
   \ javaapi#method(0,'getPackage(', ')', 'Package'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
@@ -1117,18 +1117,18 @@ call javaapi#class('1', 'Entry>', [
   \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'ValueStream', [
   \ javaapi#method(0,'getInt(', 'int)', 'int'),
   \ javaapi#method(0,'getRef(', 'int)', 'Entry'),
   \ javaapi#method(0,'decodeBCI(', 'int)', 'int'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'FilterInputStream', [
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ ])
 
-call javaapi#class('LimitedBuffer', '', [
+call javaapi#class('LimitedBuffer', 'BufferedInputStream', [
   \ javaapi#method(0,'atLimit(', ')', 'boolean'),
   \ javaapi#method(0,'getBytesServed(', ')', 'long'),
   \ javaapi#method(0,'setReadLimit(', 'long)', 'void'),
@@ -1138,7 +1138,7 @@ call javaapi#class('LimitedBuffer', '', [
   \ javaapi#method(0,'skip(', 'long) throws IOException', 'long'),
   \ ])
 
-call javaapi#class('PackageReader', '', [
+call javaapi#class('PackageReader', 'BandStructure', [
   \ ])
 
 call javaapi#class('1', 'Object>', [
@@ -1149,14 +1149,14 @@ call javaapi#class('2', 'Comparator', [
   \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'ValueStream', [
   \ javaapi#method(0,'putInt(', 'int, int)', 'void'),
   \ javaapi#method(0,'putRef(', 'int, Entry)', 'void'),
   \ javaapi#method(0,'encodeBCI(', 'int)', 'int'),
   \ javaapi#method(0,'noteBackCall(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('PackageWriter', '', [
+call javaapi#class('PackageWriter', 'BandStructure', [
   \ ])
 
 call javaapi#class('1', '', [
@@ -1169,7 +1169,7 @@ call javaapi#class('InFile', '', [
 call javaapi#class('DoPack', '', [
   \ ])
 
-call javaapi#class('PackerImpl', '', [
+call javaapi#class('PackerImpl', 'TLGlobals', [
   \ javaapi#method(0,'PackerImpl(', ')', 'public'),
   \ javaapi#method(0,'properties(', ')', 'SortedMap'),
   \ javaapi#method(0,'pack(', 'JarFile, OutputStream) throws IOException', 'void'),
@@ -1229,7 +1229,7 @@ call javaapi#class('DoUnpack', '', [
   \ javaapi#method(0,'run(', 'BufferedInputStream, JarOutputStream) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('UnpackerImpl', '', [
+call javaapi#class('UnpackerImpl', 'TLGlobals', [
   \ javaapi#method(0,'addPropertyChangeListener(', 'PropertyChangeListener)', 'void'),
   \ javaapi#method(0,'removePropertyChangeListener(', 'PropertyChangeListener)', 'void'),
   \ javaapi#method(0,'UnpackerImpl(', ')', 'public'),
@@ -1239,7 +1239,7 @@ call javaapi#class('UnpackerImpl', '', [
   \ javaapi#method(0,'unpack(', 'File, JarOutputStream) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('NonCloser', '', [
+call javaapi#class('NonCloser', 'FilterOutputStream', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 

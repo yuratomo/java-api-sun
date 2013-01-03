@@ -1,13 +1,13 @@
 call javaapi#namespace('com.sun.org.apache.xerces.internal.jaxp.validation')
 
-call javaapi#class('AbstractXMLSchema', '', [
+call javaapi#class('AbstractXMLSchema', 'Schema', [
   \ javaapi#method(0,'AbstractXMLSchema(', ')', 'public'),
   \ javaapi#method(0,'newValidator(', ')', 'Validator'),
   \ javaapi#method(0,'newValidatorHandler(', ')', 'ValidatorHandler'),
   \ javaapi#method(0,'getFeature(', 'String)', 'Boolean'),
   \ ])
 
-call javaapi#interface('DOMDocumentHandler', '', [
+call javaapi#interface('DOMDocumentHandler', 'XMLDocumentHandler', [
   \ javaapi#method(0,'setDOMResult(', 'DOMResult)', 'void'),
   \ javaapi#method(0,'doctypeDecl(', 'DocumentType) throws XNIException', 'void'),
   \ javaapi#method(0,'characters(', 'Text) throws XNIException', 'void'),
@@ -101,7 +101,7 @@ call javaapi#class('DraconianErrorHandler', 'ErrorHandler', [
   \ javaapi#method(0,'fatalError(', 'SAXParseException) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('EmptyXMLSchema', '', [
+call javaapi#class('EmptyXMLSchema', 'AbstractXMLSchema', [
   \ javaapi#method(0,'EmptyXMLSchema(', ')', 'public'),
   \ javaapi#method(0,'retrieveInitialGrammarSet(', 'String)', 'Grammar[]'),
   \ javaapi#method(0,'cacheGrammars(', 'String, Grammar[])', 'void'),
@@ -136,7 +136,7 @@ call javaapi#class('ReadOnlyGrammarPool', 'XMLGrammarPool', [
   \ javaapi#method(0,'unlockPool(', ')', 'void'),
   \ ])
 
-call javaapi#class('SimpleXMLSchema', '', [
+call javaapi#class('SimpleXMLSchema', 'AbstractXMLSchema', [
   \ javaapi#method(0,'SimpleXMLSchema(', 'Grammar)', 'public'),
   \ javaapi#method(0,'retrieveInitialGrammarSet(', 'String)', 'Grammar[]'),
   \ javaapi#method(0,'cacheGrammars(', 'String, Grammar[])', 'void'),
@@ -157,7 +157,7 @@ call javaapi#class('Entry', '', [
   \ javaapi#field(0,'grammar', 'SoftGrammarReference'),
   \ ])
 
-call javaapi#class('SoftGrammarReference', '', [
+call javaapi#class('SoftGrammarReference', 'SoftReference', [
   \ javaapi#field(0,'entry', 'Entry'),
   \ ])
 
@@ -207,7 +207,7 @@ call javaapi#class('ResolutionForwarder', 'EntityResolver2', [
   \ javaapi#method(0,'resolveEntity(', 'String, String) throws SAXException, IOException', 'InputSource'),
   \ ])
 
-call javaapi#class('XMLSchemaTypeInfoProvider', '', [
+call javaapi#class('XMLSchemaTypeInfoProvider', 'TypeInfoProvider', [
   \ javaapi#method(0,'getAttributeTypeInfo(', 'int)', 'TypeInfo'),
   \ javaapi#method(0,'getAttributeTypeInfo(', 'String, String)', 'TypeInfo'),
   \ javaapi#method(0,'getAttributeTypeInfo(', 'String)', 'TypeInfo'),
@@ -216,7 +216,7 @@ call javaapi#class('XMLSchemaTypeInfoProvider', '', [
   \ javaapi#method(0,'isSpecified(', 'int)', 'boolean'),
   \ ])
 
-call javaapi#class('ValidatorHandlerImpl', '', [
+call javaapi#class('ValidatorHandlerImpl', 'ValidatorHandler', [
   \ javaapi#method(0,'ValidatorHandlerImpl(', 'XSGrammarPoolContainer)', 'public'),
   \ javaapi#method(0,'ValidatorHandlerImpl(', 'XMLSchemaValidatorComponentManager)', 'public'),
   \ javaapi#method(0,'setContentHandler(', 'ContentHandler)', 'void'),
@@ -273,7 +273,7 @@ call javaapi#interface('ValidatorHelper', '', [
   \ javaapi#method(0,'validate(', 'Source, Result) throws SAXException, IOException', 'void'),
   \ ])
 
-call javaapi#class('ValidatorImpl', '', [
+call javaapi#class('ValidatorImpl', 'Validator', [
   \ javaapi#method(0,'ValidatorImpl(', 'XSGrammarPoolContainer)', 'public'),
   \ javaapi#method(0,'validate(', 'Source, Result) throws SAXException, IOException', 'void'),
   \ javaapi#method(0,'setErrorHandler(', 'ErrorHandler)', 'void'),
@@ -290,23 +290,23 @@ call javaapi#class('ValidatorImpl', '', [
   \ javaapi#method(0,'getAttributePSVIByName(', 'String, String)', 'AttributePSVI'),
   \ ])
 
-call javaapi#class('WeakReferenceXMLSchema', '', [
+call javaapi#class('WeakReferenceXMLSchema', 'AbstractXMLSchema', [
   \ javaapi#method(0,'WeakReferenceXMLSchema(', ')', 'public'),
   \ javaapi#method(0,'getGrammarPool(', ')', 'XMLGrammarPool'),
   \ javaapi#method(0,'isFullyComposed(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('WrappedSAXException', '', [
+call javaapi#class('WrappedSAXException', 'RuntimeException', [
   \ javaapi#field(0,'exception', 'SAXException'),
   \ ])
 
-call javaapi#class('XMLSchema', '', [
+call javaapi#class('XMLSchema', 'AbstractXMLSchema', [
   \ javaapi#method(0,'XMLSchema(', 'XMLGrammarPool)', 'public'),
   \ javaapi#method(0,'getGrammarPool(', ')', 'XMLGrammarPool'),
   \ javaapi#method(0,'isFullyComposed(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('XMLGrammarPoolImplExtension', '', [
+call javaapi#class('XMLGrammarPoolImplExtension', 'XMLGrammarPoolImpl', [
   \ javaapi#method(0,'XMLGrammarPoolImplExtension(', ')', 'public'),
   \ javaapi#method(0,'XMLGrammarPoolImplExtension(', 'int)', 'public'),
   \ ])
@@ -320,7 +320,7 @@ call javaapi#class('XMLGrammarPoolWrapper', 'XMLGrammarPool', [
   \ javaapi#method(0,'clear(', ')', 'void'),
   \ ])
 
-call javaapi#class('XMLSchemaFactory', '', [
+call javaapi#class('XMLSchemaFactory', 'SchemaFactory', [
   \ javaapi#method(0,'XMLSchemaFactory(', ')', 'public'),
   \ javaapi#method(0,'isSchemaLanguageSupported(', 'String)', 'boolean'),
   \ javaapi#method(0,'getResourceResolver(', ')', 'LSResourceResolver'),
@@ -335,7 +335,7 @@ call javaapi#class('XMLSchemaFactory', '', [
   \ javaapi#method(0,'setProperty(', 'String, Object) throws SAXNotRecognizedException, SAXNotSupportedException', 'void'),
   \ ])
 
-call javaapi#class('XMLSchemaValidatorComponentManager', '', [
+call javaapi#class('XMLSchemaValidatorComponentManager', 'ParserConfigurationSettings', [
   \ javaapi#method(0,'XMLSchemaValidatorComponentManager(', 'XSGrammarPoolContainer)', 'public'),
   \ javaapi#method(0,'getFeatureState(', 'String) throws XMLConfigurationException', 'FeatureState'),
   \ javaapi#method(0,'setFeature(', 'String, boolean) throws XMLConfigurationException', 'void'),

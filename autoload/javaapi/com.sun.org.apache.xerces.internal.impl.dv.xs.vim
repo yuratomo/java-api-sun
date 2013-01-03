@@ -22,45 +22,45 @@ call javaapi#class('DateTimeData', 'XSDateTime', [
   \ javaapi#method(0,'getDuration(', ')', 'Duration'),
   \ ])
 
-call javaapi#class('AbstractDateTimeDV', '', [
+call javaapi#class('AbstractDateTimeDV', 'TypeValidator', [
   \ javaapi#method(0,'AbstractDateTimeDV(', ')', 'public'),
   \ javaapi#method(0,'getAllowedFacets(', ')', 'short'),
   \ javaapi#method(0,'isIdentical(', 'Object, Object)', 'boolean'),
   \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
   \ ])
 
-call javaapi#class('AnyAtomicDV', '', [
+call javaapi#class('AnyAtomicDV', 'TypeValidator', [
   \ javaapi#method(0,'getAllowedFacets(', ')', 'short'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ ])
 
-call javaapi#class('AnySimpleDV', '', [
+call javaapi#class('AnySimpleDV', 'TypeValidator', [
   \ javaapi#method(0,'AnySimpleDV(', ')', 'public'),
   \ javaapi#method(0,'getAllowedFacets(', ')', 'short'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ ])
 
-call javaapi#class('AnyURIDV', '', [
+call javaapi#class('AnyURIDV', 'TypeValidator', [
   \ javaapi#method(0,'AnyURIDV(', ')', 'public'),
   \ javaapi#method(0,'getAllowedFacets(', ')', 'short'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ ])
 
-call javaapi#class('XBase64', '', [
+call javaapi#class('XBase64', 'ByteListImpl', [
   \ javaapi#method(0,'XBase64(', 'byte[])', 'public'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('Base64BinaryDV', '', [
+call javaapi#class('Base64BinaryDV', 'TypeValidator', [
   \ javaapi#method(0,'Base64BinaryDV(', ')', 'public'),
   \ javaapi#method(0,'getAllowedFacets(', ')', 'short'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ javaapi#method(0,'getDataLength(', 'Object)', 'int'),
   \ ])
 
-call javaapi#class('BaseDVFactory', '', [
+call javaapi#class('BaseDVFactory', 'SchemaDVFactory', [
   \ javaapi#method(0,'BaseDVFactory(', ')', 'public'),
   \ javaapi#method(0,'getBuiltInType(', 'String)', 'XSSimpleType'),
   \ javaapi#method(0,'getBuiltInTypes(', ')', 'SymbolHash'),
@@ -69,7 +69,7 @@ call javaapi#class('BaseDVFactory', '', [
   \ javaapi#method(0,'createTypeUnion(', 'String, String, short, XSSimpleType[], XSObjectList)', 'XSSimpleType'),
   \ ])
 
-call javaapi#class('BaseSchemaDVFactory', '', [
+call javaapi#class('BaseSchemaDVFactory', 'SchemaDVFactory', [
   \ javaapi#method(0,'BaseSchemaDVFactory(', ')', 'public'),
   \ javaapi#method(0,'createTypeRestriction(', 'String, String, short, XSSimpleType, XSObjectList)', 'XSSimpleType'),
   \ javaapi#method(0,'createTypeList(', 'String, String, short, XSSimpleType, XSObjectList)', 'XSSimpleType'),
@@ -78,28 +78,28 @@ call javaapi#class('BaseSchemaDVFactory', '', [
   \ javaapi#method(0,'newXSSimpleTypeDecl(', ')', 'XSSimpleTypeDecl'),
   \ ])
 
-call javaapi#class('BooleanDV', '', [
+call javaapi#class('BooleanDV', 'TypeValidator', [
   \ javaapi#method(0,'BooleanDV(', ')', 'public'),
   \ javaapi#method(0,'getAllowedFacets(', ')', 'short'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ ])
 
-call javaapi#class('DateDV', '', [
+call javaapi#class('DateDV', 'DateTimeDV', [
   \ javaapi#method(0,'DateDV(', ')', 'public'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ ])
 
-call javaapi#class('DateTimeDV', '', [
+call javaapi#class('DateTimeDV', 'AbstractDateTimeDV', [
   \ javaapi#method(0,'DateTimeDV(', ')', 'public'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ ])
 
-call javaapi#class('DayDV', '', [
+call javaapi#class('DayDV', 'AbstractDateTimeDV', [
   \ javaapi#method(0,'DayDV(', ')', 'public'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ ])
 
-call javaapi#class('DayTimeDurationDV', '', [
+call javaapi#class('DayTimeDurationDV', 'DurationDV', [
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ ])
 
@@ -115,7 +115,7 @@ call javaapi#class('XDecimal', 'XSDecimal', [
   \ javaapi#method(0,'getByte(', ') throws NumberFormatException', 'byte'),
   \ ])
 
-call javaapi#class('DecimalDV', '', [
+call javaapi#class('DecimalDV', 'TypeValidator', [
   \ javaapi#method(0,'DecimalDV(', ')', 'public'),
   \ javaapi#method(0,'getAllowedFacets(', ')', 'short'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
@@ -133,7 +133,7 @@ call javaapi#class('XDouble', 'XSDouble', [
   \ javaapi#method(0,'getValue(', ')', 'double'),
   \ ])
 
-call javaapi#class('DoubleDV', '', [
+call javaapi#class('DoubleDV', 'TypeValidator', [
   \ javaapi#method(0,'DoubleDV(', ')', 'public'),
   \ javaapi#method(0,'getAllowedFacets(', ')', 'short'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
@@ -141,7 +141,7 @@ call javaapi#class('DoubleDV', '', [
   \ javaapi#method(0,'isIdentical(', 'Object, Object)', 'boolean'),
   \ ])
 
-call javaapi#class('DurationDV', '', [
+call javaapi#class('DurationDV', 'AbstractDateTimeDV', [
   \ javaapi#field(1,'DURATION_TYPE', 'int'),
   \ javaapi#field(1,'YEARMONTHDURATION_TYPE', 'int'),
   \ javaapi#field(1,'DAYTIMEDURATION_TYPE', 'int'),
@@ -149,14 +149,14 @@ call javaapi#class('DurationDV', '', [
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ ])
 
-call javaapi#class('EntityDV', '', [
+call javaapi#class('EntityDV', 'TypeValidator', [
   \ javaapi#method(0,'EntityDV(', ')', 'public'),
   \ javaapi#method(0,'getAllowedFacets(', ')', 'short'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ javaapi#method(0,'checkExtraRules(', 'Object, ValidationContext) throws InvalidDatatypeValueException', 'void'),
   \ ])
 
-call javaapi#class('ExtendedSchemaDVFactoryImpl', '', [
+call javaapi#class('ExtendedSchemaDVFactoryImpl', 'BaseSchemaDVFactory', [
   \ javaapi#method(0,'ExtendedSchemaDVFactoryImpl(', ')', 'public'),
   \ javaapi#method(0,'getBuiltInType(', 'String)', 'XSSimpleType'),
   \ javaapi#method(0,'getBuiltInTypes(', ')', 'SymbolHash'),
@@ -171,7 +171,7 @@ call javaapi#class('XFloat', 'XSFloat', [
   \ javaapi#method(0,'getValue(', ')', 'float'),
   \ ])
 
-call javaapi#class('FloatDV', '', [
+call javaapi#class('FloatDV', 'TypeValidator', [
   \ javaapi#method(0,'FloatDV(', ')', 'public'),
   \ javaapi#method(0,'getAllowedFacets(', ')', 'short'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
@@ -179,46 +179,46 @@ call javaapi#class('FloatDV', '', [
   \ javaapi#method(0,'isIdentical(', 'Object, Object)', 'boolean'),
   \ ])
 
-call javaapi#class('FullDVFactory', '', [
+call javaapi#class('FullDVFactory', 'BaseDVFactory', [
   \ javaapi#method(0,'FullDVFactory(', ')', 'public'),
   \ javaapi#method(0,'getBuiltInType(', 'String)', 'XSSimpleType'),
   \ javaapi#method(0,'getBuiltInTypes(', ')', 'SymbolHash'),
   \ ])
 
-call javaapi#class('XHex', '', [
+call javaapi#class('XHex', 'ByteListImpl', [
   \ javaapi#method(0,'XHex(', 'byte[])', 'public'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('HexBinaryDV', '', [
+call javaapi#class('HexBinaryDV', 'TypeValidator', [
   \ javaapi#method(0,'HexBinaryDV(', ')', 'public'),
   \ javaapi#method(0,'getAllowedFacets(', ')', 'short'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ javaapi#method(0,'getDataLength(', 'Object)', 'int'),
   \ ])
 
-call javaapi#class('IDDV', '', [
+call javaapi#class('IDDV', 'TypeValidator', [
   \ javaapi#method(0,'IDDV(', ')', 'public'),
   \ javaapi#method(0,'getAllowedFacets(', ')', 'short'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ javaapi#method(0,'checkExtraRules(', 'Object, ValidationContext) throws InvalidDatatypeValueException', 'void'),
   \ ])
 
-call javaapi#class('IDREFDV', '', [
+call javaapi#class('IDREFDV', 'TypeValidator', [
   \ javaapi#method(0,'IDREFDV(', ')', 'public'),
   \ javaapi#method(0,'getAllowedFacets(', ')', 'short'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ javaapi#method(0,'checkExtraRules(', 'Object, ValidationContext) throws InvalidDatatypeValueException', 'void'),
   \ ])
 
-call javaapi#class('IntegerDV', '', [
+call javaapi#class('IntegerDV', 'DecimalDV', [
   \ javaapi#method(0,'IntegerDV(', ')', 'public'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ ])
 
-call javaapi#class('ListData', '', [
+call javaapi#class('ListData', 'AbstractList', [
   \ javaapi#method(0,'ListData(', 'Object[])', 'public'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'getLength(', ')', 'int'),
@@ -230,19 +230,19 @@ call javaapi#class('ListData', '', [
   \ javaapi#method(0,'size(', ')', 'int'),
   \ ])
 
-call javaapi#class('ListDV', '', [
+call javaapi#class('ListDV', 'TypeValidator', [
   \ javaapi#method(0,'ListDV(', ')', 'public'),
   \ javaapi#method(0,'getAllowedFacets(', ')', 'short'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ javaapi#method(0,'getDataLength(', 'Object)', 'int'),
   \ ])
 
-call javaapi#class('MonthDV', '', [
+call javaapi#class('MonthDV', 'AbstractDateTimeDV', [
   \ javaapi#method(0,'MonthDV(', ')', 'public'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ ])
 
-call javaapi#class('MonthDayDV', '', [
+call javaapi#class('MonthDayDV', 'AbstractDateTimeDV', [
   \ javaapi#method(0,'MonthDayDV(', ')', 'public'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ ])
@@ -254,7 +254,7 @@ call javaapi#class('XPrecisionDecimal', '', [
   \ javaapi#method(0,'isIdentical(', 'XPrecisionDecimal)', 'boolean'),
   \ ])
 
-call javaapi#class('PrecisionDecimalDV', '', [
+call javaapi#class('PrecisionDecimalDV', 'TypeValidator', [
   \ javaapi#method(0,'getAllowedFacets(', ')', 'short'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
@@ -263,7 +263,7 @@ call javaapi#class('PrecisionDecimalDV', '', [
   \ javaapi#method(0,'isIdentical(', 'Object, Object)', 'boolean'),
   \ ])
 
-call javaapi#class('XQName', '', [
+call javaapi#class('XQName', 'QName', [
   \ javaapi#method(0,'XQName(', 'String, String, String, String)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'toString(', ')', 'String'),
@@ -271,31 +271,31 @@ call javaapi#class('XQName', '', [
   \ javaapi#method(0,'getXNIQName(', ')', 'QName'),
   \ ])
 
-call javaapi#class('QNameDV', '', [
+call javaapi#class('QNameDV', 'TypeValidator', [
   \ javaapi#method(0,'QNameDV(', ')', 'public'),
   \ javaapi#method(0,'getAllowedFacets(', ')', 'short'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ javaapi#method(0,'getDataLength(', 'Object)', 'int'),
   \ ])
 
-call javaapi#class('SchemaDVFactoryImpl', '', [
+call javaapi#class('SchemaDVFactoryImpl', 'BaseSchemaDVFactory', [
   \ javaapi#method(0,'SchemaDVFactoryImpl(', ')', 'public'),
   \ javaapi#method(0,'getBuiltInType(', 'String)', 'XSSimpleType'),
   \ javaapi#method(0,'getBuiltInTypes(', ')', 'SymbolHash'),
   \ ])
 
-call javaapi#class('SchemaDateTimeException', '', [
+call javaapi#class('SchemaDateTimeException', 'RuntimeException', [
   \ javaapi#method(0,'SchemaDateTimeException(', ')', 'public'),
   \ javaapi#method(0,'SchemaDateTimeException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('StringDV', '', [
+call javaapi#class('StringDV', 'TypeValidator', [
   \ javaapi#method(0,'StringDV(', ')', 'public'),
   \ javaapi#method(0,'getAllowedFacets(', ')', 'short'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ ])
 
-call javaapi#class('TimeDV', '', [
+call javaapi#class('TimeDV', 'AbstractDateTimeDV', [
   \ javaapi#method(0,'TimeDV(', ')', 'public'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ ])
@@ -318,7 +318,7 @@ call javaapi#class('TypeValidator', '', [
   \ javaapi#method(1,'getDigit(', 'char)', 'int'),
   \ ])
 
-call javaapi#class('UnionDV', '', [
+call javaapi#class('UnionDV', 'TypeValidator', [
   \ javaapi#method(0,'UnionDV(', ')', 'public'),
   \ javaapi#method(0,'getAllowedFacets(', ')', 'short'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
@@ -339,13 +339,13 @@ call javaapi#class('1', 'ValidationContext', [
   \ javaapi#method(0,'getLocale(', ')', 'Locale'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'AbstractObjectList', [
   \ javaapi#method(0,'getLength(', ')', 'int'),
   \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
   \ javaapi#method(0,'item(', 'int)', 'Object'),
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'AbstractObjectList', [
   \ javaapi#method(0,'getLength(', ')', 'int'),
   \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
   \ javaapi#method(0,'item(', 'int)', 'Object'),
@@ -366,7 +366,7 @@ call javaapi#class('4', 'ValidationContext', [
   \ javaapi#method(0,'getLocale(', ')', 'Locale'),
   \ ])
 
-call javaapi#class('AbstractObjectList', '', [
+call javaapi#class('AbstractObjectList', 'AbstractList', [
   \ javaapi#method(0,'get(', 'int)', 'Object'),
   \ javaapi#method(0,'size(', ')', 'int'),
   \ ])
@@ -530,17 +530,17 @@ call javaapi#class('XSSimpleTypeDelegate', 'XSSimpleType', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('YearDV', '', [
+call javaapi#class('YearDV', 'AbstractDateTimeDV', [
   \ javaapi#method(0,'YearDV(', ')', 'public'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ ])
 
-call javaapi#class('YearMonthDV', '', [
+call javaapi#class('YearMonthDV', 'AbstractDateTimeDV', [
   \ javaapi#method(0,'YearMonthDV(', ')', 'public'),
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ ])
 
-call javaapi#class('YearMonthDurationDV', '', [
+call javaapi#class('YearMonthDurationDV', 'DurationDV', [
   \ javaapi#method(0,'getActualValue(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'Object'),
   \ ])
 

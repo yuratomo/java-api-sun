@@ -1,34 +1,34 @@
 call javaapi#namespace('com.sun.jndi.toolkit.ctx')
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'RefAddr', [
   \ javaapi#method(0,'getContent(', ')', 'Object'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'RefAddr', [
   \ javaapi#method(0,'getContent(', ')', 'Object'),
   \ ])
 
-call javaapi#class('AtomicContext', '', [
+call javaapi#class('AtomicContext', 'ComponentContext', [
   \ ])
 
-call javaapi#class('AtomicDirContext', '', [
+call javaapi#class('AtomicDirContext', 'ComponentDirContext', [
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'RefAddr', [
   \ javaapi#method(0,'getContent(', ')', 'Object'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'RefAddr', [
   \ javaapi#method(0,'getContent(', ')', 'Object'),
   \ ])
 
-call javaapi#class('ComponentContext', '', [
+call javaapi#class('ComponentContext', 'PartialCompositeContext', [
   \ ])
 
-call javaapi#class('ComponentDirContext', '', [
+call javaapi#class('ComponentDirContext', 'PartialCompositeDirContext', [
   \ ])
 
-call javaapi#class('Continuation', '', [
+call javaapi#class('Continuation', 'ResolveResult', [
   \ javaapi#method(0,'Continuation(', ')', 'public'),
   \ javaapi#method(0,'Continuation(', 'Name, Hashtable)', 'public'),
   \ javaapi#method(0,'isContinue(', ')', 'boolean'),
@@ -86,7 +86,7 @@ call javaapi#class('PartialCompositeContext', 'Resolver', [
   \ javaapi#method(0,'composeName(', 'Name, Name) throws NamingException', 'Name'),
   \ ])
 
-call javaapi#class('PartialCompositeDirContext', '', [
+call javaapi#class('PartialCompositeDirContext', 'AtomicContext', [
   \ javaapi#method(0,'getAttributes(', 'String) throws NamingException', 'Attributes'),
   \ javaapi#method(0,'getAttributes(', 'Name) throws NamingException', 'Attributes'),
   \ javaapi#method(0,'getAttributes(', 'String, String[]) throws NamingException', 'Attributes'),

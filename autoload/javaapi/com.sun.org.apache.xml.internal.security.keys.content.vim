@@ -3,14 +3,14 @@ call javaapi#namespace('com.sun.org.apache.xml.internal.security.keys.content')
 call javaapi#interface('KeyInfoContent', '', [
   \ ])
 
-call javaapi#class('KeyName', '', [
+call javaapi#class('KeyName', 'SignatureElementProxy', [
   \ javaapi#method(0,'KeyName(', 'Element, String) throws XMLSecurityException', 'public'),
   \ javaapi#method(0,'KeyName(', 'Document, String)', 'public'),
   \ javaapi#method(0,'getKeyName(', ')', 'String'),
   \ javaapi#method(0,'getBaseLocalName(', ')', 'String'),
   \ ])
 
-call javaapi#class('KeyValue', '', [
+call javaapi#class('KeyValue', 'SignatureElementProxy', [
   \ javaapi#method(0,'KeyValue(', 'Document, DSAKeyValue)', 'public'),
   \ javaapi#method(0,'KeyValue(', 'Document, RSAKeyValue)', 'public'),
   \ javaapi#method(0,'KeyValue(', 'Document, Element)', 'public'),
@@ -20,19 +20,19 @@ call javaapi#class('KeyValue', '', [
   \ javaapi#method(0,'getBaseLocalName(', ')', 'String'),
   \ ])
 
-call javaapi#class('MgmtData', '', [
+call javaapi#class('MgmtData', 'SignatureElementProxy', [
   \ javaapi#method(0,'MgmtData(', 'Element, String) throws XMLSecurityException', 'public'),
   \ javaapi#method(0,'MgmtData(', 'Document, String)', 'public'),
   \ javaapi#method(0,'getMgmtData(', ')', 'String'),
   \ javaapi#method(0,'getBaseLocalName(', ')', 'String'),
   \ ])
 
-call javaapi#class('PGPData', '', [
+call javaapi#class('PGPData', 'SignatureElementProxy', [
   \ javaapi#method(0,'PGPData(', 'Element, String) throws XMLSecurityException', 'public'),
   \ javaapi#method(0,'getBaseLocalName(', ')', 'String'),
   \ ])
 
-call javaapi#class('RetrievalMethod', '', [
+call javaapi#class('RetrievalMethod', 'SignatureElementProxy', [
   \ javaapi#field(1,'TYPE_DSA', 'String'),
   \ javaapi#field(1,'TYPE_RSA', 'String'),
   \ javaapi#field(1,'TYPE_PGP', 'String'),
@@ -49,12 +49,12 @@ call javaapi#class('RetrievalMethod', '', [
   \ javaapi#method(0,'getBaseLocalName(', ')', 'String'),
   \ ])
 
-call javaapi#class('SPKIData', '', [
+call javaapi#class('SPKIData', 'SignatureElementProxy', [
   \ javaapi#method(0,'SPKIData(', 'Element, String) throws XMLSecurityException', 'public'),
   \ javaapi#method(0,'getBaseLocalName(', ')', 'String'),
   \ ])
 
-call javaapi#class('X509Data', '', [
+call javaapi#class('X509Data', 'SignatureElementProxy', [
   \ javaapi#method(0,'X509Data(', 'Document)', 'public'),
   \ javaapi#method(0,'X509Data(', 'Element, String) throws XMLSecurityException', 'public'),
   \ javaapi#method(0,'addIssuerSerial(', 'String, BigInteger)', 'void'),

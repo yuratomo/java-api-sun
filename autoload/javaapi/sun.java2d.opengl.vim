@@ -1,111 +1,77 @@
 call javaapi#namespace('sun.java2d.opengl')
 
-call javaapi#interface('OGLGraphicsConfig', '', [
-  \ javaapi#method(0,'getContext(', ')', 'OGLContext'),
-  \ javaapi#method(0,'getNativeConfigInfo(', ')', 'long'),
-  \ javaapi#method(0,'isCapPresent(', 'int)', 'boolean'),
-  \ javaapi#method(0,'createManagedSurface(', 'int, int, int)', 'SurfaceData'),
-  \ ])
-
-
-call javaapi#class('WGLGraphicsConfig', '', [
-  \ javaapi#method(1,'getDefaultPixFmt(', 'int)', 'int'),
-  \ javaapi#method(0,'getProxyKey(', ')', 'Object'),
-  \ javaapi#method(0,'createManagedSurface(', 'int, int, int)', 'SurfaceData'),
-  \ javaapi#method(1,'getConfig(', 'Win32GraphicsDevice, int)', 'WGLGraphicsConfig'),
-  \ javaapi#method(1,'isWGLAvailable(', ')', 'boolean'),
-  \ javaapi#method(0,'isCapPresent(', 'int)', 'boolean'),
-  \ javaapi#method(0,'getNativeConfigInfo(', ')', 'long'),
-  \ javaapi#method(0,'getContext(', ')', 'OGLContext'),
-  \ javaapi#method(0,'displayChanged(', ')', 'void'),
-  \ javaapi#method(0,'getColorModel(', 'int)', 'ColorModel'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'createSurfaceData(', 'WComponentPeer, int)', 'SurfaceData'),
-  \ javaapi#method(0,'assertOperationSupported(', 'Component, int, BufferCapabilities) throws AWTException', 'void'),
-  \ javaapi#method(0,'createBackBuffer(', 'WComponentPeer)', 'VolatileImage'),
-  \ javaapi#method(0,'flip(', 'WComponentPeer, Component, VolatileImage, int, int, int, int, FlipContents)', 'void'),
-  \ javaapi#method(0,'getBufferCapabilities(', ')', 'BufferCapabilities'),
-  \ javaapi#method(0,'getImageCapabilities(', ')', 'ImageCapabilities'),
-  \ javaapi#method(0,'createCompatibleVolatileImage(', 'int, int, int, int)', 'VolatileImage'),
-  \ javaapi#method(0,'getContextCapabilities(', ')', 'ContextCapabilities'),
-  \ javaapi#method(0,'addDeviceEventListener(', 'AccelDeviceEventListener)', 'void'),
-  \ javaapi#method(0,'removeDeviceEventListener(', 'AccelDeviceEventListener)', 'void'),
-  \ javaapi#method(0,'getContext(', ')', 'BufferedContext'),
-  \ ])
-
-
 call javaapi#class('OGLBlitLoops', '', [
   \ ])
 
-call javaapi#class('OGLBufImgOps', '', [
+call javaapi#class('OGLBufImgOps', 'BufferedBufImgOps', [
   \ ])
 
-call javaapi#class('OGLContextCaps', '', [
+call javaapi#class('OGLContextCaps', 'ContextCapabilities', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('OGLContext', '', [
+call javaapi#class('OGLContext', 'BufferedContext', [
   \ javaapi#method(0,'getRenderQueue(', ')', 'RenderQueue'),
   \ javaapi#method(0,'saveState(', ')', 'void'),
   \ javaapi#method(0,'restoreState(', ')', 'void'),
   \ ])
 
-call javaapi#class('OGLDrawImage', '', [
+call javaapi#class('OGLDrawImage', 'DrawImage', [
   \ javaapi#method(0,'OGLDrawImage(', ')', 'public'),
   \ javaapi#method(0,'transformImage(', 'SunGraphics2D, BufferedImage, BufferedImageOp, int, int)', 'void'),
   \ ])
 
-call javaapi#class('OGLGeneralBlit', '', [
+call javaapi#class('OGLGeneralBlit', 'Blit', [
   \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('OGLMaskBlit', '', [
+call javaapi#class('OGLMaskBlit', 'BufferedMaskBlit', [
   \ ])
 
-call javaapi#class('OGLMaskFill', '', [
+call javaapi#class('OGLMaskFill', 'BufferedMaskFill', [
   \ ])
 
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('Gradient', '', [
+call javaapi#class('Gradient', 'OGLPaints', [
   \ ])
 
-call javaapi#class('LinearGradient', '', [
+call javaapi#class('LinearGradient', 'MultiGradient', [
   \ ])
 
-call javaapi#class('MultiGradient', '', [
+call javaapi#class('MultiGradient', 'OGLPaints', [
   \ ])
 
-call javaapi#class('RadialGradient', '', [
+call javaapi#class('RadialGradient', 'MultiGradient', [
   \ ])
 
-call javaapi#class('Texture', '', [
+call javaapi#class('Texture', 'OGLPaints', [
   \ ])
 
 call javaapi#class('OGLPaints', '', [
   \ ])
 
-call javaapi#class('OGLRTTSurfaceToSurfaceBlit', '', [
+call javaapi#class('OGLRTTSurfaceToSurfaceBlit', 'Blit', [
   \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('OGLRTTSurfaceToSurfaceScale', '', [
+call javaapi#class('OGLRTTSurfaceToSurfaceScale', 'ScaledBlit', [
   \ javaapi#method(0,'Scale(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, double, double, double, double)', 'void'),
   \ ])
 
-call javaapi#class('OGLRTTSurfaceToSurfaceTransform', '', [
+call javaapi#class('OGLRTTSurfaceToSurfaceTransform', 'TransformBlit', [
   \ javaapi#method(0,'Transform(', 'SurfaceData, SurfaceData, Composite, Region, AffineTransform, int, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('QueueFlusher', '', [
+call javaapi#class('QueueFlusher', 'Thread', [
   \ javaapi#method(0,'QueueFlusher(', 'OGLRenderQueue)', 'public'),
   \ javaapi#method(0,'flushNow(', ')', 'void'),
   \ javaapi#method(0,'flushAndInvokeNow(', 'Runnable)', 'void'),
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('OGLRenderQueue', '', [
+call javaapi#class('OGLRenderQueue', 'RenderQueue', [
   \ javaapi#method(1,'getInstance(', ')', 'OGLRenderQueue'),
   \ javaapi#method(1,'sync(', ')', 'void'),
   \ javaapi#method(1,'disposeGraphicsConfig(', 'long)', 'void'),
@@ -119,7 +85,7 @@ call javaapi#class('1', 'ParallelogramPipe', [
   \ javaapi#method(0,'drawParallelogram(', 'SunGraphics2D, double, double, double, double, double, double, double, double, double, double, double, double)', 'void'),
   \ ])
 
-call javaapi#class('Tracer', '', [
+call javaapi#class('Tracer', 'OGLRenderer', [
   \ javaapi#method(0,'getAAParallelogramPipe(', ')', 'ParallelogramPipe'),
   \ javaapi#method(0,'drawLine(', 'SunGraphics2D, int, int, int, int)', 'void'),
   \ javaapi#method(0,'drawRect(', 'SunGraphics2D, int, int, int, int)', 'void'),
@@ -129,14 +95,14 @@ call javaapi#class('Tracer', '', [
   \ javaapi#method(0,'copyArea(', 'SunGraphics2D, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('OGLRenderer', '', [
+call javaapi#class('OGLRenderer', 'BufferedRenderPipe', [
   \ ])
 
 call javaapi#class('1', 'Runnable', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('OGLSurfaceData', '', [
+call javaapi#class('OGLSurfaceData', 'SurfaceData', [
   \ javaapi#field(1,'PBUFFER', 'int'),
   \ javaapi#field(1,'FBOBJECT', 'int'),
   \ javaapi#field(1,'PF_INT_ARGB', 'int'),
@@ -166,60 +132,60 @@ call javaapi#class('OGLSurfaceData', '', [
   \ javaapi#method(0,'getContext(', ')', 'BufferedContext'),
   \ ])
 
-call javaapi#class('OGLSurfaceDataProxy', '', [
+call javaapi#class('OGLSurfaceDataProxy', 'SurfaceDataProxy', [
   \ javaapi#method(1,'createProxy(', 'SurfaceData, OGLGraphicsConfig)', 'SurfaceDataProxy'),
   \ javaapi#method(0,'OGLSurfaceDataProxy(', 'OGLGraphicsConfig, int)', 'public'),
   \ javaapi#method(0,'validateSurfaceData(', 'SurfaceData, SurfaceData, int, int)', 'SurfaceData'),
   \ javaapi#method(0,'isSupportedOperation(', 'SurfaceData, int, CompositeType, Color)', 'boolean'),
   \ ])
 
-call javaapi#class('OGLSurfaceToSurfaceBlit', '', [
+call javaapi#class('OGLSurfaceToSurfaceBlit', 'Blit', [
   \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('OGLSurfaceToSurfaceScale', '', [
+call javaapi#class('OGLSurfaceToSurfaceScale', 'ScaledBlit', [
   \ javaapi#method(0,'Scale(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, double, double, double, double)', 'void'),
   \ ])
 
-call javaapi#class('OGLSurfaceToSurfaceTransform', '', [
+call javaapi#class('OGLSurfaceToSurfaceTransform', 'TransformBlit', [
   \ javaapi#method(0,'Transform(', 'SurfaceData, SurfaceData, Composite, Region, AffineTransform, int, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('OGLSurfaceToSwBlit', '', [
+call javaapi#class('OGLSurfaceToSwBlit', 'Blit', [
   \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('OGLSwToSurfaceBlit', '', [
+call javaapi#class('OGLSwToSurfaceBlit', 'Blit', [
   \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('OGLSwToSurfaceScale', '', [
+call javaapi#class('OGLSwToSurfaceScale', 'ScaledBlit', [
   \ javaapi#method(0,'Scale(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, double, double, double, double)', 'void'),
   \ ])
 
-call javaapi#class('OGLSwToSurfaceTransform', '', [
+call javaapi#class('OGLSwToSurfaceTransform', 'TransformBlit', [
   \ javaapi#method(0,'Transform(', 'SurfaceData, SurfaceData, Composite, Region, AffineTransform, int, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('OGLSwToTextureBlit', '', [
+call javaapi#class('OGLSwToTextureBlit', 'Blit', [
   \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('Tracer', '', [
+call javaapi#class('Tracer', 'OGLTextRenderer', [
   \ ])
 
-call javaapi#class('OGLTextRenderer', '', [
+call javaapi#class('OGLTextRenderer', 'BufferedTextPipe', [
   \ ])
 
-call javaapi#class('OGLTextureToSurfaceBlit', '', [
+call javaapi#class('OGLTextureToSurfaceBlit', 'Blit', [
   \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('OGLTextureToSurfaceScale', '', [
+call javaapi#class('OGLTextureToSurfaceScale', 'ScaledBlit', [
   \ javaapi#method(0,'Scale(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, double, double, double, double)', 'void'),
   \ ])
 
-call javaapi#class('OGLTextureToSurfaceTransform', '', [
+call javaapi#class('OGLTextureToSurfaceTransform', 'TransformBlit', [
   \ javaapi#method(0,'Transform(', 'SurfaceData, SurfaceData, Composite, Region, AffineTransform, int, int, int, int, int, int, int)', 'void'),
   \ ])
 
@@ -244,7 +210,7 @@ call javaapi#class('1', 'Runnable', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('WGLBufferCaps', '', [
+call javaapi#class('WGLBufferCaps', 'BufferCapabilities', [
   \ javaapi#method(0,'WGLBufferCaps(', 'boolean)', 'public'),
   \ ])
 
@@ -262,31 +228,31 @@ call javaapi#class('WGLGetConfigInfo', 'Runnable', [
   \ javaapi#method(0,'getConfigInfo(', ')', 'long'),
   \ ])
 
-call javaapi#class('WGLImageCaps', '', [
+call javaapi#class('WGLImageCaps', 'ImageCapabilities', [
   \ javaapi#method(0,'isTrueVolatile(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('WGLOffScreenSurfaceData', '', [
+call javaapi#class('WGLOffScreenSurfaceData', 'WGLSurfaceData', [
   \ javaapi#method(0,'WGLOffScreenSurfaceData(', 'WComponentPeer, WGLGraphicsConfig, int, int, Image, ColorModel, int)', 'public'),
   \ javaapi#method(0,'getReplacement(', ')', 'SurfaceData'),
   \ javaapi#method(0,'getBounds(', ')', 'Rectangle'),
   \ javaapi#method(0,'getDestination(', ')', 'Object'),
   \ ])
 
-call javaapi#class('WGLVSyncOffScreenSurfaceData', '', [
+call javaapi#class('WGLVSyncOffScreenSurfaceData', 'WGLOffScreenSurfaceData', [
   \ javaapi#method(0,'WGLVSyncOffScreenSurfaceData(', 'WComponentPeer, WGLGraphicsConfig, int, int, Image, ColorModel, int)', 'public'),
   \ javaapi#method(0,'getFlipSurface(', ')', 'SurfaceData'),
   \ javaapi#method(0,'flush(', ')', 'void'),
   \ ])
 
-call javaapi#class('WGLWindowSurfaceData', '', [
+call javaapi#class('WGLWindowSurfaceData', 'WGLSurfaceData', [
   \ javaapi#method(0,'WGLWindowSurfaceData(', 'WComponentPeer, WGLGraphicsConfig)', 'public'),
   \ javaapi#method(0,'getReplacement(', ')', 'SurfaceData'),
   \ javaapi#method(0,'getBounds(', ')', 'Rectangle'),
   \ javaapi#method(0,'getDestination(', ')', 'Object'),
   \ ])
 
-call javaapi#class('WGLSurfaceData', '', [
+call javaapi#class('WGLSurfaceData', 'OGLSurfaceData', [
   \ javaapi#method(0,'getDeviceConfiguration(', ')', 'GraphicsConfiguration'),
   \ javaapi#method(1,'createData(', 'WComponentPeer)', 'WGLWindowSurfaceData'),
   \ javaapi#method(1,'createData(', 'WComponentPeer, Image, int)', 'WGLOffScreenSurfaceData'),
@@ -295,8 +261,44 @@ call javaapi#class('WGLSurfaceData', '', [
   \ javaapi#method(1,'updateWindowAccelImpl(', 'long, WComponentPeer, int, int)', 'boolean'),
   \ ])
 
-call javaapi#class('WGLVolatileSurfaceManager', '', [
+call javaapi#class('WGLVolatileSurfaceManager', 'VolatileSurfaceManager', [
   \ javaapi#method(0,'WGLVolatileSurfaceManager(', 'SunVolatileImage, Object)', 'public'),
   \ javaapi#method(0,'initContents(', ')', 'void'),
+  \ ])
+
+call javaapi#namespace('sun.java2d.opengl')
+
+call javaapi#class('WGLGraphicsConfig', 'Win32GraphicsConfig', [
+  \ javaapi#method(1,'getDefaultPixFmt(', 'int)', 'int'),
+  \ javaapi#method(0,'getProxyKey(', ')', 'Object'),
+  \ javaapi#method(0,'createManagedSurface(', 'int, int, int)', 'SurfaceData'),
+  \ javaapi#method(1,'getConfig(', 'Win32GraphicsDevice, int)', 'WGLGraphicsConfig'),
+  \ javaapi#method(1,'isWGLAvailable(', ')', 'boolean'),
+  \ javaapi#method(0,'isCapPresent(', 'int)', 'boolean'),
+  \ javaapi#method(0,'getNativeConfigInfo(', ')', 'long'),
+  \ javaapi#method(0,'getContext(', ')', 'OGLContext'),
+  \ javaapi#method(0,'displayChanged(', ')', 'void'),
+  \ javaapi#method(0,'getColorModel(', 'int)', 'ColorModel'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'createSurfaceData(', 'WComponentPeer, int)', 'SurfaceData'),
+  \ javaapi#method(0,'assertOperationSupported(', 'Component, int, BufferCapabilities) throws AWTException', 'void'),
+  \ javaapi#method(0,'createBackBuffer(', 'WComponentPeer)', 'VolatileImage'),
+  \ javaapi#method(0,'flip(', 'WComponentPeer, Component, VolatileImage, int, int, int, int, FlipContents)', 'void'),
+  \ javaapi#method(0,'getBufferCapabilities(', ')', 'BufferCapabilities'),
+  \ javaapi#method(0,'getImageCapabilities(', ')', 'ImageCapabilities'),
+  \ javaapi#method(0,'createCompatibleVolatileImage(', 'int, int, int, int)', 'VolatileImage'),
+  \ javaapi#method(0,'getContextCapabilities(', ')', 'ContextCapabilities'),
+  \ javaapi#method(0,'addDeviceEventListener(', 'AccelDeviceEventListener)', 'void'),
+  \ javaapi#method(0,'removeDeviceEventListener(', 'AccelDeviceEventListener)', 'void'),
+  \ javaapi#method(0,'getContext(', ')', 'BufferedContext'),
+  \ ])
+
+call javaapi#namespace('sun.java2d.opengl')
+
+call javaapi#interface('OGLGraphicsConfig', 'ProxiedGraphicsConfig', [
+  \ javaapi#method(0,'getContext(', ')', 'OGLContext'),
+  \ javaapi#method(0,'getNativeConfigInfo(', ')', 'long'),
+  \ javaapi#method(0,'isCapPresent(', 'int)', 'boolean'),
+  \ javaapi#method(0,'createManagedSurface(', 'int, int, int)', 'SurfaceData'),
   \ ])
 

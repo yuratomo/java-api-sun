@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xerces.internal.impl.xs.opti')
 
-call javaapi#class('AttrImpl', '', [
+call javaapi#class('AttrImpl', 'NodeImpl', [
   \ javaapi#method(0,'AttrImpl(', ')', 'public'),
   \ javaapi#method(0,'AttrImpl(', 'Element, String, String, String, String, String)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'String'),
@@ -15,7 +15,7 @@ call javaapi#class('AttrImpl', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('DefaultDocument', '', [
+call javaapi#class('DefaultDocument', 'NodeImpl', [
   \ javaapi#method(0,'DefaultDocument(', ')', 'public'),
   \ javaapi#method(0,'getDoctype(', ')', 'DocumentType'),
   \ javaapi#method(0,'getImplementation(', ')', 'DOMImplementation'),
@@ -50,7 +50,7 @@ call javaapi#class('DefaultDocument', '', [
   \ javaapi#method(0,'renameNode(', 'Node, String, String) throws DOMException', 'Node'),
   \ ])
 
-call javaapi#class('DefaultElement', '', [
+call javaapi#class('DefaultElement', 'NodeImpl', [
   \ javaapi#method(0,'DefaultElement(', ')', 'public'),
   \ javaapi#method(0,'DefaultElement(', 'String, String, String, String, short)', 'public'),
   \ javaapi#method(0,'getTagName(', ')', 'String'),
@@ -116,7 +116,7 @@ call javaapi#class('DefaultNode', 'Node', [
   \ javaapi#method(0,'getUserData(', 'String)', 'Object'),
   \ ])
 
-call javaapi#class('DefaultText', '', [
+call javaapi#class('DefaultText', 'NodeImpl', [
   \ javaapi#method(0,'DefaultText(', ')', 'public'),
   \ javaapi#method(0,'getData(', ') throws DOMException', 'String'),
   \ javaapi#method(0,'setData(', 'String) throws DOMException', 'void'),
@@ -187,7 +187,7 @@ call javaapi#class('DefaultXMLDocumentHandler', 'XMLDTDContentModelHandler', [
   \ javaapi#method(0,'getDTDContentModelSource(', ')', 'XMLDTDContentModelSource'),
   \ ])
 
-call javaapi#class('ElementImpl', '', [
+call javaapi#class('ElementImpl', 'DefaultElement', [
   \ javaapi#method(0,'ElementImpl(', 'int, int, int)', 'public'),
   \ javaapi#method(0,'ElementImpl(', 'int, int)', 'public'),
   \ javaapi#method(0,'ElementImpl(', 'String, String, String, String, int, int, int)', 'public'),
@@ -228,7 +228,7 @@ call javaapi#class('NamedNodeMapImpl', 'NamedNodeMap', [
   \ javaapi#method(0,'removeNamedItemNS(', 'String, String) throws DOMException', 'Node'),
   \ ])
 
-call javaapi#class('NodeImpl', '', [
+call javaapi#class('NodeImpl', 'DefaultNode', [
   \ javaapi#method(0,'NodeImpl(', ')', 'public'),
   \ javaapi#method(0,'NodeImpl(', 'String, String, String, String, short)', 'public'),
   \ javaapi#method(0,'getNodeName(', ')', 'String'),
@@ -240,7 +240,7 @@ call javaapi#class('NodeImpl', '', [
   \ javaapi#method(0,'getReadOnly(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('SchemaDOM', '', [
+call javaapi#class('SchemaDOM', 'DefaultDocument', [
   \ javaapi#method(0,'SchemaDOM(', ')', 'public'),
   \ javaapi#method(0,'startElement(', 'QName, XMLAttributes, int, int, int)', 'ElementImpl'),
   \ javaapi#method(0,'emptyElement(', 'QName, XMLAttributes, int, int, int)', 'ElementImpl'),
@@ -271,7 +271,7 @@ call javaapi#class('BooleanStack', '', [
   \ javaapi#method(0,'clear(', ')', 'void'),
   \ ])
 
-call javaapi#class('SchemaDOMParser', '', [
+call javaapi#class('SchemaDOMParser', 'DefaultXMLDocumentHandler', [
   \ javaapi#field(1,'ERROR_REPORTER', 'String'),
   \ javaapi#field(1,'GENERATE_SYNTHETIC_ANNOTATION', 'String'),
   \ javaapi#method(0,'SchemaDOMParser(', 'XMLParserConfiguration)', 'public'),
@@ -297,7 +297,7 @@ call javaapi#class('SchemaDOMParser', '', [
   \ javaapi#method(0,'resetNodePool(', ')', 'void'),
   \ ])
 
-call javaapi#class('SchemaParsingConfig', '', [
+call javaapi#class('SchemaParsingConfig', 'BasicParserConfiguration', [
   \ javaapi#method(0,'SchemaParsingConfig(', ')', 'public'),
   \ javaapi#method(0,'SchemaParsingConfig(', 'SymbolTable)', 'public'),
   \ javaapi#method(0,'SchemaParsingConfig(', 'SymbolTable, XMLGrammarPool)', 'public'),
@@ -315,7 +315,7 @@ call javaapi#class('SchemaParsingConfig', '', [
   \ javaapi#method(0,'resetNodePool(', ')', 'void'),
   \ ])
 
-call javaapi#class('TextImpl', '', [
+call javaapi#class('TextImpl', 'DefaultText', [
   \ javaapi#method(0,'TextImpl(', 'StringBuffer, SchemaDOM, int, int)', 'public'),
   \ javaapi#method(0,'getParentNode(', ')', 'Node'),
   \ javaapi#method(0,'getPreviousSibling(', ')', 'Node'),

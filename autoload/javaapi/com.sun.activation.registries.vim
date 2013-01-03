@@ -24,7 +24,7 @@ call javaapi#class('MailcapFile', '', [
   \ javaapi#method(0,'appendToMailcap(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('MailcapParseException', '', [
+call javaapi#class('MailcapParseException', 'Exception', [
   \ javaapi#method(0,'MailcapParseException(', ')', 'public'),
   \ javaapi#method(0,'MailcapParseException(', 'String)', 'public'),
   \ ])

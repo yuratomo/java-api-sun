@@ -1,12 +1,12 @@
 call javaapi#namespace('com.sun.org.apache.xalan.internal.res')
 
-call javaapi#class('XSLMessages', '', [
+call javaapi#class('XSLMessages', 'XPATHMessages', [
   \ javaapi#method(0,'XSLMessages(', ')', 'public'),
   \ javaapi#method(1,'createMessage(', 'String, Object[])', 'String'),
   \ javaapi#method(1,'createWarning(', 'String, Object[])', 'String'),
   \ ])
 
-call javaapi#class('XSLTErrorResources', '', [
+call javaapi#class('XSLTErrorResources', 'ListResourceBundle', [
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX', 'String'),
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX_FOR_DEFAULT', 'String'),
   \ javaapi#field(1,'ER_NO_CURLYBRACE', 'String'),
@@ -266,7 +266,7 @@ call javaapi#class('XSLTErrorResources', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XSLTErrorResources'),
   \ ])
 
-call javaapi#class('XSLTErrorResources_de', '', [
+call javaapi#class('XSLTErrorResources_de', 'ListResourceBundle', [
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX', 'String'),
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX_FOR_DEFAULT', 'String'),
   \ javaapi#field(1,'ER_NO_CURLYBRACE', 'String'),
@@ -526,11 +526,11 @@ call javaapi#class('XSLTErrorResources_de', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XSLTErrorResources'),
   \ ])
 
-call javaapi#class('XSLTErrorResources_en', '', [
+call javaapi#class('XSLTErrorResources_en', 'XSLTErrorResources', [
   \ javaapi#method(0,'XSLTErrorResources_en(', ')', 'public'),
   \ ])
 
-call javaapi#class('XSLTErrorResources_es', '', [
+call javaapi#class('XSLTErrorResources_es', 'ListResourceBundle', [
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX', 'String'),
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX_FOR_DEFAULT', 'String'),
   \ javaapi#field(1,'ER_NO_CURLYBRACE', 'String'),
@@ -790,7 +790,7 @@ call javaapi#class('XSLTErrorResources_es', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XSLTErrorResources'),
   \ ])
 
-call javaapi#class('XSLTErrorResources_fr', '', [
+call javaapi#class('XSLTErrorResources_fr', 'ListResourceBundle', [
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX', 'String'),
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX_FOR_DEFAULT', 'String'),
   \ javaapi#field(1,'ER_NO_CURLYBRACE', 'String'),
@@ -1050,7 +1050,7 @@ call javaapi#class('XSLTErrorResources_fr', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XSLTErrorResources'),
   \ ])
 
-call javaapi#class('XSLTErrorResources_it', '', [
+call javaapi#class('XSLTErrorResources_it', 'ListResourceBundle', [
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX', 'String'),
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX_FOR_DEFAULT', 'String'),
   \ javaapi#field(1,'ER_NO_CURLYBRACE', 'String'),
@@ -1310,7 +1310,7 @@ call javaapi#class('XSLTErrorResources_it', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XSLTErrorResources'),
   \ ])
 
-call javaapi#class('XSLTErrorResources_ja', '', [
+call javaapi#class('XSLTErrorResources_ja', 'ListResourceBundle', [
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX', 'String'),
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX_FOR_DEFAULT', 'String'),
   \ javaapi#field(1,'ER_NO_CURLYBRACE', 'String'),
@@ -1570,7 +1570,7 @@ call javaapi#class('XSLTErrorResources_ja', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XSLTErrorResources'),
   \ ])
 
-call javaapi#class('XSLTErrorResources_ko', '', [
+call javaapi#class('XSLTErrorResources_ko', 'ListResourceBundle', [
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX', 'String'),
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX_FOR_DEFAULT', 'String'),
   \ javaapi#field(1,'ER_NO_CURLYBRACE', 'String'),
@@ -1830,7 +1830,7 @@ call javaapi#class('XSLTErrorResources_ko', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XSLTErrorResources'),
   \ ])
 
-call javaapi#class('XSLTErrorResources_pt_BR', '', [
+call javaapi#class('XSLTErrorResources_pt_BR', 'ListResourceBundle', [
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX', 'String'),
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX_FOR_DEFAULT', 'String'),
   \ javaapi#field(1,'ER_NO_CURLYBRACE', 'String'),
@@ -2090,7 +2090,7 @@ call javaapi#class('XSLTErrorResources_pt_BR', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XSLTErrorResources'),
   \ ])
 
-call javaapi#class('XSLTErrorResources_sv', '', [
+call javaapi#class('XSLTErrorResources_sv', 'ListResourceBundle', [
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX', 'String'),
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX_FOR_DEFAULT', 'String'),
   \ javaapi#field(1,'ER_NO_CURLYBRACE', 'String'),
@@ -2350,7 +2350,7 @@ call javaapi#class('XSLTErrorResources_sv', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XSLTErrorResources'),
   \ ])
 
-call javaapi#class('XSLTErrorResources_zh_CN', '', [
+call javaapi#class('XSLTErrorResources_zh_CN', 'ListResourceBundle', [
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX', 'String'),
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX_FOR_DEFAULT', 'String'),
   \ javaapi#field(1,'ER_NO_CURLYBRACE', 'String'),
@@ -2610,7 +2610,7 @@ call javaapi#class('XSLTErrorResources_zh_CN', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XSLTErrorResources'),
   \ ])
 
-call javaapi#class('XSLTErrorResources_zh_TW', '', [
+call javaapi#class('XSLTErrorResources_zh_TW', 'ListResourceBundle', [
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX', 'String'),
   \ javaapi#field(1,'ER_INVALID_NAMESPACE_URI_VALUE_FOR_RESULT_PREFIX_FOR_DEFAULT', 'String'),
   \ javaapi#field(1,'ER_NO_CURLYBRACE', 'String'),

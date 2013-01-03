@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.ws.api.addressing')
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'AddressingVersion', [
   \ javaapi#method(0,'isReferenceParameter(', 'String)', 'boolean'),
   \ javaapi#method(0,'getWsaHelper(', 'WSDLPort, SEIModel, WSBinding)', 'WsaTubeHelper'),
   \ javaapi#method(0,'getMapRequiredText(', ')', 'String'),
@@ -10,7 +10,7 @@ call javaapi#class('1', '', [
   \ javaapi#method(0,'getFeatureClass(', ')', 'WebServiceFeature>'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'AddressingVersion', [
   \ javaapi#method(0,'isReferenceParameter(', 'String)', 'boolean'),
   \ javaapi#method(0,'getWsaHelper(', 'WSDLPort, SEIModel, WSBinding)', 'WsaTubeHelper'),
   \ javaapi#method(0,'getMapRequiredText(', ')', 'String'),
@@ -32,7 +32,7 @@ call javaapi#class('EPR', '', [
   \ javaapi#method(0,'EPR(', 'Class<? extends EndpointReference>, String, String, String, String, QName, String, String)', 'public'),
   \ ])
 
-call javaapi#class('AddressingVersion', '', [
+call javaapi#class('AddressingVersion', 'AddressingVersion>', [
   \ javaapi#field(1,'W3C', 'AddressingVersion'),
   \ javaapi#field(1,'MEMBER', 'AddressingVersion'),
   \ javaapi#field(0,'nsUri', 'String'),
@@ -91,7 +91,7 @@ call javaapi#class('AddressingVersion', '', [
   \ javaapi#method(1,'isEnabled(', 'WSBinding)', 'boolean'),
   \ ])
 
-call javaapi#class('EPRHeader', '', [
+call javaapi#class('EPRHeader', 'AbstractHeaderImpl', [
   \ javaapi#method(0,'getNamespaceURI(', ')', 'String'),
   \ javaapi#method(0,'getLocalPart(', ')', 'String'),
   \ javaapi#method(0,'getAttribute(', 'String, String)', 'String'),
@@ -101,7 +101,7 @@ call javaapi#class('EPRHeader', '', [
   \ javaapi#method(0,'writeTo(', 'ContentHandler, ErrorHandler) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('OneWayFeature', '', [
+call javaapi#class('OneWayFeature', 'WebServiceFeature', [
   \ javaapi#field(1,'ID', 'String'),
   \ javaapi#method(0,'OneWayFeature(', ')', 'public'),
   \ javaapi#method(0,'OneWayFeature(', 'boolean)', 'public'),
@@ -116,7 +116,7 @@ call javaapi#class('OneWayFeature', '', [
   \ javaapi#method(0,'setRelatesToID(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'StreamReaderDelegate', [
   \ javaapi#method(0,'next(', ') throws XMLStreamException', 'int'),
   \ javaapi#method(0,'nextTag(', ') throws XMLStreamException', 'int'),
   \ javaapi#method(0,'getAttributeCount(', ')', 'int'),
@@ -129,12 +129,12 @@ call javaapi#class('1', '', [
   \ javaapi#method(0,'getAttributeValue(', 'String, String)', 'String'),
   \ ])
 
-call javaapi#class('1Filter', '', [
+call javaapi#class('1Filter', 'XMLFilterImpl', [
   \ javaapi#method(0,'startElement(', 'String, String, String, Attributes) throws SAXException', 'void'),
   \ javaapi#method(0,'endElement(', 'String, String, String) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'XMLStreamWriterFilter', [
   \ javaapi#method(0,'writeStartElement(', 'String) throws XMLStreamException', 'void'),
   \ javaapi#method(0,'writeStartElement(', 'String, String) throws XMLStreamException', 'void'),
   \ javaapi#method(0,'writeStartElement(', 'String, String, String) throws XMLStreamException', 'void'),
@@ -147,7 +147,7 @@ call javaapi#class('Attribute', '', [
   \ javaapi#method(0,'Attribute(', 'String, String, String)', 'public'),
   \ ])
 
-call javaapi#class('OutboundReferenceParameterHeader', '', [
+call javaapi#class('OutboundReferenceParameterHeader', 'AbstractHeaderImpl', [
   \ javaapi#method(0,'getNamespaceURI(', ')', 'String'),
   \ javaapi#method(0,'getLocalPart(', ')', 'String'),
   \ javaapi#method(0,'getAttribute(', 'String, String)', 'String'),
@@ -157,16 +157,16 @@ call javaapi#class('OutboundReferenceParameterHeader', '', [
   \ javaapi#method(0,'writeTo(', 'ContentHandler, ErrorHandler) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'XMLFilterImpl', [
   \ javaapi#method(0,'startElement(', 'String, String, String, Attributes) throws SAXException', 'void'),
   \ javaapi#method(0,'characters(', 'char[], int, int) throws SAXException', 'void'),
   \ javaapi#method(0,'endElement(', 'String, String, String) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'StreamReaderBufferProcessor', [
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'XMLStreamWriterFilter', [
   \ javaapi#method(0,'writeStartDocument(', ') throws XMLStreamException', 'void'),
   \ javaapi#method(0,'writeStartDocument(', 'String, String) throws XMLStreamException', 'void'),
   \ javaapi#method(0,'writeStartDocument(', 'String) throws XMLStreamException', 'void'),
@@ -193,7 +193,7 @@ call javaapi#class('Metadata', '', [
   \ javaapi#method(0,'getWsdliLocation(', ')', 'String'),
   \ ])
 
-call javaapi#class('SAXBufferProcessorImpl', '', [
+call javaapi#class('SAXBufferProcessorImpl', 'SAXBufferProcessor', [
   \ javaapi#method(0,'SAXBufferProcessorImpl(', 'WSEndpointReference, String)', 'public'),
   \ ])
 

@@ -23,7 +23,7 @@ call javaapi#class('EncapsulationUtility', '', [
   \ javaapi#method(1,'writeEncapsulation(', 'WriteContents, OutputStream)', 'void'),
   \ ])
 
-call javaapi#class('FreezableList', '', [
+call javaapi#class('FreezableList', 'AbstractList', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ javaapi#method(0,'FreezableList(', 'List, boolean)', 'public'),
@@ -50,13 +50,13 @@ call javaapi#class('GenericIdentifiable', 'Identifiable', [
   \ javaapi#method(0,'getData(', ')', 'byte[]'),
   \ ])
 
-call javaapi#class('GenericTaggedComponent', '', [
+call javaapi#class('GenericTaggedComponent', 'GenericIdentifiable', [
   \ javaapi#method(0,'GenericTaggedComponent(', 'int, InputStream)', 'public'),
   \ javaapi#method(0,'GenericTaggedComponent(', 'int, byte[])', 'public'),
   \ javaapi#method(0,'getIOPComponent(', 'ORB)', 'TaggedComponent'),
   \ ])
 
-call javaapi#class('GenericTaggedProfile', '', [
+call javaapi#class('GenericTaggedProfile', 'GenericIdentifiable', [
   \ javaapi#method(0,'GenericTaggedProfile(', 'int, InputStream)', 'public'),
   \ javaapi#method(0,'GenericTaggedProfile(', 'ORB, int, byte[])', 'public'),
   \ javaapi#method(0,'getTaggedProfileTemplate(', ')', 'TaggedProfileTemplate'),
@@ -73,7 +73,7 @@ call javaapi#interface('Handler', '', [
   \ javaapi#method(0,'handle(', 'int, int, InputStream, OctetSeqHolder)', 'ObjectKeyTemplate'),
   \ ])
 
-call javaapi#class('IORImpl', '', [
+call javaapi#class('IORImpl', 'IdentifiableContainerBase', [
   \ javaapi#method(0,'getORB(', ')', 'ORB'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
@@ -93,7 +93,7 @@ call javaapi#class('IORImpl', '', [
   \ javaapi#method(0,'getProfile(', ')', 'IIOPProfile'),
   \ ])
 
-call javaapi#class('IORTemplateImpl', '', [
+call javaapi#class('IORTemplateImpl', 'IdentifiableContainerBase', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ javaapi#method(0,'getObjectKeyTemplate(', ')', 'ObjectKeyTemplate'),
@@ -105,7 +105,7 @@ call javaapi#class('IORTemplateImpl', '', [
   \ javaapi#method(0,'IORTemplateImpl(', 'InputStream)', 'public'),
   \ ])
 
-call javaapi#class('IORTemplateListImpl', '', [
+call javaapi#class('IORTemplateListImpl', 'FreezableList', [
   \ javaapi#method(0,'set(', 'int, Object)', 'Object'),
   \ javaapi#method(0,'add(', 'int, Object)', 'void'),
   \ javaapi#method(0,'IORTemplateListImpl(', ')', 'public'),
@@ -122,19 +122,19 @@ call javaapi#class('IdentifiableFactoryFinderBase', 'IdentifiableFactoryFinder',
   \ javaapi#method(0,'registerFactory(', 'IdentifiableFactory)', 'void'),
   \ ])
 
-call javaapi#class('JIDLObjectKeyTemplate', '', [
+call javaapi#class('JIDLObjectKeyTemplate', 'NewObjectKeyTemplateBase', [
   \ javaapi#method(0,'JIDLObjectKeyTemplate(', 'ORB, int, int, InputStream)', 'public'),
   \ javaapi#method(0,'JIDLObjectKeyTemplate(', 'ORB, int, int, InputStream, OctetSeqHolder)', 'public'),
   \ javaapi#method(0,'JIDLObjectKeyTemplate(', 'ORB, int, int)', 'public'),
   \ ])
 
-call javaapi#class('NewObjectKeyTemplateBase', '', [
+call javaapi#class('NewObjectKeyTemplateBase', 'ObjectKeyTemplateBase', [
   \ javaapi#method(0,'NewObjectKeyTemplateBase(', 'ORB, int, int, int, String, ObjectAdapterId)', 'public'),
   \ javaapi#method(0,'write(', 'ObjectId, OutputStream)', 'void'),
   \ javaapi#method(0,'write(', 'OutputStream)', 'void'),
   \ ])
 
-call javaapi#class('ObjectAdapterIdArray', '', [
+call javaapi#class('ObjectAdapterIdArray', 'ObjectAdapterIdBase', [
   \ javaapi#method(0,'ObjectAdapterIdArray(', 'String[])', 'public'),
   \ javaapi#method(0,'ObjectAdapterIdArray(', 'String, String)', 'public'),
   \ javaapi#method(0,'getNumLevels(', ')', 'int'),
@@ -153,7 +153,7 @@ call javaapi#class('ObjectAdapterIdBase', 'ObjectAdapterId', [
   \ javaapi#method(0,'write(', 'OutputStream)', 'void'),
   \ ])
 
-call javaapi#class('ObjectAdapterIdNumber', '', [
+call javaapi#class('ObjectAdapterIdNumber', 'ObjectAdapterIdArray', [
   \ javaapi#method(0,'ObjectAdapterIdNumber(', 'int)', 'public'),
   \ javaapi#method(0,'getOldPOAId(', ')', 'int'),
   \ ])
@@ -215,7 +215,7 @@ call javaapi#class('ObjectKeyTemplateBase', 'ObjectKeyTemplate', [
   \ javaapi#method(0,'getServerRequestDispatcher(', 'ORB, ObjectId)', 'CorbaServerRequestDispatcher'),
   \ ])
 
-call javaapi#class('ObjectReferenceFactoryImpl', '', [
+call javaapi#class('ObjectReferenceFactoryImpl', 'ObjectReferenceProducerBase', [
   \ javaapi#field(1,'repositoryId', 'String'),
   \ javaapi#method(0,'ObjectReferenceFactoryImpl(', 'InputStream)', 'public'),
   \ javaapi#method(0,'ObjectReferenceFactoryImpl(', 'ORB, IORTemplateList)', 'public'),
@@ -236,7 +236,7 @@ call javaapi#class('ObjectReferenceProducerBase', '', [
   \ javaapi#method(0,'make_object(', 'String, byte[])', 'Object'),
   \ ])
 
-call javaapi#class('ObjectReferenceTemplateImpl', '', [
+call javaapi#class('ObjectReferenceTemplateImpl', 'ObjectReferenceProducerBase', [
   \ javaapi#field(1,'repositoryId', 'String'),
   \ javaapi#method(0,'ObjectReferenceTemplateImpl(', 'InputStream)', 'public'),
   \ javaapi#method(0,'ObjectReferenceTemplateImpl(', 'ORB, IORTemplate)', 'public'),
@@ -253,7 +253,7 @@ call javaapi#class('ObjectReferenceTemplateImpl', '', [
   \ javaapi#method(0,'getIORTemplateList(', ')', 'IORTemplateList'),
   \ ])
 
-call javaapi#class('OldJIDLObjectKeyTemplate', '', [
+call javaapi#class('OldJIDLObjectKeyTemplate', 'OldObjectKeyTemplateBase', [
   \ javaapi#field(1,'NULL_PATCH_VERSION', 'byte'),
   \ javaapi#method(0,'OldJIDLObjectKeyTemplate(', 'ORB, int, int, InputStream, OctetSeqHolder)', 'public'),
   \ javaapi#method(0,'OldJIDLObjectKeyTemplate(', 'ORB, int, int, int)', 'public'),
@@ -261,11 +261,11 @@ call javaapi#class('OldJIDLObjectKeyTemplate', '', [
   \ javaapi#method(0,'write(', 'ObjectId, OutputStream)', 'void'),
   \ ])
 
-call javaapi#class('OldObjectKeyTemplateBase', '', [
+call javaapi#class('OldObjectKeyTemplateBase', 'ObjectKeyTemplateBase', [
   \ javaapi#method(0,'OldObjectKeyTemplateBase(', 'ORB, int, int, int, String, ObjectAdapterId)', 'public'),
   \ ])
 
-call javaapi#class('OldPOAObjectKeyTemplate', '', [
+call javaapi#class('OldPOAObjectKeyTemplate', 'OldObjectKeyTemplateBase', [
   \ javaapi#method(0,'OldPOAObjectKeyTemplate(', 'ORB, int, int, InputStream)', 'public'),
   \ javaapi#method(0,'OldPOAObjectKeyTemplate(', 'ORB, int, int, InputStream, OctetSeqHolder)', 'public'),
   \ javaapi#method(0,'OldPOAObjectKeyTemplate(', 'ORB, int, int, int, int, int)', 'public'),
@@ -273,7 +273,7 @@ call javaapi#class('OldPOAObjectKeyTemplate', '', [
   \ javaapi#method(0,'getORBVersion(', ')', 'ORBVersion'),
   \ ])
 
-call javaapi#class('POAObjectKeyTemplate', '', [
+call javaapi#class('POAObjectKeyTemplate', 'NewObjectKeyTemplateBase', [
   \ javaapi#method(0,'POAObjectKeyTemplate(', 'ORB, int, int, InputStream)', 'public'),
   \ javaapi#method(0,'POAObjectKeyTemplate(', 'ORB, int, int, InputStream, OctetSeqHolder)', 'public'),
   \ javaapi#method(0,'POAObjectKeyTemplate(', 'ORB, int, int, String, ObjectAdapterId)', 'public'),
@@ -292,18 +292,18 @@ call javaapi#class('StubIORImpl', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('TaggedComponentFactoryFinderImpl', '', [
+call javaapi#class('TaggedComponentFactoryFinderImpl', 'IdentifiableFactoryFinderBase', [
   \ javaapi#method(0,'TaggedComponentFactoryFinderImpl(', 'ORB)', 'public'),
   \ javaapi#method(0,'handleMissingFactory(', 'int, InputStream)', 'Identifiable'),
   \ javaapi#method(0,'create(', 'ORB, TaggedComponent)', 'TaggedComponent'),
   \ ])
 
-call javaapi#class('TaggedProfileFactoryFinderImpl', '', [
+call javaapi#class('TaggedProfileFactoryFinderImpl', 'IdentifiableFactoryFinderBase', [
   \ javaapi#method(0,'TaggedProfileFactoryFinderImpl(', 'ORB)', 'public'),
   \ javaapi#method(0,'handleMissingFactory(', 'int, InputStream)', 'Identifiable'),
   \ ])
 
-call javaapi#class('TaggedProfileTemplateFactoryFinderImpl', '', [
+call javaapi#class('TaggedProfileTemplateFactoryFinderImpl', 'IdentifiableFactoryFinderBase', [
   \ javaapi#method(0,'TaggedProfileTemplateFactoryFinderImpl(', 'ORB)', 'public'),
   \ javaapi#method(0,'handleMissingFactory(', 'int, InputStream)', 'Identifiable'),
   \ ])

@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.jndi.url.iiop')
 
-call javaapi#class('iiopURLContext', '', [
+call javaapi#class('iiopURLContext', 'GenericURLContext', [
   \ ])
 
 call javaapi#class('iiopURLContextFactory', 'ObjectFactory', [

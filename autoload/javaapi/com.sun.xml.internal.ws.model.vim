@@ -38,7 +38,7 @@ call javaapi#class('XmlElementHandler', 'InvocationHandler', [
   \ javaapi#method(0,'invoke(', 'Object, Method, Object[]) throws Throwable', 'Object'),
   \ ])
 
-call javaapi#class('AbstractWrapperBeanGenerator<T,C,M,A', '', [
+call javaapi#class('AbstractWrapperBeanGenerator<T,C,M,A', 'Comparable>', [
   \ javaapi#method(0,'collectRequestBeanMembers(', 'M)', 'List<A>'),
   \ javaapi#method(0,'collectResponseBeanMembers(', 'M)', 'List<A>'),
   \ javaapi#method(0,'collectExceptionBeanMembers(', 'C)', 'Collection<A>'),
@@ -164,14 +164,14 @@ call javaapi#class('RuntimeModeler', '', [
   \ javaapi#method(1,'getPortTypeName(', 'Class<?>)', 'QName'),
   \ ])
 
-call javaapi#class('RuntimeModelerException', '', [
+call javaapi#class('RuntimeModelerException', 'JAXWSExceptionBase', [
   \ javaapi#method(0,'RuntimeModelerException(', 'String, )', 'public'),
   \ javaapi#method(0,'RuntimeModelerException(', 'Throwable)', 'public'),
   \ javaapi#method(0,'RuntimeModelerException(', 'Localizable)', 'public'),
   \ javaapi#method(0,'getDefaultResourceBundleName(', ')', 'String'),
   \ ])
 
-call javaapi#class('SOAPSEIModel', '', [
+call javaapi#class('SOAPSEIModel', 'AbstractSEIModelImpl', [
   \ javaapi#method(0,'SOAPSEIModel(', 'WebServiceFeature[])', 'public'),
   \ javaapi#method(0,'getKnownHeaders(', ')', 'QName>'),
   \ ])
@@ -189,14 +189,14 @@ call javaapi#class('FieldFactory', 'Field>', [
   \ javaapi#method(0,'createWrapperBeanMember(', 'Object, String, List)', 'Object'),
   \ ])
 
-call javaapi#class('RuntimeWrapperBeanGenerator', '', [
+call javaapi#class('RuntimeWrapperBeanGenerator', 'Field>', [
   \ ])
 
 call javaapi#class('WrapperBeanGenerator', '', [
   \ javaapi#method(0,'WrapperBeanGenerator(', ')', 'public'),
   \ ])
 
-call javaapi#class('WrapperParameter', '', [
+call javaapi#class('WrapperParameter', 'ParameterImpl', [
   \ javaapi#method(0,'WrapperParameter(', 'JavaMethodImpl, TypeReference, Mode, int)', 'public'),
   \ javaapi#method(0,'isWrapperStyle(', ')', 'boolean'),
   \ javaapi#method(0,'getWrapperChildren(', ')', 'ParameterImpl>'),

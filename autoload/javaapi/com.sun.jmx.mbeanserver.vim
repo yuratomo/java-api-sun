@@ -20,61 +20,61 @@ call javaapi#class('ConvertingMethod', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('ArrayMapping', '', [
+call javaapi#class('ArrayMapping', 'NonNullMXBeanMapping', [
   \ javaapi#method(0,'checkReconstructible(', ') throws InvalidObjectException', 'void'),
   \ ])
 
-call javaapi#class('CollectionMapping', '', [
+call javaapi#class('CollectionMapping', 'NonNullMXBeanMapping', [
   \ javaapi#method(0,'checkReconstructible(', ') throws InvalidObjectException', 'void'),
   \ ])
 
 call javaapi#class('CompositeBuilder', '', [
   \ ])
 
-call javaapi#class('CompositeBuilderCheckGetters', '', [
+call javaapi#class('CompositeBuilderCheckGetters', 'CompositeBuilder', [
   \ ])
 
 call javaapi#class('Constr', '', [
   \ ])
 
-call javaapi#class('CompositeBuilderViaConstructor', '', [
+call javaapi#class('CompositeBuilderViaConstructor', 'CompositeBuilder', [
   \ ])
 
-call javaapi#class('CompositeBuilderViaFrom', '', [
+call javaapi#class('CompositeBuilderViaFrom', 'CompositeBuilder', [
   \ ])
 
-call javaapi#class('CompositeBuilderViaProxy', '', [
+call javaapi#class('CompositeBuilderViaProxy', 'CompositeBuilder', [
   \ ])
 
-call javaapi#class('CompositeBuilderViaSetters', '', [
+call javaapi#class('CompositeBuilderViaSetters', 'CompositeBuilder', [
   \ ])
 
-call javaapi#class('CompositeMapping', '', [
+call javaapi#class('CompositeMapping', 'NonNullMXBeanMapping', [
   \ javaapi#method(0,'checkReconstructible(', ') throws InvalidObjectException', 'void'),
   \ ])
 
-call javaapi#class('EnumMapping<T', '', [
+call javaapi#class('EnumMapping<T', 'Enum<T>>', [
   \ ])
 
-call javaapi#class('IdentityMapping', '', [
+call javaapi#class('IdentityMapping', 'NonNullMXBeanMapping', [
   \ ])
 
-call javaapi#class('MXBeanRefMapping', '', [
+call javaapi#class('MXBeanRefMapping', 'NonNullMXBeanMapping', [
   \ ])
 
-call javaapi#class('Mappings', '', [
+call javaapi#class('Mappings', 'MXBeanMapping>>', [
   \ ])
 
-call javaapi#class('NonNullMXBeanMapping', '', [
+call javaapi#class('NonNullMXBeanMapping', 'MXBeanMapping', [
   \ javaapi#method(0,'fromOpenValue(', 'Object) throws InvalidObjectException', 'Object'),
   \ javaapi#method(0,'toOpenValue(', 'Object) throws OpenDataException', 'Object'),
   \ ])
 
-call javaapi#class('TabularMapping', '', [
+call javaapi#class('TabularMapping', 'NonNullMXBeanMapping', [
   \ javaapi#method(0,'checkReconstructible(', ') throws InvalidObjectException', 'void'),
   \ ])
 
-call javaapi#class('DefaultMXBeanMappingFactory', '', [
+call javaapi#class('DefaultMXBeanMappingFactory', 'MXBeanMappingFactory', [
   \ javaapi#method(0,'DefaultMXBeanMappingFactory(', ')', 'public'),
   \ javaapi#method(0,'mappingForType(', 'Type, MXBeanMappingFactory) throws OpenDataException', 'MXBeanMapping'),
   \ javaapi#method(1,'decapitalize(', 'String)', 'String'),
@@ -87,7 +87,7 @@ call javaapi#class('DescriptorCache', '', [
   \ javaapi#method(0,'union(', ')', 'ImmutableDescriptor'),
   \ ])
 
-call javaapi#interface('DynamicMBean2', '', [
+call javaapi#interface('DynamicMBean2', 'DynamicMBean', [
   \ javaapi#method(0,'getResource(', ')', 'Object'),
   \ javaapi#method(0,'getClassName(', ')', 'String'),
   \ javaapi#method(0,'preRegister2(', 'MBeanServer, ObjectName) throws Exception', 'void'),
@@ -173,7 +173,7 @@ call javaapi#class('JmxMBeanServer', 'SunJmxMBeanServer', [
   \ javaapi#method(1,'newMBeanServer(', 'String, MBeanServer, MBeanServerDelegate, boolean)', 'MBeanServer'),
   \ ])
 
-call javaapi#class('JmxMBeanServerBuilder', '', [
+call javaapi#class('JmxMBeanServerBuilder', 'MBeanServerBuilder', [
   \ javaapi#method(0,'JmxMBeanServerBuilder(', ')', 'public'),
   \ javaapi#method(0,'newMBeanServerDelegate(', ')', 'MBeanServerDelegate'),
   \ javaapi#method(0,'newMBeanServer(', 'String, MBeanServer, MBeanServerDelegate)', 'MBeanServer'),
@@ -224,16 +224,16 @@ call javaapi#class('MBeanInfoMaker', 'MBeanVisitor<M>', [
   \ javaapi#method(0,'visitOperation(', 'String, M)', 'void'),
   \ ])
 
-call javaapi#class('MBeanInfoMap', '', [
+call javaapi#class('MBeanInfoMap', 'MBeanInfo>>', [
   \ ])
 
-call javaapi#class('PerInterfaceMap<M>', '', [
+call javaapi#class('PerInterfaceMap<M>', 'PerInterface<M>>>', [
   \ ])
 
 call javaapi#class('MBeanIntrospector<M>', '', [
   \ ])
 
-call javaapi#class('MBeanServerDelegateImpl', '', [
+call javaapi#class('MBeanServerDelegateImpl', 'MBeanServerDelegate', [
   \ javaapi#method(0,'MBeanServerDelegateImpl(', ')', 'public'),
   \ javaapi#method(0,'preRegister(', 'MBeanServer, ObjectName) throws Exception', 'ObjectName'),
   \ javaapi#method(0,'postRegister(', 'Boolean)', 'void'),
@@ -268,7 +268,7 @@ call javaapi#class('MBeanSupport<M>', 'MBeanRegistration', [
   \ javaapi#method(0,'getMBeanInterface(', ')', 'Class<?>'),
   \ ])
 
-call javaapi#class('MXBeanIntrospector', '', [
+call javaapi#class('MXBeanIntrospector', 'ConvertingMethod>', [
   \ ])
 
 call javaapi#class('MXBeanLookup', '', [
@@ -291,16 +291,16 @@ call javaapi#class('MXBeanMappingFactory', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('GetHandler', '', [
+call javaapi#class('GetHandler', 'Handler', [
   \ ])
 
 call javaapi#class('Handler', '', [
   \ ])
 
-call javaapi#class('InvokeHandler', '', [
+call javaapi#class('InvokeHandler', 'Handler', [
   \ ])
 
-call javaapi#class('SetHandler', '', [
+call javaapi#class('SetHandler', 'Handler', [
   \ ])
 
 call javaapi#class('Visitor', 'ConvertingMethod>', [
@@ -315,13 +315,13 @@ call javaapi#class('MXBeanProxy', '', [
   \ javaapi#method(0,'invoke(', 'MBeanServerConnection, ObjectName, Method, Object[]) throws Throwable', 'Object'),
   \ ])
 
-call javaapi#class('MXBeanSupport', '', [
+call javaapi#class('MXBeanSupport', 'ConvertingMethod>', [
   \ javaapi#method(0,'MXBeanSupport(', 'T, Class<T>) throws NotCompliantMBeanException', 'java/lang/Object>'),
   \ javaapi#method(0,'register(', 'MBeanServer, ObjectName) throws InstanceAlreadyExistsException', 'void'),
   \ javaapi#method(0,'unregister(', ')', 'void'),
   \ ])
 
-call javaapi#interface('ModifiableClassLoaderRepository', '', [
+call javaapi#interface('ModifiableClassLoaderRepository', 'ClassLoaderRepository', [
   \ javaapi#method(0,'addClassLoader(', 'ClassLoader)', 'void'),
   \ javaapi#method(0,'removeClassLoader(', 'ClassLoader)', 'void'),
   \ javaapi#method(0,'addClassLoader(', 'ObjectName, ClassLoader)', 'void'),
@@ -338,7 +338,7 @@ call javaapi#class('NamedObject', '', [
   \ javaapi#method(0,'getObject(', ')', 'DynamicMBean'),
   \ ])
 
-call javaapi#class('ObjectInputStreamWithLoader', '', [
+call javaapi#class('ObjectInputStreamWithLoader', 'ObjectInputStream', [
   \ javaapi#method(0,'ObjectInputStreamWithLoader(', 'InputStream, ClassLoader) throws IOException', 'public'),
   \ ])
 
@@ -387,17 +387,17 @@ call javaapi#class('SecureClassLoaderRepository', 'ClassLoaderRepository', [
   \ javaapi#method(0,'loadClassBefore(', 'ClassLoader, String) throws ClassNotFoundException', 'Class<?>'),
   \ ])
 
-call javaapi#class('StandardMBeanIntrospector', '', [
+call javaapi#class('StandardMBeanIntrospector', 'Method>', [
   \ ])
 
-call javaapi#class('StandardMBeanSupport', '', [
+call javaapi#class('StandardMBeanSupport', 'Method>', [
   \ javaapi#method(0,'StandardMBeanSupport(', 'T, Class<T>) throws NotCompliantMBeanException', 'java/lang/Object>'),
   \ javaapi#method(0,'register(', 'MBeanServer, ObjectName)', 'void'),
   \ javaapi#method(0,'unregister(', ')', 'void'),
   \ javaapi#method(0,'getMBeanInfo(', ')', 'MBeanInfo'),
   \ ])
 
-call javaapi#interface('SunJmxMBeanServer', '', [
+call javaapi#interface('SunJmxMBeanServer', 'MBeanServer', [
   \ javaapi#method(0,'getMBeanInstantiator(', ')', 'MBeanInstantiator'),
   \ javaapi#method(0,'interceptorsEnabled(', ')', 'boolean'),
   \ javaapi#method(0,'getMBeanServerInterceptor(', ')', 'MBeanServer'),
@@ -413,7 +413,7 @@ call javaapi#class('Util', '', [
   \ javaapi#method(1,'wildmatch(', 'String, String)', 'boolean'),
   \ ])
 
-call javaapi#class('IdentityWeakReference<T>', '', [
+call javaapi#class('IdentityWeakReference<T>', 'WeakReference<T>', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])

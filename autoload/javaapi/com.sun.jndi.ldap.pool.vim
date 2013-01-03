@@ -14,7 +14,7 @@ call javaapi#class('Connections', 'PoolCallback', [
 call javaapi#class('ConnectionsRef', '', [
   \ ])
 
-call javaapi#class('ConnectionsWeakRef', '', [
+call javaapi#class('ConnectionsWeakRef', 'WeakReference', [
   \ ])
 
 call javaapi#class('Pool', '', [
@@ -30,7 +30,7 @@ call javaapi#interface('PoolCallback', '', [
   \ javaapi#method(0,'removePooledConnection(', 'PooledConnection)', 'boolean'),
   \ ])
 
-call javaapi#class('PoolCleaner', '', [
+call javaapi#class('PoolCleaner', 'Thread', [
   \ javaapi#method(0,'PoolCleaner(', 'long, Pool[])', 'public'),
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])

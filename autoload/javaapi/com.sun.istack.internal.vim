@@ -13,13 +13,13 @@ call javaapi#class('ByteArrayDataSource', 'DataSource', [
   \ javaapi#method(0,'getOutputStream(', ')', 'OutputStream'),
   \ ])
 
-call javaapi#class('FinalArrayList<T>', '', [
+call javaapi#class('FinalArrayList<T>', 'ArrayList<T>', [
   \ javaapi#method(0,'FinalArrayList(', 'int)', 'public'),
   \ javaapi#method(0,'FinalArrayList(', ')', 'public'),
   \ javaapi#method(0,'FinalArrayList(', 'Collection<? extends T>)', 'public'),
   \ ])
 
-call javaapi#class('FragmentContentHandler', '', [
+call javaapi#class('FragmentContentHandler', 'XMLFilterImpl', [
   \ javaapi#method(0,'FragmentContentHandler(', ')', 'public'),
   \ javaapi#method(0,'FragmentContentHandler(', 'XMLReader)', 'public'),
   \ javaapi#method(0,'FragmentContentHandler(', 'ContentHandler)', 'public'),
@@ -27,13 +27,13 @@ call javaapi#class('FragmentContentHandler', '', [
   \ javaapi#method(0,'endDocument(', ') throws SAXException', 'void'),
   \ ])
 
-call javaapi#interface('Interned', '', [
+call javaapi#interface('Interned', 'Annotation', [
   \ ])
 
-call javaapi#interface('NotNull', '', [
+call javaapi#interface('NotNull', 'Annotation', [
   \ ])
 
-call javaapi#interface('Nullable', '', [
+call javaapi#interface('Nullable', 'Annotation', [
   \ ])
 
 call javaapi#class('Impl<T>', 'Pool<T>', [
@@ -47,14 +47,14 @@ call javaapi#interface('Pool<T>', '', [
   \ javaapi#method(0,'recycle(', 'T)', 'void'),
   \ ])
 
-call javaapi#class('SAXException2', '', [
+call javaapi#class('SAXException2', 'SAXException', [
   \ javaapi#method(0,'SAXException2(', 'String)', 'public'),
   \ javaapi#method(0,'SAXException2(', 'Exception)', 'public'),
   \ javaapi#method(0,'SAXException2(', 'String, Exception)', 'public'),
   \ javaapi#method(0,'getCause(', ')', 'Throwable'),
   \ ])
 
-call javaapi#class('SAXParseException2', '', [
+call javaapi#class('SAXParseException2', 'SAXParseException', [
   \ javaapi#method(0,'SAXParseException2(', 'String, Locator)', 'public'),
   \ javaapi#method(0,'SAXParseException2(', 'String, Locator, Exception)', 'public'),
   \ javaapi#method(0,'SAXParseException2(', 'String, String, String, int, int)', 'public'),
@@ -62,7 +62,7 @@ call javaapi#class('SAXParseException2', '', [
   \ javaapi#method(0,'getCause(', ')', 'Throwable'),
   \ ])
 
-call javaapi#class('XMLStreamException2', '', [
+call javaapi#class('XMLStreamException2', 'XMLStreamException', [
   \ javaapi#method(0,'XMLStreamException2(', 'String)', 'public'),
   \ javaapi#method(0,'XMLStreamException2(', 'Throwable)', 'public'),
   \ javaapi#method(0,'XMLStreamException2(', 'String, Throwable)', 'public'),

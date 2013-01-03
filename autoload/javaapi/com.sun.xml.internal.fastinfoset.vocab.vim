@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.fastinfoset.vocab')
 
-call javaapi#class('ParserVocabulary', '', [
+call javaapi#class('ParserVocabulary', 'Vocabulary', [
   \ javaapi#field(1,'IDENTIFYING_STRING_TABLE_MAXIMUM_ITEMS_PEOPERTY', 'String'),
   \ javaapi#field(1,'NON_IDENTIFYING_STRING_TABLE_MAXIMUM_ITEMS_PEOPERTY', 'String'),
   \ javaapi#field(1,'NON_IDENTIFYING_STRING_TABLE_MAXIMUM_CHARACTERS_PEOPERTY', 'String'),
@@ -24,7 +24,7 @@ call javaapi#class('ParserVocabulary', '', [
   \ javaapi#method(0,'clear(', ')', 'void'),
   \ ])
 
-call javaapi#class('SerializerVocabulary', '', [
+call javaapi#class('SerializerVocabulary', 'Vocabulary', [
   \ javaapi#field(0,'restrictedAlphabet', 'StringIntMap'),
   \ javaapi#field(0,'encodingAlgorithm', 'StringIntMap'),
   \ javaapi#field(0,'namespaceName', 'StringIntMap'),

@@ -20,9 +20,13 @@ call javaapi#class('NameClassPairEnumeration', 'NamingEnumeration', [
   \ javaapi#method(0,'close(', ')', 'void'),
   \ ])
 
-call javaapi#class('ReferenceWrapper', '', [
+call javaapi#class('ReferenceWrapper', 'UnicastRemoteObject', [
   \ javaapi#method(0,'ReferenceWrapper(', 'Reference) throws NamingException, RemoteException', 'public'),
   \ javaapi#method(0,'getReference(', ') throws RemoteException', 'Reference'),
+  \ ])
+
+call javaapi#com.sun.jndi.rmi.registry.ReferenceWrapper_Stub(java.rmi.server.RemoteRef);('ReferenceWrapper', '', [
+  \ javaapi#method(0,'getReference(', ') throws RemoteException, NamingException', 'Reference'),
   \ ])
 
 call javaapi#class('RegistryContext', 'Referenceable', [
@@ -68,7 +72,7 @@ call javaapi#class('RegistryContextFactory', 'InitialContextFactory', [
   \ javaapi#method(0,'getObjectInstance(', 'Object, Name, Context, Hashtable<?, ?>) throws NamingException', 'Object'),
   \ ])
 
-call javaapi#interface('RemoteReference', '', [
+call javaapi#interface('RemoteReference', 'Remote', [
   \ javaapi#method(0,'getReference(', ') throws NamingException, RemoteException', 'Reference'),
   \ ])
 

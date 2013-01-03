@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.jndi.url.ldap')
 
-call javaapi#class('ldapURLContext', '', [
+call javaapi#class('ldapURLContext', 'GenericURLDirContext', [
   \ javaapi#method(0,'lookup(', 'String) throws NamingException', 'Object'),
   \ javaapi#method(0,'lookup(', 'Name) throws NamingException', 'Object'),
   \ javaapi#method(0,'bind(', 'String, Object) throws NamingException', 'void'),

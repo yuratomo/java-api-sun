@@ -1,18 +1,18 @@
 call javaapi#namespace('com.sun.xml.internal.bind.v2.runtime.reflect')
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Object>', [
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,'set(', 'Object, Object)', 'void'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'Object>', [
   \ javaapi#method(0,'get(', 'JAXBElement)', 'Object'),
   \ javaapi#method(0,'set(', 'JAXBElement, Object)', 'void'),
   \ javaapi#method(0,'set(', 'Object, Object) throws AccessorException', 'void'),
   \ javaapi#method(0,'get(', 'Object) throws AccessorException', 'Object'),
   \ ])
 
-call javaapi#class('FieldReflection<BeanT,ValueT>', '', [
+call javaapi#class('FieldReflection<BeanT,ValueT>', 'Accessor<BeanT,ValueT>', [
   \ javaapi#field(0,'f', 'Field'),
   \ javaapi#method(0,'FieldReflection(', 'Field)', 'public'),
   \ javaapi#method(0,'FieldReflection(', 'Field, boolean)', 'public'),
@@ -21,12 +21,12 @@ call javaapi#class('FieldReflection<BeanT,ValueT>', '', [
   \ javaapi#method(0,'optimize(', 'JAXBContextImpl)', 'ValueT>'),
   \ ])
 
-call javaapi#class('GetterOnlyReflection<BeanT,ValueT>', '', [
+call javaapi#class('GetterOnlyReflection<BeanT,ValueT>', 'GetterSetterReflection<BeanT,ValueT>', [
   \ javaapi#method(0,'GetterOnlyReflection(', 'Method)', 'public'),
   \ javaapi#method(0,'set(', 'BeanT, ValueT) throws AccessorException', 'void'),
   \ ])
 
-call javaapi#class('GetterSetterReflection<BeanT,ValueT>', '', [
+call javaapi#class('GetterSetterReflection<BeanT,ValueT>', 'Accessor<BeanT,ValueT>', [
   \ javaapi#field(0,'getter', 'Method'),
   \ javaapi#field(0,'setter', 'Method'),
   \ javaapi#method(0,'GetterSetterReflection(', 'Method, Method)', 'public'),
@@ -35,14 +35,14 @@ call javaapi#class('GetterSetterReflection<BeanT,ValueT>', '', [
   \ javaapi#method(0,'optimize(', 'JAXBContextImpl)', 'ValueT>'),
   \ ])
 
-call javaapi#class('ReadOnlyFieldReflection<BeanT,ValueT>', '', [
+call javaapi#class('ReadOnlyFieldReflection<BeanT,ValueT>', 'FieldReflection<BeanT,ValueT>', [
   \ javaapi#method(0,'ReadOnlyFieldReflection(', 'Field, boolean)', 'public'),
   \ javaapi#method(0,'ReadOnlyFieldReflection(', 'Field)', 'public'),
   \ javaapi#method(0,'set(', 'BeanT, ValueT)', 'void'),
   \ javaapi#method(0,'optimize(', 'JAXBContextImpl)', 'ValueT>'),
   \ ])
 
-call javaapi#class('SetterOnlyReflection<BeanT,ValueT>', '', [
+call javaapi#class('SetterOnlyReflection<BeanT,ValueT>', 'GetterSetterReflection<BeanT,ValueT>', [
   \ javaapi#method(0,'SetterOnlyReflection(', 'Method)', 'public'),
   \ javaapi#method(0,'get(', 'BeanT) throws AccessorException', 'ValueT'),
   \ ])
@@ -64,7 +64,7 @@ call javaapi#class('Accessor<BeanT,ValueT>', 'Receiver', [
   \ javaapi#method(1,'getErrorInstance(', ')', 'B>'),
   \ ])
 
-call javaapi#class('AdaptedAccessor<BeanT,InMemValueT,OnWireValueT>', '', [
+call javaapi#class('AdaptedAccessor<BeanT,InMemValueT,OnWireValueT>', 'Accessor<BeanT,OnWireValueT>', [
   \ javaapi#method(0,'isAdapted(', ')', 'boolean'),
   \ javaapi#method(0,'get(', 'BeanT) throws AccessorException', 'OnWireValueT'),
   \ javaapi#method(0,'set(', 'BeanT, OnWireValueT) throws AccessorException', 'void'),
@@ -78,7 +78,7 @@ call javaapi#class('ListIteratorImpl', 'ListIterator<OnWireItemT>', [
   \ javaapi#method(0,'next(', ') throws SAXException, JAXBException', 'OnWireItemT'),
   \ ])
 
-call javaapi#class('AdaptedLister<BeanT,PropT,InMemItemT,OnWireItemT,PackT>', '', [
+call javaapi#class('AdaptedLister<BeanT,PropT,InMemItemT,OnWireItemT,PackT>', 'Lister<BeanT,PropT,OnWireItemT,PackT>', [
   \ javaapi#method(0,'iterator(', 'PropT, XMLSerializer)', 'ListIterator<OnWireItemT>'),
   \ javaapi#method(0,'startPacking(', 'BeanT, Accessor<BeanT, PropT>) throws AccessorException', 'PackT'),
   \ javaapi#method(0,'addToPack(', 'PackT, OnWireItemT) throws AccessorException', 'void'),
@@ -86,7 +86,7 @@ call javaapi#class('AdaptedLister<BeanT,PropT,InMemItemT,OnWireItemT,PackT>', ''
   \ javaapi#method(0,'reset(', 'BeanT, Accessor<BeanT, PropT>) throws AccessorException', 'void'),
   \ ])
 
-call javaapi#class('DefaultTransducedAccessor<T>', '', [
+call javaapi#class('DefaultTransducedAccessor<T>', 'TransducedAccessor<T>', [
   \ javaapi#method(0,'DefaultTransducedAccessor(', ')', 'public'),
   \ javaapi#method(0,'print(', 'T) throws AccessorException, SAXException', 'String'),
   \ javaapi#method(0,'writeLeafElement(', 'XMLSerializer, Name, T, String) throws SAXException, AccessorException, IOException, XMLStreamException', 'void'),
@@ -99,7 +99,7 @@ call javaapi#interface('ListIterator<E>', '', [
   \ javaapi#method(0,'next(', ') throws SAXException, JAXBException', 'E'),
   \ ])
 
-call javaapi#class('ListTransducedAccessorImpl<BeanT,ListT,ItemT,PackT>', '', [
+call javaapi#class('ListTransducedAccessorImpl<BeanT,ListT,ItemT,PackT>', 'DefaultTransducedAccessor<BeanT>', [
   \ javaapi#method(0,'ListTransducedAccessorImpl(', 'Transducer<ItemT>, Accessor<BeanT, ListT>, Lister<BeanT, ListT, ItemT, PackT>)', 'public'),
   \ javaapi#method(0,'useNamespace(', ')', 'boolean'),
   \ javaapi#method(0,'declareNamespace(', 'BeanT, XMLSerializer) throws AccessorException, SAXException', 'void'),
@@ -109,7 +109,7 @@ call javaapi#class('ListTransducedAccessorImpl<BeanT,ListT,ItemT,PackT>', '', [
   \ javaapi#method(0,'print(', 'Object) throws AccessorException, SAXException', 'CharSequence'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Lister', [
   \ javaapi#method(0,'iterator(', 'Object, XMLSerializer)', 'ListIterator'),
   \ javaapi#method(0,'startPacking(', 'Object, Accessor)', 'Object'),
   \ javaapi#method(0,'addToPack(', 'Object, Object)', 'void'),
@@ -127,7 +127,7 @@ call javaapi#class('1', 'ListIterator<ItemT>', [
   \ javaapi#method(0,'next(', ')', 'ItemT'),
   \ ])
 
-call javaapi#class('ArrayLister<BeanT,ItemT>', '', [
+call javaapi#class('ArrayLister<BeanT,ItemT>', 'Pack<ItemT>>', [
   \ javaapi#method(0,'ArrayLister(', 'Class<ItemT>)', 'public'),
   \ javaapi#method(0,'iterator(', 'ItemT[], XMLSerializer)', 'ListIterator<ItemT>'),
   \ javaapi#method(0,'startPacking(', 'BeanT, Accessor<BeanT, ItemT[]>)', 'Pack'),
@@ -145,7 +145,7 @@ call javaapi#class('1', 'ListIterator', [
   \ javaapi#method(0,'next(', ')', 'Object'),
   \ ])
 
-call javaapi#class('CollectionLister<BeanT,T', '', [
+call javaapi#class('CollectionLister<BeanT,T', 'Collection>', [
   \ javaapi#method(0,'CollectionLister(', 'Class<? extends T>)', 'public'),
   \ javaapi#method(0,'iterator(', 'T, XMLSerializer)', 'ListIterator'),
   \ javaapi#method(0,'startPacking(', 'BeanT, Accessor<BeanT, T>) throws AccessorException', 'T'),
@@ -164,7 +164,7 @@ call javaapi#class('Pack', 'Patcher', [
   \ javaapi#method(0,'run(', ') throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('IDREFS<BeanT,PropT>', '', [
+call javaapi#class('IDREFS<BeanT,PropT>', 'Pack>', [
   \ javaapi#method(0,'IDREFS(', 'Lister, Class)', 'public'),
   \ javaapi#method(0,'iterator(', 'PropT, XMLSerializer)', 'String>'),
   \ javaapi#method(0,'startPacking(', 'BeanT, Accessor<BeanT, PropT>)', 'Pack'),
@@ -183,7 +183,7 @@ call javaapi#class('IDREFSIterator', 'String>', [
   \ javaapi#method(0,'next(', ') throws SAXException, JAXBException', 'Object'),
   \ ])
 
-call javaapi#class('Pack<ItemT>', '', [
+call javaapi#class('Pack<ItemT>', 'ArrayList<ItemT>', [
   \ javaapi#method(0,'Pack(', 'Class<ItemT>)', 'public'),
   \ javaapi#method(0,'build(', ')', 'ItemT[]'),
   \ ])
@@ -199,7 +199,7 @@ call javaapi#class('Lister<BeanT,PropT,ItemT,PackT>', '', [
   \ javaapi#method(1,'getErrorInstance(', ')', 'D>'),
   \ ])
 
-call javaapi#class('Messages', '', [
+call javaapi#class('Messages', 'Messages>', [
   \ javaapi#field(1,'UNABLE_TO_ACCESS_NON_PUBLIC_FIELD', 'Messages'),
   \ javaapi#field(1,'UNASSIGNABLE_TYPE', 'Messages'),
   \ javaapi#field(1,'NO_SETTER', 'Messages'),
@@ -210,7 +210,7 @@ call javaapi#class('Messages', '', [
   \ javaapi#method(0,'format(', ')', 'String'),
   \ ])
 
-call javaapi#class('NullSafeAccessor<B,V,P>', '', [
+call javaapi#class('NullSafeAccessor<B,V,P>', 'Accessor<B,V>', [
   \ javaapi#method(0,'NullSafeAccessor(', 'Accessor<B, V>, Lister<B, V, ?, P>)', 'public'),
   \ javaapi#method(0,'get(', 'B) throws AccessorException', 'V'),
   \ javaapi#method(0,'set(', 'B, V) throws AccessorException', 'void'),
@@ -225,7 +225,7 @@ call javaapi#class('1', 'Boolean>', [
 call javaapi#class('BooleanArrayPack', '', [
   \ ])
 
-call javaapi#class('PrimitiveArrayListerBoolean<BeanT>', '', [
+call javaapi#class('PrimitiveArrayListerBoolean<BeanT>', 'BooleanArrayPack>', [
   \ javaapi#method(0,'iterator(', 'boolean[], XMLSerializer)', 'Boolean>'),
   \ javaapi#method(0,'startPacking(', 'BeanT, Accessor<BeanT, boolean[]>)', 'BooleanArrayPack'),
   \ javaapi#method(0,'addToPack(', 'BooleanArrayPack, Boolean)', 'void'),
@@ -246,7 +246,7 @@ call javaapi#class('1', 'Byte>', [
 call javaapi#class('ByteArrayPack', '', [
   \ ])
 
-call javaapi#class('PrimitiveArrayListerByte<BeanT>', '', [
+call javaapi#class('PrimitiveArrayListerByte<BeanT>', 'ByteArrayPack>', [
   \ javaapi#method(0,'iterator(', 'byte[], XMLSerializer)', 'Byte>'),
   \ javaapi#method(0,'startPacking(', 'BeanT, Accessor<BeanT, byte[]>)', 'ByteArrayPack'),
   \ javaapi#method(0,'addToPack(', 'ByteArrayPack, Byte)', 'void'),
@@ -267,7 +267,7 @@ call javaapi#class('1', 'Character>', [
 call javaapi#class('CharacterArrayPack', '', [
   \ ])
 
-call javaapi#class('PrimitiveArrayListerCharacter<BeanT>', '', [
+call javaapi#class('PrimitiveArrayListerCharacter<BeanT>', 'CharacterArrayPack>', [
   \ javaapi#method(0,'iterator(', 'char[], XMLSerializer)', 'Character>'),
   \ javaapi#method(0,'startPacking(', 'BeanT, Accessor<BeanT, char[]>)', 'CharacterArrayPack'),
   \ javaapi#method(0,'addToPack(', 'CharacterArrayPack, Character)', 'void'),
@@ -288,7 +288,7 @@ call javaapi#class('1', 'Double>', [
 call javaapi#class('DoubleArrayPack', '', [
   \ ])
 
-call javaapi#class('PrimitiveArrayListerDouble<BeanT>', '', [
+call javaapi#class('PrimitiveArrayListerDouble<BeanT>', 'DoubleArrayPack>', [
   \ javaapi#method(0,'iterator(', 'double[], XMLSerializer)', 'Double>'),
   \ javaapi#method(0,'startPacking(', 'BeanT, Accessor<BeanT, double[]>)', 'DoubleArrayPack'),
   \ javaapi#method(0,'addToPack(', 'DoubleArrayPack, Double)', 'void'),
@@ -309,7 +309,7 @@ call javaapi#class('1', 'Float>', [
 call javaapi#class('FloatArrayPack', '', [
   \ ])
 
-call javaapi#class('PrimitiveArrayListerFloat<BeanT>', '', [
+call javaapi#class('PrimitiveArrayListerFloat<BeanT>', 'FloatArrayPack>', [
   \ javaapi#method(0,'iterator(', 'float[], XMLSerializer)', 'Float>'),
   \ javaapi#method(0,'startPacking(', 'BeanT, Accessor<BeanT, float[]>)', 'FloatArrayPack'),
   \ javaapi#method(0,'addToPack(', 'FloatArrayPack, Float)', 'void'),
@@ -330,7 +330,7 @@ call javaapi#class('1', 'Integer>', [
 call javaapi#class('IntegerArrayPack', '', [
   \ ])
 
-call javaapi#class('PrimitiveArrayListerInteger<BeanT>', '', [
+call javaapi#class('PrimitiveArrayListerInteger<BeanT>', 'IntegerArrayPack>', [
   \ javaapi#method(0,'iterator(', 'int[], XMLSerializer)', 'Integer>'),
   \ javaapi#method(0,'startPacking(', 'BeanT, Accessor<BeanT, int[]>)', 'IntegerArrayPack'),
   \ javaapi#method(0,'addToPack(', 'IntegerArrayPack, Integer)', 'void'),
@@ -351,7 +351,7 @@ call javaapi#class('1', 'Long>', [
 call javaapi#class('LongArrayPack', '', [
   \ ])
 
-call javaapi#class('PrimitiveArrayListerLong<BeanT>', '', [
+call javaapi#class('PrimitiveArrayListerLong<BeanT>', 'LongArrayPack>', [
   \ javaapi#method(0,'iterator(', 'long[], XMLSerializer)', 'Long>'),
   \ javaapi#method(0,'startPacking(', 'BeanT, Accessor<BeanT, long[]>)', 'LongArrayPack'),
   \ javaapi#method(0,'addToPack(', 'LongArrayPack, Long)', 'void'),
@@ -372,7 +372,7 @@ call javaapi#class('1', 'Short>', [
 call javaapi#class('ShortArrayPack', '', [
   \ ])
 
-call javaapi#class('PrimitiveArrayListerShort<BeanT>', '', [
+call javaapi#class('PrimitiveArrayListerShort<BeanT>', 'ShortArrayPack>', [
   \ javaapi#method(0,'iterator(', 'short[], XMLSerializer)', 'Short>'),
   \ javaapi#method(0,'startPacking(', 'BeanT, Accessor<BeanT, short[]>)', 'ShortArrayPack'),
   \ javaapi#method(0,'addToPack(', 'ShortArrayPack, Short)', 'void'),
@@ -384,14 +384,14 @@ call javaapi#class('PrimitiveArrayListerShort<BeanT>', '', [
   \ javaapi#method(0,'iterator(', 'Object, XMLSerializer)', 'ListIterator'),
   \ ])
 
-call javaapi#class('CompositeContextDependentTransducedAccessorImpl<BeanT,ValueT>', '', [
+call javaapi#class('CompositeContextDependentTransducedAccessorImpl<BeanT,ValueT>', 'CompositeTransducedAccessorImpl<BeanT,ValueT>', [
   \ javaapi#method(0,'CompositeContextDependentTransducedAccessorImpl(', 'JAXBContextImpl, Transducer<ValueT>, Accessor<BeanT, ValueT>)', 'public'),
   \ javaapi#method(0,'useNamespace(', ')', 'boolean'),
   \ javaapi#method(0,'declareNamespace(', 'BeanT, XMLSerializer) throws AccessorException', 'void'),
   \ javaapi#method(0,'writeLeafElement(', 'XMLSerializer, Name, BeanT, String) throws SAXException, AccessorException, IOException, XMLStreamException', 'void'),
   \ ])
 
-call javaapi#class('CompositeTransducedAccessorImpl<BeanT,ValueT>', '', [
+call javaapi#class('CompositeTransducedAccessorImpl<BeanT,ValueT>', 'TransducedAccessor<BeanT>', [
   \ javaapi#method(0,'CompositeTransducedAccessorImpl(', 'JAXBContextImpl, Transducer<ValueT>, Accessor<BeanT, ValueT>)', 'public'),
   \ javaapi#method(0,'print(', 'BeanT) throws AccessorException', 'CharSequence'),
   \ javaapi#method(0,'parse(', 'BeanT, CharSequence) throws AccessorException, SAXException', 'void'),
@@ -404,7 +404,7 @@ call javaapi#class('1', 'Patcher', [
   \ javaapi#method(0,'run(', ') throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('IDREFTransducedAccessorImpl<BeanT,TargetT>', '', [
+call javaapi#class('IDREFTransducedAccessorImpl<BeanT,TargetT>', 'DefaultTransducedAccessor<BeanT>', [
   \ javaapi#method(0,'IDREFTransducedAccessorImpl(', 'Accessor<BeanT, TargetT>)', 'public'),
   \ javaapi#method(0,'print(', 'BeanT) throws AccessorException, SAXException', 'String'),
   \ javaapi#method(0,'parse(', 'BeanT, CharSequence) throws AccessorException, SAXException', 'void'),

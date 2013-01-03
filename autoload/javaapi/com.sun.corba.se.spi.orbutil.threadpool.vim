@@ -1,10 +1,10 @@
 call javaapi#namespace('com.sun.corba.se.spi.orbutil.threadpool')
 
-call javaapi#class('NoSuchThreadPoolException', '', [
+call javaapi#class('NoSuchThreadPoolException', 'Exception', [
   \ javaapi#method(0,'NoSuchThreadPoolException(', ')', 'public'),
   \ ])
 
-call javaapi#class('NoSuchWorkQueueException', '', [
+call javaapi#class('NoSuchWorkQueueException', 'Exception', [
   \ javaapi#method(0,'NoSuchWorkQueueException(', ')', 'public'),
   \ ])
 

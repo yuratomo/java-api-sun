@@ -1,16 +1,16 @@
 call javaapi#namespace('com.sun.tracing.dtrace')
 
-call javaapi#interface('ArgsAttributes', '', [
+call javaapi#interface('ArgsAttributes', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'Attributes'),
   \ ])
 
-call javaapi#interface('Attributes', '', [
+call javaapi#interface('Attributes', 'Annotation', [
   \ javaapi#method(0,'name(', ')', 'StabilityLevel'),
   \ javaapi#method(0,'data(', ')', 'StabilityLevel'),
   \ javaapi#method(0,'dependency(', ')', 'DependencyClass'),
   \ ])
 
-call javaapi#class('DependencyClass', '', [
+call javaapi#class('DependencyClass', 'DependencyClass>', [
   \ javaapi#field(1,'UNKNOWN', 'DependencyClass'),
   \ javaapi#field(1,'CPU', 'DependencyClass'),
   \ javaapi#field(1,'PLATFORM', 'DependencyClass'),
@@ -23,31 +23,31 @@ call javaapi#class('DependencyClass', '', [
   \ javaapi#method(0,'getEncoding(', ')', 'int'),
   \ ])
 
-call javaapi#interface('FunctionAttributes', '', [
+call javaapi#interface('FunctionAttributes', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'Attributes'),
   \ ])
 
-call javaapi#interface('FunctionName', '', [
+call javaapi#interface('FunctionName', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'String'),
   \ ])
 
-call javaapi#interface('ModuleAttributes', '', [
+call javaapi#interface('ModuleAttributes', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'Attributes'),
   \ ])
 
-call javaapi#interface('ModuleName', '', [
+call javaapi#interface('ModuleName', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'String'),
   \ ])
 
-call javaapi#interface('NameAttributes', '', [
+call javaapi#interface('NameAttributes', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'Attributes'),
   \ ])
 
-call javaapi#interface('ProviderAttributes', '', [
+call javaapi#interface('ProviderAttributes', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'Attributes'),
   \ ])
 
-call javaapi#class('StabilityLevel', '', [
+call javaapi#class('StabilityLevel', 'StabilityLevel>', [
   \ javaapi#field(1,'INTERNAL', 'StabilityLevel'),
   \ javaapi#field(1,'PRIVATE', 'StabilityLevel'),
   \ javaapi#field(1,'OBSOLETE', 'StabilityLevel'),

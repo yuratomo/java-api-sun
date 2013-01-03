@@ -69,7 +69,7 @@ call javaapi#class('Constants', '', [
 call javaapi#class('Context2', '', [
   \ ])
 
-call javaapi#class('DOM2Helper', '', [
+call javaapi#class('DOM2Helper', 'DOMHelper', [
   \ javaapi#method(0,'DOM2Helper(', ')', 'public'),
   \ javaapi#method(0,'checkNode(', 'Node) throws TransformerException', 'void'),
   \ javaapi#method(0,'supportsSAX(', ')', 'boolean'),
@@ -202,7 +202,7 @@ call javaapi#class('Hashtree2Node', '', [
   \ javaapi#method(1,'appendHashToNode(', 'Hashtable, String, Node, Document)', 'void'),
   \ ])
 
-call javaapi#class('IntStack', '', [
+call javaapi#class('IntStack', 'IntVector', [
   \ javaapi#method(0,'IntStack(', ')', 'public'),
   \ javaapi#method(0,'IntStack(', 'int)', 'public'),
   \ javaapi#method(0,'IntStack(', 'IntStack)', 'public'),
@@ -266,7 +266,7 @@ call javaapi#class('LocaleUtility', '', [
   \ javaapi#method(1,'langToLocale(', 'String)', 'Locale'),
   \ ])
 
-call javaapi#class('MutableAttrListImpl', '', [
+call javaapi#class('MutableAttrListImpl', 'AttributesImpl', [
   \ javaapi#method(0,'MutableAttrListImpl(', ')', 'public'),
   \ javaapi#method(0,'MutableAttrListImpl(', 'Attributes)', 'public'),
   \ javaapi#method(0,'addAttribute(', 'String, String, String, String, String)', 'void'),
@@ -294,7 +294,7 @@ call javaapi#class('NameSpace', 'Serializable', [
   \ javaapi#method(0,'NameSpace(', 'String, String)', 'public'),
   \ ])
 
-call javaapi#class('NamespaceSupport2', '', [
+call javaapi#class('NamespaceSupport2', 'NamespaceSupport', [
   \ javaapi#field(1,'XMLNS', 'String'),
   \ javaapi#method(0,'NamespaceSupport2(', ')', 'public'),
   \ javaapi#method(0,'reset(', ')', 'void'),
@@ -346,7 +346,7 @@ call javaapi#class('NodeVector', 'Cloneable', [
   \ javaapi#method(0,'sort(', ') throws Exception', 'void'),
   \ ])
 
-call javaapi#class('ConfigurationError', '', [
+call javaapi#class('ConfigurationError', 'Error', [
   \ ])
 
 call javaapi#class('ObjectFactory', '', [
@@ -362,7 +362,7 @@ call javaapi#class('ObjectPool', 'Serializable', [
   \ javaapi#method(0,'freeInstance(', 'Object)', 'void'),
   \ ])
 
-call javaapi#class('ObjectStack', '', [
+call javaapi#class('ObjectStack', 'ObjectVector', [
   \ javaapi#method(0,'ObjectStack(', ')', 'public'),
   \ javaapi#method(0,'ObjectStack(', 'int)', 'public'),
   \ javaapi#method(0,'ObjectStack(', 'ObjectStack)', 'public'),
@@ -457,7 +457,7 @@ call javaapi#interface('RawCharacterHandler', '', [
   \ javaapi#method(0,'charactersRaw(', 'char[], int, int) throws TransformerException', 'void'),
   \ ])
 
-call javaapi#class('SAXSourceLocator', '', [
+call javaapi#class('SAXSourceLocator', 'LocatorImpl', [
   \ javaapi#method(0,'SAXSourceLocator(', ')', 'public'),
   \ javaapi#method(0,'SAXSourceLocator(', 'Locator)', 'public'),
   \ javaapi#method(0,'SAXSourceLocator(', 'SourceLocator)', 'public'),
@@ -503,7 +503,7 @@ call javaapi#class('8', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('SecuritySupport12', '', [
+call javaapi#class('SecuritySupport12', 'SecuritySupport', [
   \ ])
 
 call javaapi#class('SerializableLocatorImpl', 'Serializable', [
@@ -519,7 +519,7 @@ call javaapi#class('SerializableLocatorImpl', 'Serializable', [
   \ javaapi#method(0,'setColumnNumber(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('StopParseException', '', [
+call javaapi#class('StopParseException', 'SAXException', [
   \ ])
 
 call javaapi#class('StringBufferPool', '', [
@@ -591,7 +591,7 @@ call javaapi#class('StringVector', 'Serializable', [
   \ javaapi#method(0,'peek(', ')', 'String'),
   \ ])
 
-call javaapi#class('StylesheetPIHandler', '', [
+call javaapi#class('StylesheetPIHandler', 'DefaultHandler', [
   \ javaapi#method(0,'setURIResolver(', 'URIResolver)', 'void'),
   \ javaapi#method(0,'getURIResolver(', ')', 'URIResolver'),
   \ javaapi#method(0,'StylesheetPIHandler(', 'String, String, String, String)', 'public'),
@@ -640,7 +640,7 @@ call javaapi#class('SystemIDResolver', '', [
   \ javaapi#method(1,'getAbsoluteURI(', 'String, String) throws TransformerException', 'String'),
   \ ])
 
-call javaapi#class('SafeThread', '', [
+call javaapi#class('SafeThread', 'Thread', [
   \ javaapi#method(0,'SafeThread(', 'ThreadController, Runnable)', 'public'),
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
@@ -677,7 +677,7 @@ call javaapi#class('Trie', '', [
   \ javaapi#method(0,'get(', 'String)', 'Object'),
   \ ])
 
-call javaapi#class('MalformedURIException', '', [
+call javaapi#class('MalformedURIException', 'IOException', [
   \ javaapi#method(0,'MalformedURIException(', ')', 'public'),
   \ javaapi#method(0,'MalformedURIException(', 'String)', 'public'),
   \ ])
@@ -831,13 +831,13 @@ call javaapi#class('UnImplNode', 'Document', [
   \ javaapi#method(0,'setXmlVersion(', 'String) throws DOMException', 'void'),
   \ ])
 
-call javaapi#class('WrappedRuntimeException', '', [
+call javaapi#class('WrappedRuntimeException', 'RuntimeException', [
   \ javaapi#method(0,'WrappedRuntimeException(', 'Exception)', 'public'),
   \ javaapi#method(0,'WrappedRuntimeException(', 'String, Exception)', 'public'),
   \ javaapi#method(0,'getException(', ')', 'Exception'),
   \ ])
 
-call javaapi#class('WrongParserException', '', [
+call javaapi#class('WrongParserException', 'RuntimeException', [
   \ javaapi#method(0,'WrongParserException(', 'String)', 'public'),
   \ ])
 
@@ -1006,7 +1006,7 @@ call javaapi#class('XMLStringFactory', '', [
   \ javaapi#method(0,'emptystr(', ')', 'XMLString'),
   \ ])
 
-call javaapi#class('XMLStringFactoryDefault', '', [
+call javaapi#class('XMLStringFactoryDefault', 'XMLStringFactory', [
   \ javaapi#method(0,'XMLStringFactoryDefault(', ')', 'public'),
   \ javaapi#method(0,'newstr(', 'String)', 'XMLString'),
   \ javaapi#method(0,'newstr(', 'FastStringBuffer, int, int)', 'XMLString'),

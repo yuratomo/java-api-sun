@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.bind.api')
 
-call javaapi#class('AccessorException', '', [
+call javaapi#class('AccessorException', 'Exception', [
   \ javaapi#method(0,'AccessorException(', ')', 'public'),
   \ javaapi#method(0,'AccessorException(', 'String)', 'public'),
   \ javaapi#method(0,'AccessorException(', 'String, Throwable)', 'public'),
@@ -64,14 +64,14 @@ call javaapi#class('CompositeStructure', '', [
   \ javaapi#method(0,'CompositeStructure(', ')', 'public'),
   \ ])
 
-call javaapi#interface('ErrorListener', '', [
+call javaapi#interface('ErrorListener', 'ErrorHandler', [
   \ javaapi#method(0,'error(', 'SAXParseException)', 'void'),
   \ javaapi#method(0,'fatalError(', 'SAXParseException)', 'void'),
   \ javaapi#method(0,'warning(', 'SAXParseException)', 'void'),
   \ javaapi#method(0,'info(', 'SAXParseException)', 'void'),
   \ ])
 
-call javaapi#class('JAXBRIContext', '', [
+call javaapi#class('JAXBRIContext', 'JAXBContext', [
   \ javaapi#field(1,'DEFAULT_NAMESPACE_REMAP', 'String'),
   \ javaapi#field(1,'TYPE_REFERENCES', 'String'),
   \ javaapi#field(1,'CANONICALIZATION_SUPPORT', 'String'),
@@ -103,7 +103,7 @@ call javaapi#class('JAXBRIContext', '', [
   \ javaapi#method(1,'getBaseType(', 'Type, Class)', 'Type'),
   \ ])
 
-call javaapi#class('Messages', '', [
+call javaapi#class('Messages', 'Messages>', [
   \ javaapi#field(1,'ARGUMENT_CANT_BE_NULL', 'Messages'),
   \ javaapi#method(1,'values(', ')', 'Messages[]'),
   \ javaapi#method(1,'valueOf(', 'String)', 'Messages'),

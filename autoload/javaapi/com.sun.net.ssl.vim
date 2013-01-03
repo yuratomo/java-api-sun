@@ -8,7 +8,7 @@ call javaapi#class('1', 'HostnameVerifier', [
   \ javaapi#method(0,'verify(', 'String, String)', 'boolean'),
   \ ])
 
-call javaapi#class('HttpsURLConnection', '', [
+call javaapi#class('HttpsURLConnection', 'HttpURLConnection', [
   \ javaapi#method(0,'HttpsURLConnection(', 'URL) throws IOException', 'public'),
   \ javaapi#method(0,'getCipherSuite(', ')', 'String'),
   \ javaapi#method(0,'getServerCertificateChain(', ')', 'X509Certificate[]'),
@@ -45,7 +45,7 @@ call javaapi#class('KeyManagerFactorySpi', '', [
   \ javaapi#method(0,'KeyManagerFactorySpi(', ')', 'public'),
   \ ])
 
-call javaapi#class('KeyManagerFactorySpiWrapper', '', [
+call javaapi#class('KeyManagerFactorySpiWrapper', 'KeyManagerFactorySpi', [
   \ ])
 
 call javaapi#class('SSLContext', '', [
@@ -63,10 +63,10 @@ call javaapi#class('SSLContextSpi', '', [
   \ javaapi#method(0,'SSLContextSpi(', ')', 'public'),
   \ ])
 
-call javaapi#class('SSLContextSpiWrapper', '', [
+call javaapi#class('SSLContextSpiWrapper', 'SSLContextSpi', [
   \ ])
 
-call javaapi#class('SSLPermission', '', [
+call javaapi#class('SSLPermission', 'BasicPermission', [
   \ javaapi#method(0,'SSLPermission(', 'String)', 'public'),
   \ javaapi#method(0,'SSLPermission(', 'String, String)', 'public'),
   \ ])
@@ -97,10 +97,10 @@ call javaapi#class('TrustManagerFactorySpi', '', [
   \ javaapi#method(0,'TrustManagerFactorySpi(', ')', 'public'),
   \ ])
 
-call javaapi#class('TrustManagerFactorySpiWrapper', '', [
+call javaapi#class('TrustManagerFactorySpiWrapper', 'TrustManagerFactorySpi', [
   \ ])
 
-call javaapi#interface('X509KeyManager', '', [
+call javaapi#interface('X509KeyManager', 'KeyManager', [
   \ javaapi#method(0,'getClientAliases(', 'String, Principal[])', 'String[]'),
   \ javaapi#method(0,'chooseClientAlias(', 'String, Principal[])', 'String'),
   \ javaapi#method(0,'getServerAliases(', 'String, Principal[])', 'String[]'),
@@ -129,7 +129,7 @@ call javaapi#class('X509KeyManagerJavaxWrapper', 'X509KeyManager', [
   \ javaapi#method(0,'getPrivateKey(', 'String)', 'PrivateKey'),
   \ ])
 
-call javaapi#interface('X509TrustManager', '', [
+call javaapi#interface('X509TrustManager', 'TrustManager', [
   \ javaapi#method(0,'isClientTrusted(', 'X509Certificate[])', 'boolean'),
   \ javaapi#method(0,'isServerTrusted(', 'X509Certificate[])', 'boolean'),
   \ javaapi#method(0,'getAcceptedIssuers(', ')', 'X509Certificate[]'),

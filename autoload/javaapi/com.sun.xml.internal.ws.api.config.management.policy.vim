@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.ws.api.config.management.policy')
 
-call javaapi#class('ManagedClientAssertion', '', [
+call javaapi#class('ManagedClientAssertion', 'ManagementAssertion', [
   \ javaapi#field(1,'MANAGED_CLIENT_QNAME', 'QName'),
   \ javaapi#method(1,'getAssertion(', 'WSPortInfo) throws WebServiceException', 'ManagedClientAssertion'),
   \ javaapi#method(0,'ManagedClientAssertion(', 'AssertionData, Collection<PolicyAssertion>) throws AssertionCreationException', 'public'),
@@ -27,7 +27,7 @@ call javaapi#class('NestedParameters', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ManagedServiceAssertion', '', [
+call javaapi#class('ManagedServiceAssertion', 'ManagementAssertion', [
   \ javaapi#field(1,'MANAGED_SERVICE_QNAME', 'QName'),
   \ javaapi#method(1,'getAssertion(', 'WSEndpoint) throws WebServiceException', 'ManagedServiceAssertion'),
   \ javaapi#method(0,'ManagedServiceAssertion(', 'AssertionData, Collection<PolicyAssertion>) throws AssertionCreationException', 'public'),
@@ -39,7 +39,7 @@ call javaapi#class('ManagedServiceAssertion', '', [
   \ javaapi#method(0,'getConfigReaderImplementation(', ')', 'ImplementationRecord'),
   \ ])
 
-call javaapi#class('Setting', '', [
+call javaapi#class('Setting', 'Setting>', [
   \ javaapi#field(1,'NOT_SET', 'Setting'),
   \ javaapi#field(1,'OFF', 'Setting'),
   \ javaapi#field(1,'ON', 'Setting'),
@@ -47,7 +47,7 @@ call javaapi#class('Setting', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'Setting'),
   \ ])
 
-call javaapi#class('ManagementAssertion', '', [
+call javaapi#class('ManagementAssertion', 'SimpleAssertion', [
   \ javaapi#method(0,'getId(', ')', 'String'),
   \ javaapi#method(0,'getStart(', ')', 'String'),
   \ javaapi#method(0,'isManagementEnabled(', ')', 'boolean'),

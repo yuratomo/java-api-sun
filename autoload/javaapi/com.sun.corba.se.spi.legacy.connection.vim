@@ -4,7 +4,7 @@ call javaapi#interface('Connection', '', [
   \ javaapi#method(0,'getSocket(', ')', 'Socket'),
   \ ])
 
-call javaapi#class('GetEndPointInfoAgainException', '', [
+call javaapi#class('GetEndPointInfoAgainException', 'Exception', [
   \ javaapi#method(0,'GetEndPointInfoAgainException(', 'SocketInfo)', 'public'),
   \ javaapi#method(0,'getEndPointInfo(', ')', 'SocketInfo'),
   \ ])

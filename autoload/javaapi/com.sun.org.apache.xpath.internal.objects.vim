@@ -11,25 +11,25 @@ call javaapi#class('DTMXRTreeFrag', '', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('EqualComparator', '', [
+call javaapi#class('EqualComparator', 'Comparator', [
   \ ])
 
-call javaapi#class('GreaterThanComparator', '', [
+call javaapi#class('GreaterThanComparator', 'Comparator', [
   \ ])
 
-call javaapi#class('GreaterThanOrEqualComparator', '', [
+call javaapi#class('GreaterThanOrEqualComparator', 'Comparator', [
   \ ])
 
-call javaapi#class('LessThanComparator', '', [
+call javaapi#class('LessThanComparator', 'Comparator', [
   \ ])
 
-call javaapi#class('LessThanOrEqualComparator', '', [
+call javaapi#class('LessThanOrEqualComparator', 'Comparator', [
   \ ])
 
-call javaapi#class('NotEqualComparator', '', [
+call javaapi#class('NotEqualComparator', 'Comparator', [
   \ ])
 
-call javaapi#class('XBoolean', '', [
+call javaapi#class('XBoolean', 'XObject', [
   \ javaapi#field(1,'S_TRUE', 'XBoolean'),
   \ javaapi#field(1,'S_FALSE', 'XBoolean'),
   \ javaapi#method(0,'XBoolean(', 'boolean)', 'public'),
@@ -43,12 +43,12 @@ call javaapi#class('XBoolean', '', [
   \ javaapi#method(0,'equals(', 'XObject)', 'boolean'),
   \ ])
 
-call javaapi#class('XBooleanStatic', '', [
+call javaapi#class('XBooleanStatic', 'XBoolean', [
   \ javaapi#method(0,'XBooleanStatic(', 'boolean)', 'public'),
   \ javaapi#method(0,'equals(', 'XObject)', 'boolean'),
   \ ])
 
-call javaapi#class('XMLStringFactoryImpl', '', [
+call javaapi#class('XMLStringFactoryImpl', 'XMLStringFactory', [
   \ javaapi#method(0,'XMLStringFactoryImpl(', ')', 'public'),
   \ javaapi#method(1,'getFactory(', ')', 'XMLStringFactory'),
   \ javaapi#method(0,'newstr(', 'String)', 'XMLString'),
@@ -57,7 +57,7 @@ call javaapi#class('XMLStringFactoryImpl', '', [
   \ javaapi#method(0,'emptystr(', ')', 'XMLString'),
   \ ])
 
-call javaapi#class('XNodeSet', '', [
+call javaapi#class('XNodeSet', 'NodeSequence', [
   \ javaapi#method(0,'XNodeSet(', 'DTMIterator)', 'public'),
   \ javaapi#method(0,'XNodeSet(', 'XNodeSet)', 'public'),
   \ javaapi#method(0,'XNodeSet(', 'DTMManager)', 'public'),
@@ -91,7 +91,7 @@ call javaapi#class('XNodeSet', '', [
   \ javaapi#method(0,'notEquals(', 'XObject) throws TransformerException', 'boolean'),
   \ ])
 
-call javaapi#class('XNodeSetForDOM', '', [
+call javaapi#class('XNodeSetForDOM', 'XNodeSet', [
   \ javaapi#method(0,'XNodeSetForDOM(', 'Node, DTMManager)', 'public'),
   \ javaapi#method(0,'XNodeSetForDOM(', 'XNodeSet)', 'public'),
   \ javaapi#method(0,'XNodeSetForDOM(', 'NodeList, XPathContext)', 'public'),
@@ -101,7 +101,7 @@ call javaapi#class('XNodeSetForDOM', '', [
   \ javaapi#method(0,'nodelist(', ') throws TransformerException', 'NodeList'),
   \ ])
 
-call javaapi#class('XNull', '', [
+call javaapi#class('XNull', 'XNodeSet', [
   \ javaapi#method(0,'XNull(', ')', 'public'),
   \ javaapi#method(0,'getType(', ')', 'int'),
   \ javaapi#method(0,'getTypeString(', ')', 'String'),
@@ -112,7 +112,7 @@ call javaapi#class('XNull', '', [
   \ javaapi#method(0,'equals(', 'XObject)', 'boolean'),
   \ ])
 
-call javaapi#class('XNumber', '', [
+call javaapi#class('XNumber', 'XObject', [
   \ javaapi#method(0,'XNumber(', 'double)', 'public'),
   \ javaapi#method(0,'XNumber(', 'Number)', 'public'),
   \ javaapi#method(0,'getType(', ')', 'int'),
@@ -127,7 +127,7 @@ call javaapi#class('XNumber', '', [
   \ javaapi#method(0,'callVisitors(', 'ExpressionOwner, XPathVisitor)', 'void'),
   \ ])
 
-call javaapi#class('XObject', '', [
+call javaapi#class('XObject', 'Expression', [
   \ javaapi#field(1,'CLASS_NULL', 'int'),
   \ javaapi#field(1,'CLASS_UNKNOWN', 'int'),
   \ javaapi#field(1,'CLASS_BOOLEAN', 'int'),
@@ -184,7 +184,7 @@ call javaapi#class('XObjectFactory', '', [
   \ javaapi#method(1,'create(', 'Object, XPathContext)', 'XObject'),
   \ ])
 
-call javaapi#class('XRTreeFrag', '', [
+call javaapi#class('XRTreeFrag', 'XObject', [
   \ javaapi#method(0,'XRTreeFrag(', 'int, XPathContext, ExpressionNode)', 'public'),
   \ javaapi#method(0,'XRTreeFrag(', 'int, XPathContext)', 'public'),
   \ javaapi#method(0,'object(', ')', 'Object'),
@@ -204,7 +204,7 @@ call javaapi#class('XRTreeFrag', '', [
   \ javaapi#method(0,'equals(', 'XObject)', 'boolean'),
   \ ])
 
-call javaapi#class('XRTreeFragSelectWrapper', '', [
+call javaapi#class('XRTreeFragSelectWrapper', 'XRTreeFrag', [
   \ javaapi#method(0,'XRTreeFragSelectWrapper(', 'Expression)', 'public'),
   \ javaapi#method(0,'fixupVariables(', 'Vector, int)', 'void'),
   \ javaapi#method(0,'execute(', 'XPathContext) throws TransformerException', 'XObject'),
@@ -217,7 +217,7 @@ call javaapi#class('XRTreeFragSelectWrapper', '', [
   \ javaapi#method(0,'asNodeIterator(', ')', 'DTMIterator'),
   \ ])
 
-call javaapi#class('XString', '', [
+call javaapi#class('XString', 'XObject', [
   \ javaapi#field(1,'EMPTYSTRING', 'XString'),
   \ javaapi#method(0,'XString(', 'String)', 'public'),
   \ javaapi#method(0,'getType(', ')', 'int'),
@@ -267,7 +267,7 @@ call javaapi#class('XString', '', [
   \ javaapi#method(0,'callVisitors(', 'ExpressionOwner, XPathVisitor)', 'void'),
   \ ])
 
-call javaapi#class('XStringForChars', '', [
+call javaapi#class('XStringForChars', 'XString', [
   \ javaapi#method(0,'XStringForChars(', 'char[], int, int)', 'public'),
   \ javaapi#method(0,'fsb(', ')', 'FastStringBuffer'),
   \ javaapi#method(0,'appendToFsb(', 'FastStringBuffer)', 'void'),
@@ -281,7 +281,7 @@ call javaapi#class('XStringForChars', '', [
   \ javaapi#method(0,'getChars(', 'int, int, char[], int)', 'void'),
   \ ])
 
-call javaapi#class('XStringForFSB', '', [
+call javaapi#class('XStringForFSB', 'XString', [
   \ javaapi#method(0,'XStringForFSB(', 'FastStringBuffer, int, int)', 'public'),
   \ javaapi#method(0,'fsb(', ')', 'FastStringBuffer'),
   \ javaapi#method(0,'appendToFsb(', 'FastStringBuffer)', 'void'),

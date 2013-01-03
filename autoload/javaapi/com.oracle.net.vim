@@ -5,7 +5,7 @@ call javaapi#class('1', 'Void>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('SdpSocket', '', [
+call javaapi#class('SdpSocket', 'Socket', [
   \ ])
 
 call javaapi#class('Sdp', '', [

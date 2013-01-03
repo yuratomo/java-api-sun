@@ -1,13 +1,13 @@
 call javaapi#namespace('com.sun.xml.internal.ws.api.model.wsdl')
 
-call javaapi#interface('WSDLBoundFault', '', [
+call javaapi#interface('WSDLBoundFault', 'WSDLExtensible', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getQName(', ')', 'QName'),
   \ javaapi#method(0,'getFault(', ')', 'WSDLFault'),
   \ javaapi#method(0,'getBoundOperation(', ')', 'WSDLBoundOperation'),
   \ ])
 
-call javaapi#class('ANONYMOUS', '', [
+call javaapi#class('ANONYMOUS', 'ANONYMOUS>', [
   \ javaapi#field(1,'optional', 'ANONYMOUS'),
   \ javaapi#field(1,'required', 'ANONYMOUS'),
   \ javaapi#field(1,'prohibited', 'ANONYMOUS'),
@@ -15,7 +15,7 @@ call javaapi#class('ANONYMOUS', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'ANONYMOUS'),
   \ ])
 
-call javaapi#interface('WSDLBoundOperation', '', [
+call javaapi#interface('WSDLBoundOperation', 'WSDLExtensible', [
   \ javaapi#method(0,'getName(', ')', 'QName'),
   \ javaapi#method(0,'getSOAPAction(', ')', 'String'),
   \ javaapi#method(0,'getOperation(', ')', 'WSDLOperation'),
@@ -28,7 +28,7 @@ call javaapi#interface('WSDLBoundOperation', '', [
   \ javaapi#method(0,'getReqPayloadName(', ')', 'QName'),
   \ ])
 
-call javaapi#interface('WSDLBoundPortType', '', [
+call javaapi#interface('WSDLBoundPortType', 'WSDLExtensible', [
   \ javaapi#method(0,'getName(', ')', 'QName'),
   \ javaapi#method(0,'getOwner(', ')', 'WSDLModel'),
   \ javaapi#method(0,'get(', 'QName)', 'WSDLBoundOperation'),
@@ -40,14 +40,14 @@ call javaapi#interface('WSDLBoundPortType', '', [
   \ javaapi#method(0,'getOperation(', 'String, String)', 'WSDLBoundOperation'),
   \ ])
 
-call javaapi#class('WSDLDescriptorKind', '', [
+call javaapi#class('WSDLDescriptorKind', 'WSDLDescriptorKind>', [
   \ javaapi#field(1,'ELEMENT', 'WSDLDescriptorKind'),
   \ javaapi#field(1,'TYPE', 'WSDLDescriptorKind'),
   \ javaapi#method(1,'values(', ')', 'WSDLDescriptorKind[]'),
   \ javaapi#method(1,'valueOf(', 'String)', 'WSDLDescriptorKind'),
   \ ])
 
-call javaapi#interface('WSDLExtensible', '', [
+call javaapi#interface('WSDLExtensible', 'WSDLObject', [
   \ javaapi#method(0,'getExtensions(', ')', 'WSDLExtension>'),
   \ javaapi#method(0,'getExtensions(', 'Class<T>)', 'Iterable<T>'),
   \ javaapi#method(0,'getExtension(', 'Class<T>)', 'T'),
@@ -58,7 +58,7 @@ call javaapi#interface('WSDLExtension', '', [
   \ javaapi#method(0,'getName(', ')', 'QName'),
   \ ])
 
-call javaapi#interface('WSDLFault', '', [
+call javaapi#interface('WSDLFault', 'WSDLExtensible', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getMessage(', ')', 'WSDLMessage'),
   \ javaapi#method(0,'getOperation(', ')', 'WSDLOperation'),
@@ -66,13 +66,13 @@ call javaapi#interface('WSDLFault', '', [
   \ javaapi#method(0,'getAction(', ')', 'String'),
   \ ])
 
-call javaapi#interface('WSDLFeaturedObject', '', [
+call javaapi#interface('WSDLFeaturedObject', 'WSDLObject', [
   \ javaapi#method(0,'getFeature(', 'Class<F>)', 'F'),
   \ javaapi#method(0,'getFeatures(', ')', 'WSFeatureList'),
   \ javaapi#method(0,'addFeature(', 'WebServiceFeature)', 'void'),
   \ ])
 
-call javaapi#interface('WSDLInput', '', [
+call javaapi#interface('WSDLInput', 'WSDLExtensible', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getMessage(', ')', 'WSDLMessage'),
   \ javaapi#method(0,'getAction(', ')', 'String'),
@@ -80,7 +80,7 @@ call javaapi#interface('WSDLInput', '', [
   \ javaapi#method(0,'getQName(', ')', 'QName'),
   \ ])
 
-call javaapi#interface('WSDLMessage', '', [
+call javaapi#interface('WSDLMessage', 'WSDLExtensible', [
   \ javaapi#method(0,'getName(', ')', 'QName'),
   \ javaapi#method(0,'parts(', ')', 'WSDLPart>'),
   \ ])
@@ -92,7 +92,7 @@ call javaapi#class('WSDLParser', '', [
   \ javaapi#method(1,'parse(', 'Parser, XMLEntityResolver, boolean, Container, PolicyResolver, ) throws IOException, XMLStreamException, SAXException', 'WSDLModel'),
   \ ])
 
-call javaapi#interface('WSDLModel', '', [
+call javaapi#interface('WSDLModel', 'WSDLExtensible', [
   \ javaapi#method(0,'getPortType(', 'QName)', 'WSDLPortType'),
   \ javaapi#method(0,'getBinding(', 'QName)', 'WSDLBoundPortType'),
   \ javaapi#method(0,'getBinding(', 'QName, QName)', 'WSDLBoundPortType'),
@@ -107,7 +107,7 @@ call javaapi#interface('WSDLObject', '', [
   \ javaapi#method(0,'getLocation(', ')', 'Locator'),
   \ ])
 
-call javaapi#interface('WSDLOperation', '', [
+call javaapi#interface('WSDLOperation', 'WSDLExtensible', [
   \ javaapi#method(0,'getName(', ')', 'QName'),
   \ javaapi#method(0,'getInput(', ')', 'WSDLInput'),
   \ javaapi#method(0,'getOutput(', ')', 'WSDLOutput'),
@@ -117,7 +117,7 @@ call javaapi#interface('WSDLOperation', '', [
   \ javaapi#method(0,'getPortTypeName(', ')', 'QName'),
   \ ])
 
-call javaapi#interface('WSDLOutput', '', [
+call javaapi#interface('WSDLOutput', 'WSDLExtensible', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getMessage(', ')', 'WSDLMessage'),
   \ javaapi#method(0,'getAction(', ')', 'String'),
@@ -125,32 +125,32 @@ call javaapi#interface('WSDLOutput', '', [
   \ javaapi#method(0,'getQName(', ')', 'QName'),
   \ ])
 
-call javaapi#interface('WSDLPart', '', [
+call javaapi#interface('WSDLPart', 'WSDLObject', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getBinding(', ')', 'ParameterBinding'),
   \ javaapi#method(0,'getIndex(', ')', 'int'),
   \ javaapi#method(0,'getDescriptor(', ')', 'WSDLPartDescriptor'),
   \ ])
 
-call javaapi#interface('WSDLPartDescriptor', '', [
+call javaapi#interface('WSDLPartDescriptor', 'WSDLObject', [
   \ javaapi#method(0,'name(', ')', 'QName'),
   \ javaapi#method(0,'type(', ')', 'WSDLDescriptorKind'),
   \ ])
 
-call javaapi#interface('WSDLPort', '', [
+call javaapi#interface('WSDLPort', 'WSDLExtensible', [
   \ javaapi#method(0,'getName(', ')', 'QName'),
   \ javaapi#method(0,'getBinding(', ')', 'WSDLBoundPortType'),
   \ javaapi#method(0,'getAddress(', ')', 'EndpointAddress'),
   \ javaapi#method(0,'getOwner(', ')', 'WSDLService'),
   \ ])
 
-call javaapi#interface('WSDLPortType', '', [
+call javaapi#interface('WSDLPortType', 'WSDLExtensible', [
   \ javaapi#method(0,'getName(', ')', 'QName'),
   \ javaapi#method(0,'get(', 'String)', 'WSDLOperation'),
   \ javaapi#method(0,'getOperations(', ')', 'WSDLOperation>'),
   \ ])
 
-call javaapi#interface('WSDLService', '', [
+call javaapi#interface('WSDLService', 'WSDLExtensible', [
   \ javaapi#method(0,'getParent(', ')', 'WSDLModel'),
   \ javaapi#method(0,'getName(', ')', 'QName'),
   \ javaapi#method(0,'get(', 'QName)', 'WSDLPort'),

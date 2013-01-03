@@ -49,7 +49,7 @@ call javaapi#class('CNCtxFactory', 'InitialContextFactory', [
   \ javaapi#method(0,'getInitialContext(', 'Hashtable<?, ?>) throws NamingException', 'Context'),
   \ ])
 
-call javaapi#class('CNCompoundName', '', [
+call javaapi#class('CNCompoundName', 'CompoundName', [
   \ javaapi#method(0,'clone(', ')', 'Object'),
   \ javaapi#method(0,'getPrefix(', 'int)', 'Name'),
   \ javaapi#method(0,'getSuffix(', 'int)', 'Name'),
@@ -68,11 +68,11 @@ call javaapi#class('CorbanameUrl', '', [
   \ javaapi#method(0,'CorbanameUrl(', 'String) throws MalformedURLException', 'public'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'RefAddr', [
   \ javaapi#method(0,'getContent(', ')', 'Object'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'RefAddr', [
   \ javaapi#method(0,'getContent(', ')', 'Object'),
   \ ])
 

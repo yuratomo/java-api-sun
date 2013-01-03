@@ -1,5 +1,102 @@
 call javaapi#namespace('com.sun.jmx.snmp')
 
+call javaapi#class('BerDecoder', '', [
+  \ javaapi#field(1,'BooleanTag', 'int'),
+  \ javaapi#field(1,'IntegerTag', 'int'),
+  \ javaapi#field(1,'OctetStringTag', 'int'),
+  \ javaapi#field(1,'NullTag', 'int'),
+  \ javaapi#field(1,'OidTag', 'int'),
+  \ javaapi#field(1,'SequenceTag', 'int'),
+  \ javaapi#method(0,'BerDecoder(', 'byte[])', 'public'),
+  \ javaapi#method(0,'reset(', ')', 'void'),
+  \ javaapi#method(0,'fetchInteger(', ') throws BerException', 'int'),
+  \ javaapi#method(0,'fetchInteger(', 'int) throws BerException', 'int'),
+  \ javaapi#method(0,'fetchIntegerAsLong(', ') throws BerException', 'long'),
+  \ javaapi#method(0,'fetchIntegerAsLong(', 'int) throws BerException', 'long'),
+  \ javaapi#method(0,'fetchOctetString(', ') throws BerException', 'byte[]'),
+  \ javaapi#method(0,'fetchOctetString(', 'int) throws BerException', 'byte[]'),
+  \ javaapi#method(0,'fetchOid(', ') throws BerException', 'long[]'),
+  \ javaapi#method(0,'fetchOid(', 'int) throws BerException', 'long[]'),
+  \ javaapi#method(0,'fetchNull(', ') throws BerException', 'void'),
+  \ javaapi#method(0,'fetchNull(', 'int) throws BerException', 'void'),
+  \ javaapi#method(0,'fetchAny(', ') throws BerException', 'byte[]'),
+  \ javaapi#method(0,'fetchAny(', 'int) throws BerException', 'byte[]'),
+  \ javaapi#method(0,'openSequence(', ') throws BerException', 'void'),
+  \ javaapi#method(0,'openSequence(', 'int) throws BerException', 'void'),
+  \ javaapi#method(0,'closeSequence(', ') throws BerException', 'void'),
+  \ javaapi#method(0,'cannotCloseSequence(', ')', 'boolean'),
+  \ javaapi#method(0,'getTag(', ') throws BerException', 'int'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#class('BerEncoder', '', [
+  \ javaapi#field(1,'BooleanTag', 'int'),
+  \ javaapi#field(1,'IntegerTag', 'int'),
+  \ javaapi#field(1,'OctetStringTag', 'int'),
+  \ javaapi#field(1,'NullTag', 'int'),
+  \ javaapi#field(1,'OidTag', 'int'),
+  \ javaapi#field(1,'SequenceTag', 'int'),
+  \ javaapi#method(0,'BerEncoder(', 'byte[])', 'public'),
+  \ javaapi#method(0,'trim(', ')', 'int'),
+  \ javaapi#method(0,'putInteger(', 'int)', 'void'),
+  \ javaapi#method(0,'putInteger(', 'int, int)', 'void'),
+  \ javaapi#method(0,'putInteger(', 'long)', 'void'),
+  \ javaapi#method(0,'putInteger(', 'long, int)', 'void'),
+  \ javaapi#method(0,'putOctetString(', 'byte[])', 'void'),
+  \ javaapi#method(0,'putOctetString(', 'byte[], int)', 'void'),
+  \ javaapi#method(0,'putOid(', 'long[])', 'void'),
+  \ javaapi#method(0,'putOid(', 'long[], int)', 'void'),
+  \ javaapi#method(0,'putNull(', ')', 'void'),
+  \ javaapi#method(0,'putNull(', 'int)', 'void'),
+  \ javaapi#method(0,'putAny(', 'byte[])', 'void'),
+  \ javaapi#method(0,'putAny(', 'byte[], int)', 'void'),
+  \ javaapi#method(0,'openSequence(', ')', 'void'),
+  \ javaapi#method(0,'closeSequence(', ')', 'void'),
+  \ javaapi#method(0,'closeSequence(', 'int)', 'void'),
+  \ ])
+
+call javaapi#class('BerException', 'Exception', [
+  \ javaapi#field(1,'BAD_VERSION', 'int'),
+  \ javaapi#method(0,'BerException(', ')', 'public'),
+  \ javaapi#method(0,'BerException(', 'int)', 'public'),
+  \ javaapi#method(0,'isInvalidSnmpVersion(', ')', 'boolean'),
+  \ ])
+
+call javaapi#class('EnumRowStatus', 'Enumerated', [
+  \ javaapi#field(1,'unspecified', 'int'),
+  \ javaapi#field(1,'active', 'int'),
+  \ javaapi#field(1,'notInService', 'int'),
+  \ javaapi#field(1,'notReady', 'int'),
+  \ javaapi#field(1,'createAndGo', 'int'),
+  \ javaapi#field(1,'createAndWait', 'int'),
+  \ javaapi#field(1,'destroy', 'int'),
+  \ javaapi#method(0,'EnumRowStatus(', 'int) throws IllegalArgumentException', 'public'),
+  \ javaapi#method(0,'EnumRowStatus(', 'Enumerated) throws IllegalArgumentException', 'public'),
+  \ javaapi#method(0,'EnumRowStatus(', 'long) throws IllegalArgumentException', 'public'),
+  \ javaapi#method(0,'EnumRowStatus(', 'Integer) throws IllegalArgumentException', 'public'),
+  \ javaapi#method(0,'EnumRowStatus(', 'Long) throws IllegalArgumentException', 'public'),
+  \ javaapi#method(0,'EnumRowStatus(', ') throws IllegalArgumentException', 'public'),
+  \ javaapi#method(0,'EnumRowStatus(', 'String) throws IllegalArgumentException', 'public'),
+  \ javaapi#method(0,'EnumRowStatus(', 'SnmpInt) throws IllegalArgumentException', 'public'),
+  \ javaapi#method(0,'toSnmpValue(', ') throws IllegalArgumentException', 'SnmpInt'),
+  \ javaapi#method(1,'isValidValue(', 'int)', 'boolean'),
+  \ ])
+
+call javaapi#class('Enumerated', 'Serializable', [
+  \ javaapi#method(0,'Enumerated(', ') throws IllegalArgumentException', 'public'),
+  \ javaapi#method(0,'Enumerated(', 'int) throws IllegalArgumentException', 'public'),
+  \ javaapi#method(0,'Enumerated(', 'Integer) throws IllegalArgumentException', 'public'),
+  \ javaapi#method(0,'Enumerated(', 'String) throws IllegalArgumentException', 'public'),
+  \ javaapi#method(0,'intValue(', ')', 'int'),
+  \ javaapi#method(0,'valueIndexes(', ')', 'Enumeration'),
+  \ javaapi#method(0,'valueStrings(', ')', 'Enumeration'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#namespace('com.sun.jmx.snmp')
+
 call javaapi#interface('InetAddressAcl', '', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'checkReadPermission(', 'InetAddress)', 'boolean'),
@@ -39,11 +136,11 @@ call javaapi#interface('SnmpAckPdu', '', [
   \ javaapi#method(0,'getResponsePdu(', ')', 'SnmpPdu'),
   \ ])
 
-call javaapi#class('SnmpBadSecurityLevelException', '', [
+call javaapi#class('SnmpBadSecurityLevelException', 'Exception', [
   \ javaapi#method(0,'SnmpBadSecurityLevelException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SnmpCounter', '', [
+call javaapi#class('SnmpCounter', 'SnmpUnsignedInt', [
   \ javaapi#method(0,'SnmpCounter(', 'int) throws IllegalArgumentException', 'public'),
   \ javaapi#method(0,'SnmpCounter(', 'Integer) throws IllegalArgumentException', 'public'),
   \ javaapi#method(0,'SnmpCounter(', 'long) throws IllegalArgumentException', 'public'),
@@ -51,7 +148,7 @@ call javaapi#class('SnmpCounter', '', [
   \ javaapi#method(0,'getTypeName(', ')', 'String'),
   \ ])
 
-call javaapi#class('SnmpCounter64', '', [
+call javaapi#class('SnmpCounter64', 'SnmpValue', [
   \ javaapi#method(0,'SnmpCounter64(', 'long) throws IllegalArgumentException', 'public'),
   \ javaapi#method(0,'SnmpCounter64(', 'Long) throws IllegalArgumentException', 'public'),
   \ javaapi#method(0,'longValue(', ')', 'long'),
@@ -219,7 +316,7 @@ call javaapi#class('SnmpEngineParameters', 'Serializable', [
   \ javaapi#method(0,'getEngineId(', ')', 'SnmpEngineId'),
   \ ])
 
-call javaapi#class('SnmpGauge', '', [
+call javaapi#class('SnmpGauge', 'SnmpUnsignedInt', [
   \ javaapi#method(0,'SnmpGauge(', 'int) throws IllegalArgumentException', 'public'),
   \ javaapi#method(0,'SnmpGauge(', 'Integer) throws IllegalArgumentException', 'public'),
   \ javaapi#method(0,'SnmpGauge(', 'long) throws IllegalArgumentException', 'public'),
@@ -227,7 +324,7 @@ call javaapi#class('SnmpGauge', '', [
   \ javaapi#method(0,'getTypeName(', ')', 'String'),
   \ ])
 
-call javaapi#class('SnmpInt', '', [
+call javaapi#class('SnmpInt', 'SnmpValue', [
   \ javaapi#method(0,'SnmpInt(', 'int) throws IllegalArgumentException', 'public'),
   \ javaapi#method(0,'SnmpInt(', 'Integer) throws IllegalArgumentException', 'public'),
   \ javaapi#method(0,'SnmpInt(', 'long) throws IllegalArgumentException', 'public'),
@@ -248,7 +345,7 @@ call javaapi#class('SnmpInt', '', [
   \ javaapi#method(0,'getTypeName(', ')', 'String'),
   \ ])
 
-call javaapi#class('SnmpIpAddress', '', [
+call javaapi#class('SnmpIpAddress', 'SnmpOid', [
   \ javaapi#method(0,'SnmpIpAddress(', 'byte[]) throws IllegalArgumentException', 'public'),
   \ javaapi#method(0,'SnmpIpAddress(', 'long)', 'public'),
   \ javaapi#method(0,'SnmpIpAddress(', 'String) throws IllegalArgumentException', 'public'),
@@ -261,7 +358,7 @@ call javaapi#class('SnmpIpAddress', '', [
   \ javaapi#method(0,'getTypeName(', ')', 'String'),
   \ ])
 
-call javaapi#class('SnmpMessage', '', [
+call javaapi#class('SnmpMessage', 'SnmpMsg', [
   \ javaapi#field(0,'community', 'byte[]'),
   \ javaapi#method(0,'SnmpMessage(', ')', 'public'),
   \ javaapi#method(0,'encodeMessage(', 'byte[]) throws SnmpTooBigException', 'int'),
@@ -292,7 +389,7 @@ call javaapi#class('SnmpMsg', 'SnmpDefinitions', [
   \ javaapi#method(0,'decodeVarBindList(', 'BerDecoder) throws BerException', 'SnmpVarBind[]'),
   \ ])
 
-call javaapi#class('SnmpNull', '', [
+call javaapi#class('SnmpNull', 'SnmpValue', [
   \ javaapi#method(0,'SnmpNull(', ')', 'public'),
   \ javaapi#method(0,'SnmpNull(', 'String)', 'public'),
   \ javaapi#method(0,'SnmpNull(', 'int)', 'public'),
@@ -307,7 +404,7 @@ call javaapi#class('SnmpNull', '', [
   \ javaapi#method(0,'isEndOfMibViewValue(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('SnmpOid', '', [
+call javaapi#class('SnmpOid', 'SnmpValue', [
   \ javaapi#method(0,'SnmpOid(', ')', 'public'),
   \ javaapi#method(0,'SnmpOid(', 'long[])', 'public'),
   \ javaapi#method(0,'SnmpOid(', 'long)', 'public'),
@@ -345,7 +442,7 @@ call javaapi#class('SnmpOid', '', [
   \ javaapi#method(0,'toOctetString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('SnmpOidDatabase', '', [
+call javaapi#interface('SnmpOidDatabase', 'SnmpOidTable', [
   \ javaapi#method(0,'add(', 'SnmpOidTable)', 'void'),
   \ javaapi#method(0,'remove(', 'SnmpOidTable) throws SnmpStatusException', 'void'),
   \ javaapi#method(0,'removeAll(', ')', 'void'),
@@ -388,7 +485,7 @@ call javaapi#class('SnmpOidTableSupport', 'SnmpOidTable', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('SnmpOpaque', '', [
+call javaapi#class('SnmpOpaque', 'SnmpString', [
   \ javaapi#method(0,'SnmpOpaque(', 'byte[])', 'public'),
   \ javaapi#method(0,'SnmpOpaque(', 'Byte[])', 'public'),
   \ javaapi#method(0,'SnmpOpaque(', 'String)', 'public'),
@@ -396,7 +493,7 @@ call javaapi#class('SnmpOpaque', '', [
   \ javaapi#method(0,'getTypeName(', ')', 'String'),
   \ ])
 
-call javaapi#class('SnmpParameters', '', [
+call javaapi#class('SnmpParameters', 'SnmpParams', [
   \ javaapi#method(0,'SnmpParameters(', ')', 'public'),
   \ javaapi#method(0,'SnmpParameters(', 'String, String)', 'public'),
   \ javaapi#method(0,'SnmpParameters(', 'String, String, String)', 'public'),
@@ -429,7 +526,7 @@ call javaapi#class('SnmpPdu', 'Serializable', [
   \ javaapi#method(1,'pduTypeToString(', 'int)', 'String'),
   \ ])
 
-call javaapi#class('SnmpPduBulk', '', [
+call javaapi#class('SnmpPduBulk', 'SnmpPduPacket', [
   \ javaapi#field(0,'nonRepeaters', 'int'),
   \ javaapi#field(0,'maxRepetitions', 'int'),
   \ javaapi#method(0,'SnmpPduBulk(', ')', 'public'),
@@ -440,7 +537,7 @@ call javaapi#class('SnmpPduBulk', '', [
   \ javaapi#method(0,'getResponsePdu(', ')', 'SnmpPdu'),
   \ ])
 
-call javaapi#interface('SnmpPduBulkType', '', [
+call javaapi#interface('SnmpPduBulkType', 'SnmpAckPdu', [
   \ javaapi#method(0,'setMaxRepetitions(', 'int)', 'void'),
   \ javaapi#method(0,'setNonRepeaters(', 'int)', 'void'),
   \ javaapi#method(0,'getMaxRepetitions(', ')', 'int'),
@@ -458,12 +555,12 @@ call javaapi#class('SnmpPduFactoryBER', 'Serializable', [
   \ javaapi#method(0,'encodeSnmpPdu(', 'SnmpPdu, int) throws SnmpStatusException, SnmpTooBigException', 'SnmpMsg'),
   \ ])
 
-call javaapi#class('SnmpPduPacket', '', [
+call javaapi#class('SnmpPduPacket', 'SnmpPdu', [
   \ javaapi#field(0,'community', 'byte[]'),
   \ javaapi#method(0,'SnmpPduPacket(', ')', 'public'),
   \ ])
 
-call javaapi#class('SnmpPduRequest', '', [
+call javaapi#class('SnmpPduRequest', 'SnmpPduPacket', [
   \ javaapi#field(0,'errorStatus', 'int'),
   \ javaapi#field(0,'errorIndex', 'int'),
   \ javaapi#method(0,'SnmpPduRequest(', ')', 'public'),
@@ -474,14 +571,14 @@ call javaapi#class('SnmpPduRequest', '', [
   \ javaapi#method(0,'getResponsePdu(', ')', 'SnmpPdu'),
   \ ])
 
-call javaapi#interface('SnmpPduRequestType', '', [
+call javaapi#interface('SnmpPduRequestType', 'SnmpAckPdu', [
   \ javaapi#method(0,'setErrorIndex(', 'int)', 'void'),
   \ javaapi#method(0,'setErrorStatus(', 'int)', 'void'),
   \ javaapi#method(0,'getErrorIndex(', ')', 'int'),
   \ javaapi#method(0,'getErrorStatus(', ')', 'int'),
   \ ])
 
-call javaapi#class('SnmpPduTrap', '', [
+call javaapi#class('SnmpPduTrap', 'SnmpPduPacket', [
   \ javaapi#field(0,'enterprise', 'SnmpOid'),
   \ javaapi#field(0,'agentAddr', 'SnmpIpAddress'),
   \ javaapi#field(0,'genericTrap', 'int'),
@@ -524,7 +621,7 @@ call javaapi#class('SnmpPeer', 'Serializable', [
   \ javaapi#method(0,'getAvgRtt(', ')', 'long'),
   \ ])
 
-call javaapi#class('SnmpScopedPduBulk', '', [
+call javaapi#class('SnmpScopedPduBulk', 'SnmpScopedPduPacket', [
   \ javaapi#method(0,'SnmpScopedPduBulk(', ')', 'public'),
   \ javaapi#method(0,'setMaxRepetitions(', 'int)', 'void'),
   \ javaapi#method(0,'setNonRepeaters(', 'int)', 'void'),
@@ -533,7 +630,7 @@ call javaapi#class('SnmpScopedPduBulk', '', [
   \ javaapi#method(0,'getResponsePdu(', ')', 'SnmpPdu'),
   \ ])
 
-call javaapi#class('SnmpScopedPduPacket', '', [
+call javaapi#class('SnmpScopedPduPacket', 'SnmpPdu', [
   \ javaapi#field(0,'msgMaxSize', 'int'),
   \ javaapi#field(0,'msgId', 'int'),
   \ javaapi#field(0,'msgFlags', 'byte'),
@@ -543,7 +640,7 @@ call javaapi#class('SnmpScopedPduPacket', '', [
   \ javaapi#field(0,'securityParameters', 'SnmpSecurityParameters'),
   \ ])
 
-call javaapi#class('SnmpScopedPduRequest', '', [
+call javaapi#class('SnmpScopedPduRequest', 'SnmpScopedPduPacket', [
   \ javaapi#method(0,'SnmpScopedPduRequest(', ')', 'public'),
   \ javaapi#method(0,'setErrorIndex(', 'int)', 'void'),
   \ javaapi#method(0,'setErrorStatus(', 'int)', 'void'),
@@ -552,7 +649,7 @@ call javaapi#class('SnmpScopedPduRequest', '', [
   \ javaapi#method(0,'getResponsePdu(', ')', 'SnmpPdu'),
   \ ])
 
-call javaapi#class('SnmpSecurityException', '', [
+call javaapi#class('SnmpSecurityException', 'Exception', [
   \ javaapi#field(0,'list', 'SnmpVarBind[]'),
   \ javaapi#field(0,'status', 'int'),
   \ javaapi#field(0,'params', 'SnmpSecurityParameters'),
@@ -568,7 +665,7 @@ call javaapi#interface('SnmpSecurityParameters', '', [
   \ javaapi#method(0,'getPrincipal(', ')', 'String'),
   \ ])
 
-call javaapi#class('SnmpStatusException', '', [
+call javaapi#class('SnmpStatusException', 'Exception', [
   \ javaapi#field(1,'noSuchName', 'int'),
   \ javaapi#field(1,'badValue', 'int'),
   \ javaapi#field(1,'readOnly', 'int'),
@@ -583,7 +680,7 @@ call javaapi#class('SnmpStatusException', '', [
   \ javaapi#method(0,'getErrorIndex(', ')', 'int'),
   \ ])
 
-call javaapi#class('SnmpString', '', [
+call javaapi#class('SnmpString', 'SnmpValue', [
   \ javaapi#method(0,'SnmpString(', ')', 'public'),
   \ javaapi#method(0,'SnmpString(', 'byte[])', 'public'),
   \ javaapi#method(0,'SnmpString(', 'Byte[])', 'public'),
@@ -604,7 +701,7 @@ call javaapi#class('SnmpString', '', [
   \ javaapi#method(0,'getTypeName(', ')', 'String'),
   \ ])
 
-call javaapi#class('SnmpStringFixed', '', [
+call javaapi#class('SnmpStringFixed', 'SnmpString', [
   \ javaapi#method(0,'SnmpStringFixed(', 'byte[])', 'public'),
   \ javaapi#method(0,'SnmpStringFixed(', 'Byte[])', 'public'),
   \ javaapi#method(0,'SnmpStringFixed(', 'String)', 'public'),
@@ -616,7 +713,7 @@ call javaapi#class('SnmpStringFixed', '', [
   \ javaapi#method(1,'appendToOid(', 'int, SnmpOid, SnmpOid)', 'void'),
   \ ])
 
-call javaapi#class('SnmpTimeticks', '', [
+call javaapi#class('SnmpTimeticks', 'SnmpUnsignedInt', [
   \ javaapi#method(0,'SnmpTimeticks(', 'int) throws IllegalArgumentException', 'public'),
   \ javaapi#method(0,'SnmpTimeticks(', 'Integer) throws IllegalArgumentException', 'public'),
   \ javaapi#method(0,'SnmpTimeticks(', 'long) throws IllegalArgumentException', 'public'),
@@ -626,37 +723,37 @@ call javaapi#class('SnmpTimeticks', '', [
   \ javaapi#method(0,'getTypeName(', ')', 'String'),
   \ ])
 
-call javaapi#class('SnmpTooBigException', '', [
+call javaapi#class('SnmpTooBigException', 'Exception', [
   \ javaapi#method(0,'SnmpTooBigException(', ')', 'public'),
   \ javaapi#method(0,'SnmpTooBigException(', 'int)', 'public'),
   \ javaapi#method(0,'getVarBindCount(', ')', 'int'),
   \ ])
 
-call javaapi#class('SnmpUnknownAccContrModelException', '', [
+call javaapi#class('SnmpUnknownAccContrModelException', 'SnmpUnknownModelException', [
   \ javaapi#method(0,'SnmpUnknownAccContrModelException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SnmpUnknownModelException', '', [
+call javaapi#class('SnmpUnknownModelException', 'Exception', [
   \ javaapi#method(0,'SnmpUnknownModelException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SnmpUnknownModelLcdException', '', [
+call javaapi#class('SnmpUnknownModelLcdException', 'Exception', [
   \ javaapi#method(0,'SnmpUnknownModelLcdException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SnmpUnknownMsgProcModelException', '', [
+call javaapi#class('SnmpUnknownMsgProcModelException', 'SnmpUnknownModelException', [
   \ javaapi#method(0,'SnmpUnknownMsgProcModelException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SnmpUnknownSecModelException', '', [
+call javaapi#class('SnmpUnknownSecModelException', 'SnmpUnknownModelException', [
   \ javaapi#method(0,'SnmpUnknownSecModelException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SnmpUnknownSubSystemException', '', [
+call javaapi#class('SnmpUnknownSubSystemException', 'Exception', [
   \ javaapi#method(0,'SnmpUnknownSubSystemException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SnmpUnsignedInt', '', [
+call javaapi#class('SnmpUnsignedInt', 'SnmpInt', [
   \ javaapi#field(1,'MAX_VALUE', 'long'),
   \ javaapi#method(0,'SnmpUnsignedInt(', 'int) throws IllegalArgumentException', 'public'),
   \ javaapi#method(0,'SnmpUnsignedInt(', 'Integer) throws IllegalArgumentException', 'public'),
@@ -675,7 +772,7 @@ call javaapi#interface('SnmpUsmKeyHandler', '', [
   \ javaapi#method(0,'calculatePrivDelta(', 'String, byte[], byte[], byte[], int) throws IllegalArgumentException', 'byte[]'),
   \ ])
 
-call javaapi#class('SnmpV3Message', '', [
+call javaapi#class('SnmpV3Message', 'SnmpMsg', [
   \ javaapi#field(0,'msgId', 'int'),
   \ javaapi#field(0,'msgMaxSize', 'int'),
   \ javaapi#field(0,'msgFlags', 'byte'),
@@ -768,7 +865,7 @@ call javaapi#class('SnmpVarBind', 'Serializable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SnmpVarBindList', '', [
+call javaapi#class('SnmpVarBindList', 'SnmpVarBind>', [
   \ javaapi#field(0,'identity', 'String'),
   \ javaapi#method(0,'SnmpVarBindList(', ')', 'public'),
   \ javaapi#method(0,'SnmpVarBindList(', 'int)', 'public'),
@@ -838,101 +935,5 @@ call javaapi#interface('UserAcl', '', [
   \ javaapi#method(0,'checkContextName(', 'String)', 'boolean'),
   \ javaapi#method(0,'checkWritePermission(', 'String)', 'boolean'),
   \ javaapi#method(0,'checkWritePermission(', 'String, String, int)', 'boolean'),
-  \ ])
-
-
-call javaapi#class('BerDecoder', '', [
-  \ javaapi#field(1,'BooleanTag', 'int'),
-  \ javaapi#field(1,'IntegerTag', 'int'),
-  \ javaapi#field(1,'OctetStringTag', 'int'),
-  \ javaapi#field(1,'NullTag', 'int'),
-  \ javaapi#field(1,'OidTag', 'int'),
-  \ javaapi#field(1,'SequenceTag', 'int'),
-  \ javaapi#method(0,'BerDecoder(', 'byte[])', 'public'),
-  \ javaapi#method(0,'reset(', ')', 'void'),
-  \ javaapi#method(0,'fetchInteger(', ') throws BerException', 'int'),
-  \ javaapi#method(0,'fetchInteger(', 'int) throws BerException', 'int'),
-  \ javaapi#method(0,'fetchIntegerAsLong(', ') throws BerException', 'long'),
-  \ javaapi#method(0,'fetchIntegerAsLong(', 'int) throws BerException', 'long'),
-  \ javaapi#method(0,'fetchOctetString(', ') throws BerException', 'byte[]'),
-  \ javaapi#method(0,'fetchOctetString(', 'int) throws BerException', 'byte[]'),
-  \ javaapi#method(0,'fetchOid(', ') throws BerException', 'long[]'),
-  \ javaapi#method(0,'fetchOid(', 'int) throws BerException', 'long[]'),
-  \ javaapi#method(0,'fetchNull(', ') throws BerException', 'void'),
-  \ javaapi#method(0,'fetchNull(', 'int) throws BerException', 'void'),
-  \ javaapi#method(0,'fetchAny(', ') throws BerException', 'byte[]'),
-  \ javaapi#method(0,'fetchAny(', 'int) throws BerException', 'byte[]'),
-  \ javaapi#method(0,'openSequence(', ') throws BerException', 'void'),
-  \ javaapi#method(0,'openSequence(', 'int) throws BerException', 'void'),
-  \ javaapi#method(0,'closeSequence(', ') throws BerException', 'void'),
-  \ javaapi#method(0,'cannotCloseSequence(', ')', 'boolean'),
-  \ javaapi#method(0,'getTag(', ') throws BerException', 'int'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('BerEncoder', '', [
-  \ javaapi#field(1,'BooleanTag', 'int'),
-  \ javaapi#field(1,'IntegerTag', 'int'),
-  \ javaapi#field(1,'OctetStringTag', 'int'),
-  \ javaapi#field(1,'NullTag', 'int'),
-  \ javaapi#field(1,'OidTag', 'int'),
-  \ javaapi#field(1,'SequenceTag', 'int'),
-  \ javaapi#method(0,'BerEncoder(', 'byte[])', 'public'),
-  \ javaapi#method(0,'trim(', ')', 'int'),
-  \ javaapi#method(0,'putInteger(', 'int)', 'void'),
-  \ javaapi#method(0,'putInteger(', 'int, int)', 'void'),
-  \ javaapi#method(0,'putInteger(', 'long)', 'void'),
-  \ javaapi#method(0,'putInteger(', 'long, int)', 'void'),
-  \ javaapi#method(0,'putOctetString(', 'byte[])', 'void'),
-  \ javaapi#method(0,'putOctetString(', 'byte[], int)', 'void'),
-  \ javaapi#method(0,'putOid(', 'long[])', 'void'),
-  \ javaapi#method(0,'putOid(', 'long[], int)', 'void'),
-  \ javaapi#method(0,'putNull(', ')', 'void'),
-  \ javaapi#method(0,'putNull(', 'int)', 'void'),
-  \ javaapi#method(0,'putAny(', 'byte[])', 'void'),
-  \ javaapi#method(0,'putAny(', 'byte[], int)', 'void'),
-  \ javaapi#method(0,'openSequence(', ')', 'void'),
-  \ javaapi#method(0,'closeSequence(', ')', 'void'),
-  \ javaapi#method(0,'closeSequence(', 'int)', 'void'),
-  \ ])
-
-call javaapi#class('BerException', '', [
-  \ javaapi#field(1,'BAD_VERSION', 'int'),
-  \ javaapi#method(0,'BerException(', ')', 'public'),
-  \ javaapi#method(0,'BerException(', 'int)', 'public'),
-  \ javaapi#method(0,'isInvalidSnmpVersion(', ')', 'boolean'),
-  \ ])
-
-call javaapi#class('EnumRowStatus', '', [
-  \ javaapi#field(1,'unspecified', 'int'),
-  \ javaapi#field(1,'active', 'int'),
-  \ javaapi#field(1,'notInService', 'int'),
-  \ javaapi#field(1,'notReady', 'int'),
-  \ javaapi#field(1,'createAndGo', 'int'),
-  \ javaapi#field(1,'createAndWait', 'int'),
-  \ javaapi#field(1,'destroy', 'int'),
-  \ javaapi#method(0,'EnumRowStatus(', 'int) throws IllegalArgumentException', 'public'),
-  \ javaapi#method(0,'EnumRowStatus(', 'Enumerated) throws IllegalArgumentException', 'public'),
-  \ javaapi#method(0,'EnumRowStatus(', 'long) throws IllegalArgumentException', 'public'),
-  \ javaapi#method(0,'EnumRowStatus(', 'Integer) throws IllegalArgumentException', 'public'),
-  \ javaapi#method(0,'EnumRowStatus(', 'Long) throws IllegalArgumentException', 'public'),
-  \ javaapi#method(0,'EnumRowStatus(', ') throws IllegalArgumentException', 'public'),
-  \ javaapi#method(0,'EnumRowStatus(', 'String) throws IllegalArgumentException', 'public'),
-  \ javaapi#method(0,'EnumRowStatus(', 'SnmpInt) throws IllegalArgumentException', 'public'),
-  \ javaapi#method(0,'toSnmpValue(', ') throws IllegalArgumentException', 'SnmpInt'),
-  \ javaapi#method(1,'isValidValue(', 'int)', 'boolean'),
-  \ ])
-
-call javaapi#class('Enumerated', 'Serializable', [
-  \ javaapi#method(0,'Enumerated(', ') throws IllegalArgumentException', 'public'),
-  \ javaapi#method(0,'Enumerated(', 'int) throws IllegalArgumentException', 'public'),
-  \ javaapi#method(0,'Enumerated(', 'Integer) throws IllegalArgumentException', 'public'),
-  \ javaapi#method(0,'Enumerated(', 'String) throws IllegalArgumentException', 'public'),
-  \ javaapi#method(0,'intValue(', ')', 'int'),
-  \ javaapi#method(0,'valueIndexes(', ')', 'Enumeration'),
-  \ javaapi#method(0,'valueStrings(', ')', 'Enumeration'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 

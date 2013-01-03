@@ -10,7 +10,7 @@ call javaapi#class('1', 'String>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('NegotiatorImpl', '', [
+call javaapi#class('NegotiatorImpl', 'Negotiator', [
   \ javaapi#method(0,'NegotiatorImpl(', 'HttpCallerInfo) throws IOException', 'public'),
   \ javaapi#method(0,'firstToken(', ')', 'byte[]'),
   \ javaapi#method(0,'nextToken(', 'byte[]) throws IOException', 'byte[]'),

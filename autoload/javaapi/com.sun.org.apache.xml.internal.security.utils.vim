@@ -111,7 +111,7 @@ call javaapi#class('Constants', '', [
   \ javaapi#method(1,'getSignatureSpecNSprefix(', ')', 'String'),
   \ ])
 
-call javaapi#class('DigesterOutputStream', '', [
+call javaapi#class('DigesterOutputStream', 'ByteArrayOutputStream', [
   \ javaapi#method(0,'DigesterOutputStream(', 'MessageDigestAlgorithm)', 'public'),
   \ javaapi#method(0,'write(', 'byte[])', 'void'),
   \ javaapi#method(0,'write(', 'int)', 'void'),
@@ -124,17 +124,17 @@ call javaapi#interface('ElementChecker', '', [
   \ javaapi#method(0,'isNamespaceElement(', 'Node, String, String)', 'boolean'),
   \ ])
 
-call javaapi#class('EmptyChecker', '', [
+call javaapi#class('EmptyChecker', 'ElementCheckerImpl', [
   \ javaapi#method(0,'EmptyChecker(', ')', 'public'),
   \ javaapi#method(0,'guaranteeThatElementInCorrectSpace(', 'ElementProxy, Element) throws XMLSecurityException', 'void'),
   \ ])
 
-call javaapi#class('FullChecker', '', [
+call javaapi#class('FullChecker', 'ElementCheckerImpl', [
   \ javaapi#method(0,'FullChecker(', ')', 'public'),
   \ javaapi#method(0,'guaranteeThatElementInCorrectSpace(', 'ElementProxy, Element) throws XMLSecurityException', 'void'),
   \ ])
 
-call javaapi#class('InternedNsChecker', '', [
+call javaapi#class('InternedNsChecker', 'ElementCheckerImpl', [
   \ javaapi#method(0,'InternedNsChecker(', ')', 'public'),
   \ javaapi#method(0,'guaranteeThatElementInCorrectSpace(', 'ElementProxy, Element) throws XMLSecurityException', 'void'),
   \ ])
@@ -225,7 +225,7 @@ call javaapi#class('EncryptionConstants', '', [
   \ javaapi#method(1,'getEncryptionSpecNSprefix(', ')', 'String'),
   \ ])
 
-call javaapi#class('EncryptionElementProxy', '', [
+call javaapi#class('EncryptionElementProxy', 'ElementProxy', [
   \ javaapi#method(0,'EncryptionElementProxy(', 'Document)', 'public'),
   \ javaapi#method(0,'EncryptionElementProxy(', 'Element, String) throws XMLSecurityException', 'public'),
   \ javaapi#method(0,'getBaseNamespace(', ')', 'String'),
@@ -277,23 +277,23 @@ call javaapi#class('RFC2253Parser', '', [
   \ javaapi#method(1,'main(', 'String[]) throws Exception', 'void'),
   \ ])
 
-call javaapi#class('SignatureElementProxy', '', [
+call javaapi#class('SignatureElementProxy', 'ElementProxy', [
   \ javaapi#method(0,'SignatureElementProxy(', 'Document)', 'public'),
   \ javaapi#method(0,'SignatureElementProxy(', 'Element, String) throws XMLSecurityException', 'public'),
   \ javaapi#method(0,'getBaseNamespace(', ')', 'String'),
   \ ])
 
-call javaapi#class('SignerOutputStream', '', [
+call javaapi#class('SignerOutputStream', 'ByteArrayOutputStream', [
   \ javaapi#method(0,'SignerOutputStream(', 'SignatureAlgorithm)', 'public'),
   \ javaapi#method(0,'write(', 'byte[])', 'void'),
   \ javaapi#method(0,'write(', 'int)', 'void'),
   \ javaapi#method(0,'write(', 'byte[], int, int)', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ThreadLocal', [
   \ ])
 
-call javaapi#class('UnsyncBufferedOutputStream', '', [
+call javaapi#class('UnsyncBufferedOutputStream', 'OutputStream', [
   \ javaapi#method(0,'UnsyncBufferedOutputStream(', 'OutputStream)', 'public'),
   \ javaapi#method(0,'write(', 'byte[]) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
@@ -302,10 +302,10 @@ call javaapi#class('UnsyncBufferedOutputStream', '', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ThreadLocal', [
   \ ])
 
-call javaapi#class('UnsyncByteArrayOutputStream', '', [
+call javaapi#class('UnsyncByteArrayOutputStream', 'OutputStream', [
   \ javaapi#method(0,'UnsyncByteArrayOutputStream(', ')', 'public'),
   \ javaapi#method(0,'write(', 'byte[])', 'void'),
   \ javaapi#method(0,'write(', 'byte[], int, int)', 'void'),

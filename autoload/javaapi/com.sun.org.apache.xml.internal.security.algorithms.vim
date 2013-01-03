@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xml.internal.security.algorithms')
 
-call javaapi#class('Algorithm', '', [
+call javaapi#class('Algorithm', 'SignatureElementProxy', [
   \ javaapi#method(0,'Algorithm(', 'Document, String)', 'public'),
   \ javaapi#method(0,'Algorithm(', 'Element, String) throws XMLSecurityException', 'public'),
   \ javaapi#method(0,'getAlgorithmURI(', ')', 'String'),
@@ -21,10 +21,10 @@ call javaapi#class('JCEMapper', '', [
   \ javaapi#method(1,'setProviderId(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ThreadLocal', [
   \ ])
 
-call javaapi#class('MessageDigestAlgorithm', '', [
+call javaapi#class('MessageDigestAlgorithm', 'Algorithm', [
   \ javaapi#field(1,'ALGO_ID_DIGEST_NOT_RECOMMENDED_MD5', 'String'),
   \ javaapi#field(1,'ALGO_ID_DIGEST_SHA1', 'String'),
   \ javaapi#field(1,'ALGO_ID_DIGEST_SHA256', 'String'),
@@ -48,19 +48,19 @@ call javaapi#class('MessageDigestAlgorithm', '', [
   \ javaapi#method(0,'getBaseLocalName(', ')', 'String'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ThreadLocal', [
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'ThreadLocal', [
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'ThreadLocal', [
   \ ])
 
-call javaapi#class('4', '', [
+call javaapi#class('4', 'ThreadLocal', [
   \ ])
 
-call javaapi#class('SignatureAlgorithm', '', [
+call javaapi#class('SignatureAlgorithm', 'Algorithm', [
   \ javaapi#method(0,'SignatureAlgorithm(', 'Document, String) throws XMLSecurityException', 'public'),
   \ javaapi#method(0,'SignatureAlgorithm(', 'Document, String, int) throws XMLSecurityException', 'public'),
   \ javaapi#method(0,'SignatureAlgorithm(', 'Element, String) throws XMLSecurityException', 'public'),

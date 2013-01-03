@@ -1,12 +1,12 @@
 call javaapi#namespace('sun.security.jgss.krb5')
 
-call javaapi#class('AcceptSecContextToken', '', [
+call javaapi#class('AcceptSecContextToken', 'InitialToken', [
   \ javaapi#method(0,'AcceptSecContextToken(', 'Krb5Context, KrbApReq) throws KrbException, IOException', 'public'),
   \ javaapi#method(0,'AcceptSecContextToken(', 'Krb5Context, Credentials, KrbApReq, InputStream) throws IOException, GSSException, KrbException', 'public'),
   \ javaapi#method(0,'encode(', ') throws IOException', 'byte[]'),
   \ ])
 
-call javaapi#class('WrapTokenInputStream', '', [
+call javaapi#class('WrapTokenInputStream', 'InputStream', [
   \ javaapi#method(0,'WrapTokenInputStream(', 'CipherHelper, InputStream, int)', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[]) throws IOException', 'int'),
@@ -19,7 +19,7 @@ call javaapi#class('WrapTokenInputStream', '', [
 call javaapi#class('CipherHelper', '', [
   \ ])
 
-call javaapi#class('InitSecContextToken', '', [
+call javaapi#class('InitSecContextToken', 'InitialToken', [
   \ javaapi#method(0,'getKrbApReq(', ')', 'KrbApReq'),
   \ javaapi#method(0,'encode(', ') throws IOException', 'byte[]'),
   \ ])
@@ -32,7 +32,7 @@ call javaapi#class('OverloadedChecksum', '', [
   \ javaapi#method(0,'setContextFlags(', 'Krb5Context)', 'void'),
   \ ])
 
-call javaapi#class('InitialToken', '', [
+call javaapi#class('InitialToken', 'Krb5Token', [
   \ javaapi#method(0,'encode(', ') throws IOException', 'byte[]'),
   \ ])
 
@@ -131,7 +131,7 @@ call javaapi#class('Krb5Context', 'GSSContextSpi', [
   \ javaapi#method(0,'setAuthzData(', 'AuthorizationDataEntry[])', 'void'),
   \ ])
 
-call javaapi#interface('Krb5CredElement', '', [
+call javaapi#interface('Krb5CredElement', 'GSSCredentialSpi', [
   \ ])
 
 call javaapi#class('1', 'KerberosTicket>', [
@@ -139,7 +139,7 @@ call javaapi#class('1', 'KerberosTicket>', [
   \ javaapi#method(0,'run(', ') throws Exception', 'Object'),
   \ ])
 
-call javaapi#class('Krb5InitCredential', '', [
+call javaapi#class('Krb5InitCredential', 'KerberosTicket', [
   \ javaapi#method(0,'getName(', ') throws GSSException', 'GSSNameSpi'),
   \ javaapi#method(0,'getInitLifetime(', ') throws GSSException', 'int'),
   \ javaapi#method(0,'getAcceptLifetime(', ') throws GSSException', 'int'),
@@ -179,7 +179,7 @@ call javaapi#class('Krb5NameElement', 'GSSNameSpi', [
   \ javaapi#method(0,'getProvider(', ')', 'Provider'),
   \ ])
 
-call javaapi#class('Krb5Token', '', [
+call javaapi#class('Krb5Token', 'GSSToken', [
   \ javaapi#field(1,'AP_REQ_ID', 'int'),
   \ javaapi#field(1,'AP_REP_ID', 'int'),
   \ javaapi#field(1,'ERR_ID', 'int'),
@@ -191,7 +191,7 @@ call javaapi#class('Krb5Token', '', [
   \ javaapi#method(1,'getTokenName(', 'int)', 'String'),
   \ ])
 
-call javaapi#class('KeysFromKeyTab', '', [
+call javaapi#class('KeysFromKeyTab', 'KerberosKey', [
   \ javaapi#method(0,'KeysFromKeyTab(', 'KerberosKey)', 'public'),
   \ ])
 
@@ -222,7 +222,7 @@ call javaapi#class('MessageTokenHeader', '', [
   \ javaapi#method(0,'getBytes(', ')', 'byte[]'),
   \ ])
 
-call javaapi#class('MessageToken', '', [
+call javaapi#class('MessageToken', 'Krb5Token', [
   \ javaapi#method(0,'getGSSHeader(', ')', 'GSSHeader'),
   \ javaapi#method(0,'getTokenId(', ')', 'int'),
   \ javaapi#method(0,'getEncSeqNumber(', ')', 'byte[]'),
@@ -242,7 +242,7 @@ call javaapi#class('MessageTokenHeader', '', [
   \ javaapi#method(0,'getBytes(', ')', 'byte[]'),
   \ ])
 
-call javaapi#class('MessageToken_v2', '', [
+call javaapi#class('MessageToken_v2', 'Krb5Token', [
   \ javaapi#method(0,'getTokenId(', ')', 'int'),
   \ javaapi#method(0,'getKeyUsage(', ')', 'int'),
   \ javaapi#method(0,'getConfState(', ')', 'boolean'),
@@ -252,7 +252,7 @@ call javaapi#class('MessageToken_v2', '', [
   \ javaapi#method(0,'encode(', 'OutputStream) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('MicToken', '', [
+call javaapi#class('MicToken', 'MessageToken', [
   \ javaapi#method(0,'MicToken(', 'Krb5Context, byte[], int, int, MessageProp) throws GSSException', 'public'),
   \ javaapi#method(0,'MicToken(', 'Krb5Context, InputStream, MessageProp) throws GSSException', 'public'),
   \ javaapi#method(0,'verify(', 'byte[], int, int) throws GSSException', 'void'),
@@ -263,7 +263,7 @@ call javaapi#class('MicToken', '', [
   \ javaapi#method(0,'encode(', ') throws IOException, GSSException', 'byte[]'),
   \ ])
 
-call javaapi#class('MicToken_v2', '', [
+call javaapi#class('MicToken_v2', 'MessageToken_v2', [
   \ javaapi#method(0,'MicToken_v2(', 'Krb5Context, byte[], int, int, MessageProp) throws GSSException', 'public'),
   \ javaapi#method(0,'MicToken_v2(', 'Krb5Context, InputStream, MessageProp) throws GSSException', 'public'),
   \ javaapi#method(0,'verify(', 'byte[], int, int) throws GSSException', 'void'),
@@ -278,7 +278,7 @@ call javaapi#class('MicToken_v2', '', [
 call javaapi#class('SubjectComber', '', [
   \ ])
 
-call javaapi#class('WrapToken', '', [
+call javaapi#class('WrapToken', 'MessageToken', [
   \ javaapi#method(0,'WrapToken(', 'Krb5Context, byte[], int, int, MessageProp) throws GSSException', 'public'),
   \ javaapi#method(0,'WrapToken(', 'Krb5Context, InputStream, MessageProp) throws GSSException', 'public'),
   \ javaapi#method(0,'getData(', ') throws GSSException', 'byte[]'),
@@ -289,7 +289,7 @@ call javaapi#class('WrapToken', '', [
   \ javaapi#method(0,'encode(', 'byte[], int) throws IOException, GSSException', 'int'),
   \ ])
 
-call javaapi#class('WrapToken_v2', '', [
+call javaapi#class('WrapToken_v2', 'MessageToken_v2', [
   \ javaapi#method(0,'WrapToken_v2(', 'Krb5Context, byte[], int, int, MessageProp) throws GSSException', 'public'),
   \ javaapi#method(0,'WrapToken_v2(', 'Krb5Context, InputStream, MessageProp) throws GSSException', 'public'),
   \ javaapi#method(0,'getData(', ') throws GSSException', 'byte[]'),

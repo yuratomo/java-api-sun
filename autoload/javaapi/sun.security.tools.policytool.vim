@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.security.tools.policytool')
 
-call javaapi#class('AWTPerm', '', [
+call javaapi#class('AWTPerm', 'Perm', [
   \ javaapi#method(0,'AWTPerm(', ')', 'public'),
   \ ])
 
@@ -16,15 +16,15 @@ call javaapi#class('AddPrinButtonListener', 'ActionListener', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('AllPerm', '', [
+call javaapi#class('AllPerm', 'Perm', [
   \ javaapi#method(0,'AllPerm(', ')', 'public'),
   \ ])
 
-call javaapi#class('AudioPerm', '', [
+call javaapi#class('AudioPerm', 'Perm', [
   \ javaapi#method(0,'AudioPerm(', ')', 'public'),
   \ ])
 
-call javaapi#class('AuthPerm', '', [
+call javaapi#class('AuthPerm', 'Perm', [
   \ javaapi#method(0,'AuthPerm(', ')', 'public'),
   \ ])
 
@@ -50,7 +50,7 @@ call javaapi#class('ConfirmRemovePolicyEntryOKButtonListener', 'ActionListener',
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('DelegationPerm', '', [
+call javaapi#class('DelegationPerm', 'Perm', [
   \ javaapi#method(0,'DelegationPerm(', ')', 'public'),
   \ ])
 
@@ -70,31 +70,31 @@ call javaapi#class('FileMenuListener', 'ActionListener', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('FilePerm', '', [
+call javaapi#class('FilePerm', 'Perm', [
   \ javaapi#method(0,'FilePerm(', ')', 'public'),
   \ ])
 
-call javaapi#class('InqSecContextPerm', '', [
+call javaapi#class('InqSecContextPerm', 'Perm', [
   \ javaapi#method(0,'InqSecContextPerm(', ')', 'public'),
   \ ])
 
-call javaapi#class('KrbPrin', '', [
+call javaapi#class('KrbPrin', 'Prin', [
   \ javaapi#method(0,'KrbPrin(', ')', 'public'),
   \ ])
 
-call javaapi#class('LogPerm', '', [
+call javaapi#class('LogPerm', 'Perm', [
   \ javaapi#method(0,'LogPerm(', ')', 'public'),
   \ ])
 
-call javaapi#class('MBeanPerm', '', [
+call javaapi#class('MBeanPerm', 'Perm', [
   \ javaapi#method(0,'MBeanPerm(', ')', 'public'),
   \ ])
 
-call javaapi#class('MBeanSvrPerm', '', [
+call javaapi#class('MBeanSvrPerm', 'Perm', [
   \ javaapi#method(0,'MBeanSvrPerm(', ')', 'public'),
   \ ])
 
-call javaapi#class('MBeanTrustPerm', '', [
+call javaapi#class('MBeanTrustPerm', 'Perm', [
   \ javaapi#method(0,'MBeanTrustPerm(', ')', 'public'),
   \ ])
 
@@ -102,11 +102,11 @@ call javaapi#class('MainWindowListener', 'ActionListener', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('MgmtPerm', '', [
+call javaapi#class('MgmtPerm', 'Perm', [
   \ javaapi#method(0,'MgmtPerm(', ')', 'public'),
   \ ])
 
-call javaapi#class('NetPerm', '', [
+call javaapi#class('NetPerm', 'Perm', [
   \ javaapi#method(0,'NetPerm(', ')', 'public'),
   \ ])
 
@@ -118,7 +118,7 @@ call javaapi#class('NewPolicyPrinOKButtonListener', 'ActionListener', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('NoDisplayException', '', [
+call javaapi#class('NoDisplayException', 'RuntimeException', [
   \ ])
 
 call javaapi#class('Perm', '', [
@@ -162,15 +162,15 @@ call javaapi#class('PrincipalTypeMenuListener', 'ItemListener', [
   \ javaapi#method(0,'itemStateChanged(', 'ItemEvent)', 'void'),
   \ ])
 
-call javaapi#class('PrivCredPerm', '', [
+call javaapi#class('PrivCredPerm', 'Perm', [
   \ javaapi#method(0,'PrivCredPerm(', ')', 'public'),
   \ ])
 
-call javaapi#class('PropPerm', '', [
+call javaapi#class('PropPerm', 'Perm', [
   \ javaapi#method(0,'PropPerm(', ')', 'public'),
   \ ])
 
-call javaapi#class('ReflectPerm', '', [
+call javaapi#class('ReflectPerm', 'Perm', [
   \ javaapi#method(0,'ReflectPerm(', ')', 'public'),
   \ ])
 
@@ -182,31 +182,31 @@ call javaapi#class('RemovePrinButtonListener', 'ActionListener', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('RuntimePerm', '', [
+call javaapi#class('RuntimePerm', 'Perm', [
   \ javaapi#method(0,'RuntimePerm(', ')', 'public'),
   \ ])
 
-call javaapi#class('SQLPerm', '', [
+call javaapi#class('SQLPerm', 'Perm', [
   \ javaapi#method(0,'SQLPerm(', ')', 'public'),
   \ ])
 
-call javaapi#class('SSLPerm', '', [
+call javaapi#class('SSLPerm', 'Perm', [
   \ javaapi#method(0,'SSLPerm(', ')', 'public'),
   \ ])
 
-call javaapi#class('SecurityPerm', '', [
+call javaapi#class('SecurityPerm', 'Perm', [
   \ javaapi#method(0,'SecurityPerm(', ')', 'public'),
   \ ])
 
-call javaapi#class('SerialPerm', '', [
+call javaapi#class('SerialPerm', 'Perm', [
   \ javaapi#method(0,'SerialPerm(', ')', 'public'),
   \ ])
 
-call javaapi#class('ServicePerm', '', [
+call javaapi#class('ServicePerm', 'Perm', [
   \ javaapi#method(0,'ServicePerm(', ')', 'public'),
   \ ])
 
-call javaapi#class('SocketPerm', '', [
+call javaapi#class('SocketPerm', 'Perm', [
   \ javaapi#method(0,'SocketPerm(', ')', 'public'),
   \ ])
 
@@ -214,11 +214,11 @@ call javaapi#class('StatusOKButtonListener', 'ActionListener', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('SubjDelegPerm', '', [
+call javaapi#class('SubjDelegPerm', 'Perm', [
   \ javaapi#method(0,'SubjDelegPerm(', ')', 'public'),
   \ ])
 
-call javaapi#class('TaggedList', '', [
+call javaapi#class('TaggedList', 'List', [
   \ javaapi#method(0,'TaggedList(', 'int, boolean)', 'public'),
   \ javaapi#method(0,'getObject(', 'int)', 'Object'),
   \ javaapi#method(0,'add(', 'String)', 'void'),
@@ -229,15 +229,15 @@ call javaapi#class('TaggedList', '', [
   \ javaapi#method(0,'removeTaggedItem(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'WindowAdapter', [
   \ javaapi#method(0,'windowClosing(', 'WindowEvent)', 'void'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'WindowAdapter', [
   \ javaapi#method(0,'windowClosing(', 'WindowEvent)', 'void'),
   \ ])
 
-call javaapi#class('ToolDialog', '', [
+call javaapi#class('ToolDialog', 'Dialog', [
   \ javaapi#field(1,'NOACTION', 'int'),
   \ javaapi#field(1,'QUIT', 'int'),
   \ javaapi#field(1,'NEW', 'int'),
@@ -319,7 +319,7 @@ call javaapi#class('2', 'ActionListener', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('ToolWindow', '', [
+call javaapi#class('ToolWindow', 'Frame', [
   \ javaapi#field(1,'TOP_PADDING', 'Insets'),
   \ javaapi#field(1,'BOTTOM_PADDING', 'Insets'),
   \ javaapi#field(1,'LITE_BOTTOM_PADDING', 'Insets'),
@@ -372,7 +372,7 @@ call javaapi#class('UserSaveYesButtonListener', 'ActionListener', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('X500Prin', '', [
+call javaapi#class('X500Prin', 'Prin', [
   \ javaapi#method(0,'X500Prin(', ')', 'public'),
   \ ])
 

@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.security.provider.certpath')
 
-call javaapi#class('AdaptableX509CertSelector', '', [
+call javaapi#class('AdaptableX509CertSelector', 'X509CertSelector', [
   \ javaapi#method(0,'match(', 'Certificate)', 'boolean'),
   \ javaapi#method(0,'clone(', ')', 'Object'),
   \ ])
@@ -11,7 +11,7 @@ call javaapi#class('AdjacencyList', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('AlgorithmChecker', '', [
+call javaapi#class('AlgorithmChecker', 'PKIXCertPathChecker', [
   \ javaapi#method(0,'AlgorithmChecker(', 'TrustAnchor)', 'public'),
   \ javaapi#method(0,'AlgorithmChecker(', 'AlgorithmConstraints)', 'public'),
   \ javaapi#method(0,'AlgorithmChecker(', 'TrustAnchor, AlgorithmConstraints)', 'public'),
@@ -21,7 +21,7 @@ call javaapi#class('AlgorithmChecker', '', [
   \ javaapi#method(0,'check(', 'Certificate, Collection<String>) throws CertPathValidatorException', 'void'),
   \ ])
 
-call javaapi#class('BasicChecker', '', [
+call javaapi#class('BasicChecker', 'PKIXCertPathChecker', [
   \ javaapi#method(0,'init(', 'boolean) throws CertPathValidatorException', 'void'),
   \ javaapi#method(0,'isForwardCheckingSupported(', ')', 'boolean'),
   \ javaapi#method(0,'getSupportedExtensions(', ')', 'String>'),
@@ -74,25 +74,25 @@ call javaapi#interface('CertStoreHelper', '', [
   \ javaapi#method(0,'wrap(', 'X509CRLSelector, Collection<X500Principal>, String) throws IOException', 'X509CRLSelector'),
   \ ])
 
-call javaapi#class('CollectionCertStore', '', [
+call javaapi#class('CollectionCertStore', 'CertStoreSpi', [
   \ javaapi#method(0,'CollectionCertStore(', 'CertStoreParameters) throws InvalidAlgorithmParameterException', 'public'),
   \ javaapi#method(0,'engineGetCertificates(', 'CertSelector) throws CertStoreException', 'Certificate>'),
   \ javaapi#method(0,'engineGetCRLs(', 'CRLSelector) throws CertStoreException', 'CRL>'),
   \ ])
 
-call javaapi#class('ConstraintsChecker', '', [
+call javaapi#class('ConstraintsChecker', 'PKIXCertPathChecker', [
   \ javaapi#method(0,'init(', 'boolean) throws CertPathValidatorException', 'void'),
   \ javaapi#method(0,'isForwardCheckingSupported(', ')', 'boolean'),
   \ javaapi#method(0,'getSupportedExtensions(', ')', 'String>'),
   \ javaapi#method(0,'check(', 'Certificate, Collection<String>) throws CertPathValidatorException', 'void'),
   \ ])
 
-call javaapi#class('RejectKeySelector', '', [
+call javaapi#class('RejectKeySelector', 'X509CertSelector', [
   \ javaapi#method(0,'match(', 'Certificate)', 'boolean'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('CrlRevocationChecker', '', [
+call javaapi#class('CrlRevocationChecker', 'PKIXCertPathChecker', [
   \ javaapi#method(0,'init(', 'boolean) throws CertPathValidatorException', 'void'),
   \ javaapi#method(0,'isForwardCheckingSupported(', ')', 'boolean'),
   \ javaapi#method(0,'getSupportedExtensions(', ')', 'String>'),
@@ -108,7 +108,7 @@ call javaapi#class('PKIXCertComparator', 'X509Certificate>', [
   \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
   \ ])
 
-call javaapi#class('ForwardBuilder', '', [
+call javaapi#class('ForwardBuilder', 'Builder', [
   \ ])
 
 call javaapi#class('ForwardState', 'State', [
@@ -121,20 +121,20 @@ call javaapi#class('ForwardState', 'State', [
   \ javaapi#method(0,'clone(', ')', 'Object'),
   \ ])
 
-call javaapi#class('IndexedCollectionCertStore', '', [
+call javaapi#class('IndexedCollectionCertStore', 'CertStoreSpi', [
   \ javaapi#method(0,'IndexedCollectionCertStore(', 'CertStoreParameters) throws InvalidAlgorithmParameterException', 'public'),
   \ javaapi#method(0,'engineGetCertificates(', 'CertSelector) throws CertStoreException', 'Certificate>'),
   \ javaapi#method(0,'engineGetCRLs(', 'CRLSelector) throws CertStoreException', 'CRL>'),
   \ ])
 
-call javaapi#class('KeyChecker', '', [
+call javaapi#class('KeyChecker', 'PKIXCertPathChecker', [
   \ javaapi#method(0,'init(', 'boolean) throws CertPathValidatorException', 'void'),
   \ javaapi#method(0,'isForwardCheckingSupported(', ')', 'boolean'),
   \ javaapi#method(0,'getSupportedExtensions(', ')', 'String>'),
   \ javaapi#method(0,'check(', 'Certificate, Collection<String>) throws CertPathValidatorException', 'void'),
   \ ])
 
-call javaapi#class('CertStatus', '', [
+call javaapi#class('CertStatus', 'CertStatus>', [
   \ javaapi#field(1,'GOOD', 'CertStatus'),
   \ javaapi#field(1,'REVOKED', 'CertStatus'),
   \ javaapi#field(1,'UNKNOWN', 'CertStatus'),
@@ -160,7 +160,7 @@ call javaapi#class('1', 'Void>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('OCSPChecker', '', [
+call javaapi#class('OCSPChecker', 'PKIXCertPathChecker', [
   \ javaapi#method(0,'init(', 'boolean) throws CertPathValidatorException', 'void'),
   \ javaapi#method(0,'isForwardCheckingSupported(', ')', 'boolean'),
   \ javaapi#method(0,'getSupportedExtensions(', ')', 'String>'),
@@ -173,7 +173,7 @@ call javaapi#class('OCSPRequest', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('ResponseStatus', '', [
+call javaapi#class('ResponseStatus', 'ResponseStatus>', [
   \ javaapi#field(1,'SUCCESSFUL', 'ResponseStatus'),
   \ javaapi#field(1,'MALFORMED_REQUEST', 'ResponseStatus'),
   \ javaapi#field(1,'INTERNAL_ERROR', 'ResponseStatus'),
@@ -196,7 +196,7 @@ call javaapi#class('SingleResponse', 'RevocationStatus', [
 call javaapi#class('OCSPResponse', '', [
   \ ])
 
-call javaapi#class('PKIXCertPathValidator', '', [
+call javaapi#class('PKIXCertPathValidator', 'CertPathValidatorSpi', [
   \ javaapi#method(0,'PKIXCertPathValidator(', ')', 'public'),
   \ javaapi#method(0,'engineValidate(', 'CertPath, CertPathParameters) throws CertPathValidatorException, InvalidAlgorithmParameterException', 'CertPathValidatorResult'),
   \ ])
@@ -204,7 +204,7 @@ call javaapi#class('PKIXCertPathValidator', '', [
 call javaapi#class('PKIXMasterCertPathValidator', '', [
   \ ])
 
-call javaapi#class('PolicyChecker', '', [
+call javaapi#class('PolicyChecker', 'PKIXCertPathChecker', [
   \ javaapi#method(0,'init(', 'boolean) throws CertPathValidatorException', 'void'),
   \ javaapi#method(0,'isForwardCheckingSupported(', ')', 'boolean'),
   \ javaapi#method(0,'getSupportedExtensions(', ')', 'String>'),
@@ -227,7 +227,7 @@ call javaapi#class('PKIXCertComparator', 'X509Certificate>', [
   \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
   \ ])
 
-call javaapi#class('ReverseBuilder', '', [
+call javaapi#class('ReverseBuilder', 'Builder', [
   \ ])
 
 call javaapi#class('ReverseState', 'State', [
@@ -242,7 +242,7 @@ call javaapi#class('ReverseState', 'State', [
   \ javaapi#method(0,'clone(', ')', 'Object'),
   \ ])
 
-call javaapi#interface('State', '', [
+call javaapi#interface('State', 'Cloneable', [
   \ javaapi#method(0,'updateState(', 'X509Certificate) throws CertificateException, IOException, CertPathValidatorException', 'void'),
   \ javaapi#method(0,'clone(', ')', 'Object'),
   \ javaapi#method(0,'isInitial(', ')', 'boolean'),
@@ -257,12 +257,12 @@ call javaapi#class('CertStoreComparator', 'CertStore>', [
   \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
   \ ])
 
-call javaapi#class('SunCertPathBuilder', '', [
+call javaapi#class('SunCertPathBuilder', 'CertPathBuilderSpi', [
   \ javaapi#method(0,'SunCertPathBuilder(', ') throws CertPathBuilderException', 'public'),
   \ javaapi#method(0,'engineBuild(', 'CertPathParameters) throws CertPathBuilderException, InvalidAlgorithmParameterException', 'CertPathBuilderResult'),
   \ ])
 
-call javaapi#class('SunCertPathBuilderException', '', [
+call javaapi#class('SunCertPathBuilderException', 'CertPathBuilderException', [
   \ javaapi#method(0,'SunCertPathBuilderException(', ')', 'public'),
   \ javaapi#method(0,'SunCertPathBuilderException(', 'String)', 'public'),
   \ javaapi#method(0,'SunCertPathBuilderException(', 'Throwable)', 'public'),
@@ -270,7 +270,7 @@ call javaapi#class('SunCertPathBuilderException', '', [
   \ javaapi#method(0,'getAdjacencyList(', ')', 'AdjacencyList'),
   \ ])
 
-call javaapi#class('SunCertPathBuilderParameters', '', [
+call javaapi#class('SunCertPathBuilderParameters', 'PKIXBuilderParameters', [
   \ javaapi#method(0,'SunCertPathBuilderParameters(', 'Set<TrustAnchor>, CertSelector) throws InvalidAlgorithmParameterException', 'public'),
   \ javaapi#method(0,'SunCertPathBuilderParameters(', 'KeyStore, CertSelector) throws KeyStoreException, InvalidAlgorithmParameterException', 'public'),
   \ javaapi#method(0,'getBuildForward(', ')', 'boolean'),
@@ -278,7 +278,7 @@ call javaapi#class('SunCertPathBuilderParameters', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SunCertPathBuilderResult', '', [
+call javaapi#class('SunCertPathBuilderResult', 'PKIXCertPathBuilderResult', [
   \ javaapi#method(0,'getAdjacencyList(', ')', 'AdjacencyList'),
   \ ])
 
@@ -290,7 +290,7 @@ call javaapi#class('1', 'CertStoreHelper>', [
 call javaapi#class('LDAP', '', [
   \ ])
 
-call javaapi#class('UCS', '', [
+call javaapi#class('UCS', 'CertStore', [
   \ ])
 
 call javaapi#class('URICertStoreParameters', 'CertStoreParameters', [
@@ -299,12 +299,12 @@ call javaapi#class('URICertStoreParameters', 'CertStoreParameters', [
   \ javaapi#method(0,'clone(', ')', 'Object'),
   \ ])
 
-call javaapi#class('URICertStore', '', [
+call javaapi#class('URICertStore', 'CertStoreSpi', [
   \ javaapi#method(0,'engineGetCertificates(', 'CertSelector) throws CertStoreException', 'X509Certificate>'),
   \ javaapi#method(0,'engineGetCRLs(', 'CRLSelector) throws CertStoreException', 'X509CRL>'),
   \ ])
 
-call javaapi#class('UntrustedChecker', '', [
+call javaapi#class('UntrustedChecker', 'PKIXCertPathChecker', [
   \ javaapi#method(0,'UntrustedChecker(', ')', 'public'),
   \ javaapi#method(0,'init(', 'boolean) throws CertPathValidatorException', 'void'),
   \ javaapi#method(0,'isForwardCheckingSupported(', ')', 'boolean'),
@@ -323,7 +323,7 @@ call javaapi#class('Vertex', '', [
   \ javaapi#method(0,'indexToString(', ')', 'String'),
   \ ])
 
-call javaapi#class('X509CertPath', '', [
+call javaapi#class('X509CertPath', 'CertPath', [
   \ javaapi#method(0,'X509CertPath(', 'List<? extends Certificate>) throws CertificateException', 'public'),
   \ javaapi#method(0,'X509CertPath(', 'InputStream) throws CertificateException', 'public'),
   \ javaapi#method(0,'X509CertPath(', 'InputStream, String) throws CertificateException', 'public'),

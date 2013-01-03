@@ -37,36 +37,36 @@ call javaapi#class('GetPropertyAction', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('HexOutputStream', '', [
+call javaapi#class('HexOutputStream', 'OutputStream', [
   \ javaapi#method(0,'HexOutputStream(', 'StringWriter)', 'public'),
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[]) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('IIOPInputStream_1_3', '', [
+call javaapi#class('IIOPInputStream_1_3', 'IIOPInputStream', [
   \ javaapi#method(0,'readFields(', ') throws IOException, ClassNotFoundException, NotActiveException', 'GetField'),
   \ javaapi#method(0,'IIOPInputStream_1_3(', ') throws IOException', 'public'),
   \ ])
 
-call javaapi#class('IIOPInputStream_1_3_1', '', [
+call javaapi#class('IIOPInputStream_1_3_1', 'IIOPInputStream', [
   \ javaapi#method(0,'IIOPInputStream_1_3_1(', ') throws IOException', 'public'),
   \ javaapi#method(0,'readFields(', ') throws IOException, ClassNotFoundException, NotActiveException', 'GetField'),
   \ ])
 
-call javaapi#class('IIOPOutputStream_1_3', '', [
+call javaapi#class('IIOPOutputStream_1_3', 'IIOPOutputStream', [
   \ javaapi#method(0,'IIOPOutputStream_1_3(', ') throws IOException', 'public'),
   \ javaapi#method(0,'putFields(', ') throws IOException', 'PutField'),
   \ javaapi#method(0,'writeFields(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('IIOPOutputStream_1_3_1', '', [
+call javaapi#class('IIOPOutputStream_1_3_1', 'IIOPOutputStream', [
   \ javaapi#method(0,'IIOPOutputStream_1_3_1(', ') throws IOException', 'public'),
   \ javaapi#method(0,'putFields(', ') throws IOException', 'PutField'),
   \ javaapi#method(0,'writeFields(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('LegacyHookGetFields', '', [
+call javaapi#class('LegacyHookGetFields', 'GetField', [
   \ javaapi#method(0,'getObjectStreamClass(', ')', 'ObjectStreamClass'),
   \ javaapi#method(0,'defaulted(', 'String) throws IOException, IllegalArgumentException', 'boolean'),
   \ javaapi#method(0,'get(', 'String, boolean) throws IOException, IllegalArgumentException', 'boolean'),
@@ -81,7 +81,7 @@ call javaapi#class('LegacyHookGetFields', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('LegacyHookPutFields', '', [
+call javaapi#class('LegacyHookPutFields', 'PutField', [
   \ javaapi#method(0,'put(', 'String, boolean)', 'void'),
   \ javaapi#method(0,'put(', 'String, char)', 'void'),
   \ javaapi#method(0,'put(', 'String, byte)', 'void'),
@@ -424,7 +424,7 @@ call javaapi#class('ObjectUtility', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('IndentingObjectWriter', '', [
+call javaapi#class('IndentingObjectWriter', 'ObjectWriter', [
   \ javaapi#method(0,'IndentingObjectWriter(', 'int, int)', 'public'),
   \ javaapi#method(0,'startObject(', 'Object)', 'void'),
   \ javaapi#method(0,'startElement(', ')', 'void'),
@@ -433,7 +433,7 @@ call javaapi#class('IndentingObjectWriter', '', [
   \ javaapi#method(0,'endObject(', ')', 'void'),
   \ ])
 
-call javaapi#class('SimpleObjectWriter', '', [
+call javaapi#class('SimpleObjectWriter', 'ObjectWriter', [
   \ javaapi#method(0,'startObject(', 'Object)', 'void'),
   \ javaapi#method(0,'startElement(', ')', 'void'),
   \ javaapi#method(0,'endObject(', 'String)', 'void'),
@@ -546,12 +546,12 @@ call javaapi#class('RepIdDelegator_1_3_1', 'RepositoryIdInterface', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('RepositoryIdCache_1_3', '', [
+call javaapi#class('RepositoryIdCache_1_3', 'Hashtable', [
   \ javaapi#method(0,'RepositoryIdCache_1_3(', ')', 'public'),
   \ javaapi#method(0,'getId(', 'String)', 'RepositoryId_1_3'),
   \ ])
 
-call javaapi#class('RepositoryIdCache_1_3_1', '', [
+call javaapi#class('RepositoryIdCache_1_3_1', 'Hashtable', [
   \ javaapi#method(0,'RepositoryIdCache_1_3_1(', ')', 'public'),
   \ javaapi#method(0,'getId(', 'String)', 'RepositoryId_1_3_1'),
   \ ])
@@ -571,11 +571,11 @@ call javaapi#interface('RepositoryIdInterface', '', [
   \ javaapi#method(0,'getClassName(', ')', 'String'),
   \ ])
 
-call javaapi#class('RepositoryIdPool_1_3', '', [
+call javaapi#class('RepositoryIdPool_1_3', 'Stack', [
   \ javaapi#method(0,'popId(', ')', 'RepositoryId_1_3'),
   \ ])
 
-call javaapi#class('RepositoryIdPool_1_3_1', '', [
+call javaapi#class('RepositoryIdPool_1_3_1', 'Stack', [
   \ javaapi#method(0,'popId(', ')', 'RepositoryId_1_3_1'),
   \ ])
 
@@ -778,7 +778,7 @@ call javaapi#class('StackImpl', '', [
   \ javaapi#method(0,'push(', 'Object)', 'Object'),
   \ ])
 
-call javaapi#class('ValueHandlerImpl_1_3', '', [
+call javaapi#class('ValueHandlerImpl_1_3', 'ValueHandlerImpl', [
   \ javaapi#method(0,'ValueHandlerImpl_1_3(', ')', 'public'),
   \ javaapi#method(0,'ValueHandlerImpl_1_3(', 'boolean)', 'public'),
   \ javaapi#method(0,'writeValue(', 'OutputStream, Serializable)', 'void'),
@@ -799,7 +799,7 @@ call javaapi#class('ValueHandlerImpl_1_3', '', [
   \ javaapi#method(0,'isSequence(', 'String)', 'boolean'),
   \ ])
 
-call javaapi#class('ValueHandlerImpl_1_3_1', '', [
+call javaapi#class('ValueHandlerImpl_1_3_1', 'ValueHandlerImpl', [
   \ javaapi#method(0,'ValueHandlerImpl_1_3_1(', ')', 'public'),
   \ javaapi#method(0,'ValueHandlerImpl_1_3_1(', 'boolean)', 'public'),
   \ javaapi#method(0,'useFullValueDescription(', 'Class, String) throws IOException', 'boolean'),

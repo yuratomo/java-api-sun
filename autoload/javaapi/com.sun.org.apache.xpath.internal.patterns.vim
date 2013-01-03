@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xpath.internal.patterns')
 
-call javaapi#class('ContextMatchStepPattern', '', [
+call javaapi#class('ContextMatchStepPattern', 'StepPattern', [
   \ javaapi#method(0,'ContextMatchStepPattern(', 'int, int)', 'public'),
   \ javaapi#method(0,'execute(', 'XPathContext) throws TransformerException', 'XObject'),
   \ javaapi#method(0,'executeRelativePathPattern(', 'XPathContext, StepPattern) throws TransformerException', 'XObject'),
@@ -11,7 +11,7 @@ call javaapi#class('FunctionOwner', 'ExpressionOwner', [
   \ javaapi#method(0,'setExpression(', 'Expression)', 'void'),
   \ ])
 
-call javaapi#class('FunctionPattern', '', [
+call javaapi#class('FunctionPattern', 'StepPattern', [
   \ javaapi#method(0,'FunctionPattern(', 'Expression, int, int)', 'public'),
   \ javaapi#method(0,'calcScore(', ')', 'void'),
   \ javaapi#method(0,'fixupVariables(', 'Vector, int)', 'void'),
@@ -20,7 +20,7 @@ call javaapi#class('FunctionPattern', '', [
   \ javaapi#method(0,'execute(', 'XPathContext) throws TransformerException', 'XObject'),
   \ ])
 
-call javaapi#class('NodeTest', '', [
+call javaapi#class('NodeTest', 'Expression', [
   \ javaapi#field(1,'WILD', 'String'),
   \ javaapi#field(1,'SUPPORTS_PRE_STRIPPING', 'String'),
   \ javaapi#field(1,'SHOW_BYFUNCTION', 'int'),
@@ -62,7 +62,7 @@ call javaapi#class('PredOwner', 'ExpressionOwner', [
   \ javaapi#method(0,'setExpression(', 'Expression)', 'void'),
   \ ])
 
-call javaapi#class('StepPattern', '', [
+call javaapi#class('StepPattern', 'NodeTest', [
   \ javaapi#method(0,'StepPattern(', 'int, String, String, int, int)', 'public'),
   \ javaapi#method(0,'StepPattern(', 'int, int, int)', 'public'),
   \ javaapi#method(0,'calcTargetString(', ')', 'void'),
@@ -96,7 +96,7 @@ call javaapi#class('UnionPathPartOwner', 'ExpressionOwner', [
   \ javaapi#method(0,'setExpression(', 'Expression)', 'void'),
   \ ])
 
-call javaapi#class('UnionPattern', '', [
+call javaapi#class('UnionPattern', 'Expression', [
   \ javaapi#method(0,'UnionPattern(', ')', 'public'),
   \ javaapi#method(0,'fixupVariables(', 'Vector, int)', 'void'),
   \ javaapi#method(0,'canTraverseOutsideSubtree(', ')', 'boolean'),

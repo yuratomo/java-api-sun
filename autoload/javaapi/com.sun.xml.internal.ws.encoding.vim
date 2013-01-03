@@ -27,7 +27,7 @@ call javaapi#class('DataHandlerDataSource', 'DataSource', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('DataSourceStreamingDataHandler', '', [
+call javaapi#class('DataSourceStreamingDataHandler', 'StreamingDataHandler', [
   \ javaapi#method(0,'DataSourceStreamingDataHandler(', 'DataSource)', 'public'),
   \ javaapi#method(0,'readOnce(', ') throws IOException', 'InputStream'),
   \ javaapi#method(0,'moveTo(', 'File) throws IOException', 'void'),
@@ -47,7 +47,7 @@ call javaapi#class('Token', '', [
 call javaapi#class('HeaderTokenizer', '', [
   \ ])
 
-call javaapi#class('ImageDataContentHandler', '', [
+call javaapi#class('ImageDataContentHandler', 'Component', [
   \ javaapi#method(0,'ImageDataContentHandler(', ')', 'public'),
   \ javaapi#method(0,'getTransferDataFlavors(', ')', 'DataFlavor[]'),
   \ javaapi#method(0,'getTransferData(', 'DataFlavor, DataSource) throws IOException', 'Object'),
@@ -55,7 +55,7 @@ call javaapi#class('ImageDataContentHandler', '', [
   \ javaapi#method(0,'writeTo(', 'Object, String, OutputStream) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('MyIOException', '', [
+call javaapi#class('MyIOException', 'IOException', [
   \ javaapi#method(0,'getCause(', ')', 'Throwable'),
   \ ])
 
@@ -67,7 +67,7 @@ call javaapi#class('StreamingDataSource', 'DataSource', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('MIMEPartStreamingDataHandler', '', [
+call javaapi#class('MIMEPartStreamingDataHandler', 'StreamingDataHandler', [
   \ javaapi#method(0,'MIMEPartStreamingDataHandler(', 'MIMEPart)', 'public'),
   \ javaapi#method(0,'readOnce(', ') throws IOException', 'InputStream'),
   \ javaapi#method(0,'moveTo(', 'File) throws IOException', 'void'),
@@ -112,7 +112,7 @@ call javaapi#class('1', '', [
 call javaapi#class('ByteArrayBuffer', '', [
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'AttachmentMarshaller', [
   \ javaapi#method(0,'addMtomAttachment(', 'DataHandler, String, String)', 'String'),
   \ javaapi#method(0,'addMtomAttachment(', 'byte[], int, int, String, String, String)', 'String'),
   \ javaapi#method(0,'addSwaRefAttachment(', 'DataHandler)', 'String'),
@@ -127,7 +127,7 @@ call javaapi#class('MtomNamespaceContextEx', 'NamespaceContextEx', [
   \ javaapi#method(0,'getPrefixes(', 'String)', 'Iterator'),
   \ ])
 
-call javaapi#class('MtomStreamWriterImpl', '', [
+call javaapi#class('MtomStreamWriterImpl', 'XMLStreamWriterFilter', [
   \ javaapi#method(0,'MtomStreamWriterImpl(', 'XMLStreamWriter, OutputStream, List<ByteArrayBuffer>)', 'public'),
   \ javaapi#method(0,'writeBinary(', 'byte[], int, int, String) throws XMLStreamException', 'void'),
   \ javaapi#method(0,'writeBinary(', 'DataHandler) throws XMLStreamException', 'void'),
@@ -147,7 +147,7 @@ call javaapi#class('MtomNamespaceContextEx', 'NamespaceContextEx', [
   \ javaapi#method(0,'getPrefixes(', 'String)', 'Iterator'),
   \ ])
 
-call javaapi#class('MtomXMLStreamReaderEx', '', [
+call javaapi#class('MtomXMLStreamReaderEx', 'XMLStreamReaderFilter', [
   \ javaapi#method(0,'MtomXMLStreamReaderEx(', 'MimeMultipartParser, XMLStreamReader)', 'public'),
   \ javaapi#method(0,'getPCDATA(', ') throws XMLStreamException', 'CharSequence'),
   \ javaapi#method(0,'getNamespaceContext(', ')', 'NamespaceContextEx'),
@@ -162,7 +162,7 @@ call javaapi#class('MtomXMLStreamReaderEx', '', [
   \ javaapi#method(0,'getNamespaceContext(', ')', 'NamespaceContext'),
   \ ])
 
-call javaapi#class('MtomCodec', '', [
+call javaapi#class('MtomCodec', 'MimeCodec', [
   \ javaapi#field(1,'XOP_XML_MIME_TYPE', 'String'),
   \ javaapi#method(0,'getStaticContentType(', 'Packet)', 'ContentType'),
   \ javaapi#method(0,'encode(', 'Packet, OutputStream) throws IOException', 'ContentType'),
@@ -178,7 +178,7 @@ call javaapi#class('MtomCodec', '', [
 call javaapi#class('ParameterList', '', [
   \ ])
 
-call javaapi#interface('RootOnlyCodec', '', [
+call javaapi#interface('RootOnlyCodec', 'Codec', [
   \ javaapi#method(0,'decode(', 'InputStream, String, Packet, AttachmentSet) throws IOException', 'void'),
   \ javaapi#method(0,'decode(', 'ReadableByteChannel, String, Packet, AttachmentSet)', 'void'),
   \ ])
@@ -193,7 +193,7 @@ call javaapi#class('AcceptContentType', 'ContentType', [
   \ javaapi#method(0,'getAcceptHeader(', ')', 'String'),
   \ ])
 
-call javaapi#class('TriState', '', [
+call javaapi#class('TriState', 'TriState>', [
   \ javaapi#field(1,'UNSET', 'TriState'),
   \ javaapi#field(1,'TRUE', 'TriState'),
   \ javaapi#field(1,'FALSE', 'TriState'),
@@ -201,7 +201,7 @@ call javaapi#class('TriState', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'TriState'),
   \ ])
 
-call javaapi#class('SOAPBindingCodec', '', [
+call javaapi#class('SOAPBindingCodec', 'MimeCodec', [
   \ javaapi#method(0,'getXMLCodec(', ')', 'StreamSOAPCodec'),
   \ javaapi#method(0,'SOAPBindingCodec(', 'WSBinding)', 'public'),
   \ javaapi#method(0,'SOAPBindingCodec(', 'WSBinding, StreamSOAPCodec)', 'public'),
@@ -216,14 +216,14 @@ call javaapi#class('SOAPBindingCodec', '', [
   \ javaapi#method(0,'copy(', ')', 'Codec'),
   \ ])
 
-call javaapi#class('StreamSOAP11Codec', '', [
+call javaapi#class('StreamSOAP11Codec', 'StreamSOAPCodec', [
   \ javaapi#field(1,'SOAP11_MIME_TYPE', 'String'),
   \ javaapi#field(1,'SOAP11_CONTENT_TYPE', 'String'),
   \ javaapi#field(1,'defaultContentType', 'ContentTypeImpl'),
   \ javaapi#method(0,'getMimeType(', ')', 'String'),
   \ ])
 
-call javaapi#class('StreamSOAP12Codec', '', [
+call javaapi#class('StreamSOAP12Codec', 'StreamSOAPCodec', [
   \ javaapi#field(1,'SOAP12_MIME_TYPE', 'String'),
   \ javaapi#field(1,'SOAP12_CONTENT_TYPE', 'String'),
   \ javaapi#field(1,'defaultContentType', 'ContentTypeImpl'),
@@ -257,7 +257,7 @@ call javaapi#class('StringDataContentHandler', 'DataContentHandler', [
   \ javaapi#method(0,'writeTo(', 'Object, String, OutputStream) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('SwACodec', '', [
+call javaapi#class('SwACodec', 'MimeCodec', [
   \ javaapi#method(0,'SwACodec(', 'SOAPVersion, WSBinding, Codec)', 'public'),
   \ javaapi#method(0,'encode(', 'Packet, WritableByteChannel)', 'ContentType'),
   \ javaapi#method(0,'copy(', ')', 'SwACodec'),
@@ -293,7 +293,7 @@ call javaapi#class('AcceptContentType', 'ContentType', [
   \ javaapi#method(0,'getAcceptHeader(', ')', 'String'),
   \ ])
 
-call javaapi#class('XMLHTTPBindingCodec', '', [
+call javaapi#class('XMLHTTPBindingCodec', 'MimeCodec', [
   \ javaapi#method(0,'XMLHTTPBindingCodec(', 'WSBinding)', 'public'),
   \ javaapi#method(0,'getMimeType(', ')', 'String'),
   \ javaapi#method(0,'getStaticContentType(', 'Packet)', 'ContentType'),

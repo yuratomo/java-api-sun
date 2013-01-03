@@ -7,7 +7,7 @@ call javaapi#class('Base64', '', [
   \ javaapi#method(1,'base64Decode(', 'String)', 'String'),
   \ ])
 
-call javaapi#class('ByteInputStream', '', [
+call javaapi#class('ByteInputStream', 'ByteArrayInputStream', [
   \ javaapi#method(0,'ByteInputStream(', ')', 'public'),
   \ javaapi#method(0,'ByteInputStream(', 'byte[], int)', 'public'),
   \ javaapi#method(0,'ByteInputStream(', 'byte[], int, int)', 'public'),
@@ -17,7 +17,7 @@ call javaapi#class('ByteInputStream', '', [
   \ javaapi#method(0,'setBuf(', 'byte[])', 'void'),
   \ ])
 
-call javaapi#class('ByteOutputStream', '', [
+call javaapi#class('ByteOutputStream', 'OutputStream', [
   \ javaapi#method(0,'ByteOutputStream(', ')', 'public'),
   \ javaapi#method(0,'ByteOutputStream(', 'int)', 'public'),
   \ javaapi#method(0,'write(', 'InputStream) throws IOException', 'void'),
@@ -36,14 +36,14 @@ call javaapi#class('ByteOutputStream', '', [
   \ javaapi#method(0,'getCount(', ')', 'int'),
   \ ])
 
-call javaapi#class('CharReader', '', [
+call javaapi#class('CharReader', 'CharArrayReader', [
   \ javaapi#method(0,'CharReader(', 'char[], int)', 'public'),
   \ javaapi#method(0,'CharReader(', 'char[], int, int)', 'public'),
   \ javaapi#method(0,'getChars(', ')', 'char[]'),
   \ javaapi#method(0,'getCount(', ')', 'int'),
   \ ])
 
-call javaapi#class('CharWriter', '', [
+call javaapi#class('CharWriter', 'CharArrayWriter', [
   \ javaapi#method(0,'CharWriter(', ')', 'public'),
   \ javaapi#method(0,'CharWriter(', 'int)', 'public'),
   \ javaapi#method(0,'getChars(', ')', 'char[]'),
@@ -67,13 +67,13 @@ call javaapi#class('FastInfosetReflection', '', [
   \ javaapi#method(1,'FastInfosetResult_getOutputStream(', 'Result) throws Exception', 'OutputStream'),
   \ ])
 
-call javaapi#class('FinalArrayList', '', [
+call javaapi#class('FinalArrayList', 'ArrayList', [
   \ javaapi#method(0,'FinalArrayList(', 'int)', 'public'),
   \ javaapi#method(0,'FinalArrayList(', ')', 'public'),
   \ javaapi#method(0,'FinalArrayList(', 'Collection)', 'public'),
   \ ])
 
-call javaapi#class('JAXMStreamSource', '', [
+call javaapi#class('JAXMStreamSource', 'StreamSource', [
   \ javaapi#method(0,'JAXMStreamSource(', 'InputStream) throws IOException', 'public'),
   \ javaapi#method(0,'JAXMStreamSource(', 'Reader) throws IOException', 'public'),
   \ javaapi#method(0,'getInputStream(', ')', 'InputStream'),
@@ -81,7 +81,7 @@ call javaapi#class('JAXMStreamSource', '', [
   \ javaapi#method(0,'reset(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('MalformedURIException', '', [
+call javaapi#class('MalformedURIException', 'IOException', [
   \ javaapi#method(0,'MalformedURIException(', ')', 'public'),
   \ javaapi#method(0,'MalformedURIException(', 'String)', 'public'),
   \ ])
@@ -156,7 +156,7 @@ call javaapi#class('ParserPool', '', [
   \ javaapi#method(0,'returnParser(', 'SAXParser)', 'void'),
   \ ])
 
-call javaapi#class('RejectDoctypeSaxFilter', '', [
+call javaapi#class('RejectDoctypeSaxFilter', 'XMLFilterImpl', [
   \ javaapi#method(0,'RejectDoctypeSaxFilter(', 'SAXParser) throws SOAPException', 'public'),
   \ javaapi#method(0,'setProperty(', 'String, Object) throws SAXNotRecognizedException, SAXNotSupportedException', 'void'),
   \ javaapi#method(0,'startDTD(', 'String, String, String) throws SAXException', 'void'),
@@ -169,7 +169,7 @@ call javaapi#class('RejectDoctypeSaxFilter', '', [
   \ javaapi#method(0,'startElement(', 'String, String, String, Attributes) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('TeeInputStream', '', [
+call javaapi#class('TeeInputStream', 'InputStream', [
   \ javaapi#method(0,'TeeInputStream(', 'InputStream, OutputStream)', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'available(', ') throws IOException', 'int'),

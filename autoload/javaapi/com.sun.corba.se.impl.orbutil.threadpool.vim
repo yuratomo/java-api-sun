@@ -1,26 +1,26 @@
 call javaapi#namespace('com.sun.corba.se.impl.orbutil.threadpool')
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'LongMonitoredAttributeBase', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'LongMonitoredAttributeBase', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'LongMonitoredAttributeBase', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ ])
 
-call javaapi#class('4', '', [
+call javaapi#class('4', 'LongMonitoredAttributeBase', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ ])
 
-call javaapi#class('5', '', [
+call javaapi#class('5', 'LongMonitoredAttributeBase', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ ])
 
-call javaapi#class('WorkerThread', '', [
+call javaapi#class('WorkerThread', 'Thread', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
@@ -55,19 +55,19 @@ call javaapi#class('ThreadPoolManagerImpl', 'ThreadPoolManager', [
   \ javaapi#method(0,'getThreadPoolChooserNumericId(', 'String)', 'int'),
   \ ])
 
-call javaapi#class('TimeoutException', '', [
+call javaapi#class('TimeoutException', 'Exception', [
   \ javaapi#method(0,'TimeoutException(', ')', 'public'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'LongMonitoredAttributeBase', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'LongMonitoredAttributeBase', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'LongMonitoredAttributeBase', [
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ ])
 

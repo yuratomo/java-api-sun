@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.net.ftp.impl')
 
-call javaapi#class('DefaultFtpClientProvider', '', [
+call javaapi#class('DefaultFtpClientProvider', 'FtpClientProvider', [
   \ javaapi#method(0,'DefaultFtpClientProvider(', ')', 'public'),
   \ javaapi#method(0,'createFtpClient(', ')', 'FtpClient'),
   \ ])
@@ -36,7 +36,7 @@ call javaapi#class('MLSxParser', 'FtpDirParser', [
   \ javaapi#method(0,'parseLine(', 'String)', 'FtpDirEntry'),
   \ ])
 
-call javaapi#class('FtpClient', '', [
+call javaapi#class('FtpClient', 'FtpClient', [
   \ javaapi#method(1,'create(', ')', 'FtpClient'),
   \ javaapi#method(0,'enablePassiveMode(', 'boolean)', 'FtpClient'),
   \ javaapi#method(0,'isPassiveModeEnabled(', ')', 'boolean'),

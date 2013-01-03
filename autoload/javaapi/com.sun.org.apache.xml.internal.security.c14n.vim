@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xml.internal.security.c14n')
 
-call javaapi#class('CanonicalizationException', '', [
+call javaapi#class('CanonicalizationException', 'XMLSecurityException', [
   \ javaapi#method(0,'CanonicalizationException(', ')', 'public'),
   \ javaapi#method(0,'CanonicalizationException(', 'String)', 'public'),
   \ javaapi#method(0,'CanonicalizationException(', 'String, Object[])', 'public'),
@@ -48,7 +48,7 @@ call javaapi#class('CanonicalizerSpi', '', [
   \ javaapi#method(0,'setWriter(', 'OutputStream)', 'void'),
   \ ])
 
-call javaapi#class('InvalidCanonicalizerException', '', [
+call javaapi#class('InvalidCanonicalizerException', 'XMLSecurityException', [
   \ javaapi#method(0,'InvalidCanonicalizerException(', ')', 'public'),
   \ javaapi#method(0,'InvalidCanonicalizerException(', 'String)', 'public'),
   \ javaapi#method(0,'InvalidCanonicalizerException(', 'String, Object[])', 'public'),

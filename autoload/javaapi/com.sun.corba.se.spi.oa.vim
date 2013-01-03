@@ -10,11 +10,11 @@ call javaapi#class('OADefault', '', [
   \ javaapi#method(1,'makeTOAFactory(', 'ORB)', 'ObjectAdapterFactory'),
   \ ])
 
-call javaapi#class('OADestroyed', '', [
+call javaapi#class('OADestroyed', 'Exception', [
   \ javaapi#method(0,'OADestroyed(', ')', 'public'),
   \ ])
 
-call javaapi#class('OAInvocationInfo', '', [
+call javaapi#class('OAInvocationInfo', 'ServantObject', [
   \ javaapi#method(0,'OAInvocationInfo(', 'ObjectAdapter, byte[])', 'public'),
   \ javaapi#method(0,'OAInvocationInfo(', 'OAInvocationInfo, String)', 'public'),
   \ javaapi#method(0,'oa(', ')', 'ObjectAdapter'),
@@ -46,7 +46,7 @@ call javaapi#interface('ObjectAdapter', '', [
   \ javaapi#method(0,'getInterfaces(', 'Object, byte[])', 'String[]'),
   \ ])
 
-call javaapi#class('ObjectAdapterBase', '', [
+call javaapi#class('ObjectAdapterBase', 'LocalObject', [
   \ javaapi#method(0,'ObjectAdapterBase(', 'ORB)', 'public'),
   \ javaapi#method(0,'iorWrapper(', ')', 'POASystemException'),
   \ javaapi#method(0,'lifecycleWrapper(', ')', 'POASystemException'),

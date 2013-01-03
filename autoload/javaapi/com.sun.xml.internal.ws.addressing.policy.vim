@@ -5,7 +5,7 @@ call javaapi#class('AddressingFeatureConfigurator', 'PolicyFeatureConfigurator',
   \ javaapi#method(0,'getFeatures(', 'PolicyMapKey, PolicyMap) throws PolicyException', 'WebServiceFeature>'),
   \ ])
 
-call javaapi#class('AddressingAssertion', '', [
+call javaapi#class('AddressingAssertion', 'PolicyAssertion', [
   \ ])
 
 call javaapi#class('AddressingPolicyMapConfigurator', 'PolicyMapConfigurator', [

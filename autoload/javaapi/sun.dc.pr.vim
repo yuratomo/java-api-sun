@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.dc.pr')
 
-call javaapi#class('PRError', '', [
+call javaapi#class('PRError', 'RuntimeException', [
   \ javaapi#field(1,'UNEX_setUsage', 'String'),
   \ javaapi#field(1,'UNEX_setFillMode', 'String'),
   \ javaapi#field(1,'UNEX_setPenDiameter', 'String'),
@@ -49,7 +49,7 @@ call javaapi#class('PRError', '', [
   \ javaapi#method(0,'PRError(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('PRException', '', [
+call javaapi#class('PRException', 'Exception', [
   \ javaapi#field(1,'BAD_COORD_setOutputArea', 'String'),
   \ javaapi#field(1,'ALPHA_ARRAY_SHORT', 'String'),
   \ javaapi#field(1,'DUMMY', 'String'),

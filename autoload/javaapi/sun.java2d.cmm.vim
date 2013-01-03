@@ -55,7 +55,7 @@ call javaapi#interface('ProfileActivator', '', [
   \ javaapi#method(0,'activate(', ') throws ProfileDataException', 'void'),
   \ ])
 
-call javaapi#class('ProfileDeferralInfo', '', [
+call javaapi#class('ProfileDeferralInfo', 'InputStream', [
   \ javaapi#field(0,'colorSpaceType', 'int'),
   \ javaapi#field(0,'numComponents', 'int'),
   \ javaapi#field(0,'profileClass', 'int'),

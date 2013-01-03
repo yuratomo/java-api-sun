@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.messaging.saaj.packaging.mime.internet')
 
-call javaapi#class('AsciiOutputStream', '', [
+call javaapi#class('AsciiOutputStream', 'OutputStream', [
   \ javaapi#method(0,'AsciiOutputStream(', 'boolean, boolean)', 'public'),
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[]) throws IOException', 'void'),
@@ -8,7 +8,7 @@ call javaapi#class('AsciiOutputStream', '', [
   \ javaapi#method(0,'getAscii(', ')', 'int'),
   \ ])
 
-call javaapi#class('BMMimeMultipart', '', [
+call javaapi#class('BMMimeMultipart', 'MimeMultipart', [
   \ javaapi#method(0,'BMMimeMultipart(', ')', 'public'),
   \ javaapi#method(0,'BMMimeMultipart(', 'String)', 'public'),
   \ javaapi#method(0,'BMMimeMultipart(', 'DataSource, ContentType) throws MessagingException', 'public'),
@@ -81,7 +81,7 @@ call javaapi#class('HeaderTokenizer', '', [
   \ javaapi#method(0,'getRemainder(', ')', 'String'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'AbstractList', [
   \ javaapi#method(0,'get(', 'int)', 'Object'),
   \ javaapi#method(0,'size(', ')', 'int'),
   \ ])
@@ -178,13 +178,13 @@ call javaapi#class('MimePartDataSource', 'DataSource', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('MimePullMultipart', '', [
+call javaapi#class('MimePullMultipart', 'MimeMultipart', [
   \ javaapi#method(0,'MimePullMultipart(', 'DataSource, ContentType) throws MessagingException', 'public'),
   \ javaapi#method(0,'readAndReturnSOAPPart(', ') throws MessagingException', 'MIMEPart'),
   \ javaapi#method(0,'parseAll(', ') throws MessagingException', 'void'),
   \ ])
 
-call javaapi#class('1NullInputStream', '', [
+call javaapi#class('1NullInputStream', 'InputStream', [
   \ javaapi#method(0,'read(', ')', 'int'),
   \ ])
 
@@ -220,7 +220,7 @@ call javaapi#class('ParameterList', '', [
   \ javaapi#method(0,'copy(', ')', 'ParameterList'),
   \ ])
 
-call javaapi#class('ParseException', '', [
+call javaapi#class('ParseException', 'MessagingException', [
   \ javaapi#method(0,'ParseException(', ')', 'public'),
   \ javaapi#method(0,'ParseException(', 'String)', 'public'),
   \ ])

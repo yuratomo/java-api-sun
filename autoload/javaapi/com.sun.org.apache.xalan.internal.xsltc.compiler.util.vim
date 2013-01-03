@@ -1,13 +1,13 @@
 call javaapi#namespace('com.sun.org.apache.xalan.internal.xsltc.compiler.util')
 
-call javaapi#class('AttributeSetMethodGenerator', '', [
+call javaapi#class('AttributeSetMethodGenerator', 'MethodGenerator', [
   \ javaapi#method(0,'AttributeSetMethodGenerator(', 'String, ClassGenerator)', 'public'),
   \ javaapi#method(0,'getLocalIndex(', 'String)', 'int'),
   \ javaapi#method(0,'loadParameter(', 'int)', 'Instruction'),
   \ javaapi#method(0,'storeParameter(', 'int)', 'Instruction'),
   \ ])
 
-call javaapi#class('BooleanType', '', [
+call javaapi#class('BooleanType', 'Type', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'identicalTo(', 'Type)', 'boolean'),
   \ javaapi#method(0,'toSignature(', ')', 'String'),
@@ -29,7 +29,7 @@ call javaapi#class('BooleanType', '', [
   \ javaapi#method(0,'LE(', 'boolean)', 'BranchInstruction'),
   \ ])
 
-call javaapi#class('ClassGenerator', '', [
+call javaapi#class('ClassGenerator', 'ClassGen', [
   \ javaapi#method(0,'ClassGenerator(', 'String, String, String, int, String[], Stylesheet)', 'public'),
   \ javaapi#method(0,'getParser(', ')', 'Parser'),
   \ javaapi#method(0,'getStylesheet(', ')', 'Stylesheet'),
@@ -42,7 +42,7 @@ call javaapi#class('ClassGenerator', '', [
   \ javaapi#method(0,'isExternal(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('CompareGenerator', '', [
+call javaapi#class('CompareGenerator', 'MethodGenerator', [
   \ javaapi#method(0,'CompareGenerator(', 'int, Type, Type[], String[], String, String, InstructionList, ConstantPoolGen)', 'public'),
   \ javaapi#method(0,'loadLastNode(', ')', 'Instruction'),
   \ javaapi#method(0,'loadCurrentNode(', ')', 'Instruction'),
@@ -55,72 +55,72 @@ call javaapi#class('CompareGenerator', '', [
   \ javaapi#method(0,'getLocalIndex(', 'String)', 'int'),
   \ ])
 
-call javaapi#class('ErrorMessages', '', [
+call javaapi#class('ErrorMessages', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_ca', '', [
+call javaapi#class('ErrorMessages_ca', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_ca(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_cs', '', [
+call javaapi#class('ErrorMessages_cs', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_cs(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_de', '', [
+call javaapi#class('ErrorMessages_de', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_de(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_es', '', [
+call javaapi#class('ErrorMessages_es', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_es(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_fr', '', [
+call javaapi#class('ErrorMessages_fr', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_fr(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_it', '', [
+call javaapi#class('ErrorMessages_it', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_it(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_ja', '', [
+call javaapi#class('ErrorMessages_ja', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_ja(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_ko', '', [
+call javaapi#class('ErrorMessages_ko', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_ko(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_pt_BR', '', [
+call javaapi#class('ErrorMessages_pt_BR', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_pt_BR(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_sk', '', [
+call javaapi#class('ErrorMessages_sk', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_sk(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_sv', '', [
+call javaapi#class('ErrorMessages_sv', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_sv(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_zh_CN', '', [
+call javaapi#class('ErrorMessages_zh_CN', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_zh_CN(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('ErrorMessages_zh_TW', '', [
+call javaapi#class('ErrorMessages_zh_TW', 'ListResourceBundle', [
   \ javaapi#method(0,'ErrorMessages_zh_TW(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
@@ -248,13 +248,13 @@ call javaapi#class('ErrorMsg', '', [
   \ javaapi#method(0,'isWarningError(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('FilterGenerator', '', [
+call javaapi#class('FilterGenerator', 'ClassGenerator', [
   \ javaapi#method(0,'FilterGenerator(', 'String, String, String, int, String[], Stylesheet)', 'public'),
   \ javaapi#method(0,'loadTranslet(', ')', 'Instruction'),
   \ javaapi#method(0,'isExternal(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('IntType', '', [
+call javaapi#class('IntType', 'NumberType', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'identicalTo(', 'Type)', 'boolean'),
   \ javaapi#method(0,'toSignature(', ')', 'String'),
@@ -283,7 +283,7 @@ call javaapi#class('IntType', '', [
   \ javaapi#method(0,'LE(', 'boolean)', 'BranchInstruction'),
   \ ])
 
-call javaapi#class('MatchGenerator', '', [
+call javaapi#class('MatchGenerator', 'MethodGenerator', [
   \ javaapi#method(0,'MatchGenerator(', 'int, Type, Type[], String[], String, String, InstructionList, ConstantPoolGen)', 'public'),
   \ javaapi#method(0,'loadCurrentNode(', ')', 'Instruction'),
   \ javaapi#method(0,'storeCurrentNode(', ')', 'Instruction'),
@@ -295,7 +295,7 @@ call javaapi#class('MatchGenerator', '', [
   \ javaapi#method(0,'getLocalIndex(', 'String)', 'int'),
   \ ])
 
-call javaapi#class('MethodGenerator', '', [
+call javaapi#class('MethodGenerator', 'MethodGen', [
   \ javaapi#method(0,'MethodGenerator(', 'int, Type, Type[], String[], String, String, InstructionList, ConstantPoolGen)', 'public'),
   \ javaapi#method(0,'addLocalVariable(', 'String, Type, InstructionHandle, InstructionHandle)', 'LocalVariableGen'),
   \ javaapi#method(0,'addLocalVariable2(', 'String, Type, InstructionHandle)', 'LocalVariableGen'),
@@ -327,7 +327,7 @@ call javaapi#class('MethodGenerator', '', [
   \ javaapi#method(0,'getInstructionList(', 'Pattern)', 'InstructionList'),
   \ ])
 
-call javaapi#class('MethodType', '', [
+call javaapi#class('MethodType', 'Type', [
   \ javaapi#method(0,'MethodType(', 'Type)', 'public'),
   \ javaapi#method(0,'MethodType(', 'Type, Type)', 'public'),
   \ javaapi#method(0,'MethodType(', 'Type, Type, Type)', 'public'),
@@ -344,27 +344,27 @@ call javaapi#class('MethodType', '', [
   \ javaapi#method(0,'argsCount(', ')', 'int'),
   \ ])
 
-call javaapi#class('MultiHashtable', '', [
+call javaapi#class('MultiHashtable', 'Hashtable', [
   \ javaapi#method(0,'MultiHashtable(', ')', 'public'),
   \ javaapi#method(0,'put(', 'Object, Object)', 'Object'),
   \ javaapi#method(0,'maps(', 'Object, Object)', 'Object'),
   \ ])
 
-call javaapi#class('NamedMethodGenerator', '', [
+call javaapi#class('NamedMethodGenerator', 'MethodGenerator', [
   \ javaapi#method(0,'NamedMethodGenerator(', 'int, Type, Type[], String[], String, String, InstructionList, ConstantPoolGen)', 'public'),
   \ javaapi#method(0,'getLocalIndex(', 'String)', 'int'),
   \ javaapi#method(0,'loadParameter(', 'int)', 'Instruction'),
   \ javaapi#method(0,'storeParameter(', 'int)', 'Instruction'),
   \ ])
 
-call javaapi#class('NodeCounterGenerator', '', [
+call javaapi#class('NodeCounterGenerator', 'ClassGenerator', [
   \ javaapi#method(0,'NodeCounterGenerator(', 'String, String, String, int, String[], Stylesheet)', 'public'),
   \ javaapi#method(0,'setTransletIndex(', 'int)', 'void'),
   \ javaapi#method(0,'loadTranslet(', ')', 'Instruction'),
   \ javaapi#method(0,'isExternal(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('NodeSetType', '', [
+call javaapi#class('NodeSetType', 'Type', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'identicalTo(', 'Type)', 'boolean'),
   \ javaapi#method(0,'toSignature(', ')', 'String'),
@@ -386,18 +386,18 @@ call javaapi#class('NodeSetType', '', [
   \ javaapi#method(0,'STORE(', 'int)', 'Instruction'),
   \ ])
 
-call javaapi#class('NodeSortRecordFactGenerator', '', [
+call javaapi#class('NodeSortRecordFactGenerator', 'ClassGenerator', [
   \ javaapi#method(0,'NodeSortRecordFactGenerator(', 'String, String, String, int, String[], Stylesheet)', 'public'),
   \ javaapi#method(0,'isExternal(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('NodeSortRecordGenerator', '', [
+call javaapi#class('NodeSortRecordGenerator', 'ClassGenerator', [
   \ javaapi#method(0,'NodeSortRecordGenerator(', 'String, String, String, int, String[], Stylesheet)', 'public'),
   \ javaapi#method(0,'loadTranslet(', ')', 'Instruction'),
   \ javaapi#method(0,'isExternal(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('NodeType', '', [
+call javaapi#class('NodeType', 'Type', [
   \ javaapi#method(0,'getType(', ')', 'int'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'identicalTo(', 'Type)', 'boolean'),
@@ -420,19 +420,19 @@ call javaapi#class('NodeType', '', [
   \ javaapi#method(0,'STORE(', 'int)', 'Instruction'),
   \ ])
 
-call javaapi#class('NumberType', '', [
+call javaapi#class('NumberType', 'Type', [
   \ javaapi#method(0,'NumberType(', ')', 'public'),
   \ javaapi#method(0,'isNumber(', ')', 'boolean'),
   \ javaapi#method(0,'isSimple(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('ConfigurationError', '', [
+call javaapi#class('ConfigurationError', 'Error', [
   \ ])
 
 call javaapi#class('ObjectFactory', '', [
   \ ])
 
-call javaapi#class('ObjectType', '', [
+call javaapi#class('ObjectType', 'Type', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getJavaClassName(', ')', 'String'),
@@ -449,7 +449,7 @@ call javaapi#class('ObjectType', '', [
   \ javaapi#method(0,'STORE(', 'int)', 'Instruction'),
   \ ])
 
-call javaapi#class('RealType', '', [
+call javaapi#class('RealType', 'NumberType', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'identicalTo(', 'Type)', 'boolean'),
   \ javaapi#method(0,'toSignature(', ')', 'String'),
@@ -478,7 +478,7 @@ call javaapi#class('RealType', '', [
   \ javaapi#method(0,'DUP(', ')', 'Instruction'),
   \ ])
 
-call javaapi#class('ReferenceType', '', [
+call javaapi#class('ReferenceType', 'Type', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'identicalTo(', 'Type)', 'boolean'),
   \ javaapi#method(0,'toSignature(', ')', 'String'),
@@ -500,7 +500,7 @@ call javaapi#class('ReferenceType', '', [
   \ javaapi#method(0,'STORE(', 'int)', 'Instruction'),
   \ ])
 
-call javaapi#class('ResultTreeType', '', [
+call javaapi#class('ResultTreeType', 'Type', [
   \ javaapi#method(0,'ResultTreeType(', 'String)', 'public'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'identicalTo(', 'Type)', 'boolean'),
@@ -524,7 +524,7 @@ call javaapi#class('ResultTreeType', '', [
   \ javaapi#method(0,'STORE(', 'int)', 'Instruction'),
   \ ])
 
-call javaapi#class('RtMethodGenerator', '', [
+call javaapi#class('RtMethodGenerator', 'MethodGenerator', [
   \ javaapi#method(0,'RtMethodGenerator(', 'int, Type, Type[], String[], String, String, InstructionList, ConstantPoolGen)', 'public'),
   \ javaapi#method(0,'getIteratorIndex(', ')', 'int'),
   \ javaapi#method(0,'storeHandler(', ')', 'Instruction'),
@@ -567,7 +567,7 @@ call javaapi#class('8', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('SecuritySupport12', '', [
+call javaapi#class('SecuritySupport12', 'SecuritySupport', [
   \ ])
 
 call javaapi#class('SlotAllocator', '', [
@@ -576,14 +576,14 @@ call javaapi#class('SlotAllocator', '', [
   \ javaapi#method(0,'releaseSlot(', 'LocalVariableGen)', 'void'),
   \ ])
 
-call javaapi#class('StringStack', '', [
+call javaapi#class('StringStack', 'Stack', [
   \ javaapi#method(0,'StringStack(', ')', 'public'),
   \ javaapi#method(0,'peekString(', ')', 'String'),
   \ javaapi#method(0,'popString(', ')', 'String'),
   \ javaapi#method(0,'pushString(', 'String)', 'String'),
   \ ])
 
-call javaapi#class('StringType', '', [
+call javaapi#class('StringType', 'Type', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'identicalTo(', 'Type)', 'boolean'),
   \ javaapi#method(0,'toSignature(', ')', 'String'),
@@ -603,7 +603,7 @@ call javaapi#class('StringType', '', [
   \ javaapi#method(0,'STORE(', 'int)', 'Instruction'),
   \ ])
 
-call javaapi#class('TestGenerator', '', [
+call javaapi#class('TestGenerator', 'MethodGenerator', [
   \ javaapi#method(0,'TestGenerator(', 'int, Type, Type[], String[], String, String, InstructionList, ConstantPoolGen)', 'public'),
   \ javaapi#method(0,'getHandlerIndex(', ')', 'int'),
   \ javaapi#method(0,'getIteratorIndex(', ')', 'int'),
@@ -672,7 +672,7 @@ call javaapi#class('Type', 'Constants', [
   \ javaapi#method(0,'DUP(', ')', 'Instruction'),
   \ ])
 
-call javaapi#class('TypeCheckError', '', [
+call javaapi#class('TypeCheckError', 'Exception', [
   \ javaapi#method(0,'TypeCheckError(', 'SyntaxTreeNode)', 'public'),
   \ javaapi#method(0,'TypeCheckError(', 'ErrorMsg)', 'public'),
   \ javaapi#method(0,'TypeCheckError(', 'String, Object)', 'public'),
@@ -704,7 +704,7 @@ call javaapi#class('Util', '', [
   \ javaapi#method(1,'isValidQNames(', 'String)', 'boolean'),
   \ ])
 
-call javaapi#class('VoidType', '', [
+call javaapi#class('VoidType', 'Type', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'identicalTo(', 'Type)', 'boolean'),
   \ javaapi#method(0,'toSignature(', ')', 'String'),

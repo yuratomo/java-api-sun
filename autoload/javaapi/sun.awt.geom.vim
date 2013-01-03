@@ -4,12 +4,12 @@ call javaapi#class('1', 'Comparator', [
   \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
   \ ])
 
-call javaapi#class('AddOp', '', [
+call javaapi#class('AddOp', 'CAGOp', [
   \ javaapi#method(0,'AddOp(', ')', 'public'),
   \ javaapi#method(0,'newClassification(', 'boolean, boolean)', 'boolean'),
   \ ])
 
-call javaapi#class('CAGOp', '', [
+call javaapi#class('CAGOp', 'AreaOp', [
   \ javaapi#method(0,'CAGOp(', ')', 'public'),
   \ javaapi#method(0,'newRow(', ')', 'void'),
   \ javaapi#method(0,'classify(', 'Edge)', 'int'),
@@ -17,31 +17,31 @@ call javaapi#class('CAGOp', '', [
   \ javaapi#method(0,'newClassification(', 'boolean, boolean)', 'boolean'),
   \ ])
 
-call javaapi#class('EOWindOp', '', [
+call javaapi#class('EOWindOp', 'AreaOp', [
   \ javaapi#method(0,'EOWindOp(', ')', 'public'),
   \ javaapi#method(0,'newRow(', ')', 'void'),
   \ javaapi#method(0,'classify(', 'Edge)', 'int'),
   \ javaapi#method(0,'getState(', ')', 'int'),
   \ ])
 
-call javaapi#class('IntOp', '', [
+call javaapi#class('IntOp', 'CAGOp', [
   \ javaapi#method(0,'IntOp(', ')', 'public'),
   \ javaapi#method(0,'newClassification(', 'boolean, boolean)', 'boolean'),
   \ ])
 
-call javaapi#class('NZWindOp', '', [
+call javaapi#class('NZWindOp', 'AreaOp', [
   \ javaapi#method(0,'NZWindOp(', ')', 'public'),
   \ javaapi#method(0,'newRow(', ')', 'void'),
   \ javaapi#method(0,'classify(', 'Edge)', 'int'),
   \ javaapi#method(0,'getState(', ')', 'int'),
   \ ])
 
-call javaapi#class('SubOp', '', [
+call javaapi#class('SubOp', 'CAGOp', [
   \ javaapi#method(0,'SubOp(', ')', 'public'),
   \ javaapi#method(0,'newClassification(', 'boolean, boolean)', 'boolean'),
   \ ])
 
-call javaapi#class('XorOp', '', [
+call javaapi#class('XorOp', 'CAGOp', [
   \ javaapi#method(0,'XorOp(', ')', 'public'),
   \ javaapi#method(0,'newClassification(', 'boolean, boolean)', 'boolean'),
   \ ])
@@ -73,13 +73,13 @@ call javaapi#class('ChainEnd', '', [
   \ javaapi#method(0,'getX(', ')', 'double'),
   \ ])
 
-call javaapi#class('EvenOdd', '', [
+call javaapi#class('EvenOdd', 'Crossings', [
   \ javaapi#method(0,'EvenOdd(', 'double, double, double, double)', 'public'),
   \ javaapi#method(0,'covers(', 'double, double)', 'boolean'),
   \ javaapi#method(0,'record(', 'double, double, int)', 'void'),
   \ ])
 
-call javaapi#class('NonZero', '', [
+call javaapi#class('NonZero', 'Crossings', [
   \ javaapi#method(0,'NonZero(', 'double, double, double, double)', 'public'),
   \ javaapi#method(0,'covers(', 'double, double)', 'boolean'),
   \ javaapi#method(0,'remove(', 'int)', 'void'),
@@ -198,7 +198,7 @@ call javaapi#class('Edge', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('Order0', '', [
+call javaapi#class('Order0', 'Curve', [
   \ javaapi#method(0,'Order0(', 'double, double)', 'public'),
   \ javaapi#method(0,'getOrder(', ')', 'int'),
   \ javaapi#method(0,'getXTop(', ')', 'double'),
@@ -226,7 +226,7 @@ call javaapi#class('Order0', '', [
   \ javaapi#method(0,'getSegment(', 'double[])', 'int'),
   \ ])
 
-call javaapi#class('Order1', '', [
+call javaapi#class('Order1', 'Curve', [
   \ javaapi#method(0,'Order1(', 'double, double, double, double, int)', 'public'),
   \ javaapi#method(0,'getOrder(', ')', 'int'),
   \ javaapi#method(0,'getXTop(', ')', 'double'),
@@ -254,7 +254,7 @@ call javaapi#class('Order1', '', [
   \ javaapi#method(0,'getSegment(', 'double[])', 'int'),
   \ ])
 
-call javaapi#class('Order2', '', [
+call javaapi#class('Order2', 'Curve', [
   \ javaapi#method(1,'insert(', 'Vector, double[], double, double, double, double, double, double, int)', 'void'),
   \ javaapi#method(1,'addInstance(', 'Vector, double, double, double, double, double, double, int)', 'void'),
   \ javaapi#method(1,'getHorizontalParams(', 'double, double, double, double[])', 'int'),
@@ -288,7 +288,7 @@ call javaapi#class('Order2', '', [
   \ javaapi#method(0,'controlPointString(', ')', 'String'),
   \ ])
 
-call javaapi#class('Order3', '', [
+call javaapi#class('Order3', 'Curve', [
   \ javaapi#method(1,'insert(', 'Vector, double[], double, double, double, double, double, double, double, double, int)', 'void'),
   \ javaapi#method(1,'addInstance(', 'Vector, double, double, double, double, double, double, double, double, int)', 'void'),
   \ javaapi#method(1,'getHorizontalParams(', 'double, double, double, double, double[])', 'int'),

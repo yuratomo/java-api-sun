@@ -22,7 +22,7 @@ call javaapi#class('FastInfosetMIMETypes', '', [
   \ javaapi#method(0,'FastInfosetMIMETypes(', ')', 'public'),
   \ ])
 
-call javaapi#class('FastInfosetStreamReaderFactory', '', [
+call javaapi#class('FastInfosetStreamReaderFactory', 'XMLStreamReaderFactory', [
   \ javaapi#method(0,'FastInfosetStreamReaderFactory(', ')', 'public'),
   \ javaapi#method(1,'getInstance(', ')', 'FastInfosetStreamReaderFactory'),
   \ javaapi#method(0,'doCreate(', 'String, InputStream, boolean)', 'XMLStreamReader'),
@@ -30,17 +30,17 @@ call javaapi#class('FastInfosetStreamReaderFactory', '', [
   \ javaapi#method(0,'doRecycle(', 'XMLStreamReader)', 'void'),
   \ ])
 
-call javaapi#class('FastInfosetStreamReaderRecyclable', '', [
+call javaapi#class('FastInfosetStreamReaderRecyclable', 'StAXDocumentParser', [
   \ javaapi#method(0,'FastInfosetStreamReaderRecyclable(', ')', 'public'),
   \ javaapi#method(0,'FastInfosetStreamReaderRecyclable(', 'InputStream)', 'public'),
   \ javaapi#method(0,'onRecycled(', ')', 'void'),
   \ ])
 
-call javaapi#class('FastInfosetStreamSOAP11Codec', '', [
+call javaapi#class('FastInfosetStreamSOAP11Codec', 'FastInfosetStreamSOAPCodec', [
   \ javaapi#method(0,'copy(', ')', 'Codec'),
   \ ])
 
-call javaapi#class('FastInfosetStreamSOAP12Codec', '', [
+call javaapi#class('FastInfosetStreamSOAP12Codec', 'FastInfosetStreamSOAPCodec', [
   \ javaapi#method(0,'copy(', ')', 'Codec'),
   \ ])
 

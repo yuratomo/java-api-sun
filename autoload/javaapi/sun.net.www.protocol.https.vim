@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.net.www.protocol.https')
 
-call javaapi#class('AbstractDelegateHttpsURLConnection', '', [
+call javaapi#class('AbstractDelegateHttpsURLConnection', 'HttpURLConnection', [
   \ javaapi#method(0,'setNewClient(', 'URL) throws IOException', 'void'),
   \ javaapi#method(0,'setNewClient(', 'URL, boolean) throws IOException', 'void'),
   \ javaapi#method(0,'setProxiedClient(', 'URL, String, int) throws IOException', 'void'),
@@ -19,11 +19,11 @@ call javaapi#class('DefaultHostnameVerifier', 'HostnameVerifier', [
   \ javaapi#method(0,'verify(', 'String, SSLSession)', 'boolean'),
   \ ])
 
-call javaapi#class('DelegateHttpsURLConnection', '', [
+call javaapi#class('DelegateHttpsURLConnection', 'AbstractDelegateHttpsURLConnection', [
   \ javaapi#field(0,'httpsURLConnection', 'HttpsURLConnection'),
   \ ])
 
-call javaapi#class('Handler', '', [
+call javaapi#class('Handler', 'Handler', [
   \ javaapi#method(0,'Handler(', ')', 'public'),
   \ javaapi#method(0,'Handler(', 'String, int)', 'public'),
   \ ])
@@ -38,7 +38,7 @@ call javaapi#class('2', 'CookieHandler>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('HttpsClient', '', [
+call javaapi#class('HttpsClient', 'HttpClient', [
   \ javaapi#method(0,'needsTunneling(', ')', 'boolean'),
   \ javaapi#method(0,'afterConnect(', ') throws IOException, UnknownHostException', 'void'),
   \ javaapi#method(0,'closeIdleConnection(', ')', 'void'),
@@ -48,7 +48,7 @@ call javaapi#class('HttpsClient', '', [
   \ javaapi#method(0,'getProxyPortUsed(', ')', 'int'),
   \ ])
 
-call javaapi#class('HttpsURLConnectionImpl', '', [
+call javaapi#class('HttpsURLConnectionImpl', 'HttpsURLConnection', [
   \ javaapi#method(0,'connect(', ') throws IOException', 'void'),
   \ javaapi#method(0,'getCipherSuite(', ')', 'String'),
   \ javaapi#method(0,'getLocalCertificates(', ')', 'Certificate[]'),

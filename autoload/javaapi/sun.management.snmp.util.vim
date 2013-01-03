@@ -54,18 +54,18 @@ call javaapi#class('SnmpCachedData', 'SnmpTableHandler', [
   \ javaapi#method(0,'contains(', 'SnmpOid)', 'boolean'),
   \ ])
 
-call javaapi#class('SnmpListTableCache', '', [
+call javaapi#class('SnmpListTableCache', 'SnmpTableCache', [
   \ javaapi#method(0,'SnmpListTableCache(', ')', 'public'),
   \ ])
 
-call javaapi#class('SnmpLoadedClassData', '', [
+call javaapi#class('SnmpLoadedClassData', 'SnmpCachedData', [
   \ javaapi#method(0,'SnmpLoadedClassData(', 'long, TreeMap<SnmpOid, Object>)', 'public'),
   \ javaapi#method(0,'getData(', 'SnmpOid)', 'Object'),
   \ javaapi#method(0,'getNext(', 'SnmpOid)', 'SnmpOid'),
   \ javaapi#method(0,'contains(', 'SnmpOid)', 'boolean'),
   \ ])
 
-call javaapi#class('SnmpNamedListTableCache', '', [
+call javaapi#class('SnmpNamedListTableCache', 'SnmpListTableCache', [
   \ javaapi#method(0,'SnmpNamedListTableCache(', ')', 'public'),
   \ ])
 

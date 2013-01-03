@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.corba.se.impl.javax.rmi.CORBA')
 
-call javaapi#class('KeepAlive', '', [
+call javaapi#class('KeepAlive', 'Thread', [
   \ javaapi#method(0,'KeepAlive(', ')', 'public'),
   \ javaapi#method(0,'run(', ')', 'void'),
   \ javaapi#method(0,'quit(', ')', 'void'),

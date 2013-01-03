@@ -1,12 +1,12 @@
 call javaapi#namespace('com.sun.org.apache.xerces.internal.xs.datatypes')
 
-call javaapi#interface('ByteList', '', [
+call javaapi#interface('ByteList', 'List', [
   \ javaapi#method(0,'getLength(', ')', 'int'),
   \ javaapi#method(0,'contains(', 'byte)', 'boolean'),
   \ javaapi#method(0,'item(', 'int) throws XSException', 'byte'),
   \ ])
 
-call javaapi#interface('ObjectList', '', [
+call javaapi#interface('ObjectList', 'List', [
   \ javaapi#method(0,'getLength(', ')', 'int'),
   \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
   \ javaapi#method(0,'item(', 'int)', 'Object'),

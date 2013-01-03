@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.corba.se.impl.ior.iiop')
 
-call javaapi#class('AlternateIIOPAddressComponentImpl', '', [
+call javaapi#class('AlternateIIOPAddressComponentImpl', 'TaggedComponentBase', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ javaapi#method(0,'toString(', ')', 'String'),
@@ -10,7 +10,7 @@ call javaapi#class('AlternateIIOPAddressComponentImpl', '', [
   \ javaapi#method(0,'getId(', ')', 'int'),
   \ ])
 
-call javaapi#class('CodeSetsComponentImpl', '', [
+call javaapi#class('CodeSetsComponentImpl', 'TaggedComponentBase', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ javaapi#method(0,'toString(', ')', 'String'),
@@ -29,7 +29,7 @@ call javaapi#class('IIOPAddressBase', 'IIOPAddress', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('IIOPAddressClosureImpl', '', [
+call javaapi#class('IIOPAddressClosureImpl', 'IIOPAddressBase', [
   \ javaapi#method(0,'IIOPAddressClosureImpl(', 'Closure, Closure)', 'public'),
   \ javaapi#method(0,'getHost(', ')', 'String'),
   \ javaapi#method(0,'getPort(', ')', 'int'),
@@ -39,7 +39,7 @@ call javaapi#class('IIOPAddressClosureImpl', '', [
   \ javaapi#method(0,'write(', 'OutputStream)', 'void'),
   \ ])
 
-call javaapi#class('IIOPAddressImpl', '', [
+call javaapi#class('IIOPAddressImpl', 'IIOPAddressBase', [
   \ javaapi#method(0,'IIOPAddressImpl(', 'ORB, String, int)', 'public'),
   \ javaapi#method(0,'IIOPAddressImpl(', 'InputStream)', 'public'),
   \ javaapi#method(0,'getHost(', ')', 'String'),
@@ -54,7 +54,7 @@ call javaapi#class('LocalCodeBaseSingletonHolder', '', [
   \ javaapi#field(1,'comp', 'JavaCodebaseComponent'),
   \ ])
 
-call javaapi#class('IIOPProfileImpl', '', [
+call javaapi#class('IIOPProfileImpl', 'IdentifiableBase', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ javaapi#method(0,'getObjectId(', ')', 'ObjectId'),
@@ -76,7 +76,7 @@ call javaapi#class('IIOPProfileImpl', '', [
   \ javaapi#method(0,'makeImmutable(', ')', 'void'),
   \ ])
 
-call javaapi#class('IIOPProfileTemplateImpl', '', [
+call javaapi#class('IIOPProfileTemplateImpl', 'TaggedProfileTemplateBase', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ javaapi#method(0,'create(', 'ObjectKeyTemplate, ObjectId)', 'TaggedProfile'),
@@ -90,7 +90,7 @@ call javaapi#class('IIOPProfileTemplateImpl', '', [
   \ javaapi#method(0,'isEquivalent(', 'TaggedProfileTemplate)', 'boolean'),
   \ ])
 
-call javaapi#class('JavaCodebaseComponentImpl', '', [
+call javaapi#class('JavaCodebaseComponentImpl', 'TaggedComponentBase', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ javaapi#method(0,'toString(', ')', 'String'),
@@ -100,7 +100,7 @@ call javaapi#class('JavaCodebaseComponentImpl', '', [
   \ javaapi#method(0,'getId(', ')', 'int'),
   \ ])
 
-call javaapi#class('JavaSerializationComponent', '', [
+call javaapi#class('JavaSerializationComponent', 'TaggedComponentBase', [
   \ javaapi#method(1,'singleton(', ')', 'JavaSerializationComponent'),
   \ javaapi#method(0,'JavaSerializationComponent(', 'byte)', 'public'),
   \ javaapi#method(0,'javaSerializationVersion(', ')', 'byte'),
@@ -110,7 +110,7 @@ call javaapi#class('JavaSerializationComponent', '', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('MaxStreamFormatVersionComponentImpl', '', [
+call javaapi#class('MaxStreamFormatVersionComponentImpl', 'TaggedComponentBase', [
   \ javaapi#field(1,'singleton', 'MaxStreamFormatVersionComponentImpl'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
@@ -122,7 +122,7 @@ call javaapi#class('MaxStreamFormatVersionComponentImpl', '', [
   \ javaapi#method(0,'getId(', ')', 'int'),
   \ ])
 
-call javaapi#class('ORBTypeComponentImpl', '', [
+call javaapi#class('ORBTypeComponentImpl', 'TaggedComponentBase', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ javaapi#method(0,'toString(', ')', 'String'),
@@ -132,7 +132,7 @@ call javaapi#class('ORBTypeComponentImpl', '', [
   \ javaapi#method(0,'writeContents(', 'OutputStream)', 'void'),
   \ ])
 
-call javaapi#class('RequestPartitioningComponentImpl', '', [
+call javaapi#class('RequestPartitioningComponentImpl', 'TaggedComponentBase', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ javaapi#method(0,'toString(', ')', 'String'),

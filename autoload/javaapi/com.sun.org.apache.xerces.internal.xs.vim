@@ -1,10 +1,10 @@
 call javaapi#namespace('com.sun.org.apache.xerces.internal.xs')
 
-call javaapi#interface('AttributePSVI', '', [
+call javaapi#interface('AttributePSVI', 'ItemPSVI', [
   \ javaapi#method(0,'getAttributeDeclaration(', ')', 'XSAttributeDeclaration'),
   \ ])
 
-call javaapi#interface('ElementPSVI', '', [
+call javaapi#interface('ElementPSVI', 'ItemPSVI', [
   \ javaapi#method(0,'getElementDeclaration(', ')', 'XSElementDeclaration'),
   \ javaapi#method(0,'getNotation(', ')', 'XSNotationDeclaration'),
   \ javaapi#method(0,'getNil(', ')', 'boolean'),
@@ -32,7 +32,7 @@ call javaapi#interface('ItemPSVI', '', [
   \ javaapi#method(0,'getIsSchemaSpecified(', ')', 'boolean'),
   \ ])
 
-call javaapi#interface('LSInputList', '', [
+call javaapi#interface('LSInputList', 'List', [
   \ javaapi#method(0,'getLength(', ')', 'int'),
   \ javaapi#method(0,'item(', 'int)', 'LSInput'),
   \ ])
@@ -43,19 +43,19 @@ call javaapi#interface('PSVIProvider', '', [
   \ javaapi#method(0,'getAttributePSVIByName(', 'String, String)', 'AttributePSVI'),
   \ ])
 
-call javaapi#interface('ShortList', '', [
+call javaapi#interface('ShortList', 'List', [
   \ javaapi#method(0,'getLength(', ')', 'int'),
   \ javaapi#method(0,'contains(', 'short)', 'boolean'),
   \ javaapi#method(0,'item(', 'int) throws XSException', 'short'),
   \ ])
 
-call javaapi#interface('StringList', '', [
+call javaapi#interface('StringList', 'List', [
   \ javaapi#method(0,'getLength(', ')', 'int'),
   \ javaapi#method(0,'contains(', 'String)', 'boolean'),
   \ javaapi#method(0,'item(', 'int)', 'String'),
   \ ])
 
-call javaapi#interface('XSAnnotation', '', [
+call javaapi#interface('XSAnnotation', 'XSObject', [
   \ javaapi#field(1,'W3C_DOM_ELEMENT', 'short'),
   \ javaapi#field(1,'SAX_CONTENTHANDLER', 'short'),
   \ javaapi#field(1,'W3C_DOM_DOCUMENT', 'short'),
@@ -63,7 +63,7 @@ call javaapi#interface('XSAnnotation', '', [
   \ javaapi#method(0,'getAnnotationString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('XSAttributeDeclaration', '', [
+call javaapi#interface('XSAttributeDeclaration', 'XSObject', [
   \ javaapi#method(0,'getTypeDefinition(', ')', 'XSSimpleTypeDefinition'),
   \ javaapi#method(0,'getScope(', ')', 'short'),
   \ javaapi#method(0,'getEnclosingCTDefinition(', ')', 'XSComplexTypeDefinition'),
@@ -76,14 +76,14 @@ call javaapi#interface('XSAttributeDeclaration', '', [
   \ javaapi#method(0,'getAnnotations(', ')', 'XSObjectList'),
   \ ])
 
-call javaapi#interface('XSAttributeGroupDefinition', '', [
+call javaapi#interface('XSAttributeGroupDefinition', 'XSObject', [
   \ javaapi#method(0,'getAttributeUses(', ')', 'XSObjectList'),
   \ javaapi#method(0,'getAttributeWildcard(', ')', 'XSWildcard'),
   \ javaapi#method(0,'getAnnotation(', ')', 'XSAnnotation'),
   \ javaapi#method(0,'getAnnotations(', ')', 'XSObjectList'),
   \ ])
 
-call javaapi#interface('XSAttributeUse', '', [
+call javaapi#interface('XSAttributeUse', 'XSObject', [
   \ javaapi#method(0,'getRequired(', ')', 'boolean'),
   \ javaapi#method(0,'getAttrDeclaration(', ')', 'XSAttributeDeclaration'),
   \ javaapi#method(0,'getConstraintType(', ')', 'short'),
@@ -94,7 +94,7 @@ call javaapi#interface('XSAttributeUse', '', [
   \ javaapi#method(0,'getAnnotations(', ')', 'XSObjectList'),
   \ ])
 
-call javaapi#interface('XSComplexTypeDefinition', '', [
+call javaapi#interface('XSComplexTypeDefinition', 'XSTypeDefinition', [
   \ javaapi#field(1,'CONTENTTYPE_EMPTY', 'short'),
   \ javaapi#field(1,'CONTENTTYPE_SIMPLE', 'short'),
   \ javaapi#field(1,'CONTENTTYPE_ELEMENT', 'short'),
@@ -187,7 +187,7 @@ call javaapi#interface('XSConstants', '', [
   \ javaapi#field(1,'UNAVAILABLE_DT', 'short'),
   \ ])
 
-call javaapi#interface('XSElementDeclaration', '', [
+call javaapi#interface('XSElementDeclaration', 'XSTerm', [
   \ javaapi#method(0,'getTypeDefinition(', ')', 'XSTypeDefinition'),
   \ javaapi#method(0,'getScope(', ')', 'short'),
   \ javaapi#method(0,'getEnclosingCTDefinition(', ')', 'XSComplexTypeDefinition'),
@@ -208,14 +208,14 @@ call javaapi#interface('XSElementDeclaration', '', [
   \ javaapi#method(0,'getAnnotations(', ')', 'XSObjectList'),
   \ ])
 
-call javaapi#class('XSException', '', [
+call javaapi#class('XSException', 'RuntimeException', [
   \ javaapi#field(0,'code', 'short'),
   \ javaapi#field(1,'NOT_SUPPORTED_ERR', 'short'),
   \ javaapi#field(1,'INDEX_SIZE_ERR', 'short'),
   \ javaapi#method(0,'XSException(', 'short, String)', 'public'),
   \ ])
 
-call javaapi#interface('XSFacet', '', [
+call javaapi#interface('XSFacet', 'XSObject', [
   \ javaapi#method(0,'getFacetKind(', ')', 'short'),
   \ javaapi#method(0,'getLexicalFacetValue(', ')', 'String'),
   \ javaapi#method(0,'getFixed(', ')', 'boolean'),
@@ -223,7 +223,7 @@ call javaapi#interface('XSFacet', '', [
   \ javaapi#method(0,'getAnnotations(', ')', 'XSObjectList'),
   \ ])
 
-call javaapi#interface('XSIDCDefinition', '', [
+call javaapi#interface('XSIDCDefinition', 'XSObject', [
   \ javaapi#field(1,'IC_KEY', 'short'),
   \ javaapi#field(1,'IC_KEYREF', 'short'),
   \ javaapi#field(1,'IC_UNIQUE', 'short'),
@@ -262,7 +262,7 @@ call javaapi#interface('XSModel', '', [
   \ javaapi#method(0,'getSubstitutionGroup(', 'XSElementDeclaration)', 'XSObjectList'),
   \ ])
 
-call javaapi#interface('XSModelGroup', '', [
+call javaapi#interface('XSModelGroup', 'XSTerm', [
   \ javaapi#field(1,'COMPOSITOR_SEQUENCE', 'short'),
   \ javaapi#field(1,'COMPOSITOR_CHOICE', 'short'),
   \ javaapi#field(1,'COMPOSITOR_ALL', 'short'),
@@ -272,19 +272,19 @@ call javaapi#interface('XSModelGroup', '', [
   \ javaapi#method(0,'getAnnotations(', ')', 'XSObjectList'),
   \ ])
 
-call javaapi#interface('XSModelGroupDefinition', '', [
+call javaapi#interface('XSModelGroupDefinition', 'XSObject', [
   \ javaapi#method(0,'getModelGroup(', ')', 'XSModelGroup'),
   \ javaapi#method(0,'getAnnotation(', ')', 'XSAnnotation'),
   \ javaapi#method(0,'getAnnotations(', ')', 'XSObjectList'),
   \ ])
 
-call javaapi#interface('XSMultiValueFacet', '', [
+call javaapi#interface('XSMultiValueFacet', 'XSObject', [
   \ javaapi#method(0,'getFacetKind(', ')', 'short'),
   \ javaapi#method(0,'getLexicalFacetValues(', ')', 'StringList'),
   \ javaapi#method(0,'getAnnotations(', ')', 'XSObjectList'),
   \ ])
 
-call javaapi#interface('XSNamedMap', '', [
+call javaapi#interface('XSNamedMap', 'Map', [
   \ javaapi#method(0,'getLength(', ')', 'int'),
   \ javaapi#method(0,'item(', 'int)', 'XSObject'),
   \ javaapi#method(0,'itemByName(', 'String, String)', 'XSObject'),
@@ -303,12 +303,12 @@ call javaapi#interface('XSNamespaceItem', '', [
   \ javaapi#method(0,'getDocumentLocations(', ')', 'StringList'),
   \ ])
 
-call javaapi#interface('XSNamespaceItemList', '', [
+call javaapi#interface('XSNamespaceItemList', 'List', [
   \ javaapi#method(0,'getLength(', ')', 'int'),
   \ javaapi#method(0,'item(', 'int)', 'XSNamespaceItem'),
   \ ])
 
-call javaapi#interface('XSNotationDeclaration', '', [
+call javaapi#interface('XSNotationDeclaration', 'XSObject', [
   \ javaapi#method(0,'getSystemId(', ')', 'String'),
   \ javaapi#method(0,'getPublicId(', ')', 'String'),
   \ javaapi#method(0,'getAnnotation(', ')', 'XSAnnotation'),
@@ -322,12 +322,12 @@ call javaapi#interface('XSObject', '', [
   \ javaapi#method(0,'getNamespaceItem(', ')', 'XSNamespaceItem'),
   \ ])
 
-call javaapi#interface('XSObjectList', '', [
+call javaapi#interface('XSObjectList', 'List', [
   \ javaapi#method(0,'getLength(', ')', 'int'),
   \ javaapi#method(0,'item(', 'int)', 'XSObject'),
   \ ])
 
-call javaapi#interface('XSParticle', '', [
+call javaapi#interface('XSParticle', 'XSObject', [
   \ javaapi#method(0,'getMinOccurs(', ')', 'int'),
   \ javaapi#method(0,'getMaxOccurs(', ')', 'int'),
   \ javaapi#method(0,'getMaxOccursUnbounded(', ')', 'boolean'),
@@ -335,7 +335,7 @@ call javaapi#interface('XSParticle', '', [
   \ javaapi#method(0,'getAnnotations(', ')', 'XSObjectList'),
   \ ])
 
-call javaapi#interface('XSSimpleTypeDefinition', '', [
+call javaapi#interface('XSSimpleTypeDefinition', 'XSTypeDefinition', [
   \ javaapi#field(1,'VARIETY_ABSENT', 'short'),
   \ javaapi#field(1,'VARIETY_ATOMIC', 'short'),
   \ javaapi#field(1,'VARIETY_LIST', 'short'),
@@ -377,10 +377,10 @@ call javaapi#interface('XSSimpleTypeDefinition', '', [
   \ javaapi#method(0,'getAnnotations(', ')', 'XSObjectList'),
   \ ])
 
-call javaapi#interface('XSTerm', '', [
+call javaapi#interface('XSTerm', 'XSObject', [
   \ ])
 
-call javaapi#interface('XSTypeDefinition', '', [
+call javaapi#interface('XSTypeDefinition', 'XSObject', [
   \ javaapi#field(1,'COMPLEX_TYPE', 'short'),
   \ javaapi#field(1,'SIMPLE_TYPE', 'short'),
   \ javaapi#method(0,'getTypeCategory(', ')', 'short'),
@@ -392,7 +392,7 @@ call javaapi#interface('XSTypeDefinition', '', [
   \ javaapi#method(0,'derivedFrom(', 'String, String, short)', 'boolean'),
   \ ])
 
-call javaapi#interface('XSWildcard', '', [
+call javaapi#interface('XSWildcard', 'XSTerm', [
   \ javaapi#field(1,'NSCONSTRAINT_ANY', 'short'),
   \ javaapi#field(1,'NSCONSTRAINT_NOT', 'short'),
   \ javaapi#field(1,'NSCONSTRAINT_LIST', 'short'),

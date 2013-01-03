@@ -33,7 +33,7 @@ call javaapi#class('GenericURLContext', 'Context', [
   \ javaapi#method(0,'getEnvironment(', ') throws NamingException', 'Hashtable'),
   \ ])
 
-call javaapi#class('GenericURLDirContext', '', [
+call javaapi#class('GenericURLDirContext', 'GenericURLContext', [
   \ javaapi#method(0,'getAttributes(', 'String) throws NamingException', 'Attributes'),
   \ javaapi#method(0,'getAttributes(', 'Name) throws NamingException', 'Attributes'),
   \ javaapi#method(0,'getAttributes(', 'String, String[]) throws NamingException', 'Attributes'),

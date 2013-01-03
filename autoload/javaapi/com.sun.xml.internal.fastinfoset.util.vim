@@ -18,7 +18,7 @@ call javaapi#class('CharArray', 'CharSequence', [
   \ javaapi#method(0,'subSequence(', 'int, int)', 'CharSequence'),
   \ ])
 
-call javaapi#class('CharArrayArray', '', [
+call javaapi#class('CharArrayArray', 'ValueArray', [
   \ javaapi#method(0,'CharArrayArray(', 'int, int)', 'public'),
   \ javaapi#method(0,'CharArrayArray(', ')', 'public'),
   \ javaapi#method(0,'clear(', ')', 'void'),
@@ -29,12 +29,12 @@ call javaapi#class('CharArrayArray', '', [
   \ javaapi#method(0,'add(', 'CharArray)', 'void'),
   \ ])
 
-call javaapi#class('Entry', '', [
+call javaapi#class('Entry', 'BaseEntry', [
   \ javaapi#method(0,'Entry(', 'char[], int, int, int, int, Entry)', 'public'),
   \ javaapi#method(0,'equalsCharArray(', 'char[], int, int)', 'boolean'),
   \ ])
 
-call javaapi#class('CharArrayIntMap', '', [
+call javaapi#class('CharArrayIntMap', 'KeyIntMap', [
   \ javaapi#method(0,'CharArrayIntMap(', 'int, float)', 'public'),
   \ javaapi#method(0,'CharArrayIntMap(', 'int)', 'public'),
   \ javaapi#method(0,'CharArrayIntMap(', ')', 'public'),
@@ -46,7 +46,7 @@ call javaapi#class('CharArrayIntMap', '', [
   \ javaapi#method(0,'getTotalCharacterCount(', ')', 'int'),
   \ ])
 
-call javaapi#class('CharArrayString', '', [
+call javaapi#class('CharArrayString', 'CharArray', [
   \ javaapi#method(0,'CharArrayString(', 'String)', 'public'),
   \ javaapi#method(0,'CharArrayString(', 'String, boolean)', 'public'),
   \ javaapi#method(0,'toString(', ')', 'String'),
@@ -54,7 +54,7 @@ call javaapi#class('CharArrayString', '', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('ContiguousCharArrayArray', '', [
+call javaapi#class('ContiguousCharArrayArray', 'ValueArray', [
   \ javaapi#field(1,'INITIAL_CHARACTER_SIZE', 'int'),
   \ javaapi#field(1,'MAXIMUM_CHARACTER_SIZE', 'int'),
   \ javaapi#field(0,'_offset', 'int[]'),
@@ -93,7 +93,7 @@ call javaapi#class('DuplicateAttributeVerifier', '', [
   \ javaapi#method(0,'checkForDuplicateAttribute(', 'int, int) throws FastInfosetException', 'void'),
   \ ])
 
-call javaapi#class('FixedEntryStringIntMap', '', [
+call javaapi#class('FixedEntryStringIntMap', 'StringIntMap', [
   \ javaapi#method(0,'FixedEntryStringIntMap(', 'String, int, float)', 'public'),
   \ javaapi#method(0,'FixedEntryStringIntMap(', 'String, int)', 'public'),
   \ javaapi#method(0,'FixedEntryStringIntMap(', 'String)', 'public'),
@@ -125,7 +125,7 @@ call javaapi#class('Entry', '', [
   \ javaapi#method(0,'addQualifiedName(', 'QualifiedName)', 'void'),
   \ ])
 
-call javaapi#class('LocalNameQualifiedNamesMap', '', [
+call javaapi#class('LocalNameQualifiedNamesMap', 'KeyIntMap', [
   \ javaapi#method(0,'LocalNameQualifiedNamesMap(', 'int, float)', 'public'),
   \ javaapi#method(0,'LocalNameQualifiedNamesMap(', 'int)', 'public'),
   \ javaapi#method(0,'LocalNameQualifiedNamesMap(', ')', 'public'),
@@ -174,7 +174,7 @@ call javaapi#class('NamespaceEntry', '', [
 call javaapi#class('PrefixEntry', '', [
   \ ])
 
-call javaapi#class('PrefixArray', '', [
+call javaapi#class('PrefixArray', 'ValueArray', [
   \ javaapi#field(1,'PREFIX_MAP_SIZE', 'int'),
   \ javaapi#field(0,'_array', 'String[]'),
   \ javaapi#field(0,'_currentInScope', 'int[]'),
@@ -202,7 +202,7 @@ call javaapi#class('PrefixArray', '', [
   \ javaapi#method(0,'getPrefixesFromNamespace(', 'String)', 'Iterator'),
   \ ])
 
-call javaapi#class('QualifiedNameArray', '', [
+call javaapi#class('QualifiedNameArray', 'ValueArray', [
   \ javaapi#field(0,'_array', 'QualifiedName[]'),
   \ javaapi#method(0,'QualifiedNameArray(', 'int, int)', 'public'),
   \ javaapi#method(0,'QualifiedNameArray(', ')', 'public'),
@@ -215,7 +215,7 @@ call javaapi#class('QualifiedNameArray', '', [
   \ javaapi#method(0,'add(', 'QualifiedName)', 'void'),
   \ ])
 
-call javaapi#class('StringArray', '', [
+call javaapi#class('StringArray', 'ValueArray', [
   \ javaapi#field(0,'_array', 'String[]'),
   \ javaapi#method(0,'StringArray(', 'int, int, boolean)', 'public'),
   \ javaapi#method(0,'StringArray(', ')', 'public'),
@@ -228,11 +228,11 @@ call javaapi#class('StringArray', '', [
   \ javaapi#method(0,'add(', 'String)', 'int'),
   \ ])
 
-call javaapi#class('Entry', '', [
+call javaapi#class('Entry', 'BaseEntry', [
   \ javaapi#method(0,'Entry(', 'String, int, int, Entry)', 'public'),
   \ ])
 
-call javaapi#class('StringIntMap', '', [
+call javaapi#class('StringIntMap', 'KeyIntMap', [
   \ javaapi#method(0,'StringIntMap(', 'int, float)', 'public'),
   \ javaapi#method(0,'StringIntMap(', 'int)', 'public'),
   \ javaapi#method(0,'StringIntMap(', ')', 'public'),
@@ -258,7 +258,7 @@ call javaapi#class('ValueArray', '', [
   \ javaapi#method(0,'clear(', ')', 'void'),
   \ ])
 
-call javaapi#class('ValueArrayResourceException', '', [
+call javaapi#class('ValueArrayResourceException', 'RuntimeException', [
   \ javaapi#method(0,'ValueArrayResourceException(', ')', 'public'),
   \ javaapi#method(0,'ValueArrayResourceException(', 'String)', 'public'),
   \ ])

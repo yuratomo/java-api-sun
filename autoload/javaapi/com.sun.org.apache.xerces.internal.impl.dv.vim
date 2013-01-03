@@ -7,12 +7,12 @@ call javaapi#class('DTDDVFactory', '', [
   \ javaapi#method(0,'getBuiltInTypes(', ')', 'Hashtable'),
   \ ])
 
-call javaapi#class('DVFactoryException', '', [
+call javaapi#class('DVFactoryException', 'RuntimeException', [
   \ javaapi#method(0,'DVFactoryException(', ')', 'public'),
   \ javaapi#method(0,'DVFactoryException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('DatatypeException', '', [
+call javaapi#class('DatatypeException', 'Exception', [
   \ javaapi#method(0,'DatatypeException(', 'String, Object[])', 'public'),
   \ javaapi#method(0,'getKey(', ')', 'String'),
   \ javaapi#method(0,'getArgs(', ')', 'Object[]'),
@@ -23,15 +23,15 @@ call javaapi#interface('DatatypeValidator', '', [
   \ javaapi#method(0,'validate(', 'String, ValidationContext) throws InvalidDatatypeValueException', 'void'),
   \ ])
 
-call javaapi#class('InvalidDatatypeFacetException', '', [
+call javaapi#class('InvalidDatatypeFacetException', 'DatatypeException', [
   \ javaapi#method(0,'InvalidDatatypeFacetException(', 'String, Object[])', 'public'),
   \ ])
 
-call javaapi#class('InvalidDatatypeValueException', '', [
+call javaapi#class('InvalidDatatypeValueException', 'DatatypeException', [
   \ javaapi#method(0,'InvalidDatatypeValueException(', 'String, Object[])', 'public'),
   \ ])
 
-call javaapi#class('ConfigurationError', '', [
+call javaapi#class('ConfigurationError', 'Error', [
   \ ])
 
 call javaapi#class('ObjectFactory', '', [
@@ -139,7 +139,7 @@ call javaapi#class('XSFacets', '', [
   \ javaapi#method(0,'reset(', ')', 'void'),
   \ ])
 
-call javaapi#interface('XSSimpleType', '', [
+call javaapi#interface('XSSimpleType', 'XSSimpleTypeDefinition', [
   \ javaapi#field(1,'WS_PRESERVE', 'short'),
   \ javaapi#field(1,'WS_REPLACE', 'short'),
   \ javaapi#field(1,'WS_COLLAPSE', 'short'),

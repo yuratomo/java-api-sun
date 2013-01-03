@@ -7,7 +7,7 @@ call javaapi#class('1', 'DataSource', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('AttachmentPartImpl', '', [
+call javaapi#class('AttachmentPartImpl', 'AttachmentPart', [
   \ javaapi#method(0,'AttachmentPartImpl(', ')', 'public'),
   \ javaapi#method(0,'AttachmentPartImpl(', 'MIMEPart)', 'public'),
   \ javaapi#method(0,'getSize(', ') throws SOAPException', 'int'),
@@ -36,7 +36,7 @@ call javaapi#class('AttachmentPartImpl', '', [
   \ javaapi#method(0,'getMimeHeaders(', ')', 'MimeHeaders'),
   \ ])
 
-call javaapi#interface('Envelope', '', [
+call javaapi#interface('Envelope', 'SOAPEnvelope', [
   \ javaapi#method(0,'getContent(', ')', 'Source'),
   \ javaapi#method(0,'output(', 'OutputStream) throws IOException', 'void'),
   \ javaapi#method(0,'output(', 'OutputStream, boolean) throws IOException', 'void'),
@@ -56,7 +56,7 @@ call javaapi#class('FastInfosetDataContentHandler', 'DataContentHandler', [
   \ javaapi#method(0,'writeTo(', 'Object, String, OutputStream) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('GifDataContentHandler', '', [
+call javaapi#class('GifDataContentHandler', 'Component', [
   \ javaapi#method(0,'GifDataContentHandler(', ')', 'public'),
   \ javaapi#method(0,'getTransferDataFlavors(', ')', 'DataFlavor[]'),
   \ javaapi#method(0,'getTransferData(', 'DataFlavor, DataSource) throws IOException', 'Object'),
@@ -64,7 +64,7 @@ call javaapi#class('GifDataContentHandler', '', [
   \ javaapi#method(0,'writeTo(', 'Object, String, OutputStream) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('ImageDataContentHandler', '', [
+call javaapi#class('ImageDataContentHandler', 'Component', [
   \ javaapi#method(0,'ImageDataContentHandler(', ')', 'public'),
   \ javaapi#method(0,'getTransferDataFlavors(', ')', 'DataFlavor[]'),
   \ javaapi#method(0,'getTransferData(', 'DataFlavor, DataSource) throws IOException', 'Object'),
@@ -72,7 +72,7 @@ call javaapi#class('ImageDataContentHandler', '', [
   \ javaapi#method(0,'writeTo(', 'Object, String, OutputStream) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('JpegDataContentHandler', '', [
+call javaapi#class('JpegDataContentHandler', 'Component', [
   \ javaapi#field(0,'STR_SRC', 'String'),
   \ javaapi#method(0,'JpegDataContentHandler(', ')', 'public'),
   \ javaapi#method(0,'getTransferDataFlavors(', ')', 'DataFlavor[]'),
@@ -81,7 +81,7 @@ call javaapi#class('JpegDataContentHandler', '', [
   \ javaapi#method(0,'writeTo(', 'Object, String, OutputStream) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('MessageFactoryImpl', '', [
+call javaapi#class('MessageFactoryImpl', 'MessageFactory', [
   \ javaapi#method(0,'MessageFactoryImpl(', ')', 'public'),
   \ javaapi#method(0,'listen(', 'OutputStream)', 'OutputStream'),
   \ javaapi#method(0,'createMessage(', ') throws SOAPException', 'SOAPMessage'),
@@ -104,7 +104,7 @@ call javaapi#class('MimeMatchingIterator', 'Iterator', [
   \ javaapi#method(0,'remove(', ')', 'void'),
   \ ])
 
-call javaapi#class('MessageImpl', '', [
+call javaapi#class('MessageImpl', 'SOAPMessage', [
   \ javaapi#field(1,'CONTENT_ID', 'String'),
   \ javaapi#field(1,'CONTENT_LOCATION', 'String'),
   \ javaapi#method(0,'isFastInfoset(', ')', 'boolean'),
@@ -148,7 +148,7 @@ call javaapi#class('MultipartDataContentHandler', 'DataContentHandler', [
   \ javaapi#method(0,'writeTo(', 'Object, String, OutputStream) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('SAAJMetaFactoryImpl', '', [
+call javaapi#class('SAAJMetaFactoryImpl', 'SAAJMetaFactory', [
   \ javaapi#method(0,'SAAJMetaFactoryImpl(', ')', 'public'),
   \ ])
 
@@ -157,12 +157,12 @@ call javaapi#interface('SOAPDocument', '', [
   \ javaapi#method(0,'getDocument(', ')', 'SOAPDocumentImpl'),
   \ ])
 
-call javaapi#class('SOAPDocumentFragment', '', [
+call javaapi#class('SOAPDocumentFragment', 'DocumentFragmentImpl', [
   \ javaapi#method(0,'SOAPDocumentFragment(', 'CoreDocumentImpl)', 'public'),
   \ javaapi#method(0,'SOAPDocumentFragment(', ')', 'public'),
   \ ])
 
-call javaapi#class('SOAPDocumentImpl', '', [
+call javaapi#class('SOAPDocumentImpl', 'DocumentImpl', [
   \ javaapi#method(0,'SOAPDocumentImpl(', 'SOAPPartImpl)', 'public'),
   \ javaapi#method(0,'getSOAPPart(', ')', 'SOAPPartImpl'),
   \ javaapi#method(0,'getDocument(', ')', 'SOAPDocumentImpl'),
@@ -187,7 +187,7 @@ call javaapi#class('SOAPDocumentImpl', '', [
   \ javaapi#method(0,'cloneNode(', 'SOAPDocumentImpl, boolean)', 'void'),
   \ ])
 
-call javaapi#class('SOAPFactoryImpl', '', [
+call javaapi#class('SOAPFactoryImpl', 'SOAPFactory', [
   \ javaapi#method(0,'SOAPFactoryImpl(', ')', 'public'),
   \ javaapi#method(0,'createElement(', 'String) throws SOAPException', 'SOAPElement'),
   \ javaapi#method(0,'createElement(', 'Name) throws SOAPException', 'SOAPElement'),
@@ -201,7 +201,7 @@ call javaapi#class('SOAPFactoryImpl', '', [
   \ javaapi#method(0,'createFault(', ') throws SOAPException', 'SOAPFault'),
   \ ])
 
-call javaapi#class('SOAPIOException', '', [
+call javaapi#class('SOAPIOException', 'IOException', [
   \ javaapi#method(0,'SOAPIOException(', ')', 'public'),
   \ javaapi#method(0,'SOAPIOException(', 'String)', 'public'),
   \ javaapi#method(0,'SOAPIOException(', 'String, Throwable)', 'public'),
@@ -222,7 +222,7 @@ call javaapi#class('1', 'DataSource', [
   \ javaapi#method(0,'getInputStream(', ') throws IOException', 'InputStream'),
   \ ])
 
-call javaapi#class('SOAPPartImpl', '', [
+call javaapi#class('SOAPPartImpl', 'SOAPPart', [
   \ javaapi#method(0,'isFastInfoset(', ')', 'boolean'),
   \ javaapi#method(0,'getEnvelope(', ') throws SOAPException', 'SOAPEnvelope'),
   \ javaapi#method(0,'removeAllMimeHeaders(', ')', 'void'),
@@ -316,7 +316,7 @@ call javaapi#class('SOAPPartImpl', '', [
   \ javaapi#method(0,'getSourceCharsetEncoding(', ')', 'String'),
   \ ])
 
-call javaapi#class('SOAPVersionMismatchException', '', [
+call javaapi#class('SOAPVersionMismatchException', 'SOAPExceptionImpl', [
   \ javaapi#method(0,'SOAPVersionMismatchException(', ')', 'public'),
   \ javaapi#method(0,'SOAPVersionMismatchException(', 'String)', 'public'),
   \ javaapi#method(0,'SOAPVersionMismatchException(', 'String, Throwable)', 'public'),

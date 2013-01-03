@@ -23,7 +23,7 @@ call javaapi#class('1', 'Void>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'MethodHandle[]>', [
   \ ])
 
 call javaapi#class('3', '', [
@@ -84,7 +84,7 @@ call javaapi#class('VerifyType', '', [
 call javaapi#class('Format', '', [
   \ ])
 
-call javaapi#class('Wrapper', '', [
+call javaapi#class('Wrapper', 'Wrapper>', [
   \ javaapi#field(1,'BOOLEAN', 'Wrapper'),
   \ javaapi#field(1,'BYTE', 'Wrapper'),
   \ javaapi#field(1,'SHORT', 'Wrapper'),

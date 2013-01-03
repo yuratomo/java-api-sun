@@ -1,10 +1,10 @@
 call javaapi#namespace('com.sun.xml.internal.ws.util.pipe')
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'StreamSource', [
   \ javaapi#method(0,'getReader(', ')', 'Reader'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'StreamSource', [
   \ javaapi#method(0,'getReader(', ')', 'Reader'),
   \ ])
 
@@ -38,15 +38,15 @@ call javaapi#class('ValidationDocumentAddressResolver', 'DocumentAddressResolver
   \ javaapi#method(0,'getRelativeAddressFor(', 'SDDocument, SDDocument)', 'String'),
   \ ])
 
-call javaapi#class('AbstractSchemaValidationTube', '', [
+call javaapi#class('AbstractSchemaValidationTube', 'AbstractFilterTubeImpl', [
   \ javaapi#method(0,'AbstractSchemaValidationTube(', 'WSBinding, Tube)', 'public'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'PrintStream', [
   \ javaapi#method(0,'close(', ')', 'void'),
   \ ])
 
-call javaapi#class('DumpTube', '', [
+call javaapi#class('DumpTube', 'AbstractFilterTubeImpl', [
   \ javaapi#method(0,'DumpTube(', 'String, PrintStream, Tube)', 'public'),
   \ javaapi#method(0,'processRequest(', 'Packet)', 'NextAction'),
   \ javaapi#method(0,'processResponse(', 'Packet)', 'NextAction'),

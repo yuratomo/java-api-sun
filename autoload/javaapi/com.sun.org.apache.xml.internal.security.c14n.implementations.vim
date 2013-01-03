@@ -6,19 +6,19 @@ call javaapi#class('XmlsStackElement', '', [
 call javaapi#class('XmlAttrStack', '', [
   \ ])
 
-call javaapi#class('Canonicalizer11', '', [
+call javaapi#class('Canonicalizer11', 'CanonicalizerBase', [
   \ javaapi#method(0,'Canonicalizer11(', 'boolean)', 'public'),
   \ javaapi#method(0,'engineCanonicalizeXPathNodeSet(', 'Set, String) throws CanonicalizationException', 'byte[]'),
   \ javaapi#method(0,'engineCanonicalizeSubTree(', 'Node, String) throws CanonicalizationException', 'byte[]'),
   \ ])
 
-call javaapi#class('Canonicalizer11_OmitComments', '', [
+call javaapi#class('Canonicalizer11_OmitComments', 'Canonicalizer11', [
   \ javaapi#method(0,'Canonicalizer11_OmitComments(', ')', 'public'),
   \ javaapi#method(0,'engineGetURI(', ')', 'String'),
   \ javaapi#method(0,'engineGetIncludeComments(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('Canonicalizer11_WithComments', '', [
+call javaapi#class('Canonicalizer11_WithComments', 'Canonicalizer11', [
   \ javaapi#method(0,'Canonicalizer11_WithComments(', ')', 'public'),
   \ javaapi#method(0,'engineGetURI(', ')', 'String'),
   \ javaapi#method(0,'engineGetIncludeComments(', ')', 'boolean'),
@@ -30,13 +30,13 @@ call javaapi#class('XmlsStackElement', '', [
 call javaapi#class('XmlAttrStack', '', [
   \ ])
 
-call javaapi#class('Canonicalizer20010315', '', [
+call javaapi#class('Canonicalizer20010315', 'CanonicalizerBase', [
   \ javaapi#method(0,'Canonicalizer20010315(', 'boolean)', 'public'),
   \ javaapi#method(0,'engineCanonicalizeXPathNodeSet(', 'Set, String) throws CanonicalizationException', 'byte[]'),
   \ javaapi#method(0,'engineCanonicalizeSubTree(', 'Node, String) throws CanonicalizationException', 'byte[]'),
   \ ])
 
-call javaapi#class('Canonicalizer20010315Excl', '', [
+call javaapi#class('Canonicalizer20010315Excl', 'CanonicalizerBase', [
   \ javaapi#method(0,'Canonicalizer20010315Excl(', 'boolean)', 'public'),
   \ javaapi#method(0,'engineCanonicalizeSubTree(', 'Node) throws CanonicalizationException', 'byte[]'),
   \ javaapi#method(0,'engineCanonicalizeSubTree(', 'Node, String) throws CanonicalizationException', 'byte[]'),
@@ -45,31 +45,31 @@ call javaapi#class('Canonicalizer20010315Excl', '', [
   \ javaapi#method(0,'engineCanonicalizeXPathNodeSet(', 'Set, String) throws CanonicalizationException', 'byte[]'),
   \ ])
 
-call javaapi#class('Canonicalizer20010315ExclOmitComments', '', [
+call javaapi#class('Canonicalizer20010315ExclOmitComments', 'Canonicalizer20010315Excl', [
   \ javaapi#method(0,'Canonicalizer20010315ExclOmitComments(', ')', 'public'),
   \ javaapi#method(0,'engineGetURI(', ')', 'String'),
   \ javaapi#method(0,'engineGetIncludeComments(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('Canonicalizer20010315ExclWithComments', '', [
+call javaapi#class('Canonicalizer20010315ExclWithComments', 'Canonicalizer20010315Excl', [
   \ javaapi#method(0,'Canonicalizer20010315ExclWithComments(', ')', 'public'),
   \ javaapi#method(0,'engineGetURI(', ')', 'String'),
   \ javaapi#method(0,'engineGetIncludeComments(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('Canonicalizer20010315OmitComments', '', [
+call javaapi#class('Canonicalizer20010315OmitComments', 'Canonicalizer20010315', [
   \ javaapi#method(0,'Canonicalizer20010315OmitComments(', ')', 'public'),
   \ javaapi#method(0,'engineGetURI(', ')', 'String'),
   \ javaapi#method(0,'engineGetIncludeComments(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('Canonicalizer20010315WithComments', '', [
+call javaapi#class('Canonicalizer20010315WithComments', 'Canonicalizer20010315', [
   \ javaapi#method(0,'Canonicalizer20010315WithComments(', ')', 'public'),
   \ javaapi#method(0,'engineGetURI(', ')', 'String'),
   \ javaapi#method(0,'engineGetIncludeComments(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('CanonicalizerBase', '', [
+call javaapi#class('CanonicalizerBase', 'CanonicalizerSpi', [
   \ javaapi#method(0,'CanonicalizerBase(', 'boolean)', 'public'),
   \ javaapi#method(0,'engineCanonicalizeSubTree(', 'Node) throws CanonicalizationException', 'byte[]'),
   \ javaapi#method(0,'engineCanonicalizeXPathNodeSet(', 'Set) throws CanonicalizationException', 'byte[]'),

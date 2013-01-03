@@ -18,7 +18,7 @@ call javaapi#class('StateInfo', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('DefaultSynthStyle', '', [
+call javaapi#class('DefaultSynthStyle', 'SynthStyle', [
   \ javaapi#method(0,'DefaultSynthStyle(', ')', 'public'),
   \ javaapi#method(0,'DefaultSynthStyle(', 'DefaultSynthStyle)', 'public'),
   \ javaapi#method(0,'DefaultSynthStyle(', 'Insets, boolean, StateInfo[], Map)', 'public'),
@@ -47,7 +47,7 @@ call javaapi#class('DefaultSynthStyle', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('PaintType', '', [
+call javaapi#class('PaintType', 'PaintType>', [
   \ javaapi#field(1,'CENTER', 'PaintType'),
   \ javaapi#field(1,'TILE', 'PaintType'),
   \ javaapi#field(1,'PAINT9_STRETCH', 'PaintType'),
@@ -56,7 +56,7 @@ call javaapi#class('PaintType', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'PaintType'),
   \ ])
 
-call javaapi#class('Paint9Painter', '', [
+call javaapi#class('Paint9Painter', 'CachedPainter', [
   \ javaapi#field(1,'PAINT_TOP_LEFT', 'int'),
   \ javaapi#field(1,'PAINT_TOP', 'int'),
   \ javaapi#field(1,'PAINT_TOP_RIGHT', 'int'),
@@ -91,11 +91,11 @@ call javaapi#class('DelayedSelectionUpdater', 'Runnable', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('FileNameCompletionAction', '', [
+call javaapi#class('FileNameCompletionAction', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('GlobFilter', '', [
+call javaapi#class('GlobFilter', 'FileFilter', [
   \ javaapi#method(0,'setPattern(', 'String)', 'void'),
   \ javaapi#method(0,'accept(', 'File)', 'boolean'),
   \ javaapi#method(0,'getDescription(', ')', 'String'),
@@ -105,13 +105,13 @@ call javaapi#class('SynthFCPropertyChangeListener', 'PropertyChangeListener', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('UIBorder', '', [
+call javaapi#class('UIBorder', 'AbstractBorder', [
   \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
   \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
   \ javaapi#method(0,'isBorderOpaque(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('SynthFileChooserUI', '', [
+call javaapi#class('SynthFileChooserUI', 'BasicFileChooserUI', [
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'SynthFileChooserUI(', 'JFileChooser)', 'public'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -136,15 +136,15 @@ call javaapi#class('2', 'PropertyChangeListener', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'JTextField', [
   \ javaapi#method(0,'getMaximumSize(', ')', 'Dimension'),
   \ ])
 
-call javaapi#class('4', '', [
+call javaapi#class('4', 'FocusAdapter', [
   \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
   \ ])
 
-call javaapi#class('AlignedLabel', '', [
+call javaapi#class('AlignedLabel', 'JLabel', [
   \ javaapi#method(0,'getPreferredSize(', ')', 'Dimension'),
   \ ])
 
@@ -156,7 +156,7 @@ call javaapi#class('ButtonAreaLayout', 'LayoutManager', [
   \ javaapi#method(0,'removeLayoutComponent(', 'Component)', 'void'),
   \ ])
 
-call javaapi#class('DirectoryComboBoxAction', '', [
+call javaapi#class('DirectoryComboBoxAction', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
@@ -165,7 +165,7 @@ call javaapi#class('1', 'File[]>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('DirectoryComboBoxModel', '', [
+call javaapi#class('DirectoryComboBoxModel', 'AbstractListModel', [
   \ javaapi#method(0,'DirectoryComboBoxModel(', 'SynthFileChooserUIImpl)', 'public'),
   \ javaapi#method(0,'addItem(', 'File)', 'void'),
   \ javaapi#method(0,'getDepth(', 'int)', 'int'),
@@ -179,7 +179,7 @@ call javaapi#class('DirectoryComboBoxRenderer', 'ListCellRenderer', [
   \ javaapi#method(0,'getListCellRendererComponent(', 'JList, Object, int, boolean, boolean)', 'Component'),
   \ ])
 
-call javaapi#class('FilterComboBoxModel', '', [
+call javaapi#class('FilterComboBoxModel', 'AbstractListModel', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ javaapi#method(0,'setSelectedItem(', 'Object)', 'void'),
   \ javaapi#method(0,'getSelectedItem(', ')', 'Object'),
@@ -211,7 +211,7 @@ call javaapi#class('SynthFileChooserUIAccessor', 'FileChooserUIAccessor', [
   \ javaapi#method(0,'createListSelectionListener(', ')', 'ListSelectionListener'),
   \ ])
 
-call javaapi#class('SynthFileChooserUIImpl', '', [
+call javaapi#class('SynthFileChooserUIImpl', 'SynthFileChooserUI', [
   \ javaapi#method(0,'SynthFileChooserUIImpl(', 'JFileChooser)', 'public'),
   \ javaapi#method(0,'installComponents(', 'JFileChooser)', 'void'),
   \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),

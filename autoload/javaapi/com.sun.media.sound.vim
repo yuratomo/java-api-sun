@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.media.sound')
 
-call javaapi#class('AbstractDataLine', '', [
+call javaapi#class('AbstractDataLine', 'AbstractLine', [
   \ javaapi#method(0,'open(', 'AudioFormat, int) throws LineUnavailableException', 'void'),
   \ javaapi#method(0,'open(', 'AudioFormat) throws LineUnavailableException', 'void'),
   \ javaapi#method(0,'available(', ')', 'int'),
@@ -67,16 +67,16 @@ call javaapi#class('AbstractMidiDevice', 'ReferenceCountingDevice', [
   \ javaapi#method(0,'getTransmitterReferenceCounting(', ') throws MidiUnavailableException', 'Transmitter'),
   \ ])
 
-call javaapi#class('Info', '', [
+call javaapi#class('Info', 'Info', [
   \ ])
 
-call javaapi#class('AbstractMidiDeviceProvider', '', [
+call javaapi#class('AbstractMidiDeviceProvider', 'MidiDeviceProvider', [
   \ javaapi#method(0,'AbstractMidiDeviceProvider(', ')', 'public'),
   \ javaapi#method(0,'getDeviceInfo(', ')', 'Info[]'),
   \ javaapi#method(0,'getDevice(', 'Info)', 'MidiDevice'),
   \ ])
 
-call javaapi#class('AbstractMixer', '', [
+call javaapi#class('AbstractMixer', 'AbstractLine', [
   \ javaapi#method(0,'getMixerInfo(', ')', 'Info'),
   \ javaapi#method(0,'getSourceLineInfo(', ')', 'Info[]'),
   \ javaapi#method(0,'getTargetLineInfo(', ')', 'Info[]'),
@@ -94,10 +94,10 @@ call javaapi#class('AbstractMixer', '', [
   \ javaapi#method(0,'close(', ')', 'void'),
   \ ])
 
-call javaapi#class('AiffFileFormat', '', [
+call javaapi#class('AiffFileFormat', 'AudioFileFormat', [
   \ ])
 
-call javaapi#class('AiffFileReader', '', [
+call javaapi#class('AiffFileReader', 'SunFileReader', [
   \ javaapi#field(1,'types', 'Type[]'),
   \ javaapi#method(0,'AiffFileReader(', ')', 'public'),
   \ javaapi#method(0,'getAudioFileFormat(', 'InputStream) throws UnsupportedAudioFileException, IOException', 'AudioFileFormat'),
@@ -108,7 +108,7 @@ call javaapi#class('AiffFileReader', '', [
   \ javaapi#method(0,'getAudioInputStream(', 'File) throws UnsupportedAudioFileException, IOException', 'AudioInputStream'),
   \ ])
 
-call javaapi#class('AiffFileWriter', '', [
+call javaapi#class('AiffFileWriter', 'SunFileWriter', [
   \ javaapi#method(0,'AiffFileWriter(', ')', 'public'),
   \ javaapi#method(0,'getAudioFileTypes(', 'AudioInputStream)', 'Type[]'),
   \ javaapi#method(0,'write(', 'AudioInputStream, Type, OutputStream) throws IOException', 'int'),
@@ -116,13 +116,13 @@ call javaapi#class('AiffFileWriter', '', [
   \ javaapi#method(0,'getAudioFileTypes(', ')', 'Type[]'),
   \ ])
 
-call javaapi#class('AlawCodecStream', '', [
+call javaapi#class('AlawCodecStream', 'AudioInputStream', [
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[]) throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ ])
 
-call javaapi#class('AlawCodec', '', [
+call javaapi#class('AlawCodec', 'SunCodec', [
   \ javaapi#method(0,'AlawCodec(', ')', 'public'),
   \ javaapi#method(0,'getTargetEncodings(', 'AudioFormat)', 'Encoding[]'),
   \ javaapi#method(0,'getTargetFormats(', 'Encoding, AudioFormat)', 'AudioFormat[]'),
@@ -132,11 +132,11 @@ call javaapi#class('AlawCodec', '', [
   \ javaapi#method(0,'getSourceEncodings(', ')', 'Encoding[]'),
   \ ])
 
-call javaapi#class('AuFileFormat', '', [
+call javaapi#class('AuFileFormat', 'AudioFileFormat', [
   \ javaapi#method(0,'getAuType(', ')', 'int'),
   \ ])
 
-call javaapi#class('AuFileReader', '', [
+call javaapi#class('AuFileReader', 'SunFileReader', [
   \ javaapi#field(1,'types', 'Type[]'),
   \ javaapi#method(0,'AuFileReader(', ')', 'public'),
   \ javaapi#method(0,'getAudioFileFormat(', 'InputStream) throws UnsupportedAudioFileException, IOException', 'AudioFileFormat'),
@@ -147,7 +147,7 @@ call javaapi#class('AuFileReader', '', [
   \ javaapi#method(0,'getAudioInputStream(', 'File) throws UnsupportedAudioFileException, IOException', 'AudioInputStream'),
   \ ])
 
-call javaapi#class('AuFileWriter', '', [
+call javaapi#class('AuFileWriter', 'SunFileWriter', [
   \ javaapi#field(1,'UNKNOWN_SIZE', 'int'),
   \ javaapi#method(0,'AuFileWriter(', ')', 'public'),
   \ javaapi#method(0,'getAudioFileTypes(', 'AudioInputStream)', 'Type[]'),
@@ -156,7 +156,7 @@ call javaapi#class('AuFileWriter', '', [
   \ javaapi#method(0,'getAudioFileTypes(', ')', 'Type[]'),
   \ ])
 
-call javaapi#class('AudioFileSoundbankReader', '', [
+call javaapi#class('AudioFileSoundbankReader', 'SoundbankReader', [
   \ javaapi#method(0,'AudioFileSoundbankReader(', ')', 'public'),
   \ javaapi#method(0,'getSoundbank(', 'URL) throws InvalidMidiDataException, IOException', 'Soundbank'),
   \ javaapi#method(0,'getSoundbank(', 'InputStream) throws InvalidMidiDataException, IOException', 'Soundbank'),
@@ -167,121 +167,121 @@ call javaapi#class('AudioFileSoundbankReader', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('AudioFloatConversion16SB', '', [
+call javaapi#class('AudioFloatConversion16SB', 'AudioFloatConverter', [
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatConversion16SL', '', [
+call javaapi#class('AudioFloatConversion16SL', 'AudioFloatConverter', [
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatConversion16UB', '', [
+call javaapi#class('AudioFloatConversion16UB', 'AudioFloatConverter', [
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatConversion16UL', '', [
+call javaapi#class('AudioFloatConversion16UL', 'AudioFloatConverter', [
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatConversion24SB', '', [
+call javaapi#class('AudioFloatConversion24SB', 'AudioFloatConverter', [
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatConversion24SL', '', [
+call javaapi#class('AudioFloatConversion24SL', 'AudioFloatConverter', [
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatConversion24UB', '', [
+call javaapi#class('AudioFloatConversion24UB', 'AudioFloatConverter', [
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatConversion24UL', '', [
+call javaapi#class('AudioFloatConversion24UL', 'AudioFloatConverter', [
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatConversion32B', '', [
+call javaapi#class('AudioFloatConversion32B', 'AudioFloatConverter', [
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatConversion32L', '', [
+call javaapi#class('AudioFloatConversion32L', 'AudioFloatConverter', [
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatConversion32SB', '', [
+call javaapi#class('AudioFloatConversion32SB', 'AudioFloatConverter', [
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatConversion32SL', '', [
+call javaapi#class('AudioFloatConversion32SL', 'AudioFloatConverter', [
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatConversion32UB', '', [
+call javaapi#class('AudioFloatConversion32UB', 'AudioFloatConverter', [
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatConversion32UL', '', [
+call javaapi#class('AudioFloatConversion32UL', 'AudioFloatConverter', [
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatConversion32xSB', '', [
+call javaapi#class('AudioFloatConversion32xSB', 'AudioFloatConverter', [
   \ javaapi#method(0,'AudioFloatConversion32xSB(', 'int)', 'public'),
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatConversion32xSL', '', [
+call javaapi#class('AudioFloatConversion32xSL', 'AudioFloatConverter', [
   \ javaapi#method(0,'AudioFloatConversion32xSL(', 'int)', 'public'),
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatConversion32xUB', '', [
+call javaapi#class('AudioFloatConversion32xUB', 'AudioFloatConverter', [
   \ javaapi#method(0,'AudioFloatConversion32xUB(', 'int)', 'public'),
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatConversion32xUL', '', [
+call javaapi#class('AudioFloatConversion32xUL', 'AudioFloatConverter', [
   \ javaapi#method(0,'AudioFloatConversion32xUL(', 'int)', 'public'),
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatConversion64B', '', [
+call javaapi#class('AudioFloatConversion64B', 'AudioFloatConverter', [
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatConversion64L', '', [
+call javaapi#class('AudioFloatConversion64L', 'AudioFloatConverter', [
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatConversion8S', '', [
+call javaapi#class('AudioFloatConversion8S', 'AudioFloatConverter', [
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatConversion8U', '', [
+call javaapi#class('AudioFloatConversion8U', 'AudioFloatConverter', [
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatLSBFilter', '', [
+call javaapi#class('AudioFloatLSBFilter', 'AudioFloatConverter', [
   \ javaapi#method(0,'AudioFloatLSBFilter(', 'AudioFloatConverter, AudioFormat)', 'public'),
   \ javaapi#method(0,'toByteArray(', 'float[], int, int, byte[], int)', 'byte[]'),
   \ javaapi#method(0,'toFloatArray(', 'byte[], int, float[], int, int)', 'float[]'),
@@ -303,7 +303,7 @@ call javaapi#class('AudioFloatConverter', '', [
   \ javaapi#method(0,'toByteArray(', 'float[], byte[])', 'byte[]'),
   \ ])
 
-call javaapi#class('AudioFloatFormatConverterInputStream', '', [
+call javaapi#class('AudioFloatFormatConverterInputStream', 'InputStream', [
   \ javaapi#method(0,'AudioFloatFormatConverterInputStream(', 'AudioFormat, AudioFloatInputStream)', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
@@ -315,7 +315,7 @@ call javaapi#class('AudioFloatFormatConverterInputStream', '', [
   \ javaapi#method(0,'skip(', 'long) throws IOException', 'long'),
   \ ])
 
-call javaapi#class('AudioFloatInputStreamChannelMixer', '', [
+call javaapi#class('AudioFloatInputStreamChannelMixer', 'AudioFloatInputStream', [
   \ javaapi#method(0,'AudioFloatInputStreamChannelMixer(', 'AudioFloatInputStream, int)', 'public'),
   \ javaapi#method(0,'available(', ') throws IOException', 'int'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
@@ -328,7 +328,7 @@ call javaapi#class('AudioFloatInputStreamChannelMixer', '', [
   \ javaapi#method(0,'skip(', 'long) throws IOException', 'long'),
   \ ])
 
-call javaapi#class('AudioFloatInputStreamResampler', '', [
+call javaapi#class('AudioFloatInputStreamResampler', 'AudioFloatInputStream', [
   \ javaapi#method(0,'AudioFloatInputStreamResampler(', 'AudioFloatInputStream, AudioFormat)', 'public'),
   \ javaapi#method(0,'available(', ') throws IOException', 'int'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
@@ -341,7 +341,7 @@ call javaapi#class('AudioFloatInputStreamResampler', '', [
   \ javaapi#method(0,'skip(', 'long) throws IOException', 'long'),
   \ ])
 
-call javaapi#class('AudioFloatFormatConverter', '', [
+call javaapi#class('AudioFloatFormatConverter', 'FormatConversionProvider', [
   \ javaapi#method(0,'AudioFloatFormatConverter(', ')', 'public'),
   \ javaapi#method(0,'getAudioInputStream(', 'Encoding, AudioInputStream)', 'AudioInputStream'),
   \ javaapi#method(0,'getAudioInputStream(', 'AudioFormat, AudioInputStream)', 'AudioInputStream'),
@@ -354,7 +354,7 @@ call javaapi#class('AudioFloatFormatConverter', '', [
   \ javaapi#method(0,'isConversionSupported(', 'Encoding, AudioFormat)', 'boolean'),
   \ ])
 
-call javaapi#class('BytaArrayAudioFloatInputStream', '', [
+call javaapi#class('BytaArrayAudioFloatInputStream', 'AudioFloatInputStream', [
   \ javaapi#method(0,'BytaArrayAudioFloatInputStream(', 'AudioFloatConverter, byte[], int, int)', 'public'),
   \ javaapi#method(0,'getFormat(', ')', 'AudioFormat'),
   \ javaapi#method(0,'getFrameLength(', ')', 'long'),
@@ -367,7 +367,7 @@ call javaapi#class('BytaArrayAudioFloatInputStream', '', [
   \ javaapi#method(0,'reset(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('DirectAudioFloatInputStream', '', [
+call javaapi#class('DirectAudioFloatInputStream', 'AudioFloatInputStream', [
   \ javaapi#method(0,'DirectAudioFloatInputStream(', 'AudioInputStream)', 'public'),
   \ javaapi#method(0,'getFormat(', ')', 'AudioFormat'),
   \ javaapi#method(0,'getFrameLength(', ')', 'long'),
@@ -400,7 +400,7 @@ call javaapi#class('AudioFloatInputStream', '', [
   \ javaapi#method(0,'reset(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#interface('AudioSynthesizer', '', [
+call javaapi#interface('AudioSynthesizer', 'Synthesizer', [
   \ javaapi#method(0,'getFormat(', ')', 'AudioFormat'),
   \ javaapi#method(0,'getPropertyInfo(', 'Map<String, Object>)', 'AudioSynthesizerPropertyInfo[]'),
   \ javaapi#method(0,'open(', 'SourceDataLine, Map<String, Object>) throws MidiUnavailableException', 'void'),
@@ -416,7 +416,7 @@ call javaapi#class('AudioSynthesizerPropertyInfo', '', [
   \ javaapi#method(0,'AudioSynthesizerPropertyInfo(', 'String, Object)', 'public'),
   \ ])
 
-call javaapi#interface('AutoClosingClip', '', [
+call javaapi#interface('AutoClosingClip', 'Clip', [
   \ javaapi#method(0,'isAutoClosing(', ')', 'boolean'),
   \ javaapi#method(0,'setAutoClosing(', 'boolean)', 'void'),
   \ ])
@@ -446,7 +446,7 @@ call javaapi#class('DLSInfo', '', [
   \ javaapi#method(0,'DLSInfo(', ')', 'public'),
   \ ])
 
-call javaapi#class('DLSInstrument', '', [
+call javaapi#class('DLSInstrument', 'ModelInstrument', [
   \ javaapi#method(0,'DLSInstrument(', ')', 'public'),
   \ javaapi#method(0,'DLSInstrument(', 'DLSSoundbank)', 'public'),
   \ javaapi#method(0,'getInfo(', ')', 'DLSInfo'),
@@ -572,7 +572,7 @@ call javaapi#class('DLSRegion', '', [
   \ javaapi#method(0,'setSampleoptions(', 'DLSSampleOptions)', 'void'),
   \ ])
 
-call javaapi#class('DLSSample', '', [
+call javaapi#class('DLSSample', 'SoundbankResource', [
   \ javaapi#method(0,'DLSSample(', 'Soundbank)', 'public'),
   \ javaapi#method(0,'DLSSample(', ')', 'public'),
   \ javaapi#method(0,'getInfo(', ')', 'DLSInfo'),
@@ -655,7 +655,7 @@ call javaapi#class('DLSSoundbank', 'Soundbank', [
   \ javaapi#method(0,'getInstruments(', ')', 'Instrument[]'),
   \ ])
 
-call javaapi#class('DLSSoundbankReader', '', [
+call javaapi#class('DLSSoundbankReader', 'SoundbankReader', [
   \ javaapi#method(0,'DLSSoundbankReader(', ')', 'public'),
   \ javaapi#method(0,'getSoundbank(', 'URL) throws InvalidMidiDataException, IOException', 'Soundbank'),
   \ javaapi#method(0,'getSoundbank(', 'InputStream) throws InvalidMidiDataException, IOException', 'Soundbank'),
@@ -674,12 +674,12 @@ call javaapi#class('DataPusher', 'Runnable', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('DirectBAOS', '', [
+call javaapi#class('DirectBAOS', 'ByteArrayOutputStream', [
   \ javaapi#method(0,'DirectBAOS(', ')', 'public'),
   \ javaapi#method(0,'getInternalBuffer(', ')', 'byte[]'),
   \ ])
 
-call javaapi#class('DirectClip', '', [
+call javaapi#class('DirectClip', 'DirectDL', [
   \ javaapi#method(0,'open(', 'AudioFormat, byte[], int, int) throws LineUnavailableException', 'void'),
   \ javaapi#method(0,'open(', 'AudioInputStream) throws LineUnavailableException, IOException', 'void'),
   \ javaapi#method(0,'getFrameLength(', ')', 'int'),
@@ -694,23 +694,23 @@ call javaapi#class('DirectClip', '', [
   \ javaapi#method(0,'setAutoClosing(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('Balance', '', [
+call javaapi#class('Balance', 'FloatControl', [
   \ javaapi#method(0,'setValue(', 'float)', 'void'),
   \ ])
 
-call javaapi#class('Gain', '', [
+call javaapi#class('Gain', 'FloatControl', [
   \ javaapi#method(0,'setValue(', 'float)', 'void'),
   \ ])
 
-call javaapi#class('Mute', '', [
+call javaapi#class('Mute', 'BooleanControl', [
   \ javaapi#method(0,'setValue(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('Pan', '', [
+call javaapi#class('Pan', 'FloatControl', [
   \ javaapi#method(0,'setValue(', 'float)', 'void'),
   \ ])
 
-call javaapi#class('DirectDL', '', [
+call javaapi#class('DirectDL', 'AbstractDataLine', [
   \ javaapi#method(0,'available(', ')', 'int'),
   \ javaapi#method(0,'drain(', ')', 'void'),
   \ javaapi#method(0,'flush(', ')', 'void'),
@@ -719,26 +719,26 @@ call javaapi#class('DirectDL', '', [
   \ javaapi#method(0,'checkLine(', ')', 'void'),
   \ ])
 
-call javaapi#class('DirectDLI', '', [
+call javaapi#class('DirectDLI', 'Info', [
   \ javaapi#method(0,'isFormatSupportedInHardware(', 'AudioFormat)', 'boolean'),
   \ ])
 
-call javaapi#class('DirectSDL', '', [
+call javaapi#class('DirectSDL', 'DirectDL', [
   \ ])
 
-call javaapi#class('DirectTDL', '', [
+call javaapi#class('DirectTDL', 'DirectDL', [
   \ javaapi#method(0,'read(', 'byte[], int, int)', 'int'),
   \ ])
 
-call javaapi#class('DirectAudioDevice', '', [
+call javaapi#class('DirectAudioDevice', 'AbstractMixer', [
   \ javaapi#method(0,'getLine(', 'Info) throws LineUnavailableException', 'Line'),
   \ javaapi#method(0,'getMaxLines(', 'Info)', 'int'),
   \ ])
 
-call javaapi#class('DirectAudioDeviceInfo', '', [
+call javaapi#class('DirectAudioDeviceInfo', 'Info', [
   \ ])
 
-call javaapi#class('DirectAudioDeviceProvider', '', [
+call javaapi#class('DirectAudioDeviceProvider', 'MixerProvider', [
   \ javaapi#method(0,'DirectAudioDeviceProvider(', ')', 'public'),
   \ javaapi#method(0,'getMixerInfo(', ')', 'Info[]'),
   \ javaapi#method(0,'getMixer(', 'Info)', 'Mixer'),
@@ -827,7 +827,7 @@ call javaapi#class('FFT', '', [
   \ javaapi#method(0,'transform(', 'double[])', 'void'),
   \ ])
 
-call javaapi#class('FastShortMessage', '', [
+call javaapi#class('FastShortMessage', 'ShortMessage', [
   \ javaapi#method(0,'FastShortMessage(', 'int) throws InvalidMidiDataException', 'public'),
   \ javaapi#method(0,'FastShortMessage(', 'ShortMessage)', 'public'),
   \ javaapi#method(0,'getMessage(', ')', 'byte[]'),
@@ -843,21 +843,21 @@ call javaapi#class('FastShortMessage', '', [
   \ javaapi#method(0,'clone(', ')', 'Object'),
   \ ])
 
-call javaapi#class('FastSysexMessage', '', [
+call javaapi#class('FastSysexMessage', 'SysexMessage', [
   \ javaapi#method(0,'setMessage(', 'byte[], int) throws InvalidMidiDataException', 'void'),
   \ ])
 
-call javaapi#class('InvalidDataException', '', [
+call javaapi#class('InvalidDataException', 'IOException', [
   \ javaapi#method(0,'InvalidDataException(', ')', 'public'),
   \ javaapi#method(0,'InvalidDataException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('InvalidFormatException', '', [
+call javaapi#class('InvalidFormatException', 'InvalidDataException', [
   \ javaapi#method(0,'InvalidFormatException(', ')', 'public'),
   \ javaapi#method(0,'InvalidFormatException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('JARSoundbankReader', '', [
+call javaapi#class('JARSoundbankReader', 'SoundbankReader', [
   \ javaapi#method(0,'JARSoundbankReader(', ')', 'public'),
   \ javaapi#method(0,'isZIP(', 'URL)', 'boolean'),
   \ javaapi#method(0,'getSoundbank(', 'URL) throws InvalidMidiDataException, IOException', 'Soundbank'),
@@ -908,7 +908,7 @@ call javaapi#class('6', 'Boolean>', [
 call javaapi#class('JSSecurityManager', '', [
   \ ])
 
-call javaapi#class('DirectBAOS', '', [
+call javaapi#class('DirectBAOS', 'ByteArrayOutputStream', [
   \ javaapi#method(0,'DirectBAOS(', ')', 'public'),
   \ javaapi#method(0,'getInternalBuffer(', ')', 'byte[]'),
   \ ])
@@ -943,10 +943,10 @@ call javaapi#class('MidiDeviceTransmitterEnvelope', 'MidiDeviceTransmitter', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('MidiInTransmitter', '', [
+call javaapi#class('MidiInTransmitter', 'BasicTransmitter', [
   \ ])
 
-call javaapi#class('MidiInDevice', '', [
+call javaapi#class('MidiInDevice', 'AbstractMidiDevice', [
   \ javaapi#method(0,'getMicrosecondPosition(', ')', 'long'),
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
@@ -954,27 +954,27 @@ call javaapi#class('MidiInDevice', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('MidiInDeviceInfo', '', [
+call javaapi#class('MidiInDeviceInfo', 'Info', [
   \ ])
 
-call javaapi#class('MidiInDeviceProvider', '', [
+call javaapi#class('MidiInDeviceProvider', 'AbstractMidiDeviceProvider', [
   \ javaapi#method(0,'MidiInDeviceProvider(', ')', 'public'),
   \ ])
 
-call javaapi#class('MidiOutReceiver', '', [
+call javaapi#class('MidiOutReceiver', 'AbstractReceiver', [
   \ ])
 
-call javaapi#class('MidiOutDevice', '', [
+call javaapi#class('MidiOutDevice', 'AbstractMidiDevice', [
   \ javaapi#method(0,'getMicrosecondPosition(', ')', 'long'),
   \ ])
 
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('MidiOutDeviceInfo', '', [
+call javaapi#class('MidiOutDeviceInfo', 'Info', [
   \ ])
 
-call javaapi#class('MidiOutDeviceProvider', '', [
+call javaapi#class('MidiOutDeviceProvider', 'AbstractMidiDeviceProvider', [
   \ javaapi#method(0,'MidiOutDeviceProvider(', ')', 'public'),
   \ ])
 
@@ -1065,7 +1065,7 @@ call javaapi#class('ModelAbstractOscillator', 'Soundbank', [
   \ javaapi#method(0,'getVersion(', ')', 'String'),
   \ ])
 
-call javaapi#class('RandomFileInputStream', '', [
+call javaapi#class('RandomFileInputStream', 'InputStream', [
   \ javaapi#method(0,'RandomFileInputStream(', 'ModelByteBuffer) throws IOException', 'public'),
   \ javaapi#method(0,'available(', ') throws IOException', 'int'),
   \ javaapi#method(0,'mark(', 'int)', 'void'),
@@ -1099,7 +1099,7 @@ call javaapi#class('ModelByteBuffer', '', [
   \ javaapi#method(0,'unload(', ')', 'void'),
   \ ])
 
-call javaapi#class('Buffer8PlusInputStream', '', [
+call javaapi#class('Buffer8PlusInputStream', 'InputStream', [
   \ javaapi#method(0,'Buffer8PlusInputStream(', 'ModelByteBufferWavetable)', 'public'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ javaapi#method(0,'skip(', 'long) throws IOException', 'long'),
@@ -1135,7 +1135,7 @@ call javaapi#class('ModelByteBufferWavetable', 'ModelWavetable', [
   \ javaapi#method(0,'setPitchcorrection(', 'float)', 'void'),
   \ ])
 
-call javaapi#interface('ModelChannelMixer', '', [
+call javaapi#interface('ModelChannelMixer', 'MidiChannel', [
   \ javaapi#method(0,'process(', 'float[][], int, int)', 'boolean'),
   \ javaapi#method(0,'stop(', ')', 'void'),
   \ ])
@@ -1219,7 +1219,7 @@ call javaapi#class('ModelIdentifier', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ModelInstrument', '', [
+call javaapi#class('ModelInstrument', 'Instrument', [
   \ javaapi#method(0,'getDirector(', 'ModelPerformer[], MidiChannel, ModelDirectedPlayer)', 'ModelDirector'),
   \ javaapi#method(0,'getPerformers(', ')', 'ModelPerformer[]'),
   \ javaapi#method(0,'getChannelMixer(', 'MidiChannel, AudioFormat)', 'ModelChannelMixer'),
@@ -1234,7 +1234,7 @@ call javaapi#class('ModelInstrumentComparator', 'Instrument>', [
   \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
   \ ])
 
-call javaapi#class('ModelMappedInstrument', '', [
+call javaapi#class('ModelMappedInstrument', 'ModelInstrument', [
   \ javaapi#method(0,'ModelMappedInstrument(', 'ModelInstrument, Patch)', 'public'),
   \ javaapi#method(0,'getData(', ')', 'Object'),
   \ javaapi#method(0,'getPerformers(', ')', 'ModelPerformer[]'),
@@ -1256,7 +1256,7 @@ call javaapi#interface('ModelOscillatorStream', '', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('ModelPatch', '', [
+call javaapi#class('ModelPatch', 'Patch', [
   \ javaapi#method(0,'ModelPatch(', 'int, int)', 'public'),
   \ javaapi#method(0,'ModelPatch(', 'int, int, boolean)', 'public'),
   \ javaapi#method(0,'isPercussion(', ')', 'boolean'),
@@ -1355,7 +1355,7 @@ call javaapi#interface('ModelTransform', '', [
   \ javaapi#method(0,'transform(', 'double)', 'double'),
   \ ])
 
-call javaapi#interface('ModelWavetable', '', [
+call javaapi#interface('ModelWavetable', 'ModelOscillator', [
   \ javaapi#field(1,'LOOP_TYPE_OFF', 'int'),
   \ javaapi#field(1,'LOOP_TYPE_FORWARD', 'int'),
   \ javaapi#field(1,'LOOP_TYPE_RELEASE', 'int'),
@@ -1368,13 +1368,13 @@ call javaapi#interface('ModelWavetable', '', [
   \ javaapi#method(0,'getPitchcorrection(', ')', 'float'),
   \ ])
 
-call javaapi#class('PCMtoPCMCodecStream', '', [
+call javaapi#class('PCMtoPCMCodecStream', 'AudioInputStream', [
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[]) throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ ])
 
-call javaapi#class('PCMtoPCMCodec', '', [
+call javaapi#class('PCMtoPCMCodec', 'SunCodec', [
   \ javaapi#method(0,'PCMtoPCMCodec(', ')', 'public'),
   \ javaapi#method(0,'getTargetEncodings(', 'AudioFormat)', 'Encoding[]'),
   \ javaapi#method(0,'getTargetFormats(', 'Encoding, AudioFormat)', 'AudioFormat[]'),
@@ -1396,45 +1396,45 @@ call javaapi#class('Platform', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('BCT', '', [
+call javaapi#class('BCT', 'Type', [
   \ ])
 
-call javaapi#class('BoolCtrl', '', [
+call javaapi#class('BoolCtrl', 'BooleanControl', [
   \ javaapi#method(0,'setValue(', 'boolean)', 'void'),
   \ javaapi#method(0,'getValue(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('CCT', '', [
+call javaapi#class('CCT', 'Type', [
   \ ])
 
-call javaapi#class('CompCtrl', '', [
+call javaapi#class('CompCtrl', 'CompoundControl', [
   \ ])
 
-call javaapi#class('FCT', '', [
+call javaapi#class('FCT', 'Type', [
   \ ])
 
-call javaapi#class('FloatCtrl', '', [
+call javaapi#class('FloatCtrl', 'FloatControl', [
   \ javaapi#method(0,'setValue(', 'float)', 'void'),
   \ javaapi#method(0,'getValue(', ')', 'float'),
   \ ])
 
-call javaapi#class('PortInfo', '', [
+call javaapi#class('PortInfo', 'Info', [
   \ ])
 
-call javaapi#class('PortMixerPort', '', [
+call javaapi#class('PortMixerPort', 'AbstractLine', [
   \ javaapi#method(0,'open(', ') throws LineUnavailableException', 'void'),
   \ javaapi#method(0,'close(', ')', 'void'),
   \ ])
 
-call javaapi#class('PortMixer', '', [
+call javaapi#class('PortMixer', 'AbstractMixer', [
   \ javaapi#method(0,'getLine(', 'Info) throws LineUnavailableException', 'Line'),
   \ javaapi#method(0,'getMaxLines(', 'Info)', 'int'),
   \ ])
 
-call javaapi#class('PortMixerInfo', '', [
+call javaapi#class('PortMixerInfo', 'Info', [
   \ ])
 
-call javaapi#class('PortMixerProvider', '', [
+call javaapi#class('PortMixerProvider', 'MixerProvider', [
   \ javaapi#method(0,'PortMixerProvider(', ')', 'public'),
   \ javaapi#method(0,'getMixerInfo(', ')', 'Info[]'),
   \ javaapi#method(0,'getMixer(', 'Info)', 'Mixer'),
@@ -1450,17 +1450,17 @@ call javaapi#class('Printer', '', [
   \ javaapi#method(1,'println(', ')', 'void'),
   \ ])
 
-call javaapi#class('RIFFInvalidDataException', '', [
+call javaapi#class('RIFFInvalidDataException', 'InvalidDataException', [
   \ javaapi#method(0,'RIFFInvalidDataException(', ')', 'public'),
   \ javaapi#method(0,'RIFFInvalidDataException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('RIFFInvalidFormatException', '', [
+call javaapi#class('RIFFInvalidFormatException', 'InvalidFormatException', [
   \ javaapi#method(0,'RIFFInvalidFormatException(', ')', 'public'),
   \ javaapi#method(0,'RIFFInvalidFormatException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('RIFFReader', '', [
+call javaapi#class('RIFFReader', 'InputStream', [
   \ javaapi#method(0,'RIFFReader(', 'InputStream) throws IOException', 'public'),
   \ javaapi#method(0,'getFilePointer(', ') throws IOException', 'long'),
   \ javaapi#method(0,'hasNextChunk(', ') throws IOException', 'boolean'),
@@ -1523,7 +1523,7 @@ call javaapi#interface('RandomAccessWriter', '', [
   \ javaapi#method(0,'setLength(', 'long) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('RIFFWriter', '', [
+call javaapi#class('RIFFWriter', 'OutputStream', [
   \ javaapi#method(0,'RIFFWriter(', 'String, String) throws IOException', 'public'),
   \ javaapi#method(0,'RIFFWriter(', 'File, String) throws IOException', 'public'),
   \ javaapi#method(0,'RIFFWriter(', 'OutputStream, String) throws IOException', 'public'),
@@ -1560,19 +1560,19 @@ call javaapi#class('PlayThread', 'Runnable', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('RealTimeSequencerInfo', '', [
+call javaapi#class('RealTimeSequencerInfo', 'Info', [
   \ ])
 
 call javaapi#class('RecordingTrack', '', [
   \ ])
 
-call javaapi#class('SequencerReceiver', '', [
+call javaapi#class('SequencerReceiver', 'AbstractReceiver', [
   \ ])
 
-call javaapi#class('SequencerTransmitter', '', [
+call javaapi#class('SequencerTransmitter', 'BasicTransmitter', [
   \ ])
 
-call javaapi#class('RealTimeSequencer', '', [
+call javaapi#class('RealTimeSequencer', 'AbstractMidiDevice', [
   \ javaapi#method(0,'setSequence(', 'Sequence) throws InvalidMidiDataException', 'void'),
   \ javaapi#method(0,'setSequence(', 'InputStream) throws IOException, InvalidMidiDataException', 'void'),
   \ javaapi#method(0,'getSequence(', ')', 'Sequence'),
@@ -1619,7 +1619,7 @@ call javaapi#class('RealTimeSequencer', '', [
   \ javaapi#method(0,'setAutoConnect(', 'Receiver)', 'void'),
   \ ])
 
-call javaapi#class('RealTimeSequencerProvider', '', [
+call javaapi#class('RealTimeSequencerProvider', 'MidiDeviceProvider', [
   \ javaapi#method(0,'RealTimeSequencerProvider(', ')', 'public'),
   \ javaapi#method(0,'getDeviceInfo(', ')', 'Info[]'),
   \ javaapi#method(0,'getDevice(', 'Info)', 'MidiDevice'),
@@ -1630,7 +1630,7 @@ call javaapi#interface('ReferenceCountingDevice', '', [
   \ javaapi#method(0,'getTransmitterReferenceCounting(', ') throws MidiUnavailableException', 'Transmitter'),
   \ ])
 
-call javaapi#class('SF2GlobalRegion', '', [
+call javaapi#class('SF2GlobalRegion', 'SF2Region', [
   \ javaapi#method(0,'SF2GlobalRegion(', ')', 'public'),
   \ ])
 
@@ -1638,7 +1638,7 @@ call javaapi#class('1', 'ModelTransform', [
   \ javaapi#method(0,'transform(', 'double)', 'double'),
   \ ])
 
-call javaapi#class('SF2Instrument', '', [
+call javaapi#class('SF2Instrument', 'ModelInstrument', [
   \ javaapi#method(0,'SF2Instrument(', ')', 'public'),
   \ javaapi#method(0,'SF2Instrument(', 'SF2Soundbank)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'String'),
@@ -1659,13 +1659,13 @@ call javaapi#class('SF2Instrument', '', [
   \ javaapi#method(0,'getPerformers(', ')', 'ModelPerformer[]'),
   \ ])
 
-call javaapi#class('SF2InstrumentRegion', '', [
+call javaapi#class('SF2InstrumentRegion', 'SF2Region', [
   \ javaapi#method(0,'SF2InstrumentRegion(', ')', 'public'),
   \ javaapi#method(0,'getLayer(', ')', 'SF2Layer'),
   \ javaapi#method(0,'setLayer(', 'SF2Layer)', 'void'),
   \ ])
 
-call javaapi#class('SF2Layer', '', [
+call javaapi#class('SF2Layer', 'SoundbankResource', [
   \ javaapi#method(0,'SF2Layer(', 'SF2Soundbank)', 'public'),
   \ javaapi#method(0,'SF2Layer(', ')', 'public'),
   \ javaapi#method(0,'getData(', ')', 'Object'),
@@ -1677,7 +1677,7 @@ call javaapi#class('SF2Layer', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SF2LayerRegion', '', [
+call javaapi#class('SF2LayerRegion', 'SF2Region', [
   \ javaapi#method(0,'SF2LayerRegion(', ')', 'public'),
   \ javaapi#method(0,'getSample(', ')', 'SF2Sample'),
   \ javaapi#method(0,'setSample(', 'SF2Sample)', 'void'),
@@ -1790,7 +1790,7 @@ call javaapi#class('SF2Region', '', [
   \ javaapi#method(0,'getModulators(', ')', 'SF2Modulator>'),
   \ ])
 
-call javaapi#class('SF2Sample', '', [
+call javaapi#class('SF2Sample', 'SoundbankResource', [
   \ javaapi#method(0,'SF2Sample(', 'Soundbank)', 'public'),
   \ javaapi#method(0,'SF2Sample(', ')', 'public'),
   \ javaapi#method(0,'getData(', ')', 'Object'),
@@ -1863,7 +1863,7 @@ call javaapi#class('SF2Soundbank', 'Soundbank', [
   \ javaapi#method(0,'getInstruments(', ')', 'Instrument[]'),
   \ ])
 
-call javaapi#class('SF2SoundbankReader', '', [
+call javaapi#class('SF2SoundbankReader', 'SoundbankReader', [
   \ javaapi#method(0,'SF2SoundbankReader(', ')', 'public'),
   \ javaapi#method(0,'getSoundbank(', 'URL) throws InvalidMidiDataException, IOException', 'Soundbank'),
   \ javaapi#method(0,'getSoundbank(', 'InputStream) throws InvalidMidiDataException, IOException', 'Soundbank'),
@@ -1880,7 +1880,7 @@ call javaapi#class('1', '', [
 call javaapi#class('SimpleInstrumentPart', '', [
   \ ])
 
-call javaapi#class('SimpleInstrument', '', [
+call javaapi#class('SimpleInstrument', 'ModelInstrument', [
   \ javaapi#method(0,'SimpleInstrument(', ')', 'public'),
   \ javaapi#method(0,'clear(', ')', 'void'),
   \ javaapi#method(0,'add(', 'ModelPerformer[], int, int, int, int, int)', 'void'),
@@ -2106,7 +2106,7 @@ call javaapi#interface('SoftControl', '', [
   \ javaapi#method(0,'get(', 'int, String)', 'double[]'),
   \ ])
 
-call javaapi#class('SoftCubicResampler', '', [
+call javaapi#class('SoftCubicResampler', 'SoftAbstractResampler', [
   \ javaapi#method(0,'SoftCubicResampler(', ')', 'public'),
   \ javaapi#method(0,'getPadding(', ')', 'int'),
   \ javaapi#method(0,'interpolate(', 'float[], float[], float, float[], float, float[], int[], int)', 'void'),
@@ -2150,7 +2150,7 @@ call javaapi#class('SoftFilter', '', [
   \ javaapi#method(0,'filter1(', 'SoftAudioBuffer)', 'void'),
   \ ])
 
-call javaapi#class('SoftInstrument', '', [
+call javaapi#class('SoftInstrument', 'Instrument', [
   \ javaapi#method(0,'SoftInstrument(', 'ModelInstrument)', 'public'),
   \ javaapi#method(0,'SoftInstrument(', 'ModelInstrument, ModelPerformer[])', 'public'),
   \ javaapi#method(0,'getDirector(', 'MidiChannel, ModelDirectedPlayer)', 'ModelDirector'),
@@ -2163,7 +2163,7 @@ call javaapi#class('1', 'Runnable', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('JitterStream', '', [
+call javaapi#class('JitterStream', 'InputStream', [
   \ javaapi#method(0,'nextReadBuffer(', ')', 'byte[]'),
   \ javaapi#method(0,'nextWriteBuffer(', ')', 'byte[]'),
   \ javaapi#method(0,'commit(', ')', 'void'),
@@ -2175,11 +2175,11 @@ call javaapi#class('JitterStream', '', [
   \ javaapi#method(0,'available(', ')', 'int'),
   \ ])
 
-call javaapi#class('SoftJitterCorrector', '', [
+call javaapi#class('SoftJitterCorrector', 'AudioInputStream', [
   \ javaapi#method(0,'SoftJitterCorrector(', 'AudioInputStream, int, int)', 'public'),
   \ ])
 
-call javaapi#class('SoftLanczosResampler', '', [
+call javaapi#class('SoftLanczosResampler', 'SoftAbstractResampler', [
   \ javaapi#method(0,'SoftLanczosResampler(', ')', 'public'),
   \ javaapi#method(1,'sinc(', 'double)', 'double'),
   \ javaapi#method(1,'sincTable(', 'int, float)', 'float[]'),
@@ -2198,13 +2198,13 @@ call javaapi#class('SoftLimiter', 'SoftAudioProcessor', [
   \ javaapi#method(0,'processControlLogic(', ')', 'void'),
   \ ])
 
-call javaapi#class('SoftLinearResampler', '', [
+call javaapi#class('SoftLinearResampler', 'SoftAbstractResampler', [
   \ javaapi#method(0,'SoftLinearResampler(', ')', 'public'),
   \ javaapi#method(0,'getPadding(', ')', 'int'),
   \ javaapi#method(0,'interpolate(', 'float[], float[], float, float[], float, float[], int[], int)', 'void'),
   \ ])
 
-call javaapi#class('SoftLinearResampler2', '', [
+call javaapi#class('SoftLinearResampler2', 'SoftAbstractResampler', [
   \ javaapi#method(0,'SoftLinearResampler2(', ')', 'public'),
   \ javaapi#method(0,'getPadding(', ')', 'int'),
   \ javaapi#method(0,'interpolate(', 'float[], float[], float, float[], float, float[], int[], int)', 'void'),
@@ -2222,7 +2222,7 @@ call javaapi#class('1', 'SoftControl', [
   \ javaapi#method(0,'get(', 'int, String)', 'double[]'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'InputStream', [
   \ javaapi#method(0,'fillBuffer(', ')', 'void'),
   \ javaapi#method(0,'read(', 'byte[], int, int)', 'int'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
@@ -2271,7 +2271,7 @@ call javaapi#class('SoftMainMixer', '', [
   \ javaapi#method(0,'close(', ')', 'void'),
   \ ])
 
-call javaapi#class('SoftMidiAudioFileReader', '', [
+call javaapi#class('SoftMidiAudioFileReader', 'AudioFileReader', [
   \ javaapi#field(1,'MIDI', 'Type'),
   \ javaapi#method(0,'SoftMidiAudioFileReader(', ')', 'public'),
   \ javaapi#method(0,'getAudioFileFormat(', 'Sequence) throws UnsupportedAudioFileException, IOException', 'AudioFileFormat'),
@@ -2284,12 +2284,12 @@ call javaapi#class('SoftMidiAudioFileReader', '', [
   \ javaapi#method(0,'getAudioFileFormat(', 'InputStream) throws UnsupportedAudioFileException, IOException', 'AudioFileFormat'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'InputStream', [
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ ])
 
-call javaapi#class('SoftMixingClip', '', [
+call javaapi#class('SoftMixingClip', 'SoftMixingDataLine', [
   \ javaapi#method(0,'getFrameLength(', ')', 'int'),
   \ javaapi#method(0,'getMicrosecondLength(', ')', 'long'),
   \ javaapi#method(0,'loop(', 'int)', 'void'),
@@ -2316,14 +2316,14 @@ call javaapi#class('SoftMixingClip', '', [
   \ javaapi#method(0,'open(', ') throws LineUnavailableException', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Type', [
   \ ])
 
-call javaapi#class('ApplyReverb', '', [
+call javaapi#class('ApplyReverb', 'BooleanControl', [
   \ javaapi#method(0,'setValue(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('AudioFloatInputStreamResampler', '', [
+call javaapi#class('AudioFloatInputStreamResampler', 'AudioFloatInputStream', [
   \ javaapi#method(0,'AudioFloatInputStreamResampler(', 'AudioFloatInputStream, AudioFormat)', 'public'),
   \ javaapi#method(0,'available(', ') throws IOException', 'int'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
@@ -2336,28 +2336,28 @@ call javaapi#class('AudioFloatInputStreamResampler', '', [
   \ javaapi#method(0,'skip(', 'long) throws IOException', 'long'),
   \ ])
 
-call javaapi#class('Balance', '', [
+call javaapi#class('Balance', 'FloatControl', [
   \ javaapi#method(0,'setValue(', 'float)', 'void'),
   \ ])
 
-call javaapi#class('ChorusSend', '', [
+call javaapi#class('ChorusSend', 'FloatControl', [
   \ javaapi#method(0,'setValue(', 'float)', 'void'),
   \ ])
 
-call javaapi#class('Gain', '', [
+call javaapi#class('Gain', 'FloatControl', [
   \ javaapi#method(0,'setValue(', 'float)', 'void'),
   \ ])
 
-call javaapi#class('Mute', '', [
+call javaapi#class('Mute', 'BooleanControl', [
   \ javaapi#method(0,'setValue(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('Pan', '', [
+call javaapi#class('Pan', 'FloatControl', [
   \ javaapi#method(0,'setValue(', 'float)', 'void'),
   \ javaapi#method(0,'getValue(', ')', 'float'),
   \ ])
 
-call javaapi#class('ReverbSend', '', [
+call javaapi#class('ReverbSend', 'FloatControl', [
   \ javaapi#method(0,'setValue(', 'float)', 'void'),
   \ ])
 
@@ -2371,7 +2371,7 @@ call javaapi#class('SoftMixingDataLine', 'DataLine', [
   \ javaapi#method(0,'isControlSupported(', 'Type)', 'boolean'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'InputStream', [
   \ javaapi#method(0,'fillBuffer(', ')', 'void'),
   \ javaapi#method(0,'read(', 'byte[], int, int)', 'int'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
@@ -2400,7 +2400,7 @@ call javaapi#class('SoftMixingMainMixer', '', [
   \ javaapi#method(0,'close(', ')', 'void'),
   \ ])
 
-call javaapi#class('Info', '', [
+call javaapi#class('Info', 'Info', [
   \ javaapi#method(0,'Info(', ')', 'public'),
   \ ])
 
@@ -2434,19 +2434,19 @@ call javaapi#class('SoftMixingMixer', 'Mixer', [
   \ javaapi#method(0,'getFormat(', ')', 'AudioFormat'),
   \ ])
 
-call javaapi#class('SoftMixingMixerProvider', '', [
+call javaapi#class('SoftMixingMixerProvider', 'MixerProvider', [
   \ javaapi#method(0,'SoftMixingMixerProvider(', ')', 'public'),
   \ javaapi#method(0,'getMixer(', 'Info)', 'Mixer'),
   \ javaapi#method(0,'getMixerInfo(', ')', 'Info[]'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'InputStream', [
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'available(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ ])
 
-call javaapi#class('NonBlockingFloatInputStream', '', [
+call javaapi#class('NonBlockingFloatInputStream', 'AudioFloatInputStream', [
   \ javaapi#method(0,'NonBlockingFloatInputStream(', 'AudioFloatInputStream)', 'public'),
   \ javaapi#method(0,'available(', ') throws IOException', 'int'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
@@ -2459,7 +2459,7 @@ call javaapi#class('NonBlockingFloatInputStream', '', [
   \ javaapi#method(0,'skip(', 'long) throws IOException', 'long'),
   \ ])
 
-call javaapi#class('SoftMixingSourceDataLine', '', [
+call javaapi#class('SoftMixingSourceDataLine', 'SoftMixingDataLine', [
   \ javaapi#method(0,'write(', 'byte[], int, int)', 'int'),
   \ javaapi#method(0,'open(', ') throws LineUnavailableException', 'void'),
   \ javaapi#method(0,'open(', 'AudioFormat) throws LineUnavailableException', 'void'),
@@ -2514,20 +2514,20 @@ call javaapi#class('SoftPerformer', '', [
   \ javaapi#method(0,'SoftPerformer(', 'ModelPerformer)', 'public'),
   \ ])
 
-call javaapi#class('SoftPointResampler', '', [
+call javaapi#class('SoftPointResampler', 'SoftAbstractResampler', [
   \ javaapi#method(0,'SoftPointResampler(', ')', 'public'),
   \ javaapi#method(0,'getPadding(', ')', 'int'),
   \ javaapi#method(0,'interpolate(', 'float[], float[], float, float[], float, float[], int[], int)', 'void'),
   \ ])
 
-call javaapi#interface('SoftProcess', '', [
+call javaapi#interface('SoftProcess', 'SoftControl', [
   \ javaapi#method(0,'init(', 'SoftSynthesizer)', 'void'),
   \ javaapi#method(0,'get(', 'int, String)', 'double[]'),
   \ javaapi#method(0,'processControlLogic(', ')', 'void'),
   \ javaapi#method(0,'reset(', ')', 'void'),
   \ ])
 
-call javaapi#class('SoftProvider', '', [
+call javaapi#class('SoftProvider', 'MidiDeviceProvider', [
   \ javaapi#method(0,'SoftProvider(', ')', 'public'),
   \ javaapi#method(0,'getDeviceInfo(', ')', 'Info[]'),
   \ javaapi#method(0,'getDevice(', 'Info)', 'MidiDevice'),
@@ -2544,7 +2544,7 @@ call javaapi#interface('SoftResampler', '', [
   \ javaapi#method(0,'openStreamer(', ')', 'SoftResamplerStreamer'),
   \ ])
 
-call javaapi#interface('SoftResamplerStreamer', '', [
+call javaapi#interface('SoftResamplerStreamer', 'ModelOscillatorStream', [
   \ javaapi#method(0,'open(', 'ModelWavetable, float) throws IOException', 'void'),
   \ ])
 
@@ -2585,14 +2585,14 @@ call javaapi#class('SoftReverb', 'SoftAudioProcessor', [
   \ javaapi#method(0,'setLightMode(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('SoftShortMessage', '', [
+call javaapi#class('SoftShortMessage', 'ShortMessage', [
   \ javaapi#method(0,'SoftShortMessage(', ')', 'public'),
   \ javaapi#method(0,'getChannel(', ')', 'int'),
   \ javaapi#method(0,'setMessage(', 'int, int, int, int) throws InvalidMidiDataException', 'void'),
   \ javaapi#method(0,'clone(', ')', 'Object'),
   \ ])
 
-call javaapi#class('SoftSincResampler', '', [
+call javaapi#class('SoftSincResampler', 'SoftAbstractResampler', [
   \ javaapi#method(0,'SoftSincResampler(', ')', 'public'),
   \ javaapi#method(1,'sinc(', 'double)', 'double'),
   \ javaapi#method(1,'wHanning(', 'int, float)', 'float[]'),
@@ -2626,7 +2626,7 @@ call javaapi#class('5', 'Properties>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('Info', '', [
+call javaapi#class('Info', 'Info', [
   \ javaapi#method(0,'Info(', ')', 'public'),
   \ ])
 
@@ -2634,7 +2634,7 @@ call javaapi#class('1', 'Runnable', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('WeakAudioStream', '', [
+call javaapi#class('WeakAudioStream', 'InputStream', [
   \ javaapi#field(0,'pusher', 'SoftAudioPusher'),
   \ javaapi#field(0,'jitter_stream', 'AudioInputStream'),
   \ javaapi#field(0,'sourceDataLine', 'SourceDataLine'),
@@ -2713,13 +2713,13 @@ call javaapi#class('4', 'SoftControl', [
   \ javaapi#method(0,'get(', 'int, String)', 'double[]'),
   \ ])
 
-call javaapi#class('SoftVoice', '', [
+call javaapi#class('SoftVoice', 'VoiceStatus', [
   \ javaapi#field(0,'exclusiveClass', 'int'),
   \ javaapi#field(0,'releaseTriggered', 'boolean'),
   \ javaapi#method(0,'SoftVoice(', 'SoftSynthesizer)', 'public'),
   \ ])
 
-call javaapi#class('StandardMidiFileReader', '', [
+call javaapi#class('StandardMidiFileReader', 'MidiFileReader', [
   \ javaapi#method(0,'StandardMidiFileReader(', ')', 'public'),
   \ javaapi#method(0,'getMidiFileFormat(', 'InputStream) throws InvalidMidiDataException, IOException', 'MidiFileFormat'),
   \ javaapi#method(0,'getMidiFileFormat(', 'URL) throws InvalidMidiDataException, IOException', 'MidiFileFormat'),
@@ -2729,7 +2729,7 @@ call javaapi#class('StandardMidiFileReader', '', [
   \ javaapi#method(0,'getSequence(', 'File) throws InvalidMidiDataException, IOException', 'Sequence'),
   \ ])
 
-call javaapi#class('StandardMidiFileWriter', '', [
+call javaapi#class('StandardMidiFileWriter', 'MidiFileWriter', [
   \ javaapi#method(0,'StandardMidiFileWriter(', ')', 'public'),
   \ javaapi#method(0,'getMidiFileTypes(', ')', 'int[]'),
   \ javaapi#method(0,'getMidiFileTypes(', 'Sequence)', 'int[]'),
@@ -2738,7 +2738,7 @@ call javaapi#class('StandardMidiFileWriter', '', [
   \ javaapi#method(0,'write(', 'Sequence, int, File) throws IOException', 'int'),
   \ ])
 
-call javaapi#class('SunCodec', '', [
+call javaapi#class('SunCodec', 'FormatConversionProvider', [
   \ javaapi#method(0,'getSourceEncodings(', ')', 'Encoding[]'),
   \ javaapi#method(0,'getTargetEncodings(', ')', 'Encoding[]'),
   \ javaapi#method(0,'getTargetEncodings(', 'AudioFormat)', 'Encoding[]'),
@@ -2747,7 +2747,7 @@ call javaapi#class('SunCodec', '', [
   \ javaapi#method(0,'getAudioInputStream(', 'AudioFormat, AudioInputStream)', 'AudioInputStream'),
   \ ])
 
-call javaapi#class('SunFileReader', '', [
+call javaapi#class('SunFileReader', 'AudioFileReader', [
   \ javaapi#method(0,'SunFileReader(', ')', 'public'),
   \ javaapi#method(0,'getAudioFileFormat(', 'InputStream) throws UnsupportedAudioFileException, IOException', 'AudioFileFormat'),
   \ javaapi#method(0,'getAudioFileFormat(', 'URL) throws UnsupportedAudioFileException, IOException', 'AudioFileFormat'),
@@ -2757,7 +2757,7 @@ call javaapi#class('SunFileReader', '', [
   \ javaapi#method(0,'getAudioInputStream(', 'File) throws UnsupportedAudioFileException, IOException', 'AudioInputStream'),
   \ ])
 
-call javaapi#class('NoCloseInputStream', '', [
+call javaapi#class('NoCloseInputStream', 'InputStream', [
   \ javaapi#method(0,'NoCloseInputStream(', 'SunFileWriter, InputStream)', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[]) throws IOException', 'int'),
@@ -2770,7 +2770,7 @@ call javaapi#class('NoCloseInputStream', '', [
   \ javaapi#method(0,'markSupported(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('SunFileWriter', '', [
+call javaapi#class('SunFileWriter', 'AudioFileWriter', [
   \ javaapi#method(0,'getAudioFileTypes(', ')', 'Type[]'),
   \ javaapi#method(0,'getAudioFileTypes(', 'AudioInputStream)', 'Type[]'),
   \ javaapi#method(0,'write(', 'AudioInputStream, Type, OutputStream) throws IOException', 'int'),
@@ -2782,13 +2782,13 @@ call javaapi#class('Toolkit', '', [
   \ javaapi#method(1,'getPCMConvertedAudioInputStream(', 'AudioInputStream)', 'AudioInputStream'),
   \ ])
 
-call javaapi#class('UlawCodecStream', '', [
+call javaapi#class('UlawCodecStream', 'AudioInputStream', [
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[]) throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ ])
 
-call javaapi#class('UlawCodec', '', [
+call javaapi#class('UlawCodec', 'SunCodec', [
   \ javaapi#method(0,'UlawCodec(', ')', 'public'),
   \ javaapi#method(0,'getTargetEncodings(', 'AudioFormat)', 'Encoding[]'),
   \ javaapi#method(0,'getTargetFormats(', 'Encoding, AudioFormat)', 'AudioFormat[]'),
@@ -2805,7 +2805,7 @@ call javaapi#class('GUID', '', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('WaveExtensibleFileReader', '', [
+call javaapi#class('WaveExtensibleFileReader', 'AudioFileReader', [
   \ javaapi#method(0,'WaveExtensibleFileReader(', ')', 'public'),
   \ javaapi#method(0,'getAudioFileFormat(', 'InputStream) throws UnsupportedAudioFileException, IOException', 'AudioFileFormat'),
   \ javaapi#method(0,'getAudioInputStream(', 'InputStream) throws UnsupportedAudioFileException, IOException', 'AudioInputStream'),
@@ -2815,10 +2815,10 @@ call javaapi#class('WaveExtensibleFileReader', '', [
   \ javaapi#method(0,'getAudioInputStream(', 'File) throws UnsupportedAudioFileException, IOException', 'AudioInputStream'),
   \ ])
 
-call javaapi#class('WaveFileFormat', '', [
+call javaapi#class('WaveFileFormat', 'AudioFileFormat', [
   \ ])
 
-call javaapi#class('WaveFileReader', '', [
+call javaapi#class('WaveFileReader', 'SunFileReader', [
   \ javaapi#field(1,'types', 'Type[]'),
   \ javaapi#method(0,'WaveFileReader(', ')', 'public'),
   \ javaapi#method(0,'getAudioFileFormat(', 'InputStream) throws UnsupportedAudioFileException, IOException', 'AudioFileFormat'),
@@ -2829,7 +2829,7 @@ call javaapi#class('WaveFileReader', '', [
   \ javaapi#method(0,'getAudioInputStream(', 'File) throws UnsupportedAudioFileException, IOException', 'AudioInputStream'),
   \ ])
 
-call javaapi#class('WaveFileWriter', '', [
+call javaapi#class('WaveFileWriter', 'SunFileWriter', [
   \ javaapi#method(0,'WaveFileWriter(', ')', 'public'),
   \ javaapi#method(0,'getAudioFileTypes(', 'AudioInputStream)', 'Type[]'),
   \ javaapi#method(0,'write(', 'AudioInputStream, Type, OutputStream) throws IOException', 'int'),
@@ -2837,7 +2837,7 @@ call javaapi#class('WaveFileWriter', '', [
   \ javaapi#method(0,'getAudioFileTypes(', ')', 'Type[]'),
   \ ])
 
-call javaapi#class('WaveFloatFileReader', '', [
+call javaapi#class('WaveFloatFileReader', 'AudioFileReader', [
   \ javaapi#method(0,'WaveFloatFileReader(', ')', 'public'),
   \ javaapi#method(0,'getAudioFileFormat(', 'InputStream) throws UnsupportedAudioFileException, IOException', 'AudioFileFormat'),
   \ javaapi#method(0,'getAudioInputStream(', 'InputStream) throws UnsupportedAudioFileException, IOException', 'AudioInputStream'),
@@ -2847,7 +2847,7 @@ call javaapi#class('WaveFloatFileReader', '', [
   \ javaapi#method(0,'getAudioInputStream(', 'File) throws UnsupportedAudioFileException, IOException', 'AudioInputStream'),
   \ ])
 
-call javaapi#class('NoCloseOutputStream', '', [
+call javaapi#class('NoCloseOutputStream', 'OutputStream', [
   \ javaapi#method(0,'NoCloseOutputStream(', 'OutputStream)', 'public'),
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'flush(', ') throws IOException', 'void'),
@@ -2855,7 +2855,7 @@ call javaapi#class('NoCloseOutputStream', '', [
   \ javaapi#method(0,'write(', 'byte[]) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('WaveFloatFileWriter', '', [
+call javaapi#class('WaveFloatFileWriter', 'AudioFileWriter', [
   \ javaapi#method(0,'WaveFloatFileWriter(', ')', 'public'),
   \ javaapi#method(0,'getAudioFileTypes(', ')', 'Type[]'),
   \ javaapi#method(0,'getAudioFileTypes(', 'AudioInputStream)', 'Type[]'),

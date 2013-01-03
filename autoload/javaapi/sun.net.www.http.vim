@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.net.www.http')
 
-call javaapi#class('ChunkedInputStream', '', [
+call javaapi#class('ChunkedInputStream', 'InputStream', [
   \ javaapi#method(0,'ChunkedInputStream(', 'InputStream, HttpClient, MessageHeader) throws IOException', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
@@ -9,7 +9,7 @@ call javaapi#class('ChunkedInputStream', '', [
   \ javaapi#method(0,'hurry(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('ChunkedOutputStream', '', [
+call javaapi#class('ChunkedOutputStream', 'PrintStream', [
   \ javaapi#method(0,'ChunkedOutputStream(', 'PrintStream)', 'public'),
   \ javaapi#method(0,'ChunkedOutputStream(', 'PrintStream, int)', 'public'),
   \ javaapi#method(0,'checkError(', ')', 'boolean'),
@@ -21,7 +21,7 @@ call javaapi#class('ChunkedOutputStream', '', [
   \ javaapi#method(0,'flush(', ')', 'void'),
   \ ])
 
-call javaapi#class('ClientVector', '', [
+call javaapi#class('ClientVector', 'KeepAliveEntry>', [
   \ ])
 
 call javaapi#class('1', 'String>', [
@@ -36,7 +36,7 @@ call javaapi#class('HttpCapture', '', [
   \ javaapi#method(1,'getCapture(', 'URL)', 'HttpCapture'),
   \ ])
 
-call javaapi#class('HttpCaptureInputStream', '', [
+call javaapi#class('HttpCaptureInputStream', 'FilterInputStream', [
   \ javaapi#method(0,'HttpCaptureInputStream(', 'InputStream, HttpCapture)', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
@@ -44,7 +44,7 @@ call javaapi#class('HttpCaptureInputStream', '', [
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ ])
 
-call javaapi#class('HttpCaptureOutputStream', '', [
+call javaapi#class('HttpCaptureOutputStream', 'FilterOutputStream', [
   \ javaapi#method(0,'HttpCaptureOutputStream(', 'OutputStream, HttpCapture)', 'public'),
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[]) throws IOException', 'void'),
@@ -62,7 +62,7 @@ call javaapi#class('2', 'Void>', [
   \ javaapi#method(0,'run(', ') throws Exception', 'Object'),
   \ ])
 
-call javaapi#class('HttpClient', '', [
+call javaapi#class('HttpClient', 'NetworkClient', [
   \ javaapi#field(0,'usingProxy', 'boolean'),
   \ javaapi#field(0,'reuse', 'boolean'),
   \ javaapi#method(1,'resetProperties(', ')', 'void'),
@@ -107,7 +107,7 @@ call javaapi#class('1', 'Void>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('KeepAliveCache', '', [
+call javaapi#class('KeepAliveCache', 'ClientVector>', [
   \ javaapi#method(0,'KeepAliveCache(', ')', 'public'),
   \ javaapi#method(0,'put(', 'URL, Object, HttpClient)', 'void'),
   \ javaapi#method(0,'remove(', 'HttpClient, Object)', 'void'),
@@ -133,7 +133,7 @@ call javaapi#class('1', 'Void>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('KeepAliveStream', '', [
+call javaapi#class('KeepAliveStream', 'MeteredStream', [
   \ javaapi#method(0,'KeepAliveStream(', 'InputStream, ProgressSource, long, HttpClient)', 'public'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ javaapi#method(0,'markSupported(', ')', 'boolean'),
@@ -152,13 +152,13 @@ call javaapi#class('2', 'Integer>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('KeepAliveStreamCleaner', '', [
+call javaapi#class('KeepAliveStreamCleaner', 'KeepAliveCleanerEntry>', [
   \ javaapi#method(0,'offer(', 'KeepAliveCleanerEntry)', 'boolean'),
   \ javaapi#method(0,'run(', ')', 'void'),
   \ javaapi#method(0,'offer(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('PosterOutputStream', '', [
+call javaapi#class('PosterOutputStream', 'ByteArrayOutputStream', [
   \ javaapi#method(0,'PosterOutputStream(', ')', 'public'),
   \ javaapi#method(0,'write(', 'int)', 'void'),
   \ javaapi#method(0,'write(', 'byte[], int, int)', 'void'),

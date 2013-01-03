@@ -3,19 +3,19 @@ call javaapi#namespace('sun.tracing.dtrace')
 call javaapi#class('Activation', '', [
   \ ])
 
-call javaapi#class('DTraceProbe', '', [
+call javaapi#class('DTraceProbe', 'ProbeSkeleton', [
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
   \ javaapi#method(0,'uncheckedTrigger(', 'Object[])', 'void'),
   \ ])
 
-call javaapi#class('DTraceProvider', '', [
+call javaapi#class('DTraceProvider', 'ProviderSkeleton', [
   \ javaapi#method(0,'dispose(', ')', 'void'),
   \ javaapi#method(0,'newProxyInstance(', ')', 'T'),
   \ javaapi#method(0,'invoke(', 'Object, Method, Object[])', 'Object'),
   \ javaapi#method(0,'getProviderName(', ')', 'String'),
   \ ])
 
-call javaapi#class('DTraceProviderFactory', '', [
+call javaapi#class('DTraceProviderFactory', 'ProviderFactory', [
   \ javaapi#method(0,'DTraceProviderFactory(', ')', 'public'),
   \ javaapi#method(0,'createProvider(', 'Class<T>)', 'T'),
   \ javaapi#method(0,'createProviders(', 'Set<Class<? extends Provider>>, String)', 'Provider>'),
@@ -25,6 +25,6 @@ call javaapi#class('DTraceProviderFactory', '', [
 call javaapi#class('JVM', '', [
   \ ])
 
-call javaapi#class('SystemResource', '', [
+call javaapi#class('SystemResource', 'Activation>', [
   \ ])
 

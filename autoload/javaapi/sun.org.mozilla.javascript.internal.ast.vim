@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.org.mozilla.javascript.internal.ast')
 
-call javaapi#class('ArrayComprehension', '', [
+call javaapi#class('ArrayComprehension', 'Scope', [
   \ javaapi#method(0,'ArrayComprehension(', ')', 'public'),
   \ javaapi#method(0,'ArrayComprehension(', 'int)', 'public'),
   \ javaapi#method(0,'ArrayComprehension(', 'int, int)', 'public'),
@@ -21,7 +21,7 @@ call javaapi#class('ArrayComprehension', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('ArrayComprehensionLoop', '', [
+call javaapi#class('ArrayComprehensionLoop', 'ForInLoop', [
   \ javaapi#method(0,'ArrayComprehensionLoop(', ')', 'public'),
   \ javaapi#method(0,'ArrayComprehensionLoop(', 'int)', 'public'),
   \ javaapi#method(0,'ArrayComprehensionLoop(', 'int, int)', 'public'),
@@ -31,7 +31,7 @@ call javaapi#class('ArrayComprehensionLoop', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('ArrayLiteral', '', [
+call javaapi#class('ArrayLiteral', 'AstNode', [
   \ javaapi#method(0,'ArrayLiteral(', ')', 'public'),
   \ javaapi#method(0,'ArrayLiteral(', 'int)', 'public'),
   \ javaapi#method(0,'ArrayLiteral(', 'int, int)', 'public'),
@@ -50,7 +50,7 @@ call javaapi#class('ArrayLiteral', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('Assignment', '', [
+call javaapi#class('Assignment', 'InfixExpression', [
   \ javaapi#method(0,'Assignment(', ')', 'public'),
   \ javaapi#method(0,'Assignment(', 'int)', 'public'),
   \ javaapi#method(0,'Assignment(', 'int, int)', 'public'),
@@ -71,7 +71,7 @@ call javaapi#class('PositionComparator', 'Serializable', [
   \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
   \ ])
 
-call javaapi#class('AstNode', '', [
+call javaapi#class('AstNode', 'Node', [
   \ javaapi#method(0,'AstNode(', ')', 'public'),
   \ javaapi#method(0,'AstNode(', 'int)', 'public'),
   \ javaapi#method(0,'AstNode(', 'int, int)', 'public'),
@@ -107,7 +107,7 @@ call javaapi#class('1', 'NodeVisitor', [
   \ javaapi#method(0,'visit(', 'AstNode)', 'boolean'),
   \ ])
 
-call javaapi#class('AstRoot', '', [
+call javaapi#class('AstRoot', 'ScriptNode', [
   \ javaapi#method(0,'AstRoot(', ')', 'public'),
   \ javaapi#method(0,'AstRoot(', 'int)', 'public'),
   \ javaapi#method(0,'getComments(', ')', 'Comment>'),
@@ -122,7 +122,7 @@ call javaapi#class('AstRoot', '', [
   \ javaapi#method(0,'checkParentLinks(', ')', 'void'),
   \ ])
 
-call javaapi#class('Block', '', [
+call javaapi#class('Block', 'AstNode', [
   \ javaapi#method(0,'Block(', ')', 'public'),
   \ javaapi#method(0,'Block(', 'int)', 'public'),
   \ javaapi#method(0,'Block(', 'int, int)', 'public'),
@@ -131,7 +131,7 @@ call javaapi#class('Block', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('BreakStatement', '', [
+call javaapi#class('BreakStatement', 'Jump', [
   \ javaapi#method(0,'BreakStatement(', ')', 'public'),
   \ javaapi#method(0,'BreakStatement(', 'int)', 'public'),
   \ javaapi#method(0,'BreakStatement(', 'int, int)', 'public'),
@@ -143,7 +143,7 @@ call javaapi#class('BreakStatement', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('CatchClause', '', [
+call javaapi#class('CatchClause', 'AstNode', [
   \ javaapi#method(0,'CatchClause(', ')', 'public'),
   \ javaapi#method(0,'CatchClause(', 'int)', 'public'),
   \ javaapi#method(0,'CatchClause(', 'int, int)', 'public'),
@@ -164,7 +164,7 @@ call javaapi#class('CatchClause', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('Comment', '', [
+call javaapi#class('Comment', 'AstNode', [
   \ javaapi#method(0,'Comment(', 'int, int, CommentType, String)', 'public'),
   \ javaapi#method(0,'getCommentType(', ')', 'CommentType'),
   \ javaapi#method(0,'setCommentType(', 'CommentType)', 'void'),
@@ -173,7 +173,7 @@ call javaapi#class('Comment', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('ConditionalExpression', '', [
+call javaapi#class('ConditionalExpression', 'AstNode', [
   \ javaapi#method(0,'ConditionalExpression(', ')', 'public'),
   \ javaapi#method(0,'ConditionalExpression(', 'int)', 'public'),
   \ javaapi#method(0,'ConditionalExpression(', 'int, int)', 'public'),
@@ -192,7 +192,7 @@ call javaapi#class('ConditionalExpression', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('ContinueStatement', '', [
+call javaapi#class('ContinueStatement', 'Jump', [
   \ javaapi#method(0,'ContinueStatement(', ')', 'public'),
   \ javaapi#method(0,'ContinueStatement(', 'int)', 'public'),
   \ javaapi#method(0,'ContinueStatement(', 'int, int)', 'public'),
@@ -212,7 +212,7 @@ call javaapi#interface('DestructuringForm', '', [
   \ javaapi#method(0,'isDestructuring(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('DoLoop', '', [
+call javaapi#class('DoLoop', 'Loop', [
   \ javaapi#method(0,'DoLoop(', ')', 'public'),
   \ javaapi#method(0,'DoLoop(', 'int)', 'public'),
   \ javaapi#method(0,'DoLoop(', 'int, int)', 'public'),
@@ -224,7 +224,7 @@ call javaapi#class('DoLoop', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('ElementGet', '', [
+call javaapi#class('ElementGet', 'AstNode', [
   \ javaapi#method(0,'ElementGet(', ')', 'public'),
   \ javaapi#method(0,'ElementGet(', 'int)', 'public'),
   \ javaapi#method(0,'ElementGet(', 'int, int)', 'public'),
@@ -242,7 +242,7 @@ call javaapi#class('ElementGet', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('EmptyExpression', '', [
+call javaapi#class('EmptyExpression', 'AstNode', [
   \ javaapi#method(0,'EmptyExpression(', ')', 'public'),
   \ javaapi#method(0,'EmptyExpression(', 'int)', 'public'),
   \ javaapi#method(0,'EmptyExpression(', 'int, int)', 'public'),
@@ -261,7 +261,7 @@ call javaapi#class('ErrorCollector', 'IdeErrorReporter', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ErrorNode', '', [
+call javaapi#class('ErrorNode', 'AstNode', [
   \ javaapi#method(0,'ErrorNode(', ')', 'public'),
   \ javaapi#method(0,'ErrorNode(', 'int)', 'public'),
   \ javaapi#method(0,'ErrorNode(', 'int, int)', 'public'),
@@ -271,7 +271,7 @@ call javaapi#class('ErrorNode', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('ExpressionStatement', '', [
+call javaapi#class('ExpressionStatement', 'AstNode', [
   \ javaapi#method(0,'setHasResult(', ')', 'void'),
   \ javaapi#method(0,'ExpressionStatement(', ')', 'public'),
   \ javaapi#method(0,'ExpressionStatement(', 'AstNode, boolean)', 'public'),
@@ -285,7 +285,7 @@ call javaapi#class('ExpressionStatement', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('ForInLoop', '', [
+call javaapi#class('ForInLoop', 'Loop', [
   \ javaapi#method(0,'ForInLoop(', ')', 'public'),
   \ javaapi#method(0,'ForInLoop(', 'int)', 'public'),
   \ javaapi#method(0,'ForInLoop(', 'int, int)', 'public'),
@@ -303,7 +303,7 @@ call javaapi#class('ForInLoop', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('ForLoop', '', [
+call javaapi#class('ForLoop', 'Loop', [
   \ javaapi#method(0,'ForLoop(', ')', 'public'),
   \ javaapi#method(0,'ForLoop(', 'int)', 'public'),
   \ javaapi#method(0,'ForLoop(', 'int, int)', 'public'),
@@ -317,7 +317,7 @@ call javaapi#class('ForLoop', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('FunctionCall', '', [
+call javaapi#class('FunctionCall', 'AstNode', [
   \ javaapi#method(0,'FunctionCall(', ')', 'public'),
   \ javaapi#method(0,'FunctionCall(', 'int)', 'public'),
   \ javaapi#method(0,'FunctionCall(', 'int, int)', 'public'),
@@ -335,7 +335,7 @@ call javaapi#class('FunctionCall', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('Form', '', [
+call javaapi#class('Form', 'Form>', [
   \ javaapi#field(1,'FUNCTION', 'Form'),
   \ javaapi#field(1,'GETTER', 'Form'),
   \ javaapi#field(1,'SETTER', 'Form'),
@@ -343,7 +343,7 @@ call javaapi#class('Form', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'Form'),
   \ ])
 
-call javaapi#class('FunctionNode', '', [
+call javaapi#class('FunctionNode', 'ScriptNode', [
   \ javaapi#field(1,'FUNCTION_STATEMENT', 'int'),
   \ javaapi#field(1,'FUNCTION_EXPRESSION', 'int'),
   \ javaapi#field(1,'FUNCTION_EXPRESSION_STATEMENT', 'int'),
@@ -390,12 +390,12 @@ call javaapi#class('FunctionNode', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#interface('IdeErrorReporter', '', [
+call javaapi#interface('IdeErrorReporter', 'ErrorReporter', [
   \ javaapi#method(0,'warning(', 'String, String, int, int)', 'void'),
   \ javaapi#method(0,'error(', 'String, String, int, int)', 'void'),
   \ ])
 
-call javaapi#class('IfStatement', '', [
+call javaapi#class('IfStatement', 'AstNode', [
   \ javaapi#method(0,'IfStatement(', ')', 'public'),
   \ javaapi#method(0,'IfStatement(', 'int)', 'public'),
   \ javaapi#method(0,'IfStatement(', 'int, int)', 'public'),
@@ -416,7 +416,7 @@ call javaapi#class('IfStatement', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('InfixExpression', '', [
+call javaapi#class('InfixExpression', 'AstNode', [
   \ javaapi#method(0,'InfixExpression(', ')', 'public'),
   \ javaapi#method(0,'InfixExpression(', 'int)', 'public'),
   \ javaapi#method(0,'InfixExpression(', 'int, int)', 'public'),
@@ -437,7 +437,7 @@ call javaapi#class('InfixExpression', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('Jump', '', [
+call javaapi#class('Jump', 'AstNode', [
   \ javaapi#field(0,'target', 'Node'),
   \ javaapi#method(0,'Jump(', ')', 'public'),
   \ javaapi#method(0,'Jump(', 'int)', 'public'),
@@ -458,7 +458,7 @@ call javaapi#class('Jump', '', [
   \ javaapi#method(0,'toSource(', 'int)', 'String'),
   \ ])
 
-call javaapi#class('KeywordLiteral', '', [
+call javaapi#class('KeywordLiteral', 'AstNode', [
   \ javaapi#method(0,'KeywordLiteral(', ')', 'public'),
   \ javaapi#method(0,'KeywordLiteral(', 'int)', 'public'),
   \ javaapi#method(0,'KeywordLiteral(', 'int, int)', 'public'),
@@ -470,7 +470,7 @@ call javaapi#class('KeywordLiteral', '', [
   \ javaapi#method(0,'setType(', 'int)', 'Node'),
   \ ])
 
-call javaapi#class('Label', '', [
+call javaapi#class('Label', 'Jump', [
   \ javaapi#method(0,'Label(', ')', 'public'),
   \ javaapi#method(0,'Label(', 'int)', 'public'),
   \ javaapi#method(0,'Label(', 'int, int)', 'public'),
@@ -481,7 +481,7 @@ call javaapi#class('Label', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('LabeledStatement', '', [
+call javaapi#class('LabeledStatement', 'AstNode', [
   \ javaapi#method(0,'LabeledStatement(', ')', 'public'),
   \ javaapi#method(0,'LabeledStatement(', 'int)', 'public'),
   \ javaapi#method(0,'LabeledStatement(', 'int, int)', 'public'),
@@ -496,7 +496,7 @@ call javaapi#class('LabeledStatement', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('LetNode', '', [
+call javaapi#class('LetNode', 'Scope', [
   \ javaapi#method(0,'LetNode(', ')', 'public'),
   \ javaapi#method(0,'LetNode(', 'int)', 'public'),
   \ javaapi#method(0,'LetNode(', 'int, int)', 'public'),
@@ -513,7 +513,7 @@ call javaapi#class('LetNode', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('Loop', '', [
+call javaapi#class('Loop', 'Scope', [
   \ javaapi#method(0,'Loop(', ')', 'public'),
   \ javaapi#method(0,'Loop(', 'int)', 'public'),
   \ javaapi#method(0,'Loop(', 'int, int)', 'public'),
@@ -526,7 +526,7 @@ call javaapi#class('Loop', '', [
   \ javaapi#method(0,'setParens(', 'int, int)', 'void'),
   \ ])
 
-call javaapi#class('Name', '', [
+call javaapi#class('Name', 'AstNode', [
   \ javaapi#method(0,'Name(', ')', 'public'),
   \ javaapi#method(0,'Name(', 'int)', 'public'),
   \ javaapi#method(0,'Name(', 'int, int)', 'public'),
@@ -543,7 +543,7 @@ call javaapi#class('Name', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('NewExpression', '', [
+call javaapi#class('NewExpression', 'FunctionCall', [
   \ javaapi#method(0,'NewExpression(', ')', 'public'),
   \ javaapi#method(0,'NewExpression(', 'int)', 'public'),
   \ javaapi#method(0,'NewExpression(', 'int, int)', 'public'),
@@ -557,7 +557,7 @@ call javaapi#interface('NodeVisitor', '', [
   \ javaapi#method(0,'visit(', 'AstNode)', 'boolean'),
   \ ])
 
-call javaapi#class('NumberLiteral', '', [
+call javaapi#class('NumberLiteral', 'AstNode', [
   \ javaapi#method(0,'NumberLiteral(', ')', 'public'),
   \ javaapi#method(0,'NumberLiteral(', 'int)', 'public'),
   \ javaapi#method(0,'NumberLiteral(', 'int, int)', 'public'),
@@ -572,7 +572,7 @@ call javaapi#class('NumberLiteral', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('ObjectLiteral', '', [
+call javaapi#class('ObjectLiteral', 'AstNode', [
   \ javaapi#method(0,'ObjectLiteral(', ')', 'public'),
   \ javaapi#method(0,'ObjectLiteral(', 'int)', 'public'),
   \ javaapi#method(0,'ObjectLiteral(', 'int, int)', 'public'),
@@ -585,7 +585,7 @@ call javaapi#class('ObjectLiteral', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('ObjectProperty', '', [
+call javaapi#class('ObjectProperty', 'InfixExpression', [
   \ javaapi#method(0,'setNodeType(', 'int)', 'void'),
   \ javaapi#method(0,'ObjectProperty(', ')', 'public'),
   \ javaapi#method(0,'ObjectProperty(', 'int)', 'public'),
@@ -597,7 +597,7 @@ call javaapi#class('ObjectProperty', '', [
   \ javaapi#method(0,'toSource(', 'int)', 'String'),
   \ ])
 
-call javaapi#class('ParenthesizedExpression', '', [
+call javaapi#class('ParenthesizedExpression', 'AstNode', [
   \ javaapi#method(0,'ParenthesizedExpression(', ')', 'public'),
   \ javaapi#method(0,'ParenthesizedExpression(', 'int)', 'public'),
   \ javaapi#method(0,'ParenthesizedExpression(', 'int, int)', 'public'),
@@ -609,7 +609,7 @@ call javaapi#class('ParenthesizedExpression', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('Type', '', [
+call javaapi#class('Type', 'Type>', [
   \ javaapi#field(1,'Error', 'Type'),
   \ javaapi#field(1,'Warning', 'Type'),
   \ javaapi#method(1,'values(', ')', 'Type[]'),
@@ -631,7 +631,7 @@ call javaapi#class('ParseProblem', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('PropertyGet', '', [
+call javaapi#class('PropertyGet', 'InfixExpression', [
   \ javaapi#method(0,'PropertyGet(', ')', 'public'),
   \ javaapi#method(0,'PropertyGet(', 'int)', 'public'),
   \ javaapi#method(0,'PropertyGet(', 'int, int)', 'public'),
@@ -646,7 +646,7 @@ call javaapi#class('PropertyGet', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('RegExpLiteral', '', [
+call javaapi#class('RegExpLiteral', 'AstNode', [
   \ javaapi#method(0,'RegExpLiteral(', ')', 'public'),
   \ javaapi#method(0,'RegExpLiteral(', 'int)', 'public'),
   \ javaapi#method(0,'RegExpLiteral(', 'int, int)', 'public'),
@@ -658,7 +658,7 @@ call javaapi#class('RegExpLiteral', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('ReturnStatement', '', [
+call javaapi#class('ReturnStatement', 'AstNode', [
   \ javaapi#method(0,'ReturnStatement(', ')', 'public'),
   \ javaapi#method(0,'ReturnStatement(', 'int)', 'public'),
   \ javaapi#method(0,'ReturnStatement(', 'int, int)', 'public'),
@@ -669,7 +669,7 @@ call javaapi#class('ReturnStatement', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('Scope', '', [
+call javaapi#class('Scope', 'Jump', [
   \ javaapi#method(0,'Scope(', ')', 'public'),
   \ javaapi#method(0,'Scope(', 'int)', 'public'),
   \ javaapi#method(0,'Scope(', 'int, int)', 'public'),
@@ -693,7 +693,7 @@ call javaapi#class('Scope', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('ScriptNode', '', [
+call javaapi#class('ScriptNode', 'Scope', [
   \ javaapi#method(0,'ScriptNode(', ')', 'public'),
   \ javaapi#method(0,'ScriptNode(', 'int)', 'public'),
   \ javaapi#method(0,'getSourceName(', ')', 'String'),
@@ -732,7 +732,7 @@ call javaapi#class('ScriptNode', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('StringLiteral', '', [
+call javaapi#class('StringLiteral', 'AstNode', [
   \ javaapi#method(0,'StringLiteral(', ')', 'public'),
   \ javaapi#method(0,'StringLiteral(', 'int)', 'public'),
   \ javaapi#method(0,'StringLiteral(', 'int, int)', 'public'),
@@ -745,7 +745,7 @@ call javaapi#class('StringLiteral', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('SwitchCase', '', [
+call javaapi#class('SwitchCase', 'AstNode', [
   \ javaapi#method(0,'SwitchCase(', ')', 'public'),
   \ javaapi#method(0,'SwitchCase(', 'int)', 'public'),
   \ javaapi#method(0,'SwitchCase(', 'int, int)', 'public'),
@@ -759,7 +759,7 @@ call javaapi#class('SwitchCase', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('SwitchStatement', '', [
+call javaapi#class('SwitchStatement', 'Jump', [
   \ javaapi#method(0,'SwitchStatement(', ')', 'public'),
   \ javaapi#method(0,'SwitchStatement(', 'int)', 'public'),
   \ javaapi#method(0,'SwitchStatement(', 'int, int)', 'public'),
@@ -794,7 +794,7 @@ call javaapi#class('Symbol', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ThrowStatement', '', [
+call javaapi#class('ThrowStatement', 'AstNode', [
   \ javaapi#method(0,'ThrowStatement(', ')', 'public'),
   \ javaapi#method(0,'ThrowStatement(', 'int)', 'public'),
   \ javaapi#method(0,'ThrowStatement(', 'int, int)', 'public'),
@@ -807,7 +807,7 @@ call javaapi#class('ThrowStatement', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('TryStatement', '', [
+call javaapi#class('TryStatement', 'AstNode', [
   \ javaapi#method(0,'TryStatement(', ')', 'public'),
   \ javaapi#method(0,'TryStatement(', 'int)', 'public'),
   \ javaapi#method(0,'TryStatement(', 'int, int)', 'public'),
@@ -824,7 +824,7 @@ call javaapi#class('TryStatement', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('UnaryExpression', '', [
+call javaapi#class('UnaryExpression', 'AstNode', [
   \ javaapi#method(0,'UnaryExpression(', ')', 'public'),
   \ javaapi#method(0,'UnaryExpression(', 'int)', 'public'),
   \ javaapi#method(0,'UnaryExpression(', 'int, int)', 'public'),
@@ -841,7 +841,7 @@ call javaapi#class('UnaryExpression', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('VariableDeclaration', '', [
+call javaapi#class('VariableDeclaration', 'AstNode', [
   \ javaapi#method(0,'VariableDeclaration(', ')', 'public'),
   \ javaapi#method(0,'VariableDeclaration(', 'int)', 'public'),
   \ javaapi#method(0,'VariableDeclaration(', 'int, int)', 'public'),
@@ -856,7 +856,7 @@ call javaapi#class('VariableDeclaration', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('VariableInitializer', '', [
+call javaapi#class('VariableInitializer', 'AstNode', [
   \ javaapi#method(0,'setNodeType(', 'int)', 'void'),
   \ javaapi#method(0,'VariableInitializer(', ')', 'public'),
   \ javaapi#method(0,'VariableInitializer(', 'int)', 'public'),
@@ -870,7 +870,7 @@ call javaapi#class('VariableInitializer', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('WhileLoop', '', [
+call javaapi#class('WhileLoop', 'Loop', [
   \ javaapi#method(0,'WhileLoop(', ')', 'public'),
   \ javaapi#method(0,'WhileLoop(', 'int)', 'public'),
   \ javaapi#method(0,'WhileLoop(', 'int, int)', 'public'),
@@ -880,7 +880,7 @@ call javaapi#class('WhileLoop', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('WithStatement', '', [
+call javaapi#class('WithStatement', 'AstNode', [
   \ javaapi#method(0,'WithStatement(', ')', 'public'),
   \ javaapi#method(0,'WithStatement(', 'int)', 'public'),
   \ javaapi#method(0,'WithStatement(', 'int, int)', 'public'),
@@ -897,7 +897,7 @@ call javaapi#class('WithStatement', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('XmlDotQuery', '', [
+call javaapi#class('XmlDotQuery', 'InfixExpression', [
   \ javaapi#method(0,'XmlDotQuery(', ')', 'public'),
   \ javaapi#method(0,'XmlDotQuery(', 'int)', 'public'),
   \ javaapi#method(0,'XmlDotQuery(', 'int, int)', 'public'),
@@ -906,7 +906,7 @@ call javaapi#class('XmlDotQuery', '', [
   \ javaapi#method(0,'toSource(', 'int)', 'String'),
   \ ])
 
-call javaapi#class('XmlElemRef', '', [
+call javaapi#class('XmlElemRef', 'XmlRef', [
   \ javaapi#method(0,'XmlElemRef(', ')', 'public'),
   \ javaapi#method(0,'XmlElemRef(', 'int)', 'public'),
   \ javaapi#method(0,'XmlElemRef(', 'int, int)', 'public'),
@@ -921,7 +921,7 @@ call javaapi#class('XmlElemRef', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('XmlExpression', '', [
+call javaapi#class('XmlExpression', 'XmlFragment', [
   \ javaapi#method(0,'XmlExpression(', ')', 'public'),
   \ javaapi#method(0,'XmlExpression(', 'int)', 'public'),
   \ javaapi#method(0,'XmlExpression(', 'int, int)', 'public'),
@@ -934,13 +934,13 @@ call javaapi#class('XmlExpression', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('XmlFragment', '', [
+call javaapi#class('XmlFragment', 'AstNode', [
   \ javaapi#method(0,'XmlFragment(', ')', 'public'),
   \ javaapi#method(0,'XmlFragment(', 'int)', 'public'),
   \ javaapi#method(0,'XmlFragment(', 'int, int)', 'public'),
   \ ])
 
-call javaapi#class('XmlLiteral', '', [
+call javaapi#class('XmlLiteral', 'AstNode', [
   \ javaapi#method(0,'XmlLiteral(', ')', 'public'),
   \ javaapi#method(0,'XmlLiteral(', 'int)', 'public'),
   \ javaapi#method(0,'XmlLiteral(', 'int, int)', 'public'),
@@ -951,7 +951,7 @@ call javaapi#class('XmlLiteral', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('XmlMemberGet', '', [
+call javaapi#class('XmlMemberGet', 'InfixExpression', [
   \ javaapi#method(0,'XmlMemberGet(', ')', 'public'),
   \ javaapi#method(0,'XmlMemberGet(', 'int)', 'public'),
   \ javaapi#method(0,'XmlMemberGet(', 'int, int)', 'public'),
@@ -965,7 +965,7 @@ call javaapi#class('XmlMemberGet', '', [
   \ javaapi#method(0,'toSource(', 'int)', 'String'),
   \ ])
 
-call javaapi#class('XmlPropRef', '', [
+call javaapi#class('XmlPropRef', 'XmlRef', [
   \ javaapi#method(0,'XmlPropRef(', ')', 'public'),
   \ javaapi#method(0,'XmlPropRef(', 'int)', 'public'),
   \ javaapi#method(0,'XmlPropRef(', 'int, int)', 'public'),
@@ -975,7 +975,7 @@ call javaapi#class('XmlPropRef', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('XmlRef', '', [
+call javaapi#class('XmlRef', 'AstNode', [
   \ javaapi#method(0,'XmlRef(', ')', 'public'),
   \ javaapi#method(0,'XmlRef(', 'int)', 'public'),
   \ javaapi#method(0,'XmlRef(', 'int, int)', 'public'),
@@ -988,7 +988,7 @@ call javaapi#class('XmlRef', '', [
   \ javaapi#method(0,'setColonPos(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('XmlString', '', [
+call javaapi#class('XmlString', 'XmlFragment', [
   \ javaapi#method(0,'XmlString(', ')', 'public'),
   \ javaapi#method(0,'XmlString(', 'int)', 'public'),
   \ javaapi#method(0,'XmlString(', 'int, String)', 'public'),
@@ -998,7 +998,7 @@ call javaapi#class('XmlString', '', [
   \ javaapi#method(0,'visit(', 'NodeVisitor)', 'void'),
   \ ])
 
-call javaapi#class('Yield', '', [
+call javaapi#class('Yield', 'AstNode', [
   \ javaapi#method(0,'Yield(', ')', 'public'),
   \ javaapi#method(0,'Yield(', 'int)', 'public'),
   \ javaapi#method(0,'Yield(', 'int, int)', 'public'),

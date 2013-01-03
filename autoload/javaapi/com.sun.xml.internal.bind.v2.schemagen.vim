@@ -1,20 +1,20 @@
 call javaapi#namespace('com.sun.xml.internal.bind.v2.schemagen')
 
-call javaapi#class('FoolProofResolver', '', [
+call javaapi#class('FoolProofResolver', 'SchemaOutputResolver', [
   \ javaapi#method(0,'FoolProofResolver(', 'SchemaOutputResolver)', 'public'),
   \ javaapi#method(0,'createOutput(', 'String, String) throws IOException', 'Result'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Form', [
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'Form', [
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'Form', [
   \ ])
 
-call javaapi#class('Form', '', [
+call javaapi#class('Form', 'Form>', [
   \ javaapi#field(1,'QUALIFIED', 'Form'),
   \ javaapi#field(1,'UNQUALIFIED', 'Form'),
   \ javaapi#field(1,'UNSET', 'Form'),
@@ -26,7 +26,7 @@ call javaapi#class('Form', '', [
   \ javaapi#method(1,'get(', 'XmlNsForm)', 'Form'),
   \ ])
 
-call javaapi#class('GroupKind', '', [
+call javaapi#class('GroupKind', 'GroupKind>', [
   \ javaapi#field(1,'ALL', 'GroupKind'),
   \ javaapi#field(1,'SEQUENCE', 'GroupKind'),
   \ javaapi#field(1,'CHOICE', 'GroupKind'),
@@ -34,7 +34,7 @@ call javaapi#class('GroupKind', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'GroupKind'),
   \ ])
 
-call javaapi#class('Messages', '', [
+call javaapi#class('Messages', 'Messages>', [
   \ javaapi#field(1,'ANONYMOUS_TYPE_CYCLE', 'Messages'),
   \ javaapi#method(1,'values(', ')', 'Messages[]'),
   \ javaapi#method(1,'valueOf(', 'String)', 'Messages'),
@@ -42,7 +42,7 @@ call javaapi#class('Messages', '', [
   \ javaapi#method(0,'format(', ')', 'String'),
   \ ])
 
-call javaapi#class('MultiMap<K', '', [
+call javaapi#class('MultiMap<K', 'Comparable<K>,V>', [
   \ javaapi#method(0,'MultiMap(', 'V)', 'public'),
   \ javaapi#method(0,'put(', 'K, V)', 'V'),
   \ javaapi#method(0,'putAll(', 'Map<? extends K, ? extends V>)', 'void'),
@@ -52,16 +52,16 @@ call javaapi#class('MultiMap<K', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('Group', '', [
+call javaapi#class('Group', 'Tree', [
   \ ])
 
-call javaapi#class('Optional', '', [
+call javaapi#class('Optional', 'Tree', [
   \ ])
 
-call javaapi#class('Repeated', '', [
+call javaapi#class('Repeated', 'Tree', [
   \ ])
 
-call javaapi#class('Term', '', [
+call javaapi#class('Term', 'Tree', [
   \ ])
 
 call javaapi#class('Tree', '', [
@@ -83,25 +83,25 @@ call javaapi#class('1', 'String>', [
 call javaapi#class('2', '', [
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Term', [
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'Term', [
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'Term', [
   \ ])
 
-call javaapi#class('4', '', [
+call javaapi#class('4', 'Term', [
   \ ])
 
-call javaapi#class('5', '', [
+call javaapi#class('5', 'Term', [
   \ ])
 
-call javaapi#class('6', '', [
+call javaapi#class('6', 'Term', [
   \ ])
 
-call javaapi#class('7', '', [
+call javaapi#class('7', 'Term', [
   \ ])
 
 call javaapi#class('ElementDeclaration', '', [
@@ -110,7 +110,7 @@ call javaapi#class('ElementDeclaration', '', [
   \ javaapi#method(0,'writeTo(', 'String, Schema)', 'void'),
   \ ])
 
-call javaapi#class('ElementWithType', '', [
+call javaapi#class('ElementWithType', 'ElementDeclaration', [
   \ javaapi#method(0,'ElementWithType(', 'boolean, NonElement<T, C>)', 'public'),
   \ javaapi#method(0,'writeTo(', 'String, Schema)', 'void'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),

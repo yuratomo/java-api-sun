@@ -1,180 +1,6 @@
 call javaapi#namespace('sun.text.normalizer')
 
-call javaapi#class('DecomposeArgs', '', [
-  \ ])
-
-call javaapi#interface('UnicodeMatcher', '', [
-  \ javaapi#field(1,'ETHER', 'char'),
-  \ ])
-
-call javaapi#class('UnicodeSet', 'UnicodeMatcher', [
-  \ javaapi#field(1,'MIN_VALUE', 'int'),
-  \ javaapi#field(1,'MAX_VALUE', 'int'),
-  \ javaapi#field(1,'IGNORE_SPACE', 'int'),
-  \ javaapi#method(0,'UnicodeSet(', ')', 'public'),
-  \ javaapi#method(0,'UnicodeSet(', 'int, int)', 'public'),
-  \ javaapi#method(0,'UnicodeSet(', 'String)', 'public'),
-  \ javaapi#method(0,'set(', 'UnicodeSet)', 'UnicodeSet'),
-  \ javaapi#method(0,'applyPattern(', 'String)', 'UnicodeSet'),
-  \ javaapi#method(0,'_generatePattern(', 'StringBuffer, boolean, boolean)', 'StringBuffer'),
-  \ javaapi#method(0,'add(', 'int)', 'UnicodeSet'),
-  \ javaapi#method(0,'add(', 'String)', 'UnicodeSet'),
-  \ javaapi#method(0,'complement(', 'int, int)', 'UnicodeSet'),
-  \ javaapi#method(0,'complement(', ')', 'UnicodeSet'),
-  \ javaapi#method(0,'contains(', 'int)', 'boolean'),
-  \ javaapi#method(0,'addAll(', 'UnicodeSet)', 'UnicodeSet'),
-  \ javaapi#method(0,'retainAll(', 'UnicodeSet)', 'UnicodeSet'),
-  \ javaapi#method(0,'removeAll(', 'UnicodeSet)', 'UnicodeSet'),
-  \ javaapi#method(0,'clear(', ')', 'UnicodeSet'),
-  \ javaapi#method(0,'getRangeCount(', ')', 'int'),
-  \ javaapi#method(0,'getRangeStart(', 'int)', 'int'),
-  \ javaapi#method(0,'getRangeEnd(', 'int)', 'int'),
-  \ javaapi#method(0,'applyPropertyAlias(', 'String, String, SymbolTable)', 'UnicodeSet'),
-  \ ])
-
-call javaapi#class('FriendAgent', '', [
-  \ javaapi#method(0,'FriendAgent(', 'CharTrie)', 'public'),
-  \ javaapi#method(0,'getPrivateIndex(', ')', 'char[]'),
-  \ javaapi#method(0,'getPrivateData(', ')', 'char[]'),
-  \ javaapi#method(0,'getPrivateInitialValue(', ')', 'int'),
-  \ ])
-
-call javaapi#class('CharTrie', '', [
-  \ javaapi#method(0,'CharTrie(', 'InputStream, DataManipulate) throws IOException', 'public'),
-  \ javaapi#method(0,'CharTrie(', 'int, int, DataManipulate)', 'public'),
-  \ javaapi#method(0,'putIndexData(', 'UCharacterProperty)', 'void'),
-  \ javaapi#method(0,'getCodePointValue(', 'int)', 'char'),
-  \ javaapi#method(0,'getLeadValue(', 'char)', 'char'),
-  \ javaapi#method(0,'getSurrogateValue(', 'char, char)', 'char'),
-  \ javaapi#method(0,'getTrailValue(', 'int, char)', 'char'),
-  \ ])
-
-call javaapi#class('Trie', '', [
-  \ ])
-
-call javaapi#class('IntTrie', '', [
-  \ javaapi#method(0,'IntTrie(', 'InputStream, DataManipulate) throws IOException', 'public'),
-  \ javaapi#method(0,'getCodePointValue(', 'int)', 'int'),
-  \ javaapi#method(0,'getLeadValue(', 'char)', 'int'),
-  \ javaapi#method(0,'getTrailValue(', 'int, char)', 'int'),
-  \ ])
-
-call javaapi#class('AuxTrieImpl', 'DataManipulate', [
-  \ javaapi#method(0,'getFoldingOffset(', 'int)', 'int'),
-  \ ])
-
-call javaapi#class('NormTrieImpl', 'DataManipulate', [
-  \ javaapi#method(0,'getFoldingOffset(', 'int)', 'int'),
-  \ ])
-
-call javaapi#interface('DataManipulate', '', [
-  \ javaapi#method(0,'getFoldingOffset(', 'int)', 'int'),
-  \ ])
-
-call javaapi#class('FCDTrieImpl', 'DataManipulate', [
-  \ javaapi#method(0,'getFoldingOffset(', 'int)', 'int'),
-  \ ])
-
-call javaapi#class('ICUBinary', '', [
-  \ javaapi#method(0,'ICUBinary(', ')', 'public'),
-  \ javaapi#method(1,'readHeader(', 'InputStream, byte[], Authenticate) throws IOException', 'byte[]'),
-  \ ])
-
-call javaapi#interface('Authenticate', '', [
-  \ javaapi#method(0,'isDataVersionAcceptable(', 'byte[])', 'boolean'),
-  \ ])
-
-call javaapi#class('NormalizerDataReader', 'Authenticate', [
-  \ javaapi#method(0,'getDataFormatVersion(', ')', 'byte[]'),
-  \ javaapi#method(0,'isDataVersionAcceptable(', 'byte[])', 'boolean'),
-  \ javaapi#method(0,'getUnicodeVersion(', ')', 'byte[]'),
-  \ ])
-
-call javaapi#class('ICUData', '', [
-  \ javaapi#method(0,'ICUData(', ')', 'public'),
-  \ javaapi#method(1,'getStream(', 'String)', 'InputStream'),
-  \ javaapi#method(1,'getRequiredStream(', 'String)', 'InputStream'),
-  \ ])
-
-call javaapi#class('NormalizerImpl', '', [
-  \ javaapi#field(1,'QC_NFC', 'int'),
-  \ javaapi#field(1,'QC_NFKC', 'int'),
-  \ javaapi#field(1,'QC_NFD', 'int'),
-  \ javaapi#field(1,'QC_NFKD', 'int'),
-  \ javaapi#field(1,'QC_ANY_NO', 'int'),
-  \ javaapi#field(1,'QC_MAYBE', 'int'),
-  \ javaapi#field(1,'QC_ANY_MAYBE', 'int'),
-  \ javaapi#field(1,'QC_MASK', 'int'),
-  \ javaapi#field(1,'COMBINES_ANY', 'int'),
-  \ javaapi#field(1,'CC_MASK', 'int'),
-  \ javaapi#field(1,'INDEX_MIN_NFC_NO_MAYBE', 'int'),
-  \ javaapi#field(1,'INDEX_MIN_NFKC_NO_MAYBE', 'int'),
-  \ javaapi#field(1,'INDEX_MIN_NFD_NO_MAYBE', 'int'),
-  \ javaapi#field(1,'INDEX_MIN_NFKD_NO_MAYBE', 'int'),
-  \ javaapi#field(1,'MIN_WITH_LEAD_CC', 'int'),
-  \ javaapi#field(1,'JAMO_L_BASE', 'int'),
-  \ javaapi#field(1,'JAMO_V_BASE', 'int'),
-  \ javaapi#field(1,'JAMO_T_BASE', 'int'),
-  \ javaapi#field(1,'HANGUL_BASE', 'int'),
-  \ javaapi#field(1,'JAMO_L_COUNT', 'int'),
-  \ javaapi#field(1,'JAMO_V_COUNT', 'int'),
-  \ javaapi#field(1,'JAMO_T_COUNT', 'int'),
-  \ javaapi#field(1,'HANGUL_COUNT', 'int'),
-  \ javaapi#field(1,'OPTIONS_SETS_MASK', 'int'),
-  \ javaapi#field(1,'BEFORE_PRI_29', 'int'),
-  \ javaapi#field(1,'OPTIONS_COMPAT', 'int'),
-  \ javaapi#field(1,'OPTIONS_COMPOSE_CONTIGUOUS', 'int'),
-  \ javaapi#field(1,'WITHOUT_CORRIGENDUM4_CORRECTIONS', 'int'),
-  \ javaapi#method(1,'getFromIndexesArr(', 'int)', 'int'),
-  \ javaapi#method(1,'getNorm32(', 'char)', 'long'),
-  \ javaapi#method(1,'getNorm32FromSurrogatePair(', 'long, char)', 'long'),
-  \ javaapi#method(1,'getUnicodeVersion(', ')', 'VersionInfo'),
-  \ javaapi#method(1,'getFCD16(', 'char)', 'char'),
-  \ javaapi#method(1,'getFCD16FromSurrogatePair(', 'char, char)', 'char'),
-  \ javaapi#method(1,'getFCD16(', 'int)', 'int'),
-  \ javaapi#method(1,'isNFDSafe(', 'long, int, int)', 'boolean'),
-  \ javaapi#method(1,'isTrueStarter(', 'long, int, int)', 'boolean'),
-  \ javaapi#method(1,'quickCheck(', 'char[], int, int, int, int, int, boolean, UnicodeSet)', 'QuickCheckResult'),
-  \ javaapi#method(1,'decompose(', 'char[], int, int, char[], int, int, boolean, int[], UnicodeSet)', 'int'),
-  \ javaapi#method(1,'compose(', 'char[], int, int, char[], int, int, int, UnicodeSet)', 'int'),
-  \ javaapi#method(1,'getCombiningClass(', 'int)', 'int'),
-  \ javaapi#method(1,'isFullCompositionExclusion(', 'int)', 'boolean'),
-  \ javaapi#method(1,'isCanonSafeStart(', 'int)', 'boolean'),
-  \ javaapi#method(1,'isNFSkippable(', 'int, Mode, long)', 'boolean'),
-  \ javaapi#method(1,'addPropertyStarts(', 'UnicodeSet)', 'UnicodeSet'),
-  \ javaapi#method(1,'quickCheck(', 'int, int)', 'int'),
-  \ javaapi#method(1,'getNX(', 'int)', 'UnicodeSet'),
-  \ javaapi#method(1,'getDecompose(', 'int[], String[])', 'int'),
-  \ javaapi#method(1,'canonicalDecomposeWithSingleQuotation(', 'String)', 'String'),
-  \ javaapi#method(1,'convert(', 'String)', 'String'),
-  \ ])
-
-
-call javaapi#class('UTF16', '', [
-  \ javaapi#field(1,'CODEPOINT_MIN_VALUE', 'int'),
-  \ javaapi#field(1,'CODEPOINT_MAX_VALUE', 'int'),
-  \ javaapi#field(1,'SUPPLEMENTARY_MIN_VALUE', 'int'),
-  \ javaapi#field(1,'LEAD_SURROGATE_MIN_VALUE', 'int'),
-  \ javaapi#field(1,'TRAIL_SURROGATE_MIN_VALUE', 'int'),
-  \ javaapi#field(1,'LEAD_SURROGATE_MAX_VALUE', 'int'),
-  \ javaapi#field(1,'TRAIL_SURROGATE_MAX_VALUE', 'int'),
-  \ javaapi#field(1,'SURROGATE_MIN_VALUE', 'int'),
-  \ javaapi#method(0,'UTF16(', ')', 'public'),
-  \ javaapi#method(1,'charAt(', 'String, int)', 'int'),
-  \ javaapi#method(1,'charAt(', 'char[], int, int, int)', 'int'),
-  \ javaapi#method(1,'getCharCount(', 'int)', 'int'),
-  \ javaapi#method(1,'isSurrogate(', 'char)', 'boolean'),
-  \ javaapi#method(1,'isTrailSurrogate(', 'char)', 'boolean'),
-  \ javaapi#method(1,'isLeadSurrogate(', 'char)', 'boolean'),
-  \ javaapi#method(1,'getLeadSurrogate(', 'int)', 'char'),
-  \ javaapi#method(1,'getTrailSurrogate(', 'int)', 'char'),
-  \ javaapi#method(1,'valueOf(', 'int)', 'String'),
-  \ javaapi#method(1,'append(', 'StringBuffer, int)', 'StringBuffer'),
-  \ javaapi#method(1,'moveCodePointOffset(', 'char[], int, int, int, int)', 'int'),
-  \ ])
-
-
-call javaapi#class('CharacterIteratorWrapper', '', [
+call javaapi#class('CharacterIteratorWrapper', 'UCharacterIterator', [
   \ javaapi#method(0,'CharacterIteratorWrapper(', 'CharacterIterator)', 'public'),
   \ javaapi#method(0,'current(', ')', 'int'),
   \ javaapi#method(0,'getLength(', ')', 'int'),
@@ -220,16 +46,16 @@ call javaapi#class('IsPrevTrueStarter', 'IsPrevBoundary', [
 call javaapi#class('Mode', '', [
   \ ])
 
-call javaapi#class('NFCMode', '', [
+call javaapi#class('NFCMode', 'Mode', [
   \ ])
 
-call javaapi#class('NFDMode', '', [
+call javaapi#class('NFDMode', 'Mode', [
   \ ])
 
-call javaapi#class('NFKCMode', '', [
+call javaapi#class('NFKCMode', 'Mode', [
   \ ])
 
-call javaapi#class('NFKDMode', '', [
+call javaapi#class('NFKDMode', 'Mode', [
   \ ])
 
 call javaapi#class('QuickCheckResult', '', [
@@ -322,7 +148,7 @@ call javaapi#class('ReplaceableString', 'Replaceable', [
   \ javaapi#method(0,'getChars(', 'int, int, char[], int)', 'void'),
   \ ])
 
-call javaapi#class('ReplaceableUCharacterIterator', '', [
+call javaapi#class('ReplaceableUCharacterIterator', 'UCharacterIterator', [
   \ javaapi#method(0,'ReplaceableUCharacterIterator(', 'String)', 'public'),
   \ javaapi#method(0,'ReplaceableUCharacterIterator(', 'StringBuffer)', 'public'),
   \ javaapi#method(0,'clone(', ')', 'Object'),
@@ -480,5 +306,181 @@ call javaapi#class('VersionInfo', '', [
   \ javaapi#method(1,'getInstance(', 'String)', 'VersionInfo'),
   \ javaapi#method(1,'getInstance(', 'int, int, int, int)', 'VersionInfo'),
   \ javaapi#method(0,'compareTo(', 'VersionInfo)', 'int'),
+  \ ])
+
+call javaapi#namespace('sun.text.normalizer')
+
+call javaapi#class('UTF16', '', [
+  \ javaapi#field(1,'CODEPOINT_MIN_VALUE', 'int'),
+  \ javaapi#field(1,'CODEPOINT_MAX_VALUE', 'int'),
+  \ javaapi#field(1,'SUPPLEMENTARY_MIN_VALUE', 'int'),
+  \ javaapi#field(1,'LEAD_SURROGATE_MIN_VALUE', 'int'),
+  \ javaapi#field(1,'TRAIL_SURROGATE_MIN_VALUE', 'int'),
+  \ javaapi#field(1,'LEAD_SURROGATE_MAX_VALUE', 'int'),
+  \ javaapi#field(1,'TRAIL_SURROGATE_MAX_VALUE', 'int'),
+  \ javaapi#field(1,'SURROGATE_MIN_VALUE', 'int'),
+  \ javaapi#method(0,'UTF16(', ')', 'public'),
+  \ javaapi#method(1,'charAt(', 'String, int)', 'int'),
+  \ javaapi#method(1,'charAt(', 'char[], int, int, int)', 'int'),
+  \ javaapi#method(1,'getCharCount(', 'int)', 'int'),
+  \ javaapi#method(1,'isSurrogate(', 'char)', 'boolean'),
+  \ javaapi#method(1,'isTrailSurrogate(', 'char)', 'boolean'),
+  \ javaapi#method(1,'isLeadSurrogate(', 'char)', 'boolean'),
+  \ javaapi#method(1,'getLeadSurrogate(', 'int)', 'char'),
+  \ javaapi#method(1,'getTrailSurrogate(', 'int)', 'char'),
+  \ javaapi#method(1,'valueOf(', 'int)', 'String'),
+  \ javaapi#method(1,'append(', 'StringBuffer, int)', 'StringBuffer'),
+  \ javaapi#method(1,'moveCodePointOffset(', 'char[], int, int, int, int)', 'int'),
+  \ ])
+
+call javaapi#namespace('sun.text.normalizer')
+
+call javaapi#class('DecomposeArgs', '', [
+  \ ])
+
+call javaapi#interface('UnicodeMatcher', '', [
+  \ javaapi#field(1,'ETHER', 'char'),
+  \ ])
+
+call javaapi#class('UnicodeSet', 'UnicodeMatcher', [
+  \ javaapi#field(1,'MIN_VALUE', 'int'),
+  \ javaapi#field(1,'MAX_VALUE', 'int'),
+  \ javaapi#field(1,'IGNORE_SPACE', 'int'),
+  \ javaapi#method(0,'UnicodeSet(', ')', 'public'),
+  \ javaapi#method(0,'UnicodeSet(', 'int, int)', 'public'),
+  \ javaapi#method(0,'UnicodeSet(', 'String)', 'public'),
+  \ javaapi#method(0,'set(', 'UnicodeSet)', 'UnicodeSet'),
+  \ javaapi#method(0,'applyPattern(', 'String)', 'UnicodeSet'),
+  \ javaapi#method(0,'_generatePattern(', 'StringBuffer, boolean, boolean)', 'StringBuffer'),
+  \ javaapi#method(0,'add(', 'int)', 'UnicodeSet'),
+  \ javaapi#method(0,'add(', 'String)', 'UnicodeSet'),
+  \ javaapi#method(0,'complement(', 'int, int)', 'UnicodeSet'),
+  \ javaapi#method(0,'complement(', ')', 'UnicodeSet'),
+  \ javaapi#method(0,'contains(', 'int)', 'boolean'),
+  \ javaapi#method(0,'addAll(', 'UnicodeSet)', 'UnicodeSet'),
+  \ javaapi#method(0,'retainAll(', 'UnicodeSet)', 'UnicodeSet'),
+  \ javaapi#method(0,'removeAll(', 'UnicodeSet)', 'UnicodeSet'),
+  \ javaapi#method(0,'clear(', ')', 'UnicodeSet'),
+  \ javaapi#method(0,'getRangeCount(', ')', 'int'),
+  \ javaapi#method(0,'getRangeStart(', 'int)', 'int'),
+  \ javaapi#method(0,'getRangeEnd(', 'int)', 'int'),
+  \ javaapi#method(0,'applyPropertyAlias(', 'String, String, SymbolTable)', 'UnicodeSet'),
+  \ ])
+
+call javaapi#class('FriendAgent', '', [
+  \ javaapi#method(0,'FriendAgent(', 'CharTrie)', 'public'),
+  \ javaapi#method(0,'getPrivateIndex(', ')', 'char[]'),
+  \ javaapi#method(0,'getPrivateData(', ')', 'char[]'),
+  \ javaapi#method(0,'getPrivateInitialValue(', ')', 'int'),
+  \ ])
+
+call javaapi#class('CharTrie', 'Trie', [
+  \ javaapi#method(0,'CharTrie(', 'InputStream, DataManipulate) throws IOException', 'public'),
+  \ javaapi#method(0,'CharTrie(', 'int, int, DataManipulate)', 'public'),
+  \ javaapi#method(0,'putIndexData(', 'UCharacterProperty)', 'void'),
+  \ javaapi#method(0,'getCodePointValue(', 'int)', 'char'),
+  \ javaapi#method(0,'getLeadValue(', 'char)', 'char'),
+  \ javaapi#method(0,'getSurrogateValue(', 'char, char)', 'char'),
+  \ javaapi#method(0,'getTrailValue(', 'int, char)', 'char'),
+  \ ])
+
+call javaapi#class('Trie', '', [
+  \ ])
+
+call javaapi#class('IntTrie', 'Trie', [
+  \ javaapi#method(0,'IntTrie(', 'InputStream, DataManipulate) throws IOException', 'public'),
+  \ javaapi#method(0,'getCodePointValue(', 'int)', 'int'),
+  \ javaapi#method(0,'getLeadValue(', 'char)', 'int'),
+  \ javaapi#method(0,'getTrailValue(', 'int, char)', 'int'),
+  \ ])
+
+call javaapi#class('AuxTrieImpl', 'DataManipulate', [
+  \ javaapi#method(0,'getFoldingOffset(', 'int)', 'int'),
+  \ ])
+
+call javaapi#class('NormTrieImpl', 'DataManipulate', [
+  \ javaapi#method(0,'getFoldingOffset(', 'int)', 'int'),
+  \ ])
+
+call javaapi#interface('DataManipulate', '', [
+  \ javaapi#method(0,'getFoldingOffset(', 'int)', 'int'),
+  \ ])
+
+call javaapi#class('FCDTrieImpl', 'DataManipulate', [
+  \ javaapi#method(0,'getFoldingOffset(', 'int)', 'int'),
+  \ ])
+
+call javaapi#class('ICUBinary', '', [
+  \ javaapi#method(0,'ICUBinary(', ')', 'public'),
+  \ javaapi#method(1,'readHeader(', 'InputStream, byte[], Authenticate) throws IOException', 'byte[]'),
+  \ ])
+
+call javaapi#interface('Authenticate', '', [
+  \ javaapi#method(0,'isDataVersionAcceptable(', 'byte[])', 'boolean'),
+  \ ])
+
+call javaapi#class('NormalizerDataReader', 'Authenticate', [
+  \ javaapi#method(0,'getDataFormatVersion(', ')', 'byte[]'),
+  \ javaapi#method(0,'isDataVersionAcceptable(', 'byte[])', 'boolean'),
+  \ javaapi#method(0,'getUnicodeVersion(', ')', 'byte[]'),
+  \ ])
+
+call javaapi#class('ICUData', '', [
+  \ javaapi#method(0,'ICUData(', ')', 'public'),
+  \ javaapi#method(1,'getStream(', 'String)', 'InputStream'),
+  \ javaapi#method(1,'getRequiredStream(', 'String)', 'InputStream'),
+  \ ])
+
+call javaapi#class('NormalizerImpl', '', [
+  \ javaapi#field(1,'QC_NFC', 'int'),
+  \ javaapi#field(1,'QC_NFKC', 'int'),
+  \ javaapi#field(1,'QC_NFD', 'int'),
+  \ javaapi#field(1,'QC_NFKD', 'int'),
+  \ javaapi#field(1,'QC_ANY_NO', 'int'),
+  \ javaapi#field(1,'QC_MAYBE', 'int'),
+  \ javaapi#field(1,'QC_ANY_MAYBE', 'int'),
+  \ javaapi#field(1,'QC_MASK', 'int'),
+  \ javaapi#field(1,'COMBINES_ANY', 'int'),
+  \ javaapi#field(1,'CC_MASK', 'int'),
+  \ javaapi#field(1,'INDEX_MIN_NFC_NO_MAYBE', 'int'),
+  \ javaapi#field(1,'INDEX_MIN_NFKC_NO_MAYBE', 'int'),
+  \ javaapi#field(1,'INDEX_MIN_NFD_NO_MAYBE', 'int'),
+  \ javaapi#field(1,'INDEX_MIN_NFKD_NO_MAYBE', 'int'),
+  \ javaapi#field(1,'MIN_WITH_LEAD_CC', 'int'),
+  \ javaapi#field(1,'JAMO_L_BASE', 'int'),
+  \ javaapi#field(1,'JAMO_V_BASE', 'int'),
+  \ javaapi#field(1,'JAMO_T_BASE', 'int'),
+  \ javaapi#field(1,'HANGUL_BASE', 'int'),
+  \ javaapi#field(1,'JAMO_L_COUNT', 'int'),
+  \ javaapi#field(1,'JAMO_V_COUNT', 'int'),
+  \ javaapi#field(1,'JAMO_T_COUNT', 'int'),
+  \ javaapi#field(1,'HANGUL_COUNT', 'int'),
+  \ javaapi#field(1,'OPTIONS_SETS_MASK', 'int'),
+  \ javaapi#field(1,'BEFORE_PRI_29', 'int'),
+  \ javaapi#field(1,'OPTIONS_COMPAT', 'int'),
+  \ javaapi#field(1,'OPTIONS_COMPOSE_CONTIGUOUS', 'int'),
+  \ javaapi#field(1,'WITHOUT_CORRIGENDUM4_CORRECTIONS', 'int'),
+  \ javaapi#method(1,'getFromIndexesArr(', 'int)', 'int'),
+  \ javaapi#method(1,'getNorm32(', 'char)', 'long'),
+  \ javaapi#method(1,'getNorm32FromSurrogatePair(', 'long, char)', 'long'),
+  \ javaapi#method(1,'getUnicodeVersion(', ')', 'VersionInfo'),
+  \ javaapi#method(1,'getFCD16(', 'char)', 'char'),
+  \ javaapi#method(1,'getFCD16FromSurrogatePair(', 'char, char)', 'char'),
+  \ javaapi#method(1,'getFCD16(', 'int)', 'int'),
+  \ javaapi#method(1,'isNFDSafe(', 'long, int, int)', 'boolean'),
+  \ javaapi#method(1,'isTrueStarter(', 'long, int, int)', 'boolean'),
+  \ javaapi#method(1,'quickCheck(', 'char[], int, int, int, int, int, boolean, UnicodeSet)', 'QuickCheckResult'),
+  \ javaapi#method(1,'decompose(', 'char[], int, int, char[], int, int, boolean, int[], UnicodeSet)', 'int'),
+  \ javaapi#method(1,'compose(', 'char[], int, int, char[], int, int, int, UnicodeSet)', 'int'),
+  \ javaapi#method(1,'getCombiningClass(', 'int)', 'int'),
+  \ javaapi#method(1,'isFullCompositionExclusion(', 'int)', 'boolean'),
+  \ javaapi#method(1,'isCanonSafeStart(', 'int)', 'boolean'),
+  \ javaapi#method(1,'isNFSkippable(', 'int, Mode, long)', 'boolean'),
+  \ javaapi#method(1,'addPropertyStarts(', 'UnicodeSet)', 'UnicodeSet'),
+  \ javaapi#method(1,'quickCheck(', 'int, int)', 'int'),
+  \ javaapi#method(1,'getNX(', 'int)', 'UnicodeSet'),
+  \ javaapi#method(1,'getDecompose(', 'int[], String[])', 'int'),
+  \ javaapi#method(1,'canonicalDecomposeWithSingleQuotation(', 'String)', 'String'),
+  \ javaapi#method(1,'convert(', 'String)', 'String'),
   \ ])
 

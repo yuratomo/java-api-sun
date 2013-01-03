@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.rowset')
 
-call javaapi#class('CachedRowSetImpl', '', [
+call javaapi#class('CachedRowSetImpl', 'BaseRowSet', [
   \ javaapi#method(0,'CachedRowSetImpl(', ') throws SQLException', 'public'),
   \ javaapi#method(0,'CachedRowSetImpl(', 'Hashtable) throws SQLException', 'public'),
   \ javaapi#method(0,'setCommand(', 'String) throws SQLException', 'void'),
@@ -298,7 +298,7 @@ call javaapi#class('CachedRowSetImpl', '', [
   \ javaapi#method(0,'getObject(', 'String, Class<T>) throws SQLException', 'T'),
   \ ])
 
-call javaapi#class('FilteredRowSetImpl', '', [
+call javaapi#class('FilteredRowSetImpl', 'WebRowSetImpl', [
   \ javaapi#method(0,'FilteredRowSetImpl(', ') throws SQLException', 'public'),
   \ javaapi#method(0,'FilteredRowSetImpl(', 'Hashtable) throws SQLException', 'public'),
   \ javaapi#method(0,'setFilter(', 'Predicate) throws SQLException', 'void'),
@@ -345,7 +345,7 @@ call javaapi#class('FilteredRowSetImpl', '', [
   \ javaapi#method(0,'insertRow(', ') throws SQLException', 'void'),
   \ ])
 
-call javaapi#class('JdbcRowSetImpl', '', [
+call javaapi#class('JdbcRowSetImpl', 'BaseRowSet', [
   \ javaapi#method(0,'JdbcRowSetImpl(', ')', 'public'),
   \ javaapi#method(0,'JdbcRowSetImpl(', 'Connection) throws SQLException', 'public'),
   \ javaapi#method(0,'JdbcRowSetImpl(', 'String, String, String) throws SQLException', 'public'),
@@ -630,7 +630,7 @@ call javaapi#class('JdbcRowSetResourceBundle', 'Serializable', [
   \ javaapi#method(0,'handleGetObject(', 'String)', 'Object'),
   \ ])
 
-call javaapi#class('JoinRowSetImpl', '', [
+call javaapi#class('JoinRowSetImpl', 'WebRowSetImpl', [
   \ javaapi#method(0,'JoinRowSetImpl(', ') throws SQLException', 'public'),
   \ javaapi#method(0,'addRowSet(', 'Joinable) throws SQLException', 'void'),
   \ javaapi#method(0,'addRowSet(', 'RowSet, int) throws SQLException', 'void'),
@@ -817,7 +817,7 @@ call javaapi#class('RowSetFactoryImpl', 'RowSetFactory', [
   \ javaapi#method(0,'createWebRowSet(', ') throws SQLException', 'WebRowSet'),
   \ ])
 
-call javaapi#class('WebRowSetImpl', '', [
+call javaapi#class('WebRowSetImpl', 'CachedRowSetImpl', [
   \ javaapi#method(0,'WebRowSetImpl(', ') throws SQLException', 'public'),
   \ javaapi#method(0,'WebRowSetImpl(', 'Hashtable) throws SQLException', 'public'),
   \ javaapi#method(0,'writeXml(', 'ResultSet, Writer) throws SQLException', 'void'),

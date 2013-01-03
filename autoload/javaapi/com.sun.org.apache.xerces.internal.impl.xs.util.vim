@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xerces.internal.impl.xs.util')
 
-call javaapi#class('LSInputListImpl', '', [
+call javaapi#class('LSInputListImpl', 'AbstractList', [
   \ javaapi#field(1,'EMPTY_LIST', 'LSInputListImpl'),
   \ javaapi#method(0,'LSInputListImpl(', 'LSInput[], int)', 'public'),
   \ javaapi#method(0,'getLength(', ')', 'int'),
@@ -11,7 +11,7 @@ call javaapi#class('LSInputListImpl', '', [
   \ javaapi#method(0,'toArray(', 'Object[])', 'Object[]'),
   \ ])
 
-call javaapi#class('ObjectListImpl', '', [
+call javaapi#class('ObjectListImpl', 'AbstractList', [
   \ javaapi#field(1,'EMPTY_LIST', 'ObjectListImpl'),
   \ javaapi#method(0,'ObjectListImpl(', 'Object[], int)', 'public'),
   \ javaapi#method(0,'getLength(', ')', 'int'),
@@ -23,7 +23,7 @@ call javaapi#class('ObjectListImpl', '', [
   \ javaapi#method(0,'toArray(', 'Object[])', 'Object[]'),
   \ ])
 
-call javaapi#class('ShortListImpl', '', [
+call javaapi#class('ShortListImpl', 'AbstractList', [
   \ javaapi#field(1,'EMPTY_LIST', 'ShortListImpl'),
   \ javaapi#method(0,'ShortListImpl(', 'short[], int)', 'public'),
   \ javaapi#method(0,'getLength(', ')', 'int'),
@@ -58,7 +58,7 @@ call javaapi#class('SimpleLocator', 'XMLLocator', [
   \ javaapi#method(0,'getXMLVersion(', ')', 'String'),
   \ ])
 
-call javaapi#class('StringListImpl', '', [
+call javaapi#class('StringListImpl', 'AbstractList', [
   \ javaapi#field(1,'EMPTY_LIST', 'StringListImpl'),
   \ javaapi#method(0,'StringListImpl(', 'Vector)', 'public'),
   \ javaapi#method(0,'StringListImpl(', 'String[], int)', 'public'),
@@ -83,13 +83,13 @@ call javaapi#class('XIntPool', '', [
   \ javaapi#method(0,'getXInt(', 'int)', 'XInt'),
   \ ])
 
-call javaapi#class('XSGrammarPool', '', [
+call javaapi#class('XSGrammarPool', 'XMLGrammarPoolImpl', [
   \ javaapi#method(0,'XSGrammarPool(', ')', 'public'),
   \ javaapi#method(0,'toXSModel(', ')', 'XSModel'),
   \ javaapi#method(0,'toXSModel(', 'short)', 'XSModel'),
   \ ])
 
-call javaapi#class('XSInputSource', '', [
+call javaapi#class('XSInputSource', 'XMLInputSource', [
   \ javaapi#method(0,'XSInputSource(', 'SchemaGrammar[])', 'public'),
   \ javaapi#method(0,'XSInputSource(', 'XSObject[])', 'public'),
   \ javaapi#method(0,'getGrammars(', ')', 'SchemaGrammar[]'),
@@ -98,7 +98,7 @@ call javaapi#class('XSInputSource', '', [
   \ javaapi#method(0,'setComponents(', 'XSObject[])', 'void'),
   \ ])
 
-call javaapi#class('XSNamedMap4Types', '', [
+call javaapi#class('XSNamedMap4Types', 'XSNamedMapImpl', [
   \ javaapi#method(0,'XSNamedMap4Types(', 'String, SymbolHash, short)', 'public'),
   \ javaapi#method(0,'XSNamedMap4Types(', 'String[], SymbolHash[], int, short)', 'public'),
   \ javaapi#method(0,'getLength(', ')', 'int'),
@@ -112,7 +112,7 @@ call javaapi#class('1', 'Iterator', [
   \ javaapi#method(0,'remove(', ')', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'AbstractSet', [
   \ javaapi#method(0,'iterator(', ')', 'Iterator'),
   \ javaapi#method(0,'size(', ')', 'int'),
   \ ])
@@ -127,7 +127,7 @@ call javaapi#class('XSNamedMapEntry', 'Entry', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('XSNamedMapImpl', '', [
+call javaapi#class('XSNamedMapImpl', 'AbstractMap', [
   \ javaapi#field(1,'EMPTY_MAP', 'XSNamedMapImpl'),
   \ javaapi#method(0,'XSNamedMapImpl(', 'String, SymbolHash)', 'public'),
   \ javaapi#method(0,'XSNamedMapImpl(', 'String[], SymbolHash[], int)', 'public'),
@@ -166,7 +166,7 @@ call javaapi#class('XSObjectListIterator', 'ListIterator', [
   \ javaapi#method(0,'add(', 'Object)', 'void'),
   \ ])
 
-call javaapi#class('XSObjectListImpl', '', [
+call javaapi#class('XSObjectListImpl', 'AbstractList', [
   \ javaapi#field(1,'EMPTY_LIST', 'XSObjectListImpl'),
   \ javaapi#method(0,'XSObjectListImpl(', ')', 'public'),
   \ javaapi#method(0,'XSObjectListImpl(', 'XSObject[], int)', 'public'),

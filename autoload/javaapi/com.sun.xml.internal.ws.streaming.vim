@@ -91,19 +91,19 @@ call javaapi#class('SourceReaderFactory', '', [
   \ javaapi#method(1,'createSourceReader(', 'Source, boolean, String)', 'XMLStreamReader'),
   \ ])
 
-call javaapi#class('TidyXMLStreamReader', '', [
+call javaapi#class('TidyXMLStreamReader', 'XMLStreamReaderFilter', [
   \ javaapi#method(0,'TidyXMLStreamReader(', 'XMLStreamReader, Closeable)', 'public'),
   \ javaapi#method(0,'close(', ') throws XMLStreamException', 'void'),
   \ ])
 
-call javaapi#class('XMLReaderException', '', [
+call javaapi#class('XMLReaderException', 'JAXWSExceptionBase', [
   \ javaapi#method(0,'XMLReaderException(', 'String, )', 'public'),
   \ javaapi#method(0,'XMLReaderException(', 'Throwable)', 'public'),
   \ javaapi#method(0,'XMLReaderException(', 'Localizable)', 'public'),
   \ javaapi#method(0,'getDefaultResourceBundleName(', ')', 'String'),
   \ ])
 
-call javaapi#class('XMLStreamReaderException', '', [
+call javaapi#class('XMLStreamReaderException', 'JAXWSExceptionBase', [
   \ javaapi#method(0,'XMLStreamReaderException(', 'String, )', 'public'),
   \ javaapi#method(0,'XMLStreamReaderException(', 'Throwable)', 'public'),
   \ javaapi#method(0,'XMLStreamReaderException(', 'Localizable)', 'public'),
@@ -149,7 +149,7 @@ call javaapi#class('XMLStreamReaderUtil', '', [
   \ javaapi#method(1,'getStateName(', 'int)', 'String'),
   \ ])
 
-call javaapi#class('XMLStreamWriterException', '', [
+call javaapi#class('XMLStreamWriterException', 'JAXWSExceptionBase', [
   \ javaapi#method(0,'XMLStreamWriterException(', 'String, )', 'public'),
   \ javaapi#method(0,'XMLStreamWriterException(', 'Throwable)', 'public'),
   \ javaapi#method(0,'XMLStreamWriterException(', 'Localizable)', 'public'),

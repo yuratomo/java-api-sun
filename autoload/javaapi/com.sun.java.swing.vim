@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.java.swing')
 
-call javaapi#interface('Painter<T>', '', [
+call javaapi#interface('Painter<T>', 'Painter', [
   \ ])
 
 call javaapi#class('EventQueueDelegateFromMap', 'Delegate', [

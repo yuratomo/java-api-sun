@@ -1,9 +1,9 @@
 call javaapi#namespace('sunw.util')
 
-call javaapi#interface('EventListener', '', [
+call javaapi#interface('EventListener', 'EventListener', [
   \ ])
 
-call javaapi#class('EventObject', '', [
+call javaapi#class('EventObject', 'EventObject', [
   \ javaapi#method(0,'EventObject(', 'Object)', 'public'),
   \ ])
 

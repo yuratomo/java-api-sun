@@ -111,7 +111,7 @@ call javaapi#class('TraceListener', 'NotificationListener', [
   \ javaapi#method(0,'setFile(', 'String) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('TraceNotification', '', [
+call javaapi#class('TraceNotification', 'Notification', [
   \ javaapi#field(0,'level', 'int'),
   \ javaapi#field(0,'type', 'int'),
   \ javaapi#field(0,'className', 'String'),

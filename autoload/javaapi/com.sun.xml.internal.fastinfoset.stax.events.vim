@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.fastinfoset.stax.events')
 
-call javaapi#class('AttributeBase', '', [
+call javaapi#class('AttributeBase', 'EventBase', [
   \ javaapi#method(0,'AttributeBase(', ')', 'public'),
   \ javaapi#method(0,'AttributeBase(', 'String, String)', 'public'),
   \ javaapi#method(0,'AttributeBase(', 'QName, String)', 'public'),
@@ -18,7 +18,7 @@ call javaapi#class('AttributeBase', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('CharactersEvent', '', [
+call javaapi#class('CharactersEvent', 'EventBase', [
   \ javaapi#method(0,'CharactersEvent(', ')', 'public'),
   \ javaapi#method(0,'CharactersEvent(', 'String)', 'public'),
   \ javaapi#method(0,'CharactersEvent(', 'String, boolean)', 'public'),
@@ -32,7 +32,7 @@ call javaapi#class('CharactersEvent', '', [
   \ javaapi#method(0,'setIgnorable(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('CommentEvent', '', [
+call javaapi#class('CommentEvent', 'EventBase', [
   \ javaapi#method(0,'CommentEvent(', ')', 'public'),
   \ javaapi#method(0,'CommentEvent(', 'String)', 'public'),
   \ javaapi#method(0,'toString(', ')', 'String'),
@@ -40,7 +40,7 @@ call javaapi#class('CommentEvent', '', [
   \ javaapi#method(0,'setText(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('DTDEvent', '', [
+call javaapi#class('DTDEvent', 'EventBase', [
   \ javaapi#method(0,'DTDEvent(', ')', 'public'),
   \ javaapi#method(0,'DTDEvent(', 'String)', 'public'),
   \ javaapi#method(0,'getDocumentTypeDeclaration(', ')', 'String'),
@@ -61,12 +61,12 @@ call javaapi#class('EmptyIterator', 'Iterator', [
   \ javaapi#method(0,'remove(', ')', 'void'),
   \ ])
 
-call javaapi#class('EndDocumentEvent', '', [
+call javaapi#class('EndDocumentEvent', 'EventBase', [
   \ javaapi#method(0,'EndDocumentEvent(', ')', 'public'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('EndElementEvent', '', [
+call javaapi#class('EndElementEvent', 'EventBase', [
   \ javaapi#method(0,'reset(', ')', 'void'),
   \ javaapi#method(0,'EndElementEvent(', ')', 'public'),
   \ javaapi#method(0,'EndElementEvent(', 'String, String, String)', 'public'),
@@ -78,7 +78,7 @@ call javaapi#class('EndElementEvent', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('EntityDeclarationImpl', '', [
+call javaapi#class('EntityDeclarationImpl', 'EventBase', [
   \ javaapi#method(0,'EntityDeclarationImpl(', ')', 'public'),
   \ javaapi#method(0,'EntityDeclarationImpl(', 'String, String)', 'public'),
   \ javaapi#method(0,'getPublicId(', ')', 'String'),
@@ -95,7 +95,7 @@ call javaapi#class('EntityDeclarationImpl', '', [
   \ javaapi#method(0,'setNotationName(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('EntityReferenceEvent', '', [
+call javaapi#class('EntityReferenceEvent', 'EventBase', [
   \ javaapi#method(0,'EntityReferenceEvent(', ')', 'public'),
   \ javaapi#method(0,'EntityReferenceEvent(', 'String, EntityDeclaration)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'String'),
@@ -128,7 +128,7 @@ call javaapi#class('EventBase', 'XMLEvent', [
   \ javaapi#method(0,'writeAsEncodedUnicode(', 'Writer) throws XMLStreamException', 'void'),
   \ ])
 
-call javaapi#class('NamespaceBase', '', [
+call javaapi#class('NamespaceBase', 'AttributeBase', [
   \ javaapi#method(0,'NamespaceBase(', 'String)', 'public'),
   \ javaapi#method(0,'NamespaceBase(', 'String, String)', 'public'),
   \ javaapi#method(0,'getPrefix(', ')', 'String'),
@@ -137,7 +137,7 @@ call javaapi#class('NamespaceBase', '', [
   \ javaapi#method(0,'isDefaultNamespaceDeclaration(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('ProcessingInstructionEvent', '', [
+call javaapi#class('ProcessingInstructionEvent', 'EventBase', [
   \ javaapi#method(0,'ProcessingInstructionEvent(', ')', 'public'),
   \ javaapi#method(0,'ProcessingInstructionEvent(', 'String, String)', 'public'),
   \ javaapi#method(0,'getTarget(', ')', 'String'),
@@ -205,7 +205,7 @@ call javaapi#class('StAXFilteredEvent', 'XMLEventReader', [
   \ javaapi#method(0,'getProperty(', 'String)', 'Object'),
   \ ])
 
-call javaapi#class('StartDocumentEvent', '', [
+call javaapi#class('StartDocumentEvent', 'EventBase', [
   \ javaapi#method(0,'reset(', ')', 'void'),
   \ javaapi#method(0,'StartDocumentEvent(', ')', 'public'),
   \ javaapi#method(0,'StartDocumentEvent(', 'String)', 'public'),
@@ -224,7 +224,7 @@ call javaapi#class('StartDocumentEvent', '', [
   \ javaapi#method(0,'isStartDocument(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('StartElementEvent', '', [
+call javaapi#class('StartElementEvent', 'EventBase', [
   \ javaapi#method(0,'reset(', ')', 'void'),
   \ javaapi#method(0,'StartElementEvent(', ')', 'public'),
   \ javaapi#method(0,'StartElementEvent(', 'String, String, String)', 'public'),

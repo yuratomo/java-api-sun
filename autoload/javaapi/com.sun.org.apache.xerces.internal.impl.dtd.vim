@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xerces.internal.impl.dtd')
 
-call javaapi#class('BalancedDTDGrammar', '', [
+call javaapi#class('BalancedDTDGrammar', 'DTDGrammar', [
   \ javaapi#method(0,'BalancedDTDGrammar(', 'SymbolTable, XMLDTDDescription)', 'public'),
   \ javaapi#method(0,'startContentModel(', 'String, Augmentations) throws XNIException', 'void'),
   \ javaapi#method(0,'startGroup(', 'Augmentations) throws XNIException', 'void'),
@@ -97,18 +97,18 @@ call javaapi#class('DTDGrammarBucket', '', [
   \ javaapi#method(0,'clear(', ')', 'void'),
   \ ])
 
-call javaapi#class('XML11DTDProcessor', '', [
+call javaapi#class('XML11DTDProcessor', 'XMLDTDLoader', [
   \ javaapi#method(0,'XML11DTDProcessor(', ')', 'public'),
   \ javaapi#method(0,'XML11DTDProcessor(', 'SymbolTable)', 'public'),
   \ javaapi#method(0,'XML11DTDProcessor(', 'SymbolTable, XMLGrammarPool)', 'public'),
   \ ])
 
-call javaapi#class('XML11DTDValidator', '', [
+call javaapi#class('XML11DTDValidator', 'XMLDTDValidator', [
   \ javaapi#method(0,'XML11DTDValidator(', ')', 'public'),
   \ javaapi#method(0,'reset(', 'XMLComponentManager)', 'void'),
   \ ])
 
-call javaapi#class('XML11NSDTDValidator', '', [
+call javaapi#class('XML11NSDTDValidator', 'XML11DTDValidator', [
   \ javaapi#method(0,'XML11NSDTDValidator(', ')', 'public'),
   \ ])
 
@@ -156,7 +156,7 @@ call javaapi#class('XMLContentSpec', '', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('XMLDTDDescription', '', [
+call javaapi#class('XMLDTDDescription', 'XMLResourceIdentifierImpl', [
   \ javaapi#method(0,'XMLDTDDescription(', 'XMLResourceIdentifier, String)', 'public'),
   \ javaapi#method(0,'XMLDTDDescription(', 'String, String, String, String, String)', 'public'),
   \ javaapi#method(0,'XMLDTDDescription(', 'XMLInputSource)', 'public'),
@@ -169,7 +169,7 @@ call javaapi#class('XMLDTDDescription', '', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('XMLDTDLoader', '', [
+call javaapi#class('XMLDTDLoader', 'XMLDTDProcessor', [
   \ javaapi#field(1,'ENTITY_RESOLVER', 'String'),
   \ javaapi#field(1,'LOCALE', 'String'),
   \ javaapi#method(0,'XMLDTDLoader(', ')', 'public'),
@@ -274,7 +274,7 @@ call javaapi#class('XMLDTDValidator', 'RevalidationHandler', [
   \ javaapi#method(0,'characterData(', 'String, Augmentations)', 'boolean'),
   \ ])
 
-call javaapi#interface('XMLDTDValidatorFilter', '', [
+call javaapi#interface('XMLDTDValidatorFilter', 'XMLDocumentFilter', [
   \ javaapi#method(0,'hasGrammar(', ')', 'boolean'),
   \ javaapi#method(0,'validate(', ')', 'boolean'),
   \ ])
@@ -310,7 +310,7 @@ call javaapi#class('XMLEntityDecl', '', [
   \ javaapi#method(0,'clear(', ')', 'void'),
   \ ])
 
-call javaapi#class('XMLNSDTDValidator', '', [
+call javaapi#class('XMLNSDTDValidator', 'XMLDTDValidator', [
   \ javaapi#method(0,'XMLNSDTDValidator(', ')', 'public'),
   \ ])
 

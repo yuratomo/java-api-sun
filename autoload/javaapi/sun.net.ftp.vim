@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.net.ftp')
 
-call javaapi#class('TransferType', '', [
+call javaapi#class('TransferType', 'TransferType>', [
   \ javaapi#field(1,'ASCII', 'TransferType'),
   \ javaapi#field(1,'BINARY', 'TransferType'),
   \ javaapi#field(1,'EBCDIC', 'TransferType'),
@@ -83,7 +83,7 @@ call javaapi#class('FtpClientProvider', '', [
   \ javaapi#method(1,'provider(', ')', 'FtpClientProvider'),
   \ ])
 
-call javaapi#class('Permission', '', [
+call javaapi#class('Permission', 'Permission>', [
   \ javaapi#field(1,'USER', 'Permission'),
   \ javaapi#field(1,'GROUP', 'Permission'),
   \ javaapi#field(1,'OTHERS', 'Permission'),
@@ -91,7 +91,7 @@ call javaapi#class('Permission', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'Permission'),
   \ ])
 
-call javaapi#class('Type', '', [
+call javaapi#class('Type', 'Type>', [
   \ javaapi#field(1,'FILE', 'Type'),
   \ javaapi#field(1,'DIR', 'Type'),
   \ javaapi#field(1,'PDIR', 'Type'),
@@ -129,17 +129,17 @@ call javaapi#interface('FtpDirParser', '', [
   \ javaapi#method(0,'parseLine(', 'String)', 'FtpDirEntry'),
   \ ])
 
-call javaapi#class('FtpLoginException', '', [
+call javaapi#class('FtpLoginException', 'IOException', [
   \ javaapi#method(0,'FtpLoginException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('FtpProtocolException', '', [
+call javaapi#class('FtpProtocolException', 'Exception', [
   \ javaapi#method(0,'FtpProtocolException(', 'String)', 'public'),
   \ javaapi#method(0,'FtpProtocolException(', 'String, FtpReplyCode)', 'public'),
   \ javaapi#method(0,'getReplyCode(', ')', 'FtpReplyCode'),
   \ ])
 
-call javaapi#class('FtpReplyCode', '', [
+call javaapi#class('FtpReplyCode', 'FtpReplyCode>', [
   \ javaapi#field(1,'RESTART_MARKER', 'FtpReplyCode'),
   \ javaapi#field(1,'SERVICE_READY_IN', 'FtpReplyCode'),
   \ javaapi#field(1,'DATA_CONNECTION_ALREADY_OPEN', 'FtpReplyCode'),

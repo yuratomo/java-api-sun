@@ -31,7 +31,7 @@ call javaapi#class('EncodingAlgorithmAttributesImpl', 'EncodingAlgorithmAttribut
   \ javaapi#method(0,'getToIndex(', 'int)', 'boolean'),
   \ ])
 
-call javaapi#class('FastInfosetDefaultHandler', '', [
+call javaapi#class('FastInfosetDefaultHandler', 'DefaultHandler', [
   \ javaapi#method(0,'FastInfosetDefaultHandler(', ')', 'public'),
   \ javaapi#method(0,'comment(', 'char[], int, int) throws SAXException', 'void'),
   \ javaapi#method(0,'startCDATA(', ') throws SAXException', 'void'),

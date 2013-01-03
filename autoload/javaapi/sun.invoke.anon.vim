@@ -23,13 +23,13 @@ call javaapi#class('ConstantPoolParser', '', [
   \ javaapi#method(0,'parse(', 'ConstantPoolVisitor) throws InvalidConstantPoolFormatException', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ConstantPoolVisitor', [
   \ javaapi#method(0,'visitUTF8(', 'int, byte, String)', 'void'),
   \ javaapi#method(0,'visitConstantValue(', 'int, byte, Object)', 'void'),
   \ javaapi#method(0,'visitConstantString(', 'int, byte, String, int)', 'void'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'ConstantPoolVisitor', [
   \ javaapi#method(0,'visitUTF8(', 'int, byte, String)', 'void'),
   \ javaapi#method(0,'visitConstantValue(', 'int, byte, Object)', 'void'),
   \ javaapi#method(0,'visitConstantString(', 'int, byte, String, int)', 'void'),
@@ -79,7 +79,7 @@ call javaapi#class('ConstantPoolVisitor', '', [
   \ javaapi#method(1,'tagName(', 'byte)', 'String'),
   \ ])
 
-call javaapi#class('InvalidConstantPoolFormatException', '', [
+call javaapi#class('InvalidConstantPoolFormatException', 'Exception', [
   \ javaapi#method(0,'InvalidConstantPoolFormatException(', 'String, Throwable)', 'public'),
   \ javaapi#method(0,'InvalidConstantPoolFormatException(', 'String)', 'public'),
   \ javaapi#method(0,'InvalidConstantPoolFormatException(', 'Throwable)', 'public'),

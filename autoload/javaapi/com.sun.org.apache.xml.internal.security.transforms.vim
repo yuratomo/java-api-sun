@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xml.internal.security.transforms')
 
-call javaapi#class('InvalidTransformException', '', [
+call javaapi#class('InvalidTransformException', 'XMLSecurityException', [
   \ javaapi#method(0,'InvalidTransformException(', ')', 'public'),
   \ javaapi#method(0,'InvalidTransformException(', 'String)', 'public'),
   \ javaapi#method(0,'InvalidTransformException(', 'String, Object[])', 'public'),
@@ -8,7 +8,7 @@ call javaapi#class('InvalidTransformException', '', [
   \ javaapi#method(0,'InvalidTransformException(', 'String, Object[], Exception)', 'public'),
   \ ])
 
-call javaapi#class('Transform', '', [
+call javaapi#class('Transform', 'SignatureElementProxy', [
   \ javaapi#method(0,'Transform(', 'Document, String, NodeList) throws InvalidTransformException', 'public'),
   \ javaapi#method(0,'Transform(', 'Element, String) throws InvalidTransformException, TransformationException, XMLSecurityException', 'public'),
   \ javaapi#method(1,'getInstance(', 'Document, String) throws InvalidTransformException', 'Transform'),
@@ -29,7 +29,7 @@ call javaapi#class('TransformSpi', '', [
   \ javaapi#method(0,'TransformSpi(', ')', 'public'),
   \ ])
 
-call javaapi#class('TransformationException', '', [
+call javaapi#class('TransformationException', 'XMLSecurityException', [
   \ javaapi#method(0,'TransformationException(', ')', 'public'),
   \ javaapi#method(0,'TransformationException(', 'String)', 'public'),
   \ javaapi#method(0,'TransformationException(', 'String, Object[])', 'public'),
@@ -37,7 +37,7 @@ call javaapi#class('TransformationException', '', [
   \ javaapi#method(0,'TransformationException(', 'String, Object[], Exception)', 'public'),
   \ ])
 
-call javaapi#class('Transforms', '', [
+call javaapi#class('Transforms', 'SignatureElementProxy', [
   \ javaapi#field(1,'TRANSFORM_C14N_OMIT_COMMENTS', 'String'),
   \ javaapi#field(1,'TRANSFORM_C14N_WITH_COMMENTS', 'String'),
   \ javaapi#field(1,'TRANSFORM_C14N11_OMIT_COMMENTS', 'String'),

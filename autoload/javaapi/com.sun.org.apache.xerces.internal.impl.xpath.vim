@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xerces.internal.impl.xpath')
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Scanner', [
   \ ])
 
 call javaapi#class('Axis', 'Cloneable', [
@@ -119,7 +119,7 @@ call javaapi#class('XPath', '', [
   \ javaapi#method(1,'main(', 'String[]) throws Exception', 'void'),
   \ ])
 
-call javaapi#class('XPathException', '', [
+call javaapi#class('XPathException', 'Exception', [
   \ javaapi#method(0,'XPathException(', ')', 'public'),
   \ javaapi#method(0,'XPathException(', 'String)', 'public'),
   \ javaapi#method(0,'getKey(', ')', 'String'),

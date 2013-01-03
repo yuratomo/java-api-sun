@@ -1,13 +1,13 @@
 call javaapi#namespace('com.sun.corba.se.spi.transport')
 
-call javaapi#interface('CorbaAcceptor', '', [
+call javaapi#interface('CorbaAcceptor', 'Acceptor', [
   \ javaapi#method(0,'getObjectAdapterId(', ')', 'String'),
   \ javaapi#method(0,'getObjectAdapterManagerId(', ')', 'String'),
   \ javaapi#method(0,'addToIORTemplate(', 'IORTemplate, Policies, String)', 'void'),
   \ javaapi#method(0,'getMonitoringName(', ')', 'String'),
   \ ])
 
-call javaapi#interface('CorbaConnection', '', [
+call javaapi#interface('CorbaConnection', 'Connection', [
   \ javaapi#field(1,'OPENING', 'int'),
   \ javaapi#field(1,'ESTABLISHED', 'int'),
   \ javaapi#field(1,'CLOSE_SENT', 'int'),
@@ -54,7 +54,7 @@ call javaapi#interface('CorbaConnectionCache', '', [
   \ javaapi#method(0,'getMonitoringName(', ')', 'String'),
   \ ])
 
-call javaapi#interface('CorbaContactInfo', '', [
+call javaapi#interface('CorbaContactInfo', 'ContactInfo', [
   \ javaapi#method(0,'getTargetIOR(', ')', 'IOR'),
   \ javaapi#method(0,'getEffectiveTargetIOR(', ')', 'IOR'),
   \ javaapi#method(0,'getEffectiveProfile(', ')', 'IIOPProfile'),
@@ -63,7 +63,7 @@ call javaapi#interface('CorbaContactInfo', '', [
   \ javaapi#method(0,'getMonitoringName(', ')', 'String'),
   \ ])
 
-call javaapi#interface('CorbaContactInfoList', '', [
+call javaapi#interface('CorbaContactInfoList', 'ContactInfoList', [
   \ javaapi#method(0,'setTargetIOR(', 'IOR)', 'void'),
   \ javaapi#method(0,'getTargetIOR(', ')', 'IOR'),
   \ javaapi#method(0,'setEffectiveTargetIOR(', 'IOR)', 'void'),
@@ -77,17 +77,17 @@ call javaapi#interface('CorbaContactInfoListFactory', '', [
   \ javaapi#method(0,'create(', 'IOR)', 'CorbaContactInfoList'),
   \ ])
 
-call javaapi#interface('CorbaContactInfoListIterator', '', [
+call javaapi#interface('CorbaContactInfoListIterator', 'ContactInfoListIterator', [
   \ javaapi#method(0,'reportAddrDispositionRetry(', 'CorbaContactInfo, short)', 'void'),
   \ javaapi#method(0,'reportRedirect(', 'CorbaContactInfo, IOR)', 'void'),
   \ ])
 
-call javaapi#interface('CorbaResponseWaitingRoom', '', [
+call javaapi#interface('CorbaResponseWaitingRoom', 'ResponseWaitingRoom', [
   \ javaapi#method(0,'signalExceptionToAllWaiters(', 'SystemException)', 'void'),
   \ javaapi#method(0,'getMessageMediator(', 'int)', 'MessageMediator'),
   \ ])
 
-call javaapi#interface('CorbaTransportManager', '', [
+call javaapi#interface('CorbaTransportManager', 'TransportManager', [
   \ javaapi#field(1,'SOCKET_OR_CHANNEL_CONNECTION_CACHE', 'String'),
   \ javaapi#method(0,'getAcceptors(', 'String, ObjectAdapterId)', 'Collection'),
   \ javaapi#method(0,'addToIORTemplate(', 'IORTemplate, Policies, String, String, ObjectAdapterId)', 'void'),

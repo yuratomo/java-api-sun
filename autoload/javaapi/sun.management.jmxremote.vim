@@ -51,7 +51,7 @@ call javaapi#class('ConnectorBootstrap', '', [
   \ javaapi#method(1,'startLocalConnectorServer(', ')', 'JMXConnectorServer'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ServerSocket', [
   \ javaapi#method(0,'accept(', ') throws IOException', 'Socket'),
   \ ])
 
@@ -62,7 +62,7 @@ call javaapi#class('LocalRMIServerSocketFactory', 'RMIServerSocketFactory', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('SingleEntryRegistry', '', [
+call javaapi#class('SingleEntryRegistry', 'RegistryImpl', [
   \ javaapi#method(0,'list(', ')', 'String[]'),
   \ javaapi#method(0,'lookup(', 'String) throws NotBoundException', 'Remote'),
   \ javaapi#method(0,'bind(', 'String, Remote) throws AccessException', 'void'),

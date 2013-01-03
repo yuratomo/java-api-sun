@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.corba.se.spi.activation.InitialNameServicePackage')
 
-call javaapi#class('NameAlreadyBound', '', [
+call javaapi#class('NameAlreadyBound', 'UserException', [
   \ javaapi#method(0,'NameAlreadyBound(', ')', 'public'),
   \ javaapi#method(0,'NameAlreadyBound(', 'String)', 'public'),
   \ ])

@@ -5,7 +5,7 @@ call javaapi#class('Chunk', '', [
   \ javaapi#method(0,'createNext(', 'DataHead, ByteBuffer)', 'Chunk'),
   \ ])
 
-call javaapi#class('ChunkInputStream', '', [
+call javaapi#class('ChunkInputStream', 'InputStream', [
   \ javaapi#method(0,'ChunkInputStream(', 'MIMEMessage, MIMEPart, Chunk)', 'public'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
@@ -22,14 +22,14 @@ call javaapi#interface('Data', '', [
 call javaapi#class('DataFile', '', [
   \ ])
 
-call javaapi#class('ReadMultiStream', '', [
+call javaapi#class('ReadMultiStream', 'InputStream', [
   \ javaapi#method(0,'ReadMultiStream(', 'DataHead)', 'public'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('ReadOnceStream', '', [
+call javaapi#class('ReadOnceStream', 'ReadMultiStream', [
   \ ])
 
 call javaapi#class('DataHead', '', [
@@ -44,7 +44,7 @@ call javaapi#class('FileData', 'Data', [
   \ javaapi#method(0,'createNext(', 'DataHead, ByteBuffer)', 'Data'),
   \ ])
 
-call javaapi#class('FinalArrayList<T>', '', [
+call javaapi#class('FinalArrayList<T>', 'ArrayList<T>', [
   \ javaapi#method(0,'FinalArrayList(', 'int)', 'public'),
   \ javaapi#method(0,'FinalArrayList(', ')', 'public'),
   \ javaapi#method(0,'FinalArrayList(', 'Collection<? extends T>)', 'public'),
@@ -66,10 +66,10 @@ call javaapi#class('MIMEConfig', '', [
   \ javaapi#method(0,'validate(', ')', 'void'),
   \ ])
 
-call javaapi#class('Content', '', [
+call javaapi#class('Content', 'MIMEEvent', [
   \ ])
 
-call javaapi#class('EVENT_TYPE', '', [
+call javaapi#class('EVENT_TYPE', 'EVENT_TYPE>', [
   \ javaapi#field(1,'START_MESSAGE', 'EVENT_TYPE'),
   \ javaapi#field(1,'START_PART', 'EVENT_TYPE'),
   \ javaapi#field(1,'HEADERS', 'EVENT_TYPE'),
@@ -80,19 +80,19 @@ call javaapi#class('EVENT_TYPE', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'EVENT_TYPE'),
   \ ])
 
-call javaapi#class('EndMessage', '', [
+call javaapi#class('EndMessage', 'MIMEEvent', [
   \ ])
 
-call javaapi#class('EndPart', '', [
+call javaapi#class('EndPart', 'MIMEEvent', [
   \ ])
 
-call javaapi#class('Headers', '', [
+call javaapi#class('Headers', 'MIMEEvent', [
   \ ])
 
-call javaapi#class('StartMessage', '', [
+call javaapi#class('StartMessage', 'MIMEEvent', [
   \ ])
 
-call javaapi#class('StartPart', '', [
+call javaapi#class('StartPart', 'MIMEEvent', [
   \ ])
 
 call javaapi#class('MIMEEvent', '', [
@@ -125,7 +125,7 @@ call javaapi#class('MIMEEventIterator', 'MIMEEvent>', [
   \ javaapi#method(0,'next(', ')', 'Object'),
   \ ])
 
-call javaapi#class('STATE', '', [
+call javaapi#class('STATE', 'STATE>', [
   \ javaapi#field(1,'START_MESSAGE', 'STATE'),
   \ javaapi#field(1,'SKIP_PREAMBLE', 'STATE'),
   \ javaapi#field(1,'START_PART', 'STATE'),
@@ -141,7 +141,7 @@ call javaapi#class('MIMEParser', 'MIMEEvent>', [
   \ javaapi#method(0,'iterator(', ')', 'MIMEEvent>'),
   \ ])
 
-call javaapi#class('MIMEParsingException', '', [
+call javaapi#class('MIMEParsingException', 'RuntimeException', [
   \ javaapi#method(0,'MIMEParsingException(', ')', 'public'),
   \ javaapi#method(0,'MIMEParsingException(', 'String)', 'public'),
   \ javaapi#method(0,'MIMEParsingException(', 'String, Throwable)', 'public'),
@@ -167,7 +167,7 @@ call javaapi#class('MemoryData', 'Data', [
   \ javaapi#method(0,'createNext(', 'DataHead, ByteBuffer)', 'Data'),
   \ ])
 
-call javaapi#class('WeakDataFile', '', [
+call javaapi#class('WeakDataFile', 'DataFile>', [
   \ ])
 
 call javaapi#class('hdr', 'Header', [

@@ -25,7 +25,7 @@ call javaapi#class('3', 'HostnameVerifier', [
   \ javaapi#method(0,'verify(', 'String, SSLSession)', 'boolean'),
   \ ])
 
-call javaapi#class('Command', '', [
+call javaapi#class('Command', 'Command>', [
   \ javaapi#field(1,'CERTREQ', 'Command'),
   \ javaapi#field(1,'CHANGEALIAS', 'Command'),
   \ javaapi#field(1,'DELETE', 'Command'),
@@ -50,7 +50,7 @@ call javaapi#class('Command', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('Option', '', [
+call javaapi#class('Option', 'Option>', [
   \ javaapi#field(1,'ALIAS', 'Option'),
   \ javaapi#field(1,'DESTALIAS', 'Option'),
   \ javaapi#field(1,'DESTKEYPASS', 'Option'),

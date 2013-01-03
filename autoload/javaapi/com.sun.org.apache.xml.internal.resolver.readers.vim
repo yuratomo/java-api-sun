@@ -17,14 +17,14 @@ call javaapi#class('DOMCatalogReader', 'CatalogReader', [
   \ javaapi#method(0,'readCatalog(', 'Catalog, String) throws MalformedURLException, IOException, CatalogException', 'void'),
   \ ])
 
-call javaapi#class('ExtendedXMLCatalogReader', '', [
+call javaapi#class('ExtendedXMLCatalogReader', 'OASISXMLCatalogReader', [
   \ javaapi#field(1,'extendedNamespaceName', 'String'),
   \ javaapi#method(0,'ExtendedXMLCatalogReader(', ')', 'public'),
   \ javaapi#method(0,'startElement(', 'String, String, String, Attributes) throws SAXException', 'void'),
   \ javaapi#method(0,'endElement(', 'String, String, String) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('OASISXMLCatalogReader', '', [
+call javaapi#class('OASISXMLCatalogReader', 'SAXCatalogReader', [
   \ javaapi#field(1,'namespaceName', 'String'),
   \ javaapi#field(1,'tr9401NamespaceName', 'String'),
   \ javaapi#method(0,'OASISXMLCatalogReader(', ')', 'public'),
@@ -45,7 +45,7 @@ call javaapi#class('OASISXMLCatalogReader', '', [
   \ javaapi#method(0,'endPrefixMapping(', 'String) throws SAXException', 'void'),
   \ ])
 
-call javaapi#interface('SAXCatalogParser', '', [
+call javaapi#interface('SAXCatalogParser', 'DocumentHandler', [
   \ javaapi#method(0,'setCatalog(', 'Catalog)', 'void'),
   \ ])
 
@@ -76,7 +76,7 @@ call javaapi#class('SAXCatalogReader', 'DocumentHandler', [
   \ javaapi#method(0,'skippedEntity(', 'String) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('SAXParserHandler', '', [
+call javaapi#class('SAXParserHandler', 'DefaultHandler', [
   \ javaapi#method(0,'SAXParserHandler(', ')', 'public'),
   \ javaapi#method(0,'setEntityResolver(', 'EntityResolver)', 'void'),
   \ javaapi#method(0,'setContentHandler(', 'ContentHandler)', 'void'),
@@ -94,7 +94,7 @@ call javaapi#class('SAXParserHandler', '', [
   \ javaapi#method(0,'startPrefixMapping(', 'String, String) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('TR9401CatalogReader', '', [
+call javaapi#class('TR9401CatalogReader', 'TextCatalogReader', [
   \ javaapi#method(0,'TR9401CatalogReader(', ')', 'public'),
   \ javaapi#method(0,'readCatalog(', 'Catalog, InputStream) throws MalformedURLException, IOException', 'void'),
   \ ])
@@ -107,7 +107,7 @@ call javaapi#class('TextCatalogReader', 'CatalogReader', [
   \ javaapi#method(0,'readCatalog(', 'Catalog, InputStream) throws MalformedURLException, IOException', 'void'),
   \ ])
 
-call javaapi#class('XCatalogReader', '', [
+call javaapi#class('XCatalogReader', 'SAXCatalogReader', [
   \ javaapi#method(0,'setCatalog(', 'Catalog)', 'void'),
   \ javaapi#method(0,'getCatalog(', ')', 'Catalog'),
   \ javaapi#method(0,'XCatalogReader(', 'SAXParserFactory)', 'public'),

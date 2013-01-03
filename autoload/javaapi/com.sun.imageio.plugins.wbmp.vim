@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.imageio.plugins.wbmp')
 
-call javaapi#class('WBMPImageReader', '', [
+call javaapi#class('WBMPImageReader', 'ImageReader', [
   \ javaapi#method(0,'WBMPImageReader(', 'ImageReaderSpi)', 'public'),
   \ javaapi#method(0,'setInput(', 'Object, boolean, boolean)', 'void'),
   \ javaapi#method(0,'getNumImages(', 'boolean) throws IOException', 'int'),
@@ -18,7 +18,7 @@ call javaapi#class('WBMPImageReader', '', [
   \ javaapi#method(0,'reset(', ')', 'void'),
   \ ])
 
-call javaapi#class('WBMPImageReaderSpi', '', [
+call javaapi#class('WBMPImageReaderSpi', 'ImageReaderSpi', [
   \ javaapi#method(0,'WBMPImageReaderSpi(', ')', 'public'),
   \ javaapi#method(0,'onRegistration(', 'ServiceRegistry, Class<?>)', 'void'),
   \ javaapi#method(0,'getDescription(', 'Locale)', 'String'),
@@ -26,7 +26,7 @@ call javaapi#class('WBMPImageReaderSpi', '', [
   \ javaapi#method(0,'createReaderInstance(', 'Object) throws IIOException', 'ImageReader'),
   \ ])
 
-call javaapi#class('WBMPImageWriter', '', [
+call javaapi#class('WBMPImageWriter', 'ImageWriter', [
   \ javaapi#method(0,'WBMPImageWriter(', 'ImageWriterSpi)', 'public'),
   \ javaapi#method(0,'setOutput(', 'Object)', 'void'),
   \ javaapi#method(0,'getDefaultStreamMetadata(', 'ImageWriteParam)', 'IIOMetadata'),
@@ -38,7 +38,7 @@ call javaapi#class('WBMPImageWriter', '', [
   \ javaapi#method(0,'reset(', ')', 'void'),
   \ ])
 
-call javaapi#class('WBMPImageWriterSpi', '', [
+call javaapi#class('WBMPImageWriterSpi', 'ImageWriterSpi', [
   \ javaapi#method(0,'WBMPImageWriterSpi(', ')', 'public'),
   \ javaapi#method(0,'getDescription(', 'Locale)', 'String'),
   \ javaapi#method(0,'onRegistration(', 'ServiceRegistry, Class<?>)', 'void'),
@@ -46,7 +46,7 @@ call javaapi#class('WBMPImageWriterSpi', '', [
   \ javaapi#method(0,'createWriterInstance(', 'Object) throws IIOException', 'ImageWriter'),
   \ ])
 
-call javaapi#class('WBMPMetadata', '', [
+call javaapi#class('WBMPMetadata', 'IIOMetadata', [
   \ javaapi#field(0,'wbmpType', 'int'),
   \ javaapi#field(0,'width', 'int'),
   \ javaapi#field(0,'height', 'int'),
@@ -58,7 +58,7 @@ call javaapi#class('WBMPMetadata', '', [
   \ javaapi#method(0,'reset(', ')', 'void'),
   \ ])
 
-call javaapi#class('WBMPMetadataFormat', '', [
+call javaapi#class('WBMPMetadataFormat', 'IIOMetadataFormatImpl', [
   \ javaapi#method(0,'canNodeAppear(', 'String, ImageTypeSpecifier)', 'boolean'),
   \ javaapi#method(1,'getInstance(', ')', 'IIOMetadataFormat'),
   \ ])

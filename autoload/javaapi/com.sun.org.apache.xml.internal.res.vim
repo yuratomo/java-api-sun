@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xml.internal.res')
 
-call javaapi#class('XMLErrorResources', '', [
+call javaapi#class('XMLErrorResources', 'ListResourceBundle', [
   \ javaapi#field(1,'MAX_CODE', 'int'),
   \ javaapi#field(1,'MAX_WARNING', 'int'),
   \ javaapi#field(1,'MAX_OTHERS', 'int'),
@@ -84,7 +84,7 @@ call javaapi#class('XMLErrorResources', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
-call javaapi#class('XMLErrorResources_ca', '', [
+call javaapi#class('XMLErrorResources_ca', 'ListResourceBundle', [
   \ javaapi#field(1,'MAX_CODE', 'int'),
   \ javaapi#field(1,'MAX_WARNING', 'int'),
   \ javaapi#field(1,'MAX_OTHERS', 'int'),
@@ -167,7 +167,7 @@ call javaapi#class('XMLErrorResources_ca', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
-call javaapi#class('XMLErrorResources_cs', '', [
+call javaapi#class('XMLErrorResources_cs', 'ListResourceBundle', [
   \ javaapi#field(1,'MAX_CODE', 'int'),
   \ javaapi#field(1,'MAX_WARNING', 'int'),
   \ javaapi#field(1,'MAX_OTHERS', 'int'),
@@ -250,7 +250,7 @@ call javaapi#class('XMLErrorResources_cs', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
-call javaapi#class('XMLErrorResources_de', '', [
+call javaapi#class('XMLErrorResources_de', 'ListResourceBundle', [
   \ javaapi#field(1,'MAX_CODE', 'int'),
   \ javaapi#field(1,'MAX_WARNING', 'int'),
   \ javaapi#field(1,'MAX_OTHERS', 'int'),
@@ -334,11 +334,11 @@ call javaapi#class('XMLErrorResources_de', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
-call javaapi#class('XMLErrorResources_en', '', [
+call javaapi#class('XMLErrorResources_en', 'XMLErrorResources', [
   \ javaapi#method(0,'XMLErrorResources_en(', ')', 'public'),
   \ ])
 
-call javaapi#class('XMLErrorResources_es', '', [
+call javaapi#class('XMLErrorResources_es', 'ListResourceBundle', [
   \ javaapi#field(1,'MAX_CODE', 'int'),
   \ javaapi#field(1,'MAX_WARNING', 'int'),
   \ javaapi#field(1,'MAX_OTHERS', 'int'),
@@ -422,7 +422,7 @@ call javaapi#class('XMLErrorResources_es', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
-call javaapi#class('XMLErrorResources_fr', '', [
+call javaapi#class('XMLErrorResources_fr', 'ListResourceBundle', [
   \ javaapi#field(1,'MAX_CODE', 'int'),
   \ javaapi#field(1,'MAX_WARNING', 'int'),
   \ javaapi#field(1,'MAX_OTHERS', 'int'),
@@ -506,7 +506,7 @@ call javaapi#class('XMLErrorResources_fr', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
-call javaapi#class('XMLErrorResources_it', '', [
+call javaapi#class('XMLErrorResources_it', 'ListResourceBundle', [
   \ javaapi#field(1,'MAX_CODE', 'int'),
   \ javaapi#field(1,'MAX_WARNING', 'int'),
   \ javaapi#field(1,'MAX_OTHERS', 'int'),
@@ -590,7 +590,7 @@ call javaapi#class('XMLErrorResources_it', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
-call javaapi#class('XMLErrorResources_ja', '', [
+call javaapi#class('XMLErrorResources_ja', 'ListResourceBundle', [
   \ javaapi#field(1,'MAX_CODE', 'int'),
   \ javaapi#field(1,'MAX_WARNING', 'int'),
   \ javaapi#field(1,'MAX_OTHERS', 'int'),
@@ -674,7 +674,7 @@ call javaapi#class('XMLErrorResources_ja', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
-call javaapi#class('XMLErrorResources_ko', '', [
+call javaapi#class('XMLErrorResources_ko', 'ListResourceBundle', [
   \ javaapi#field(1,'MAX_CODE', 'int'),
   \ javaapi#field(1,'MAX_WARNING', 'int'),
   \ javaapi#field(1,'MAX_OTHERS', 'int'),
@@ -758,7 +758,7 @@ call javaapi#class('XMLErrorResources_ko', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
-call javaapi#class('XMLErrorResources_pt_BR', '', [
+call javaapi#class('XMLErrorResources_pt_BR', 'ListResourceBundle', [
   \ javaapi#field(1,'MAX_CODE', 'int'),
   \ javaapi#field(1,'MAX_WARNING', 'int'),
   \ javaapi#field(1,'MAX_OTHERS', 'int'),
@@ -843,7 +843,7 @@ call javaapi#class('XMLErrorResources_pt_BR', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
-call javaapi#class('XMLErrorResources_sk', '', [
+call javaapi#class('XMLErrorResources_sk', 'ListResourceBundle', [
   \ javaapi#field(1,'MAX_CODE', 'int'),
   \ javaapi#field(1,'MAX_WARNING', 'int'),
   \ javaapi#field(1,'MAX_OTHERS', 'int'),
@@ -926,7 +926,7 @@ call javaapi#class('XMLErrorResources_sk', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
-call javaapi#class('XMLErrorResources_sv', '', [
+call javaapi#class('XMLErrorResources_sv', 'ListResourceBundle', [
   \ javaapi#field(1,'MAX_CODE', 'int'),
   \ javaapi#field(1,'MAX_WARNING', 'int'),
   \ javaapi#field(1,'MAX_OTHERS', 'int'),
@@ -1010,7 +1010,7 @@ call javaapi#class('XMLErrorResources_sv', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
-call javaapi#class('XMLErrorResources_tr', '', [
+call javaapi#class('XMLErrorResources_tr', 'ListResourceBundle', [
   \ javaapi#field(1,'MAX_CODE', 'int'),
   \ javaapi#field(1,'MAX_WARNING', 'int'),
   \ javaapi#field(1,'MAX_OTHERS', 'int'),
@@ -1093,7 +1093,7 @@ call javaapi#class('XMLErrorResources_tr', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
-call javaapi#class('XMLErrorResources_zh_CN', '', [
+call javaapi#class('XMLErrorResources_zh_CN', 'ListResourceBundle', [
   \ javaapi#field(1,'MAX_CODE', 'int'),
   \ javaapi#field(1,'MAX_WARNING', 'int'),
   \ javaapi#field(1,'MAX_OTHERS', 'int'),
@@ -1177,11 +1177,11 @@ call javaapi#class('XMLErrorResources_zh_CN', '', [
   \ javaapi#method(1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
-call javaapi#class('XMLErrorResources_zh_HK', '', [
+call javaapi#class('XMLErrorResources_zh_HK', 'XMLErrorResources_zh_TW', [
   \ javaapi#method(0,'XMLErrorResources_zh_HK(', ')', 'public'),
   \ ])
 
-call javaapi#class('XMLErrorResources_zh_TW', '', [
+call javaapi#class('XMLErrorResources_zh_TW', 'ListResourceBundle', [
   \ javaapi#field(1,'MAX_CODE', 'int'),
   \ javaapi#field(1,'MAX_WARNING', 'int'),
   \ javaapi#field(1,'MAX_OTHERS', 'int'),

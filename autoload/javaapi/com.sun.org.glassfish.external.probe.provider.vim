@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.glassfish.external.probe.provider')
 
-call javaapi#class('PluginPoint', '', [
+call javaapi#class('PluginPoint', 'PluginPoint>', [
   \ javaapi#field(1,'SERVER', 'PluginPoint'),
   \ javaapi#field(1,'APPLICATIONS', 'PluginPoint'),
   \ javaapi#method(1,'values(', ')', 'PluginPoint[]'),

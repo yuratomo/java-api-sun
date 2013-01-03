@@ -1,55 +1,5 @@
 call javaapi#namespace('com.sun.org.omg.CORBA')
 
-call javaapi#class('ValueMemberHelper', '', [
-  \ javaapi#method(0,'ValueMemberHelper(', ')', 'public'),
-  \ javaapi#method(1,'insert(', 'Any, ValueMember)', 'void'),
-  \ javaapi#method(1,'extract(', 'Any)', 'ValueMember'),
-  \ javaapi#method(1,'type(', ')', 'TypeCode'),
-  \ javaapi#method(1,'id(', ')', 'String'),
-  \ javaapi#method(1,'read(', 'InputStream)', 'ValueMember'),
-  \ javaapi#method(1,'write(', 'OutputStream, ValueMember)', 'void'),
-  \ ])
-
-call javaapi#class('ValueMemberSeqHelper', '', [
-  \ javaapi#method(0,'ValueMemberSeqHelper(', ')', 'public'),
-  \ javaapi#method(1,'insert(', 'Any, ValueMember[])', 'void'),
-  \ javaapi#method(1,'extract(', 'Any)', 'ValueMember[]'),
-  \ javaapi#method(1,'type(', ')', 'TypeCode'),
-  \ javaapi#method(1,'id(', ')', 'String'),
-  \ javaapi#method(1,'read(', 'InputStream)', 'ValueMember[]'),
-  \ javaapi#method(1,'write(', 'OutputStream, ValueMember[])', 'void'),
-  \ ])
-
-call javaapi#class('VersionSpecHelper', '', [
-  \ javaapi#method(0,'VersionSpecHelper(', ')', 'public'),
-  \ javaapi#method(1,'insert(', 'Any, String)', 'void'),
-  \ javaapi#method(1,'extract(', 'Any)', 'String'),
-  \ javaapi#method(1,'type(', ')', 'TypeCode'),
-  \ javaapi#method(1,'id(', ')', 'String'),
-  \ javaapi#method(1,'read(', 'InputStream)', 'String'),
-  \ javaapi#method(1,'write(', 'OutputStream, String)', 'void'),
-  \ ])
-
-call javaapi#class('VisibilityHelper', '', [
-  \ javaapi#method(0,'VisibilityHelper(', ')', 'public'),
-  \ javaapi#method(1,'insert(', 'Any, short)', 'void'),
-  \ javaapi#method(1,'extract(', 'Any)', 'short'),
-  \ javaapi#method(1,'type(', ')', 'TypeCode'),
-  \ javaapi#method(1,'id(', ')', 'String'),
-  \ javaapi#method(1,'read(', 'InputStream)', 'short'),
-  \ javaapi#method(1,'write(', 'OutputStream, short)', 'void'),
-  \ ])
-
-call javaapi#class('_IDLTypeStub', '', [
-  \ javaapi#method(0,'_IDLTypeStub(', ')', 'public'),
-  \ javaapi#method(0,'_IDLTypeStub(', 'Delegate)', 'public'),
-  \ javaapi#method(0,'type(', ')', 'TypeCode'),
-  \ javaapi#method(0,'def_kind(', ')', 'DefinitionKind'),
-  \ javaapi#method(0,'destroy(', ')', 'void'),
-  \ javaapi#method(0,'_ids(', ')', 'String[]'),
-  \ ])
-
-
 call javaapi#class('AttrDescriptionSeqHelper', '', [
   \ javaapi#method(0,'AttrDescriptionSeqHelper(', ')', 'public'),
   \ javaapi#method(1,'insert(', 'Any, AttributeDescription[])', 'void'),
@@ -311,7 +261,7 @@ call javaapi#class('ParameterModeHelper', '', [
   \ javaapi#method(1,'write(', 'OutputStream, ParameterMode)', 'void'),
   \ ])
 
-call javaapi#interface('Repository', '', [
+call javaapi#interface('Repository', 'IDLEntity', [
   \ ])
 
 call javaapi#class('RepositoryHelper', '', [
@@ -362,5 +312,56 @@ call javaapi#class('StructMemberSeqHelper', '', [
   \ javaapi#method(1,'id(', ')', 'String'),
   \ javaapi#method(1,'read(', 'InputStream)', 'StructMember[]'),
   \ javaapi#method(1,'write(', 'OutputStream, StructMember[])', 'void'),
+  \ ])
+
+call javaapi#namespace('com.sun.org.omg.CORBA')
+
+call javaapi#class('ValueMemberHelper', '', [
+  \ javaapi#method(0,'ValueMemberHelper(', ')', 'public'),
+  \ javaapi#method(1,'insert(', 'Any, ValueMember)', 'void'),
+  \ javaapi#method(1,'extract(', 'Any)', 'ValueMember'),
+  \ javaapi#method(1,'type(', ')', 'TypeCode'),
+  \ javaapi#method(1,'id(', ')', 'String'),
+  \ javaapi#method(1,'read(', 'InputStream)', 'ValueMember'),
+  \ javaapi#method(1,'write(', 'OutputStream, ValueMember)', 'void'),
+  \ ])
+
+call javaapi#class('ValueMemberSeqHelper', '', [
+  \ javaapi#method(0,'ValueMemberSeqHelper(', ')', 'public'),
+  \ javaapi#method(1,'insert(', 'Any, ValueMember[])', 'void'),
+  \ javaapi#method(1,'extract(', 'Any)', 'ValueMember[]'),
+  \ javaapi#method(1,'type(', ')', 'TypeCode'),
+  \ javaapi#method(1,'id(', ')', 'String'),
+  \ javaapi#method(1,'read(', 'InputStream)', 'ValueMember[]'),
+  \ javaapi#method(1,'write(', 'OutputStream, ValueMember[])', 'void'),
+  \ ])
+
+call javaapi#class('VersionSpecHelper', '', [
+  \ javaapi#method(0,'VersionSpecHelper(', ')', 'public'),
+  \ javaapi#method(1,'insert(', 'Any, String)', 'void'),
+  \ javaapi#method(1,'extract(', 'Any)', 'String'),
+  \ javaapi#method(1,'type(', ')', 'TypeCode'),
+  \ javaapi#method(1,'id(', ')', 'String'),
+  \ javaapi#method(1,'read(', 'InputStream)', 'String'),
+  \ javaapi#method(1,'write(', 'OutputStream, String)', 'void'),
+  \ ])
+
+call javaapi#class('VisibilityHelper', '', [
+  \ javaapi#method(0,'VisibilityHelper(', ')', 'public'),
+  \ javaapi#method(1,'insert(', 'Any, short)', 'void'),
+  \ javaapi#method(1,'extract(', 'Any)', 'short'),
+  \ javaapi#method(1,'type(', ')', 'TypeCode'),
+  \ javaapi#method(1,'id(', ')', 'String'),
+  \ javaapi#method(1,'read(', 'InputStream)', 'short'),
+  \ javaapi#method(1,'write(', 'OutputStream, short)', 'void'),
+  \ ])
+
+call javaapi#class('_IDLTypeStub', 'ObjectImpl', [
+  \ javaapi#method(0,'_IDLTypeStub(', ')', 'public'),
+  \ javaapi#method(0,'_IDLTypeStub(', 'Delegate)', 'public'),
+  \ javaapi#method(0,'type(', ')', 'TypeCode'),
+  \ javaapi#method(0,'def_kind(', ')', 'DefinitionKind'),
+  \ javaapi#method(0,'destroy(', ')', 'void'),
+  \ javaapi#method(0,'_ids(', ')', 'String[]'),
   \ ])
 

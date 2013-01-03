@@ -35,10 +35,10 @@ call javaapi#interface('CipherValue', '', [
   \ javaapi#method(0,'setValue(', 'String)', 'void'),
   \ ])
 
-call javaapi#interface('EncryptedData', '', [
+call javaapi#interface('EncryptedData', 'EncryptedType', [
   \ ])
 
-call javaapi#interface('EncryptedKey', '', [
+call javaapi#interface('EncryptedKey', 'EncryptedType', [
   \ javaapi#method(0,'getRecipient(', ')', 'String'),
   \ javaapi#method(0,'setRecipient(', 'String)', 'void'),
   \ javaapi#method(0,'getReferenceList(', ')', 'ReferenceList'),
@@ -162,11 +162,11 @@ call javaapi#class('CipherValueImpl', 'CipherValue', [
   \ javaapi#method(0,'setValue(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('EncryptedDataImpl', '', [
+call javaapi#class('EncryptedDataImpl', 'EncryptedTypeImpl', [
   \ javaapi#method(0,'EncryptedDataImpl(', 'Factory, CipherData)', 'public'),
   \ ])
 
-call javaapi#class('EncryptedKeyImpl', '', [
+call javaapi#class('EncryptedKeyImpl', 'EncryptedTypeImpl', [
   \ javaapi#method(0,'EncryptedKeyImpl(', 'Factory, CipherData)', 'public'),
   \ javaapi#method(0,'getRecipient(', ')', 'String'),
   \ javaapi#method(0,'setRecipient(', 'String)', 'void'),
@@ -228,11 +228,11 @@ call javaapi#class('EncryptionPropertyImpl', 'EncryptionProperty', [
   \ javaapi#method(0,'removeEncryptionInformation(', 'Element)', 'void'),
   \ ])
 
-call javaapi#class('DataReference', '', [
+call javaapi#class('DataReference', 'ReferenceImpl', [
   \ javaapi#method(0,'toElement(', ')', 'Element'),
   \ ])
 
-call javaapi#class('KeyReference', '', [
+call javaapi#class('KeyReference', 'ReferenceImpl', [
   \ javaapi#method(0,'toElement(', ')', 'Element'),
   \ ])
 
@@ -256,7 +256,7 @@ call javaapi#class('ReferenceListImpl', 'ReferenceList', [
   \ javaapi#method(0,'newKeyReference(', 'String)', 'Reference'),
   \ ])
 
-call javaapi#class('TransformsImpl', '', [
+call javaapi#class('TransformsImpl', 'Transforms', [
   \ javaapi#method(0,'TransformsImpl(', 'Factory)', 'public'),
   \ javaapi#method(0,'TransformsImpl(', 'Factory, Document)', 'public'),
   \ javaapi#method(0,'TransformsImpl(', 'Factory, Element) throws XMLSignatureException, InvalidTransformException, XMLSecurityException, TransformationException', 'public'),
@@ -367,7 +367,7 @@ call javaapi#interface('XMLCipherParameters', '', [
   \ javaapi#field(1,'EXCL_XML_N14C_CMMNTS', 'String'),
   \ ])
 
-call javaapi#class('XMLEncryptionException', '', [
+call javaapi#class('XMLEncryptionException', 'XMLSecurityException', [
   \ javaapi#method(0,'XMLEncryptionException(', ')', 'public'),
   \ javaapi#method(0,'XMLEncryptionException(', 'String)', 'public'),
   \ javaapi#method(0,'XMLEncryptionException(', 'String, Object[])', 'public'),

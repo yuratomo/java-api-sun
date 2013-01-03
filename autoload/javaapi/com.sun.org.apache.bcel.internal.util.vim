@@ -3,7 +3,7 @@ call javaapi#namespace('com.sun.org.apache.bcel.internal.util')
 call javaapi#class('AttributeHTML', 'Constants', [
   \ ])
 
-call javaapi#class('BCELFactory', '', [
+call javaapi#class('BCELFactory', 'EmptyVisitor', [
   \ javaapi#method(0,'start(', ')', 'void'),
   \ javaapi#method(0,'visitLocalVariableInstruction(', 'LocalVariableInstruction)', 'void'),
   \ javaapi#method(0,'visitArrayInstruction(', 'ArrayInstruction)', 'void'),
@@ -20,7 +20,7 @@ call javaapi#class('BCELFactory', '', [
   \ javaapi#method(0,'visitRET(', 'RET)', 'void'),
   \ ])
 
-call javaapi#class('BCELifier', '', [
+call javaapi#class('BCELifier', 'EmptyVisitor', [
   \ javaapi#method(0,'BCELifier(', 'JavaClass, OutputStream)', 'public'),
   \ javaapi#method(0,'start(', ')', 'void'),
   \ javaapi#method(0,'visitJavaClass(', 'JavaClass)', 'void'),
@@ -29,10 +29,10 @@ call javaapi#class('BCELifier', '', [
   \ javaapi#method(1,'_main(', 'String[]) throws Exception', 'void'),
   \ ])
 
-call javaapi#class('ByteArrayStream', '', [
+call javaapi#class('ByteArrayStream', 'ByteArrayInputStream', [
   \ ])
 
-call javaapi#class('ByteSequence', '', [
+call javaapi#class('ByteSequence', 'DataInputStream', [
   \ javaapi#method(0,'ByteSequence(', 'byte[])', 'public'),
   \ javaapi#method(0,'getIndex(', ')', 'int'),
   \ ])
@@ -42,7 +42,7 @@ call javaapi#class('Class2HTML', 'Constants', [
   \ javaapi#method(1,'_main(', 'String[])', 'void'),
   \ ])
 
-call javaapi#class('ClassLoader', '', [
+call javaapi#class('ClassLoader', 'ClassLoader', [
   \ javaapi#method(0,'ClassLoader(', ')', 'public'),
   \ javaapi#method(0,'ClassLoader(', 'ClassLoader)', 'public'),
   \ javaapi#method(0,'ClassLoader(', 'String[])', 'public'),
@@ -79,7 +79,7 @@ call javaapi#class('1', 'ClassFile', [
   \ javaapi#method(0,'getBase(', ')', 'String'),
   \ ])
 
-call javaapi#class('Dir', '', [
+call javaapi#class('Dir', 'PathEntry', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
@@ -94,7 +94,7 @@ call javaapi#class('1', 'ClassFile', [
   \ javaapi#method(0,'getBase(', ')', 'String'),
   \ ])
 
-call javaapi#class('Zip', '', [
+call javaapi#class('Zip', 'PathEntry', [
   \ ])
 
 call javaapi#class('ClassPath', 'Serializable', [
@@ -178,7 +178,7 @@ call javaapi#class('JavaWrapper', '', [
 call javaapi#class('MethodHTML', 'Constants', [
   \ ])
 
-call javaapi#interface('Repository', '', [
+call javaapi#interface('Repository', 'Serializable', [
   \ javaapi#method(0,'storeClass(', 'JavaClass)', 'void'),
   \ javaapi#method(0,'removeClass(', 'JavaClass)', 'void'),
   \ javaapi#method(0,'findClass(', 'String)', 'JavaClass'),

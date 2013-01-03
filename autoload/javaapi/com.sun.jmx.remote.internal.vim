@@ -24,7 +24,7 @@ call javaapi#class('5', 'NotificationListener', [
   \ javaapi#method(0,'handleNotification(', 'Notification, Object)', 'void'),
   \ ])
 
-call javaapi#class('BroadcasterQuery', '', [
+call javaapi#class('BroadcasterQuery', 'QueryEval', [
   \ javaapi#method(0,'apply(', 'ObjectName)', 'boolean'),
   \ ])
 
@@ -47,7 +47,7 @@ call javaapi#class('ArrayNotificationBuffer', 'NotificationBuffer', [
   \ javaapi#method(0,'fetchNotifications(', 'NotificationBufferFilter, long, long, int) throws InterruptedException', 'NotificationResult'),
   \ ])
 
-call javaapi#class('ArrayQueue<T>', '', [
+call javaapi#class('ArrayQueue<T>', 'AbstractList<T>', [
   \ javaapi#method(0,'ArrayQueue(', 'int)', 'public'),
   \ javaapi#method(0,'resize(', 'int)', 'void'),
   \ javaapi#method(0,'add(', 'T)', 'boolean'),
@@ -85,7 +85,7 @@ call javaapi#class('ClientListenerInfo', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Thread', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 

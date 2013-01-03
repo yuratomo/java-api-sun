@@ -1,10 +1,10 @@
 call javaapi#namespace('com.sun.org.apache.xerces.internal.jaxp')
 
-call javaapi#class('DefaultValidationErrorHandler', '', [
+call javaapi#class('DefaultValidationErrorHandler', 'DefaultHandler', [
   \ javaapi#method(0,'error(', 'SAXParseException) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('DocumentBuilderFactoryImpl', '', [
+call javaapi#class('DocumentBuilderFactoryImpl', 'DocumentBuilderFactory', [
   \ javaapi#method(0,'DocumentBuilderFactoryImpl(', ')', 'public'),
   \ javaapi#method(0,'newDocumentBuilder(', ') throws ParserConfigurationException', 'DocumentBuilder'),
   \ javaapi#method(0,'setAttribute(', 'String, Object) throws IllegalArgumentException', 'void'),
@@ -17,7 +17,7 @@ call javaapi#class('DocumentBuilderFactoryImpl', '', [
   \ javaapi#method(0,'setFeature(', 'String, boolean) throws ParserConfigurationException', 'void'),
   \ ])
 
-call javaapi#class('DocumentBuilderImpl', '', [
+call javaapi#class('DocumentBuilderImpl', 'DocumentBuilder', [
   \ javaapi#method(0,'newDocument(', ')', 'Document'),
   \ javaapi#method(0,'getDOMImplementation(', ')', 'DOMImplementation'),
   \ javaapi#method(0,'parse(', 'InputSource) throws SAXException, IOException', 'Document'),
@@ -36,14 +36,14 @@ call javaapi#interface('JAXPConstants', '', [
   \ javaapi#field(1,'JAXP_SCHEMA_SOURCE', 'String'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ErrorHandlerProxy', [
   \ ])
 
 call javaapi#class('2', 'LSResourceResolver', [
   \ javaapi#method(0,'resolveResource(', 'String, String, String, String, String)', 'LSInput'),
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'TypeInfoProvider', [
   \ javaapi#method(0,'getElementTypeInfo(', ')', 'TypeInfo'),
   \ javaapi#method(0,'getAttributeTypeInfo(', 'int)', 'TypeInfo'),
   \ javaapi#method(0,'getAttributeTypeInfo(', 'String)', 'TypeInfo'),
@@ -59,14 +59,14 @@ call javaapi#class('DraconianErrorHandler', 'ErrorHandler', [
   \ javaapi#method(0,'fatalError(', 'SAXParseException) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('SAX2XNI', '', [
+call javaapi#class('SAX2XNI', 'DefaultHandler', [
   \ javaapi#method(0,'characters(', 'char[], int, int) throws SAXException', 'void'),
   \ javaapi#method(0,'ignorableWhitespace(', 'char[], int, int) throws SAXException', 'void'),
   \ javaapi#method(0,'startElement(', 'String, String, String, Attributes) throws SAXException', 'void'),
   \ javaapi#method(0,'endElement(', 'String, String, String) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('XNI2SAX', '', [
+call javaapi#class('XNI2SAX', 'DefaultXMLDocumentHandler', [
   \ javaapi#method(0,'setContentHandler(', 'ContentHandler)', 'void'),
   \ javaapi#method(0,'getContentHandler(', ')', 'ContentHandler'),
   \ javaapi#method(0,'xmlDecl(', 'String, String, String, Augmentations) throws XNIException', 'void'),
@@ -80,7 +80,7 @@ call javaapi#class('XNI2SAX', '', [
   \ javaapi#method(0,'ignorableWhitespace(', 'XMLString, Augmentations) throws XNIException', 'void'),
   \ ])
 
-call javaapi#class('JAXPValidatorComponent', '', [
+call javaapi#class('JAXPValidatorComponent', 'TeeXMLDocumentFilterImpl', [
   \ javaapi#method(0,'JAXPValidatorComponent(', 'ValidatorHandler)', 'public'),
   \ javaapi#method(0,'startElement(', 'QName, XMLAttributes, Augmentations) throws XNIException', 'void'),
   \ javaapi#method(0,'endElement(', 'QName, Augmentations) throws XNIException', 'void'),
@@ -96,7 +96,7 @@ call javaapi#class('JAXPValidatorComponent', '', [
   \ javaapi#method(0,'getPropertyDefault(', 'String)', 'Object'),
   \ ])
 
-call javaapi#class('SAXParserFactoryImpl', '', [
+call javaapi#class('SAXParserFactoryImpl', 'SAXParserFactory', [
   \ javaapi#method(0,'SAXParserFactoryImpl(', ')', 'public'),
   \ javaapi#method(0,'newSAXParser(', ') throws ParserConfigurationException', 'SAXParser'),
   \ javaapi#method(0,'setFeature(', 'String, boolean) throws ParserConfigurationException, SAXNotRecognizedException, SAXNotSupportedException', 'void'),
@@ -111,7 +111,7 @@ call javaapi#class('SAXParserFactoryImpl', '', [
   \ javaapi#method(0,'setNamespaceAware(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('JAXPSAXParser', '', [
+call javaapi#class('JAXPSAXParser', 'SAXParser', [
   \ javaapi#method(0,'JAXPSAXParser(', ')', 'public'),
   \ javaapi#method(0,'setFeature(', 'String, boolean) throws SAXNotRecognizedException, SAXNotSupportedException', 'void'),
   \ javaapi#method(0,'getFeature(', 'String) throws SAXNotRecognizedException, SAXNotSupportedException', 'boolean'),
@@ -121,7 +121,7 @@ call javaapi#class('JAXPSAXParser', '', [
   \ javaapi#method(0,'parse(', 'String) throws SAXException, IOException', 'void'),
   \ ])
 
-call javaapi#class('SAXParserImpl', '', [
+call javaapi#class('SAXParserImpl', 'SAXParser', [
   \ javaapi#method(0,'getParser(', ') throws SAXException', 'Parser'),
   \ javaapi#method(0,'getXMLReader(', ')', 'XMLReader'),
   \ javaapi#method(0,'isNamespaceAware(', ')', 'boolean'),

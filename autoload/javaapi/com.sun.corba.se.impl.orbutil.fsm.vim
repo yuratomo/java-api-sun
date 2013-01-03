@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.corba.se.impl.orbutil.fsm')
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'GuardBase', [
   \ javaapi#method(0,'evaluate(', 'FSM, Input)', 'Result'),
   \ ])
 
@@ -19,11 +19,11 @@ call javaapi#class('NameBase', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ActionBase', [
   \ javaapi#method(0,'doIt(', 'FSM, Input)', 'void'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'ActionBase', [
   \ javaapi#method(0,'doIt(', 'FSM, Input)', 'void'),
   \ ])
 

@@ -6,7 +6,7 @@ call javaapi#class('CompoundPrintable', 'CountingPrintable', [
   \ javaapi#method(0,'getNumberOfPages(', ')', 'int'),
   \ ])
 
-call javaapi#interface('CountingPrintable', '', [
+call javaapi#interface('CountingPrintable', 'Printable', [
   \ javaapi#method(0,'getNumberOfPages(', ')', 'int'),
   \ ])
 
@@ -19,20 +19,20 @@ call javaapi#class('2', 'JTextComponent>', [
   \ javaapi#method(0,'call(', ') throws Exception', 'Object'),
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'JTextField', [
   \ javaapi#method(0,'getFontMetrics(', 'Font)', 'FontMetrics'),
   \ ])
 
-call javaapi#class('4', '', [
+call javaapi#class('4', 'JTextArea', [
   \ javaapi#method(0,'getFontMetrics(', 'Font)', 'FontMetrics'),
   \ ])
 
-call javaapi#class('5', '', [
+call javaapi#class('5', 'JTextPane', [
   \ javaapi#method(0,'getFontMetrics(', 'Font)', 'FontMetrics'),
   \ javaapi#method(0,'getEditorKit(', ')', 'EditorKit'),
   \ ])
 
-call javaapi#class('6', '', [
+call javaapi#class('6', 'JEditorPane', [
   \ javaapi#method(0,'getFontMetrics(', 'Font)', 'FontMetrics'),
   \ javaapi#method(0,'getEditorKit(', ')', 'EditorKit'),
   \ ])

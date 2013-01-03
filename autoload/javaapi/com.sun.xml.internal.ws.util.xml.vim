@@ -7,7 +7,7 @@ call javaapi#class('CDATA', '', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('ContentHandlerToXMLStreamWriter', '', [
+call javaapi#class('ContentHandlerToXMLStreamWriter', 'DefaultHandler', [
   \ javaapi#method(0,'ContentHandlerToXMLStreamWriter(', 'XMLStreamWriter)', 'public'),
   \ javaapi#method(0,'endDocument(', ') throws SAXException', 'void'),
   \ javaapi#method(0,'startDocument(', ') throws SAXException', 'void'),
@@ -45,7 +45,7 @@ call javaapi#class('NodeListIterator', 'Iterator', [
   \ javaapi#method(0,'remove(', ')', 'void'),
   \ ])
 
-call javaapi#class('StAXResult', '', [
+call javaapi#class('StAXResult', 'SAXResult', [
   \ javaapi#method(0,'StAXResult(', 'XMLStreamWriter)', 'public'),
   \ ])
 
@@ -67,7 +67,7 @@ call javaapi#class('1', 'XMLReader', [
   \ javaapi#method(0,'parse(', ') throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('StAXSource', '', [
+call javaapi#class('StAXSource', 'SAXSource', [
   \ javaapi#method(0,'StAXSource(', 'XMLStreamReader, boolean)', 'public'),
   \ javaapi#method(0,'StAXSource(', 'XMLStreamReader, boolean, String[])', 'public'),
   \ ])
@@ -164,7 +164,7 @@ call javaapi#class('XMLStreamWriterFilter', 'RecycleAware', [
   \ javaapi#method(0,'onRecycled(', ')', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'CatalogManager', [
   \ javaapi#method(0,'getCatalog(', ')', 'Catalog'),
   \ ])
 

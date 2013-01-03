@@ -6,7 +6,7 @@ call javaapi#class('CompilerState', '', [
 call javaapi#class('GlobData', '', [
   \ ])
 
-call javaapi#class('NativeRegExp', '', [
+call javaapi#class('NativeRegExp', 'IdScriptableObject', [
   \ javaapi#field(1,'JSREG_GLOB', 'int'),
   \ javaapi#field(1,'JSREG_FOLD', 'int'),
   \ javaapi#field(1,'JSREG_MULTILINE', 'int'),
@@ -22,7 +22,7 @@ call javaapi#class('NativeRegExp', '', [
   \ javaapi#method(0,'execIdCall(', 'IdFunctionObject, Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ ])
 
-call javaapi#class('NativeRegExpCtor', '', [
+call javaapi#class('NativeRegExpCtor', 'BaseFunction', [
   \ javaapi#method(0,'getFunctionName(', ')', 'String'),
   \ javaapi#method(0,'call(', 'Context, Scriptable, Scriptable, Object[])', 'Object'),
   \ javaapi#method(0,'construct(', 'Context, Scriptable, Object[])', 'Scriptable'),

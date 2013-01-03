@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.org.apache.xalan.internal.xsltc.compiler')
 
-call javaapi#class('AbsoluteLocationPath', '', [
+call javaapi#class('AbsoluteLocationPath', 'Expression', [
   \ javaapi#method(0,'AbsoluteLocationPath(', ')', 'public'),
   \ javaapi#method(0,'AbsoluteLocationPath(', 'Expression)', 'public'),
   \ javaapi#method(0,'setParser(', 'Parser)', 'void'),
@@ -10,7 +10,7 @@ call javaapi#class('AbsoluteLocationPath', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('AbsolutePathPattern', '', [
+call javaapi#class('AbsolutePathPattern', 'LocationPathPattern', [
   \ javaapi#method(0,'AbsolutePathPattern(', 'RelativePathPattern)', 'public'),
   \ javaapi#method(0,'setParser(', 'Parser)', 'void'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
@@ -21,7 +21,7 @@ call javaapi#class('AbsolutePathPattern', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('AlternativePattern', '', [
+call javaapi#class('AlternativePattern', 'Pattern', [
   \ javaapi#method(0,'AlternativePattern(', 'Pattern, Pattern)', 'public'),
   \ javaapi#method(0,'setParser(', 'Parser)', 'void'),
   \ javaapi#method(0,'getLeft(', ')', 'Pattern'),
@@ -32,7 +32,7 @@ call javaapi#class('AlternativePattern', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('AncestorPattern', '', [
+call javaapi#class('AncestorPattern', 'RelativePathPattern', [
   \ javaapi#method(0,'AncestorPattern(', 'RelativePathPattern)', 'public'),
   \ javaapi#method(0,'AncestorPattern(', 'Pattern, RelativePathPattern)', 'public'),
   \ javaapi#method(0,'getLoopHandle(', ')', 'InstructionHandle'),
@@ -45,7 +45,7 @@ call javaapi#class('AncestorPattern', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ApplyImports', '', [
+call javaapi#class('ApplyImports', 'Instruction', [
   \ javaapi#method(0,'display(', 'int)', 'void'),
   \ javaapi#method(0,'hasWithParams(', ')', 'boolean'),
   \ javaapi#method(0,'parseContents(', 'Parser)', 'void'),
@@ -53,7 +53,7 @@ call javaapi#class('ApplyImports', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('ApplyTemplates', '', [
+call javaapi#class('ApplyTemplates', 'Instruction', [
   \ javaapi#method(0,'display(', 'int)', 'void'),
   \ javaapi#method(0,'hasWithParams(', ')', 'boolean'),
   \ javaapi#method(0,'parseContents(', 'Parser)', 'void'),
@@ -66,12 +66,12 @@ call javaapi#class('ArgumentList', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('Attribute', '', [
+call javaapi#class('Attribute', 'Instruction', [
   \ javaapi#method(0,'display(', 'int)', 'void'),
   \ javaapi#method(0,'parseContents(', 'Parser)', 'void'),
   \ ])
 
-call javaapi#class('AttributeSet', '', [
+call javaapi#class('AttributeSet', 'TopLevelElement', [
   \ javaapi#method(0,'getName(', ')', 'QName'),
   \ javaapi#method(0,'getMethodName(', ')', 'String'),
   \ javaapi#method(0,'ignore(', ')', 'void'),
@@ -81,18 +81,18 @@ call javaapi#class('AttributeSet', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('AttributeValue', '', [
+call javaapi#class('AttributeValue', 'Expression', [
   \ javaapi#method(1,'create(', 'SyntaxTreeNode, String, Parser)', 'AttributeValue'),
   \ ])
 
-call javaapi#class('AttributeValueTemplate', '', [
+call javaapi#class('AttributeValueTemplate', 'AttributeValue', [
   \ javaapi#method(0,'AttributeValueTemplate(', 'String, Parser, SyntaxTreeNode)', 'public'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('BinOpExpr', '', [
+call javaapi#class('BinOpExpr', 'Expression', [
   \ javaapi#field(1,'PLUS', 'int'),
   \ javaapi#field(1,'MINUS', 'int'),
   \ javaapi#field(1,'TIMES', 'int'),
@@ -107,13 +107,13 @@ call javaapi#class('BinOpExpr', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('BooleanCall', '', [
+call javaapi#class('BooleanCall', 'FunctionCall', [
   \ javaapi#method(0,'BooleanCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('BooleanExpr', '', [
+call javaapi#class('BooleanExpr', 'Expression', [
   \ javaapi#method(0,'BooleanExpr(', 'boolean)', 'public'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'toString(', ')', 'String'),
@@ -127,7 +127,7 @@ call javaapi#class('actions', '', [
   \ javaapi#method(0,'do_action(', 'int, lr_parser, Stack, int) throws Exception', 'Symbol'),
   \ ])
 
-call javaapi#class('CallTemplate', '', [
+call javaapi#class('CallTemplate', 'Instruction', [
   \ javaapi#method(0,'display(', 'int)', 'void'),
   \ javaapi#method(0,'hasWithParams(', ')', 'boolean'),
   \ javaapi#method(0,'parseContents(', 'Parser)', 'void'),
@@ -136,13 +136,13 @@ call javaapi#class('CallTemplate', '', [
   \ javaapi#method(0,'getCalleeTemplate(', ')', 'Template'),
   \ ])
 
-call javaapi#class('CastCall', '', [
+call javaapi#class('CastCall', 'FunctionCall', [
   \ javaapi#method(0,'CastCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('CastExpr', '', [
+call javaapi#class('CastExpr', 'Expression', [
   \ javaapi#method(0,'CastExpr(', 'Expression, Type) throws TypeCheckError', 'public'),
   \ javaapi#method(0,'getExpr(', ')', 'Expression'),
   \ javaapi#method(0,'hasPositionCall(', ')', 'boolean'),
@@ -153,12 +153,12 @@ call javaapi#class('CastExpr', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('CeilingCall', '', [
+call javaapi#class('CeilingCall', 'FunctionCall', [
   \ javaapi#method(0,'CeilingCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('Choose', '', [
+call javaapi#class('Choose', 'Instruction', [
   \ javaapi#method(0,'display(', 'int)', 'void'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
@@ -170,26 +170,26 @@ call javaapi#interface('Closure', '', [
   \ javaapi#method(0,'addVariable(', 'VariableRefBase)', 'void'),
   \ ])
 
-call javaapi#class('Comment', '', [
+call javaapi#class('Comment', 'Instruction', [
   \ javaapi#method(0,'parseContents(', 'Parser)', 'void'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('CompilerException', '', [
+call javaapi#class('CompilerException', 'Exception', [
   \ javaapi#method(0,'CompilerException(', ')', 'public'),
   \ javaapi#method(0,'CompilerException(', 'Exception)', 'public'),
   \ javaapi#method(0,'CompilerException(', 'String)', 'public'),
   \ javaapi#method(0,'getMessage(', ')', 'String'),
   \ ])
 
-call javaapi#class('ConcatCall', '', [
+call javaapi#class('ConcatCall', 'FunctionCall', [
   \ javaapi#method(0,'ConcatCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#interface('Constants', '', [
+call javaapi#interface('Constants', 'InstructionConstants', [
   \ javaapi#field(1,'INTERNAL', 'int'),
   \ javaapi#field(1,'UNSUPPORTED', 'int'),
   \ javaapi#field(1,'FATAL', 'int'),
@@ -410,7 +410,7 @@ call javaapi#interface('Constants', '', [
   \ javaapi#field(1,'RTF_INITIAL_SIZE', 'int'),
   \ ])
 
-call javaapi#class('ContainsCall', '', [
+call javaapi#class('ContainsCall', 'FunctionCall', [
   \ javaapi#method(0,'ContainsCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'isBoolean(', ')', 'boolean'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
@@ -418,39 +418,39 @@ call javaapi#class('ContainsCall', '', [
   \ javaapi#method(0,'translateDesynthesized(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('Copy', '', [
+call javaapi#class('Copy', 'Instruction', [
   \ javaapi#method(0,'parseContents(', 'Parser)', 'void'),
   \ javaapi#method(0,'display(', 'int)', 'void'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('CopyOf', '', [
+call javaapi#class('CopyOf', 'Instruction', [
   \ javaapi#method(0,'display(', 'int)', 'void'),
   \ javaapi#method(0,'parseContents(', 'Parser)', 'void'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('CurrentCall', '', [
+call javaapi#class('CurrentCall', 'FunctionCall', [
   \ javaapi#method(0,'CurrentCall(', 'QName)', 'public'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('DecimalFormatting', '', [
+call javaapi#class('DecimalFormatting', 'TopLevelElement', [
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'parseContents(', 'Parser)', 'void'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ javaapi#method(1,'translateDefaultDFS(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('DocumentCall', '', [
+call javaapi#class('DocumentCall', 'FunctionCall', [
   \ javaapi#method(0,'DocumentCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('ElementAvailableCall', '', [
+call javaapi#class('ElementAvailableCall', 'FunctionCall', [
   \ javaapi#method(0,'ElementAvailableCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'evaluateAtCompileTime(', ')', 'Object'),
@@ -458,7 +458,7 @@ call javaapi#class('ElementAvailableCall', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('EqualityExpr', '', [
+call javaapi#class('EqualityExpr', 'Expression', [
   \ javaapi#method(0,'EqualityExpr(', 'int, Expression, Expression)', 'public'),
   \ javaapi#method(0,'setParser(', 'Parser)', 'void'),
   \ javaapi#method(0,'toString(', ')', 'String'),
@@ -472,7 +472,7 @@ call javaapi#class('EqualityExpr', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('Expression', '', [
+call javaapi#class('Expression', 'SyntaxTreeNode', [
   \ javaapi#method(0,'getType(', ')', 'Type'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'hasPositionCall(', ')', 'boolean'),
@@ -492,7 +492,7 @@ call javaapi#class('Expression', '', [
   \ javaapi#method(0,'lookupPrimop(', 'SymbolTable, String, MethodType)', 'MethodType'),
   \ ])
 
-call javaapi#class('Fallback', '', [
+call javaapi#class('Fallback', 'Instruction', [
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'activate(', ')', 'void'),
   \ javaapi#method(0,'toString(', ')', 'String'),
@@ -500,7 +500,7 @@ call javaapi#class('Fallback', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('FilterExpr', '', [
+call javaapi#class('FilterExpr', 'Expression', [
   \ javaapi#method(0,'FilterExpr(', 'Expression, Vector)', 'public'),
   \ javaapi#method(0,'setParser(', 'Parser)', 'void'),
   \ javaapi#method(0,'toString(', ')', 'String'),
@@ -509,7 +509,7 @@ call javaapi#class('FilterExpr', '', [
   \ javaapi#method(0,'translatePredicates(', 'ClassGenerator, MethodGenerator, int)', 'void'),
   \ ])
 
-call javaapi#class('FilterParentPath', '', [
+call javaapi#class('FilterParentPath', 'Expression', [
   \ javaapi#method(0,'FilterParentPath(', 'Expression, Expression)', 'public'),
   \ javaapi#method(0,'setParser(', 'Parser)', 'void'),
   \ javaapi#method(0,'toString(', ')', 'String'),
@@ -518,7 +518,7 @@ call javaapi#class('FilterParentPath', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('FilteredAbsoluteLocationPath', '', [
+call javaapi#class('FilteredAbsoluteLocationPath', 'Expression', [
   \ javaapi#method(0,'FilteredAbsoluteLocationPath(', ')', 'public'),
   \ javaapi#method(0,'FilteredAbsoluteLocationPath(', 'Expression)', 'public'),
   \ javaapi#method(0,'setParser(', 'Parser)', 'void'),
@@ -528,7 +528,7 @@ call javaapi#class('FilteredAbsoluteLocationPath', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('FloorCall', '', [
+call javaapi#class('FloorCall', 'FunctionCall', [
   \ javaapi#method(0,'FloorCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
@@ -543,7 +543,7 @@ call javaapi#class('FlowList', '', [
   \ javaapi#method(0,'copyAndRedirect(', 'InstructionList, InstructionList)', 'FlowList'),
   \ ])
 
-call javaapi#class('ForEach', '', [
+call javaapi#class('ForEach', 'Instruction', [
   \ javaapi#method(0,'display(', 'int)', 'void'),
   \ javaapi#method(0,'parseContents(', 'Parser)', 'void'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
@@ -551,13 +551,13 @@ call javaapi#class('ForEach', '', [
   \ javaapi#method(0,'initializeVariables(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('FormatNumberCall', '', [
+call javaapi#class('FormatNumberCall', 'FunctionCall', [
   \ javaapi#method(0,'FormatNumberCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('FunctionAvailableCall', '', [
+call javaapi#class('FunctionAvailableCall', 'FunctionCall', [
   \ javaapi#method(0,'FunctionAvailableCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'evaluateAtCompileTime(', ')', 'Object'),
@@ -572,7 +572,7 @@ call javaapi#class('JavaType', '', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('FunctionCall', '', [
+call javaapi#class('FunctionCall', 'Expression', [
   \ javaapi#method(0,'FunctionCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'FunctionCall(', 'QName)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'String'),
@@ -590,12 +590,12 @@ call javaapi#class('FunctionCall', '', [
   \ javaapi#method(0,'isExtension(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('GenerateIdCall', '', [
+call javaapi#class('GenerateIdCall', 'FunctionCall', [
   \ javaapi#method(0,'GenerateIdCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('IdKeyPattern', '', [
+call javaapi#class('IdKeyPattern', 'LocationPathPattern', [
   \ javaapi#method(0,'IdKeyPattern(', 'String, String)', 'public'),
   \ javaapi#method(0,'getIndexName(', ')', 'String'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
@@ -607,48 +607,48 @@ call javaapi#class('IdKeyPattern', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('IdPattern', '', [
+call javaapi#class('IdPattern', 'IdKeyPattern', [
   \ javaapi#method(0,'IdPattern(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('If', '', [
+call javaapi#class('If', 'Instruction', [
   \ javaapi#method(0,'display(', 'int)', 'void'),
   \ javaapi#method(0,'parseContents(', 'Parser)', 'void'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('IllegalCharException', '', [
+call javaapi#class('IllegalCharException', 'Exception', [
   \ javaapi#method(0,'IllegalCharException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('Import', '', [
+call javaapi#class('Import', 'TopLevelElement', [
   \ javaapi#method(0,'getImportedStylesheet(', ')', 'Stylesheet'),
   \ javaapi#method(0,'parseContents(', 'Parser)', 'void'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('Include', '', [
+call javaapi#class('Include', 'TopLevelElement', [
   \ javaapi#method(0,'getIncludedStylesheet(', ')', 'Stylesheet'),
   \ javaapi#method(0,'parseContents(', 'Parser)', 'void'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('Instruction', '', [
+call javaapi#class('Instruction', 'SyntaxTreeNode', [
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('IntExpr', '', [
+call javaapi#class('IntExpr', 'Expression', [
   \ javaapi#method(0,'IntExpr(', 'int)', 'public'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('Key', '', [
+call javaapi#class('Key', 'TopLevelElement', [
   \ javaapi#method(0,'parseContents(', 'Parser)', 'void'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
@@ -656,32 +656,32 @@ call javaapi#class('Key', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('KeyCall', '', [
+call javaapi#class('KeyCall', 'FunctionCall', [
   \ javaapi#method(0,'KeyCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'addParentDependency(', ')', 'void'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('KeyPattern', '', [
+call javaapi#class('KeyPattern', 'IdKeyPattern', [
   \ javaapi#method(0,'KeyPattern(', 'String, String)', 'public'),
   \ ])
 
-call javaapi#class('LangCall', '', [
+call javaapi#class('LangCall', 'FunctionCall', [
   \ javaapi#method(0,'LangCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'getType(', ')', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('LastCall', '', [
+call javaapi#class('LastCall', 'FunctionCall', [
   \ javaapi#method(0,'LastCall(', 'QName)', 'public'),
   \ javaapi#method(0,'hasPositionCall(', ')', 'boolean'),
   \ javaapi#method(0,'hasLastCall(', ')', 'boolean'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('LiteralAttribute', '', [
+call javaapi#class('LiteralAttribute', 'Instruction', [
   \ javaapi#method(0,'LiteralAttribute(', 'String, String, Parser, SyntaxTreeNode)', 'public'),
   \ javaapi#method(0,'display(', 'int)', 'void'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
@@ -690,7 +690,7 @@ call javaapi#class('LiteralAttribute', '', [
   \ javaapi#method(0,'getValue(', ')', 'AttributeValue'),
   \ ])
 
-call javaapi#class('LiteralElement', '', [
+call javaapi#class('LiteralElement', 'Instruction', [
   \ javaapi#method(0,'getName(', ')', 'QName'),
   \ javaapi#method(0,'display(', 'int)', 'void'),
   \ javaapi#method(0,'registerNamespace(', 'String, String, SymbolTable, boolean)', 'void'),
@@ -704,7 +704,7 @@ call javaapi#class('LiteralElement', '', [
   \ javaapi#method(0,'allAttributesUnique(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('LiteralExpr', '', [
+call javaapi#class('LiteralExpr', 'Expression', [
   \ javaapi#method(0,'LiteralExpr(', 'String)', 'public'),
   \ javaapi#method(0,'LiteralExpr(', 'String, String)', 'public'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
@@ -712,13 +712,13 @@ call javaapi#class('LiteralExpr', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('LocalNameCall', '', [
+call javaapi#class('LocalNameCall', 'NameBase', [
   \ javaapi#method(0,'LocalNameCall(', 'QName)', 'public'),
   \ javaapi#method(0,'LocalNameCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('LocationPathPattern', '', [
+call javaapi#class('LocationPathPattern', 'Pattern', [
   \ javaapi#method(0,'LocationPathPattern(', ')', 'public'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
@@ -734,7 +734,7 @@ call javaapi#class('LocationPathPattern', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('LogicalExpr', '', [
+call javaapi#class('LogicalExpr', 'Expression', [
   \ javaapi#field(1,'OR', 'int'),
   \ javaapi#field(1,'AND', 'int'),
   \ javaapi#method(0,'LogicalExpr(', 'int, Expression, Expression)', 'public'),
@@ -749,7 +749,7 @@ call javaapi#class('LogicalExpr', '', [
   \ javaapi#method(0,'translateDesynthesized(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('Message', '', [
+call javaapi#class('Message', 'Instruction', [
   \ javaapi#method(0,'parseContents(', 'Parser)', 'void'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
@@ -768,7 +768,7 @@ call javaapi#class('Mode', 'Constants', [
   \ javaapi#method(0,'getTemplateInstructionHandle(', 'Template)', 'InstructionHandle'),
   \ ])
 
-call javaapi#class('NameBase', '', [
+call javaapi#class('NameBase', 'FunctionCall', [
   \ javaapi#method(0,'NameBase(', 'QName)', 'public'),
   \ javaapi#method(0,'NameBase(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
@@ -776,19 +776,19 @@ call javaapi#class('NameBase', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('NameCall', '', [
+call javaapi#class('NameCall', 'NameBase', [
   \ javaapi#method(0,'NameCall(', 'QName)', 'public'),
   \ javaapi#method(0,'NameCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('NamespaceAlias', '', [
+call javaapi#class('NamespaceAlias', 'TopLevelElement', [
   \ javaapi#method(0,'parseContents(', 'Parser)', 'void'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('NamespaceUriCall', '', [
+call javaapi#class('NamespaceUriCall', 'NameBase', [
   \ javaapi#method(0,'NamespaceUriCall(', 'QName)', 'public'),
   \ javaapi#method(0,'NamespaceUriCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
@@ -805,13 +805,13 @@ call javaapi#interface('NodeTest', '', [
   \ javaapi#field(1,'ANODE', 'int'),
   \ ])
 
-call javaapi#class('NotCall', '', [
+call javaapi#class('NotCall', 'FunctionCall', [
   \ javaapi#method(0,'NotCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ javaapi#method(0,'translateDesynthesized(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('Number', '', [
+call javaapi#class('Number', 'Instruction', [
   \ javaapi#method(0,'inInnerClass(', ')', 'boolean'),
   \ javaapi#method(0,'getParentClosure(', ')', 'Closure'),
   \ javaapi#method(0,'getInnerClassName(', ')', 'String'),
@@ -823,25 +823,25 @@ call javaapi#class('Number', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('NumberCall', '', [
+call javaapi#class('NumberCall', 'FunctionCall', [
   \ javaapi#method(0,'NumberCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('ConfigurationError', '', [
+call javaapi#class('ConfigurationError', 'Error', [
   \ ])
 
 call javaapi#class('ObjectFactory', '', [
   \ ])
 
-call javaapi#class('Otherwise', '', [
+call javaapi#class('Otherwise', 'Instruction', [
   \ javaapi#method(0,'display(', 'int)', 'void'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('Output', '', [
+call javaapi#class('Output', 'TopLevelElement', [
   \ javaapi#method(0,'display(', 'int)', 'void'),
   \ javaapi#method(0,'disable(', ')', 'void'),
   \ javaapi#method(0,'enabled(', ')', 'boolean'),
@@ -852,7 +852,7 @@ call javaapi#class('Output', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('Param', '', [
+call javaapi#class('Param', 'VariableBase', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'setLoadInstruction(', 'Instruction)', 'Instruction'),
   \ javaapi#method(0,'setStoreInstruction(', 'Instruction)', 'Instruction'),
@@ -862,13 +862,13 @@ call javaapi#class('Param', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('ParameterRef', '', [
+call javaapi#class('ParameterRef', 'VariableRefBase', [
   \ javaapi#method(0,'ParameterRef(', 'Param)', 'public'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('ParentLocationPath', '', [
+call javaapi#class('ParentLocationPath', 'RelativeLocationPath', [
   \ javaapi#method(0,'ParentLocationPath(', 'RelativeLocationPath, Expression)', 'public'),
   \ javaapi#method(0,'setAxis(', 'int)', 'void'),
   \ javaapi#method(0,'getAxis(', ')', 'int'),
@@ -883,7 +883,7 @@ call javaapi#class('ParentLocationPath', '', [
   \ javaapi#method(0,'translateStep(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('ParentPattern', '', [
+call javaapi#class('ParentPattern', 'RelativePathPattern', [
   \ javaapi#method(0,'ParentPattern(', 'Pattern, RelativePathPattern)', 'public'),
   \ javaapi#method(0,'setParser(', 'Parser)', 'void'),
   \ javaapi#method(0,'isWildcard(', ')', 'boolean'),
@@ -956,7 +956,7 @@ call javaapi#class('Parser', 'ContentHandler', [
   \ javaapi#method(0,'setDocumentLocator(', 'Locator)', 'void'),
   \ ])
 
-call javaapi#class('Pattern', '', [
+call javaapi#class('Pattern', 'Expression', [
   \ javaapi#method(0,'Pattern(', ')', 'public'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
@@ -976,13 +976,13 @@ call javaapi#class('Pattern', '', [
   \ javaapi#method(0,'getType(', ')', 'Type'),
   \ ])
 
-call javaapi#class('PositionCall', '', [
+call javaapi#class('PositionCall', 'FunctionCall', [
   \ javaapi#method(0,'PositionCall(', 'QName)', 'public'),
   \ javaapi#method(0,'hasPositionCall(', ')', 'boolean'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('Predicate', '', [
+call javaapi#class('Predicate', 'Expression', [
   \ javaapi#method(0,'Predicate(', 'Expression)', 'public'),
   \ javaapi#method(0,'setParser(', 'Parser)', 'void'),
   \ javaapi#method(0,'isNthPositionFilter(', ')', 'boolean'),
@@ -1007,13 +1007,13 @@ call javaapi#class('Predicate', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('ProcessingInstruction', '', [
+call javaapi#class('ProcessingInstruction', 'Instruction', [
   \ javaapi#method(0,'parseContents(', 'Parser)', 'void'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('ProcessingInstructionPattern', '', [
+call javaapi#class('ProcessingInstructionPattern', 'StepPattern', [
   \ javaapi#method(0,'ProcessingInstructionPattern(', 'String)', 'public'),
   \ javaapi#method(0,'getDefaultPriority(', ')', 'double'),
   \ javaapi#method(0,'toString(', ')', 'String'),
@@ -1036,14 +1036,14 @@ call javaapi#class('QName', '', [
   \ javaapi#method(0,'dump(', ')', 'String'),
   \ ])
 
-call javaapi#class('RealExpr', '', [
+call javaapi#class('RealExpr', 'Expression', [
   \ javaapi#method(0,'RealExpr(', 'double)', 'public'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('RelationalExpr', '', [
+call javaapi#class('RelationalExpr', 'Expression', [
   \ javaapi#method(0,'RelationalExpr(', 'int, Expression, Expression)', 'public'),
   \ javaapi#method(0,'setParser(', 'Parser)', 'void'),
   \ javaapi#method(0,'hasPositionCall(', ')', 'boolean'),
@@ -1057,15 +1057,15 @@ call javaapi#class('RelationalExpr', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('RelativeLocationPath', '', [
+call javaapi#class('RelativeLocationPath', 'Expression', [
   \ javaapi#method(0,'getAxis(', ')', 'int'),
   \ javaapi#method(0,'setAxis(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('RelativePathPattern', '', [
+call javaapi#class('RelativePathPattern', 'LocationPathPattern', [
   \ ])
 
-call javaapi#class('RoundCall', '', [
+call javaapi#class('RoundCall', 'FunctionCall', [
   \ javaapi#method(0,'RoundCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
@@ -1105,17 +1105,17 @@ call javaapi#class('8', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('SecuritySupport12', '', [
+call javaapi#class('SecuritySupport12', 'SecuritySupport', [
   \ ])
 
-call javaapi#class('SimpleAttributeValue', '', [
+call javaapi#class('SimpleAttributeValue', 'AttributeValue', [
   \ javaapi#method(0,'SimpleAttributeValue(', 'String)', 'public'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('Sort', '', [
+call javaapi#class('Sort', 'Instruction', [
   \ javaapi#method(0,'inInnerClass(', ')', 'boolean'),
   \ javaapi#method(0,'getParentClosure(', ')', 'Closure'),
   \ javaapi#method(0,'getInnerClassName(', ')', 'String'),
@@ -1137,13 +1137,13 @@ call javaapi#interface('SourceLoader', '', [
   \ javaapi#method(0,'loadSource(', 'String, String, XSLTC)', 'InputSource'),
   \ ])
 
-call javaapi#class('StartsWithCall', '', [
+call javaapi#class('StartsWithCall', 'FunctionCall', [
   \ javaapi#method(0,'StartsWithCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('Step', '', [
+call javaapi#class('Step', 'RelativeLocationPath', [
   \ javaapi#method(0,'Step(', 'int, int, Vector)', 'public'),
   \ javaapi#method(0,'setParser(', 'Parser)', 'void'),
   \ javaapi#method(0,'getAxis(', ')', 'int'),
@@ -1159,7 +1159,7 @@ call javaapi#class('Step', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('StepPattern', '', [
+call javaapi#class('StepPattern', 'RelativePathPattern', [
   \ javaapi#method(0,'StepPattern(', 'int, int, Vector)', 'public'),
   \ javaapi#method(0,'setParser(', 'Parser)', 'void'),
   \ javaapi#method(0,'getNodeType(', ')', 'int'),
@@ -1175,18 +1175,18 @@ call javaapi#class('StepPattern', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('StringCall', '', [
+call javaapi#class('StringCall', 'FunctionCall', [
   \ javaapi#method(0,'StringCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('StringLengthCall', '', [
+call javaapi#class('StringLengthCall', 'FunctionCall', [
   \ javaapi#method(0,'StringLengthCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('Stylesheet', '', [
+call javaapi#class('Stylesheet', 'SyntaxTreeNode', [
   \ javaapi#field(0,'_importedFrom', 'Stylesheet'),
   \ javaapi#field(0,'_includedFrom', 'Stylesheet'),
   \ javaapi#field(1,'UNKNOWN_OUTPUT', 'int'),
@@ -1285,7 +1285,7 @@ call javaapi#class('SyntaxTreeNode', 'Constants', [
   \ javaapi#method(0,'display(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('Template', '', [
+call javaapi#class('Template', 'TopLevelElement', [
   \ javaapi#method(0,'Template(', ')', 'public'),
   \ javaapi#method(0,'hasParams(', ')', 'boolean'),
   \ javaapi#method(0,'isSimplified(', ')', 'boolean'),
@@ -1326,7 +1326,7 @@ call javaapi#class('TestSeq', '', [
   \ javaapi#method(0,'compile(', 'ClassGenerator, MethodGenerator, InstructionHandle)', 'InstructionHandle'),
   \ ])
 
-call javaapi#class('Text', '', [
+call javaapi#class('Text', 'Instruction', [
   \ javaapi#method(0,'Text(', ')', 'public'),
   \ javaapi#method(0,'Text(', 'String)', 'public'),
   \ javaapi#method(0,'display(', 'int)', 'void'),
@@ -1339,7 +1339,7 @@ call javaapi#class('Text', '', [
   \ javaapi#method(0,'loadAsArrayOffsetLength(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('TopLevelElement', '', [
+call javaapi#class('TopLevelElement', 'SyntaxTreeNode', [
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ javaapi#method(0,'compile(', 'ClassGenerator, MethodGenerator)', 'InstructionList'),
@@ -1348,14 +1348,14 @@ call javaapi#class('TopLevelElement', '', [
   \ javaapi#method(0,'getDependencies(', ')', 'Vector'),
   \ ])
 
-call javaapi#class('TransletOutput', '', [
+call javaapi#class('TransletOutput', 'Instruction', [
   \ javaapi#method(0,'display(', 'int)', 'void'),
   \ javaapi#method(0,'parseContents(', 'Parser)', 'void'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('UnaryOpExpr', '', [
+call javaapi#class('UnaryOpExpr', 'Expression', [
   \ javaapi#method(0,'UnaryOpExpr(', 'Expression)', 'public'),
   \ javaapi#method(0,'hasPositionCall(', ')', 'boolean'),
   \ javaapi#method(0,'hasLastCall(', ')', 'boolean'),
@@ -1365,7 +1365,7 @@ call javaapi#class('UnaryOpExpr', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('UnionPathExpr', '', [
+call javaapi#class('UnionPathExpr', 'Expression', [
   \ javaapi#method(0,'UnionPathExpr(', 'Expression, Expression)', 'public'),
   \ javaapi#method(0,'setParser(', 'Parser)', 'void'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
@@ -1373,13 +1373,13 @@ call javaapi#class('UnionPathExpr', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('UnparsedEntityUriCall', '', [
+call javaapi#class('UnparsedEntityUriCall', 'FunctionCall', [
   \ javaapi#method(0,'UnparsedEntityUriCall(', 'QName, Vector)', 'public'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('UnresolvedRef', '', [
+call javaapi#class('UnresolvedRef', 'VariableRefBase', [
   \ javaapi#method(0,'UnresolvedRef(', 'QName)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'QName'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
@@ -1387,7 +1387,7 @@ call javaapi#class('UnresolvedRef', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('UnsupportedElement', '', [
+call javaapi#class('UnsupportedElement', 'SyntaxTreeNode', [
   \ javaapi#method(0,'UnsupportedElement(', 'String, String, String, boolean)', 'public'),
   \ javaapi#method(0,'setErrorMessage(', 'ErrorMsg)', 'void'),
   \ javaapi#method(0,'display(', 'int)', 'void'),
@@ -1396,21 +1396,21 @@ call javaapi#class('UnsupportedElement', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('UseAttributeSets', '', [
+call javaapi#class('UseAttributeSets', 'Instruction', [
   \ javaapi#method(0,'UseAttributeSets(', 'String, Parser)', 'public'),
   \ javaapi#method(0,'addAttributeSets(', 'String)', 'void'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('ValueOf', '', [
+call javaapi#class('ValueOf', 'Instruction', [
   \ javaapi#method(0,'display(', 'int)', 'void'),
   \ javaapi#method(0,'parseContents(', 'Parser)', 'void'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('Variable', '', [
+call javaapi#class('Variable', 'VariableBase', [
   \ javaapi#method(0,'getIndex(', ')', 'int'),
   \ javaapi#method(0,'parseContents(', 'Parser)', 'void'),
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
@@ -1418,7 +1418,7 @@ call javaapi#class('Variable', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('VariableBase', '', [
+call javaapi#class('VariableBase', 'TopLevelElement', [
   \ javaapi#method(0,'disable(', ')', 'void'),
   \ javaapi#method(0,'addReference(', 'VariableRefBase)', 'void'),
   \ javaapi#method(0,'removeReference(', 'VariableRefBase)', 'void'),
@@ -1439,12 +1439,12 @@ call javaapi#class('VariableBase', '', [
   \ javaapi#method(0,'translateValue(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('VariableRef', '', [
+call javaapi#class('VariableRef', 'VariableRefBase', [
   \ javaapi#method(0,'VariableRef(', 'Variable)', 'public'),
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('VariableRefBase', '', [
+call javaapi#class('VariableRefBase', 'Expression', [
   \ javaapi#method(0,'VariableRefBase(', 'VariableBase)', 'public'),
   \ javaapi#method(0,'VariableRefBase(', ')', 'public'),
   \ javaapi#method(0,'getVariable(', ')', 'VariableBase'),
@@ -1454,7 +1454,7 @@ call javaapi#class('VariableRefBase', '', [
   \ javaapi#method(0,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
   \ ])
 
-call javaapi#class('When', '', [
+call javaapi#class('When', 'Instruction', [
   \ javaapi#method(0,'display(', 'int)', 'void'),
   \ javaapi#method(0,'getTest(', ')', 'Expression'),
   \ javaapi#method(0,'ignore(', ')', 'boolean'),
@@ -1473,7 +1473,7 @@ call javaapi#class('WhitespaceRule', '', [
   \ javaapi#method(0,'getNamespace(', ')', 'String'),
   \ ])
 
-call javaapi#class('Whitespace', '', [
+call javaapi#class('Whitespace', 'TopLevelElement', [
   \ javaapi#field(1,'USE_PREDICATE', 'int'),
   \ javaapi#field(1,'STRIP_SPACE', 'int'),
   \ javaapi#field(1,'PRESERVE_SPACE', 'int'),
@@ -1490,7 +1490,7 @@ call javaapi#class('Whitespace', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('WithParam', '', [
+call javaapi#class('WithParam', 'Instruction', [
   \ javaapi#method(0,'display(', 'int)', 'void'),
   \ javaapi#method(0,'getEscapedName(', ')', 'String'),
   \ javaapi#method(0,'getName(', ')', 'QName'),
@@ -1507,7 +1507,7 @@ call javaapi#class('XPathLexer', 'Scanner', [
   \ javaapi#method(0,'next_token(', ') throws IOException, Exception', 'Symbol'),
   \ ])
 
-call javaapi#class('XPathParser', '', [
+call javaapi#class('XPathParser', 'lr_parser', [
   \ javaapi#field(1,'EmptyArgs', 'Vector'),
   \ javaapi#field(1,'DummyVarRef', 'VariableRef'),
   \ javaapi#field(0,'_symbolTable', 'SymbolTable'),
@@ -1602,7 +1602,7 @@ call javaapi#class('XSLTC', '', [
   \ javaapi#method(0,'addCharacterData(', 'String)', 'int'),
   \ ])
 
-call javaapi#class('XslAttribute', '', [
+call javaapi#class('XslAttribute', 'Instruction', [
   \ javaapi#method(0,'getName(', ')', 'AttributeValue'),
   \ javaapi#method(0,'display(', 'int)', 'void'),
   \ javaapi#method(0,'parseContents(', 'Parser)', 'void'),
@@ -1610,7 +1610,7 @@ call javaapi#class('XslAttribute', '', [
   \ javaapi#method(0,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('XslElement', '', [
+call javaapi#class('XslElement', 'Instruction', [
   \ javaapi#method(0,'display(', 'int)', 'void'),
   \ javaapi#method(0,'declaresDefaultNS(', ')', 'boolean'),
   \ javaapi#method(0,'parseContents(', 'Parser)', 'void'),

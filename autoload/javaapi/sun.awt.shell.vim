@@ -1,22 +1,6 @@
 call javaapi#namespace('sun.awt.shell')
 
-call javaapi#class('ShellFolderManager', '', [
-  \ javaapi#method(0,'createShellFolder(', 'File) throws FileNotFoundException', 'ShellFolder'),
-  \ javaapi#method(0,'get(', 'String)', 'Object'),
-  \ javaapi#method(0,'isComputerNode(', 'File)', 'boolean'),
-  \ javaapi#method(0,'isFileSystemRoot(', 'File)', 'boolean'),
-  \ ])
-
-call javaapi#class('Win32ShellFolderManager2', '', [
-  \ javaapi#method(0,'Win32ShellFolderManager2(', ')', 'public'),
-  \ javaapi#method(0,'createShellFolder(', 'File) throws FileNotFoundException', 'ShellFolder'),
-  \ javaapi#method(0,'get(', 'String)', 'Object'),
-  \ javaapi#method(0,'isComputerNode(', 'File)', 'boolean'),
-  \ javaapi#method(0,'isFileSystemRoot(', 'File)', 'boolean'),
-  \ ])
-
-
-call javaapi#class('DefaultShellFolder', '', [
+call javaapi#class('DefaultShellFolder', 'ShellFolder', [
   \ javaapi#method(0,'listFiles(', ')', 'File[]'),
   \ javaapi#method(0,'isLink(', ')', 'boolean'),
   \ javaapi#method(0,'isHidden(', ')', 'boolean'),
@@ -49,7 +33,7 @@ call javaapi#interface('Invoker', '', [
   \ javaapi#method(0,'invoke(', 'Callable<T>) throws Exception', 'T'),
   \ ])
 
-call javaapi#class('ShellFolder', '', [
+call javaapi#class('ShellFolder', 'File', [
   \ javaapi#method(0,'isFileSystem(', ')', 'boolean'),
   \ javaapi#method(0,'getParent(', ')', 'String'),
   \ javaapi#method(0,'getParentFile(', ')', 'File'),
@@ -232,7 +216,7 @@ call javaapi#class('FolderDisposer', 'DisposerRecord', [
   \ javaapi#method(0,'dispose(', ')', 'void'),
   \ ])
 
-call javaapi#class('SystemIcon', '', [
+call javaapi#class('SystemIcon', 'SystemIcon>', [
   \ javaapi#field(1,'IDI_APPLICATION', 'SystemIcon'),
   \ javaapi#field(1,'IDI_HAND', 'SystemIcon'),
   \ javaapi#field(1,'IDI_ERROR', 'SystemIcon'),
@@ -247,7 +231,7 @@ call javaapi#class('SystemIcon', '', [
   \ javaapi#method(0,'getIconID(', ')', 'int'),
   \ ])
 
-call javaapi#class('Win32ShellFolder2', '', [
+call javaapi#class('Win32ShellFolder2', 'ShellFolder', [
   \ javaapi#field(1,'DESKTOP', 'int'),
   \ javaapi#field(1,'INTERNET', 'int'),
   \ javaapi#field(1,'PROGRAMS', 'int'),
@@ -365,8 +349,25 @@ call javaapi#class('5', 'Void>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('ComInvoker', '', [
+call javaapi#class('ComInvoker', 'ThreadPoolExecutor', [
   \ javaapi#method(0,'newThread(', 'Runnable)', 'Thread'),
   \ javaapi#method(0,'invoke(', 'Callable<T>) throws Exception', 'T'),
+  \ ])
+
+call javaapi#namespace('sun.awt.shell')
+
+call javaapi#class('ShellFolderManager', '', [
+  \ javaapi#method(0,'createShellFolder(', 'File) throws FileNotFoundException', 'ShellFolder'),
+  \ javaapi#method(0,'get(', 'String)', 'Object'),
+  \ javaapi#method(0,'isComputerNode(', 'File)', 'boolean'),
+  \ javaapi#method(0,'isFileSystemRoot(', 'File)', 'boolean'),
+  \ ])
+
+call javaapi#class('Win32ShellFolderManager2', 'ShellFolderManager', [
+  \ javaapi#method(0,'Win32ShellFolderManager2(', ')', 'public'),
+  \ javaapi#method(0,'createShellFolder(', 'File) throws FileNotFoundException', 'ShellFolder'),
+  \ javaapi#method(0,'get(', 'String)', 'Object'),
+  \ javaapi#method(0,'isComputerNode(', 'File)', 'boolean'),
+  \ javaapi#method(0,'isFileSystemRoot(', 'File)', 'boolean'),
   \ ])
 

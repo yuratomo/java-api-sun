@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.fastinfoset.stax.factory')
 
-call javaapi#class('StAXEventFactory', '', [
+call javaapi#class('StAXEventFactory', 'XMLEventFactory', [
   \ javaapi#method(0,'StAXEventFactory(', ')', 'public'),
   \ javaapi#method(0,'setLocation(', 'Location)', 'void'),
   \ javaapi#method(0,'createAttribute(', 'String, String, String, String)', 'Attribute'),
@@ -30,7 +30,7 @@ call javaapi#class('StAXEventFactory', '', [
   \ javaapi#method(0,'createProcessingInstruction(', 'String, String)', 'ProcessingInstruction'),
   \ ])
 
-call javaapi#class('StAXInputFactory', '', [
+call javaapi#class('StAXInputFactory', 'XMLInputFactory', [
   \ javaapi#method(0,'StAXInputFactory(', ')', 'public'),
   \ javaapi#method(1,'newInstance(', ')', 'XMLInputFactory'),
   \ javaapi#method(0,'createXMLStreamReader(', 'Reader) throws XMLStreamException', 'XMLStreamReader'),
@@ -59,7 +59,7 @@ call javaapi#class('StAXInputFactory', '', [
   \ javaapi#method(0,'setProperty(', 'String, Object) throws IllegalArgumentException', 'void'),
   \ ])
 
-call javaapi#class('StAXOutputFactory', '', [
+call javaapi#class('StAXOutputFactory', 'XMLOutputFactory', [
   \ javaapi#method(0,'StAXOutputFactory(', ')', 'public'),
   \ javaapi#method(0,'createXMLEventWriter(', 'Result) throws XMLStreamException', 'XMLEventWriter'),
   \ javaapi#method(0,'createXMLEventWriter(', 'Writer) throws XMLStreamException', 'XMLEventWriter'),

@@ -12,7 +12,7 @@ call javaapi#class('AbstractHeaderImpl', 'Header', [
   \ javaapi#method(0,'getStringContent(', ')', 'String'),
   \ ])
 
-call javaapi#class('AbstractMessageImpl', '', [
+call javaapi#class('AbstractMessageImpl', 'Message', [
   \ javaapi#method(0,'readEnvelopeAsSource(', ')', 'Source'),
   \ javaapi#method(0,'readPayloadAsJAXB(', 'Unmarshaller) throws JAXBException', 'T'),
   \ javaapi#method(0,'readPayloadAsJAXB(', 'Bridge<T>) throws JAXBException', 'T'),
@@ -31,7 +31,7 @@ call javaapi#class('AttachmentSetImpl', 'AttachmentSet', [
   \ javaapi#method(0,'iterator(', ')', 'Attachment>'),
   \ ])
 
-call javaapi#class('AttachmentUnmarshallerImpl', '', [
+call javaapi#class('AttachmentUnmarshallerImpl', 'AttachmentUnmarshaller', [
   \ javaapi#method(0,'AttachmentUnmarshallerImpl(', 'AttachmentSet)', 'public'),
   \ javaapi#method(0,'getAttachmentAsDataHandler(', 'String)', 'DataHandler'),
   \ javaapi#method(0,'getAttachmentAsByteArray(', 'String)', 'byte[]'),
@@ -50,7 +50,7 @@ call javaapi#class('ByteArrayAttachment', 'Attachment', [
   \ javaapi#method(0,'writeTo(', 'SOAPMessage) throws SOAPException', 'void'),
   \ ])
 
-call javaapi#class('DOMHeader<N', '', [
+call javaapi#class('DOMHeader<N', 'Element>', [
   \ javaapi#method(0,'DOMHeader(', 'N)', 'public'),
   \ javaapi#method(0,'getNamespaceURI(', ')', 'String'),
   \ javaapi#method(0,'getLocalPart(', ')', 'String'),
@@ -64,7 +64,7 @@ call javaapi#class('DOMHeader<N', '', [
   \ javaapi#method(0,'getStringContent(', ')', 'String'),
   \ ])
 
-call javaapi#class('DOMMessage', '', [
+call javaapi#class('DOMMessage', 'AbstractMessageImpl', [
   \ javaapi#method(0,'DOMMessage(', 'SOAPVersion, Element)', 'public'),
   \ javaapi#method(0,'DOMMessage(', 'SOAPVersion, HeaderList, Element)', 'public'),
   \ javaapi#method(0,'DOMMessage(', 'SOAPVersion, HeaderList, Element, AttachmentSet)', 'public'),
@@ -93,7 +93,7 @@ call javaapi#class('DataHandlerAttachment', 'Attachment', [
   \ javaapi#method(0,'writeTo(', 'SOAPMessage) throws SOAPException', 'void'),
   \ ])
 
-call javaapi#class('EmptyMessageImpl', '', [
+call javaapi#class('EmptyMessageImpl', 'AbstractMessageImpl', [
   \ javaapi#method(0,'EmptyMessageImpl(', 'SOAPVersion)', 'public'),
   \ javaapi#method(0,'EmptyMessageImpl(', 'HeaderList, AttachmentSet, SOAPVersion)', 'public'),
   \ javaapi#method(0,'hasHeaders(', ')', 'boolean'),
@@ -108,7 +108,7 @@ call javaapi#class('EmptyMessageImpl', '', [
   \ javaapi#method(0,'copy(', ')', 'Message'),
   \ ])
 
-call javaapi#class('FaultDetailHeader', '', [
+call javaapi#class('FaultDetailHeader', 'AbstractHeaderImpl', [
   \ javaapi#method(0,'FaultDetailHeader(', 'AddressingVersion, String, QName)', 'public'),
   \ javaapi#method(0,'FaultDetailHeader(', 'AddressingVersion, String, String)', 'public'),
   \ javaapi#method(0,'getNamespaceURI(', ')', 'String'),
@@ -120,7 +120,7 @@ call javaapi#class('FaultDetailHeader', '', [
   \ javaapi#method(0,'writeTo(', 'ContentHandler, ErrorHandler) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('FaultMessage', '', [
+call javaapi#class('FaultMessage', 'FilterMessageImpl', [
   \ javaapi#method(0,'FaultMessage(', 'Message, QName)', 'public'),
   \ javaapi#method(0,'getFirstDetailEntryName(', ')', 'QName'),
   \ ])
@@ -148,7 +148,7 @@ call javaapi#class('MimeAttachmentSet', 'AttachmentSet', [
   \ javaapi#method(0,'iterator(', ')', 'Attachment>'),
   \ ])
 
-call javaapi#class('ProblemActionHeader', '', [
+call javaapi#class('ProblemActionHeader', 'AbstractHeaderImpl', [
   \ javaapi#method(0,'ProblemActionHeader(', 'String, AddressingVersion)', 'public'),
   \ javaapi#method(0,'ProblemActionHeader(', 'String, String, AddressingVersion)', 'public'),
   \ javaapi#method(0,'getNamespaceURI(', ')', 'String'),
@@ -160,7 +160,7 @@ call javaapi#class('ProblemActionHeader', '', [
   \ javaapi#method(0,'writeTo(', 'ContentHandler, ErrorHandler) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('RelatesToHeader', '', [
+call javaapi#class('RelatesToHeader', 'StringHeader', [
   \ javaapi#method(0,'RelatesToHeader(', 'QName, String, String)', 'public'),
   \ javaapi#method(0,'RelatesToHeader(', 'QName, String)', 'public'),
   \ javaapi#method(0,'getType(', ')', 'String'),
@@ -168,7 +168,7 @@ call javaapi#class('RelatesToHeader', '', [
   \ javaapi#method(0,'writeTo(', 'SOAPMessage) throws SOAPException', 'void'),
   \ ])
 
-call javaapi#class('RootElementSniffer', '', [
+call javaapi#class('RootElementSniffer', 'DefaultHandler', [
   \ javaapi#method(0,'RootElementSniffer(', 'boolean)', 'public'),
   \ javaapi#method(0,'RootElementSniffer(', ')', 'public'),
   \ javaapi#method(0,'startElement(', 'String, String, String, Attributes) throws SAXException', 'void'),
@@ -177,7 +177,7 @@ call javaapi#class('RootElementSniffer', '', [
   \ javaapi#method(0,'getAttributes(', ')', 'Attributes'),
   \ ])
 
-call javaapi#class('StringHeader', '', [
+call javaapi#class('StringHeader', 'AbstractHeaderImpl', [
   \ javaapi#method(0,'StringHeader(', 'QName, String)', 'public'),
   \ javaapi#method(0,'StringHeader(', 'QName, String, SOAPVersion, boolean)', 'public'),
   \ javaapi#method(0,'getNamespaceURI(', ')', 'String'),
@@ -194,7 +194,7 @@ call javaapi#class('Util', '', [
   \ javaapi#method(1,'parseBool(', 'String)', 'boolean'),
   \ ])
 
-call javaapi#class('XMLReaderImpl', '', [
+call javaapi#class('XMLReaderImpl', 'XMLFilterImpl', [
   \ javaapi#method(0,'parse(', 'String)', 'void'),
   \ javaapi#method(0,'parse(', 'InputSource) throws SAXException', 'void'),
   \ javaapi#method(0,'getContentHandler(', ')', 'ContentHandler'),

@@ -26,7 +26,7 @@ call javaapi#class('AssertionValidationProcessor', '', [
   \ javaapi#method(0,'validateServerSide(', 'PolicyAssertion) throws PolicyException', 'Fitness'),
   \ ])
 
-call javaapi#class('ComplexAssertion', '', [
+call javaapi#class('ComplexAssertion', 'PolicyAssertion', [
   \ javaapi#method(0,'hasNestedPolicy(', ')', 'boolean'),
   \ javaapi#method(0,'getNestedPolicy(', ')', 'NestedPolicy'),
   \ ])
@@ -34,28 +34,28 @@ call javaapi#class('ComplexAssertion', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'AlternativeFitness', [
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'AlternativeFitness', [
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'AlternativeFitness', [
   \ ])
 
-call javaapi#class('4', '', [
+call javaapi#class('4', 'AlternativeFitness', [
   \ ])
 
-call javaapi#class('5', '', [
+call javaapi#class('5', 'AlternativeFitness', [
   \ ])
 
-call javaapi#class('6', '', [
+call javaapi#class('6', 'AlternativeFitness', [
   \ ])
 
-call javaapi#class('7', '', [
+call javaapi#class('7', 'AlternativeFitness', [
   \ ])
 
-call javaapi#class('AlternativeFitness', '', [
+call javaapi#class('AlternativeFitness', 'AlternativeFitness>', [
   \ javaapi#field(1,'UNEVALUATED', 'AlternativeFitness'),
   \ javaapi#field(1,'INVALID', 'AlternativeFitness'),
   \ javaapi#field(1,'UNKNOWN', 'AlternativeFitness'),
@@ -72,7 +72,7 @@ call javaapi#class('EffectiveAlternativeSelector', '', [
   \ javaapi#method(1,'doSelection(', 'EffectivePolicyModifier) throws PolicyException', 'void'),
   \ ])
 
-call javaapi#class('EffectivePolicyModifier', '', [
+call javaapi#class('EffectivePolicyModifier', 'PolicyMapMutator', [
   \ javaapi#method(1,'createEffectivePolicyModifier(', ')', 'EffectivePolicyModifier'),
   \ javaapi#method(0,'setNewEffectivePolicyForServiceScope(', 'PolicyMapKey, Policy)', 'void'),
   \ javaapi#method(0,'setNewEffectivePolicyForEndpointScope(', 'PolicyMapKey, Policy)', 'void'),
@@ -82,7 +82,7 @@ call javaapi#class('EffectivePolicyModifier', '', [
   \ javaapi#method(0,'setNewEffectivePolicyForFaultMessageScope(', 'PolicyMapKey, Policy)', 'void'),
   \ ])
 
-call javaapi#class('NestedPolicy', '', [
+call javaapi#class('NestedPolicy', 'Policy', [
   \ javaapi#method(0,'getAssertionSet(', ')', 'AssertionSet'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
@@ -150,13 +150,13 @@ call javaapi#class('PolicyConstants', '', [
   \ javaapi#field(1,'SUN_MANAGEMENT_NAMESPACE', 'String'),
   \ ])
 
-call javaapi#class('PolicyException', '', [
+call javaapi#class('PolicyException', 'Exception', [
   \ javaapi#method(0,'PolicyException(', 'String)', 'public'),
   \ javaapi#method(0,'PolicyException(', 'String, Throwable)', 'public'),
   \ javaapi#method(0,'PolicyException(', 'Throwable)', 'public'),
   \ ])
 
-call javaapi#class('CompatibilityMode', '', [
+call javaapi#class('CompatibilityMode', 'CompatibilityMode>', [
   \ javaapi#field(1,'STRICT', 'CompatibilityMode'),
   \ javaapi#field(1,'LAX', 'CompatibilityMode'),
   \ javaapi#method(1,'values(', ')', 'CompatibilityMode[]'),
@@ -212,7 +212,7 @@ call javaapi#class('ScopeMap', 'Policy>', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ScopeType', '', [
+call javaapi#class('ScopeType', 'ScopeType>', [
   \ javaapi#field(1,'SERVICE', 'ScopeType'),
   \ javaapi#field(1,'ENDPOINT', 'ScopeType'),
   \ javaapi#field(1,'OPERATION', 'ScopeType'),
@@ -251,7 +251,7 @@ call javaapi#class('PolicyMap', 'Policy>', [
   \ javaapi#method(0,'iterator(', ')', 'Policy>'),
   \ ])
 
-call javaapi#class('PolicyMapExtender', '', [
+call javaapi#class('PolicyMapExtender', 'PolicyMapMutator', [
   \ javaapi#method(1,'createPolicyMapExtender(', ')', 'PolicyMapExtender'),
   \ javaapi#method(0,'putServiceSubject(', 'PolicyMapKey, PolicySubject)', 'void'),
   \ javaapi#method(0,'putEndpointSubject(', 'PolicyMapKey, PolicySubject)', 'void'),
@@ -309,7 +309,7 @@ call javaapi#class('PolicySubject', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SimpleAssertion', '', [
+call javaapi#class('SimpleAssertion', 'PolicyAssertion', [
   \ javaapi#method(0,'hasNestedPolicy(', ')', 'boolean'),
   \ javaapi#method(0,'getNestedPolicy(', ')', 'NestedPolicy'),
   \ ])

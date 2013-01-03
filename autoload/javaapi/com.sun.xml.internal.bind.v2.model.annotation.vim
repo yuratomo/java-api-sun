@@ -59,7 +59,7 @@ call javaapi#class('LocatableAnnotation', 'Location', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('Messages', '', [
+call javaapi#class('Messages', 'Messages>', [
   \ javaapi#field(1,'DUPLICATE_ANNOTATIONS', 'Messages'),
   \ javaapi#method(1,'values(', ')', 'Messages[]'),
   \ javaapi#method(1,'valueOf(', 'String)', 'Messages'),
@@ -79,10 +79,10 @@ call javaapi#class('Quick', 'Location', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('RuntimeAnnotationReader', '', [
+call javaapi#interface('RuntimeAnnotationReader', 'Method>', [
   \ ])
 
-call javaapi#class('RuntimeInlineAnnotationReader', '', [
+call javaapi#class('RuntimeInlineAnnotationReader', 'Method>', [
   \ javaapi#method(0,'RuntimeInlineAnnotationReader(', ')', 'public'),
   \ javaapi#method(0,'getFieldAnnotation(', 'Class<A>, Field, Locatable)', 'A'),
   \ javaapi#method(0,'hasFieldAnnotation(', 'Class<? extends Annotation>, Field)', 'boolean'),
@@ -110,7 +110,7 @@ call javaapi#class('RuntimeInlineAnnotationReader', '', [
   \ javaapi#method(0,'getFieldAnnotation(', 'Class, Object, Locatable)', 'Annotation'),
   \ ])
 
-call javaapi#class('XmlAttributeQuick', '', [
+call javaapi#class('XmlAttributeQuick', 'Quick', [
   \ javaapi#method(0,'XmlAttributeQuick(', 'Locatable, XmlAttribute)', 'public'),
   \ javaapi#method(0,'annotationType(', ')', 'XmlAttribute>'),
   \ javaapi#method(0,'namespace(', ')', 'String'),
@@ -118,7 +118,7 @@ call javaapi#class('XmlAttributeQuick', '', [
   \ javaapi#method(0,'name(', ')', 'String'),
   \ ])
 
-call javaapi#class('XmlElementDeclQuick', '', [
+call javaapi#class('XmlElementDeclQuick', 'Quick', [
   \ javaapi#method(0,'XmlElementDeclQuick(', 'Locatable, XmlElementDecl)', 'public'),
   \ javaapi#method(0,'annotationType(', ')', 'XmlElementDecl>'),
   \ javaapi#method(0,'namespace(', ')', 'String'),
@@ -129,7 +129,7 @@ call javaapi#class('XmlElementDeclQuick', '', [
   \ javaapi#method(0,'scope(', ')', 'Class'),
   \ ])
 
-call javaapi#class('XmlElementQuick', '', [
+call javaapi#class('XmlElementQuick', 'Quick', [
   \ javaapi#method(0,'XmlElementQuick(', 'Locatable, XmlElement)', 'public'),
   \ javaapi#method(0,'annotationType(', ')', 'XmlElement>'),
   \ javaapi#method(0,'namespace(', ')', 'String'),
@@ -140,7 +140,7 @@ call javaapi#class('XmlElementQuick', '', [
   \ javaapi#method(0,'defaultValue(', ')', 'String'),
   \ ])
 
-call javaapi#class('XmlElementRefQuick', '', [
+call javaapi#class('XmlElementRefQuick', 'Quick', [
   \ javaapi#method(0,'XmlElementRefQuick(', 'Locatable, XmlElementRef)', 'public'),
   \ javaapi#method(0,'annotationType(', ')', 'XmlElementRef>'),
   \ javaapi#method(0,'namespace(', ')', 'String'),
@@ -149,26 +149,26 @@ call javaapi#class('XmlElementRefQuick', '', [
   \ javaapi#method(0,'type(', ')', 'Class'),
   \ ])
 
-call javaapi#class('XmlElementRefsQuick', '', [
+call javaapi#class('XmlElementRefsQuick', 'Quick', [
   \ javaapi#method(0,'XmlElementRefsQuick(', 'Locatable, XmlElementRefs)', 'public'),
   \ javaapi#method(0,'annotationType(', ')', 'XmlElementRefs>'),
   \ javaapi#method(0,'value(', ')', 'XmlElementRef[]'),
   \ ])
 
-call javaapi#class('XmlEnumQuick', '', [
+call javaapi#class('XmlEnumQuick', 'Quick', [
   \ javaapi#method(0,'XmlEnumQuick(', 'Locatable, XmlEnum)', 'public'),
   \ javaapi#method(0,'annotationType(', ')', 'XmlEnum>'),
   \ javaapi#method(0,'value(', ')', 'Class'),
   \ ])
 
-call javaapi#class('XmlRootElementQuick', '', [
+call javaapi#class('XmlRootElementQuick', 'Quick', [
   \ javaapi#method(0,'XmlRootElementQuick(', 'Locatable, XmlRootElement)', 'public'),
   \ javaapi#method(0,'annotationType(', ')', 'XmlRootElement>'),
   \ javaapi#method(0,'namespace(', ')', 'String'),
   \ javaapi#method(0,'name(', ')', 'String'),
   \ ])
 
-call javaapi#class('XmlSchemaQuick', '', [
+call javaapi#class('XmlSchemaQuick', 'Quick', [
   \ javaapi#method(0,'XmlSchemaQuick(', 'Locatable, XmlSchema)', 'public'),
   \ javaapi#method(0,'annotationType(', ')', 'XmlSchema>'),
   \ javaapi#method(0,'namespace(', ')', 'String'),
@@ -178,7 +178,7 @@ call javaapi#class('XmlSchemaQuick', '', [
   \ javaapi#method(0,'xmlns(', ')', 'XmlNs[]'),
   \ ])
 
-call javaapi#class('XmlSchemaTypeQuick', '', [
+call javaapi#class('XmlSchemaTypeQuick', 'Quick', [
   \ javaapi#method(0,'XmlSchemaTypeQuick(', 'Locatable, XmlSchemaType)', 'public'),
   \ javaapi#method(0,'annotationType(', ')', 'XmlSchemaType>'),
   \ javaapi#method(0,'namespace(', ')', 'String'),
@@ -186,12 +186,12 @@ call javaapi#class('XmlSchemaTypeQuick', '', [
   \ javaapi#method(0,'type(', ')', 'Class'),
   \ ])
 
-call javaapi#class('XmlTransientQuick', '', [
+call javaapi#class('XmlTransientQuick', 'Quick', [
   \ javaapi#method(0,'XmlTransientQuick(', 'Locatable, XmlTransient)', 'public'),
   \ javaapi#method(0,'annotationType(', ')', 'XmlTransient>'),
   \ ])
 
-call javaapi#class('XmlTypeQuick', '', [
+call javaapi#class('XmlTypeQuick', 'Quick', [
   \ javaapi#method(0,'XmlTypeQuick(', 'Locatable, XmlType)', 'public'),
   \ javaapi#method(0,'annotationType(', ')', 'XmlType>'),
   \ javaapi#method(0,'namespace(', ')', 'String'),
@@ -201,7 +201,7 @@ call javaapi#class('XmlTypeQuick', '', [
   \ javaapi#method(0,'name(', ')', 'String'),
   \ ])
 
-call javaapi#class('XmlValueQuick', '', [
+call javaapi#class('XmlValueQuick', 'Quick', [
   \ javaapi#method(0,'XmlValueQuick(', 'Locatable, XmlValue)', 'public'),
   \ javaapi#method(0,'annotationType(', ')', 'XmlValue>'),
   \ ])

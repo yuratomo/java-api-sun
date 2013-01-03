@@ -15,7 +15,7 @@ call javaapi#class('2', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('ORB', '', [
+call javaapi#class('ORB', 'ORB', [
   \ javaapi#field(1,'ORBInitDebug', 'boolean'),
   \ javaapi#field(0,'transportDebugFlag', 'boolean'),
   \ javaapi#field(0,'subcontractDebugFlag', 'boolean'),
@@ -141,7 +141,7 @@ call javaapi#interface('ORBData', '', [
   \ javaapi#method(0,'useRepId(', ')', 'boolean'),
   \ ])
 
-call javaapi#interface('ORBVersion', '', [
+call javaapi#interface('ORBVersion', 'Comparable', [
   \ javaapi#field(1,'FOREIGN', 'byte'),
   \ javaapi#field(1,'OLD', 'byte'),
   \ javaapi#field(1,'NEW', 'byte'),
@@ -171,64 +171,64 @@ call javaapi#interface('Operation', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('BooleanAction', '', [
+call javaapi#class('BooleanAction', 'OperationBase', [
   \ javaapi#method(0,'operate(', 'Object)', 'Object'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ClassAction', '', [
+call javaapi#class('ClassAction', 'OperationBase', [
   \ javaapi#method(0,'operate(', 'Object)', 'Object'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ComposeAction', '', [
+call javaapi#class('ComposeAction', 'OperationBase', [
   \ javaapi#method(0,'operate(', 'Object)', 'Object'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ConvertIntegerToShort', '', [
+call javaapi#class('ConvertIntegerToShort', 'OperationBase', [
   \ javaapi#method(0,'operate(', 'Object)', 'Object'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('IdentityAction', '', [
+call javaapi#class('IdentityAction', 'OperationBase', [
   \ javaapi#method(0,'operate(', 'Object)', 'Object'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('IndexAction', '', [
+call javaapi#class('IndexAction', 'OperationBase', [
   \ javaapi#method(0,'IndexAction(', 'int)', 'public'),
   \ javaapi#method(0,'operate(', 'Object)', 'Object'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('IntegerAction', '', [
+call javaapi#class('IntegerAction', 'OperationBase', [
   \ javaapi#method(0,'operate(', 'Object)', 'Object'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('IntegerRangeAction', '', [
+call javaapi#class('IntegerRangeAction', 'OperationBase', [
   \ javaapi#method(0,'operate(', 'Object)', 'Object'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ListAction', '', [
+call javaapi#class('ListAction', 'OperationBase', [
   \ javaapi#method(0,'operate(', 'Object)', 'Object'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('MapAction', '', [
+call javaapi#class('MapAction', 'OperationBase', [
   \ javaapi#method(0,'operate(', 'Object)', 'Object'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('MapSequenceAction', '', [
+call javaapi#class('MapSequenceAction', 'OperationBase', [
   \ javaapi#method(0,'MapSequenceAction(', 'Operation[])', 'public'),
   \ javaapi#method(0,'operate(', 'Object)', 'Object'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('MaskErrorAction', '', [
+call javaapi#class('MaskErrorAction', 'OperationBase', [
   \ javaapi#method(0,'MaskErrorAction(', 'Operation)', 'public'),
   \ javaapi#method(0,'operate(', 'Object)', 'Object'),
   \ javaapi#method(0,'toString(', ')', 'String'),
@@ -239,32 +239,32 @@ call javaapi#class('OperationBase', 'Operation', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('SequenceAction', '', [
+call javaapi#class('SequenceAction', 'OperationBase', [
   \ javaapi#method(0,'operate(', 'Object)', 'Object'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SetFlagAction', '', [
+call javaapi#class('SetFlagAction', 'OperationBase', [
   \ javaapi#method(0,'operate(', 'Object)', 'Object'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('StringAction', '', [
+call javaapi#class('StringAction', 'OperationBase', [
   \ javaapi#method(0,'operate(', 'Object)', 'Object'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SuffixAction', '', [
+call javaapi#class('SuffixAction', 'OperationBase', [
   \ javaapi#method(0,'operate(', 'Object)', 'Object'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('URLAction', '', [
+call javaapi#class('URLAction', 'OperationBase', [
   \ javaapi#method(0,'operate(', 'Object)', 'Object'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ValueAction', '', [
+call javaapi#class('ValueAction', 'OperationBase', [
   \ javaapi#method(0,'operate(', 'Object)', 'Object'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
@@ -321,12 +321,12 @@ call javaapi#class('1', 'Iterator', [
   \ javaapi#method(0,'remove(', ')', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'AbstractSet', [
   \ javaapi#method(0,'iterator(', ')', 'Iterator'),
   \ javaapi#method(0,'size(', ')', 'int'),
   \ ])
 
-call javaapi#class('FieldMap', '', [
+call javaapi#class('FieldMap', 'AbstractMap', [
   \ javaapi#method(0,'FieldMap(', 'ParserData[], boolean)', 'public'),
   \ javaapi#method(0,'entrySet(', ')', 'Set'),
   \ ])
@@ -340,7 +340,7 @@ call javaapi#class('MapEntry', 'Entry', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('ParserImplTableBase', '', [
+call javaapi#class('ParserImplTableBase', 'ParserImplBase', [
   \ javaapi#method(0,'ParserImplTableBase(', 'ParserData[])', 'public'),
   \ javaapi#method(0,'setTestValues(', ')', 'void'),
   \ ])

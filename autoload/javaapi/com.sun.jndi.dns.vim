@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.jndi.dns')
 
-call javaapi#class('BindingEnumeration', '', [
+call javaapi#class('BindingEnumeration', 'NameClassPairEnumeration', [
   \ javaapi#method(0,'next(', ') throws NamingException', 'Object'),
   \ ])
 
@@ -13,7 +13,7 @@ call javaapi#class('DnsClient', '', [
   \ javaapi#method(1,'setDebug(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('DnsContext', '', [
+call javaapi#class('DnsContext', 'ComponentDirContext', [
   \ javaapi#method(0,'DnsContext(', 'String, String[], Hashtable) throws NamingException', 'public'),
   \ javaapi#method(0,'close(', ')', 'void'),
   \ javaapi#method(0,'getEnvironment(', ') throws NamingException', 'Hashtable'),
@@ -89,7 +89,7 @@ call javaapi#class('DnsNameParser', 'NameParser', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('DnsUrl', '', [
+call javaapi#class('DnsUrl', 'Uri', [
   \ javaapi#method(1,'fromList(', 'String) throws MalformedURLException', 'DnsUrl[]'),
   \ javaapi#method(0,'DnsUrl(', 'String) throws MalformedURLException', 'public'),
   \ javaapi#method(0,'getDomain(', ')', 'String'),
@@ -136,6 +136,6 @@ call javaapi#class('ResourceRecords', '', [
 call javaapi#class('Tcp', '', [
   \ ])
 
-call javaapi#class('ZoneNode', '', [
+call javaapi#class('ZoneNode', 'NameNode', [
   \ ])
 

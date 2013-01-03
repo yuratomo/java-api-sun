@@ -84,7 +84,7 @@ call javaapi#class('GSSCredentialImpl', 'GSSCredential', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('GSSExceptionImpl', '', [
+call javaapi#class('GSSExceptionImpl', 'GSSException', [
   \ javaapi#method(0,'GSSExceptionImpl(', 'int, String)', 'public'),
   \ javaapi#method(0,'GSSExceptionImpl(', 'int, Exception)', 'public'),
   \ javaapi#method(0,'GSSExceptionImpl(', 'int, String, Exception)', 'public'),
@@ -107,7 +107,7 @@ call javaapi#class('1', 'Boolean>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('GSSManagerImpl', '', [
+call javaapi#class('GSSManagerImpl', 'GSSManager', [
   \ javaapi#method(0,'GSSManagerImpl(', 'GSSCaller, boolean)', 'public'),
   \ javaapi#method(0,'GSSManagerImpl(', 'GSSCaller)', 'public'),
   \ javaapi#method(0,'GSSManagerImpl(', ')', 'public'),
@@ -186,7 +186,7 @@ call javaapi#class('GSSUtil', '', [
   \ javaapi#method(1,'searchSubject(', 'GSSNameSpi, Oid, boolean, Class)', 'Vector'),
   \ ])
 
-call javaapi#class('HttpCaller', '', [
+call javaapi#class('HttpCaller', 'GSSCaller', [
   \ javaapi#method(0,'HttpCaller(', 'HttpCallerInfo)', 'public'),
   \ javaapi#method(0,'info(', ')', 'HttpCallerInfo'),
   \ ])
@@ -196,7 +196,7 @@ call javaapi#class('1', 'Configuration>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('LoginConfigImpl', '', [
+call javaapi#class('LoginConfigImpl', 'Configuration', [
   \ javaapi#method(0,'LoginConfigImpl(', 'GSSCaller, Oid)', 'public'),
   \ javaapi#method(0,'getAppConfigurationEntry(', 'String)', 'AppConfigurationEntry[]'),
   \ ])
@@ -222,7 +222,7 @@ call javaapi#class('1', 'Void>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('SunProvider', '', [
+call javaapi#class('SunProvider', 'Provider', [
   \ javaapi#field(1,'INSTANCE', 'SunProvider'),
   \ javaapi#method(0,'SunProvider(', ')', 'public'),
   \ ])

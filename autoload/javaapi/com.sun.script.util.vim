@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.script.util')
 
-call javaapi#class('BindingsBase', '', [
+call javaapi#class('BindingsBase', 'Object>', [
   \ javaapi#method(0,'BindingsBase(', ')', 'public'),
   \ javaapi#method(0,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,'remove(', 'Object)', 'Object'),
@@ -29,13 +29,13 @@ call javaapi#class('BindingsIterator', 'Object>>', [
   \ javaapi#method(0,'next(', ')', 'Object'),
   \ ])
 
-call javaapi#class('BindingsEntrySet', '', [
+call javaapi#class('BindingsEntrySet', 'Object>>', [
   \ javaapi#method(0,'BindingsEntrySet(', 'BindingsBase)', 'public'),
   \ javaapi#method(0,'size(', ')', 'int'),
   \ javaapi#method(0,'iterator(', ')', 'Object>>'),
   \ ])
 
-call javaapi#class('BindingsImpl', '', [
+call javaapi#class('BindingsImpl', 'BindingsBase', [
   \ javaapi#method(0,'BindingsImpl(', ')', 'public'),
   \ javaapi#method(0,'setGlobal(', 'Bindings)', 'void'),
   \ javaapi#method(0,'setLocal(', 'Bindings)', 'void'),

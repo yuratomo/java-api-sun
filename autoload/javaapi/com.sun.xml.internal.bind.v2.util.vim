@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.bind.v2.util')
 
-call javaapi#class('ByteArrayOutputStreamEx', '', [
+call javaapi#class('ByteArrayOutputStreamEx', 'ByteArrayOutputStream', [
   \ javaapi#method(0,'ByteArrayOutputStreamEx(', ')', 'public'),
   \ javaapi#method(0,'ByteArrayOutputStreamEx(', 'int)', 'public'),
   \ javaapi#method(0,'set(', 'Base64Data, String)', 'void'),
@@ -13,7 +13,7 @@ call javaapi#class('ClassLoaderRetriever', '', [
   \ javaapi#method(1,'getClassLoader(', ')', 'ClassLoader'),
   \ ])
 
-call javaapi#class('CollisionCheckStack<E>', '', [
+call javaapi#class('CollisionCheckStack<E>', 'AbstractList<E>', [
   \ javaapi#method(0,'CollisionCheckStack(', ')', 'public'),
   \ javaapi#method(0,'setUseIdentity(', 'boolean)', 'void'),
   \ javaapi#method(0,'getUseIdentity(', ')', 'boolean'),
@@ -29,7 +29,7 @@ call javaapi#class('CollisionCheckStack<E>', '', [
   \ javaapi#method(0,'getCycleString(', ')', 'String'),
   \ ])
 
-call javaapi#class('DataSourceSource', '', [
+call javaapi#class('DataSourceSource', 'StreamSource', [
   \ javaapi#method(0,'DataSourceSource(', 'DataHandler) throws MimeTypeParseException', 'public'),
   \ javaapi#method(0,'DataSourceSource(', 'DataSource) throws MimeTypeParseException', 'public'),
   \ javaapi#method(0,'setReader(', 'Reader)', 'void'),
@@ -73,12 +73,12 @@ call javaapi#class('Entry<V>', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('EntryIterator', '', [
+call javaapi#class('EntryIterator', 'Entry<V>>', [
   \ javaapi#method(0,'next(', ')', 'Entry<V>'),
   \ javaapi#method(0,'next(', ')', 'Object'),
   \ ])
 
-call javaapi#class('EntrySet', '', [
+call javaapi#class('EntrySet', 'Entry<V>>', [
   \ javaapi#method(0,'iterator(', ')', 'Entry<V>>'),
   \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
   \ javaapi#method(0,'remove(', 'Object)', 'boolean'),
@@ -107,7 +107,7 @@ call javaapi#class('QNameMap<V>', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('StackRecorder', '', [
+call javaapi#class('StackRecorder', 'Throwable', [
   \ javaapi#method(0,'StackRecorder(', ')', 'public'),
   \ ])
 

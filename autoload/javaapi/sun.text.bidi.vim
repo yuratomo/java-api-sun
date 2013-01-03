@@ -18,7 +18,7 @@ call javaapi#class('NumericShapings', '', [
 call javaapi#class('Point', '', [
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Attribute', [
   \ ])
 
 call javaapi#class('TextAttributeConstants', '', [

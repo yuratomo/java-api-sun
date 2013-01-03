@@ -1,12 +1,12 @@
 call javaapi#namespace('sun.security.krb5.internal.ccache')
 
-call javaapi#class('CCacheInputStream', '', [
+call javaapi#class('CCacheInputStream', 'KrbDataInputStream', [
   \ javaapi#method(0,'CCacheInputStream(', 'InputStream)', 'public'),
   \ javaapi#method(0,'readTag(', ') throws IOException', 'Tag'),
   \ javaapi#method(0,'readPrincipal(', 'int) throws IOException, RealmException', 'PrincipalName'),
   \ ])
 
-call javaapi#class('CCacheOutputStream', '', [
+call javaapi#class('CCacheOutputStream', 'KrbDataOutputStream', [
   \ javaapi#method(0,'CCacheOutputStream(', 'OutputStream)', 'public'),
   \ javaapi#method(0,'writeHeader(', 'PrincipalName, int) throws IOException', 'void'),
   \ javaapi#method(0,'addCreds(', 'Credentials) throws IOException, Asn1Exception', 'void'),
@@ -76,7 +76,7 @@ call javaapi#class('2', 'Process>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('FileCredentialsCache', '', [
+call javaapi#class('FileCredentialsCache', 'CredentialsCache', [
   \ javaapi#field(0,'version', 'int'),
   \ javaapi#field(0,'tag', 'Tag'),
   \ javaapi#field(0,'primaryPrincipal', 'PrincipalName'),
@@ -94,7 +94,7 @@ call javaapi#class('FileCredentialsCache', '', [
   \ javaapi#method(1,'checkValidation(', 'String)', 'String'),
   \ ])
 
-call javaapi#class('MemoryCredentialsCache', '', [
+call javaapi#class('MemoryCredentialsCache', 'CredentialsCache', [
   \ javaapi#method(0,'MemoryCredentialsCache(', ')', 'public'),
   \ javaapi#method(0,'exists(', 'String)', 'boolean'),
   \ javaapi#method(0,'update(', 'Credentials)', 'void'),

@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.corba.se.spi.extension')
 
-call javaapi#class('CopyObjectPolicy', '', [
+call javaapi#class('CopyObjectPolicy', 'LocalObject', [
   \ javaapi#method(0,'CopyObjectPolicy(', 'int)', 'public'),
   \ javaapi#method(0,'getValue(', ')', 'int'),
   \ javaapi#method(0,'policy_type(', ')', 'int'),
@@ -9,7 +9,7 @@ call javaapi#class('CopyObjectPolicy', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('RequestPartitioningPolicy', '', [
+call javaapi#class('RequestPartitioningPolicy', 'LocalObject', [
   \ javaapi#field(1,'DEFAULT_VALUE', 'int'),
   \ javaapi#method(0,'RequestPartitioningPolicy(', 'int)', 'public'),
   \ javaapi#method(0,'getValue(', ')', 'int'),
@@ -19,7 +19,7 @@ call javaapi#class('RequestPartitioningPolicy', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ServantCachingPolicy', '', [
+call javaapi#class('ServantCachingPolicy', 'LocalObject', [
   \ javaapi#field(1,'NO_SERVANT_CACHING', 'int'),
   \ javaapi#field(1,'FULL_SEMANTICS', 'int'),
   \ javaapi#field(1,'INFO_ONLY_SEMANTICS', 'int'),
@@ -36,7 +36,7 @@ call javaapi#class('ServantCachingPolicy', '', [
   \ javaapi#method(0,'destroy(', ')', 'void'),
   \ ])
 
-call javaapi#class('ZeroPortPolicy', '', [
+call javaapi#class('ZeroPortPolicy', 'LocalObject', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'forceZeroPort(', ')', 'boolean'),
   \ javaapi#method(1,'getPolicy(', ')', 'ZeroPortPolicy'),
