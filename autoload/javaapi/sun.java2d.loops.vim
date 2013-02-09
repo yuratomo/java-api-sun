@@ -1,909 +1,625 @@
 call javaapi#namespace('sun.java2d.loops')
 
-call javaapi#class('AnyBlit', 'Blit', [
-  \ javaapi#field(1,'instance', 'AnyBlit'),
-  \ javaapi#method(0,'AnyBlit(', ')', 'public'),
-  \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
-  \ ])
-
-call javaapi#class('GeneralMaskBlit', 'Blit', [
-  \ javaapi#method(0,'GeneralMaskBlit(', 'SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
-  \ ])
-
-call javaapi#class('GeneralXorBlit', 'Blit', [
-  \ javaapi#method(0,'GeneralXorBlit(', 'SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'setPrimitives(', 'Blit, Blit, GraphicsPrimitive, Blit)', 'void'),
-  \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
-  \ ])
-
-call javaapi#class('TraceBlit', 'Blit', [
-  \ javaapi#method(0,'TraceBlit(', 'Blit)', 'public'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
-  \ ])
-
-call javaapi#class('General', 'BlitBg', [
-  \ javaapi#method(0,'General(', 'SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'BlitBg(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int, int)', 'void'),
-  \ ])
-
-call javaapi#class('TraceBlitBg', 'BlitBg', [
-  \ javaapi#method(0,'TraceBlitBg(', 'BlitBg)', 'public'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'BlitBg(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int, int)', 'void'),
-  \ ])
-
-call javaapi#class('General', 'DrawGlyphList', [
-  \ javaapi#method(0,'General(', 'SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'DrawGlyphList(', 'SunGraphics2D, SurfaceData, GlyphList)', 'void'),
-  \ ])
-
-call javaapi#class('TraceDrawGlyphList', 'DrawGlyphList', [
-  \ javaapi#method(0,'TraceDrawGlyphList(', 'DrawGlyphList)', 'public'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'DrawGlyphList(', 'SunGraphics2D, SurfaceData, GlyphList)', 'void'),
-  \ ])
-
-call javaapi#class('General', 'DrawGlyphListAA', [
-  \ javaapi#method(0,'General(', 'SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'DrawGlyphListAA(', 'SunGraphics2D, SurfaceData, GlyphList)', 'void'),
-  \ ])
-
-call javaapi#class('TraceDrawGlyphListAA', 'DrawGlyphListAA', [
-  \ javaapi#method(0,'TraceDrawGlyphListAA(', 'DrawGlyphListAA)', 'public'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'DrawGlyphListAA(', 'SunGraphics2D, SurfaceData, GlyphList)', 'void'),
-  \ ])
-
-call javaapi#class('TraceDrawGlyphListLCD', 'DrawGlyphListLCD', [
-  \ javaapi#method(0,'TraceDrawGlyphListLCD(', 'DrawGlyphListLCD)', 'public'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'DrawGlyphListLCD(', 'SunGraphics2D, SurfaceData, GlyphList)', 'void'),
-  \ ])
-
-call javaapi#class('TraceDrawLine', 'DrawLine', [
-  \ javaapi#method(0,'TraceDrawLine(', 'DrawLine)', 'public'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'DrawLine(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
-  \ ])
-
-call javaapi#class('TraceDrawParallelogram', 'DrawParallelogram', [
-  \ javaapi#method(0,'TraceDrawParallelogram(', 'DrawParallelogram)', 'public'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'DrawParallelogram(', 'SunGraphics2D, SurfaceData, double, double, double, double, double, double, double, double)', 'void'),
-  \ ])
-
 call javaapi#class('DrawParallelogram', 'GraphicsPrimitive', [
-  \ javaapi#field(1,'methodSignature', 'String'),
-  \ javaapi#field(1,'primTypeID', 'int'),
-  \ javaapi#method(1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'DrawParallelogram'),
-  \ javaapi#method(0,'DrawParallelogram(', 'long, SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'DrawParallelogram(', 'SunGraphics2D, SurfaceData, double, double, double, double, double, double, double, double)', 'void'),
-  \ javaapi#method(0,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ ])
-
-call javaapi#class('TraceDrawPath', 'DrawPath', [
-  \ javaapi#method(0,'TraceDrawPath(', 'DrawPath)', 'public'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'DrawPath(', 'SunGraphics2D, SurfaceData, int, int, Float)', 'void'),
-  \ ])
-
-call javaapi#class('TraceDrawPolygons', 'DrawPolygons', [
-  \ javaapi#method(0,'TraceDrawPolygons(', 'DrawPolygons)', 'public'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'DrawPolygons(', 'SunGraphics2D, SurfaceData, int[], int[], int[], int, int, int, boolean)', 'void'),
-  \ ])
-
-call javaapi#class('TraceDrawRect', 'DrawRect', [
-  \ javaapi#method(0,'TraceDrawRect(', 'DrawRect)', 'public'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'DrawRect(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
-  \ ])
-
-call javaapi#class('TraceFillParallelogram', 'FillParallelogram', [
-  \ javaapi#method(0,'TraceFillParallelogram(', 'FillParallelogram)', 'public'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'FillParallelogram(', 'SunGraphics2D, SurfaceData, double, double, double, double, double, double)', 'void'),
+  \ javaapi#field(1,1,'methodSignature', 'String'),
+  \ javaapi#field(1,1,'primTypeID', 'int'),
+  \ javaapi#method(1,1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'DrawParallelogram'),
+  \ javaapi#method(0,0,'DrawParallelogram(', 'SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'DrawParallelogram(', 'long, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'DrawParallelogram(', 'SunGraphics2D, SurfaceData, double, double, double, double, double, double, double, double)', 'void'),
+  \ javaapi#method(0,1,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'traceWrap(', ')', 'GraphicsPrimitive'),
   \ ])
 
 call javaapi#class('FillParallelogram', 'GraphicsPrimitive', [
-  \ javaapi#field(1,'methodSignature', 'String'),
-  \ javaapi#field(1,'primTypeID', 'int'),
-  \ javaapi#method(1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'FillParallelogram'),
-  \ javaapi#method(0,'FillParallelogram(', 'long, SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'FillParallelogram(', 'SunGraphics2D, SurfaceData, double, double, double, double, double, double)', 'void'),
-  \ javaapi#method(0,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ ])
-
-call javaapi#class('TraceFillPath', 'FillPath', [
-  \ javaapi#method(0,'TraceFillPath(', 'FillPath)', 'public'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'FillPath(', 'SunGraphics2D, SurfaceData, int, int, Float)', 'void'),
-  \ ])
-
-call javaapi#class('General', 'FillRect', [
-  \ javaapi#field(0,'fillop', 'MaskFill'),
-  \ javaapi#method(0,'General(', 'SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'FillRect(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
-  \ ])
-
-call javaapi#class('TraceFillRect', 'FillRect', [
-  \ javaapi#method(0,'TraceFillRect(', 'FillRect)', 'public'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'FillRect(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
-  \ ])
-
-call javaapi#class('TraceFillSpans', 'FillSpans', [
-  \ javaapi#method(0,'TraceFillSpans(', 'FillSpans)', 'public'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'FillSpans(', 'SunGraphics2D, SurfaceData, SpanIterator)', 'void'),
-  \ ])
-
-call javaapi#class('1', 'PrivilegedAction', [
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
-call javaapi#interface('GeneralBinaryOp', '', [
-  \ javaapi#method(0,'setPrimitives(', 'Blit, Blit, GraphicsPrimitive, Blit)', 'void'),
-  \ javaapi#method(0,'getSourceType(', ')', 'SurfaceType'),
-  \ javaapi#method(0,'getCompositeType(', ')', 'CompositeType'),
-  \ javaapi#method(0,'getDestType(', ')', 'SurfaceType'),
-  \ javaapi#method(0,'getSignature(', ')', 'String'),
-  \ javaapi#method(0,'getPrimTypeID(', ')', 'int'),
-  \ ])
-
-call javaapi#interface('GeneralUnaryOp', '', [
-  \ javaapi#method(0,'setPrimitives(', 'Blit, GraphicsPrimitive, Blit)', 'void'),
-  \ javaapi#method(0,'getCompositeType(', ')', 'CompositeType'),
-  \ javaapi#method(0,'getDestType(', ')', 'SurfaceType'),
-  \ javaapi#method(0,'getSignature(', ')', 'String'),
-  \ javaapi#method(0,'getPrimTypeID(', ')', 'int'),
-  \ ])
-
-call javaapi#class('1', 'PrivilegedAction', [
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('TraceReporter', 'Thread', [
-  \ javaapi#method(0,'TraceReporter(', ')', 'public'),
-  \ javaapi#method(1,'setShutdownHook(', ')', 'void'),
-  \ javaapi#method(0,'run(', ')', 'void'),
-  \ ])
-
-call javaapi#class('General', 'MaskBlit', [
-  \ javaapi#method(0,'General(', 'SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'setPrimitives(', 'Blit, Blit, GraphicsPrimitive, Blit)', 'void'),
-  \ javaapi#method(0,'MaskBlit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int, byte[], int, int)', 'void'),
-  \ ])
-
-call javaapi#class('TraceMaskBlit', 'MaskBlit', [
-  \ javaapi#method(0,'TraceMaskBlit(', 'MaskBlit)', 'public'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'MaskBlit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int, byte[], int, int)', 'void'),
-  \ ])
-
-call javaapi#class('General', 'MaskFill', [
-  \ javaapi#method(0,'General(', 'SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'MaskFill(', 'SunGraphics2D, SurfaceData, Composite, int, int, int, int, byte[], int, int)', 'void'),
-  \ ])
-
-call javaapi#class('TraceMaskFill', 'MaskFill', [
-  \ javaapi#method(0,'TraceMaskFill(', 'MaskFill)', 'public'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'MaskFill(', 'SunGraphics2D, SurfaceData, Composite, int, int, int, int, byte[], int, int)', 'void'),
-  \ javaapi#method(0,'FillAAPgram(', 'SunGraphics2D, SurfaceData, Composite, double, double, double, double, double, double)', 'void'),
-  \ javaapi#method(0,'DrawAAPgram(', 'SunGraphics2D, SurfaceData, Composite, double, double, double, double, double, double, double, double)', 'void'),
-  \ javaapi#method(0,'canDoParallelograms(', ')', 'boolean'),
+  \ javaapi#field(1,1,'methodSignature', 'String'),
+  \ javaapi#field(1,1,'primTypeID', 'int'),
+  \ javaapi#method(1,1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'FillParallelogram'),
+  \ javaapi#method(0,0,'FillParallelogram(', 'SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'FillParallelogram(', 'long, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'FillParallelogram(', 'SunGraphics2D, SurfaceData, double, double, double, double, double, double)', 'void'),
+  \ javaapi#method(0,1,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'traceWrap(', ')', 'GraphicsPrimitive'),
   \ ])
 
 call javaapi#class('OpaqueCopyAnyToArgb', 'Blit', [
-  \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
+  \ javaapi#method(0,1,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
   \ ])
 
 call javaapi#class('OpaqueCopyArgbToAny', 'Blit', [
-  \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
+  \ javaapi#method(0,1,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
   \ ])
 
 call javaapi#class('PixelWriter', '', [
-  \ javaapi#method(0,'setRaster(', 'WritableRaster)', 'void'),
-  \ javaapi#method(0,'writePixel(', 'int, int)', 'void'),
+  \ javaapi#field(0,0,'dstRast', 'WritableRaster'),
+  \ javaapi#method(0,1,'setRaster(', 'WritableRaster)', 'void'),
+  \ javaapi#method(0,1,'writePixel(', 'int, int)', 'void'),
   \ ])
 
 call javaapi#class('PixelWriterDrawHandler', 'DrawHandler', [
-  \ javaapi#method(0,'PixelWriterDrawHandler(', 'SurfaceData, PixelWriter, Region, int)', 'public'),
-  \ javaapi#method(0,'drawLine(', 'int, int, int, int)', 'void'),
-  \ javaapi#method(0,'drawPixel(', 'int, int)', 'void'),
-  \ javaapi#method(0,'drawScanline(', 'int, int, int)', 'void'),
-  \ ])
-
-call javaapi#class('1', 'EndSubPathHandler', [
-  \ javaapi#method(0,'processEndSubPath(', ')', 'void'),
-  \ ])
-
-call javaapi#class('ActiveEdgeList', '', [
-  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,'insert(', 'Point, int)', 'void'),
-  \ javaapi#method(0,'delete(', 'Edge)', 'void'),
-  \ javaapi#method(0,'sort(', ')', 'void'),
-  \ ])
-
-call javaapi#class('DrawHandler', '', [
-  \ javaapi#field(0,'xMin', 'int'),
-  \ javaapi#field(0,'yMin', 'int'),
-  \ javaapi#field(0,'xMax', 'int'),
-  \ javaapi#field(0,'yMax', 'int'),
-  \ javaapi#field(0,'xMinf', 'float'),
-  \ javaapi#field(0,'yMinf', 'float'),
-  \ javaapi#field(0,'xMaxf', 'float'),
-  \ javaapi#field(0,'yMaxf', 'float'),
-  \ javaapi#field(0,'strokeControl', 'int'),
-  \ javaapi#method(0,'DrawHandler(', 'int, int, int, int, int)', 'public'),
-  \ javaapi#method(0,'setBounds(', 'int, int, int, int)', 'void'),
-  \ javaapi#method(0,'setBounds(', 'int, int, int, int, int)', 'void'),
-  \ javaapi#method(0,'adjustBounds(', 'int, int, int, int)', 'void'),
-  \ javaapi#method(0,'DrawHandler(', 'int, int, int, int)', 'public'),
-  \ javaapi#method(0,'drawLine(', 'int, int, int, int)', 'void'),
-  \ javaapi#method(0,'drawPixel(', 'int, int)', 'void'),
-  \ javaapi#method(0,'drawScanline(', 'int, int, int)', 'void'),
-  \ ])
-
-call javaapi#class('DrawProcessHandler', 'ProcessHandler', [
-  \ javaapi#method(0,'DrawProcessHandler(', 'DrawHandler, EndSubPathHandler)', 'public'),
-  \ javaapi#method(0,'processEndSubPath(', ')', 'void'),
-  \ javaapi#method(0,'processFixedLine(', 'int, int, int, int, int[], boolean, boolean)', 'void'),
-  \ ])
-
-call javaapi#class('Edge', '', [
-  \ javaapi#method(0,'Edge(', 'Point, int, int, int)', 'public'),
-  \ ])
-
-call javaapi#interface('EndSubPathHandler', '', [
-  \ javaapi#method(0,'processEndSubPath(', ')', 'void'),
-  \ ])
-
-call javaapi#class('FillData', '', [
-  \ javaapi#field(0,'plgYMin', 'int'),
-  \ javaapi#field(0,'plgYMax', 'int'),
-  \ javaapi#method(0,'FillData(', ')', 'public'),
-  \ javaapi#method(0,'addPoint(', 'int, int, boolean)', 'void'),
-  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,'isEnded(', ')', 'boolean'),
-  \ javaapi#method(0,'setEnded(', ')', 'boolean'),
-  \ ])
-
-call javaapi#class('FillProcessHandler', 'ProcessHandler', [
-  \ javaapi#method(0,'processFixedLine(', 'int, int, int, int, int[], boolean, boolean)', 'void'),
-  \ javaapi#method(0,'processEndSubPath(', ')', 'void'),
-  \ ])
-
-call javaapi#class('Point', '', [
-  \ javaapi#field(0,'x', 'int'),
-  \ javaapi#field(0,'y', 'int'),
-  \ javaapi#field(0,'lastPoint', 'boolean'),
-  \ javaapi#field(0,'prev', 'Point'),
-  \ javaapi#field(0,'next', 'Point'),
-  \ javaapi#field(0,'nextByY', 'Point'),
-  \ javaapi#field(0,'edge', 'Edge'),
-  \ javaapi#method(0,'Point(', 'int, int, boolean)', 'public'),
-  \ ])
-
-call javaapi#class('ProcessHandler', 'EndSubPathHandler', [
-  \ javaapi#method(0,'ProcessHandler(', 'DrawHandler, int)', 'public'),
-  \ javaapi#method(0,'processFixedLine(', 'int, int, int, int, int[], boolean, boolean)', 'void'),
+  \ javaapi#method(0,1,'PixelWriterDrawHandler(', 'SurfaceData, PixelWriter, Region, int)', ''),
+  \ javaapi#method(0,1,'drawLine(', 'int, int, int, int)', 'void'),
+  \ javaapi#method(0,1,'drawPixel(', 'int, int)', 'void'),
+  \ javaapi#method(0,1,'drawScanline(', 'int, int, int)', 'void'),
   \ ])
 
 call javaapi#class('ProcessPath', '', [
-  \ javaapi#field(1,'PH_MODE_DRAW_CLIP', 'int'),
-  \ javaapi#field(1,'PH_MODE_FILL_CLIP', 'int'),
-  \ javaapi#field(1,'noopEndSubPathHandler', 'EndSubPathHandler'),
-  \ javaapi#field(1,'EPSFX', 'int'),
-  \ javaapi#field(1,'EPSF', 'float'),
-  \ javaapi#method(0,'ProcessPath(', ')', 'public'),
-  \ javaapi#method(1,'fillPath(', 'DrawHandler, Float, int, int)', 'boolean'),
-  \ javaapi#method(1,'drawPath(', 'DrawHandler, EndSubPathHandler, Float, int, int)', 'boolean'),
-  \ javaapi#method(1,'drawPath(', 'DrawHandler, Float, int, int)', 'boolean'),
-  \ ])
-
-call javaapi#class('TraceScaledBlit', 'ScaledBlit', [
-  \ javaapi#method(0,'TraceScaledBlit(', 'ScaledBlit)', 'public'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'Scale(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, double, double, double, double)', 'void'),
+  \ javaapi#field(1,1,'PH_MODE_DRAW_CLIP', 'int'),
+  \ javaapi#field(1,1,'PH_MODE_FILL_CLIP', 'int'),
+  \ javaapi#field(1,1,'noopEndSubPathHandler', 'EndSubPathHandler'),
+  \ javaapi#field(1,1,'EPSFX', 'int'),
+  \ javaapi#field(1,1,'EPSF', 'float'),
+  \ javaapi#method(0,1,'ProcessPath(', ')', ''),
+  \ javaapi#method(1,1,'fillPath(', 'DrawHandler, Float, int, int)', 'boolean'),
+  \ javaapi#method(1,1,'drawPath(', 'DrawHandler, EndSubPathHandler, Float, int, int)', 'boolean'),
+  \ javaapi#method(1,1,'drawPath(', 'DrawHandler, Float, int, int)', 'boolean'),
   \ ])
 
 call javaapi#class('SetDrawLineANY', 'DrawLine', [
-  \ javaapi#method(0,'DrawLine(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
+  \ javaapi#method(0,1,'DrawLine(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
   \ ])
 
 call javaapi#class('SetDrawPathANY', 'DrawPath', [
-  \ javaapi#method(0,'DrawPath(', 'SunGraphics2D, SurfaceData, int, int, Float)', 'void'),
+  \ javaapi#method(0,1,'DrawPath(', 'SunGraphics2D, SurfaceData, int, int, Float)', 'void'),
   \ ])
 
 call javaapi#class('SetDrawPolygonsANY', 'DrawPolygons', [
-  \ javaapi#method(0,'DrawPolygons(', 'SunGraphics2D, SurfaceData, int[], int[], int[], int, int, int, boolean)', 'void'),
+  \ javaapi#method(0,1,'DrawPolygons(', 'SunGraphics2D, SurfaceData, int[], int[], int[], int, int, int, boolean)', 'void'),
   \ ])
 
 call javaapi#class('SetDrawRectANY', 'DrawRect', [
-  \ javaapi#method(0,'DrawRect(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
+  \ javaapi#method(0,1,'DrawRect(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
   \ ])
 
 call javaapi#class('SetFillPathANY', 'FillPath', [
-  \ javaapi#method(0,'FillPath(', 'SunGraphics2D, SurfaceData, int, int, Float)', 'void'),
+  \ javaapi#method(0,1,'FillPath(', 'SunGraphics2D, SurfaceData, int, int, Float)', 'void'),
   \ ])
 
 call javaapi#class('SetFillRectANY', 'FillRect', [
-  \ javaapi#method(0,'FillRect(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
+  \ javaapi#method(0,1,'FillRect(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
   \ ])
 
 call javaapi#class('SetFillSpansANY', 'FillSpans', [
-  \ javaapi#method(0,'FillSpans(', 'SunGraphics2D, SurfaceData, SpanIterator)', 'void'),
+  \ javaapi#method(0,1,'FillSpans(', 'SunGraphics2D, SurfaceData, SpanIterator)', 'void'),
   \ ])
 
 call javaapi#class('SolidPixelWriter', 'PixelWriter', [
-  \ javaapi#method(0,'writePixel(', 'int, int)', 'void'),
-  \ ])
-
-call javaapi#class('TraceTransformBlit', 'TransformBlit', [
-  \ javaapi#method(0,'TraceTransformBlit(', 'TransformBlit)', 'public'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'Transform(', 'SurfaceData, SurfaceData, Composite, Region, AffineTransform, int, int, int, int, int, int, int)', 'void'),
+  \ javaapi#field(0,0,'srcData', 'Object'),
+  \ javaapi#method(0,1,'writePixel(', 'int, int)', 'void'),
   \ ])
 
 call javaapi#class('TransformBlit', 'GraphicsPrimitive', [
-  \ javaapi#field(1,'methodSignature', 'String'),
-  \ javaapi#field(1,'primTypeID', 'int'),
-  \ javaapi#method(1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'TransformBlit'),
-  \ javaapi#method(1,'getFromCache(', 'SurfaceType, CompositeType, SurfaceType)', 'TransformBlit'),
-  \ javaapi#method(0,'TransformBlit(', 'long, SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'Transform(', 'SurfaceData, SurfaceData, Composite, Region, AffineTransform, int, int, int, int, int, int, int)', 'void'),
-  \ javaapi#method(0,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ ])
-
-call javaapi#class('TraceTransformHelper', 'TransformHelper', [
-  \ javaapi#method(0,'TraceTransformHelper(', 'TransformHelper)', 'public'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'Transform(', 'MaskBlit, SurfaceData, SurfaceData, Composite, Region, AffineTransform, int, int, int, int, int, int, int, int, int, int[], int, int)', 'void'),
+  \ javaapi#field(1,1,'methodSignature', 'String'),
+  \ javaapi#field(1,1,'primTypeID', 'int'),
+  \ javaapi#method(1,1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'TransformBlit'),
+  \ javaapi#method(1,1,'getFromCache(', 'SurfaceType, CompositeType, SurfaceType)', 'TransformBlit'),
+  \ javaapi#method(0,0,'TransformBlit(', 'SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'TransformBlit(', 'long, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'Transform(', 'SurfaceData, SurfaceData, Composite, Region, AffineTransform, int, int, int, int, int, int, int)', 'void'),
+  \ javaapi#method(0,1,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'traceWrap(', ')', 'GraphicsPrimitive'),
   \ ])
 
 call javaapi#class('XorCopyArgbToAny', 'Blit', [
-  \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
+  \ javaapi#method(0,1,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
   \ ])
 
 call javaapi#class('XorDrawGlyphListAAANY', 'DrawGlyphListAA', [
-  \ javaapi#method(0,'DrawGlyphListAA(', 'SunGraphics2D, SurfaceData, GlyphList)', 'void'),
+  \ javaapi#method(0,1,'DrawGlyphListAA(', 'SunGraphics2D, SurfaceData, GlyphList)', 'void'),
   \ ])
 
 call javaapi#class('XorDrawGlyphListANY', 'DrawGlyphList', [
-  \ javaapi#method(0,'DrawGlyphList(', 'SunGraphics2D, SurfaceData, GlyphList)', 'void'),
+  \ javaapi#method(0,1,'DrawGlyphList(', 'SunGraphics2D, SurfaceData, GlyphList)', 'void'),
   \ ])
 
 call javaapi#class('XorDrawLineANY', 'DrawLine', [
-  \ javaapi#method(0,'DrawLine(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
+  \ javaapi#method(0,1,'DrawLine(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
   \ ])
 
 call javaapi#class('XorDrawPathANY', 'DrawPath', [
-  \ javaapi#method(0,'DrawPath(', 'SunGraphics2D, SurfaceData, int, int, Float)', 'void'),
+  \ javaapi#method(0,1,'DrawPath(', 'SunGraphics2D, SurfaceData, int, int, Float)', 'void'),
   \ ])
 
 call javaapi#class('XorDrawPolygonsANY', 'DrawPolygons', [
-  \ javaapi#method(0,'DrawPolygons(', 'SunGraphics2D, SurfaceData, int[], int[], int[], int, int, int, boolean)', 'void'),
+  \ javaapi#method(0,1,'DrawPolygons(', 'SunGraphics2D, SurfaceData, int[], int[], int[], int, int, int, boolean)', 'void'),
   \ ])
 
 call javaapi#class('XorDrawRectANY', 'DrawRect', [
-  \ javaapi#method(0,'DrawRect(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
+  \ javaapi#method(0,1,'DrawRect(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
   \ ])
 
 call javaapi#class('XorFillPathANY', 'FillPath', [
-  \ javaapi#method(0,'FillPath(', 'SunGraphics2D, SurfaceData, int, int, Float)', 'void'),
+  \ javaapi#method(0,1,'FillPath(', 'SunGraphics2D, SurfaceData, int, int, Float)', 'void'),
   \ ])
 
 call javaapi#class('XorFillRectANY', 'FillRect', [
-  \ javaapi#method(0,'FillRect(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
+  \ javaapi#method(0,1,'FillRect(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
   \ ])
 
 call javaapi#class('XorFillSpansANY', 'FillSpans', [
-  \ javaapi#method(0,'FillSpans(', 'SunGraphics2D, SurfaceData, SpanIterator)', 'void'),
-  \ ])
-
-call javaapi#class('ByteData', 'XorPixelWriter', [
-  \ javaapi#method(0,'writePixel(', 'int, int)', 'void'),
-  \ javaapi#method(0,'setRaster(', 'WritableRaster)', 'void'),
-  \ ])
-
-call javaapi#class('DoubleData', 'XorPixelWriter', [
-  \ javaapi#method(0,'writePixel(', 'int, int)', 'void'),
-  \ javaapi#method(0,'setRaster(', 'WritableRaster)', 'void'),
-  \ ])
-
-call javaapi#class('FloatData', 'XorPixelWriter', [
-  \ javaapi#method(0,'writePixel(', 'int, int)', 'void'),
-  \ javaapi#method(0,'setRaster(', 'WritableRaster)', 'void'),
-  \ ])
-
-call javaapi#class('IntData', 'XorPixelWriter', [
-  \ javaapi#method(0,'writePixel(', 'int, int)', 'void'),
-  \ javaapi#method(0,'setRaster(', 'WritableRaster)', 'void'),
-  \ ])
-
-call javaapi#class('ShortData', 'XorPixelWriter', [
-  \ javaapi#method(0,'writePixel(', 'int, int)', 'void'),
-  \ javaapi#method(0,'setRaster(', 'WritableRaster)', 'void'),
+  \ javaapi#method(0,1,'FillSpans(', 'SunGraphics2D, SurfaceData, SpanIterator)', 'void'),
   \ ])
 
 call javaapi#class('XorPixelWriter', 'PixelWriter', [
-  \ javaapi#method(0,'writePixel(', 'int, int)', 'void'),
+  \ javaapi#field(0,0,'dstCM', 'ColorModel'),
+  \ javaapi#method(0,1,'writePixel(', 'int, int)', 'void'),
+  \ javaapi#method(0,0,'xorPixel(', 'Object)', 'void'),
   \ ])
 
 call javaapi#namespace('sun.java2d.loops')
 
 call javaapi#class('FontInfo', 'Cloneable', [
-  \ javaapi#field(0,'font', 'Font'),
-  \ javaapi#field(0,'font2D', 'Font2D'),
-  \ javaapi#field(0,'fontStrike', 'FontStrike'),
-  \ javaapi#field(0,'devTx', 'double[]'),
-  \ javaapi#field(0,'glyphTx', 'double[]'),
-  \ javaapi#field(0,'pixelHeight', 'int'),
-  \ javaapi#field(0,'originX', 'float'),
-  \ javaapi#field(0,'originY', 'float'),
-  \ javaapi#field(0,'aaHint', 'int'),
-  \ javaapi#field(0,'lcdRGBOrder', 'boolean'),
-  \ javaapi#field(0,'lcdSubPixPos', 'boolean'),
-  \ javaapi#method(0,'FontInfo(', ')', 'public'),
-  \ javaapi#method(0,'mtx(', 'double[])', 'String'),
-  \ javaapi#method(0,'clone(', ')', 'Object'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#namespace('sun.java2d.loops')
-
-call javaapi#class('PrimitiveSpec', '', [
-  \ javaapi#field(0,'uniqueID', 'int'),
+  \ javaapi#field(0,1,'font', 'Font'),
+  \ javaapi#field(0,1,'font2D', 'Font2D'),
+  \ javaapi#field(0,1,'fontStrike', 'FontStrike'),
+  \ javaapi#field(0,1,'devTx', 'double[]'),
+  \ javaapi#field(0,1,'glyphTx', 'double[]'),
+  \ javaapi#field(0,1,'pixelHeight', 'int'),
+  \ javaapi#field(0,1,'originX', 'float'),
+  \ javaapi#field(0,1,'originY', 'float'),
+  \ javaapi#field(0,1,'aaHint', 'int'),
+  \ javaapi#field(0,1,'lcdRGBOrder', 'boolean'),
+  \ javaapi#field(0,1,'lcdSubPixPos', 'boolean'),
+  \ javaapi#method(0,1,'FontInfo(', ')', ''),
+  \ javaapi#method(0,1,'mtx(', 'double[])', 'String'),
+  \ javaapi#method(0,1,'clone(', ')', 'Object'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
 call javaapi#namespace('sun.java2d.loops')
 
 call javaapi#class('RenderLoops', '', [
-  \ javaapi#field(1,'primTypeID', 'int'),
-  \ javaapi#field(0,'drawLineLoop', 'DrawLine'),
-  \ javaapi#field(0,'fillRectLoop', 'FillRect'),
-  \ javaapi#field(0,'drawRectLoop', 'DrawRect'),
-  \ javaapi#field(0,'drawPolygonsLoop', 'DrawPolygons'),
-  \ javaapi#field(0,'drawPathLoop', 'DrawPath'),
-  \ javaapi#field(0,'fillPathLoop', 'FillPath'),
-  \ javaapi#field(0,'fillSpansLoop', 'FillSpans'),
-  \ javaapi#field(0,'fillParallelogramLoop', 'FillParallelogram'),
-  \ javaapi#field(0,'drawParallelogramLoop', 'DrawParallelogram'),
-  \ javaapi#field(0,'drawGlyphListLoop', 'DrawGlyphList'),
-  \ javaapi#field(0,'drawGlyphListAALoop', 'DrawGlyphListAA'),
-  \ javaapi#field(0,'drawGlyphListLCDLoop', 'DrawGlyphListLCD'),
-  \ javaapi#method(0,'RenderLoops(', ')', 'public'),
+  \ javaapi#field(1,1,'primTypeID', 'int'),
+  \ javaapi#field(0,1,'drawLineLoop', 'DrawLine'),
+  \ javaapi#field(0,1,'fillRectLoop', 'FillRect'),
+  \ javaapi#field(0,1,'drawRectLoop', 'DrawRect'),
+  \ javaapi#field(0,1,'drawPolygonsLoop', 'DrawPolygons'),
+  \ javaapi#field(0,1,'drawPathLoop', 'DrawPath'),
+  \ javaapi#field(0,1,'fillPathLoop', 'FillPath'),
+  \ javaapi#field(0,1,'fillSpansLoop', 'FillSpans'),
+  \ javaapi#field(0,1,'fillParallelogramLoop', 'FillParallelogram'),
+  \ javaapi#field(0,1,'drawParallelogramLoop', 'DrawParallelogram'),
+  \ javaapi#field(0,1,'drawGlyphListLoop', 'DrawGlyphList'),
+  \ javaapi#field(0,1,'drawGlyphListAALoop', 'DrawGlyphListAA'),
+  \ javaapi#field(0,1,'drawGlyphListLCDLoop', 'DrawGlyphListLCD'),
+  \ javaapi#method(0,1,'RenderLoops(', ')', ''),
   \ ])
 
 call javaapi#namespace('sun.java2d.loops')
 
-call javaapi#class('2', 'Comparator', [
-  \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
-  \ ])
-
-call javaapi#class('1', 'Comparator', [
-  \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
-  \ ])
-
 call javaapi#class('GeneralRenderer', '', [
-  \ javaapi#method(0,'GeneralRenderer(', ')', 'public'),
-  \ javaapi#method(1,'register(', ')', 'void'),
-  \ javaapi#method(1,'doDrawRect(', 'PixelWriter, SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
-  \ javaapi#method(1,'adjustLine(', 'int[], int, int, int, int)', 'boolean'),
+  \ javaapi#method(0,1,'GeneralRenderer(', ')', ''),
+  \ javaapi#method(1,1,'register(', ')', 'void'),
+  \ javaapi#method(1,1,'doDrawRect(', 'PixelWriter, SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
+  \ javaapi#method(1,1,'adjustLine(', 'int[], int, int, int, int)', 'boolean'),
   \ ])
 
 call javaapi#class('GraphicsPrimitiveProxy', 'GraphicsPrimitive', [
-  \ javaapi#method(0,'GraphicsPrimitiveProxy(', 'Class, String, String, int, SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'GraphicsPrimitiveProxy(', 'Class, String, String, int, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'traceWrap(', ')', 'GraphicsPrimitive'),
   \ ])
 
 call javaapi#class('CustomComponent', '', [
-  \ javaapi#method(0,'CustomComponent(', ')', 'public'),
-  \ javaapi#method(1,'register(', ')', 'void'),
-  \ javaapi#method(1,'getRegionOfInterest(', 'SurfaceData, SurfaceData, Region, int, int, int, int, int, int)', 'Region'),
+  \ javaapi#method(0,1,'CustomComponent(', ')', ''),
+  \ javaapi#method(1,1,'register(', ')', 'void'),
+  \ javaapi#method(1,1,'getRegionOfInterest(', 'SurfaceData, SurfaceData, Region, int, int, int, int, int, int)', 'Region'),
   \ ])
 
 call javaapi#namespace('sun.java2d.loops')
 
 call javaapi#class('TransformHelper', 'GraphicsPrimitive', [
-  \ javaapi#field(1,'methodSignature', 'String'),
-  \ javaapi#field(1,'primTypeID', 'int'),
-  \ javaapi#method(1,'locate(', 'SurfaceType)', 'TransformHelper'),
-  \ javaapi#method(1,'getFromCache(', 'SurfaceType)', 'TransformHelper'),
-  \ javaapi#method(0,'TransformHelper(', 'long, SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'Transform(', 'MaskBlit, SurfaceData, SurfaceData, Composite, Region, AffineTransform, int, int, int, int, int, int, int, int, int, int[], int, int)', 'void'),
-  \ javaapi#method(0,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
+  \ javaapi#field(1,1,'methodSignature', 'String'),
+  \ javaapi#field(1,1,'primTypeID', 'int'),
+  \ javaapi#method(1,1,'locate(', 'SurfaceType)', 'TransformHelper'),
+  \ javaapi#method(1,1,'getFromCache(', 'SurfaceType)', 'TransformHelper'),
+  \ javaapi#method(0,0,'TransformHelper(', 'SurfaceType)', ''),
+  \ javaapi#method(0,1,'TransformHelper(', 'long, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'Transform(', 'MaskBlit, SurfaceData, SurfaceData, Composite, Region, AffineTransform, int, int, int, int, int, int, int, int, int, int[], int, int)', 'void'),
+  \ javaapi#method(0,1,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'traceWrap(', ')', 'GraphicsPrimitive'),
   \ ])
 
 call javaapi#class('DrawGlyphListLCD', 'GraphicsPrimitive', [
-  \ javaapi#field(1,'methodSignature', 'String'),
-  \ javaapi#field(1,'primTypeID', 'int'),
-  \ javaapi#method(1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'DrawGlyphListLCD'),
-  \ javaapi#method(0,'DrawGlyphListLCD(', 'long, SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'DrawGlyphListLCD(', 'SunGraphics2D, SurfaceData, GlyphList)', 'void'),
-  \ javaapi#method(0,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
+  \ javaapi#field(1,1,'methodSignature', 'String'),
+  \ javaapi#field(1,1,'primTypeID', 'int'),
+  \ javaapi#method(1,1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'DrawGlyphListLCD'),
+  \ javaapi#method(0,0,'DrawGlyphListLCD(', 'SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'DrawGlyphListLCD(', 'long, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'DrawGlyphListLCD(', 'SunGraphics2D, SurfaceData, GlyphList)', 'void'),
+  \ javaapi#method(0,1,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'traceWrap(', ')', 'GraphicsPrimitive'),
   \ ])
 
 call javaapi#class('DrawGlyphListAA', 'GraphicsPrimitive', [
-  \ javaapi#field(1,'methodSignature', 'String'),
-  \ javaapi#field(1,'primTypeID', 'int'),
-  \ javaapi#method(1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'DrawGlyphListAA'),
-  \ javaapi#method(0,'DrawGlyphListAA(', 'long, SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'DrawGlyphListAA(', 'SunGraphics2D, SurfaceData, GlyphList)', 'void'),
-  \ javaapi#method(0,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
+  \ javaapi#field(1,1,'methodSignature', 'String'),
+  \ javaapi#field(1,1,'primTypeID', 'int'),
+  \ javaapi#method(1,1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'DrawGlyphListAA'),
+  \ javaapi#method(0,0,'DrawGlyphListAA(', 'SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'DrawGlyphListAA(', 'long, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'DrawGlyphListAA(', 'SunGraphics2D, SurfaceData, GlyphList)', 'void'),
+  \ javaapi#method(0,1,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'traceWrap(', ')', 'GraphicsPrimitive'),
   \ ])
 
 call javaapi#class('DrawGlyphList', 'GraphicsPrimitive', [
-  \ javaapi#field(1,'methodSignature', 'String'),
-  \ javaapi#field(1,'primTypeID', 'int'),
-  \ javaapi#method(1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'DrawGlyphList'),
-  \ javaapi#method(0,'DrawGlyphList(', 'long, SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'DrawGlyphList(', 'SunGraphics2D, SurfaceData, GlyphList)', 'void'),
-  \ javaapi#method(0,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
+  \ javaapi#field(1,1,'methodSignature', 'String'),
+  \ javaapi#field(1,1,'primTypeID', 'int'),
+  \ javaapi#method(1,1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'DrawGlyphList'),
+  \ javaapi#method(0,0,'DrawGlyphList(', 'SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'DrawGlyphList(', 'long, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'DrawGlyphList(', 'SunGraphics2D, SurfaceData, GlyphList)', 'void'),
+  \ javaapi#method(0,1,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'traceWrap(', ')', 'GraphicsPrimitive'),
   \ ])
 
 call javaapi#class('MaskFill', 'GraphicsPrimitive', [
-  \ javaapi#field(1,'methodSignature', 'String'),
-  \ javaapi#field(1,'fillPgramSignature', 'String'),
-  \ javaapi#field(1,'drawPgramSignature', 'String'),
-  \ javaapi#field(1,'primTypeID', 'int'),
-  \ javaapi#method(1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'MaskFill'),
-  \ javaapi#method(1,'locatePrim(', 'SurfaceType, CompositeType, SurfaceType)', 'MaskFill'),
-  \ javaapi#method(1,'getFromCache(', 'SurfaceType, CompositeType, SurfaceType)', 'MaskFill'),
-  \ javaapi#method(0,'MaskFill(', 'long, SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'MaskFill(', 'SunGraphics2D, SurfaceData, Composite, int, int, int, int, byte[], int, int)', 'void'),
-  \ javaapi#method(0,'FillAAPgram(', 'SunGraphics2D, SurfaceData, Composite, double, double, double, double, double, double)', 'void'),
-  \ javaapi#method(0,'DrawAAPgram(', 'SunGraphics2D, SurfaceData, Composite, double, double, double, double, double, double, double, double)', 'void'),
-  \ javaapi#method(0,'canDoParallelograms(', ')', 'boolean'),
-  \ javaapi#method(0,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
+  \ javaapi#field(1,1,'methodSignature', 'String'),
+  \ javaapi#field(1,1,'fillPgramSignature', 'String'),
+  \ javaapi#field(1,1,'drawPgramSignature', 'String'),
+  \ javaapi#field(1,1,'primTypeID', 'int'),
+  \ javaapi#method(1,1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'MaskFill'),
+  \ javaapi#method(1,1,'locatePrim(', 'SurfaceType, CompositeType, SurfaceType)', 'MaskFill'),
+  \ javaapi#method(1,1,'getFromCache(', 'SurfaceType, CompositeType, SurfaceType)', 'MaskFill'),
+  \ javaapi#method(0,0,'MaskFill(', 'String, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,0,'MaskFill(', 'SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'MaskFill(', 'long, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'MaskFill(', 'SunGraphics2D, SurfaceData, Composite, int, int, int, int, byte[], int, int)', 'void'),
+  \ javaapi#method(0,1,'FillAAPgram(', 'SunGraphics2D, SurfaceData, Composite, double, double, double, double, double, double)', 'void'),
+  \ javaapi#method(0,1,'DrawAAPgram(', 'SunGraphics2D, SurfaceData, Composite, double, double, double, double, double, double, double, double)', 'void'),
+  \ javaapi#method(0,1,'canDoParallelograms(', ')', 'boolean'),
+  \ javaapi#method(0,1,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'traceWrap(', ')', 'GraphicsPrimitive'),
   \ ])
 
 call javaapi#class('MaskBlit', 'GraphicsPrimitive', [
-  \ javaapi#field(1,'methodSignature', 'String'),
-  \ javaapi#field(1,'primTypeID', 'int'),
-  \ javaapi#method(1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'MaskBlit'),
-  \ javaapi#method(1,'getFromCache(', 'SurfaceType, CompositeType, SurfaceType)', 'MaskBlit'),
-  \ javaapi#method(0,'MaskBlit(', 'long, SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'MaskBlit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int, byte[], int, int)', 'void'),
-  \ javaapi#method(0,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
+  \ javaapi#field(1,1,'methodSignature', 'String'),
+  \ javaapi#field(1,1,'primTypeID', 'int'),
+  \ javaapi#method(1,1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'MaskBlit'),
+  \ javaapi#method(1,1,'getFromCache(', 'SurfaceType, CompositeType, SurfaceType)', 'MaskBlit'),
+  \ javaapi#method(0,0,'MaskBlit(', 'SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'MaskBlit(', 'long, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'MaskBlit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int, byte[], int, int)', 'void'),
+  \ javaapi#method(0,1,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'traceWrap(', ')', 'GraphicsPrimitive'),
   \ ])
 
 call javaapi#class('FillPath', 'GraphicsPrimitive', [
-  \ javaapi#field(1,'methodSignature', 'String'),
-  \ javaapi#field(1,'primTypeID', 'int'),
-  \ javaapi#method(1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'FillPath'),
-  \ javaapi#method(0,'FillPath(', 'long, SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'FillPath(', 'SunGraphics2D, SurfaceData, int, int, Float)', 'void'),
-  \ javaapi#method(0,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
+  \ javaapi#field(1,1,'methodSignature', 'String'),
+  \ javaapi#field(1,1,'primTypeID', 'int'),
+  \ javaapi#method(1,1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'FillPath'),
+  \ javaapi#method(0,0,'FillPath(', 'SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'FillPath(', 'long, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'FillPath(', 'SunGraphics2D, SurfaceData, int, int, Float)', 'void'),
+  \ javaapi#method(0,1,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'traceWrap(', ')', 'GraphicsPrimitive'),
   \ ])
 
 call javaapi#class('DrawPath', 'GraphicsPrimitive', [
-  \ javaapi#field(1,'methodSignature', 'String'),
-  \ javaapi#field(1,'primTypeID', 'int'),
-  \ javaapi#method(1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'DrawPath'),
-  \ javaapi#method(0,'DrawPath(', 'long, SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'DrawPath(', 'SunGraphics2D, SurfaceData, int, int, Float)', 'void'),
-  \ javaapi#method(0,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
+  \ javaapi#field(1,1,'methodSignature', 'String'),
+  \ javaapi#field(1,1,'primTypeID', 'int'),
+  \ javaapi#method(1,1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'DrawPath'),
+  \ javaapi#method(0,0,'DrawPath(', 'SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'DrawPath(', 'long, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'DrawPath(', 'SunGraphics2D, SurfaceData, int, int, Float)', 'void'),
+  \ javaapi#method(0,1,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'traceWrap(', ')', 'GraphicsPrimitive'),
   \ ])
 
 call javaapi#class('DrawPolygons', 'GraphicsPrimitive', [
-  \ javaapi#field(1,'methodSignature', 'String'),
-  \ javaapi#field(1,'primTypeID', 'int'),
-  \ javaapi#method(1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'DrawPolygons'),
-  \ javaapi#method(0,'DrawPolygons(', 'long, SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'DrawPolygons(', 'SunGraphics2D, SurfaceData, int[], int[], int[], int, int, int, boolean)', 'void'),
-  \ javaapi#method(0,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
+  \ javaapi#field(1,1,'methodSignature', 'String'),
+  \ javaapi#field(1,1,'primTypeID', 'int'),
+  \ javaapi#method(1,1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'DrawPolygons'),
+  \ javaapi#method(0,0,'DrawPolygons(', 'SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'DrawPolygons(', 'long, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'DrawPolygons(', 'SunGraphics2D, SurfaceData, int[], int[], int[], int, int, int, boolean)', 'void'),
+  \ javaapi#method(0,1,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'traceWrap(', ')', 'GraphicsPrimitive'),
   \ ])
 
 call javaapi#class('DrawRect', 'GraphicsPrimitive', [
-  \ javaapi#field(1,'methodSignature', 'String'),
-  \ javaapi#field(1,'primTypeID', 'int'),
-  \ javaapi#method(1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'DrawRect'),
-  \ javaapi#method(0,'DrawRect(', 'long, SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'DrawRect(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
-  \ javaapi#method(0,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
+  \ javaapi#field(1,1,'methodSignature', 'String'),
+  \ javaapi#field(1,1,'primTypeID', 'int'),
+  \ javaapi#method(1,1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'DrawRect'),
+  \ javaapi#method(0,0,'DrawRect(', 'SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'DrawRect(', 'long, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'DrawRect(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
+  \ javaapi#method(0,1,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'traceWrap(', ')', 'GraphicsPrimitive'),
   \ ])
 
 call javaapi#class('DrawLine', 'GraphicsPrimitive', [
-  \ javaapi#field(1,'methodSignature', 'String'),
-  \ javaapi#field(1,'primTypeID', 'int'),
-  \ javaapi#method(1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'DrawLine'),
-  \ javaapi#method(0,'DrawLine(', 'long, SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'DrawLine(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
-  \ javaapi#method(0,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
+  \ javaapi#field(1,1,'methodSignature', 'String'),
+  \ javaapi#field(1,1,'primTypeID', 'int'),
+  \ javaapi#method(1,1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'DrawLine'),
+  \ javaapi#method(0,0,'DrawLine(', 'SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'DrawLine(', 'long, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'DrawLine(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
+  \ javaapi#method(0,1,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'traceWrap(', ')', 'GraphicsPrimitive'),
   \ ])
 
 call javaapi#class('FillSpans', 'GraphicsPrimitive', [
-  \ javaapi#field(1,'methodSignature', 'String'),
-  \ javaapi#field(1,'primTypeID', 'int'),
-  \ javaapi#method(1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'FillSpans'),
-  \ javaapi#method(0,'FillSpans(', 'long, SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'FillSpans(', 'SunGraphics2D, SurfaceData, SpanIterator)', 'void'),
-  \ javaapi#method(0,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
+  \ javaapi#field(1,1,'methodSignature', 'String'),
+  \ javaapi#field(1,1,'primTypeID', 'int'),
+  \ javaapi#method(1,1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'FillSpans'),
+  \ javaapi#method(0,0,'FillSpans(', 'SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'FillSpans(', 'long, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'FillSpans(', 'SunGraphics2D, SurfaceData, SpanIterator)', 'void'),
+  \ javaapi#method(0,1,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'traceWrap(', ')', 'GraphicsPrimitive'),
   \ ])
 
 call javaapi#class('FillRect', 'GraphicsPrimitive', [
-  \ javaapi#field(1,'methodSignature', 'String'),
-  \ javaapi#field(1,'primTypeID', 'int'),
-  \ javaapi#method(1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'FillRect'),
-  \ javaapi#method(0,'FillRect(', 'long, SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'FillRect(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
-  \ javaapi#method(0,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
+  \ javaapi#field(1,1,'methodSignature', 'String'),
+  \ javaapi#field(1,1,'primTypeID', 'int'),
+  \ javaapi#method(1,1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'FillRect'),
+  \ javaapi#method(0,0,'FillRect(', 'SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'FillRect(', 'long, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'FillRect(', 'SunGraphics2D, SurfaceData, int, int, int, int)', 'void'),
+  \ javaapi#method(0,1,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'traceWrap(', ')', 'GraphicsPrimitive'),
   \ ])
 
 call javaapi#class('ScaledBlit', 'GraphicsPrimitive', [
-  \ javaapi#field(1,'methodSignature', 'String'),
-  \ javaapi#field(1,'primTypeID', 'int'),
-  \ javaapi#method(1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'ScaledBlit'),
-  \ javaapi#method(1,'getFromCache(', 'SurfaceType, CompositeType, SurfaceType)', 'ScaledBlit'),
-  \ javaapi#method(0,'ScaledBlit(', 'long, SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'Scale(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, double, double, double, double)', 'void'),
-  \ javaapi#method(0,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
+  \ javaapi#field(1,1,'methodSignature', 'String'),
+  \ javaapi#field(1,1,'primTypeID', 'int'),
+  \ javaapi#method(1,1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'ScaledBlit'),
+  \ javaapi#method(1,1,'getFromCache(', 'SurfaceType, CompositeType, SurfaceType)', 'ScaledBlit'),
+  \ javaapi#method(0,0,'ScaledBlit(', 'SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'ScaledBlit(', 'long, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'Scale(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, double, double, double, double)', 'void'),
+  \ javaapi#method(0,1,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'traceWrap(', ')', 'GraphicsPrimitive'),
   \ ])
 
 call javaapi#class('BlitBg', 'GraphicsPrimitive', [
-  \ javaapi#field(1,'methodSignature', 'String'),
-  \ javaapi#field(1,'primTypeID', 'int'),
-  \ javaapi#method(1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'BlitBg'),
-  \ javaapi#method(1,'getFromCache(', 'SurfaceType, CompositeType, SurfaceType)', 'BlitBg'),
-  \ javaapi#method(0,'BlitBg(', 'long, SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'BlitBg(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int, int)', 'void'),
-  \ javaapi#method(0,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
+  \ javaapi#field(1,1,'methodSignature', 'String'),
+  \ javaapi#field(1,1,'primTypeID', 'int'),
+  \ javaapi#method(1,1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'BlitBg'),
+  \ javaapi#method(1,1,'getFromCache(', 'SurfaceType, CompositeType, SurfaceType)', 'BlitBg'),
+  \ javaapi#method(0,0,'BlitBg(', 'SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'BlitBg(', 'long, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'BlitBg(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int, int)', 'void'),
+  \ javaapi#method(0,1,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'traceWrap(', ')', 'GraphicsPrimitive'),
   \ ])
 
 call javaapi#namespace('sun.java2d.loops')
 
 call javaapi#class('XORComposite', 'Composite', [
-  \ javaapi#method(0,'XORComposite(', 'Color, SurfaceData)', 'public'),
-  \ javaapi#method(0,'getXorColor(', ')', 'Color'),
-  \ javaapi#method(0,'getXorPixel(', ')', 'int'),
-  \ javaapi#method(0,'getAlphaMask(', ')', 'int'),
-  \ javaapi#method(0,'createContext(', 'ColorModel, ColorModel, RenderingHints)', 'CompositeContext'),
+  \ javaapi#method(0,1,'XORComposite(', 'Color, SurfaceData)', ''),
+  \ javaapi#method(0,1,'getXorColor(', ')', 'Color'),
+  \ javaapi#method(0,1,'getXorPixel(', ')', 'int'),
+  \ javaapi#method(0,1,'getAlphaMask(', ')', 'int'),
+  \ javaapi#method(0,1,'createContext(', 'ColorModel, ColorModel, RenderingHints)', 'CompositeContext'),
   \ ])
 
 call javaapi#namespace('sun.java2d.loops')
 
 call javaapi#class('CompositeType', '', [
-  \ javaapi#field(1,'DESC_ANY', 'String'),
-  \ javaapi#field(1,'DESC_XOR', 'String'),
-  \ javaapi#field(1,'DESC_CLEAR', 'String'),
-  \ javaapi#field(1,'DESC_SRC', 'String'),
-  \ javaapi#field(1,'DESC_DST', 'String'),
-  \ javaapi#field(1,'DESC_SRC_OVER', 'String'),
-  \ javaapi#field(1,'DESC_DST_OVER', 'String'),
-  \ javaapi#field(1,'DESC_SRC_IN', 'String'),
-  \ javaapi#field(1,'DESC_DST_IN', 'String'),
-  \ javaapi#field(1,'DESC_SRC_OUT', 'String'),
-  \ javaapi#field(1,'DESC_DST_OUT', 'String'),
-  \ javaapi#field(1,'DESC_SRC_ATOP', 'String'),
-  \ javaapi#field(1,'DESC_DST_ATOP', 'String'),
-  \ javaapi#field(1,'DESC_ALPHA_XOR', 'String'),
-  \ javaapi#field(1,'DESC_SRC_NO_EA', 'String'),
-  \ javaapi#field(1,'DESC_SRC_OVER_NO_EA', 'String'),
-  \ javaapi#field(1,'DESC_ANY_ALPHA', 'String'),
-  \ javaapi#field(1,'Any', 'CompositeType'),
-  \ javaapi#field(1,'General', 'CompositeType'),
-  \ javaapi#field(1,'AnyAlpha', 'CompositeType'),
-  \ javaapi#field(1,'Xor', 'CompositeType'),
-  \ javaapi#field(1,'Clear', 'CompositeType'),
-  \ javaapi#field(1,'Src', 'CompositeType'),
-  \ javaapi#field(1,'Dst', 'CompositeType'),
-  \ javaapi#field(1,'SrcOver', 'CompositeType'),
-  \ javaapi#field(1,'DstOver', 'CompositeType'),
-  \ javaapi#field(1,'SrcIn', 'CompositeType'),
-  \ javaapi#field(1,'DstIn', 'CompositeType'),
-  \ javaapi#field(1,'SrcOut', 'CompositeType'),
-  \ javaapi#field(1,'DstOut', 'CompositeType'),
-  \ javaapi#field(1,'SrcAtop', 'CompositeType'),
-  \ javaapi#field(1,'DstAtop', 'CompositeType'),
-  \ javaapi#field(1,'AlphaXor', 'CompositeType'),
-  \ javaapi#field(1,'SrcNoEa', 'CompositeType'),
-  \ javaapi#field(1,'SrcOverNoEa', 'CompositeType'),
-  \ javaapi#field(1,'OpaqueSrcOverNoEa', 'CompositeType'),
-  \ javaapi#method(0,'deriveSubType(', 'String)', 'CompositeType'),
-  \ javaapi#method(1,'forAlphaComposite(', 'AlphaComposite)', 'CompositeType'),
-  \ javaapi#method(1,'makeUniqueID(', 'String)', 'int'),
-  \ javaapi#method(0,'getUniqueID(', ')', 'int'),
-  \ javaapi#method(0,'getDescriptor(', ')', 'String'),
-  \ javaapi#method(0,'getSuperType(', ')', 'CompositeType'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'isDerivedFrom(', 'CompositeType)', 'boolean'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#field(1,1,'DESC_ANY', 'String'),
+  \ javaapi#field(1,1,'DESC_XOR', 'String'),
+  \ javaapi#field(1,1,'DESC_CLEAR', 'String'),
+  \ javaapi#field(1,1,'DESC_SRC', 'String'),
+  \ javaapi#field(1,1,'DESC_DST', 'String'),
+  \ javaapi#field(1,1,'DESC_SRC_OVER', 'String'),
+  \ javaapi#field(1,1,'DESC_DST_OVER', 'String'),
+  \ javaapi#field(1,1,'DESC_SRC_IN', 'String'),
+  \ javaapi#field(1,1,'DESC_DST_IN', 'String'),
+  \ javaapi#field(1,1,'DESC_SRC_OUT', 'String'),
+  \ javaapi#field(1,1,'DESC_DST_OUT', 'String'),
+  \ javaapi#field(1,1,'DESC_SRC_ATOP', 'String'),
+  \ javaapi#field(1,1,'DESC_DST_ATOP', 'String'),
+  \ javaapi#field(1,1,'DESC_ALPHA_XOR', 'String'),
+  \ javaapi#field(1,1,'DESC_SRC_NO_EA', 'String'),
+  \ javaapi#field(1,1,'DESC_SRC_OVER_NO_EA', 'String'),
+  \ javaapi#field(1,1,'DESC_ANY_ALPHA', 'String'),
+  \ javaapi#field(1,1,'Any', 'CompositeType'),
+  \ javaapi#field(1,1,'General', 'CompositeType'),
+  \ javaapi#field(1,1,'AnyAlpha', 'CompositeType'),
+  \ javaapi#field(1,1,'Xor', 'CompositeType'),
+  \ javaapi#field(1,1,'Clear', 'CompositeType'),
+  \ javaapi#field(1,1,'Src', 'CompositeType'),
+  \ javaapi#field(1,1,'Dst', 'CompositeType'),
+  \ javaapi#field(1,1,'SrcOver', 'CompositeType'),
+  \ javaapi#field(1,1,'DstOver', 'CompositeType'),
+  \ javaapi#field(1,1,'SrcIn', 'CompositeType'),
+  \ javaapi#field(1,1,'DstIn', 'CompositeType'),
+  \ javaapi#field(1,1,'SrcOut', 'CompositeType'),
+  \ javaapi#field(1,1,'DstOut', 'CompositeType'),
+  \ javaapi#field(1,1,'SrcAtop', 'CompositeType'),
+  \ javaapi#field(1,1,'DstAtop', 'CompositeType'),
+  \ javaapi#field(1,1,'AlphaXor', 'CompositeType'),
+  \ javaapi#field(1,1,'SrcNoEa', 'CompositeType'),
+  \ javaapi#field(1,1,'SrcOverNoEa', 'CompositeType'),
+  \ javaapi#field(1,1,'OpaqueSrcOverNoEa', 'CompositeType'),
+  \ javaapi#method(0,1,'deriveSubType(', 'String)', 'CompositeType'),
+  \ javaapi#method(1,1,'forAlphaComposite(', 'AlphaComposite)', 'CompositeType'),
+  \ javaapi#method(1,1,'makeUniqueID(', 'String)', 'int'),
+  \ javaapi#method(0,1,'getUniqueID(', ')', 'int'),
+  \ javaapi#method(0,1,'getDescriptor(', ')', 'String'),
+  \ javaapi#method(0,1,'getSuperType(', ')', 'CompositeType'),
+  \ javaapi#method(0,1,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,1,'isDerivedFrom(', 'CompositeType)', 'boolean'),
+  \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
 call javaapi#class('GraphicsPrimitiveMgr', '', [
-  \ javaapi#method(1,'register(', 'GraphicsPrimitive[])', 'void'),
-  \ javaapi#method(1,'registerGeneral(', 'GraphicsPrimitive)', 'void'),
-  \ javaapi#method(1,'locate(', 'int, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(1,'locate(', 'int, SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(1,'locatePrim(', 'int, SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(1,'testPrimitiveInstantiation(', ')', 'void'),
-  \ javaapi#method(1,'testPrimitiveInstantiation(', 'boolean)', 'void'),
-  \ javaapi#method(1,'main(', 'String[])', 'void'),
+  \ javaapi#method(1,1,'register(', 'GraphicsPrimitive[])', 'void'),
+  \ javaapi#method(1,1,'registerGeneral(', 'GraphicsPrimitive)', 'void'),
+  \ javaapi#method(1,1,'locate(', 'int, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(1,1,'locate(', 'int, SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(1,1,'locatePrim(', 'int, SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(1,1,'testPrimitiveInstantiation(', ')', 'void'),
+  \ javaapi#method(1,1,'testPrimitiveInstantiation(', 'boolean)', 'void'),
+  \ javaapi#method(1,1,'main(', 'String[])', 'void'),
   \ ])
 
 call javaapi#class('GraphicsPrimitive', '', [
-  \ javaapi#field(1,'traceflags', 'int'),
-  \ javaapi#field(1,'tracefile', 'String'),
-  \ javaapi#field(1,'traceout', 'PrintStream'),
-  \ javaapi#field(1,'TRACELOG', 'int'),
-  \ javaapi#field(1,'TRACETIMESTAMP', 'int'),
-  \ javaapi#field(1,'TRACECOUNTS', 'int'),
-  \ javaapi#method(1,'makePrimTypeID(', ')', 'int'),
-  \ javaapi#method(1,'makeUniqueID(', 'int, SurfaceType, CompositeType, SurfaceType)', 'int'),
-  \ javaapi#method(0,'getUniqueID(', ')', 'int'),
-  \ javaapi#method(0,'getSignature(', ')', 'String'),
-  \ javaapi#method(0,'getPrimTypeID(', ')', 'int'),
-  \ javaapi#method(0,'getNativePrim(', ')', 'long'),
-  \ javaapi#method(0,'getSourceType(', ')', 'SurfaceType'),
-  \ javaapi#method(0,'getCompositeType(', ')', 'CompositeType'),
-  \ javaapi#method(0,'getDestType(', ')', 'SurfaceType'),
-  \ javaapi#method(0,'satisfies(', 'String, SurfaceType, CompositeType, SurfaceType)', 'boolean'),
-  \ javaapi#method(0,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
-  \ javaapi#method(1,'tracingEnabled(', ')', 'boolean'),
-  \ javaapi#method(1,'tracePrimitive(', 'Object)', 'void'),
-  \ javaapi#method(1,'simplename(', 'Field[], Object)', 'String'),
-  \ javaapi#method(1,'simplename(', 'SurfaceType)', 'String'),
-  \ javaapi#method(1,'simplename(', 'CompositeType)', 'String'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#field(1,1,'traceflags', 'int'),
+  \ javaapi#field(1,1,'tracefile', 'String'),
+  \ javaapi#field(1,1,'traceout', 'PrintStream'),
+  \ javaapi#field(1,1,'TRACELOG', 'int'),
+  \ javaapi#field(1,1,'TRACETIMESTAMP', 'int'),
+  \ javaapi#field(1,1,'TRACECOUNTS', 'int'),
+  \ javaapi#method(1,1,'makePrimTypeID(', ')', 'int'),
+  \ javaapi#method(1,1,'makeUniqueID(', 'int, SurfaceType, CompositeType, SurfaceType)', 'int'),
+  \ javaapi#method(0,0,'GraphicsPrimitive(', 'String, int, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,0,'GraphicsPrimitive(', 'long, String, int, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'getUniqueID(', ')', 'int'),
+  \ javaapi#method(0,1,'getSignature(', ')', 'String'),
+  \ javaapi#method(0,1,'getPrimTypeID(', ')', 'int'),
+  \ javaapi#method(0,1,'getNativePrim(', ')', 'long'),
+  \ javaapi#method(0,1,'getSourceType(', ')', 'SurfaceType'),
+  \ javaapi#method(0,1,'getCompositeType(', ')', 'CompositeType'),
+  \ javaapi#method(0,1,'getDestType(', ')', 'SurfaceType'),
+  \ javaapi#method(0,1,'satisfies(', 'String, SurfaceType, CompositeType, SurfaceType)', 'boolean'),
+  \ javaapi#method(0,1,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'traceWrap(', ')', 'GraphicsPrimitive'),
+  \ javaapi#method(1,1,'tracingEnabled(', ')', 'boolean'),
+  \ javaapi#method(1,1,'tracePrimitive(', 'Object)', 'void'),
+  \ javaapi#method(0,0,'setupGeneralBinaryOp(', 'GeneralBinaryOp)', 'void'),
+  \ javaapi#method(0,0,'setupGeneralUnaryOp(', 'GeneralUnaryOp)', 'void'),
+  \ javaapi#method(1,0,'createConverter(', 'SurfaceType, SurfaceType)', 'Blit'),
+  \ javaapi#method(1,0,'convertFrom(', 'Blit, SurfaceData, int, int, int, int, SurfaceData)', 'SurfaceData'),
+  \ javaapi#method(1,0,'convertFrom(', 'Blit, SurfaceData, int, int, int, int, SurfaceData, int)', 'SurfaceData'),
+  \ javaapi#method(1,0,'convertTo(', 'Blit, SurfaceData, SurfaceData, Region, int, int, int, int)', 'void'),
+  \ javaapi#method(1,0,'getGeneralOp(', 'int, CompositeType)', 'GraphicsPrimitive'),
+  \ javaapi#method(1,1,'simplename(', 'Field[], Object)', 'String'),
+  \ javaapi#method(1,1,'simplename(', 'SurfaceType)', 'String'),
+  \ javaapi#method(1,1,'simplename(', 'CompositeType)', 'String'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
 call javaapi#class('Blit', 'GraphicsPrimitive', [
-  \ javaapi#field(1,'methodSignature', 'String'),
-  \ javaapi#field(1,'primTypeID', 'int'),
-  \ javaapi#method(1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'Blit'),
-  \ javaapi#method(1,'getFromCache(', 'SurfaceType, CompositeType, SurfaceType)', 'Blit'),
-  \ javaapi#method(0,'Blit(', 'long, SurfaceType, CompositeType, SurfaceType)', 'public'),
-  \ javaapi#method(0,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
-  \ javaapi#method(0,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
-  \ javaapi#method(0,'traceWrap(', ')', 'GraphicsPrimitive'),
+  \ javaapi#field(1,1,'methodSignature', 'String'),
+  \ javaapi#field(1,1,'primTypeID', 'int'),
+  \ javaapi#method(1,1,'locate(', 'SurfaceType, CompositeType, SurfaceType)', 'Blit'),
+  \ javaapi#method(1,1,'getFromCache(', 'SurfaceType, CompositeType, SurfaceType)', 'Blit'),
+  \ javaapi#method(0,0,'Blit(', 'SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'Blit(', 'long, SurfaceType, CompositeType, SurfaceType)', ''),
+  \ javaapi#method(0,1,'Blit(', 'SurfaceData, SurfaceData, Composite, Region, int, int, int, int, int, int)', 'void'),
+  \ javaapi#method(0,1,'makePrimitive(', 'SurfaceType, CompositeType, SurfaceType)', 'GraphicsPrimitive'),
+  \ javaapi#method(0,1,'traceWrap(', ')', 'GraphicsPrimitive'),
   \ ])
 
 call javaapi#namespace('sun.java2d.loops')
 
-call javaapi#class('Entry', '', [
-  \ javaapi#method(0,'Entry(', 'RenderCache, SurfaceType, CompositeType, SurfaceType, Object)', 'public'),
-  \ javaapi#method(0,'matches(', 'SurfaceType, CompositeType, SurfaceType)', 'boolean'),
-  \ javaapi#method(0,'getValue(', ')', 'Object'),
-  \ ])
-
 call javaapi#class('RenderCache', '', [
-  \ javaapi#method(0,'RenderCache(', 'int)', 'public'),
-  \ javaapi#method(0,'get(', 'SurfaceType, CompositeType, SurfaceType)', 'Object'),
-  \ javaapi#method(0,'put(', 'SurfaceType, CompositeType, SurfaceType, Object)', 'void'),
+  \ javaapi#method(0,1,'RenderCache(', 'int)', ''),
+  \ javaapi#method(0,1,'get(', 'SurfaceType, CompositeType, SurfaceType)', 'Object'),
+  \ javaapi#method(0,1,'put(', 'SurfaceType, CompositeType, SurfaceType, Object)', 'void'),
   \ ])
 
 call javaapi#namespace('sun.java2d.loops')
 
 call javaapi#class('SurfaceType', '', [
-  \ javaapi#field(1,'DESC_ANY', 'String'),
-  \ javaapi#field(1,'DESC_INT_RGB', 'String'),
-  \ javaapi#field(1,'DESC_INT_ARGB', 'String'),
-  \ javaapi#field(1,'DESC_INT_ARGB_PRE', 'String'),
-  \ javaapi#field(1,'DESC_INT_BGR', 'String'),
-  \ javaapi#field(1,'DESC_3BYTE_BGR', 'String'),
-  \ javaapi#field(1,'DESC_4BYTE_ABGR', 'String'),
-  \ javaapi#field(1,'DESC_4BYTE_ABGR_PRE', 'String'),
-  \ javaapi#field(1,'DESC_USHORT_565_RGB', 'String'),
-  \ javaapi#field(1,'DESC_USHORT_555_RGB', 'String'),
-  \ javaapi#field(1,'DESC_USHORT_555_RGBx', 'String'),
-  \ javaapi#field(1,'DESC_USHORT_4444_ARGB', 'String'),
-  \ javaapi#field(1,'DESC_BYTE_GRAY', 'String'),
-  \ javaapi#field(1,'DESC_USHORT_INDEXED', 'String'),
-  \ javaapi#field(1,'DESC_USHORT_GRAY', 'String'),
-  \ javaapi#field(1,'DESC_BYTE_BINARY', 'String'),
-  \ javaapi#field(1,'DESC_BYTE_INDEXED', 'String'),
-  \ javaapi#field(1,'DESC_ANY_INT', 'String'),
-  \ javaapi#field(1,'DESC_ANY_SHORT', 'String'),
-  \ javaapi#field(1,'DESC_ANY_BYTE', 'String'),
-  \ javaapi#field(1,'DESC_ANY_3BYTE', 'String'),
-  \ javaapi#field(1,'DESC_ANY_4BYTE', 'String'),
-  \ javaapi#field(1,'DESC_ANY_INT_DCM', 'String'),
-  \ javaapi#field(1,'DESC_INT_RGBx', 'String'),
-  \ javaapi#field(1,'DESC_INT_BGRx', 'String'),
-  \ javaapi#field(1,'DESC_3BYTE_RGB', 'String'),
-  \ javaapi#field(1,'DESC_INT_ARGB_BM', 'String'),
-  \ javaapi#field(1,'DESC_BYTE_INDEXED_BM', 'String'),
-  \ javaapi#field(1,'DESC_BYTE_INDEXED_OPAQUE', 'String'),
-  \ javaapi#field(1,'DESC_INDEX8_GRAY', 'String'),
-  \ javaapi#field(1,'DESC_INDEX12_GRAY', 'String'),
-  \ javaapi#field(1,'DESC_BYTE_BINARY_1BIT', 'String'),
-  \ javaapi#field(1,'DESC_BYTE_BINARY_2BIT', 'String'),
-  \ javaapi#field(1,'DESC_BYTE_BINARY_4BIT', 'String'),
-  \ javaapi#field(1,'DESC_ANY_PAINT', 'String'),
-  \ javaapi#field(1,'DESC_ANY_COLOR', 'String'),
-  \ javaapi#field(1,'DESC_OPAQUE_COLOR', 'String'),
-  \ javaapi#field(1,'DESC_GRADIENT_PAINT', 'String'),
-  \ javaapi#field(1,'DESC_OPAQUE_GRADIENT_PAINT', 'String'),
-  \ javaapi#field(1,'DESC_TEXTURE_PAINT', 'String'),
-  \ javaapi#field(1,'DESC_OPAQUE_TEXTURE_PAINT', 'String'),
-  \ javaapi#field(1,'DESC_LINEAR_GRADIENT_PAINT', 'String'),
-  \ javaapi#field(1,'DESC_OPAQUE_LINEAR_GRADIENT_PAINT', 'String'),
-  \ javaapi#field(1,'DESC_RADIAL_GRADIENT_PAINT', 'String'),
-  \ javaapi#field(1,'DESC_OPAQUE_RADIAL_GRADIENT_PAINT', 'String'),
-  \ javaapi#field(1,'Any', 'SurfaceType'),
-  \ javaapi#field(1,'AnyInt', 'SurfaceType'),
-  \ javaapi#field(1,'AnyShort', 'SurfaceType'),
-  \ javaapi#field(1,'AnyByte', 'SurfaceType'),
-  \ javaapi#field(1,'AnyByteBinary', 'SurfaceType'),
-  \ javaapi#field(1,'Any3Byte', 'SurfaceType'),
-  \ javaapi#field(1,'Any4Byte', 'SurfaceType'),
-  \ javaapi#field(1,'AnyDcm', 'SurfaceType'),
-  \ javaapi#field(1,'Custom', 'SurfaceType'),
-  \ javaapi#field(1,'IntRgb', 'SurfaceType'),
-  \ javaapi#field(1,'IntArgb', 'SurfaceType'),
-  \ javaapi#field(1,'IntArgbPre', 'SurfaceType'),
-  \ javaapi#field(1,'IntBgr', 'SurfaceType'),
-  \ javaapi#field(1,'ThreeByteBgr', 'SurfaceType'),
-  \ javaapi#field(1,'FourByteAbgr', 'SurfaceType'),
-  \ javaapi#field(1,'FourByteAbgrPre', 'SurfaceType'),
-  \ javaapi#field(1,'Ushort565Rgb', 'SurfaceType'),
-  \ javaapi#field(1,'Ushort555Rgb', 'SurfaceType'),
-  \ javaapi#field(1,'Ushort555Rgbx', 'SurfaceType'),
-  \ javaapi#field(1,'Ushort4444Argb', 'SurfaceType'),
-  \ javaapi#field(1,'UshortIndexed', 'SurfaceType'),
-  \ javaapi#field(1,'ByteGray', 'SurfaceType'),
-  \ javaapi#field(1,'UshortGray', 'SurfaceType'),
-  \ javaapi#field(1,'ByteBinary1Bit', 'SurfaceType'),
-  \ javaapi#field(1,'ByteBinary2Bit', 'SurfaceType'),
-  \ javaapi#field(1,'ByteBinary4Bit', 'SurfaceType'),
-  \ javaapi#field(1,'ByteIndexed', 'SurfaceType'),
-  \ javaapi#field(1,'IntRgbx', 'SurfaceType'),
-  \ javaapi#field(1,'IntBgrx', 'SurfaceType'),
-  \ javaapi#field(1,'ThreeByteRgb', 'SurfaceType'),
-  \ javaapi#field(1,'IntArgbBm', 'SurfaceType'),
-  \ javaapi#field(1,'ByteIndexedBm', 'SurfaceType'),
-  \ javaapi#field(1,'ByteIndexedOpaque', 'SurfaceType'),
-  \ javaapi#field(1,'Index8Gray', 'SurfaceType'),
-  \ javaapi#field(1,'Index12Gray', 'SurfaceType'),
-  \ javaapi#field(1,'AnyPaint', 'SurfaceType'),
-  \ javaapi#field(1,'AnyColor', 'SurfaceType'),
-  \ javaapi#field(1,'OpaqueColor', 'SurfaceType'),
-  \ javaapi#field(1,'GradientPaint', 'SurfaceType'),
-  \ javaapi#field(1,'OpaqueGradientPaint', 'SurfaceType'),
-  \ javaapi#field(1,'LinearGradientPaint', 'SurfaceType'),
-  \ javaapi#field(1,'OpaqueLinearGradientPaint', 'SurfaceType'),
-  \ javaapi#field(1,'RadialGradientPaint', 'SurfaceType'),
-  \ javaapi#field(1,'OpaqueRadialGradientPaint', 'SurfaceType'),
-  \ javaapi#field(1,'TexturePaint', 'SurfaceType'),
-  \ javaapi#field(1,'OpaqueTexturePaint', 'SurfaceType'),
-  \ javaapi#method(0,'deriveSubType(', 'String)', 'SurfaceType'),
-  \ javaapi#method(0,'deriveSubType(', 'String, PixelConverter)', 'SurfaceType'),
-  \ javaapi#method(1,'makeUniqueID(', 'String)', 'int'),
-  \ javaapi#method(0,'getUniqueID(', ')', 'int'),
-  \ javaapi#method(0,'getDescriptor(', ')', 'String'),
-  \ javaapi#method(0,'getSuperType(', ')', 'SurfaceType'),
-  \ javaapi#method(0,'getPixelConverter(', ')', 'PixelConverter'),
-  \ javaapi#method(0,'pixelFor(', 'int, ColorModel)', 'int'),
-  \ javaapi#method(0,'rgbFor(', 'int, ColorModel)', 'int'),
-  \ javaapi#method(0,'getAlphaMask(', ')', 'int'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#field(1,1,'DESC_ANY', 'String'),
+  \ javaapi#field(1,1,'DESC_INT_RGB', 'String'),
+  \ javaapi#field(1,1,'DESC_INT_ARGB', 'String'),
+  \ javaapi#field(1,1,'DESC_INT_ARGB_PRE', 'String'),
+  \ javaapi#field(1,1,'DESC_INT_BGR', 'String'),
+  \ javaapi#field(1,1,'DESC_3BYTE_BGR', 'String'),
+  \ javaapi#field(1,1,'DESC_4BYTE_ABGR', 'String'),
+  \ javaapi#field(1,1,'DESC_4BYTE_ABGR_PRE', 'String'),
+  \ javaapi#field(1,1,'DESC_USHORT_565_RGB', 'String'),
+  \ javaapi#field(1,1,'DESC_USHORT_555_RGB', 'String'),
+  \ javaapi#field(1,1,'DESC_USHORT_555_RGBx', 'String'),
+  \ javaapi#field(1,1,'DESC_USHORT_4444_ARGB', 'String'),
+  \ javaapi#field(1,1,'DESC_BYTE_GRAY', 'String'),
+  \ javaapi#field(1,1,'DESC_USHORT_INDEXED', 'String'),
+  \ javaapi#field(1,1,'DESC_USHORT_GRAY', 'String'),
+  \ javaapi#field(1,1,'DESC_BYTE_BINARY', 'String'),
+  \ javaapi#field(1,1,'DESC_BYTE_INDEXED', 'String'),
+  \ javaapi#field(1,1,'DESC_ANY_INT', 'String'),
+  \ javaapi#field(1,1,'DESC_ANY_SHORT', 'String'),
+  \ javaapi#field(1,1,'DESC_ANY_BYTE', 'String'),
+  \ javaapi#field(1,1,'DESC_ANY_3BYTE', 'String'),
+  \ javaapi#field(1,1,'DESC_ANY_4BYTE', 'String'),
+  \ javaapi#field(1,1,'DESC_ANY_INT_DCM', 'String'),
+  \ javaapi#field(1,1,'DESC_INT_RGBx', 'String'),
+  \ javaapi#field(1,1,'DESC_INT_BGRx', 'String'),
+  \ javaapi#field(1,1,'DESC_3BYTE_RGB', 'String'),
+  \ javaapi#field(1,1,'DESC_INT_ARGB_BM', 'String'),
+  \ javaapi#field(1,1,'DESC_BYTE_INDEXED_BM', 'String'),
+  \ javaapi#field(1,1,'DESC_BYTE_INDEXED_OPAQUE', 'String'),
+  \ javaapi#field(1,1,'DESC_INDEX8_GRAY', 'String'),
+  \ javaapi#field(1,1,'DESC_INDEX12_GRAY', 'String'),
+  \ javaapi#field(1,1,'DESC_BYTE_BINARY_1BIT', 'String'),
+  \ javaapi#field(1,1,'DESC_BYTE_BINARY_2BIT', 'String'),
+  \ javaapi#field(1,1,'DESC_BYTE_BINARY_4BIT', 'String'),
+  \ javaapi#field(1,1,'DESC_ANY_PAINT', 'String'),
+  \ javaapi#field(1,1,'DESC_ANY_COLOR', 'String'),
+  \ javaapi#field(1,1,'DESC_OPAQUE_COLOR', 'String'),
+  \ javaapi#field(1,1,'DESC_GRADIENT_PAINT', 'String'),
+  \ javaapi#field(1,1,'DESC_OPAQUE_GRADIENT_PAINT', 'String'),
+  \ javaapi#field(1,1,'DESC_TEXTURE_PAINT', 'String'),
+  \ javaapi#field(1,1,'DESC_OPAQUE_TEXTURE_PAINT', 'String'),
+  \ javaapi#field(1,1,'DESC_LINEAR_GRADIENT_PAINT', 'String'),
+  \ javaapi#field(1,1,'DESC_OPAQUE_LINEAR_GRADIENT_PAINT', 'String'),
+  \ javaapi#field(1,1,'DESC_RADIAL_GRADIENT_PAINT', 'String'),
+  \ javaapi#field(1,1,'DESC_OPAQUE_RADIAL_GRADIENT_PAINT', 'String'),
+  \ javaapi#field(1,1,'Any', 'SurfaceType'),
+  \ javaapi#field(1,1,'AnyInt', 'SurfaceType'),
+  \ javaapi#field(1,1,'AnyShort', 'SurfaceType'),
+  \ javaapi#field(1,1,'AnyByte', 'SurfaceType'),
+  \ javaapi#field(1,1,'AnyByteBinary', 'SurfaceType'),
+  \ javaapi#field(1,1,'Any3Byte', 'SurfaceType'),
+  \ javaapi#field(1,1,'Any4Byte', 'SurfaceType'),
+  \ javaapi#field(1,1,'AnyDcm', 'SurfaceType'),
+  \ javaapi#field(1,1,'Custom', 'SurfaceType'),
+  \ javaapi#field(1,1,'IntRgb', 'SurfaceType'),
+  \ javaapi#field(1,1,'IntArgb', 'SurfaceType'),
+  \ javaapi#field(1,1,'IntArgbPre', 'SurfaceType'),
+  \ javaapi#field(1,1,'IntBgr', 'SurfaceType'),
+  \ javaapi#field(1,1,'ThreeByteBgr', 'SurfaceType'),
+  \ javaapi#field(1,1,'FourByteAbgr', 'SurfaceType'),
+  \ javaapi#field(1,1,'FourByteAbgrPre', 'SurfaceType'),
+  \ javaapi#field(1,1,'Ushort565Rgb', 'SurfaceType'),
+  \ javaapi#field(1,1,'Ushort555Rgb', 'SurfaceType'),
+  \ javaapi#field(1,1,'Ushort555Rgbx', 'SurfaceType'),
+  \ javaapi#field(1,1,'Ushort4444Argb', 'SurfaceType'),
+  \ javaapi#field(1,1,'UshortIndexed', 'SurfaceType'),
+  \ javaapi#field(1,1,'ByteGray', 'SurfaceType'),
+  \ javaapi#field(1,1,'UshortGray', 'SurfaceType'),
+  \ javaapi#field(1,1,'ByteBinary1Bit', 'SurfaceType'),
+  \ javaapi#field(1,1,'ByteBinary2Bit', 'SurfaceType'),
+  \ javaapi#field(1,1,'ByteBinary4Bit', 'SurfaceType'),
+  \ javaapi#field(1,1,'ByteIndexed', 'SurfaceType'),
+  \ javaapi#field(1,1,'IntRgbx', 'SurfaceType'),
+  \ javaapi#field(1,1,'IntBgrx', 'SurfaceType'),
+  \ javaapi#field(1,1,'ThreeByteRgb', 'SurfaceType'),
+  \ javaapi#field(1,1,'IntArgbBm', 'SurfaceType'),
+  \ javaapi#field(1,1,'ByteIndexedBm', 'SurfaceType'),
+  \ javaapi#field(1,1,'ByteIndexedOpaque', 'SurfaceType'),
+  \ javaapi#field(1,1,'Index8Gray', 'SurfaceType'),
+  \ javaapi#field(1,1,'Index12Gray', 'SurfaceType'),
+  \ javaapi#field(1,1,'AnyPaint', 'SurfaceType'),
+  \ javaapi#field(1,1,'AnyColor', 'SurfaceType'),
+  \ javaapi#field(1,1,'OpaqueColor', 'SurfaceType'),
+  \ javaapi#field(1,1,'GradientPaint', 'SurfaceType'),
+  \ javaapi#field(1,1,'OpaqueGradientPaint', 'SurfaceType'),
+  \ javaapi#field(1,1,'LinearGradientPaint', 'SurfaceType'),
+  \ javaapi#field(1,1,'OpaqueLinearGradientPaint', 'SurfaceType'),
+  \ javaapi#field(1,1,'RadialGradientPaint', 'SurfaceType'),
+  \ javaapi#field(1,1,'OpaqueRadialGradientPaint', 'SurfaceType'),
+  \ javaapi#field(1,1,'TexturePaint', 'SurfaceType'),
+  \ javaapi#field(1,1,'OpaqueTexturePaint', 'SurfaceType'),
+  \ javaapi#field(0,0,'pixelConverter', 'PixelConverter'),
+  \ javaapi#method(0,1,'deriveSubType(', 'String)', 'SurfaceType'),
+  \ javaapi#method(0,1,'deriveSubType(', 'String, PixelConverter)', 'SurfaceType'),
+  \ javaapi#method(1,1,'makeUniqueID(', 'String)', 'int'),
+  \ javaapi#method(0,1,'getUniqueID(', ')', 'int'),
+  \ javaapi#method(0,1,'getDescriptor(', ')', 'String'),
+  \ javaapi#method(0,1,'getSuperType(', ')', 'SurfaceType'),
+  \ javaapi#method(0,1,'getPixelConverter(', ')', 'PixelConverter'),
+  \ javaapi#method(0,1,'pixelFor(', 'int, ColorModel)', 'int'),
+  \ javaapi#method(0,1,'rgbFor(', 'int, ColorModel)', 'int'),
+  \ javaapi#method(0,1,'getAlphaMask(', ')', 'int'),
+  \ javaapi#method(0,1,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 

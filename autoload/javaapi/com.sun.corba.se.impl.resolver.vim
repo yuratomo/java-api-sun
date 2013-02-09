@@ -1,55 +1,51 @@
 call javaapi#namespace('com.sun.corba.se.impl.resolver')
 
 call javaapi#class('BootstrapResolverImpl', 'Resolver', [
-  \ javaapi#method(0,'BootstrapResolverImpl(', 'ORB, String, int)', 'public'),
-  \ javaapi#method(0,'resolve(', 'String)', 'Object'),
-  \ javaapi#method(0,'list(', ')', 'Set'),
+  \ javaapi#method(0,1,'BootstrapResolverImpl(', 'ORB, String, int)', ''),
+  \ javaapi#method(0,1,'resolve(', 'String)', 'Object'),
+  \ javaapi#method(0,1,'list(', ')', 'Set'),
   \ ])
 
 call javaapi#class('CompositeResolverImpl', 'Resolver', [
-  \ javaapi#method(0,'CompositeResolverImpl(', 'Resolver, Resolver)', 'public'),
-  \ javaapi#method(0,'resolve(', 'String)', 'Object'),
-  \ javaapi#method(0,'list(', ')', 'Set'),
+  \ javaapi#method(0,1,'CompositeResolverImpl(', 'Resolver, Resolver)', ''),
+  \ javaapi#method(0,1,'resolve(', 'String)', 'Object'),
+  \ javaapi#method(0,1,'list(', ')', 'Set'),
   \ ])
 
 call javaapi#class('FileResolverImpl', 'Resolver', [
-  \ javaapi#method(0,'FileResolverImpl(', 'ORB, File)', 'public'),
-  \ javaapi#method(0,'resolve(', 'String)', 'Object'),
-  \ javaapi#method(0,'list(', ')', 'Set'),
-  \ ])
-
-call javaapi#class('1', 'Comparator', [
-  \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
+  \ javaapi#method(0,1,'FileResolverImpl(', 'ORB, File)', ''),
+  \ javaapi#method(0,1,'resolve(', 'String)', 'Object'),
+  \ javaapi#method(0,1,'list(', ')', 'Set'),
   \ ])
 
 call javaapi#class('INSURLOperationImpl', 'Operation', [
-  \ javaapi#method(0,'INSURLOperationImpl(', 'ORB, Resolver)', 'public'),
-  \ javaapi#method(0,'operate(', 'Object)', 'Object'),
+  \ javaapi#method(0,1,'INSURLOperationImpl(', 'ORB, Resolver)', ''),
+  \ javaapi#method(0,1,'operate(', 'Object)', 'Object'),
   \ ])
 
 call javaapi#class('LocalResolverImpl', 'LocalResolver', [
-  \ javaapi#method(0,'LocalResolverImpl(', ')', 'public'),
-  \ javaapi#method(0,'resolve(', 'String)', 'Object'),
-  \ javaapi#method(0,'list(', ')', 'Set'),
-  \ javaapi#method(0,'register(', 'String, Closure)', 'void'),
+  \ javaapi#method(0,1,'LocalResolverImpl(', ')', ''),
+  \ javaapi#method(0,1,'resolve(', 'String)', 'Object'),
+  \ javaapi#method(0,1,'list(', ')', 'Set'),
+  \ javaapi#method(0,1,'register(', 'String, Closure)', 'void'),
   \ ])
 
 call javaapi#class('ORBDefaultInitRefResolverImpl', 'Resolver', [
-  \ javaapi#method(0,'ORBDefaultInitRefResolverImpl(', 'Operation, String)', 'public'),
-  \ javaapi#method(0,'resolve(', 'String)', 'Object'),
-  \ javaapi#method(0,'list(', ')', 'Set'),
+  \ javaapi#method(0,1,'ORBDefaultInitRefResolverImpl(', 'Operation, String)', ''),
+  \ javaapi#method(0,1,'resolve(', 'String)', 'Object'),
+  \ javaapi#method(0,1,'list(', ')', 'Set'),
   \ ])
 
 call javaapi#class('ORBInitRefResolverImpl', 'Resolver', [
-  \ javaapi#method(0,'ORBInitRefResolverImpl(', 'Operation, StringPair[])', 'public'),
-  \ javaapi#method(0,'resolve(', 'String)', 'Object'),
-  \ javaapi#method(0,'list(', ')', 'Set'),
+  \ javaapi#method(0,1,'ORBInitRefResolverImpl(', 'Operation, StringPair[])', ''),
+  \ javaapi#method(0,1,'resolve(', 'String)', 'Object'),
+  \ javaapi#method(0,1,'list(', ')', 'Set'),
   \ ])
 
 call javaapi#class('SplitLocalResolverImpl', 'LocalResolver', [
-  \ javaapi#method(0,'SplitLocalResolverImpl(', 'Resolver, LocalResolver)', 'public'),
-  \ javaapi#method(0,'register(', 'String, Closure)', 'void'),
-  \ javaapi#method(0,'resolve(', 'String)', 'Object'),
-  \ javaapi#method(0,'list(', ')', 'Set'),
+  \ javaapi#method(0,1,'SplitLocalResolverImpl(', 'Resolver, LocalResolver)', ''),
+  \ javaapi#method(0,1,'register(', 'String, Closure)', 'void'),
+  \ javaapi#method(0,1,'resolve(', 'String)', 'Object'),
+  \ javaapi#method(0,1,'list(', ')', 'Set'),
   \ ])
 

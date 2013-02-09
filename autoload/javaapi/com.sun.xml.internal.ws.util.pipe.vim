@@ -1,69 +1,38 @@
 call javaapi#namespace('com.sun.xml.internal.ws.util.pipe')
 
-call javaapi#class('1', 'StreamSource', [
-  \ javaapi#method(0,'getReader(', ')', 'Reader'),
-  \ ])
-
-call javaapi#class('2', 'StreamSource', [
-  \ javaapi#method(0,'getReader(', ')', 'Reader'),
-  \ ])
-
-call javaapi#class('1', 'LSInput', [
-  \ javaapi#method(0,'getCharacterStream(', ')', 'Reader'),
-  \ javaapi#method(0,'setCharacterStream(', 'Reader)', 'void'),
-  \ javaapi#method(0,'getByteStream(', ')', 'InputStream'),
-  \ javaapi#method(0,'setByteStream(', 'InputStream)', 'void'),
-  \ javaapi#method(0,'getStringData(', ')', 'String'),
-  \ javaapi#method(0,'setStringData(', 'String)', 'void'),
-  \ javaapi#method(0,'getSystemId(', ')', 'String'),
-  \ javaapi#method(0,'setSystemId(', 'String)', 'void'),
-  \ javaapi#method(0,'getPublicId(', ')', 'String'),
-  \ javaapi#method(0,'setPublicId(', 'String)', 'void'),
-  \ javaapi#method(0,'getBaseURI(', ')', 'String'),
-  \ javaapi#method(0,'setBaseURI(', 'String)', 'void'),
-  \ javaapi#method(0,'getEncoding(', ')', 'String'),
-  \ javaapi#method(0,'setEncoding(', 'String)', 'void'),
-  \ javaapi#method(0,'getCertifiedText(', ')', 'boolean'),
-  \ javaapi#method(0,'setCertifiedText(', 'boolean)', 'void'),
-  \ ])
-
-call javaapi#class('MetadataResolverImpl', 'LSResourceResolver', [
-  \ javaapi#method(0,'MetadataResolverImpl(', 'AbstractSchemaValidationTube)', 'public'),
-  \ javaapi#method(0,'MetadataResolverImpl(', 'Iterable<SDDocument>)', 'public'),
-  \ javaapi#method(0,'resolve(', 'String)', 'SDDocument'),
-  \ javaapi#method(0,'resolveResource(', 'String, String, String, String, String)', 'LSInput'),
-  \ ])
-
-call javaapi#class('ValidationDocumentAddressResolver', 'DocumentAddressResolver', [
-  \ javaapi#method(0,'getRelativeAddressFor(', 'SDDocument, SDDocument)', 'String'),
-  \ ])
-
 call javaapi#class('AbstractSchemaValidationTube', 'AbstractFilterTubeImpl', [
-  \ javaapi#method(0,'AbstractSchemaValidationTube(', 'WSBinding, Tube)', 'public'),
-  \ ])
-
-call javaapi#class('1', 'PrintStream', [
-  \ javaapi#method(0,'close(', ')', 'void'),
+  \ javaapi#field(0,0,'binding', 'WSBinding'),
+  \ javaapi#field(0,0,'feature', 'SchemaValidationFeature'),
+  \ javaapi#field(0,0,'resolver', 'DocumentAddressResolver'),
+  \ javaapi#field(0,0,'sf', 'SchemaFactory'),
+  \ javaapi#method(0,1,'AbstractSchemaValidationTube(', 'WSBinding, Tube)', ''),
+  \ javaapi#method(0,0,'AbstractSchemaValidationTube(', 'AbstractSchemaValidationTube, TubeCloner)', ''),
+  \ javaapi#method(0,0,'getValidator(', ')', 'Validator'),
+  \ javaapi#method(0,0,'isNoValidation(', ')', 'boolean'),
+  \ javaapi#method(0,0,'getSchemaSources(', 'Iterable<SDDocument>, MetadataResolverImpl)', 'Source[]'),
+  \ javaapi#method(0,0,'doProcess(', 'Packet) throws SAXException', 'void'),
   \ ])
 
 call javaapi#class('DumpTube', 'AbstractFilterTubeImpl', [
-  \ javaapi#method(0,'DumpTube(', 'String, PrintStream, Tube)', 'public'),
-  \ javaapi#method(0,'processRequest(', 'Packet)', 'NextAction'),
-  \ javaapi#method(0,'processResponse(', 'Packet)', 'NextAction'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'AbstractTubeImpl'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'Tube'),
+  \ javaapi#method(0,1,'DumpTube(', 'String, PrintStream, Tube)', ''),
+  \ javaapi#method(0,0,'DumpTube(', 'DumpTube, TubeCloner)', ''),
+  \ javaapi#method(0,1,'processRequest(', 'Packet)', 'NextAction'),
+  \ javaapi#method(0,1,'processResponse(', 'Packet)', 'NextAction'),
+  \ javaapi#method(0,0,'dump(', 'String, Packet)', 'void'),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'AbstractTubeImpl'),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'Tube'),
   \ ])
 
 call javaapi#class('StandalonePipeAssembler', 'PipelineAssembler', [
-  \ javaapi#method(0,'StandalonePipeAssembler(', ')', 'public'),
-  \ javaapi#method(0,'createClient(', 'ClientPipeAssemblerContext)', 'Pipe'),
-  \ javaapi#method(0,'createServer(', 'ServerPipeAssemblerContext)', 'Pipe'),
+  \ javaapi#method(0,1,'StandalonePipeAssembler(', ')', ''),
+  \ javaapi#method(0,1,'createClient(', 'ClientPipeAssemblerContext)', 'Pipe'),
+  \ javaapi#method(0,1,'createServer(', 'ServerPipeAssemblerContext)', 'Pipe'),
   \ ])
 
 call javaapi#class('StandaloneTubeAssembler', 'TubelineAssembler', [
-  \ javaapi#field(1,'dump', 'boolean'),
-  \ javaapi#method(0,'StandaloneTubeAssembler(', ')', 'public'),
-  \ javaapi#method(0,'createClient(', 'ClientTubeAssemblerContext)', 'Tube'),
-  \ javaapi#method(0,'createServer(', 'ServerTubeAssemblerContext)', 'Tube'),
+  \ javaapi#field(1,1,'dump', 'boolean'),
+  \ javaapi#method(0,1,'StandaloneTubeAssembler(', ')', ''),
+  \ javaapi#method(0,1,'createClient(', 'ClientTubeAssemblerContext)', 'Tube'),
+  \ javaapi#method(0,1,'createServer(', 'ServerTubeAssemblerContext)', 'Tube'),
   \ ])
 

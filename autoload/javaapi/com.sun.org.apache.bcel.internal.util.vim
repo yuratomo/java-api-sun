@@ -4,148 +4,112 @@ call javaapi#class('AttributeHTML', 'Constants', [
   \ ])
 
 call javaapi#class('BCELFactory', 'EmptyVisitor', [
-  \ javaapi#method(0,'start(', ')', 'void'),
-  \ javaapi#method(0,'visitLocalVariableInstruction(', 'LocalVariableInstruction)', 'void'),
-  \ javaapi#method(0,'visitArrayInstruction(', 'ArrayInstruction)', 'void'),
-  \ javaapi#method(0,'visitFieldInstruction(', 'FieldInstruction)', 'void'),
-  \ javaapi#method(0,'visitInvokeInstruction(', 'InvokeInstruction)', 'void'),
-  \ javaapi#method(0,'visitAllocationInstruction(', 'AllocationInstruction)', 'void'),
-  \ javaapi#method(0,'visitLDC(', 'LDC)', 'void'),
-  \ javaapi#method(0,'visitLDC2_W(', 'LDC2_W)', 'void'),
-  \ javaapi#method(0,'visitConstantPushInstruction(', 'ConstantPushInstruction)', 'void'),
-  \ javaapi#method(0,'visitINSTANCEOF(', 'INSTANCEOF)', 'void'),
-  \ javaapi#method(0,'visitCHECKCAST(', 'CHECKCAST)', 'void'),
-  \ javaapi#method(0,'visitReturnInstruction(', 'ReturnInstruction)', 'void'),
-  \ javaapi#method(0,'visitBranchInstruction(', 'BranchInstruction)', 'void'),
-  \ javaapi#method(0,'visitRET(', 'RET)', 'void'),
+  \ javaapi#method(0,1,'start(', ')', 'void'),
+  \ javaapi#method(0,1,'visitLocalVariableInstruction(', 'LocalVariableInstruction)', 'void'),
+  \ javaapi#method(0,1,'visitArrayInstruction(', 'ArrayInstruction)', 'void'),
+  \ javaapi#method(0,1,'visitFieldInstruction(', 'FieldInstruction)', 'void'),
+  \ javaapi#method(0,1,'visitInvokeInstruction(', 'InvokeInstruction)', 'void'),
+  \ javaapi#method(0,1,'visitAllocationInstruction(', 'AllocationInstruction)', 'void'),
+  \ javaapi#method(0,1,'visitLDC(', 'LDC)', 'void'),
+  \ javaapi#method(0,1,'visitLDC2_W(', 'LDC2_W)', 'void'),
+  \ javaapi#method(0,1,'visitConstantPushInstruction(', 'ConstantPushInstruction)', 'void'),
+  \ javaapi#method(0,1,'visitINSTANCEOF(', 'INSTANCEOF)', 'void'),
+  \ javaapi#method(0,1,'visitCHECKCAST(', 'CHECKCAST)', 'void'),
+  \ javaapi#method(0,1,'visitReturnInstruction(', 'ReturnInstruction)', 'void'),
+  \ javaapi#method(0,1,'visitBranchInstruction(', 'BranchInstruction)', 'void'),
+  \ javaapi#method(0,1,'visitRET(', 'RET)', 'void'),
   \ ])
 
 call javaapi#class('BCELifier', 'EmptyVisitor', [
-  \ javaapi#method(0,'BCELifier(', 'JavaClass, OutputStream)', 'public'),
-  \ javaapi#method(0,'start(', ')', 'void'),
-  \ javaapi#method(0,'visitJavaClass(', 'JavaClass)', 'void'),
-  \ javaapi#method(0,'visitField(', 'Field)', 'void'),
-  \ javaapi#method(0,'visitMethod(', 'Method)', 'void'),
-  \ javaapi#method(1,'_main(', 'String[]) throws Exception', 'void'),
-  \ ])
-
-call javaapi#class('ByteArrayStream', 'ByteArrayInputStream', [
+  \ javaapi#method(0,1,'BCELifier(', 'JavaClass, OutputStream)', ''),
+  \ javaapi#method(0,1,'start(', ')', 'void'),
+  \ javaapi#method(0,1,'visitJavaClass(', 'JavaClass)', 'void'),
+  \ javaapi#method(0,1,'visitField(', 'Field)', 'void'),
+  \ javaapi#method(0,1,'visitMethod(', 'Method)', 'void'),
+  \ javaapi#method(1,1,'_main(', 'String[]) throws Exception', 'void'),
   \ ])
 
 call javaapi#class('ByteSequence', 'DataInputStream', [
-  \ javaapi#method(0,'ByteSequence(', 'byte[])', 'public'),
-  \ javaapi#method(0,'getIndex(', ')', 'int'),
+  \ javaapi#method(0,1,'ByteSequence(', 'byte[])', ''),
+  \ javaapi#method(0,1,'getIndex(', ')', 'int'),
   \ ])
 
 call javaapi#class('Class2HTML', 'Constants', [
-  \ javaapi#method(0,'Class2HTML(', 'JavaClass, String) throws IOException', 'public'),
-  \ javaapi#method(1,'_main(', 'String[])', 'void'),
+  \ javaapi#method(0,1,'Class2HTML(', 'JavaClass, String) throws IOException', ''),
+  \ javaapi#method(1,1,'_main(', 'String[])', 'void'),
   \ ])
 
 call javaapi#class('ClassLoader', 'ClassLoader', [
-  \ javaapi#method(0,'ClassLoader(', ')', 'public'),
-  \ javaapi#method(0,'ClassLoader(', 'ClassLoader)', 'public'),
-  \ javaapi#method(0,'ClassLoader(', 'String[])', 'public'),
-  \ javaapi#method(0,'ClassLoader(', 'ClassLoader, String[])', 'public'),
+  \ javaapi#method(0,1,'ClassLoader(', ')', ''),
+  \ javaapi#method(0,1,'ClassLoader(', 'ClassLoader)', ''),
+  \ javaapi#method(0,1,'ClassLoader(', 'String[])', ''),
+  \ javaapi#method(0,1,'ClassLoader(', 'ClassLoader, String[])', ''),
+  \ javaapi#method(0,0,'loadClass(', 'String, boolean) throws ClassNotFoundException', 'Class'),
+  \ javaapi#method(0,0,'modifyClass(', 'JavaClass)', 'JavaClass'),
+  \ javaapi#method(0,0,'createClass(', 'String)', 'JavaClass'),
   \ ])
 
 call javaapi#class('ClassLoaderRepository', 'Repository', [
-  \ javaapi#method(0,'ClassLoaderRepository(', 'ClassLoader)', 'public'),
-  \ javaapi#method(0,'storeClass(', 'JavaClass)', 'void'),
-  \ javaapi#method(0,'removeClass(', 'JavaClass)', 'void'),
-  \ javaapi#method(0,'findClass(', 'String)', 'JavaClass'),
-  \ javaapi#method(0,'loadClass(', 'String) throws ClassNotFoundException', 'JavaClass'),
-  \ javaapi#method(0,'loadClass(', 'Class) throws ClassNotFoundException', 'JavaClass'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ ])
-
-call javaapi#class('1', 'FilenameFilter', [
-  \ javaapi#method(0,'accept(', 'File, String)', 'boolean'),
-  \ ])
-
-call javaapi#interface('ClassFile', '', [
-  \ javaapi#method(0,'getInputStream(', ') throws IOException', 'InputStream'),
-  \ javaapi#method(0,'getPath(', ')', 'String'),
-  \ javaapi#method(0,'getBase(', ')', 'String'),
-  \ javaapi#method(0,'getTime(', ')', 'long'),
-  \ javaapi#method(0,'getSize(', ')', 'long'),
-  \ ])
-
-call javaapi#class('1', 'ClassFile', [
-  \ javaapi#method(0,'getInputStream(', ') throws IOException', 'InputStream'),
-  \ javaapi#method(0,'getPath(', ')', 'String'),
-  \ javaapi#method(0,'getTime(', ')', 'long'),
-  \ javaapi#method(0,'getSize(', ')', 'long'),
-  \ javaapi#method(0,'getBase(', ')', 'String'),
-  \ ])
-
-call javaapi#class('Dir', 'PathEntry', [
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('PathEntry', 'Serializable', [
-  \ ])
-
-call javaapi#class('1', 'ClassFile', [
-  \ javaapi#method(0,'getInputStream(', ') throws IOException', 'InputStream'),
-  \ javaapi#method(0,'getPath(', ')', 'String'),
-  \ javaapi#method(0,'getTime(', ')', 'long'),
-  \ javaapi#method(0,'getSize(', ')', 'long'),
-  \ javaapi#method(0,'getBase(', ')', 'String'),
-  \ ])
-
-call javaapi#class('Zip', 'PathEntry', [
+  \ javaapi#method(0,1,'ClassLoaderRepository(', 'ClassLoader)', ''),
+  \ javaapi#method(0,1,'storeClass(', 'JavaClass)', 'void'),
+  \ javaapi#method(0,1,'removeClass(', 'JavaClass)', 'void'),
+  \ javaapi#method(0,1,'findClass(', 'String)', 'JavaClass'),
+  \ javaapi#method(0,1,'loadClass(', 'String) throws ClassNotFoundException', 'JavaClass'),
+  \ javaapi#method(0,1,'loadClass(', 'Class) throws ClassNotFoundException', 'JavaClass'),
+  \ javaapi#method(0,1,'clear(', ')', 'void'),
   \ ])
 
 call javaapi#class('ClassPath', 'Serializable', [
-  \ javaapi#field(1,'SYSTEM_CLASS_PATH', 'ClassPath'),
-  \ javaapi#method(0,'ClassPath(', 'String)', 'public'),
-  \ javaapi#method(0,'ClassPath(', ')', 'public'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(1,'getClassPath(', ')', 'String'),
-  \ javaapi#method(0,'getInputStream(', 'String) throws IOException', 'InputStream'),
-  \ javaapi#method(0,'getInputStream(', 'String, String) throws IOException', 'InputStream'),
-  \ javaapi#method(0,'getClassFile(', 'String, String) throws IOException', 'ClassFile'),
-  \ javaapi#method(0,'getClassFile(', 'String) throws IOException', 'ClassFile'),
-  \ javaapi#method(0,'getBytes(', 'String, String) throws IOException', 'byte[]'),
-  \ javaapi#method(0,'getBytes(', 'String) throws IOException', 'byte[]'),
-  \ javaapi#method(0,'getPath(', 'String) throws IOException', 'String'),
-  \ javaapi#method(0,'getPath(', 'String, String) throws IOException', 'String'),
+  \ javaapi#field(1,1,'SYSTEM_CLASS_PATH', 'ClassPath'),
+  \ javaapi#method(0,1,'ClassPath(', 'String)', ''),
+  \ javaapi#method(0,1,'ClassPath(', ')', ''),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
+  \ javaapi#method(0,1,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(1,1,'getClassPath(', ')', 'String'),
+  \ javaapi#method(0,1,'getInputStream(', 'String) throws IOException', 'InputStream'),
+  \ javaapi#method(0,1,'getInputStream(', 'String, String) throws IOException', 'InputStream'),
+  \ javaapi#method(0,1,'getClassFile(', 'String, String) throws IOException', 'ClassFile'),
+  \ javaapi#method(0,1,'getClassFile(', 'String) throws IOException', 'ClassFile'),
+  \ javaapi#method(0,1,'getBytes(', 'String, String) throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'getBytes(', 'String) throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'getPath(', 'String) throws IOException', 'String'),
+  \ javaapi#method(0,1,'getPath(', 'String, String) throws IOException', 'String'),
   \ ])
 
 call javaapi#class('ClassQueue', 'Serializable', [
-  \ javaapi#method(0,'ClassQueue(', ')', 'public'),
-  \ javaapi#method(0,'enqueue(', 'JavaClass)', 'void'),
-  \ javaapi#method(0,'dequeue(', ')', 'JavaClass'),
-  \ javaapi#method(0,'empty(', ')', 'boolean'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#field(0,0,'vec', 'LinkedList'),
+  \ javaapi#method(0,1,'ClassQueue(', ')', ''),
+  \ javaapi#method(0,1,'enqueue(', 'JavaClass)', 'void'),
+  \ javaapi#method(0,1,'dequeue(', ')', 'JavaClass'),
+  \ javaapi#method(0,1,'empty(', ')', 'boolean'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
 call javaapi#class('ClassSet', 'Serializable', [
-  \ javaapi#method(0,'ClassSet(', ')', 'public'),
-  \ javaapi#method(0,'add(', 'JavaClass)', 'boolean'),
-  \ javaapi#method(0,'remove(', 'JavaClass)', 'void'),
-  \ javaapi#method(0,'empty(', ')', 'boolean'),
-  \ javaapi#method(0,'toArray(', ')', 'JavaClass[]'),
-  \ javaapi#method(0,'getClassNames(', ')', 'String[]'),
+  \ javaapi#method(0,1,'ClassSet(', ')', ''),
+  \ javaapi#method(0,1,'add(', 'JavaClass)', 'boolean'),
+  \ javaapi#method(0,1,'remove(', 'JavaClass)', 'void'),
+  \ javaapi#method(0,1,'empty(', ')', 'boolean'),
+  \ javaapi#method(0,1,'toArray(', ')', 'JavaClass[]'),
+  \ javaapi#method(0,1,'getClassNames(', ')', 'String[]'),
   \ ])
 
 call javaapi#class('ClassStack', 'Serializable', [
-  \ javaapi#method(0,'ClassStack(', ')', 'public'),
-  \ javaapi#method(0,'push(', 'JavaClass)', 'void'),
-  \ javaapi#method(0,'pop(', ')', 'JavaClass'),
-  \ javaapi#method(0,'top(', ')', 'JavaClass'),
-  \ javaapi#method(0,'empty(', ')', 'boolean'),
+  \ javaapi#method(0,1,'ClassStack(', ')', ''),
+  \ javaapi#method(0,1,'push(', 'JavaClass)', 'void'),
+  \ javaapi#method(0,1,'pop(', ')', 'JavaClass'),
+  \ javaapi#method(0,1,'top(', ')', 'JavaClass'),
+  \ javaapi#method(0,1,'empty(', ')', 'boolean'),
   \ ])
 
 call javaapi#class('ClassVector', 'Serializable', [
-  \ javaapi#method(0,'ClassVector(', ')', 'public'),
-  \ javaapi#method(0,'addElement(', 'JavaClass)', 'void'),
-  \ javaapi#method(0,'elementAt(', 'int)', 'JavaClass'),
-  \ javaapi#method(0,'removeElementAt(', 'int)', 'void'),
-  \ javaapi#method(0,'toArray(', ')', 'JavaClass[]'),
+  \ javaapi#field(0,0,'vec', 'ArrayList'),
+  \ javaapi#method(0,1,'ClassVector(', ')', ''),
+  \ javaapi#method(0,1,'addElement(', 'JavaClass)', 'void'),
+  \ javaapi#method(0,1,'elementAt(', 'int)', 'JavaClass'),
+  \ javaapi#method(0,1,'removeElementAt(', 'int)', 'void'),
+  \ javaapi#method(0,1,'toArray(', ')', 'JavaClass[]'),
   \ ])
 
 call javaapi#class('CodeHTML', 'Constants', [
@@ -154,47 +118,43 @@ call javaapi#class('CodeHTML', 'Constants', [
 call javaapi#class('ConstantHTML', 'Constants', [
   \ ])
 
-call javaapi#interface('CodeConstraint', '', [
-  \ javaapi#method(0,'checkCode(', 'InstructionHandle[])', 'boolean'),
-  \ ])
-
 call javaapi#class('InstructionFinder', '', [
-  \ javaapi#method(0,'InstructionFinder(', 'InstructionList)', 'public'),
-  \ javaapi#method(0,'reread(', ')', 'void'),
-  \ javaapi#method(0,'search(', 'String, InstructionHandle, CodeConstraint)', 'Iterator'),
-  \ javaapi#method(0,'search(', 'String)', 'Iterator'),
-  \ javaapi#method(0,'search(', 'String, InstructionHandle)', 'Iterator'),
-  \ javaapi#method(0,'search(', 'String, CodeConstraint)', 'Iterator'),
-  \ javaapi#method(0,'getInstructionList(', ')', 'InstructionList'),
+  \ javaapi#method(0,1,'InstructionFinder(', 'InstructionList)', ''),
+  \ javaapi#method(0,1,'reread(', ')', 'void'),
+  \ javaapi#method(0,1,'search(', 'String, InstructionHandle, CodeConstraint)', 'Iterator'),
+  \ javaapi#method(0,1,'search(', 'String)', 'Iterator'),
+  \ javaapi#method(0,1,'search(', 'String, InstructionHandle)', 'Iterator'),
+  \ javaapi#method(0,1,'search(', 'String, CodeConstraint)', 'Iterator'),
+  \ javaapi#method(0,1,'getInstructionList(', ')', 'InstructionList'),
   \ ])
 
 call javaapi#class('JavaWrapper', '', [
-  \ javaapi#method(0,'JavaWrapper(', 'ClassLoader)', 'public'),
-  \ javaapi#method(0,'JavaWrapper(', ')', 'public'),
-  \ javaapi#method(0,'runMain(', 'String, String[]) throws ClassNotFoundException', 'void'),
-  \ javaapi#method(1,'_main(', 'String[]) throws Exception', 'void'),
+  \ javaapi#method(0,1,'JavaWrapper(', 'ClassLoader)', ''),
+  \ javaapi#method(0,1,'JavaWrapper(', ')', ''),
+  \ javaapi#method(0,1,'runMain(', 'String, String[]) throws ClassNotFoundException', 'void'),
+  \ javaapi#method(1,1,'_main(', 'String[]) throws Exception', 'void'),
   \ ])
 
 call javaapi#class('MethodHTML', 'Constants', [
   \ ])
 
 call javaapi#interface('Repository', 'Serializable', [
-  \ javaapi#method(0,'storeClass(', 'JavaClass)', 'void'),
-  \ javaapi#method(0,'removeClass(', 'JavaClass)', 'void'),
-  \ javaapi#method(0,'findClass(', 'String)', 'JavaClass'),
-  \ javaapi#method(0,'loadClass(', 'String) throws ClassNotFoundException', 'JavaClass'),
-  \ javaapi#method(0,'loadClass(', 'Class) throws ClassNotFoundException', 'JavaClass'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(0,1,'storeClass(', 'JavaClass)', 'void'),
+  \ javaapi#method(0,1,'removeClass(', 'JavaClass)', 'void'),
+  \ javaapi#method(0,1,'findClass(', 'String)', 'JavaClass'),
+  \ javaapi#method(0,1,'loadClass(', 'String) throws ClassNotFoundException', 'JavaClass'),
+  \ javaapi#method(0,1,'loadClass(', 'Class) throws ClassNotFoundException', 'JavaClass'),
+  \ javaapi#method(0,1,'clear(', ')', 'void'),
   \ ])
 
 call javaapi#class('SyntheticRepository', 'Repository', [
-  \ javaapi#method(1,'getInstance(', ')', 'SyntheticRepository'),
-  \ javaapi#method(1,'getInstance(', 'ClassPath)', 'SyntheticRepository'),
-  \ javaapi#method(0,'storeClass(', 'JavaClass)', 'void'),
-  \ javaapi#method(0,'removeClass(', 'JavaClass)', 'void'),
-  \ javaapi#method(0,'findClass(', 'String)', 'JavaClass'),
-  \ javaapi#method(0,'loadClass(', 'String) throws ClassNotFoundException', 'JavaClass'),
-  \ javaapi#method(0,'loadClass(', 'Class) throws ClassNotFoundException', 'JavaClass'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(1,1,'getInstance(', ')', 'SyntheticRepository'),
+  \ javaapi#method(1,1,'getInstance(', 'ClassPath)', 'SyntheticRepository'),
+  \ javaapi#method(0,1,'storeClass(', 'JavaClass)', 'void'),
+  \ javaapi#method(0,1,'removeClass(', 'JavaClass)', 'void'),
+  \ javaapi#method(0,1,'findClass(', 'String)', 'JavaClass'),
+  \ javaapi#method(0,1,'loadClass(', 'String) throws ClassNotFoundException', 'JavaClass'),
+  \ javaapi#method(0,1,'loadClass(', 'Class) throws ClassNotFoundException', 'JavaClass'),
+  \ javaapi#method(0,1,'clear(', ')', 'void'),
   \ ])
 

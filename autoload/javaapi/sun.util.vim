@@ -1,136 +1,84 @@
 call javaapi#namespace('sun.util')
 
 call javaapi#class('BuddhistCalendar', 'GregorianCalendar', [
-  \ javaapi#method(0,'BuddhistCalendar(', ')', 'public'),
-  \ javaapi#method(0,'BuddhistCalendar(', 'TimeZone)', 'public'),
-  \ javaapi#method(0,'BuddhistCalendar(', 'Locale)', 'public'),
-  \ javaapi#method(0,'BuddhistCalendar(', 'TimeZone, Locale)', 'public'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'get(', 'int)', 'int'),
-  \ javaapi#method(0,'set(', 'int, int)', 'void'),
-  \ javaapi#method(0,'add(', 'int, int)', 'void'),
-  \ javaapi#method(0,'roll(', 'int, int)', 'void'),
-  \ javaapi#method(0,'getDisplayName(', 'int, int, Locale)', 'String'),
-  \ javaapi#method(0,'getDisplayNames(', 'int, int, Locale)', 'Integer>'),
-  \ javaapi#method(0,'getActualMaximum(', 'int)', 'int'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('2', 'Control', [
-  \ ])
-
-call javaapi#class('AllAvailableLocales', '', [
-  \ ])
-
-call javaapi#interface('LocalizedObjectGetter<P,S>', '', [
-  \ javaapi#method(0,'getObject(', 'P, Locale, String, )', 'S'),
-  \ ])
-
-call javaapi#class('NullProvider', 'LocaleServiceProvider', [
-  \ javaapi#method(0,'getAvailableLocales(', ')', 'Locale[]'),
-  \ ])
-
-call javaapi#class('1', 'String>', [
-  \ javaapi#method(0,'hasNext(', ')', 'boolean'),
-  \ javaapi#method(0,'next(', ')', 'String'),
-  \ javaapi#method(0,'remove(', ')', 'void'),
-  \ javaapi#method(0,'next(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('1', 'String>', [
-  \ javaapi#method(0,'size(', ')', 'int'),
-  \ javaapi#method(0,'iterator(', ')', 'String>'),
-  \ ])
-
-call javaapi#class('1', 'String,V>', [
-  \ javaapi#method(0,'getKey(', ')', 'String'),
-  \ javaapi#method(0,'getValue(', ')', 'V'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'setValue(', 'V)', 'V'),
-  \ javaapi#method(0,'getKey(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('1', 'String,V>>', [
-  \ javaapi#method(0,'hasNext(', ')', 'boolean'),
-  \ javaapi#method(0,'next(', ')', 'V>'),
-  \ javaapi#method(0,'remove(', ')', 'void'),
-  \ javaapi#method(0,'next(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('2', 'String,V>>', [
-  \ javaapi#method(0,'size(', ')', 'int'),
-  \ javaapi#method(0,'iterator(', ')', 'V>>'),
-  \ ])
-
-call javaapi#class('TimeZoneNameGetter', 'String[]>', [
-  \ javaapi#method(0,'getObject(', 'TimeZoneNameProvider, Locale, String, )', 'String[]'),
-  \ javaapi#method(0,'getObject(', 'Object, Locale, String, Object[])', 'Object'),
+  \ javaapi#method(0,1,'BuddhistCalendar(', ')', ''),
+  \ javaapi#method(0,1,'BuddhistCalendar(', 'TimeZone)', ''),
+  \ javaapi#method(0,1,'BuddhistCalendar(', 'Locale)', ''),
+  \ javaapi#method(0,1,'BuddhistCalendar(', 'TimeZone, Locale)', ''),
+  \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,1,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,1,'get(', 'int)', 'int'),
+  \ javaapi#method(0,1,'set(', 'int, int)', 'void'),
+  \ javaapi#method(0,1,'add(', 'int, int)', 'void'),
+  \ javaapi#method(0,1,'roll(', 'int, int)', 'void'),
+  \ javaapi#method(0,1,'getDisplayName(', 'int, int, Locale)', 'String'),
+  \ javaapi#method(0,1,'getDisplayNames(', 'int, int, Locale)', 'Integer>'),
+  \ javaapi#method(0,1,'getActualMaximum(', 'int)', 'int'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
 call javaapi#namespace('sun.util')
 
 call javaapi#class('EmptyListResourceBundle', 'ListResourceBundle', [
-  \ javaapi#method(0,'EmptyListResourceBundle(', ')', 'public'),
+  \ javaapi#method(0,1,'EmptyListResourceBundle(', ')', ''),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
   \ ])
 
 call javaapi#namespace('sun.util')
 
-call javaapi#class('1', 'Object>', [
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
 call javaapi#class('LocaleServiceProviderPool', '', [
-  \ javaapi#method(1,'getPool(', 'Class<? extends LocaleServiceProvider>)', 'LocaleServiceProviderPool'),
-  \ javaapi#method(1,'getAllAvailableLocales(', ')', 'Locale[]'),
-  \ javaapi#method(0,'getAvailableLocales(', ')', 'Locale[]'),
-  \ javaapi#method(0,'hasProviders(', ')', 'boolean'),
-  \ javaapi#method(0,'getLocalizedObject(', 'LocalizedObjectGetter<P, S>, Locale, )', 'S'),
-  \ javaapi#method(0,'getLocalizedObject(', 'LocalizedObjectGetter<P, S>, Locale, OpenListResourceBundle, String, )', 'S'),
-  \ javaapi#method(0,'getLocalizedObject(', 'LocalizedObjectGetter<P, S>, Locale, String, OpenListResourceBundle, String, )', 'S'),
+  \ javaapi#method(1,1,'getPool(', 'Class<? extends LocaleServiceProvider>)', 'LocaleServiceProviderPool'),
+  \ javaapi#method(1,1,'getAllAvailableLocales(', ')', 'Locale[]'),
+  \ javaapi#method(0,1,'getAvailableLocales(', ')', 'Locale[]'),
+  \ javaapi#method(0,1,'hasProviders(', ')', 'boolean'),
+  \ javaapi#method(0,1,'getLocalizedObject(', 'LocalizedObjectGetter<P, S>, Locale, )', 'S'),
+  \ javaapi#method(0,1,'getLocalizedObject(', 'LocalizedObjectGetter<P, S>, Locale, OpenListResourceBundle, String, )', 'S'),
+  \ javaapi#method(0,1,'getLocalizedObject(', 'LocalizedObjectGetter<P, S>, Locale, String, OpenListResourceBundle, String, )', 'S'),
   \ ])
 
 call javaapi#namespace('sun.util')
 
 call javaapi#class('LocaleDataMetaInfo', '', [
-  \ javaapi#method(0,'LocaleDataMetaInfo(', ')', 'public'),
-  \ javaapi#method(1,'getSupportedLocaleString(', 'String)', 'String'),
+  \ javaapi#method(0,1,'LocaleDataMetaInfo(', ')', ''),
+  \ javaapi#method(1,1,'getSupportedLocaleString(', 'String)', 'String'),
   \ ])
 
 call javaapi#namespace('sun.util')
 
 call javaapi#class('TimeZoneNameUtility', '', [
-  \ javaapi#method(0,'TimeZoneNameUtility(', ')', 'public'),
-  \ javaapi#method(1,'getZoneStrings(', 'Locale)', 'String[][]'),
-  \ javaapi#method(1,'retrieveDisplayNames(', 'String, Locale)', 'String[]'),
+  \ javaapi#method(0,1,'TimeZoneNameUtility(', ')', ''),
+  \ javaapi#method(1,1,'getZoneStrings(', 'Locale)', 'String[][]'),
+  \ javaapi#method(1,1,'retrieveDisplayNames(', 'String, Locale)', 'String[]'),
   \ ])
 
 call javaapi#namespace('sun.util')
 
 call javaapi#class('ResourceBundleEnumeration', 'String>', [
-  \ javaapi#method(0,'ResourceBundleEnumeration(', 'Set<String>, Enumeration<String>)', 'public'),
-  \ javaapi#method(0,'hasMoreElements(', ')', 'boolean'),
-  \ javaapi#method(0,'nextElement(', ')', 'String'),
-  \ javaapi#method(0,'nextElement(', ')', 'Object'),
+  \ javaapi#method(0,1,'ResourceBundleEnumeration(', 'Set<String>, Enumeration<String>)', ''),
+  \ javaapi#method(0,1,'hasMoreElements(', ')', 'boolean'),
+  \ javaapi#method(0,1,'nextElement(', ')', 'String'),
+  \ javaapi#method(0,1,'nextElement(', ')', 'Object'),
   \ ])
 
 call javaapi#namespace('sun.util')
 
 call javaapi#class('CoreResourceBundleControl', 'Control', [
-  \ javaapi#method(1,'getRBControlInstance(', ')', 'CoreResourceBundleControl'),
-  \ javaapi#method(1,'getRBControlInstance(', 'String)', 'CoreResourceBundleControl'),
-  \ javaapi#method(0,'getCandidateLocales(', 'String, Locale)', 'Locale>'),
-  \ javaapi#method(0,'getTimeToLive(', 'String, Locale)', 'long'),
+  \ javaapi#method(0,0,'CoreResourceBundleControl(', ')', ''),
+  \ javaapi#method(1,1,'getRBControlInstance(', ')', 'CoreResourceBundleControl'),
+  \ javaapi#method(1,1,'getRBControlInstance(', 'String)', 'CoreResourceBundleControl'),
+  \ javaapi#method(0,1,'getCandidateLocales(', 'String, Locale)', 'Locale>'),
+  \ javaapi#method(0,1,'getTimeToLive(', 'String, Locale)', 'long'),
   \ ])
 
 call javaapi#namespace('sun.util')
 
 call javaapi#class('PreHashedMap<V>', 'String,V>', [
-  \ javaapi#method(0,'get(', 'Object)', 'V'),
-  \ javaapi#method(0,'put(', 'String, V)', 'V'),
-  \ javaapi#method(0,'keySet(', ')', 'String>'),
-  \ javaapi#method(0,'entrySet(', ')', 'V>>'),
-  \ javaapi#method(0,'put(', 'Object, Object)', 'Object'),
+  \ javaapi#method(0,0,'PreHashedMap(', 'int, int, int, int)', ''),
+  \ javaapi#method(0,0,'init(', 'Object[])', 'void'),
+  \ javaapi#method(0,1,'get(', 'Object)', 'V'),
+  \ javaapi#method(0,1,'put(', 'String, V)', 'V'),
+  \ javaapi#method(0,1,'keySet(', ')', 'String>'),
+  \ javaapi#method(0,1,'entrySet(', ')', 'V>>'),
+  \ javaapi#method(0,1,'put(', 'Object, Object)', 'Object'),
   \ ])
 

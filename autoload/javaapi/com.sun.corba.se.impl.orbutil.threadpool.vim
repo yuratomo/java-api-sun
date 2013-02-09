@@ -1,86 +1,50 @@
 call javaapi#namespace('com.sun.corba.se.impl.orbutil.threadpool')
 
-call javaapi#class('1', 'LongMonitoredAttributeBase', [
-  \ javaapi#method(0,'getValue(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('2', 'LongMonitoredAttributeBase', [
-  \ javaapi#method(0,'getValue(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('3', 'LongMonitoredAttributeBase', [
-  \ javaapi#method(0,'getValue(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('4', 'LongMonitoredAttributeBase', [
-  \ javaapi#method(0,'getValue(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('5', 'LongMonitoredAttributeBase', [
-  \ javaapi#method(0,'getValue(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('WorkerThread', 'Thread', [
-  \ javaapi#method(0,'run(', ')', 'void'),
-  \ ])
-
 call javaapi#class('ThreadPoolImpl', 'ThreadPool', [
-  \ javaapi#method(0,'ThreadPoolImpl(', 'ThreadGroup, String)', 'public'),
-  \ javaapi#method(0,'ThreadPoolImpl(', 'String)', 'public'),
-  \ javaapi#method(0,'ThreadPoolImpl(', 'int, int, long, String)', 'public'),
-  \ javaapi#method(0,'getAnyWorkQueue(', ')', 'WorkQueue'),
-  \ javaapi#method(0,'getWorkQueue(', 'int) throws NoSuchWorkQueueException', 'WorkQueue'),
-  \ javaapi#method(0,'minimumNumberOfThreads(', ')', 'int'),
-  \ javaapi#method(0,'maximumNumberOfThreads(', ')', 'int'),
-  \ javaapi#method(0,'idleTimeoutForThreads(', ')', 'long'),
-  \ javaapi#method(0,'currentNumberOfThreads(', ')', 'int'),
-  \ javaapi#method(0,'numberOfAvailableThreads(', ')', 'int'),
-  \ javaapi#method(0,'numberOfBusyThreads(', ')', 'int'),
-  \ javaapi#method(0,'averageWorkCompletionTime(', ')', 'long'),
-  \ javaapi#method(0,'currentProcessedCount(', ')', 'long'),
-  \ javaapi#method(0,'getName(', ')', 'String'),
-  \ javaapi#method(0,'numberOfWorkQueues(', ')', 'int'),
+  \ javaapi#method(0,1,'ThreadPoolImpl(', 'ThreadGroup, String)', ''),
+  \ javaapi#method(0,1,'ThreadPoolImpl(', 'String)', ''),
+  \ javaapi#method(0,1,'ThreadPoolImpl(', 'int, int, long, String)', ''),
+  \ javaapi#method(0,1,'getAnyWorkQueue(', ')', 'WorkQueue'),
+  \ javaapi#method(0,1,'getWorkQueue(', 'int) throws NoSuchWorkQueueException', 'WorkQueue'),
+  \ javaapi#method(0,1,'minimumNumberOfThreads(', ')', 'int'),
+  \ javaapi#method(0,1,'maximumNumberOfThreads(', ')', 'int'),
+  \ javaapi#method(0,1,'idleTimeoutForThreads(', ')', 'long'),
+  \ javaapi#method(0,1,'currentNumberOfThreads(', ')', 'int'),
+  \ javaapi#method(0,1,'numberOfAvailableThreads(', ')', 'int'),
+  \ javaapi#method(0,1,'numberOfBusyThreads(', ')', 'int'),
+  \ javaapi#method(0,1,'averageWorkCompletionTime(', ')', 'long'),
+  \ javaapi#method(0,1,'currentProcessedCount(', ')', 'long'),
+  \ javaapi#method(0,1,'getName(', ')', 'String'),
+  \ javaapi#method(0,1,'numberOfWorkQueues(', ')', 'int'),
   \ ])
 
 call javaapi#class('ThreadPoolManagerImpl', 'ThreadPoolManager', [
-  \ javaapi#method(0,'ThreadPoolManagerImpl(', 'ThreadGroup)', 'public'),
-  \ javaapi#method(0,'getThreadPool(', 'String) throws NoSuchThreadPoolException', 'ThreadPool'),
-  \ javaapi#method(0,'getThreadPool(', 'int) throws NoSuchThreadPoolException', 'ThreadPool'),
-  \ javaapi#method(0,'getThreadPoolNumericId(', 'String)', 'int'),
-  \ javaapi#method(0,'getThreadPoolStringId(', 'int)', 'String'),
-  \ javaapi#method(0,'getDefaultThreadPool(', ')', 'ThreadPool'),
-  \ javaapi#method(0,'getThreadPoolChooser(', 'String)', 'ThreadPoolChooser'),
-  \ javaapi#method(0,'getThreadPoolChooser(', 'int)', 'ThreadPoolChooser'),
-  \ javaapi#method(0,'setThreadPoolChooser(', 'String, ThreadPoolChooser)', 'void'),
-  \ javaapi#method(0,'getThreadPoolChooserNumericId(', 'String)', 'int'),
+  \ javaapi#method(0,1,'ThreadPoolManagerImpl(', 'ThreadGroup)', ''),
+  \ javaapi#method(0,1,'getThreadPool(', 'String) throws NoSuchThreadPoolException', 'ThreadPool'),
+  \ javaapi#method(0,1,'getThreadPool(', 'int) throws NoSuchThreadPoolException', 'ThreadPool'),
+  \ javaapi#method(0,1,'getThreadPoolNumericId(', 'String)', 'int'),
+  \ javaapi#method(0,1,'getThreadPoolStringId(', 'int)', 'String'),
+  \ javaapi#method(0,1,'getDefaultThreadPool(', ')', 'ThreadPool'),
+  \ javaapi#method(0,1,'getThreadPoolChooser(', 'String)', 'ThreadPoolChooser'),
+  \ javaapi#method(0,1,'getThreadPoolChooser(', 'int)', 'ThreadPoolChooser'),
+  \ javaapi#method(0,1,'setThreadPoolChooser(', 'String, ThreadPoolChooser)', 'void'),
+  \ javaapi#method(0,1,'getThreadPoolChooserNumericId(', 'String)', 'int'),
   \ ])
 
 call javaapi#class('TimeoutException', 'Exception', [
-  \ javaapi#method(0,'TimeoutException(', ')', 'public'),
-  \ ])
-
-call javaapi#class('1', 'LongMonitoredAttributeBase', [
-  \ javaapi#method(0,'getValue(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('2', 'LongMonitoredAttributeBase', [
-  \ javaapi#method(0,'getValue(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('3', 'LongMonitoredAttributeBase', [
-  \ javaapi#method(0,'getValue(', ')', 'Object'),
+  \ javaapi#method(0,1,'TimeoutException(', ')', ''),
   \ ])
 
 call javaapi#class('WorkQueueImpl', 'WorkQueue', [
-  \ javaapi#method(0,'WorkQueueImpl(', ')', 'public'),
-  \ javaapi#method(0,'WorkQueueImpl(', 'ThreadPool)', 'public'),
-  \ javaapi#method(0,'WorkQueueImpl(', 'ThreadPool, String)', 'public'),
-  \ javaapi#method(0,'addWork(', 'Work)', 'void'),
-  \ javaapi#method(0,'setThreadPool(', 'ThreadPool)', 'void'),
-  \ javaapi#method(0,'getThreadPool(', ')', 'ThreadPool'),
-  \ javaapi#method(0,'totalWorkItemsAdded(', ')', 'long'),
-  \ javaapi#method(0,'workItemsInQueue(', ')', 'int'),
-  \ javaapi#method(0,'averageTimeInQueue(', ')', 'long'),
-  \ javaapi#method(0,'getName(', ')', 'String'),
+  \ javaapi#method(0,1,'WorkQueueImpl(', ')', ''),
+  \ javaapi#method(0,1,'WorkQueueImpl(', 'ThreadPool)', ''),
+  \ javaapi#method(0,1,'WorkQueueImpl(', 'ThreadPool, String)', ''),
+  \ javaapi#method(0,1,'addWork(', 'Work)', 'void'),
+  \ javaapi#method(0,1,'setThreadPool(', 'ThreadPool)', 'void'),
+  \ javaapi#method(0,1,'getThreadPool(', ')', 'ThreadPool'),
+  \ javaapi#method(0,1,'totalWorkItemsAdded(', ')', 'long'),
+  \ javaapi#method(0,1,'workItemsInQueue(', ')', 'int'),
+  \ javaapi#method(0,1,'averageTimeInQueue(', ')', 'long'),
+  \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 

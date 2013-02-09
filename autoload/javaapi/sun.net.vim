@@ -1,221 +1,196 @@
 call javaapi#namespace('sun.net')
 
 call javaapi#class('ApplicationProxy', 'Proxy', [
-  \ javaapi#method(1,'create(', 'Proxy)', 'ApplicationProxy'),
+  \ javaapi#method(1,1,'create(', 'Proxy)', 'ApplicationProxy'),
   \ ])
 
 call javaapi#class('ConnectionResetException', 'SocketException', [
-  \ javaapi#method(0,'ConnectionResetException(', 'String)', 'public'),
-  \ javaapi#method(0,'ConnectionResetException(', ')', 'public'),
+  \ javaapi#method(0,1,'ConnectionResetException(', 'String)', ''),
+  \ javaapi#method(0,1,'ConnectionResetException(', ')', ''),
   \ ])
 
 call javaapi#class('NetHooks', '', [
-  \ javaapi#method(0,'NetHooks(', ')', 'public'),
-  \ javaapi#method(1,'beforeTcpBind(', 'FileDescriptor, InetAddress, int) throws IOException', 'void'),
-  \ javaapi#method(1,'beforeTcpConnect(', 'FileDescriptor, InetAddress, int) throws IOException', 'void'),
-  \ ])
-
-call javaapi#class('1', 'Void>', [
-  \ javaapi#method(0,'run(', ')', 'Void'),
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('2', 'Socket>', [
-  \ javaapi#method(0,'run(', ')', 'Socket'),
-  \ javaapi#method(0,'run(', ')', 'Object'),
+  \ javaapi#method(0,1,'NetHooks(', ')', ''),
+  \ javaapi#method(1,1,'beforeTcpBind(', 'FileDescriptor, InetAddress, int) throws IOException', 'void'),
+  \ javaapi#method(1,1,'beforeTcpConnect(', 'FileDescriptor, InetAddress, int) throws IOException', 'void'),
   \ ])
 
 call javaapi#class('NetworkClient', '', [
-  \ javaapi#field(1,'DEFAULT_READ_TIMEOUT', 'int'),
-  \ javaapi#field(1,'DEFAULT_CONNECT_TIMEOUT', 'int'),
-  \ javaapi#field(0,'serverOutput', 'PrintStream'),
-  \ javaapi#field(0,'serverInput', 'InputStream'),
-  \ javaapi#method(0,'openServer(', 'String, int) throws IOException, UnknownHostException', 'void'),
-  \ javaapi#method(0,'closeServer(', ') throws IOException', 'void'),
-  \ javaapi#method(0,'serverIsOpen(', ')', 'boolean'),
-  \ javaapi#method(0,'NetworkClient(', 'String, int) throws IOException', 'public'),
-  \ javaapi#method(0,'NetworkClient(', ')', 'public'),
-  \ javaapi#method(0,'setConnectTimeout(', 'int)', 'void'),
-  \ javaapi#method(0,'getConnectTimeout(', ')', 'int'),
-  \ javaapi#method(0,'setReadTimeout(', 'int)', 'void'),
-  \ javaapi#method(0,'getReadTimeout(', ')', 'int'),
+  \ javaapi#field(1,1,'DEFAULT_READ_TIMEOUT', 'int'),
+  \ javaapi#field(1,1,'DEFAULT_CONNECT_TIMEOUT', 'int'),
+  \ javaapi#field(0,0,'proxy', 'Proxy'),
+  \ javaapi#field(0,0,'serverSocket', 'Socket'),
+  \ javaapi#field(0,1,'serverOutput', 'PrintStream'),
+  \ javaapi#field(0,1,'serverInput', 'InputStream'),
+  \ javaapi#field(1,0,'defaultSoTimeout', 'int'),
+  \ javaapi#field(1,0,'defaultConnectTimeout', 'int'),
+  \ javaapi#field(0,0,'readTimeout', 'int'),
+  \ javaapi#field(0,0,'connectTimeout', 'int'),
+  \ javaapi#field(1,0,'encoding', 'String'),
+  \ javaapi#method(0,1,'openServer(', 'String, int) throws IOException, UnknownHostException', 'void'),
+  \ javaapi#method(0,0,'doConnect(', 'String, int) throws IOException, UnknownHostException', 'Socket'),
+  \ javaapi#method(0,0,'createSocket(', ') throws IOException', 'Socket'),
+  \ javaapi#method(0,0,'getLocalAddress(', ') throws IOException', 'InetAddress'),
+  \ javaapi#method(0,1,'closeServer(', ') throws IOException', 'void'),
+  \ javaapi#method(0,1,'serverIsOpen(', ')', 'boolean'),
+  \ javaapi#method(0,1,'NetworkClient(', 'String, int) throws IOException', ''),
+  \ javaapi#method(0,1,'NetworkClient(', ')', ''),
+  \ javaapi#method(0,1,'setConnectTimeout(', 'int)', 'void'),
+  \ javaapi#method(0,1,'getConnectTimeout(', ')', 'int'),
+  \ javaapi#method(0,1,'setReadTimeout(', 'int)', 'void'),
+  \ javaapi#method(0,1,'getReadTimeout(', ')', 'int'),
   \ ])
 
 call javaapi#class('NetworkServer', 'Cloneable', [
-  \ javaapi#field(0,'clientSocket', 'Socket'),
-  \ javaapi#field(0,'clientOutput', 'PrintStream'),
-  \ javaapi#field(0,'clientInput', 'InputStream'),
-  \ javaapi#method(0,'close(', ') throws IOException', 'void'),
-  \ javaapi#method(0,'clientIsOpen(', ')', 'boolean'),
-  \ javaapi#method(0,'run(', ')', 'void'),
-  \ javaapi#method(0,'startServer(', 'int) throws IOException', 'void'),
-  \ javaapi#method(0,'serviceRequest(', ') throws IOException', 'void'),
-  \ javaapi#method(1,'main(', 'String[])', 'void'),
-  \ javaapi#method(0,'clone(', ')', 'Object'),
-  \ javaapi#method(0,'NetworkServer(', ')', 'public'),
+  \ javaapi#field(0,1,'clientSocket', 'Socket'),
+  \ javaapi#field(0,1,'clientOutput', 'PrintStream'),
+  \ javaapi#field(0,1,'clientInput', 'InputStream'),
+  \ javaapi#method(0,1,'close(', ') throws IOException', 'void'),
+  \ javaapi#method(0,1,'clientIsOpen(', ')', 'boolean'),
+  \ javaapi#method(0,1,'run(', ')', 'void'),
+  \ javaapi#method(0,1,'startServer(', 'int) throws IOException', 'void'),
+  \ javaapi#method(0,1,'serviceRequest(', ') throws IOException', 'void'),
+  \ javaapi#method(1,1,'main(', 'String[])', 'void'),
+  \ javaapi#method(0,1,'clone(', ')', 'Object'),
+  \ javaapi#method(0,1,'NetworkServer(', ')', ''),
   \ ])
 
 call javaapi#class('ProgressEvent', 'EventObject', [
-  \ javaapi#method(0,'ProgressEvent(', 'ProgressSource, URL, String, String, State, long, long)', 'public'),
-  \ javaapi#method(0,'getURL(', ')', 'URL'),
-  \ javaapi#method(0,'getMethod(', ')', 'String'),
-  \ javaapi#method(0,'getContentType(', ')', 'String'),
-  \ javaapi#method(0,'getProgress(', ')', 'long'),
-  \ javaapi#method(0,'getExpected(', ')', 'long'),
-  \ javaapi#method(0,'getState(', ')', 'State'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,1,'ProgressEvent(', 'ProgressSource, URL, String, String, State, long, long)', ''),
+  \ javaapi#method(0,1,'getURL(', ')', 'URL'),
+  \ javaapi#method(0,1,'getMethod(', ')', 'String'),
+  \ javaapi#method(0,1,'getContentType(', ')', 'String'),
+  \ javaapi#method(0,1,'getProgress(', ')', 'long'),
+  \ javaapi#method(0,1,'getExpected(', ')', 'long'),
+  \ javaapi#method(0,1,'getState(', ')', 'State'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
 call javaapi#interface('ProgressListener', 'EventListener', [
-  \ javaapi#method(0,'progressStart(', 'ProgressEvent)', 'void'),
-  \ javaapi#method(0,'progressUpdate(', 'ProgressEvent)', 'void'),
-  \ javaapi#method(0,'progressFinish(', 'ProgressEvent)', 'void'),
-  \ ])
-
-call javaapi#class('State', 'State>', [
-  \ javaapi#field(1,'NEW', 'State'),
-  \ javaapi#field(1,'CONNECTED', 'State'),
-  \ javaapi#field(1,'UPDATE', 'State'),
-  \ javaapi#field(1,'DELETE', 'State'),
-  \ javaapi#method(1,'values(', ')', 'State[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'State'),
+  \ javaapi#method(0,1,'progressStart(', 'ProgressEvent)', 'void'),
+  \ javaapi#method(0,1,'progressUpdate(', 'ProgressEvent)', 'void'),
+  \ javaapi#method(0,1,'progressFinish(', 'ProgressEvent)', 'void'),
   \ ])
 
 call javaapi#class('ProgressSource', '', [
-  \ javaapi#method(0,'ProgressSource(', 'URL, String)', 'public'),
-  \ javaapi#method(0,'ProgressSource(', 'URL, String, long)', 'public'),
-  \ javaapi#method(0,'connected(', ')', 'boolean'),
-  \ javaapi#method(0,'close(', ')', 'void'),
-  \ javaapi#method(0,'getURL(', ')', 'URL'),
-  \ javaapi#method(0,'getMethod(', ')', 'String'),
-  \ javaapi#method(0,'getContentType(', ')', 'String'),
-  \ javaapi#method(0,'setContentType(', 'String)', 'void'),
-  \ javaapi#method(0,'getProgress(', ')', 'long'),
-  \ javaapi#method(0,'getExpected(', ')', 'long'),
-  \ javaapi#method(0,'getState(', ')', 'State'),
-  \ javaapi#method(0,'beginTracking(', ')', 'void'),
-  \ javaapi#method(0,'finishTracking(', ')', 'void'),
-  \ javaapi#method(0,'updateProgress(', 'long, long)', 'void'),
-  \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'Object'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,1,'ProgressSource(', 'URL, String)', ''),
+  \ javaapi#method(0,1,'ProgressSource(', 'URL, String, long)', ''),
+  \ javaapi#method(0,1,'connected(', ')', 'boolean'),
+  \ javaapi#method(0,1,'close(', ')', 'void'),
+  \ javaapi#method(0,1,'getURL(', ')', 'URL'),
+  \ javaapi#method(0,1,'getMethod(', ')', 'String'),
+  \ javaapi#method(0,1,'getContentType(', ')', 'String'),
+  \ javaapi#method(0,1,'setContentType(', 'String)', 'void'),
+  \ javaapi#method(0,1,'getProgress(', ')', 'long'),
+  \ javaapi#method(0,1,'getExpected(', ')', 'long'),
+  \ javaapi#method(0,1,'getState(', ')', 'State'),
+  \ javaapi#method(0,1,'beginTracking(', ')', 'void'),
+  \ javaapi#method(0,1,'finishTracking(', ')', 'void'),
+  \ javaapi#method(0,1,'updateProgress(', 'long, long)', 'void'),
+  \ javaapi#method(0,1,'clone(', ') throws CloneNotSupportedException', 'Object'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
 call javaapi#class('RegisteredDomain', '', [
-  \ javaapi#method(0,'RegisteredDomain(', ')', 'public'),
-  \ javaapi#method(1,'getRegisteredDomain(', 'String)', 'String'),
+  \ javaapi#method(0,1,'RegisteredDomain(', ')', ''),
+  \ javaapi#method(1,1,'getRegisteredDomain(', 'String)', 'String'),
   \ ])
 
 call javaapi#class('ResourceManager', '', [
-  \ javaapi#method(0,'ResourceManager(', ')', 'public'),
-  \ javaapi#method(1,'beforeUdpCreate(', ') throws SocketException', 'void'),
-  \ javaapi#method(1,'afterUdpClose(', ')', 'void'),
+  \ javaapi#method(0,1,'ResourceManager(', ')', ''),
+  \ javaapi#method(1,1,'beforeUdpCreate(', ') throws SocketException', 'void'),
+  \ javaapi#method(1,1,'afterUdpClose(', ')', 'void'),
   \ ])
 
 call javaapi#class('SocksProxy', 'Proxy', [
-  \ javaapi#method(1,'create(', 'SocketAddress, int)', 'SocksProxy'),
-  \ javaapi#method(0,'protocolVersion(', ')', 'int'),
+  \ javaapi#method(1,1,'create(', 'SocketAddress, int)', 'SocksProxy'),
+  \ javaapi#method(0,1,'protocolVersion(', ')', 'int'),
   \ ])
 
 call javaapi#class('TelnetInputStream', 'FilterInputStream', [
-  \ javaapi#field(0,'binaryMode', 'boolean'),
-  \ javaapi#method(0,'TelnetInputStream(', 'InputStream, boolean)', 'public'),
-  \ javaapi#method(0,'setStickyCRLF(', 'boolean)', 'void'),
-  \ javaapi#method(0,'read(', ') throws IOException', 'int'),
-  \ javaapi#method(0,'read(', 'byte[]) throws IOException', 'int'),
-  \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
+  \ javaapi#field(0,1,'binaryMode', 'boolean'),
+  \ javaapi#method(0,1,'TelnetInputStream(', 'InputStream, boolean)', ''),
+  \ javaapi#method(0,1,'setStickyCRLF(', 'boolean)', 'void'),
+  \ javaapi#method(0,1,'read(', ') throws IOException', 'int'),
+  \ javaapi#method(0,1,'read(', 'byte[]) throws IOException', 'int'),
+  \ javaapi#method(0,1,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ ])
 
 call javaapi#class('TelnetOutputStream', 'BufferedOutputStream', [
-  \ javaapi#field(0,'binaryMode', 'boolean'),
-  \ javaapi#method(0,'TelnetOutputStream(', 'OutputStream, boolean)', 'public'),
-  \ javaapi#method(0,'setStickyCRLF(', 'boolean)', 'void'),
-  \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
-  \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
+  \ javaapi#field(0,1,'binaryMode', 'boolean'),
+  \ javaapi#method(0,1,'TelnetOutputStream(', 'OutputStream, boolean)', ''),
+  \ javaapi#method(0,1,'setStickyCRLF(', 'boolean)', 'void'),
+  \ javaapi#method(0,1,'write(', 'int) throws IOException', 'void'),
+  \ javaapi#method(0,1,'write(', 'byte[], int, int) throws IOException', 'void'),
   \ ])
 
 call javaapi#class('TelnetProtocolException', 'IOException', [
-  \ javaapi#method(0,'TelnetProtocolException(', 'String)', 'public'),
+  \ javaapi#method(0,1,'TelnetProtocolException(', 'String)', ''),
   \ ])
 
 call javaapi#class('TransferProtocolClient', 'NetworkClient', [
-  \ javaapi#method(0,'readServerResponse(', ') throws IOException', 'int'),
-  \ javaapi#method(0,'sendServer(', 'String)', 'void'),
-  \ javaapi#method(0,'getResponseString(', ')', 'String'),
-  \ javaapi#method(0,'getResponseStrings(', ')', 'Vector'),
-  \ javaapi#method(0,'TransferProtocolClient(', 'String, int) throws IOException', 'public'),
-  \ javaapi#method(0,'TransferProtocolClient(', ')', 'public'),
+  \ javaapi#field(0,0,'serverResponse', 'Vector'),
+  \ javaapi#field(0,0,'lastReplyCode', 'int'),
+  \ javaapi#method(0,1,'readServerResponse(', ') throws IOException', 'int'),
+  \ javaapi#method(0,1,'sendServer(', 'String)', 'void'),
+  \ javaapi#method(0,1,'getResponseString(', ')', 'String'),
+  \ javaapi#method(0,1,'getResponseStrings(', ')', 'Vector'),
+  \ javaapi#method(0,1,'TransferProtocolClient(', 'String, int) throws IOException', ''),
+  \ javaapi#method(0,1,'TransferProtocolClient(', ')', ''),
   \ ])
 
 call javaapi#class('URLCanonicalizer', '', [
-  \ javaapi#method(0,'URLCanonicalizer(', ')', 'public'),
-  \ javaapi#method(0,'canonicalize(', 'String)', 'String'),
-  \ javaapi#method(0,'hasProtocolName(', 'String)', 'boolean'),
+  \ javaapi#method(0,1,'URLCanonicalizer(', ')', ''),
+  \ javaapi#method(0,1,'canonicalize(', 'String)', 'String'),
+  \ javaapi#method(0,1,'hasProtocolName(', 'String)', 'boolean'),
+  \ javaapi#method(0,0,'isSimpleHostName(', 'String)', 'boolean'),
   \ ])
 
 call javaapi#namespace('sun.net')
 
 call javaapi#class('InetAddressCachePolicy', '', [
-  \ javaapi#field(1,'FOREVER', 'int'),
-  \ javaapi#field(1,'NEVER', 'int'),
-  \ javaapi#field(1,'DEFAULT_POSITIVE', 'int'),
-  \ javaapi#method(0,'InetAddressCachePolicy(', ')', 'public'),
-  \ javaapi#method(1,'get(', ')', 'int'),
-  \ javaapi#method(1,'getNegative(', ')', 'int'),
-  \ javaapi#method(1,'setIfNotSet(', 'int)', 'void'),
-  \ javaapi#method(1,'setNegativeIfNotSet(', 'int)', 'void'),
+  \ javaapi#field(1,1,'FOREVER', 'int'),
+  \ javaapi#field(1,1,'NEVER', 'int'),
+  \ javaapi#field(1,1,'DEFAULT_POSITIVE', 'int'),
+  \ javaapi#method(0,1,'InetAddressCachePolicy(', ')', ''),
+  \ javaapi#method(1,1,'get(', ')', 'int'),
+  \ javaapi#method(1,1,'getNegative(', ')', 'int'),
+  \ javaapi#method(1,1,'setIfNotSet(', 'int)', 'void'),
+  \ javaapi#method(1,1,'setNegativeIfNotSet(', 'int)', 'void'),
   \ ])
 
 call javaapi#namespace('sun.net')
-
-call javaapi#class('2', 'String>', [
-  \ javaapi#method(0,'run(', ')', 'String'),
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
-call javaapi#namespace('sun.net')
-
-call javaapi#class('1', 'String>', [
-  \ javaapi#method(0,'run(', ')', 'String'),
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
-call javaapi#namespace('sun.net')
-
-call javaapi#class('1', 'Void>', [
-  \ javaapi#method(0,'run(', ')', 'Void'),
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
 
 call javaapi#class('NetProperties', '', [
-  \ javaapi#method(1,'get(', 'String)', 'String'),
-  \ javaapi#method(1,'getInteger(', 'String, int)', 'Integer'),
-  \ javaapi#method(1,'getBoolean(', 'String)', 'Boolean'),
+  \ javaapi#method(1,1,'get(', 'String)', 'String'),
+  \ javaapi#method(1,1,'getInteger(', 'String, int)', 'Integer'),
+  \ javaapi#method(1,1,'getBoolean(', 'String)', 'Boolean'),
   \ ])
 
 call javaapi#namespace('sun.net')
 
 call javaapi#interface('ProgressMeteringPolicy', '', [
-  \ javaapi#method(0,'shouldMeterInput(', 'URL, String)', 'boolean'),
-  \ javaapi#method(0,'getProgressUpdateThreshold(', ')', 'int'),
+  \ javaapi#method(0,1,'shouldMeterInput(', 'URL, String)', 'boolean'),
+  \ javaapi#method(0,1,'getProgressUpdateThreshold(', ')', 'int'),
   \ ])
 
 call javaapi#class('DefaultProgressMeteringPolicy', 'ProgressMeteringPolicy', [
-  \ javaapi#method(0,'shouldMeterInput(', 'URL, String)', 'boolean'),
-  \ javaapi#method(0,'getProgressUpdateThreshold(', ')', 'int'),
+  \ javaapi#method(0,1,'shouldMeterInput(', 'URL, String)', 'boolean'),
+  \ javaapi#method(0,1,'getProgressUpdateThreshold(', ')', 'int'),
   \ ])
 
 call javaapi#class('ProgressMonitor', '', [
-  \ javaapi#method(0,'ProgressMonitor(', ')', 'public'),
-  \ javaapi#method(1,'getDefault(', ')', 'ProgressMonitor'),
-  \ javaapi#method(1,'setDefault(', 'ProgressMonitor)', 'void'),
-  \ javaapi#method(1,'setMeteringPolicy(', 'ProgressMeteringPolicy)', 'void'),
-  \ javaapi#method(0,'getProgressSources(', ')', 'ProgressSource>'),
-  \ javaapi#method(0,'getProgressUpdateThreshold(', ')', 'int'),
-  \ javaapi#method(0,'shouldMeterInput(', 'URL, String)', 'boolean'),
-  \ javaapi#method(0,'registerSource(', 'ProgressSource)', 'void'),
-  \ javaapi#method(0,'unregisterSource(', 'ProgressSource)', 'void'),
-  \ javaapi#method(0,'updateProgress(', 'ProgressSource)', 'void'),
-  \ javaapi#method(0,'addProgressListener(', 'ProgressListener)', 'void'),
-  \ javaapi#method(0,'removeProgressListener(', 'ProgressListener)', 'void'),
+  \ javaapi#method(0,1,'ProgressMonitor(', ')', ''),
+  \ javaapi#method(1,1,'getDefault(', ')', 'ProgressMonitor'),
+  \ javaapi#method(1,1,'setDefault(', 'ProgressMonitor)', 'void'),
+  \ javaapi#method(1,1,'setMeteringPolicy(', 'ProgressMeteringPolicy)', 'void'),
+  \ javaapi#method(0,1,'getProgressSources(', ')', 'ProgressSource>'),
+  \ javaapi#method(0,1,'getProgressUpdateThreshold(', ')', 'int'),
+  \ javaapi#method(0,1,'shouldMeterInput(', 'URL, String)', 'boolean'),
+  \ javaapi#method(0,1,'registerSource(', 'ProgressSource)', 'void'),
+  \ javaapi#method(0,1,'unregisterSource(', 'ProgressSource)', 'void'),
+  \ javaapi#method(0,1,'updateProgress(', 'ProgressSource)', 'void'),
+  \ javaapi#method(0,1,'addProgressListener(', 'ProgressListener)', 'void'),
+  \ javaapi#method(0,1,'removeProgressListener(', 'ProgressListener)', 'void'),
   \ ])
 

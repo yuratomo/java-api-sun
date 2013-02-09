@@ -1,573 +1,532 @@
 call javaapi#namespace('sun.awt.image')
 
 call javaapi#class('BadDepthException', 'Exception', [
-  \ javaapi#method(0,'BadDepthException(', ')', 'public'),
-  \ ])
-
-call javaapi#class('ICMColorData', '', [
-  \ javaapi#method(0,'finalize(', ')', 'void'),
+  \ javaapi#method(0,1,'BadDepthException(', ')', ''),
   \ ])
 
 call javaapi#class('BufImgSurfaceManager', 'SurfaceManager', [
-  \ javaapi#method(0,'BufImgSurfaceManager(', 'BufferedImage)', 'public'),
-  \ javaapi#method(0,'getPrimarySurfaceData(', ')', 'SurfaceData'),
-  \ javaapi#method(0,'restoreContents(', ')', 'SurfaceData'),
+  \ javaapi#field(0,0,'bImg', 'BufferedImage'),
+  \ javaapi#field(0,0,'sdDefault', 'SurfaceData'),
+  \ javaapi#method(0,1,'BufImgSurfaceManager(', 'BufferedImage)', ''),
+  \ javaapi#method(0,1,'getPrimarySurfaceData(', ')', 'SurfaceData'),
+  \ javaapi#method(0,1,'restoreContents(', ')', 'SurfaceData'),
   \ ])
 
 call javaapi#class('BufImgVolatileSurfaceManager', 'VolatileSurfaceManager', [
-  \ javaapi#method(0,'BufImgVolatileSurfaceManager(', 'SunVolatileImage, Object)', 'public'),
+  \ javaapi#method(0,1,'BufImgVolatileSurfaceManager(', 'SunVolatileImage, Object)', ''),
+  \ javaapi#method(0,0,'isAccelerationEnabled(', ')', 'boolean'),
+  \ javaapi#method(0,0,'initAcceleratedSurface(', ')', 'SurfaceData'),
   \ ])
 
 call javaapi#class('BufferedImageDevice', 'GraphicsDevice', [
-  \ javaapi#method(0,'BufferedImageDevice(', 'BufferedImageGraphicsConfig)', 'public'),
-  \ javaapi#method(0,'getType(', ')', 'int'),
-  \ javaapi#method(0,'getIDstring(', ')', 'String'),
-  \ javaapi#method(0,'getConfigurations(', ')', 'GraphicsConfiguration[]'),
-  \ javaapi#method(0,'getDefaultConfiguration(', ')', 'GraphicsConfiguration'),
+  \ javaapi#method(0,1,'BufferedImageDevice(', 'BufferedImageGraphicsConfig)', ''),
+  \ javaapi#method(0,1,'getType(', ')', 'int'),
+  \ javaapi#method(0,1,'getIDstring(', ')', 'String'),
+  \ javaapi#method(0,1,'getConfigurations(', ')', 'GraphicsConfiguration[]'),
+  \ javaapi#method(0,1,'getDefaultConfiguration(', ')', 'GraphicsConfiguration'),
   \ ])
 
 call javaapi#class('ByteBandedRaster', 'SunWritableRaster', [
-  \ javaapi#method(0,'ByteBandedRaster(', 'SampleModel, Point)', 'public'),
-  \ javaapi#method(0,'ByteBandedRaster(', 'SampleModel, DataBuffer, Point)', 'public'),
-  \ javaapi#method(0,'ByteBandedRaster(', 'SampleModel, DataBuffer, Rectangle, Point, ByteBandedRaster)', 'public'),
-  \ javaapi#method(0,'getDataOffsets(', ')', 'int[]'),
-  \ javaapi#method(0,'getDataOffset(', 'int)', 'int'),
-  \ javaapi#method(0,'getScanlineStride(', ')', 'int'),
-  \ javaapi#method(0,'getPixelStride(', ')', 'int'),
-  \ javaapi#method(0,'getDataStorage(', ')', 'byte[][]'),
-  \ javaapi#method(0,'getDataStorage(', 'int)', 'byte[]'),
-  \ javaapi#method(0,'getDataElements(', 'int, int, Object)', 'Object'),
-  \ javaapi#method(0,'getDataElements(', 'int, int, int, int, Object)', 'Object'),
-  \ javaapi#method(0,'getByteData(', 'int, int, int, int, int, byte[])', 'byte[]'),
-  \ javaapi#method(0,'getByteData(', 'int, int, int, int, byte[])', 'byte[]'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, Object)', 'void'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, Raster)', 'void'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, int, int, Object)', 'void'),
-  \ javaapi#method(0,'putByteData(', 'int, int, int, int, int, byte[])', 'void'),
-  \ javaapi#method(0,'putByteData(', 'int, int, int, int, byte[])', 'void'),
-  \ javaapi#method(0,'createWritableChild(', 'int, int, int, int, int, int, int[])', 'WritableRaster'),
-  \ javaapi#method(0,'createChild(', 'int, int, int, int, int, int, int[])', 'Raster'),
-  \ javaapi#method(0,'createCompatibleWritableRaster(', 'int, int)', 'WritableRaster'),
-  \ javaapi#method(0,'createCompatibleWritableRaster(', ')', 'WritableRaster'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,1,'ByteBandedRaster(', 'SampleModel, Point)', ''),
+  \ javaapi#method(0,1,'ByteBandedRaster(', 'SampleModel, DataBuffer, Point)', ''),
+  \ javaapi#method(0,1,'ByteBandedRaster(', 'SampleModel, DataBuffer, Rectangle, Point, ByteBandedRaster)', ''),
+  \ javaapi#method(0,1,'getDataOffsets(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getDataOffset(', 'int)', 'int'),
+  \ javaapi#method(0,1,'getScanlineStride(', ')', 'int'),
+  \ javaapi#method(0,1,'getPixelStride(', ')', 'int'),
+  \ javaapi#method(0,1,'getDataStorage(', ')', 'byte[][]'),
+  \ javaapi#method(0,1,'getDataStorage(', 'int)', 'byte[]'),
+  \ javaapi#method(0,1,'getDataElements(', 'int, int, Object)', 'Object'),
+  \ javaapi#method(0,1,'getDataElements(', 'int, int, int, int, Object)', 'Object'),
+  \ javaapi#method(0,1,'getByteData(', 'int, int, int, int, int, byte[])', 'byte[]'),
+  \ javaapi#method(0,1,'getByteData(', 'int, int, int, int, byte[])', 'byte[]'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, Object)', 'void'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, Raster)', 'void'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, int, int, Object)', 'void'),
+  \ javaapi#method(0,1,'putByteData(', 'int, int, int, int, int, byte[])', 'void'),
+  \ javaapi#method(0,1,'putByteData(', 'int, int, int, int, byte[])', 'void'),
+  \ javaapi#method(0,1,'createWritableChild(', 'int, int, int, int, int, int, int[])', 'WritableRaster'),
+  \ javaapi#method(0,1,'createChild(', 'int, int, int, int, int, int, int[])', 'Raster'),
+  \ javaapi#method(0,1,'createCompatibleWritableRaster(', 'int, int)', 'WritableRaster'),
+  \ javaapi#method(0,1,'createCompatibleWritableRaster(', ')', 'WritableRaster'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
 call javaapi#class('DataBufferNative', 'DataBuffer', [
-  \ javaapi#method(0,'DataBufferNative(', 'SurfaceData, int, int, int)', 'public'),
-  \ javaapi#method(0,'getElem(', 'int, int)', 'int'),
-  \ javaapi#method(0,'setElem(', 'int, int, int)', 'void'),
+  \ javaapi#field(0,0,'surfaceData', 'SurfaceData'),
+  \ javaapi#field(0,0,'width', 'int'),
+  \ javaapi#method(0,1,'DataBufferNative(', 'SurfaceData, int, int, int)', ''),
+  \ javaapi#method(0,0,'getElem(', 'int, int, SurfaceData)', 'int'),
+  \ javaapi#method(0,1,'getElem(', 'int, int)', 'int'),
+  \ javaapi#method(0,0,'setElem(', 'int, int, int, SurfaceData)', 'void'),
+  \ javaapi#method(0,1,'setElem(', 'int, int, int)', 'void'),
   \ ])
 
 call javaapi#class('FileImageSource', 'InputStreamImageSource', [
-  \ javaapi#method(0,'FileImageSource(', 'String)', 'public'),
+  \ javaapi#method(0,1,'FileImageSource(', 'String)', ''),
+  \ javaapi#method(0,0,'getDecoder(', ')', 'ImageDecoder'),
   \ ])
 
 call javaapi#class('ImageAccessException', 'Exception', [
-  \ javaapi#method(0,'ImageAccessException(', 'String)', 'public'),
+  \ javaapi#method(0,1,'ImageAccessException(', 'String)', ''),
   \ ])
 
 call javaapi#class('ImageFormatException', 'Exception', [
-  \ javaapi#method(0,'ImageFormatException(', 'String)', 'public'),
-  \ ])
-
-call javaapi#class('1', 'Boolean>', [
-  \ javaapi#method(0,'run(', ')', 'Boolean'),
-  \ javaapi#method(0,'run(', ')', 'Object'),
+  \ javaapi#method(0,1,'ImageFormatException(', 'String)', ''),
   \ ])
 
 call javaapi#class('ImagingLib', '', [
-  \ javaapi#method(0,'ImagingLib(', ')', 'public'),
-  \ javaapi#method(1,'transformBI(', 'BufferedImage, BufferedImage, double[], int)', 'int'),
-  \ javaapi#method(1,'transformRaster(', 'Raster, Raster, double[], int)', 'int'),
-  \ javaapi#method(1,'convolveBI(', 'BufferedImage, BufferedImage, Kernel, int)', 'int'),
-  \ javaapi#method(1,'convolveRaster(', 'Raster, Raster, Kernel, int)', 'int'),
-  \ javaapi#method(1,'lookupByteBI(', 'BufferedImage, BufferedImage, byte[][])', 'int'),
-  \ javaapi#method(1,'lookupByteRaster(', 'Raster, Raster, byte[][])', 'int'),
-  \ javaapi#method(1,'filter(', 'RasterOp, Raster, WritableRaster)', 'WritableRaster'),
-  \ javaapi#method(1,'filter(', 'BufferedImageOp, BufferedImage, BufferedImage)', 'BufferedImage'),
+  \ javaapi#method(0,1,'ImagingLib(', ')', ''),
+  \ javaapi#method(1,1,'transformBI(', 'BufferedImage, BufferedImage, double[], int)', 'int'),
+  \ javaapi#method(1,1,'transformRaster(', 'Raster, Raster, double[], int)', 'int'),
+  \ javaapi#method(1,1,'convolveBI(', 'BufferedImage, BufferedImage, Kernel, int)', 'int'),
+  \ javaapi#method(1,1,'convolveRaster(', 'Raster, Raster, Kernel, int)', 'int'),
+  \ javaapi#method(1,1,'lookupByteBI(', 'BufferedImage, BufferedImage, byte[][])', 'int'),
+  \ javaapi#method(1,1,'lookupByteRaster(', 'Raster, Raster, byte[][])', 'int'),
+  \ javaapi#method(1,1,'filter(', 'RasterOp, Raster, WritableRaster)', 'WritableRaster'),
+  \ javaapi#method(1,1,'filter(', 'BufferedImageOp, BufferedImage, BufferedImage)', 'BufferedImage'),
   \ ])
 
 call javaapi#class('JPEGImageDecoder', 'ImageDecoder', [
-  \ javaapi#method(0,'JPEGImageDecoder(', 'InputStreamImageSource, InputStream)', 'public'),
-  \ javaapi#method(0,'sendHeaderInfo(', 'int, int, boolean, boolean, boolean)', 'boolean'),
-  \ javaapi#method(0,'sendPixels(', 'int[], int)', 'boolean'),
-  \ javaapi#method(0,'sendPixels(', 'byte[], int)', 'boolean'),
-  \ javaapi#method(0,'produceImage(', ') throws IOException, ImageFormatException', 'void'),
+  \ javaapi#method(0,1,'JPEGImageDecoder(', 'InputStreamImageSource, InputStream)', ''),
+  \ javaapi#method(0,1,'sendHeaderInfo(', 'int, int, boolean, boolean, boolean)', 'boolean'),
+  \ javaapi#method(0,1,'sendPixels(', 'int[], int)', 'boolean'),
+  \ javaapi#method(0,1,'sendPixels(', 'byte[], int)', 'boolean'),
+  \ javaapi#method(0,1,'produceImage(', ') throws IOException, ImageFormatException', 'void'),
   \ ])
 
 call javaapi#class('OffScreenImageSource', 'ImageProducer', [
-  \ javaapi#method(0,'OffScreenImageSource(', 'BufferedImage, Hashtable)', 'public'),
-  \ javaapi#method(0,'OffScreenImageSource(', 'BufferedImage)', 'public'),
-  \ javaapi#method(0,'addConsumer(', 'ImageConsumer)', 'void'),
-  \ javaapi#method(0,'isConsumer(', 'ImageConsumer)', 'boolean'),
-  \ javaapi#method(0,'removeConsumer(', 'ImageConsumer)', 'void'),
-  \ javaapi#method(0,'startProduction(', 'ImageConsumer)', 'void'),
-  \ javaapi#method(0,'requestTopDownLeftRightResend(', 'ImageConsumer)', 'void'),
-  \ ])
-
-call javaapi#class('Chromaticities', '', [
-  \ javaapi#field(0,'whiteX', 'float'),
-  \ javaapi#field(0,'whiteY', 'float'),
-  \ javaapi#field(0,'redX', 'float'),
-  \ javaapi#field(0,'redY', 'float'),
-  \ javaapi#field(0,'greenX', 'float'),
-  \ javaapi#field(0,'greenY', 'float'),
-  \ javaapi#field(0,'blueX', 'float'),
-  \ javaapi#field(0,'blueY', 'float'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('PNGException', 'IOException', [
-  \ ])
-
-call javaapi#class('1', '', [
+  \ javaapi#method(0,1,'OffScreenImageSource(', 'BufferedImage, Hashtable)', ''),
+  \ javaapi#method(0,1,'OffScreenImageSource(', 'BufferedImage)', ''),
+  \ javaapi#method(0,1,'addConsumer(', 'ImageConsumer)', 'void'),
+  \ javaapi#method(0,1,'isConsumer(', 'ImageConsumer)', 'boolean'),
+  \ javaapi#method(0,1,'removeConsumer(', 'ImageConsumer)', 'void'),
+  \ javaapi#method(0,1,'startProduction(', 'ImageConsumer)', 'void'),
+  \ javaapi#method(0,1,'requestTopDownLeftRightResend(', 'ImageConsumer)', 'void'),
   \ ])
 
 call javaapi#class('ShortBandedRaster', 'SunWritableRaster', [
-  \ javaapi#method(0,'ShortBandedRaster(', 'SampleModel, Point)', 'public'),
-  \ javaapi#method(0,'ShortBandedRaster(', 'SampleModel, DataBuffer, Point)', 'public'),
-  \ javaapi#method(0,'ShortBandedRaster(', 'SampleModel, DataBuffer, Rectangle, Point, ShortBandedRaster)', 'public'),
-  \ javaapi#method(0,'getDataOffsets(', ')', 'int[]'),
-  \ javaapi#method(0,'getDataOffset(', 'int)', 'int'),
-  \ javaapi#method(0,'getScanlineStride(', ')', 'int'),
-  \ javaapi#method(0,'getPixelStride(', ')', 'int'),
-  \ javaapi#method(0,'getDataStorage(', ')', 'short[][]'),
-  \ javaapi#method(0,'getDataStorage(', 'int)', 'short[]'),
-  \ javaapi#method(0,'getDataElements(', 'int, int, Object)', 'Object'),
-  \ javaapi#method(0,'getDataElements(', 'int, int, int, int, Object)', 'Object'),
-  \ javaapi#method(0,'getShortData(', 'int, int, int, int, int, short[])', 'short[]'),
-  \ javaapi#method(0,'getShortData(', 'int, int, int, int, short[])', 'short[]'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, Object)', 'void'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, Raster)', 'void'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, int, int, Object)', 'void'),
-  \ javaapi#method(0,'putShortData(', 'int, int, int, int, int, short[])', 'void'),
-  \ javaapi#method(0,'putShortData(', 'int, int, int, int, short[])', 'void'),
-  \ javaapi#method(0,'createWritableChild(', 'int, int, int, int, int, int, int[])', 'WritableRaster'),
-  \ javaapi#method(0,'createChild(', 'int, int, int, int, int, int, int[])', 'Raster'),
-  \ javaapi#method(0,'createCompatibleWritableRaster(', 'int, int)', 'WritableRaster'),
-  \ javaapi#method(0,'createCompatibleWritableRaster(', ')', 'WritableRaster'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,1,'ShortBandedRaster(', 'SampleModel, Point)', ''),
+  \ javaapi#method(0,1,'ShortBandedRaster(', 'SampleModel, DataBuffer, Point)', ''),
+  \ javaapi#method(0,1,'ShortBandedRaster(', 'SampleModel, DataBuffer, Rectangle, Point, ShortBandedRaster)', ''),
+  \ javaapi#method(0,1,'getDataOffsets(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getDataOffset(', 'int)', 'int'),
+  \ javaapi#method(0,1,'getScanlineStride(', ')', 'int'),
+  \ javaapi#method(0,1,'getPixelStride(', ')', 'int'),
+  \ javaapi#method(0,1,'getDataStorage(', ')', 'short[][]'),
+  \ javaapi#method(0,1,'getDataStorage(', 'int)', 'short[]'),
+  \ javaapi#method(0,1,'getDataElements(', 'int, int, Object)', 'Object'),
+  \ javaapi#method(0,1,'getDataElements(', 'int, int, int, int, Object)', 'Object'),
+  \ javaapi#method(0,1,'getShortData(', 'int, int, int, int, int, short[])', 'short[]'),
+  \ javaapi#method(0,1,'getShortData(', 'int, int, int, int, short[])', 'short[]'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, Object)', 'void'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, Raster)', 'void'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, int, int, Object)', 'void'),
+  \ javaapi#method(0,1,'putShortData(', 'int, int, int, int, int, short[])', 'void'),
+  \ javaapi#method(0,1,'putShortData(', 'int, int, int, int, short[])', 'void'),
+  \ javaapi#method(0,1,'createWritableChild(', 'int, int, int, int, int, int, int[])', 'WritableRaster'),
+  \ javaapi#method(0,1,'createChild(', 'int, int, int, int, int, int, int[])', 'Raster'),
+  \ javaapi#method(0,1,'createCompatibleWritableRaster(', 'int, int)', 'WritableRaster'),
+  \ javaapi#method(0,1,'createCompatibleWritableRaster(', ')', 'WritableRaster'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
 call javaapi#class('ShortComponentRaster', 'SunWritableRaster', [
-  \ javaapi#method(0,'ShortComponentRaster(', 'SampleModel, Point)', 'public'),
-  \ javaapi#method(0,'ShortComponentRaster(', 'SampleModel, DataBuffer, Point)', 'public'),
-  \ javaapi#method(0,'ShortComponentRaster(', 'SampleModel, DataBuffer, Rectangle, Point, ShortComponentRaster)', 'public'),
-  \ javaapi#method(0,'getDataOffsets(', ')', 'int[]'),
-  \ javaapi#method(0,'getDataOffset(', 'int)', 'int'),
-  \ javaapi#method(0,'getScanlineStride(', ')', 'int'),
-  \ javaapi#method(0,'getPixelStride(', ')', 'int'),
-  \ javaapi#method(0,'getDataStorage(', ')', 'short[]'),
-  \ javaapi#method(0,'getDataElements(', 'int, int, Object)', 'Object'),
-  \ javaapi#method(0,'getDataElements(', 'int, int, int, int, Object)', 'Object'),
-  \ javaapi#method(0,'getShortData(', 'int, int, int, int, int, short[])', 'short[]'),
-  \ javaapi#method(0,'getShortData(', 'int, int, int, int, short[])', 'short[]'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, Object)', 'void'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, Raster)', 'void'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, int, int, Object)', 'void'),
-  \ javaapi#method(0,'putShortData(', 'int, int, int, int, int, short[])', 'void'),
-  \ javaapi#method(0,'putShortData(', 'int, int, int, int, short[])', 'void'),
-  \ javaapi#method(0,'createChild(', 'int, int, int, int, int, int, int[])', 'Raster'),
-  \ javaapi#method(0,'createWritableChild(', 'int, int, int, int, int, int, int[])', 'WritableRaster'),
-  \ javaapi#method(0,'createCompatibleWritableRaster(', 'int, int)', 'WritableRaster'),
-  \ javaapi#method(0,'createCompatibleWritableRaster(', ')', 'WritableRaster'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#field(0,0,'bandOffset', 'int'),
+  \ javaapi#field(0,0,'dataOffsets', 'int[]'),
+  \ javaapi#field(0,0,'scanlineStride', 'int'),
+  \ javaapi#field(0,0,'pixelStride', 'int'),
+  \ javaapi#field(0,0,'data', 'short[]'),
+  \ javaapi#method(0,1,'ShortComponentRaster(', 'SampleModel, Point)', ''),
+  \ javaapi#method(0,1,'ShortComponentRaster(', 'SampleModel, DataBuffer, Point)', ''),
+  \ javaapi#method(0,1,'ShortComponentRaster(', 'SampleModel, DataBuffer, Rectangle, Point, ShortComponentRaster)', ''),
+  \ javaapi#method(0,1,'getDataOffsets(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getDataOffset(', 'int)', 'int'),
+  \ javaapi#method(0,1,'getScanlineStride(', ')', 'int'),
+  \ javaapi#method(0,1,'getPixelStride(', ')', 'int'),
+  \ javaapi#method(0,1,'getDataStorage(', ')', 'short[]'),
+  \ javaapi#method(0,1,'getDataElements(', 'int, int, Object)', 'Object'),
+  \ javaapi#method(0,1,'getDataElements(', 'int, int, int, int, Object)', 'Object'),
+  \ javaapi#method(0,1,'getShortData(', 'int, int, int, int, int, short[])', 'short[]'),
+  \ javaapi#method(0,1,'getShortData(', 'int, int, int, int, short[])', 'short[]'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, Object)', 'void'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, Raster)', 'void'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, int, int, Object)', 'void'),
+  \ javaapi#method(0,1,'putShortData(', 'int, int, int, int, int, short[])', 'void'),
+  \ javaapi#method(0,1,'putShortData(', 'int, int, int, int, short[])', 'void'),
+  \ javaapi#method(0,1,'createChild(', 'int, int, int, int, int, int, int[])', 'Raster'),
+  \ javaapi#method(0,1,'createWritableChild(', 'int, int, int, int, int, int, int[])', 'WritableRaster'),
+  \ javaapi#method(0,1,'createCompatibleWritableRaster(', 'int, int)', 'WritableRaster'),
+  \ javaapi#method(0,1,'createCompatibleWritableRaster(', ')', 'WritableRaster'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
 call javaapi#class('ShortInterleavedRaster', 'ShortComponentRaster', [
-  \ javaapi#method(0,'ShortInterleavedRaster(', 'SampleModel, Point)', 'public'),
-  \ javaapi#method(0,'ShortInterleavedRaster(', 'SampleModel, DataBuffer, Point)', 'public'),
-  \ javaapi#method(0,'ShortInterleavedRaster(', 'SampleModel, DataBuffer, Rectangle, Point, ShortInterleavedRaster)', 'public'),
-  \ javaapi#method(0,'getDataOffsets(', ')', 'int[]'),
-  \ javaapi#method(0,'getDataOffset(', 'int)', 'int'),
-  \ javaapi#method(0,'getScanlineStride(', ')', 'int'),
-  \ javaapi#method(0,'getPixelStride(', ')', 'int'),
-  \ javaapi#method(0,'getDataStorage(', ')', 'short[]'),
-  \ javaapi#method(0,'getDataElements(', 'int, int, Object)', 'Object'),
-  \ javaapi#method(0,'getDataElements(', 'int, int, int, int, Object)', 'Object'),
-  \ javaapi#method(0,'getShortData(', 'int, int, int, int, int, short[])', 'short[]'),
-  \ javaapi#method(0,'getShortData(', 'int, int, int, int, short[])', 'short[]'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, Object)', 'void'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, Raster)', 'void'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, int, int, Object)', 'void'),
-  \ javaapi#method(0,'putShortData(', 'int, int, int, int, int, short[])', 'void'),
-  \ javaapi#method(0,'putShortData(', 'int, int, int, int, short[])', 'void'),
-  \ javaapi#method(0,'createChild(', 'int, int, int, int, int, int, int[])', 'Raster'),
-  \ javaapi#method(0,'createWritableChild(', 'int, int, int, int, int, int, int[])', 'WritableRaster'),
-  \ javaapi#method(0,'createCompatibleWritableRaster(', 'int, int)', 'WritableRaster'),
-  \ javaapi#method(0,'createCompatibleWritableRaster(', ')', 'WritableRaster'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#interface('DataStealer', '', [
-  \ javaapi#method(0,'getData(', 'DataBufferByte, int)', 'byte[]'),
-  \ javaapi#method(0,'getData(', 'DataBufferUShort, int)', 'short[]'),
-  \ javaapi#method(0,'getData(', 'DataBufferInt, int)', 'int[]'),
-  \ javaapi#method(0,'getTrackable(', 'DataBuffer)', 'StateTrackableDelegate'),
-  \ javaapi#method(0,'setTrackable(', 'DataBuffer, StateTrackableDelegate)', 'void'),
-  \ ])
-
-call javaapi#interface('FlushableCacheData', '', [
-  \ javaapi#method(0,'flush(', 'boolean)', 'boolean'),
-  \ ])
-
-call javaapi#class('ImageCapabilitiesGc', 'ImageCapabilities', [
-  \ javaapi#method(0,'ImageCapabilitiesGc(', 'SurfaceManager, GraphicsConfiguration)', 'public'),
-  \ javaapi#method(0,'isAccelerated(', ')', 'boolean'),
-  \ ])
-
-call javaapi#interface('ProxiedGraphicsConfig', '', [
-  \ javaapi#method(0,'getProxyKey(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('1', '', [
-  \ ])
-
-call javaapi#class('NoLimitVSyncBSMgr', 'VSyncedBSManager', [
-  \ ])
-
-call javaapi#class('SingleVSyncedBSMgr', 'VSyncedBSManager', [
-  \ javaapi#method(0,'checkAllowed(', 'BufferStrategy)', 'boolean'),
-  \ javaapi#method(0,'relinquishVsync(', 'BufferStrategy)', 'void'),
+  \ javaapi#method(0,1,'ShortInterleavedRaster(', 'SampleModel, Point)', ''),
+  \ javaapi#method(0,1,'ShortInterleavedRaster(', 'SampleModel, DataBuffer, Point)', ''),
+  \ javaapi#method(0,1,'ShortInterleavedRaster(', 'SampleModel, DataBuffer, Rectangle, Point, ShortInterleavedRaster)', ''),
+  \ javaapi#method(0,1,'getDataOffsets(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getDataOffset(', 'int)', 'int'),
+  \ javaapi#method(0,1,'getScanlineStride(', ')', 'int'),
+  \ javaapi#method(0,1,'getPixelStride(', ')', 'int'),
+  \ javaapi#method(0,1,'getDataStorage(', ')', 'short[]'),
+  \ javaapi#method(0,1,'getDataElements(', 'int, int, Object)', 'Object'),
+  \ javaapi#method(0,1,'getDataElements(', 'int, int, int, int, Object)', 'Object'),
+  \ javaapi#method(0,1,'getShortData(', 'int, int, int, int, int, short[])', 'short[]'),
+  \ javaapi#method(0,1,'getShortData(', 'int, int, int, int, short[])', 'short[]'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, Object)', 'void'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, Raster)', 'void'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, int, int, Object)', 'void'),
+  \ javaapi#method(0,1,'putShortData(', 'int, int, int, int, int, short[])', 'void'),
+  \ javaapi#method(0,1,'putShortData(', 'int, int, int, int, short[])', 'void'),
+  \ javaapi#method(0,1,'createChild(', 'int, int, int, int, int, int, int[])', 'Raster'),
+  \ javaapi#method(0,1,'createWritableChild(', 'int, int, int, int, int, int, int[])', 'WritableRaster'),
+  \ javaapi#method(0,1,'createCompatibleWritableRaster(', 'int, int)', 'WritableRaster'),
+  \ javaapi#method(0,1,'createCompatibleWritableRaster(', ')', 'WritableRaster'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
 call javaapi#class('VSyncedBSManager', '', [
-  \ javaapi#method(0,'VSyncedBSManager(', ')', 'public'),
-  \ javaapi#method(1,'vsyncAllowed(', 'BufferStrategy)', 'boolean'),
-  \ javaapi#method(1,'releaseVsync(', 'BufferStrategy)', 'void'),
-  \ ])
-
-call javaapi#class('AcceleratedImageCapabilities', 'ImageCapabilities', [
-  \ javaapi#method(0,'isAccelerated(', ')', 'boolean'),
-  \ javaapi#method(0,'isTrueVolatile(', ')', 'boolean'),
+  \ javaapi#method(0,1,'VSyncedBSManager(', ')', ''),
+  \ javaapi#method(1,1,'vsyncAllowed(', 'BufferStrategy)', 'boolean'),
+  \ javaapi#method(1,1,'releaseVsync(', 'BufferStrategy)', 'void'),
   \ ])
 
 call javaapi#class('WritableRasterNative', 'WritableRaster', [
-  \ javaapi#method(1,'createNativeRaster(', 'SampleModel, DataBuffer)', 'WritableRasterNative'),
-  \ javaapi#method(1,'createNativeRaster(', 'ColorModel, SurfaceData, int, int)', 'WritableRasterNative'),
+  \ javaapi#method(1,1,'createNativeRaster(', 'SampleModel, DataBuffer)', 'WritableRasterNative'),
+  \ javaapi#method(0,0,'WritableRasterNative(', 'SampleModel, DataBuffer)', ''),
+  \ javaapi#method(1,1,'createNativeRaster(', 'ColorModel, SurfaceData, int, int)', 'WritableRasterNative'),
   \ ])
 
 call javaapi#class('XbmImageDecoder', 'ImageDecoder', [
-  \ javaapi#method(0,'XbmImageDecoder(', 'InputStreamImageSource, InputStream)', 'public'),
-  \ javaapi#method(0,'produceImage(', ') throws IOException, ImageFormatException', 'void'),
+  \ javaapi#method(0,1,'XbmImageDecoder(', 'InputStreamImageSource, InputStream)', ''),
+  \ javaapi#method(0,1,'produceImage(', ') throws IOException, ImageFormatException', 'void'),
   \ ])
 
 call javaapi#namespace('sun.awt.image')
 
 call javaapi#class('BufferedImageGraphicsConfig', 'GraphicsConfiguration', [
-  \ javaapi#method(1,'getConfig(', 'BufferedImage)', 'BufferedImageGraphicsConfig'),
-  \ javaapi#method(0,'BufferedImageGraphicsConfig(', 'BufferedImage, Component)', 'public'),
-  \ javaapi#method(0,'getDevice(', ')', 'GraphicsDevice'),
-  \ javaapi#method(0,'createCompatibleImage(', 'int, int)', 'BufferedImage'),
-  \ javaapi#method(0,'getColorModel(', ')', 'ColorModel'),
-  \ javaapi#method(0,'getColorModel(', 'int)', 'ColorModel'),
-  \ javaapi#method(0,'getDefaultTransform(', ')', 'AffineTransform'),
-  \ javaapi#method(0,'getNormalizingTransform(', ')', 'AffineTransform'),
-  \ javaapi#method(0,'getBounds(', ')', 'Rectangle'),
+  \ javaapi#method(1,1,'getConfig(', 'BufferedImage)', 'BufferedImageGraphicsConfig'),
+  \ javaapi#method(0,1,'BufferedImageGraphicsConfig(', 'BufferedImage, Component)', ''),
+  \ javaapi#method(0,1,'getDevice(', ')', 'GraphicsDevice'),
+  \ javaapi#method(0,1,'createCompatibleImage(', 'int, int)', 'BufferedImage'),
+  \ javaapi#method(0,1,'getColorModel(', ')', 'ColorModel'),
+  \ javaapi#method(0,1,'getColorModel(', 'int)', 'ColorModel'),
+  \ javaapi#method(0,1,'getDefaultTransform(', ')', 'AffineTransform'),
+  \ javaapi#method(0,1,'getNormalizingTransform(', ')', 'AffineTransform'),
+  \ javaapi#method(0,1,'getBounds(', ')', 'Rectangle'),
   \ ])
 
 call javaapi#namespace('sun.awt.image')
 
 call javaapi#class('ByteArrayImageSource', 'InputStreamImageSource', [
-  \ javaapi#method(0,'ByteArrayImageSource(', 'byte[])', 'public'),
-  \ javaapi#method(0,'ByteArrayImageSource(', 'byte[], int, int)', 'public'),
-  \ ])
-
-call javaapi#namespace('sun.awt.image')
-
-call javaapi#class('1', 'PrivilegedAction', [
-  \ javaapi#method(0,'run(', ')', 'Object'),
+  \ javaapi#method(0,1,'ByteArrayImageSource(', 'byte[])', ''),
+  \ javaapi#method(0,1,'ByteArrayImageSource(', 'byte[], int, int)', ''),
+  \ javaapi#method(0,0,'getDecoder(', ')', 'ImageDecoder'),
   \ ])
 
 call javaapi#namespace('sun.awt.image')
 
 call javaapi#class('BufImgSurfaceData', 'SurfaceData', [
-  \ javaapi#method(1,'createData(', 'BufferedImage)', 'SurfaceData'),
-  \ javaapi#method(1,'createData(', 'Raster, ColorModel)', 'SurfaceData'),
-  \ javaapi#method(1,'createDataIC(', 'BufferedImage, SurfaceType)', 'SurfaceData'),
-  \ javaapi#method(1,'createDataSC(', 'BufferedImage, SurfaceType, IndexColorModel)', 'SurfaceData'),
-  \ javaapi#method(1,'createDataBC(', 'BufferedImage, SurfaceType, int)', 'SurfaceData'),
-  \ javaapi#method(1,'createDataBP(', 'BufferedImage, SurfaceType)', 'SurfaceData'),
-  \ javaapi#method(0,'getRenderLoops(', 'SunGraphics2D)', 'RenderLoops'),
-  \ javaapi#method(0,'getRaster(', 'int, int, int, int)', 'Raster'),
-  \ javaapi#method(0,'BufImgSurfaceData(', 'DataBuffer, BufferedImage, SurfaceType)', 'public'),
-  \ javaapi#method(0,'initSolidLoops(', ')', 'void'),
-  \ javaapi#method(1,'getSolidLoops(', 'SurfaceType)', 'RenderLoops'),
-  \ javaapi#method(0,'getReplacement(', ')', 'SurfaceData'),
-  \ javaapi#method(0,'getDeviceConfiguration(', ')', 'GraphicsConfiguration'),
-  \ javaapi#method(0,'getBounds(', ')', 'Rectangle'),
-  \ javaapi#method(0,'getDestination(', ')', 'Object'),
+  \ javaapi#method(1,1,'createData(', 'BufferedImage)', 'SurfaceData'),
+  \ javaapi#method(1,1,'createData(', 'Raster, ColorModel)', 'SurfaceData'),
+  \ javaapi#method(1,1,'createDataIC(', 'BufferedImage, SurfaceType)', 'SurfaceData'),
+  \ javaapi#method(1,1,'createDataSC(', 'BufferedImage, SurfaceType, IndexColorModel)', 'SurfaceData'),
+  \ javaapi#method(1,1,'createDataBC(', 'BufferedImage, SurfaceType, int)', 'SurfaceData'),
+  \ javaapi#method(1,1,'createDataBP(', 'BufferedImage, SurfaceType)', 'SurfaceData'),
+  \ javaapi#method(0,1,'getRenderLoops(', 'SunGraphics2D)', 'RenderLoops'),
+  \ javaapi#method(0,1,'getRaster(', 'int, int, int, int)', 'Raster'),
+  \ javaapi#method(0,0,'initRaster(', 'Object, int, int, int, int, int, int, IndexColorModel)', 'void'),
+  \ javaapi#method(0,1,'BufImgSurfaceData(', 'DataBuffer, BufferedImage, SurfaceType)', ''),
+  \ javaapi#method(0,1,'initSolidLoops(', ')', 'void'),
+  \ javaapi#method(1,1,'getSolidLoops(', 'SurfaceType)', 'RenderLoops'),
+  \ javaapi#method(0,1,'getReplacement(', ')', 'SurfaceData'),
+  \ javaapi#method(0,1,'getDeviceConfiguration(', ')', 'GraphicsConfiguration'),
+  \ javaapi#method(0,1,'getBounds(', ')', 'Rectangle'),
+  \ javaapi#method(0,0,'checkCustomComposite(', ')', 'void'),
+  \ javaapi#method(0,1,'getDestination(', ')', 'Object'),
   \ ])
 
 call javaapi#namespace('sun.awt.image')
 
 call javaapi#class('OffScreenImage', 'BufferedImage', [
-  \ javaapi#method(0,'OffScreenImage(', 'Component, ColorModel, WritableRaster, boolean)', 'public'),
-  \ javaapi#method(0,'getGraphics(', ')', 'Graphics'),
-  \ javaapi#method(0,'createGraphics(', ')', 'Graphics2D'),
-  \ javaapi#method(0,'getSource(', ')', 'ImageProducer'),
+  \ javaapi#field(0,0,'c', 'Component'),
+  \ javaapi#method(0,1,'OffScreenImage(', 'Component, ColorModel, WritableRaster, boolean)', ''),
+  \ javaapi#method(0,1,'getGraphics(', ')', 'Graphics'),
+  \ javaapi#method(0,1,'createGraphics(', ')', 'Graphics2D'),
+  \ javaapi#method(0,1,'getSource(', ')', 'ImageProducer'),
   \ ])
 
 call javaapi#namespace('sun.awt.image')
 
 call javaapi#class('IntegerInterleavedRaster', 'IntegerComponentRaster', [
-  \ javaapi#method(0,'IntegerInterleavedRaster(', 'SampleModel, Point)', 'public'),
-  \ javaapi#method(0,'IntegerInterleavedRaster(', 'SampleModel, DataBuffer, Point)', 'public'),
-  \ javaapi#method(0,'IntegerInterleavedRaster(', 'SampleModel, DataBuffer, Rectangle, Point, IntegerInterleavedRaster)', 'public'),
-  \ javaapi#method(0,'getDataOffsets(', ')', 'int[]'),
-  \ javaapi#method(0,'getDataOffset(', 'int)', 'int'),
-  \ javaapi#method(0,'getScanlineStride(', ')', 'int'),
-  \ javaapi#method(0,'getPixelStride(', ')', 'int'),
-  \ javaapi#method(0,'getDataStorage(', ')', 'int[]'),
-  \ javaapi#method(0,'getDataElements(', 'int, int, Object)', 'Object'),
-  \ javaapi#method(0,'getDataElements(', 'int, int, int, int, Object)', 'Object'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, Object)', 'void'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, Raster)', 'void'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, int, int, Object)', 'void'),
-  \ javaapi#method(0,'createWritableChild(', 'int, int, int, int, int, int, int[])', 'WritableRaster'),
-  \ javaapi#method(0,'createChild(', 'int, int, int, int, int, int, int[])', 'Raster'),
-  \ javaapi#method(0,'createCompatibleWritableRaster(', 'int, int)', 'WritableRaster'),
-  \ javaapi#method(0,'createCompatibleWritableRaster(', ')', 'WritableRaster'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,1,'IntegerInterleavedRaster(', 'SampleModel, Point)', ''),
+  \ javaapi#method(0,1,'IntegerInterleavedRaster(', 'SampleModel, DataBuffer, Point)', ''),
+  \ javaapi#method(0,1,'IntegerInterleavedRaster(', 'SampleModel, DataBuffer, Rectangle, Point, IntegerInterleavedRaster)', ''),
+  \ javaapi#method(0,1,'getDataOffsets(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getDataOffset(', 'int)', 'int'),
+  \ javaapi#method(0,1,'getScanlineStride(', ')', 'int'),
+  \ javaapi#method(0,1,'getPixelStride(', ')', 'int'),
+  \ javaapi#method(0,1,'getDataStorage(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getDataElements(', 'int, int, Object)', 'Object'),
+  \ javaapi#method(0,1,'getDataElements(', 'int, int, int, int, Object)', 'Object'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, Object)', 'void'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, Raster)', 'void'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, int, int, Object)', 'void'),
+  \ javaapi#method(0,1,'createWritableChild(', 'int, int, int, int, int, int, int[])', 'WritableRaster'),
+  \ javaapi#method(0,1,'createChild(', 'int, int, int, int, int, int, int[])', 'Raster'),
+  \ javaapi#method(0,1,'createCompatibleWritableRaster(', 'int, int)', 'WritableRaster'),
+  \ javaapi#method(0,1,'createCompatibleWritableRaster(', ')', 'WritableRaster'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
 call javaapi#namespace('sun.awt.image')
 
 call javaapi#class('PNGFilterInputStream', 'FilterInputStream', [
-  \ javaapi#field(0,'underlyingInputStream', 'InputStream'),
-  \ javaapi#method(0,'PNGFilterInputStream(', 'PNGImageDecoder, InputStream)', 'public'),
-  \ javaapi#method(0,'available(', ') throws IOException', 'int'),
-  \ javaapi#method(0,'markSupported(', ')', 'boolean'),
-  \ javaapi#method(0,'read(', ') throws IOException', 'int'),
-  \ javaapi#method(0,'read(', 'byte[]) throws IOException', 'int'),
-  \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
-  \ javaapi#method(0,'skip(', 'long) throws IOException', 'long'),
+  \ javaapi#field(0,1,'underlyingInputStream', 'InputStream'),
+  \ javaapi#method(0,1,'PNGFilterInputStream(', 'PNGImageDecoder, InputStream)', ''),
+  \ javaapi#method(0,1,'available(', ') throws IOException', 'int'),
+  \ javaapi#method(0,1,'markSupported(', ')', 'boolean'),
+  \ javaapi#method(0,1,'read(', ') throws IOException', 'int'),
+  \ javaapi#method(0,1,'read(', 'byte[]) throws IOException', 'int'),
+  \ javaapi#method(0,1,'read(', 'byte[], int, int) throws IOException', 'int'),
+  \ javaapi#method(0,1,'skip(', 'long) throws IOException', 'long'),
   \ ])
 
 call javaapi#class('PNGImageDecoder', 'ImageDecoder', [
-  \ javaapi#method(0,'produceImage(', ') throws IOException, ImageFormatException', 'void'),
-  \ javaapi#method(0,'PNGImageDecoder(', 'InputStreamImageSource, InputStream) throws IOException', 'public'),
-  \ javaapi#method(1,'getCheckCRC(', ')', 'boolean'),
-  \ javaapi#method(1,'setCheckCRC(', 'boolean)', 'void'),
-  \ javaapi#method(0,'print(', ')', 'void'),
+  \ javaapi#method(0,0,'handleChunk(', 'int, byte[], int, int) throws IOException', 'boolean'),
+  \ javaapi#method(0,1,'produceImage(', ') throws IOException, ImageFormatException', 'void'),
+  \ javaapi#method(0,1,'PNGImageDecoder(', 'InputStreamImageSource, InputStream) throws IOException', ''),
+  \ javaapi#method(1,1,'getCheckCRC(', ')', 'boolean'),
+  \ javaapi#method(1,1,'setCheckCRC(', 'boolean)', 'void'),
+  \ javaapi#method(0,0,'wrc(', 'int)', 'void'),
+  \ javaapi#method(0,0,'wrk(', 'int)', 'void'),
+  \ javaapi#method(0,1,'print(', ')', 'void'),
   \ ])
 
 call javaapi#namespace('sun.awt.image')
 
 call javaapi#class('BytePackedRaster', 'SunWritableRaster', [
-  \ javaapi#method(0,'BytePackedRaster(', 'SampleModel, Point)', 'public'),
-  \ javaapi#method(0,'BytePackedRaster(', 'SampleModel, DataBuffer, Point)', 'public'),
-  \ javaapi#method(0,'BytePackedRaster(', 'SampleModel, DataBuffer, Rectangle, Point, BytePackedRaster)', 'public'),
-  \ javaapi#method(0,'getDataBitOffset(', ')', 'int'),
-  \ javaapi#method(0,'getScanlineStride(', ')', 'int'),
-  \ javaapi#method(0,'getPixelBitStride(', ')', 'int'),
-  \ javaapi#method(0,'getDataStorage(', ')', 'byte[]'),
-  \ javaapi#method(0,'getDataElements(', 'int, int, Object)', 'Object'),
-  \ javaapi#method(0,'getDataElements(', 'int, int, int, int, Object)', 'Object'),
-  \ javaapi#method(0,'getPixelData(', 'int, int, int, int, Object)', 'Object'),
-  \ javaapi#method(0,'getByteData(', 'int, int, int, int, int, byte[])', 'byte[]'),
-  \ javaapi#method(0,'getByteData(', 'int, int, int, int, byte[])', 'byte[]'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, Object)', 'void'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, Raster)', 'void'),
-  \ javaapi#method(0,'setRect(', 'int, int, Raster)', 'void'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, int, int, Object)', 'void'),
-  \ javaapi#method(0,'putByteData(', 'int, int, int, int, int, byte[])', 'void'),
-  \ javaapi#method(0,'putByteData(', 'int, int, int, int, byte[])', 'void'),
-  \ javaapi#method(0,'getPixels(', 'int, int, int, int, int[])', 'int[]'),
-  \ javaapi#method(0,'setPixels(', 'int, int, int, int, int[])', 'void'),
-  \ javaapi#method(0,'createChild(', 'int, int, int, int, int, int, int[])', 'Raster'),
-  \ javaapi#method(0,'createWritableChild(', 'int, int, int, int, int, int, int[])', 'WritableRaster'),
-  \ javaapi#method(0,'createCompatibleWritableRaster(', 'int, int)', 'WritableRaster'),
-  \ javaapi#method(0,'createCompatibleWritableRaster(', ')', 'WritableRaster'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,1,'BytePackedRaster(', 'SampleModel, Point)', ''),
+  \ javaapi#method(0,1,'BytePackedRaster(', 'SampleModel, DataBuffer, Point)', ''),
+  \ javaapi#method(0,1,'BytePackedRaster(', 'SampleModel, DataBuffer, Rectangle, Point, BytePackedRaster)', ''),
+  \ javaapi#method(0,1,'getDataBitOffset(', ')', 'int'),
+  \ javaapi#method(0,1,'getScanlineStride(', ')', 'int'),
+  \ javaapi#method(0,1,'getPixelBitStride(', ')', 'int'),
+  \ javaapi#method(0,1,'getDataStorage(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getDataElements(', 'int, int, Object)', 'Object'),
+  \ javaapi#method(0,1,'getDataElements(', 'int, int, int, int, Object)', 'Object'),
+  \ javaapi#method(0,1,'getPixelData(', 'int, int, int, int, Object)', 'Object'),
+  \ javaapi#method(0,1,'getByteData(', 'int, int, int, int, int, byte[])', 'byte[]'),
+  \ javaapi#method(0,1,'getByteData(', 'int, int, int, int, byte[])', 'byte[]'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, Object)', 'void'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, Raster)', 'void'),
+  \ javaapi#method(0,1,'setRect(', 'int, int, Raster)', 'void'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, int, int, Object)', 'void'),
+  \ javaapi#method(0,1,'putByteData(', 'int, int, int, int, int, byte[])', 'void'),
+  \ javaapi#method(0,1,'putByteData(', 'int, int, int, int, byte[])', 'void'),
+  \ javaapi#method(0,1,'getPixels(', 'int, int, int, int, int[])', 'int[]'),
+  \ javaapi#method(0,1,'setPixels(', 'int, int, int, int, int[])', 'void'),
+  \ javaapi#method(0,1,'createChild(', 'int, int, int, int, int, int, int[])', 'Raster'),
+  \ javaapi#method(0,1,'createWritableChild(', 'int, int, int, int, int, int, int[])', 'WritableRaster'),
+  \ javaapi#method(0,1,'createCompatibleWritableRaster(', 'int, int)', 'WritableRaster'),
+  \ javaapi#method(0,1,'createCompatibleWritableRaster(', ')', 'WritableRaster'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
 call javaapi#class('IntegerComponentRaster', 'SunWritableRaster', [
-  \ javaapi#method(0,'IntegerComponentRaster(', 'SampleModel, Point)', 'public'),
-  \ javaapi#method(0,'IntegerComponentRaster(', 'SampleModel, DataBuffer, Point)', 'public'),
-  \ javaapi#method(0,'IntegerComponentRaster(', 'SampleModel, DataBuffer, Rectangle, Point, IntegerComponentRaster)', 'public'),
-  \ javaapi#method(0,'getDataOffsets(', ')', 'int[]'),
-  \ javaapi#method(0,'getDataOffset(', 'int)', 'int'),
-  \ javaapi#method(0,'getScanlineStride(', ')', 'int'),
-  \ javaapi#method(0,'getPixelStride(', ')', 'int'),
-  \ javaapi#method(0,'getDataStorage(', ')', 'int[]'),
-  \ javaapi#method(0,'getDataElements(', 'int, int, Object)', 'Object'),
-  \ javaapi#method(0,'getDataElements(', 'int, int, int, int, Object)', 'Object'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, Object)', 'void'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, Raster)', 'void'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, int, int, Object)', 'void'),
-  \ javaapi#method(0,'createWritableChild(', 'int, int, int, int, int, int, int[])', 'WritableRaster'),
-  \ javaapi#method(0,'createChild(', 'int, int, int, int, int, int, int[])', 'Raster'),
-  \ javaapi#method(0,'createCompatibleWritableRaster(', 'int, int)', 'WritableRaster'),
-  \ javaapi#method(0,'createCompatibleWritableRaster(', ')', 'WritableRaster'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#field(0,0,'bandOffset', 'int'),
+  \ javaapi#field(0,0,'dataOffsets', 'int[]'),
+  \ javaapi#field(0,0,'scanlineStride', 'int'),
+  \ javaapi#field(0,0,'pixelStride', 'int'),
+  \ javaapi#field(0,0,'data', 'int[]'),
+  \ javaapi#field(0,0,'numDataElems', 'int'),
+  \ javaapi#method(0,1,'IntegerComponentRaster(', 'SampleModel, Point)', ''),
+  \ javaapi#method(0,1,'IntegerComponentRaster(', 'SampleModel, DataBuffer, Point)', ''),
+  \ javaapi#method(0,1,'IntegerComponentRaster(', 'SampleModel, DataBuffer, Rectangle, Point, IntegerComponentRaster)', ''),
+  \ javaapi#method(0,1,'getDataOffsets(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getDataOffset(', 'int)', 'int'),
+  \ javaapi#method(0,1,'getScanlineStride(', ')', 'int'),
+  \ javaapi#method(0,1,'getPixelStride(', ')', 'int'),
+  \ javaapi#method(0,1,'getDataStorage(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getDataElements(', 'int, int, Object)', 'Object'),
+  \ javaapi#method(0,1,'getDataElements(', 'int, int, int, int, Object)', 'Object'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, Object)', 'void'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, Raster)', 'void'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, int, int, Object)', 'void'),
+  \ javaapi#method(0,1,'createWritableChild(', 'int, int, int, int, int, int, int[])', 'WritableRaster'),
+  \ javaapi#method(0,1,'createChild(', 'int, int, int, int, int, int, int[])', 'Raster'),
+  \ javaapi#method(0,1,'createCompatibleWritableRaster(', 'int, int)', 'WritableRaster'),
+  \ javaapi#method(0,1,'createCompatibleWritableRaster(', ')', 'WritableRaster'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
 call javaapi#namespace('sun.awt.image')
 
 call javaapi#class('SunWritableRaster', 'WritableRaster', [
-  \ javaapi#method(1,'setDataStealer(', 'DataStealer)', 'void'),
-  \ javaapi#method(1,'stealData(', 'DataBufferByte, int)', 'byte[]'),
-  \ javaapi#method(1,'stealData(', 'DataBufferUShort, int)', 'short[]'),
-  \ javaapi#method(1,'stealData(', 'DataBufferInt, int)', 'int[]'),
-  \ javaapi#method(1,'stealTrackable(', 'DataBuffer)', 'StateTrackableDelegate'),
-  \ javaapi#method(1,'setTrackable(', 'DataBuffer, StateTrackableDelegate)', 'void'),
-  \ javaapi#method(1,'makeTrackable(', 'DataBuffer)', 'void'),
-  \ javaapi#method(1,'markDirty(', 'DataBuffer)', 'void'),
-  \ javaapi#method(1,'markDirty(', 'WritableRaster)', 'void'),
-  \ javaapi#method(1,'markDirty(', 'Image)', 'void'),
-  \ javaapi#method(0,'SunWritableRaster(', 'SampleModel, Point)', 'public'),
-  \ javaapi#method(0,'SunWritableRaster(', 'SampleModel, DataBuffer, Point)', 'public'),
-  \ javaapi#method(0,'SunWritableRaster(', 'SampleModel, DataBuffer, Rectangle, Point, WritableRaster)', 'public'),
-  \ javaapi#method(0,'markDirty(', ')', 'void'),
+  \ javaapi#method(1,1,'setDataStealer(', 'DataStealer)', 'void'),
+  \ javaapi#method(1,1,'stealData(', 'DataBufferByte, int)', 'byte[]'),
+  \ javaapi#method(1,1,'stealData(', 'DataBufferUShort, int)', 'short[]'),
+  \ javaapi#method(1,1,'stealData(', 'DataBufferInt, int)', 'int[]'),
+  \ javaapi#method(1,1,'stealTrackable(', 'DataBuffer)', 'StateTrackableDelegate'),
+  \ javaapi#method(1,1,'setTrackable(', 'DataBuffer, StateTrackableDelegate)', 'void'),
+  \ javaapi#method(1,1,'makeTrackable(', 'DataBuffer)', 'void'),
+  \ javaapi#method(1,1,'markDirty(', 'DataBuffer)', 'void'),
+  \ javaapi#method(1,1,'markDirty(', 'WritableRaster)', 'void'),
+  \ javaapi#method(1,1,'markDirty(', 'Image)', 'void'),
+  \ javaapi#method(0,1,'SunWritableRaster(', 'SampleModel, Point)', ''),
+  \ javaapi#method(0,1,'SunWritableRaster(', 'SampleModel, DataBuffer, Point)', ''),
+  \ javaapi#method(0,1,'SunWritableRaster(', 'SampleModel, DataBuffer, Rectangle, Point, WritableRaster)', ''),
+  \ javaapi#method(0,1,'markDirty(', ')', 'void'),
   \ ])
 
 call javaapi#class('ByteComponentRaster', 'SunWritableRaster', [
-  \ javaapi#method(0,'ByteComponentRaster(', 'SampleModel, Point)', 'public'),
-  \ javaapi#method(0,'ByteComponentRaster(', 'SampleModel, DataBuffer, Point)', 'public'),
-  \ javaapi#method(0,'ByteComponentRaster(', 'SampleModel, DataBuffer, Rectangle, Point, ByteComponentRaster)', 'public'),
-  \ javaapi#method(0,'getDataOffsets(', ')', 'int[]'),
-  \ javaapi#method(0,'getDataOffset(', 'int)', 'int'),
-  \ javaapi#method(0,'getScanlineStride(', ')', 'int'),
-  \ javaapi#method(0,'getPixelStride(', ')', 'int'),
-  \ javaapi#method(0,'getDataStorage(', ')', 'byte[]'),
-  \ javaapi#method(0,'getDataElements(', 'int, int, Object)', 'Object'),
-  \ javaapi#method(0,'getDataElements(', 'int, int, int, int, Object)', 'Object'),
-  \ javaapi#method(0,'getByteData(', 'int, int, int, int, int, byte[])', 'byte[]'),
-  \ javaapi#method(0,'getByteData(', 'int, int, int, int, byte[])', 'byte[]'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, Object)', 'void'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, Raster)', 'void'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, int, int, Object)', 'void'),
-  \ javaapi#method(0,'putByteData(', 'int, int, int, int, int, byte[])', 'void'),
-  \ javaapi#method(0,'putByteData(', 'int, int, int, int, byte[])', 'void'),
-  \ javaapi#method(0,'createChild(', 'int, int, int, int, int, int, int[])', 'Raster'),
-  \ javaapi#method(0,'createWritableChild(', 'int, int, int, int, int, int, int[])', 'WritableRaster'),
-  \ javaapi#method(0,'createCompatibleWritableRaster(', 'int, int)', 'WritableRaster'),
-  \ javaapi#method(0,'createCompatibleWritableRaster(', ')', 'WritableRaster'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#field(0,0,'bandOffset', 'int'),
+  \ javaapi#field(0,0,'dataOffsets', 'int[]'),
+  \ javaapi#field(0,0,'scanlineStride', 'int'),
+  \ javaapi#field(0,0,'pixelStride', 'int'),
+  \ javaapi#field(0,0,'data', 'byte[]'),
+  \ javaapi#method(0,1,'ByteComponentRaster(', 'SampleModel, Point)', ''),
+  \ javaapi#method(0,1,'ByteComponentRaster(', 'SampleModel, DataBuffer, Point)', ''),
+  \ javaapi#method(0,1,'ByteComponentRaster(', 'SampleModel, DataBuffer, Rectangle, Point, ByteComponentRaster)', ''),
+  \ javaapi#method(0,1,'getDataOffsets(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getDataOffset(', 'int)', 'int'),
+  \ javaapi#method(0,1,'getScanlineStride(', ')', 'int'),
+  \ javaapi#method(0,1,'getPixelStride(', ')', 'int'),
+  \ javaapi#method(0,1,'getDataStorage(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getDataElements(', 'int, int, Object)', 'Object'),
+  \ javaapi#method(0,1,'getDataElements(', 'int, int, int, int, Object)', 'Object'),
+  \ javaapi#method(0,1,'getByteData(', 'int, int, int, int, int, byte[])', 'byte[]'),
+  \ javaapi#method(0,1,'getByteData(', 'int, int, int, int, byte[])', 'byte[]'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, Object)', 'void'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, Raster)', 'void'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, int, int, Object)', 'void'),
+  \ javaapi#method(0,1,'putByteData(', 'int, int, int, int, int, byte[])', 'void'),
+  \ javaapi#method(0,1,'putByteData(', 'int, int, int, int, byte[])', 'void'),
+  \ javaapi#method(0,1,'createChild(', 'int, int, int, int, int, int, int[])', 'Raster'),
+  \ javaapi#method(0,1,'createWritableChild(', 'int, int, int, int, int, int, int[])', 'WritableRaster'),
+  \ javaapi#method(0,1,'createCompatibleWritableRaster(', 'int, int)', 'WritableRaster'),
+  \ javaapi#method(0,1,'createCompatibleWritableRaster(', ')', 'WritableRaster'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
 call javaapi#class('ByteInterleavedRaster', 'ByteComponentRaster', [
-  \ javaapi#method(0,'ByteInterleavedRaster(', 'SampleModel, Point)', 'public'),
-  \ javaapi#method(0,'ByteInterleavedRaster(', 'SampleModel, DataBuffer, Point)', 'public'),
-  \ javaapi#method(0,'ByteInterleavedRaster(', 'SampleModel, DataBuffer, Rectangle, Point, ByteInterleavedRaster)', 'public'),
-  \ javaapi#method(0,'getDataOffsets(', ')', 'int[]'),
-  \ javaapi#method(0,'getDataOffset(', 'int)', 'int'),
-  \ javaapi#method(0,'getScanlineStride(', ')', 'int'),
-  \ javaapi#method(0,'getPixelStride(', ')', 'int'),
-  \ javaapi#method(0,'getDataStorage(', ')', 'byte[]'),
-  \ javaapi#method(0,'getDataElements(', 'int, int, Object)', 'Object'),
-  \ javaapi#method(0,'getDataElements(', 'int, int, int, int, Object)', 'Object'),
-  \ javaapi#method(0,'getByteData(', 'int, int, int, int, int, byte[])', 'byte[]'),
-  \ javaapi#method(0,'getByteData(', 'int, int, int, int, byte[])', 'byte[]'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, Object)', 'void'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, Raster)', 'void'),
-  \ javaapi#method(0,'setDataElements(', 'int, int, int, int, Object)', 'void'),
-  \ javaapi#method(0,'putByteData(', 'int, int, int, int, int, byte[])', 'void'),
-  \ javaapi#method(0,'putByteData(', 'int, int, int, int, byte[])', 'void'),
-  \ javaapi#method(0,'getSample(', 'int, int, int)', 'int'),
-  \ javaapi#method(0,'setSample(', 'int, int, int, int)', 'void'),
-  \ javaapi#method(0,'getSamples(', 'int, int, int, int, int, int[])', 'int[]'),
-  \ javaapi#method(0,'setSamples(', 'int, int, int, int, int, int[])', 'void'),
-  \ javaapi#method(0,'getPixels(', 'int, int, int, int, int[])', 'int[]'),
-  \ javaapi#method(0,'setPixels(', 'int, int, int, int, int[])', 'void'),
-  \ javaapi#method(0,'setRect(', 'int, int, Raster)', 'void'),
-  \ javaapi#method(0,'createChild(', 'int, int, int, int, int, int, int[])', 'Raster'),
-  \ javaapi#method(0,'createWritableChild(', 'int, int, int, int, int, int, int[])', 'WritableRaster'),
-  \ javaapi#method(0,'createCompatibleWritableRaster(', 'int, int)', 'WritableRaster'),
-  \ javaapi#method(0,'createCompatibleWritableRaster(', ')', 'WritableRaster'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,1,'ByteInterleavedRaster(', 'SampleModel, Point)', ''),
+  \ javaapi#method(0,1,'ByteInterleavedRaster(', 'SampleModel, DataBuffer, Point)', ''),
+  \ javaapi#method(0,1,'ByteInterleavedRaster(', 'SampleModel, DataBuffer, Rectangle, Point, ByteInterleavedRaster)', ''),
+  \ javaapi#method(0,1,'getDataOffsets(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getDataOffset(', 'int)', 'int'),
+  \ javaapi#method(0,1,'getScanlineStride(', ')', 'int'),
+  \ javaapi#method(0,1,'getPixelStride(', ')', 'int'),
+  \ javaapi#method(0,1,'getDataStorage(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getDataElements(', 'int, int, Object)', 'Object'),
+  \ javaapi#method(0,1,'getDataElements(', 'int, int, int, int, Object)', 'Object'),
+  \ javaapi#method(0,1,'getByteData(', 'int, int, int, int, int, byte[])', 'byte[]'),
+  \ javaapi#method(0,1,'getByteData(', 'int, int, int, int, byte[])', 'byte[]'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, Object)', 'void'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, Raster)', 'void'),
+  \ javaapi#method(0,1,'setDataElements(', 'int, int, int, int, Object)', 'void'),
+  \ javaapi#method(0,1,'putByteData(', 'int, int, int, int, int, byte[])', 'void'),
+  \ javaapi#method(0,1,'putByteData(', 'int, int, int, int, byte[])', 'void'),
+  \ javaapi#method(0,1,'getSample(', 'int, int, int)', 'int'),
+  \ javaapi#method(0,1,'setSample(', 'int, int, int, int)', 'void'),
+  \ javaapi#method(0,1,'getSamples(', 'int, int, int, int, int, int[])', 'int[]'),
+  \ javaapi#method(0,1,'setSamples(', 'int, int, int, int, int, int[])', 'void'),
+  \ javaapi#method(0,1,'getPixels(', 'int, int, int, int, int[])', 'int[]'),
+  \ javaapi#method(0,1,'setPixels(', 'int, int, int, int, int[])', 'void'),
+  \ javaapi#method(0,1,'setRect(', 'int, int, Raster)', 'void'),
+  \ javaapi#method(0,1,'createChild(', 'int, int, int, int, int, int, int[])', 'Raster'),
+  \ javaapi#method(0,1,'createWritableChild(', 'int, int, int, int, int, int, int[])', 'WritableRaster'),
+  \ javaapi#method(0,1,'createCompatibleWritableRaster(', 'int, int)', 'WritableRaster'),
+  \ javaapi#method(0,1,'createCompatibleWritableRaster(', ')', 'WritableRaster'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
 call javaapi#namespace('sun.awt.image')
 
 call javaapi#class('GifFrame', '', [
-  \ javaapi#method(0,'GifFrame(', 'GifImageDecoder, int, int, boolean, IndexColorModel, int, int, int, int)', 'public'),
-  \ javaapi#method(0,'dispose(', ')', 'boolean'),
+  \ javaapi#method(0,1,'GifFrame(', 'GifImageDecoder, int, int, boolean, IndexColorModel, int, int, int, int)', ''),
+  \ javaapi#method(0,1,'dispose(', ')', 'boolean'),
   \ ])
 
 call javaapi#class('ImageDecoder', '', [
-  \ javaapi#method(0,'ImageDecoder(', 'InputStreamImageSource, InputStream)', 'public'),
-  \ javaapi#method(0,'isConsumer(', 'ImageConsumer)', 'boolean'),
-  \ javaapi#method(0,'removeConsumer(', 'ImageConsumer)', 'void'),
-  \ javaapi#method(0,'produceImage(', ') throws IOException, ImageFormatException', 'void'),
-  \ javaapi#method(0,'abort(', ')', 'void'),
-  \ javaapi#method(0,'close(', ')', 'void'),
+  \ javaapi#field(0,0,'aborted', 'boolean'),
+  \ javaapi#field(0,0,'finished', 'boolean'),
+  \ javaapi#method(0,1,'ImageDecoder(', 'InputStreamImageSource, InputStream)', ''),
+  \ javaapi#method(0,1,'isConsumer(', 'ImageConsumer)', 'boolean'),
+  \ javaapi#method(0,1,'removeConsumer(', 'ImageConsumer)', 'void'),
+  \ javaapi#method(0,0,'nextConsumer(', 'ImageConsumerQueue)', 'ImageConsumerQueue'),
+  \ javaapi#method(0,0,'setDimensions(', 'int, int)', 'int'),
+  \ javaapi#method(0,0,'setProperties(', 'Hashtable)', 'int'),
+  \ javaapi#method(0,0,'setColorModel(', 'ColorModel)', 'int'),
+  \ javaapi#method(0,0,'setHints(', 'int)', 'int'),
+  \ javaapi#method(0,0,'headerComplete(', ')', 'void'),
+  \ javaapi#method(0,0,'setPixels(', 'int, int, int, int, ColorModel, byte[], int, int)', 'int'),
+  \ javaapi#method(0,0,'setPixels(', 'int, int, int, int, ColorModel, int[], int, int)', 'int'),
+  \ javaapi#method(0,0,'imageComplete(', 'int, boolean)', 'int'),
+  \ javaapi#method(0,1,'produceImage(', ') throws IOException, ImageFormatException', 'void'),
+  \ javaapi#method(0,1,'abort(', ')', 'void'),
+  \ javaapi#method(0,1,'close(', ')', 'void'),
   \ ])
 
 call javaapi#class('GifImageDecoder', 'ImageDecoder', [
-  \ javaapi#method(0,'GifImageDecoder(', 'InputStreamImageSource, InputStream)', 'public'),
-  \ javaapi#method(0,'produceImage(', ') throws IOException, ImageFormatException', 'void'),
-  \ javaapi#method(1,'grow_colormap(', 'byte[], int)', 'byte[]'),
-  \ ])
-
-call javaapi#class('1', 'PrivilegedAction', [
-  \ javaapi#method(0,'run(', ')', 'Object'),
+  \ javaapi#method(0,1,'GifImageDecoder(', 'InputStreamImageSource, InputStream)', ''),
+  \ javaapi#method(0,1,'produceImage(', ') throws IOException, ImageFormatException', 'void'),
+  \ javaapi#method(1,1,'grow_colormap(', 'byte[], int)', 'byte[]'),
   \ ])
 
 call javaapi#class('FetcherInfo', '', [
   \ ])
 
 call javaapi#class('ImageFetcher', 'Thread', [
-  \ javaapi#method(1,'add(', 'ImageFetchable)', 'boolean'),
-  \ javaapi#method(1,'remove(', 'ImageFetchable)', 'void'),
-  \ javaapi#method(1,'isFetcher(', 'Thread)', 'boolean'),
-  \ javaapi#method(1,'amFetcher(', ')', 'boolean'),
-  \ javaapi#method(0,'run(', ')', 'void'),
+  \ javaapi#method(1,1,'add(', 'ImageFetchable)', 'boolean'),
+  \ javaapi#method(1,1,'remove(', 'ImageFetchable)', 'void'),
+  \ javaapi#method(1,1,'isFetcher(', 'Thread)', 'boolean'),
+  \ javaapi#method(1,1,'amFetcher(', ')', 'boolean'),
+  \ javaapi#method(0,1,'run(', ')', 'void'),
   \ ])
 
 call javaapi#class('ImageConsumerQueue', '', [
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('WeakLink', 'Link', [
-  \ javaapi#method(0,'WeakLink(', 'ImageObserver, Link)', 'public'),
-  \ javaapi#method(0,'isWatcher(', 'ImageObserver)', 'boolean'),
-  \ javaapi#method(0,'removeWatcher(', 'ImageObserver)', 'Link'),
-  \ javaapi#method(0,'newInfo(', 'Image, int, int, int, int, int)', 'boolean'),
-  \ ])
-
-call javaapi#class('Link', '', [
-  \ javaapi#method(0,'Link(', ')', 'public'),
-  \ javaapi#method(0,'isWatcher(', 'ImageObserver)', 'boolean'),
-  \ javaapi#method(0,'removeWatcher(', 'ImageObserver)', 'Link'),
-  \ javaapi#method(0,'newInfo(', 'Image, int, int, int, int, int)', 'boolean'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
 call javaapi#class('ImageWatched', '', [
-  \ javaapi#field(1,'endlink', 'Link'),
-  \ javaapi#field(0,'watcherList', 'Link'),
-  \ javaapi#method(0,'ImageWatched(', ')', 'public'),
-  \ javaapi#method(0,'addWatcher(', 'ImageObserver)', 'void'),
-  \ javaapi#method(0,'isWatcher(', 'ImageObserver)', 'boolean'),
-  \ javaapi#method(0,'removeWatcher(', 'ImageObserver)', 'void'),
-  \ javaapi#method(0,'isWatcherListEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,'newInfo(', 'Image, int, int, int, int, int)', 'void'),
+  \ javaapi#field(1,1,'endlink', 'Link'),
+  \ javaapi#field(0,1,'watcherList', 'Link'),
+  \ javaapi#method(0,1,'ImageWatched(', ')', ''),
+  \ javaapi#method(0,1,'addWatcher(', 'ImageObserver)', 'void'),
+  \ javaapi#method(0,1,'isWatcher(', 'ImageObserver)', 'boolean'),
+  \ javaapi#method(0,1,'removeWatcher(', 'ImageObserver)', 'void'),
+  \ javaapi#method(0,1,'isWatcherListEmpty(', ')', 'boolean'),
+  \ javaapi#method(0,1,'newInfo(', 'Image, int, int, int, int, int)', 'void'),
+  \ javaapi#method(0,0,'notifyWatcherListEmpty(', ')', 'void'),
   \ ])
 
 call javaapi#namespace('sun.awt.image')
 
 call javaapi#class('ImageRepresentation', 'ImageWatched', [
-  \ javaapi#method(0,'ImageRepresentation(', 'ToolkitImage, ColorModel, boolean)', 'public'),
-  \ javaapi#method(0,'reconstruct(', 'int)', 'void'),
-  \ javaapi#method(0,'setDimensions(', 'int, int)', 'void'),
-  \ javaapi#method(0,'getWidth(', ')', 'int'),
-  \ javaapi#method(0,'getHeight(', ')', 'int'),
-  \ javaapi#method(0,'setProperties(', 'Hashtable<?, ?>)', 'void'),
-  \ javaapi#method(0,'setColorModel(', 'ColorModel)', 'void'),
-  \ javaapi#method(0,'setHints(', 'int)', 'void'),
-  \ javaapi#method(0,'setPixels(', 'int, int, int, int, ColorModel, byte[], int, int)', 'void'),
-  \ javaapi#method(0,'setPixels(', 'int, int, int, int, ColorModel, int[], int, int)', 'void'),
-  \ javaapi#method(0,'getOpaqueRGBImage(', ')', 'BufferedImage'),
-  \ javaapi#method(0,'imageComplete(', 'int)', 'void'),
-  \ javaapi#method(0,'notifyWatcherListEmpty(', ')', 'void'),
-  \ javaapi#method(0,'prepare(', 'ImageObserver)', 'boolean'),
-  \ javaapi#method(0,'check(', 'ImageObserver)', 'int'),
-  \ javaapi#method(0,'drawToBufImage(', 'Graphics, ToolkitImage, int, int, Color, ImageObserver)', 'boolean'),
-  \ javaapi#method(0,'drawToBufImage(', 'Graphics, ToolkitImage, int, int, int, int, Color, ImageObserver)', 'boolean'),
-  \ javaapi#method(0,'drawToBufImage(', 'Graphics, ToolkitImage, int, int, int, int, int, int, int, int, Color, ImageObserver)', 'boolean'),
-  \ javaapi#method(0,'drawToBufImage(', 'Graphics, ToolkitImage, AffineTransform, ImageObserver)', 'boolean'),
-  \ javaapi#method(0,'setAccelerationPriority(', 'float)', 'void'),
+  \ javaapi#field(0,0,'cmodel', 'ColorModel'),
+  \ javaapi#method(0,1,'ImageRepresentation(', 'ToolkitImage, ColorModel, boolean)', ''),
+  \ javaapi#method(0,1,'reconstruct(', 'int)', 'void'),
+  \ javaapi#method(0,1,'setDimensions(', 'int, int)', 'void'),
+  \ javaapi#method(0,1,'getWidth(', ')', 'int'),
+  \ javaapi#method(0,1,'getHeight(', ')', 'int'),
+  \ javaapi#method(0,0,'createImage(', 'ColorModel, WritableRaster, boolean, Hashtable)', 'BufferedImage'),
+  \ javaapi#method(0,1,'setProperties(', 'Hashtable<?, ?>)', 'void'),
+  \ javaapi#method(0,1,'setColorModel(', 'ColorModel)', 'void'),
+  \ javaapi#method(0,1,'setHints(', 'int)', 'void'),
+  \ javaapi#method(0,1,'setPixels(', 'int, int, int, int, ColorModel, byte[], int, int)', 'void'),
+  \ javaapi#method(0,1,'setPixels(', 'int, int, int, int, ColorModel, int[], int, int)', 'void'),
+  \ javaapi#method(0,1,'getOpaqueRGBImage(', ')', 'BufferedImage'),
+  \ javaapi#method(0,1,'imageComplete(', 'int)', 'void'),
+  \ javaapi#method(0,1,'notifyWatcherListEmpty(', ')', 'void'),
+  \ javaapi#method(0,1,'prepare(', 'ImageObserver)', 'boolean'),
+  \ javaapi#method(0,1,'check(', 'ImageObserver)', 'int'),
+  \ javaapi#method(0,1,'drawToBufImage(', 'Graphics, ToolkitImage, int, int, Color, ImageObserver)', 'boolean'),
+  \ javaapi#method(0,1,'drawToBufImage(', 'Graphics, ToolkitImage, int, int, int, int, Color, ImageObserver)', 'boolean'),
+  \ javaapi#method(0,1,'drawToBufImage(', 'Graphics, ToolkitImage, int, int, int, int, int, int, int, int, Color, ImageObserver)', 'boolean'),
+  \ javaapi#method(0,1,'drawToBufImage(', 'Graphics, ToolkitImage, AffineTransform, ImageObserver)', 'boolean'),
+  \ javaapi#method(0,1,'setAccelerationPriority(', 'float)', 'void'),
   \ ])
 
 call javaapi#namespace('sun.awt.image')
@@ -576,202 +535,131 @@ call javaapi#class('NativeLibLoader', '', [
   \ ])
 
 call javaapi#class('ToolkitImage', 'Image', [
-  \ javaapi#method(0,'ToolkitImage(', 'ImageProducer)', 'public'),
-  \ javaapi#method(0,'getSource(', ')', 'ImageProducer'),
-  \ javaapi#method(0,'getWidth(', ')', 'int'),
-  \ javaapi#method(0,'getWidth(', 'ImageObserver)', 'int'),
-  \ javaapi#method(0,'getHeight(', ')', 'int'),
-  \ javaapi#method(0,'getHeight(', 'ImageObserver)', 'int'),
-  \ javaapi#method(0,'getProperty(', 'String, ImageObserver)', 'Object'),
-  \ javaapi#method(0,'hasError(', ')', 'boolean'),
-  \ javaapi#method(0,'check(', 'ImageObserver)', 'int'),
-  \ javaapi#method(0,'preload(', 'ImageObserver)', 'void'),
-  \ javaapi#method(0,'flush(', ')', 'void'),
-  \ javaapi#method(0,'getImageRep(', ')', 'ImageRepresentation'),
-  \ javaapi#method(0,'getGraphics(', ')', 'Graphics'),
-  \ javaapi#method(0,'getColorModel(', ')', 'ColorModel'),
-  \ javaapi#method(0,'getBufferedImage(', ')', 'BufferedImage'),
-  \ javaapi#method(0,'setAccelerationPriority(', 'float)', 'void'),
+  \ javaapi#method(0,0,'ToolkitImage(', ')', ''),
+  \ javaapi#method(0,1,'ToolkitImage(', 'ImageProducer)', ''),
+  \ javaapi#method(0,1,'getSource(', ')', 'ImageProducer'),
+  \ javaapi#method(0,1,'getWidth(', ')', 'int'),
+  \ javaapi#method(0,1,'getWidth(', 'ImageObserver)', 'int'),
+  \ javaapi#method(0,1,'getHeight(', ')', 'int'),
+  \ javaapi#method(0,1,'getHeight(', 'ImageObserver)', 'int'),
+  \ javaapi#method(0,1,'getProperty(', 'String, ImageObserver)', 'Object'),
+  \ javaapi#method(0,1,'hasError(', ')', 'boolean'),
+  \ javaapi#method(0,1,'check(', 'ImageObserver)', 'int'),
+  \ javaapi#method(0,1,'preload(', 'ImageObserver)', 'void'),
+  \ javaapi#method(0,1,'flush(', ')', 'void'),
+  \ javaapi#method(0,0,'makeImageRep(', ')', 'ImageRepresentation'),
+  \ javaapi#method(0,1,'getImageRep(', ')', 'ImageRepresentation'),
+  \ javaapi#method(0,1,'getGraphics(', ')', 'Graphics'),
+  \ javaapi#method(0,1,'getColorModel(', ')', 'ColorModel'),
+  \ javaapi#method(0,1,'getBufferedImage(', ')', 'BufferedImage'),
+  \ javaapi#method(0,1,'setAccelerationPriority(', 'float)', 'void'),
   \ ])
 
 call javaapi#interface('ImageFetchable', '', [
-  \ javaapi#method(0,'doFetch(', ')', 'void'),
+  \ javaapi#method(0,1,'doFetch(', ')', 'void'),
   \ ])
 
 call javaapi#class('InputStreamImageSource', 'ImageFetchable', [
-  \ javaapi#method(0,'InputStreamImageSource(', ')', 'public'),
-  \ javaapi#method(0,'addConsumer(', 'ImageConsumer)', 'void'),
-  \ javaapi#method(0,'isConsumer(', 'ImageConsumer)', 'boolean'),
-  \ javaapi#method(0,'removeConsumer(', 'ImageConsumer)', 'void'),
-  \ javaapi#method(0,'startProduction(', 'ImageConsumer)', 'void'),
-  \ javaapi#method(0,'requestTopDownLeftRightResend(', 'ImageConsumer)', 'void'),
-  \ javaapi#method(0,'doFetch(', ')', 'void'),
+  \ javaapi#method(0,1,'InputStreamImageSource(', ')', ''),
+  \ javaapi#method(0,1,'addConsumer(', 'ImageConsumer)', 'void'),
+  \ javaapi#method(0,1,'isConsumer(', 'ImageConsumer)', 'boolean'),
+  \ javaapi#method(0,1,'removeConsumer(', 'ImageConsumer)', 'void'),
+  \ javaapi#method(0,1,'startProduction(', 'ImageConsumer)', 'void'),
+  \ javaapi#method(0,1,'requestTopDownLeftRightResend(', 'ImageConsumer)', 'void'),
+  \ javaapi#method(0,0,'getDecoder(', ')', 'ImageDecoder'),
+  \ javaapi#method(0,0,'decoderForType(', 'InputStream, String)', 'ImageDecoder'),
+  \ javaapi#method(0,0,'getDecoder(', 'InputStream)', 'ImageDecoder'),
+  \ javaapi#method(0,1,'doFetch(', ')', 'void'),
   \ ])
 
 call javaapi#class('URLImageSource', 'InputStreamImageSource', [
-  \ javaapi#method(0,'URLImageSource(', 'URL)', 'public'),
-  \ javaapi#method(0,'URLImageSource(', 'String) throws MalformedURLException', 'public'),
-  \ javaapi#method(0,'URLImageSource(', 'URL, URLConnection)', 'public'),
-  \ javaapi#method(0,'URLImageSource(', 'URLConnection)', 'public'),
+  \ javaapi#method(0,1,'URLImageSource(', 'URL)', ''),
+  \ javaapi#method(0,1,'URLImageSource(', 'String) throws MalformedURLException', ''),
+  \ javaapi#method(0,1,'URLImageSource(', 'URL, URLConnection)', ''),
+  \ javaapi#method(0,1,'URLImageSource(', 'URLConnection)', ''),
+  \ javaapi#method(0,0,'getDecoder(', ')', 'ImageDecoder'),
   \ ])
 
 call javaapi#namespace('sun.awt.image')
 
 call javaapi#class('VolatileSurfaceManager', 'SurfaceManager', [
-  \ javaapi#method(0,'initialize(', ')', 'void'),
-  \ javaapi#method(0,'getPrimarySurfaceData(', ')', 'SurfaceData'),
-  \ javaapi#method(0,'validate(', 'GraphicsConfiguration)', 'int'),
-  \ javaapi#method(0,'contentsLost(', ')', 'boolean'),
-  \ javaapi#method(0,'initContents(', ')', 'void'),
-  \ javaapi#method(0,'restoreContents(', ')', 'SurfaceData'),
-  \ javaapi#method(0,'acceleratedSurfaceLost(', ')', 'void'),
-  \ javaapi#method(0,'displayChanged(', ')', 'void'),
-  \ javaapi#method(0,'paletteChanged(', ')', 'void'),
-  \ javaapi#method(0,'getCapabilities(', 'GraphicsConfiguration)', 'ImageCapabilities'),
-  \ javaapi#method(0,'flush(', ')', 'void'),
+  \ javaapi#field(0,0,'vImg', 'SunVolatileImage'),
+  \ javaapi#field(0,0,'sdAccel', 'SurfaceData'),
+  \ javaapi#field(0,0,'sdBackup', 'SurfaceData'),
+  \ javaapi#field(0,0,'sdCurrent', 'SurfaceData'),
+  \ javaapi#field(0,0,'sdPrevious', 'SurfaceData'),
+  \ javaapi#field(0,0,'lostSurface', 'boolean'),
+  \ javaapi#field(0,0,'context', 'Object'),
+  \ javaapi#method(0,0,'VolatileSurfaceManager(', 'SunVolatileImage, Object)', ''),
+  \ javaapi#method(0,1,'initialize(', ')', 'void'),
+  \ javaapi#method(0,1,'getPrimarySurfaceData(', ')', 'SurfaceData'),
+  \ javaapi#method(0,0,'isAccelerationEnabled(', ')', 'boolean'),
+  \ javaapi#method(0,1,'validate(', 'GraphicsConfiguration)', 'int'),
+  \ javaapi#method(0,1,'contentsLost(', ')', 'boolean'),
+  \ javaapi#method(0,0,'initAcceleratedSurface(', ')', 'SurfaceData'),
+  \ javaapi#method(0,0,'getBackupSurface(', ')', 'SurfaceData'),
+  \ javaapi#method(0,1,'initContents(', ')', 'void'),
+  \ javaapi#method(0,1,'restoreContents(', ')', 'SurfaceData'),
+  \ javaapi#method(0,1,'acceleratedSurfaceLost(', ')', 'void'),
+  \ javaapi#method(0,0,'restoreAcceleratedSurface(', ')', 'void'),
+  \ javaapi#method(0,1,'displayChanged(', ')', 'void'),
+  \ javaapi#method(0,1,'paletteChanged(', ')', 'void'),
+  \ javaapi#method(0,0,'isConfigValid(', 'GraphicsConfiguration)', 'boolean'),
+  \ javaapi#method(0,1,'getCapabilities(', 'GraphicsConfiguration)', 'ImageCapabilities'),
+  \ javaapi#method(0,1,'flush(', ')', 'void'),
   \ ])
 
 call javaapi#class('SurfaceManager', '', [
-  \ javaapi#method(0,'SurfaceManager(', ')', 'public'),
-  \ javaapi#method(1,'setImageAccessor(', 'ImageAccessor)', 'void'),
-  \ javaapi#method(1,'getManager(', 'Image)', 'SurfaceManager'),
-  \ javaapi#method(1,'setManager(', 'Image, SurfaceManager)', 'void'),
-  \ javaapi#method(0,'getCacheData(', 'Object)', 'Object'),
-  \ javaapi#method(0,'setCacheData(', 'Object, Object)', 'void'),
-  \ javaapi#method(0,'getPrimarySurfaceData(', ')', 'SurfaceData'),
-  \ javaapi#method(0,'restoreContents(', ')', 'SurfaceData'),
-  \ javaapi#method(0,'acceleratedSurfaceLost(', ')', 'void'),
-  \ javaapi#method(0,'getCapabilities(', 'GraphicsConfiguration)', 'ImageCapabilities'),
-  \ javaapi#method(0,'flush(', ')', 'void'),
-  \ javaapi#method(0,'setAccelerationPriority(', 'float)', 'void'),
-  \ ])
-
-call javaapi#class('ImageAccessor', '', [
-  \ javaapi#method(0,'ImageAccessor(', ')', 'public'),
-  \ javaapi#method(0,'getSurfaceManager(', 'Image)', 'SurfaceManager'),
-  \ javaapi#method(0,'setSurfaceManager(', 'Image, SurfaceManager)', 'void'),
+  \ javaapi#method(0,1,'SurfaceManager(', ')', ''),
+  \ javaapi#method(1,1,'setImageAccessor(', 'ImageAccessor)', 'void'),
+  \ javaapi#method(1,1,'getManager(', 'Image)', 'SurfaceManager'),
+  \ javaapi#method(1,1,'setManager(', 'Image, SurfaceManager)', 'void'),
+  \ javaapi#method(0,1,'getCacheData(', 'Object)', 'Object'),
+  \ javaapi#method(0,1,'setCacheData(', 'Object, Object)', 'void'),
+  \ javaapi#method(0,1,'getPrimarySurfaceData(', ')', 'SurfaceData'),
+  \ javaapi#method(0,1,'restoreContents(', ')', 'SurfaceData'),
+  \ javaapi#method(0,1,'acceleratedSurfaceLost(', ')', 'void'),
+  \ javaapi#method(0,1,'getCapabilities(', 'GraphicsConfiguration)', 'ImageCapabilities'),
+  \ javaapi#method(0,1,'flush(', ')', 'void'),
+  \ javaapi#method(0,1,'setAccelerationPriority(', 'float)', 'void'),
   \ ])
 
 call javaapi#namespace('sun.awt.image')
 
 call javaapi#class('SunVolatileImage', 'VolatileImage', [
-  \ javaapi#method(0,'SunVolatileImage(', 'Component, int, int)', 'public'),
-  \ javaapi#method(0,'SunVolatileImage(', 'Component, int, int, Object)', 'public'),
-  \ javaapi#method(0,'SunVolatileImage(', 'GraphicsConfiguration, int, int, int, ImageCapabilities)', 'public'),
-  \ javaapi#method(0,'getWidth(', ')', 'int'),
-  \ javaapi#method(0,'getHeight(', ')', 'int'),
-  \ javaapi#method(0,'getGraphicsConfig(', ')', 'GraphicsConfiguration'),
-  \ javaapi#method(0,'updateGraphicsConfig(', ')', 'void'),
-  \ javaapi#method(0,'getComponent(', ')', 'Component'),
-  \ javaapi#method(0,'getForcedAccelSurfaceType(', ')', 'int'),
-  \ javaapi#method(0,'createGraphics(', ')', 'Graphics2D'),
-  \ javaapi#method(0,'getProperty(', 'String, ImageObserver)', 'Object'),
-  \ javaapi#method(0,'getWidth(', 'ImageObserver)', 'int'),
-  \ javaapi#method(0,'getHeight(', 'ImageObserver)', 'int'),
-  \ javaapi#method(0,'getBackupImage(', ')', 'BufferedImage'),
-  \ javaapi#method(0,'getSnapshot(', ')', 'BufferedImage'),
-  \ javaapi#method(0,'validate(', 'GraphicsConfiguration)', 'int'),
-  \ javaapi#method(0,'contentsLost(', ')', 'boolean'),
-  \ javaapi#method(0,'getCapabilities(', ')', 'ImageCapabilities'),
-  \ javaapi#method(0,'getDestSurface(', ')', 'Surface'),
+  \ javaapi#field(0,0,'volSurfaceManager', 'VolatileSurfaceManager'),
+  \ javaapi#field(0,0,'comp', 'Component'),
+  \ javaapi#method(0,0,'SunVolatileImage(', 'Component, GraphicsConfiguration, int, int, Object, int, ImageCapabilities, int)', ''),
+  \ javaapi#method(0,1,'SunVolatileImage(', 'Component, int, int)', ''),
+  \ javaapi#method(0,1,'SunVolatileImage(', 'Component, int, int, Object)', ''),
+  \ javaapi#method(0,1,'SunVolatileImage(', 'GraphicsConfiguration, int, int, int, ImageCapabilities)', ''),
+  \ javaapi#method(0,1,'getWidth(', ')', 'int'),
+  \ javaapi#method(0,1,'getHeight(', ')', 'int'),
+  \ javaapi#method(0,1,'getGraphicsConfig(', ')', 'GraphicsConfiguration'),
+  \ javaapi#method(0,1,'updateGraphicsConfig(', ')', 'void'),
+  \ javaapi#method(0,1,'getComponent(', ')', 'Component'),
+  \ javaapi#method(0,1,'getForcedAccelSurfaceType(', ')', 'int'),
+  \ javaapi#method(0,0,'createSurfaceManager(', 'Object, ImageCapabilities)', 'VolatileSurfaceManager'),
+  \ javaapi#method(0,1,'createGraphics(', ')', 'Graphics2D'),
+  \ javaapi#method(0,1,'getProperty(', 'String, ImageObserver)', 'Object'),
+  \ javaapi#method(0,1,'getWidth(', 'ImageObserver)', 'int'),
+  \ javaapi#method(0,1,'getHeight(', 'ImageObserver)', 'int'),
+  \ javaapi#method(0,1,'getBackupImage(', ')', 'BufferedImage'),
+  \ javaapi#method(0,1,'getSnapshot(', ')', 'BufferedImage'),
+  \ javaapi#method(0,1,'validate(', 'GraphicsConfiguration)', 'int'),
+  \ javaapi#method(0,1,'contentsLost(', ')', 'boolean'),
+  \ javaapi#method(0,1,'getCapabilities(', ')', 'ImageCapabilities'),
+  \ javaapi#method(0,1,'getDestSurface(', ')', 'Surface'),
   \ ])
 
 call javaapi#namespace('sun.awt.image')
 
-call javaapi#class('ArgbBm', 'PixelConverter', [
-  \ javaapi#field(1,'instance', 'PixelConverter'),
-  \ javaapi#method(0,'rgbToPixel(', 'int, ColorModel)', 'int'),
-  \ javaapi#method(0,'pixelToRgb(', 'int, ColorModel)', 'int'),
-  \ ])
-
-call javaapi#class('Bgrx', 'PixelConverter', [
-  \ javaapi#field(1,'instance', 'PixelConverter'),
-  \ javaapi#method(0,'rgbToPixel(', 'int, ColorModel)', 'int'),
-  \ javaapi#method(0,'pixelToRgb(', 'int, ColorModel)', 'int'),
-  \ ])
-
-call javaapi#class('Rgbx', 'PixelConverter', [
-  \ javaapi#field(1,'instance', 'PixelConverter'),
-  \ javaapi#method(0,'rgbToPixel(', 'int, ColorModel)', 'int'),
-  \ javaapi#method(0,'pixelToRgb(', 'int, ColorModel)', 'int'),
-  \ ])
-
-call javaapi#class('UshortGray', 'ByteGray', [
-  \ javaapi#field(1,'instance', 'PixelConverter'),
-  \ javaapi#method(0,'rgbToPixel(', 'int, ColorModel)', 'int'),
-  \ javaapi#method(0,'pixelToRgb(', 'int, ColorModel)', 'int'),
-  \ ])
-
-call javaapi#class('ByteGray', 'PixelConverter', [
-  \ javaapi#field(1,'instance', 'PixelConverter'),
-  \ javaapi#method(0,'rgbToPixel(', 'int, ColorModel)', 'int'),
-  \ javaapi#method(0,'pixelToRgb(', 'int, ColorModel)', 'int'),
-  \ ])
-
-call javaapi#class('Ushort4444Argb', 'PixelConverter', [
-  \ javaapi#field(1,'instance', 'PixelConverter'),
-  \ javaapi#method(0,'rgbToPixel(', 'int, ColorModel)', 'int'),
-  \ javaapi#method(0,'pixelToRgb(', 'int, ColorModel)', 'int'),
-  \ ])
-
-call javaapi#class('Ushort555Rgbx', 'PixelConverter', [
-  \ javaapi#field(1,'instance', 'PixelConverter'),
-  \ javaapi#method(0,'rgbToPixel(', 'int, ColorModel)', 'int'),
-  \ javaapi#method(0,'pixelToRgb(', 'int, ColorModel)', 'int'),
-  \ ])
-
-call javaapi#class('Ushort555Rgb', 'PixelConverter', [
-  \ javaapi#field(1,'instance', 'PixelConverter'),
-  \ javaapi#method(0,'rgbToPixel(', 'int, ColorModel)', 'int'),
-  \ javaapi#method(0,'pixelToRgb(', 'int, ColorModel)', 'int'),
-  \ ])
-
-call javaapi#class('Ushort565Rgb', 'PixelConverter', [
-  \ javaapi#field(1,'instance', 'PixelConverter'),
-  \ javaapi#method(0,'rgbToPixel(', 'int, ColorModel)', 'int'),
-  \ javaapi#method(0,'pixelToRgb(', 'int, ColorModel)', 'int'),
-  \ ])
-
-call javaapi#class('RgbaPre', 'PixelConverter', [
-  \ javaapi#field(1,'instance', 'PixelConverter'),
-  \ javaapi#method(0,'rgbToPixel(', 'int, ColorModel)', 'int'),
-  \ javaapi#method(0,'pixelToRgb(', 'int, ColorModel)', 'int'),
-  \ ])
-
-call javaapi#class('Rgba', 'PixelConverter', [
-  \ javaapi#field(1,'instance', 'PixelConverter'),
-  \ javaapi#method(0,'rgbToPixel(', 'int, ColorModel)', 'int'),
-  \ javaapi#method(0,'pixelToRgb(', 'int, ColorModel)', 'int'),
-  \ ])
-
-call javaapi#class('Xbgr', 'PixelConverter', [
-  \ javaapi#field(1,'instance', 'PixelConverter'),
-  \ javaapi#method(0,'rgbToPixel(', 'int, ColorModel)', 'int'),
-  \ javaapi#method(0,'pixelToRgb(', 'int, ColorModel)', 'int'),
-  \ ])
-
-call javaapi#class('ArgbPre', 'PixelConverter', [
-  \ javaapi#field(1,'instance', 'PixelConverter'),
-  \ javaapi#method(0,'rgbToPixel(', 'int, ColorModel)', 'int'),
-  \ javaapi#method(0,'pixelToRgb(', 'int, ColorModel)', 'int'),
-  \ ])
-
-call javaapi#class('Argb', 'PixelConverter', [
-  \ javaapi#field(1,'instance', 'PixelConverter'),
-  \ javaapi#method(0,'rgbToPixel(', 'int, ColorModel)', 'int'),
-  \ javaapi#method(0,'pixelToRgb(', 'int, ColorModel)', 'int'),
-  \ ])
-
-call javaapi#class('Xrgb', 'PixelConverter', [
-  \ javaapi#field(1,'instance', 'PixelConverter'),
-  \ javaapi#method(0,'rgbToPixel(', 'int, ColorModel)', 'int'),
-  \ javaapi#method(0,'pixelToRgb(', 'int, ColorModel)', 'int'),
-  \ ])
-
 call javaapi#class('PixelConverter', '', [
-  \ javaapi#field(1,'instance', 'PixelConverter'),
-  \ javaapi#method(0,'rgbToPixel(', 'int, ColorModel)', 'int'),
-  \ javaapi#method(0,'pixelToRgb(', 'int, ColorModel)', 'int'),
-  \ javaapi#method(0,'getAlphaMask(', ')', 'int'),
+  \ javaapi#field(1,1,'instance', 'PixelConverter'),
+  \ javaapi#field(0,0,'alphaMask', 'int'),
+  \ javaapi#method(0,0,'PixelConverter(', ')', ''),
+  \ javaapi#method(0,1,'rgbToPixel(', 'int, ColorModel)', 'int'),
+  \ javaapi#method(0,1,'pixelToRgb(', 'int, ColorModel)', 'int'),
+  \ javaapi#method(0,1,'getAlphaMask(', ')', 'int'),
   \ ])
 

@@ -1,381 +1,225 @@
 call javaapi#namespace('com.sun.corba.se.impl.io')
 
 call javaapi#class('FVDCodeBaseImpl', '_CodeBaseImplBase', [
-  \ javaapi#method(0,'FVDCodeBaseImpl(', ')', 'public'),
-  \ javaapi#method(0,'get_ir(', ')', 'Repository'),
-  \ javaapi#method(0,'implementation(', 'String)', 'String'),
-  \ javaapi#method(0,'implementations(', 'String[])', 'String[]'),
-  \ javaapi#method(0,'meta(', 'String)', 'FullValueDescription'),
-  \ javaapi#method(0,'metas(', 'String[])', 'FullValueDescription[]'),
-  \ javaapi#method(0,'bases(', 'String)', 'String[]'),
-  \ ])
-
-call javaapi#class('1', 'PrivilegedAction', [
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('2', 'PrivilegedExceptionAction', [
-  \ javaapi#method(0,'run(', ') throws NoSuchMethodException, SecurityException', 'Object'),
-  \ ])
-
-call javaapi#class('ActiveRecursionManager', '', [
-  \ javaapi#method(0,'ActiveRecursionManager(', ')', 'public'),
-  \ javaapi#method(0,'addObject(', 'int, Object)', 'void'),
-  \ javaapi#method(0,'getObject(', 'int) throws IOException', 'Object'),
-  \ javaapi#method(0,'removeObject(', 'int)', 'void'),
-  \ javaapi#method(0,'containsObject(', 'int)', 'boolean'),
+  \ javaapi#method(0,1,'FVDCodeBaseImpl(', ')', ''),
+  \ javaapi#method(0,1,'get_ir(', ')', 'Repository'),
+  \ javaapi#method(0,1,'implementation(', 'String)', 'String'),
+  \ javaapi#method(0,1,'implementations(', 'String[])', 'String[]'),
+  \ javaapi#method(0,1,'meta(', 'String)', 'FullValueDescription'),
+  \ javaapi#method(0,1,'metas(', 'String[])', 'FullValueDescription[]'),
+  \ javaapi#method(0,1,'bases(', 'String)', 'String[]'),
   \ ])
 
 call javaapi#class('IIOPInputStream', 'InputStreamHook', [
-  \ javaapi#field(1,'kRemoteTypeCode', 'TypeCode'),
-  \ javaapi#field(1,'kValueTypeCode', 'TypeCode'),
-  \ javaapi#method(1,'setTestFVDFlag(', 'boolean)', 'void'),
-  \ javaapi#method(0,'IIOPInputStream(', ') throws IOException', 'public'),
-  \ javaapi#method(0,'setOrbStream(', 'InputStream)', 'void'),
-  \ javaapi#method(0,'getOrbStream(', ')', 'InputStream'),
-  \ javaapi#method(0,'setSender(', 'CodeBase)', 'void'),
-  \ javaapi#method(0,'getSender(', ')', 'CodeBase'),
-  \ javaapi#method(0,'setValueHandler(', 'ValueHandler)', 'void'),
-  \ javaapi#method(0,'getValueHandler(', ')', 'ValueHandler'),
-  \ javaapi#method(0,'increaseRecursionDepth(', ')', 'void'),
-  \ javaapi#method(0,'decreaseRecursionDepth(', ')', 'int'),
-  \ javaapi#method(0,'readObjectDelegate(', ') throws IOException', 'Object'),
-  \ javaapi#method(0,'simpleSkipObject(', 'String, CodeBase)', 'void'),
-  \ javaapi#method(0,'defaultReadObjectDelegate(', ')', 'void'),
-  \ javaapi#method(0,'enableResolveObjectDelegate(', 'boolean)', 'boolean'),
-  \ javaapi#method(0,'mark(', 'int)', 'void'),
-  \ javaapi#method(0,'markSupported(', ')', 'boolean'),
-  \ javaapi#method(0,'reset(', ') throws IOException', 'void'),
-  \ javaapi#method(0,'available(', ') throws IOException', 'int'),
-  \ javaapi#method(0,'close(', ') throws IOException', 'void'),
-  \ javaapi#method(0,'read(', ') throws IOException', 'int'),
-  \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
-  \ javaapi#method(0,'readBoolean(', ') throws IOException', 'boolean'),
-  \ javaapi#method(0,'readByte(', ') throws IOException', 'byte'),
-  \ javaapi#method(0,'readChar(', ') throws IOException', 'char'),
-  \ javaapi#method(0,'readDouble(', ') throws IOException', 'double'),
-  \ javaapi#method(0,'readFloat(', ') throws IOException', 'float'),
-  \ javaapi#method(0,'readFully(', 'byte[]) throws IOException', 'void'),
-  \ javaapi#method(0,'readFully(', 'byte[], int, int) throws IOException', 'void'),
-  \ javaapi#method(0,'readInt(', ') throws IOException', 'int'),
-  \ javaapi#method(0,'readLine(', ') throws IOException', 'String'),
-  \ javaapi#method(0,'readLong(', ') throws IOException', 'long'),
-  \ javaapi#method(0,'readShort(', ') throws IOException', 'short'),
-  \ javaapi#method(0,'readUnsignedByte(', ') throws IOException', 'int'),
-  \ javaapi#method(0,'readUnsignedShort(', ') throws IOException', 'int'),
-  \ javaapi#method(0,'readUTF(', ') throws IOException', 'String'),
-  \ javaapi#method(0,'registerValidation(', 'ObjectInputValidation, int) throws NotActiveException, InvalidObjectException', 'void'),
-  \ javaapi#method(0,'skipBytes(', 'int) throws IOException', 'int'),
-  \ ])
-
-call javaapi#class('1', 'PrivilegedAction', [
-  \ javaapi#method(0,'run(', ')', 'Object'),
+  \ javaapi#field(1,1,'kRemoteTypeCode', 'TypeCode'),
+  \ javaapi#field(1,1,'kValueTypeCode', 'TypeCode'),
+  \ javaapi#method(0,0,'getStreamFormatVersion(', ')', 'byte'),
+  \ javaapi#method(1,1,'setTestFVDFlag(', 'boolean)', 'void'),
+  \ javaapi#method(0,1,'IIOPInputStream(', ') throws IOException', ''),
+  \ javaapi#method(0,1,'setOrbStream(', 'InputStream)', 'void'),
+  \ javaapi#method(0,1,'getOrbStream(', ')', 'InputStream'),
+  \ javaapi#method(0,1,'setSender(', 'CodeBase)', 'void'),
+  \ javaapi#method(0,1,'getSender(', ')', 'CodeBase'),
+  \ javaapi#method(0,1,'setValueHandler(', 'ValueHandler)', 'void'),
+  \ javaapi#method(0,1,'getValueHandler(', ')', 'ValueHandler'),
+  \ javaapi#method(0,1,'increaseRecursionDepth(', ')', 'void'),
+  \ javaapi#method(0,1,'decreaseRecursionDepth(', ')', 'int'),
+  \ javaapi#method(0,1,'readObjectDelegate(', ') throws IOException', 'Object'),
+  \ javaapi#method(0,1,'simpleSkipObject(', 'String, CodeBase)', 'void'),
+  \ javaapi#method(0,0,'readObjectOverride(', ') throws OptionalDataException, ClassNotFoundException, IOException', 'Object'),
+  \ javaapi#method(0,1,'defaultReadObjectDelegate(', ')', 'void'),
+  \ javaapi#method(0,1,'enableResolveObjectDelegate(', 'boolean)', 'boolean'),
+  \ javaapi#method(0,1,'mark(', 'int)', 'void'),
+  \ javaapi#method(0,1,'markSupported(', ')', 'boolean'),
+  \ javaapi#method(0,1,'reset(', ') throws IOException', 'void'),
+  \ javaapi#method(0,1,'available(', ') throws IOException', 'int'),
+  \ javaapi#method(0,1,'close(', ') throws IOException', 'void'),
+  \ javaapi#method(0,1,'read(', ') throws IOException', 'int'),
+  \ javaapi#method(0,1,'read(', 'byte[], int, int) throws IOException', 'int'),
+  \ javaapi#method(0,1,'readBoolean(', ') throws IOException', 'boolean'),
+  \ javaapi#method(0,1,'readByte(', ') throws IOException', 'byte'),
+  \ javaapi#method(0,1,'readChar(', ') throws IOException', 'char'),
+  \ javaapi#method(0,1,'readDouble(', ') throws IOException', 'double'),
+  \ javaapi#method(0,1,'readFloat(', ') throws IOException', 'float'),
+  \ javaapi#method(0,1,'readFully(', 'byte[]) throws IOException', 'void'),
+  \ javaapi#method(0,1,'readFully(', 'byte[], int, int) throws IOException', 'void'),
+  \ javaapi#method(0,1,'readInt(', ') throws IOException', 'int'),
+  \ javaapi#method(0,1,'readLine(', ') throws IOException', 'String'),
+  \ javaapi#method(0,1,'readLong(', ') throws IOException', 'long'),
+  \ javaapi#method(0,1,'readShort(', ') throws IOException', 'short'),
+  \ javaapi#method(0,0,'readStreamHeader(', ') throws IOException, StreamCorruptedException', 'void'),
+  \ javaapi#method(0,1,'readUnsignedByte(', ') throws IOException', 'int'),
+  \ javaapi#method(0,1,'readUnsignedShort(', ') throws IOException', 'int'),
+  \ javaapi#method(0,0,'internalReadUTF(', 'InputStream)', 'String'),
+  \ javaapi#method(0,1,'readUTF(', ') throws IOException', 'String'),
+  \ javaapi#method(0,1,'registerValidation(', 'ObjectInputValidation, int) throws NotActiveException, InvalidObjectException', 'void'),
+  \ javaapi#method(0,0,'resolveClass(', 'ObjectStreamClass) throws IOException, ClassNotFoundException', 'Class'),
+  \ javaapi#method(0,0,'resolveObject(', 'Object) throws IOException', 'Object'),
+  \ javaapi#method(0,1,'skipBytes(', 'int) throws IOException', 'int'),
   \ ])
 
 call javaapi#class('IIOPOutputStream', 'OutputStreamHook', [
-  \ javaapi#method(0,'IIOPOutputStream(', ') throws IOException', 'public'),
-  \ javaapi#method(0,'setOrbStream(', 'OutputStream)', 'void'),
-  \ javaapi#method(0,'getOrbStream(', ')', 'OutputStream'),
-  \ javaapi#method(0,'increaseRecursionDepth(', ')', 'void'),
-  \ javaapi#method(0,'decreaseRecursionDepth(', ')', 'int'),
-  \ javaapi#method(0,'writeObjectOverride(', 'Object) throws IOException', 'void'),
-  \ javaapi#method(0,'simpleWriteObject(', 'Object, byte)', 'void'),
-  \ javaapi#method(0,'defaultWriteObjectDelegate(', ')', 'void'),
-  \ javaapi#method(0,'enableReplaceObjectDelegate(', 'boolean)', 'boolean'),
-  \ javaapi#method(0,'close(', ') throws IOException', 'void'),
-  \ javaapi#method(0,'flush(', ') throws IOException', 'void'),
-  \ javaapi#method(0,'reset(', ') throws IOException', 'void'),
-  \ javaapi#method(0,'write(', 'byte[]) throws IOException', 'void'),
-  \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
-  \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
-  \ javaapi#method(0,'writeBoolean(', 'boolean) throws IOException', 'void'),
-  \ javaapi#method(0,'writeByte(', 'int) throws IOException', 'void'),
-  \ javaapi#method(0,'writeBytes(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,'writeChar(', 'int) throws IOException', 'void'),
-  \ javaapi#method(0,'writeChars(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,'writeDouble(', 'double) throws IOException', 'void'),
-  \ javaapi#method(0,'writeFloat(', 'float) throws IOException', 'void'),
-  \ javaapi#method(0,'writeInt(', 'int) throws IOException', 'void'),
-  \ javaapi#method(0,'writeLong(', 'long) throws IOException', 'void'),
-  \ javaapi#method(0,'writeShort(', 'int) throws IOException', 'void'),
-  \ javaapi#method(0,'writeUTF(', 'String) throws IOException', 'void'),
-  \ ])
-
-call javaapi#class('DefaultState', 'ReadObjectState', [
-  \ javaapi#method(0,'beginUnmarshalCustomValue(', 'InputStreamHook, boolean, boolean) throws IOException', 'void'),
-  \ ])
-
-call javaapi#class('HookGetFields', 'GetField', [
-  \ javaapi#method(0,'getObjectStreamClass(', ')', 'ObjectStreamClass'),
-  \ javaapi#method(0,'defaulted(', 'String) throws IOException, IllegalArgumentException', 'boolean'),
-  \ javaapi#method(0,'get(', 'String, boolean) throws IOException, IllegalArgumentException', 'boolean'),
-  \ javaapi#method(0,'get(', 'String, char) throws IOException, IllegalArgumentException', 'char'),
-  \ javaapi#method(0,'get(', 'String, byte) throws IOException, IllegalArgumentException', 'byte'),
-  \ javaapi#method(0,'get(', 'String, short) throws IOException, IllegalArgumentException', 'short'),
-  \ javaapi#method(0,'get(', 'String, int) throws IOException, IllegalArgumentException', 'int'),
-  \ javaapi#method(0,'get(', 'String, long) throws IOException, IllegalArgumentException', 'long'),
-  \ javaapi#method(0,'get(', 'String, float) throws IOException, IllegalArgumentException', 'float'),
-  \ javaapi#method(0,'get(', 'String, double) throws IOException, IllegalArgumentException', 'double'),
-  \ javaapi#method(0,'get(', 'String, Object) throws IOException, IllegalArgumentException', 'Object'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('InReadObjectDefaultsSentState', 'ReadObjectState', [
-  \ javaapi#method(0,'beginUnmarshalCustomValue(', 'InputStreamHook, boolean, boolean)', 'void'),
-  \ javaapi#method(0,'endUnmarshalCustomValue(', 'InputStreamHook)', 'void'),
-  \ javaapi#method(0,'endDefaultReadObject(', 'InputStreamHook) throws IOException', 'void'),
-  \ javaapi#method(0,'readData(', 'InputStreamHook) throws IOException', 'void'),
-  \ ])
-
-call javaapi#class('InReadObjectNoMoreOptionalDataState', 'InReadObjectOptionalDataState', [
-  \ javaapi#method(0,'readData(', 'InputStreamHook) throws IOException', 'void'),
-  \ ])
-
-call javaapi#class('InReadObjectOptionalDataState', 'ReadObjectState', [
-  \ javaapi#method(0,'beginUnmarshalCustomValue(', 'InputStreamHook, boolean, boolean)', 'void'),
-  \ javaapi#method(0,'endUnmarshalCustomValue(', 'InputStreamHook) throws IOException', 'void'),
-  \ javaapi#method(0,'beginDefaultReadObject(', 'InputStreamHook) throws IOException', 'void'),
-  \ ])
-
-call javaapi#class('InReadObjectPastDefaultsRemoteDidNotUseWOState', 'ReadObjectState', [
-  \ javaapi#method(0,'beginUnmarshalCustomValue(', 'InputStreamHook, boolean, boolean)', 'void'),
-  \ javaapi#method(0,'beginDefaultReadObject(', 'InputStreamHook) throws IOException', 'void'),
-  \ javaapi#method(0,'readData(', 'InputStreamHook)', 'void'),
-  \ ])
-
-call javaapi#class('InReadObjectRemoteDidNotUseWriteObjectState', 'ReadObjectState', [
-  \ javaapi#method(0,'beginUnmarshalCustomValue(', 'InputStreamHook, boolean, boolean)', 'void'),
-  \ javaapi#method(0,'endDefaultReadObject(', 'InputStreamHook)', 'void'),
-  \ javaapi#method(0,'readData(', 'InputStreamHook)', 'void'),
-  \ ])
-
-call javaapi#class('NoReadObjectDefaultsSentState', 'ReadObjectState', [
-  \ javaapi#method(0,'endUnmarshalCustomValue(', 'InputStreamHook) throws IOException', 'void'),
-  \ ])
-
-call javaapi#class('ReadObjectState', '', [
-  \ javaapi#method(0,'beginUnmarshalCustomValue(', 'InputStreamHook, boolean, boolean) throws IOException', 'void'),
-  \ javaapi#method(0,'endUnmarshalCustomValue(', 'InputStreamHook) throws IOException', 'void'),
-  \ javaapi#method(0,'beginDefaultReadObject(', 'InputStreamHook) throws IOException', 'void'),
-  \ javaapi#method(0,'endDefaultReadObject(', 'InputStreamHook) throws IOException', 'void'),
-  \ javaapi#method(0,'readData(', 'InputStreamHook) throws IOException', 'void'),
+  \ javaapi#method(0,1,'IIOPOutputStream(', ') throws IOException', ''),
+  \ javaapi#method(0,0,'beginOptionalCustomData(', ')', 'void'),
+  \ javaapi#method(0,1,'setOrbStream(', 'OutputStream)', 'void'),
+  \ javaapi#method(0,1,'getOrbStream(', ')', 'OutputStream'),
+  \ javaapi#method(0,1,'increaseRecursionDepth(', ')', 'void'),
+  \ javaapi#method(0,1,'decreaseRecursionDepth(', ')', 'int'),
+  \ javaapi#method(0,1,'writeObjectOverride(', 'Object) throws IOException', 'void'),
+  \ javaapi#method(0,1,'simpleWriteObject(', 'Object, byte)', 'void'),
+  \ javaapi#method(0,1,'defaultWriteObjectDelegate(', ')', 'void'),
+  \ javaapi#method(0,1,'enableReplaceObjectDelegate(', 'boolean)', 'boolean'),
+  \ javaapi#method(0,0,'annotateClass(', 'Class<?>) throws IOException', 'void'),
+  \ javaapi#method(0,1,'close(', ') throws IOException', 'void'),
+  \ javaapi#method(0,0,'drain(', ') throws IOException', 'void'),
+  \ javaapi#method(0,1,'flush(', ') throws IOException', 'void'),
+  \ javaapi#method(0,0,'replaceObject(', 'Object) throws IOException', 'Object'),
+  \ javaapi#method(0,1,'reset(', ') throws IOException', 'void'),
+  \ javaapi#method(0,1,'write(', 'byte[]) throws IOException', 'void'),
+  \ javaapi#method(0,1,'write(', 'byte[], int, int) throws IOException', 'void'),
+  \ javaapi#method(0,1,'write(', 'int) throws IOException', 'void'),
+  \ javaapi#method(0,1,'writeBoolean(', 'boolean) throws IOException', 'void'),
+  \ javaapi#method(0,1,'writeByte(', 'int) throws IOException', 'void'),
+  \ javaapi#method(0,1,'writeBytes(', 'String) throws IOException', 'void'),
+  \ javaapi#method(0,1,'writeChar(', 'int) throws IOException', 'void'),
+  \ javaapi#method(0,1,'writeChars(', 'String) throws IOException', 'void'),
+  \ javaapi#method(0,1,'writeDouble(', 'double) throws IOException', 'void'),
+  \ javaapi#method(0,1,'writeFloat(', 'float) throws IOException', 'void'),
+  \ javaapi#method(0,1,'writeInt(', 'int) throws IOException', 'void'),
+  \ javaapi#method(0,1,'writeLong(', 'long) throws IOException', 'void'),
+  \ javaapi#method(0,1,'writeShort(', 'int) throws IOException', 'void'),
+  \ javaapi#method(0,0,'writeStreamHeader(', ') throws IOException', 'void'),
+  \ javaapi#method(0,0,'internalWriteUTF(', 'OutputStream, String)', 'void'),
+  \ javaapi#method(0,1,'writeUTF(', 'String) throws IOException', 'void'),
   \ ])
 
 call javaapi#class('InputStreamHook', 'ObjectInputStream', [
-  \ javaapi#method(0,'InputStreamHook(', ') throws IOException', 'public'),
-  \ javaapi#method(0,'defaultReadObject(', ') throws IOException, ClassNotFoundException, NotActiveException', 'void'),
-  \ javaapi#method(0,'defaultReadObjectDelegate(', ')', 'void'),
-  \ javaapi#method(0,'readFields(', ') throws IOException, ClassNotFoundException, NotActiveException', 'GetField'),
-  \ ])
-
-call javaapi#class('1', 'PrivilegedAction', [
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('2', 'PrivilegedAction', [
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('3', 'PrivilegedAction', [
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('4', 'PrivilegedAction', [
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('CompareClassByName', 'Comparator', [
-  \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
-  \ ])
-
-call javaapi#class('CompareMemberByName', 'Comparator', [
-  \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
-  \ ])
-
-call javaapi#class('CompareObjStrFieldsByName', 'Comparator', [
-  \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
-  \ ])
-
-call javaapi#class('MethodSignature', 'Comparator', [
-  \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
-  \ ])
-
-call javaapi#class('ObjectStreamClassEntry', '', [
-  \ javaapi#method(0,'get(', ')', 'Object'),
+  \ javaapi#field(0,0,'readObjectState', 'ReadObjectState'),
+  \ javaapi#field(1,0,'DEFAULT_STATE', 'ReadObjectState'),
+  \ javaapi#field(1,0,'IN_READ_OBJECT_OPT_DATA', 'ReadObjectState'),
+  \ javaapi#field(1,0,'IN_READ_OBJECT_NO_MORE_OPT_DATA', 'ReadObjectState'),
+  \ javaapi#field(1,0,'IN_READ_OBJECT_DEFAULTS_SENT', 'ReadObjectState'),
+  \ javaapi#field(1,0,'NO_READ_OBJECT_DEFAULTS_SENT', 'ReadObjectState'),
+  \ javaapi#field(1,0,'IN_READ_OBJECT_REMOTE_NOT_CUSTOM_MARSHALED', 'ReadObjectState'),
+  \ javaapi#field(1,0,'IN_READ_OBJECT_PAST_DEFAULTS_REMOTE_NOT_CUSTOM', 'ReadObjectState'),
+  \ javaapi#method(0,1,'InputStreamHook(', ') throws IOException', ''),
+  \ javaapi#method(0,1,'defaultReadObject(', ') throws IOException, ClassNotFoundException, NotActiveException', 'void'),
+  \ javaapi#method(0,1,'defaultReadObjectDelegate(', ')', 'void'),
+  \ javaapi#method(0,1,'readFields(', ') throws IOException, ClassNotFoundException, NotActiveException', 'GetField'),
+  \ javaapi#method(0,0,'setState(', 'ReadObjectState)', 'void'),
+  \ javaapi#method(0,0,'getStreamFormatVersion(', ')', 'byte'),
+  \ javaapi#method(0,0,'getOrbStream(', ')', 'InputStream'),
+  \ javaapi#method(0,0,'throwOptionalDataIncompatibleException(', ')', 'void'),
   \ ])
 
 call javaapi#class('ObjectStreamClass', 'Serializable', [
-  \ javaapi#field(1,'kDefaultUID', 'long'),
-  \ javaapi#field(1,'CLASS_MASK', 'int'),
-  \ javaapi#field(1,'FIELD_MASK', 'int'),
-  \ javaapi#field(1,'METHOD_MASK', 'int'),
-  \ javaapi#field(1,'NO_FIELDS', 'ObjectStreamField[]'),
-  \ javaapi#method(0,'getName(', ')', 'String'),
-  \ javaapi#method(1,'getSerialVersionUID(', 'Class)', 'long'),
-  \ javaapi#method(0,'getSerialVersionUID(', ')', 'long'),
-  \ javaapi#method(0,'getSerialVersionUIDStr(', ')', 'String'),
-  \ javaapi#method(1,'getActualSerialVersionUID(', 'Class)', 'long'),
-  \ javaapi#method(0,'getActualSerialVersionUID(', ')', 'long'),
-  \ javaapi#method(0,'getActualSerialVersionUIDStr(', ')', 'String'),
-  \ javaapi#method(0,'forClass(', ')', 'Class'),
-  \ javaapi#method(0,'getFields(', ')', 'ObjectStreamField[]'),
-  \ javaapi#method(0,'hasField(', 'ValueMember)', 'boolean'),
-  \ javaapi#method(0,'getField(', 'String)', 'ObjectStreamField'),
-  \ javaapi#method(0,'writeReplace(', 'Serializable)', 'Serializable'),
-  \ javaapi#method(0,'readResolve(', 'Object)', 'Object'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'getRMIIIOPOptionalDataRepId(', ')', 'String'),
-  \ ])
-
-call javaapi#class('1', 'PrivilegedAction', [
-  \ javaapi#method(0,'run(', ')', 'Object'),
+  \ javaapi#field(1,1,'kDefaultUID', 'long'),
+  \ javaapi#field(1,1,'CLASS_MASK', 'int'),
+  \ javaapi#field(1,1,'FIELD_MASK', 'int'),
+  \ javaapi#field(1,1,'METHOD_MASK', 'int'),
+  \ javaapi#field(1,1,'NO_FIELDS', 'ObjectStreamField[]'),
+  \ javaapi#method(0,1,'getName(', ')', 'String'),
+  \ javaapi#method(1,1,'getSerialVersionUID(', 'Class)', 'long'),
+  \ javaapi#method(0,1,'getSerialVersionUID(', ')', 'long'),
+  \ javaapi#method(0,1,'getSerialVersionUIDStr(', ')', 'String'),
+  \ javaapi#method(1,1,'getActualSerialVersionUID(', 'Class)', 'long'),
+  \ javaapi#method(0,1,'getActualSerialVersionUID(', ')', 'long'),
+  \ javaapi#method(0,1,'getActualSerialVersionUIDStr(', ')', 'String'),
+  \ javaapi#method(0,1,'forClass(', ')', 'Class'),
+  \ javaapi#method(0,1,'getFields(', ')', 'ObjectStreamField[]'),
+  \ javaapi#method(0,1,'hasField(', 'ValueMember)', 'boolean'),
+  \ javaapi#method(0,1,'getField(', 'String)', 'ObjectStreamField'),
+  \ javaapi#method(0,1,'writeReplace(', 'Serializable)', 'Serializable'),
+  \ javaapi#method(0,1,'readResolve(', 'Object)', 'Object'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
+  \ javaapi#method(0,1,'getRMIIIOPOptionalDataRepId(', ')', 'String'),
   \ ])
 
 call javaapi#class('ObjectStreamClassCorbaExt', '', [
   \ ])
 
-call javaapi#class('1', 'PrivilegedAction', [
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
 call javaapi#class('ObjectStreamField', 'Comparable', [
-  \ javaapi#method(0,'getName(', ')', 'String'),
-  \ javaapi#method(0,'getType(', ')', 'Class'),
-  \ javaapi#method(0,'getTypeCode(', ')', 'char'),
-  \ javaapi#method(0,'getTypeString(', ')', 'String'),
-  \ javaapi#method(0,'isPrimitive(', ')', 'boolean'),
-  \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
-  \ javaapi#method(0,'typeEquals(', 'ObjectStreamField)', 'boolean'),
-  \ javaapi#method(0,'getSignature(', ')', 'String'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'getClazz(', ')', 'Class'),
-  \ javaapi#method(0,'getFieldID(', ')', 'long'),
+  \ javaapi#method(0,1,'getName(', ')', 'String'),
+  \ javaapi#method(0,1,'getType(', ')', 'Class'),
+  \ javaapi#method(0,1,'getTypeCode(', ')', 'char'),
+  \ javaapi#method(0,1,'getTypeString(', ')', 'String'),
+  \ javaapi#method(0,1,'isPrimitive(', ')', 'boolean'),
+  \ javaapi#method(0,1,'compareTo(', 'Object)', 'int'),
+  \ javaapi#method(0,1,'typeEquals(', 'ObjectStreamField)', 'boolean'),
+  \ javaapi#method(0,1,'getSignature(', ')', 'String'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
+  \ javaapi#method(0,1,'getClazz(', ')', 'Class'),
+  \ javaapi#method(0,1,'getFieldID(', ')', 'long'),
   \ ])
 
 call javaapi#class('OptionalDataException', 'IOException', [
-  \ javaapi#field(0,'length', 'int'),
-  \ javaapi#field(0,'eof', 'boolean'),
-  \ ])
-
-call javaapi#class('1', '', [
-  \ ])
-
-call javaapi#class('DefaultState', 'WriteObjectState', [
-  \ javaapi#method(0,'enterWriteObject(', 'OutputStreamHook) throws IOException', 'void'),
-  \ ])
-
-call javaapi#class('HookPutFields', 'PutField', [
-  \ javaapi#method(0,'put(', 'String, boolean)', 'void'),
-  \ javaapi#method(0,'put(', 'String, char)', 'void'),
-  \ javaapi#method(0,'put(', 'String, byte)', 'void'),
-  \ javaapi#method(0,'put(', 'String, short)', 'void'),
-  \ javaapi#method(0,'put(', 'String, int)', 'void'),
-  \ javaapi#method(0,'put(', 'String, long)', 'void'),
-  \ javaapi#method(0,'put(', 'String, float)', 'void'),
-  \ javaapi#method(0,'put(', 'String, double)', 'void'),
-  \ javaapi#method(0,'put(', 'String, Object)', 'void'),
-  \ javaapi#method(0,'write(', 'ObjectOutput) throws IOException', 'void'),
-  \ ])
-
-call javaapi#class('InWriteObjectState', 'WriteObjectState', [
-  \ javaapi#method(0,'enterWriteObject(', 'OutputStreamHook) throws IOException', 'void'),
-  \ javaapi#method(0,'exitWriteObject(', 'OutputStreamHook) throws IOException', 'void'),
-  \ javaapi#method(0,'defaultWriteObject(', 'OutputStreamHook) throws IOException', 'void'),
-  \ javaapi#method(0,'writeData(', 'OutputStreamHook) throws IOException', 'void'),
-  \ ])
-
-call javaapi#class('WriteObjectState', '', [
-  \ javaapi#method(0,'enterWriteObject(', 'OutputStreamHook) throws IOException', 'void'),
-  \ javaapi#method(0,'exitWriteObject(', 'OutputStreamHook) throws IOException', 'void'),
-  \ javaapi#method(0,'defaultWriteObject(', 'OutputStreamHook) throws IOException', 'void'),
-  \ javaapi#method(0,'writeData(', 'OutputStreamHook) throws IOException', 'void'),
-  \ ])
-
-call javaapi#class('WroteCustomDataState', 'InWriteObjectState', [
-  \ javaapi#method(0,'exitWriteObject(', 'OutputStreamHook) throws IOException', 'void'),
-  \ javaapi#method(0,'defaultWriteObject(', 'OutputStreamHook) throws IOException', 'void'),
-  \ javaapi#method(0,'writeData(', 'OutputStreamHook) throws IOException', 'void'),
-  \ ])
-
-call javaapi#class('WroteDefaultDataState', 'InWriteObjectState', [
-  \ javaapi#method(0,'exitWriteObject(', 'OutputStreamHook) throws IOException', 'void'),
-  \ javaapi#method(0,'defaultWriteObject(', 'OutputStreamHook) throws IOException', 'void'),
-  \ javaapi#method(0,'writeData(', 'OutputStreamHook) throws IOException', 'void'),
+  \ javaapi#field(0,1,'length', 'int'),
+  \ javaapi#field(0,1,'eof', 'boolean'),
   \ ])
 
 call javaapi#class('OutputStreamHook', 'ObjectOutputStream', [
-  \ javaapi#method(0,'OutputStreamHook(', ') throws IOException', 'public'),
-  \ javaapi#method(0,'defaultWriteObject(', ') throws IOException', 'void'),
-  \ javaapi#method(0,'defaultWriteObjectDelegate(', ')', 'void'),
-  \ javaapi#method(0,'putFields(', ') throws IOException', 'PutField'),
-  \ javaapi#method(0,'getStreamFormatVersion(', ')', 'byte'),
-  \ javaapi#method(0,'writeFields(', ') throws IOException', 'void'),
-  \ javaapi#method(0,'getOrbStream(', ')', 'OutputStream'),
+  \ javaapi#field(0,0,'streamFormatVersion', 'byte'),
+  \ javaapi#field(0,0,'writeObjectState', 'WriteObjectState'),
+  \ javaapi#field(1,0,'NOT_IN_WRITE_OBJECT', 'WriteObjectState'),
+  \ javaapi#field(1,0,'IN_WRITE_OBJECT', 'WriteObjectState'),
+  \ javaapi#field(1,0,'WROTE_DEFAULT_DATA', 'WriteObjectState'),
+  \ javaapi#field(1,0,'WROTE_CUSTOM_DATA', 'WriteObjectState'),
+  \ javaapi#method(0,1,'OutputStreamHook(', ') throws IOException', ''),
+  \ javaapi#method(0,1,'defaultWriteObject(', ') throws IOException', 'void'),
+  \ javaapi#method(0,1,'defaultWriteObjectDelegate(', ')', 'void'),
+  \ javaapi#method(0,1,'putFields(', ') throws IOException', 'PutField'),
+  \ javaapi#method(0,1,'getStreamFormatVersion(', ')', 'byte'),
+  \ javaapi#method(0,1,'writeFields(', ') throws IOException', 'void'),
+  \ javaapi#method(0,1,'getOrbStream(', ')', 'OutputStream'),
+  \ javaapi#method(0,0,'beginOptionalCustomData(', ')', 'void'),
+  \ javaapi#method(0,0,'setState(', 'WriteObjectState)', 'void'),
   \ ])
 
 call javaapi#class('TypeMismatchException', 'Error', [
-  \ javaapi#method(0,'TypeMismatchException(', ')', 'public'),
-  \ javaapi#method(0,'TypeMismatchException(', 'String)', 'public'),
-  \ ])
-
-call javaapi#class('1', 'PrivilegedAction', [
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('2', 'IIOPOutputStream>', [
-  \ javaapi#method(0,'run(', ') throws IOException', 'IIOPOutputStream'),
-  \ javaapi#method(0,'run(', ') throws Exception', 'Object'),
-  \ ])
-
-call javaapi#class('3', 'IIOPInputStream>', [
-  \ javaapi#method(0,'run(', ') throws IOException', 'IIOPInputStream'),
-  \ javaapi#method(0,'run(', ') throws Exception', 'Object'),
+  \ javaapi#method(0,1,'TypeMismatchException(', ')', ''),
+  \ javaapi#method(0,1,'TypeMismatchException(', 'String)', ''),
   \ ])
 
 call javaapi#class('ValueHandlerImpl', 'ValueHandlerMultiFormat', [
-  \ javaapi#field(1,'FORMAT_VERSION_PROPERTY', 'String'),
-  \ javaapi#field(1,'kRemoteType', 'short'),
-  \ javaapi#field(1,'kAbstractType', 'short'),
-  \ javaapi#field(1,'kValueType', 'short'),
-  \ javaapi#method(0,'getMaximumStreamFormatVersion(', ')', 'byte'),
-  \ javaapi#method(0,'writeValue(', 'OutputStream, Serializable, byte)', 'void'),
-  \ javaapi#method(0,'ValueHandlerImpl(', ')', 'public'),
-  \ javaapi#method(0,'ValueHandlerImpl(', 'boolean)', 'public'),
-  \ javaapi#method(0,'writeValue(', 'OutputStream, Serializable)', 'void'),
-  \ javaapi#method(0,'readValue(', 'InputStream, int, Class, String, RunTime)', 'Serializable'),
-  \ javaapi#method(0,'getRMIRepositoryID(', 'Class)', 'String'),
-  \ javaapi#method(0,'isCustomMarshaled(', 'Class)', 'boolean'),
-  \ javaapi#method(0,'getRunTimeCodeBase(', ')', 'RunTime'),
-  \ javaapi#method(0,'useFullValueDescription(', 'Class, String) throws IOException', 'boolean'),
-  \ javaapi#method(0,'getClassName(', 'String)', 'String'),
-  \ javaapi#method(0,'getClassFromType(', 'String) throws ClassNotFoundException', 'Class'),
-  \ javaapi#method(0,'getAnyClassFromType(', 'String) throws ClassNotFoundException', 'Class'),
-  \ javaapi#method(0,'createForAnyType(', 'Class)', 'String'),
-  \ javaapi#method(0,'getDefinedInId(', 'String)', 'String'),
-  \ javaapi#method(0,'getUnqualifiedName(', 'String)', 'String'),
-  \ javaapi#method(0,'getSerialVersionUID(', 'String)', 'String'),
-  \ javaapi#method(0,'isAbstractBase(', 'Class)', 'boolean'),
-  \ javaapi#method(0,'isSequence(', 'String)', 'boolean'),
-  \ javaapi#method(0,'writeReplace(', 'Serializable)', 'Serializable'),
-  \ ])
-
-call javaapi#class('1', '', [
-  \ ])
-
-call javaapi#class('KeyValuePair', '', [
-  \ ])
-
-call javaapi#class('IdentityKeyValueStack', '', [
+  \ javaapi#field(1,1,'FORMAT_VERSION_PROPERTY', 'String'),
+  \ javaapi#field(1,1,'kRemoteType', 'short'),
+  \ javaapi#field(1,1,'kAbstractType', 'short'),
+  \ javaapi#field(1,1,'kValueType', 'short'),
+  \ javaapi#method(0,1,'getMaximumStreamFormatVersion(', ')', 'byte'),
+  \ javaapi#method(0,1,'writeValue(', 'OutputStream, Serializable, byte)', 'void'),
+  \ javaapi#method(0,1,'ValueHandlerImpl(', ')', ''),
+  \ javaapi#method(0,1,'ValueHandlerImpl(', 'boolean)', ''),
+  \ javaapi#method(0,1,'writeValue(', 'OutputStream, Serializable)', 'void'),
+  \ javaapi#method(0,1,'readValue(', 'InputStream, int, Class, String, RunTime)', 'Serializable'),
+  \ javaapi#method(0,1,'getRMIRepositoryID(', 'Class)', 'String'),
+  \ javaapi#method(0,1,'isCustomMarshaled(', 'Class)', 'boolean'),
+  \ javaapi#method(0,1,'getRunTimeCodeBase(', ')', 'RunTime'),
+  \ javaapi#method(0,1,'useFullValueDescription(', 'Class, String) throws IOException', 'boolean'),
+  \ javaapi#method(0,1,'getClassName(', 'String)', 'String'),
+  \ javaapi#method(0,1,'getClassFromType(', 'String) throws ClassNotFoundException', 'Class'),
+  \ javaapi#method(0,1,'getAnyClassFromType(', 'String) throws ClassNotFoundException', 'Class'),
+  \ javaapi#method(0,1,'createForAnyType(', 'Class)', 'String'),
+  \ javaapi#method(0,1,'getDefinedInId(', 'String)', 'String'),
+  \ javaapi#method(0,1,'getUnqualifiedName(', 'String)', 'String'),
+  \ javaapi#method(0,1,'getSerialVersionUID(', 'String)', 'String'),
+  \ javaapi#method(0,1,'isAbstractBase(', 'Class)', 'boolean'),
+  \ javaapi#method(0,1,'isSequence(', 'String)', 'boolean'),
+  \ javaapi#method(0,1,'writeReplace(', 'Serializable)', 'Serializable'),
+  \ javaapi#method(0,0,'writeCharArray(', 'OutputStream, char[], int, int)', 'void'),
+  \ javaapi#method(0,0,'readCharArray(', 'InputStream, char[], int, int)', 'void'),
+  \ javaapi#method(0,0,'getOutputStreamClassName(', ')', 'String'),
+  \ javaapi#method(0,0,'getInputStreamClassName(', ')', 'String'),
+  \ javaapi#method(0,0,'getJavaCharTCKind(', ')', 'TCKind'),
   \ ])
 
 call javaapi#class('ValueUtility', '', [
-  \ javaapi#field(1,'PRIVATE_MEMBER', 'short'),
-  \ javaapi#field(1,'PUBLIC_MEMBER', 'short'),
-  \ javaapi#method(0,'ValueUtility(', ')', 'public'),
-  \ javaapi#method(1,'getSignature(', 'ValueMember) throws ClassNotFoundException', 'String'),
-  \ javaapi#method(1,'translate(', 'ORB, ObjectStreamClass, ValueHandler)', 'FullValueDescription'),
-  \ javaapi#method(1,'isAssignableFrom(', 'String, FullValueDescription, CodeBase)', 'boolean'),
-  \ javaapi#method(1,'createTypeCodeForClass(', 'ORB, Class, ValueHandler)', 'TypeCode'),
-  \ javaapi#method(1,'getPrimitiveTypeCodeForClass(', 'ORB, Class, ValueHandler)', 'TypeCode'),
+  \ javaapi#field(1,1,'PRIVATE_MEMBER', 'short'),
+  \ javaapi#field(1,1,'PUBLIC_MEMBER', 'short'),
+  \ javaapi#method(0,1,'ValueUtility(', ')', ''),
+  \ javaapi#method(1,1,'getSignature(', 'ValueMember) throws ClassNotFoundException', 'String'),
+  \ javaapi#method(1,1,'translate(', 'ORB, ObjectStreamClass, ValueHandler)', 'FullValueDescription'),
+  \ javaapi#method(1,1,'isAssignableFrom(', 'String, FullValueDescription, CodeBase)', 'boolean'),
+  \ javaapi#method(1,1,'createTypeCodeForClass(', 'ORB, Class, ValueHandler)', 'TypeCode'),
+  \ javaapi#method(1,1,'getPrimitiveTypeCodeForClass(', 'ORB, Class, ValueHandler)', 'TypeCode'),
   \ ])
 

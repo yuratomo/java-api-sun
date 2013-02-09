@@ -1,262 +1,197 @@
 call javaapi#namespace('com.sun.xml.internal.ws.handler')
 
 call javaapi#class('ClientLogicalHandlerTube', 'HandlerTube', [
-  \ javaapi#method(0,'ClientLogicalHandlerTube(', 'WSBinding, SEIModel, WSDLPort, Tube)', 'public'),
-  \ javaapi#method(0,'ClientLogicalHandlerTube(', 'WSBinding, SEIModel, Tube, HandlerTube)', 'public'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'AbstractFilterTubeImpl'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'AbstractTubeImpl'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'Tube'),
+  \ javaapi#method(0,1,'ClientLogicalHandlerTube(', 'WSBinding, SEIModel, WSDLPort, Tube)', ''),
+  \ javaapi#method(0,1,'ClientLogicalHandlerTube(', 'WSBinding, SEIModel, Tube, HandlerTube)', ''),
+  \ javaapi#method(0,0,'initiateClosing(', 'MessageContext)', 'void'),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'AbstractFilterTubeImpl'),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'AbstractTubeImpl'),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'Tube'),
   \ ])
 
 call javaapi#class('ClientMessageHandlerTube', 'HandlerTube', [
-  \ javaapi#method(0,'ClientMessageHandlerTube(', 'SEIModel, WSBinding, WSDLPort, Tube)', 'public'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'AbstractFilterTubeImpl'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'AbstractTubeImpl'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'Tube'),
+  \ javaapi#method(0,1,'ClientMessageHandlerTube(', 'SEIModel, WSBinding, WSDLPort, Tube)', ''),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'AbstractFilterTubeImpl'),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'AbstractTubeImpl'),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'Tube'),
   \ ])
 
 call javaapi#class('ClientSOAPHandlerTube', 'HandlerTube', [
-  \ javaapi#method(0,'ClientSOAPHandlerTube(', 'WSBinding, WSDLPort, Tube)', 'public'),
-  \ javaapi#method(0,'ClientSOAPHandlerTube(', 'WSBinding, Tube, HandlerTube)', 'public'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'AbstractFilterTubeImpl'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'AbstractTubeImpl'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'Tube'),
-  \ ])
-
-call javaapi#class('HandlerChainType', '', [
-  \ javaapi#method(0,'HandlerChainType(', ')', 'public'),
-  \ javaapi#method(0,'setServiceNamePattern(', 'QName)', 'void'),
-  \ javaapi#method(0,'getServiceNamePattern(', ')', 'QName'),
-  \ javaapi#method(0,'setPortNamePattern(', 'QName)', 'void'),
-  \ javaapi#method(0,'getPortNamePattern(', ')', 'QName'),
-  \ javaapi#method(0,'getProtocolBindings(', ')', 'String>'),
-  \ javaapi#method(0,'addProtocolBinding(', 'String)', 'void'),
-  \ javaapi#method(0,'isConstraintSet(', ')', 'boolean'),
-  \ javaapi#method(0,'getId(', ')', 'String'),
-  \ javaapi#method(0,'setId(', 'String)', 'void'),
-  \ javaapi#method(0,'getHandlers(', ')', 'HandlerType>'),
-  \ ])
-
-call javaapi#class('HandlerType', '', [
-  \ javaapi#method(0,'HandlerType(', ')', 'public'),
-  \ javaapi#method(0,'getHandlerName(', ')', 'String'),
-  \ javaapi#method(0,'setHandlerName(', 'String)', 'void'),
-  \ javaapi#method(0,'getHandlerClass(', ')', 'String'),
-  \ javaapi#method(0,'setHandlerClass(', 'String)', 'void'),
-  \ javaapi#method(0,'getId(', ')', 'String'),
-  \ javaapi#method(0,'setId(', 'String)', 'void'),
-  \ javaapi#method(0,'getSoapRoles(', ')', 'String>'),
+  \ javaapi#method(0,1,'ClientSOAPHandlerTube(', 'WSBinding, WSDLPort, Tube)', ''),
+  \ javaapi#method(0,1,'ClientSOAPHandlerTube(', 'WSBinding, Tube, HandlerTube)', ''),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'AbstractFilterTubeImpl'),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'AbstractTubeImpl'),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'Tube'),
   \ ])
 
 call javaapi#class('HandlerChainsModel', '', [
-  \ javaapi#field(1,'PROTOCOL_SOAP11_TOKEN', 'String'),
-  \ javaapi#field(1,'PROTOCOL_SOAP12_TOKEN', 'String'),
-  \ javaapi#field(1,'PROTOCOL_XML_TOKEN', 'String'),
-  \ javaapi#field(1,'NS_109', 'String'),
-  \ javaapi#field(1,'QNAME_CHAIN_PORT_PATTERN', 'QName'),
-  \ javaapi#field(1,'QNAME_CHAIN_PROTOCOL_BINDING', 'QName'),
-  \ javaapi#field(1,'QNAME_CHAIN_SERVICE_PATTERN', 'QName'),
-  \ javaapi#field(1,'QNAME_HANDLER_CHAIN', 'QName'),
-  \ javaapi#field(1,'QNAME_HANDLER_CHAINS', 'QName'),
-  \ javaapi#field(1,'QNAME_HANDLER', 'QName'),
-  \ javaapi#field(1,'QNAME_HANDLER_NAME', 'QName'),
-  \ javaapi#field(1,'QNAME_HANDLER_CLASS', 'QName'),
-  \ javaapi#field(1,'QNAME_HANDLER_PARAM', 'QName'),
-  \ javaapi#field(1,'QNAME_HANDLER_PARAM_NAME', 'QName'),
-  \ javaapi#field(1,'QNAME_HANDLER_PARAM_VALUE', 'QName'),
-  \ javaapi#field(1,'QNAME_HANDLER_HEADER', 'QName'),
-  \ javaapi#field(1,'QNAME_HANDLER_ROLE', 'QName'),
-  \ javaapi#method(0,'getId(', ')', 'String'),
-  \ javaapi#method(0,'setId(', 'String)', 'void'),
-  \ javaapi#method(1,'parseHandlerConfigFile(', 'Class, XMLStreamReader)', 'HandlerChainsModel'),
-  \ javaapi#method(1,'parseHandlerFile(', 'XMLStreamReader, ClassLoader, QName, QName, WSBinding)', 'HandlerAnnotationInfo'),
-  \ javaapi#method(0,'getHandlersForPortInfo(', 'PortInfo)', 'HandlerAnnotationInfo'),
+  \ javaapi#field(1,1,'PROTOCOL_SOAP11_TOKEN', 'String'),
+  \ javaapi#field(1,1,'PROTOCOL_SOAP12_TOKEN', 'String'),
+  \ javaapi#field(1,1,'PROTOCOL_XML_TOKEN', 'String'),
+  \ javaapi#field(1,1,'NS_109', 'String'),
+  \ javaapi#field(1,1,'QNAME_CHAIN_PORT_PATTERN', 'QName'),
+  \ javaapi#field(1,1,'QNAME_CHAIN_PROTOCOL_BINDING', 'QName'),
+  \ javaapi#field(1,1,'QNAME_CHAIN_SERVICE_PATTERN', 'QName'),
+  \ javaapi#field(1,1,'QNAME_HANDLER_CHAIN', 'QName'),
+  \ javaapi#field(1,1,'QNAME_HANDLER_CHAINS', 'QName'),
+  \ javaapi#field(1,1,'QNAME_HANDLER', 'QName'),
+  \ javaapi#field(1,1,'QNAME_HANDLER_NAME', 'QName'),
+  \ javaapi#field(1,1,'QNAME_HANDLER_CLASS', 'QName'),
+  \ javaapi#field(1,1,'QNAME_HANDLER_PARAM', 'QName'),
+  \ javaapi#field(1,1,'QNAME_HANDLER_PARAM_NAME', 'QName'),
+  \ javaapi#field(1,1,'QNAME_HANDLER_PARAM_VALUE', 'QName'),
+  \ javaapi#field(1,1,'QNAME_HANDLER_HEADER', 'QName'),
+  \ javaapi#field(1,1,'QNAME_HANDLER_ROLE', 'QName'),
+  \ javaapi#method(0,1,'getId(', ')', 'String'),
+  \ javaapi#method(0,1,'setId(', 'String)', 'void'),
+  \ javaapi#method(1,1,'parseHandlerConfigFile(', 'Class, XMLStreamReader)', 'HandlerChainsModel'),
+  \ javaapi#method(1,1,'parseHandlerFile(', 'XMLStreamReader, ClassLoader, QName, QName, WSBinding)', 'HandlerAnnotationInfo'),
+  \ javaapi#method(0,1,'getHandlersForPortInfo(', 'PortInfo)', 'HandlerAnnotationInfo'),
   \ ])
 
 call javaapi#class('HandlerException', 'JAXWSExceptionBase', [
-  \ javaapi#method(0,'HandlerException(', 'String, )', 'public'),
-  \ javaapi#method(0,'HandlerException(', 'Throwable)', 'public'),
-  \ javaapi#method(0,'HandlerException(', 'Localizable)', 'public'),
-  \ javaapi#method(0,'getDefaultResourceBundleName(', ')', 'String'),
-  \ ])
-
-call javaapi#class('Direction', 'Direction>', [
-  \ javaapi#field(1,'OUTBOUND', 'Direction'),
-  \ javaapi#field(1,'INBOUND', 'Direction'),
-  \ javaapi#method(1,'values(', ')', 'Direction[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'Direction'),
-  \ ])
-
-call javaapi#class('RequestOrResponse', 'RequestOrResponse>', [
-  \ javaapi#field(1,'REQUEST', 'RequestOrResponse'),
-  \ javaapi#field(1,'RESPONSE', 'RequestOrResponse'),
-  \ javaapi#method(1,'values(', ')', 'RequestOrResponse[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'RequestOrResponse'),
+  \ javaapi#method(0,1,'HandlerException(', 'String, )', ''),
+  \ javaapi#method(0,1,'HandlerException(', 'Throwable)', ''),
+  \ javaapi#method(0,1,'HandlerException(', 'Localizable)', ''),
+  \ javaapi#method(0,1,'getDefaultResourceBundleName(', ')', 'String'),
   \ ])
 
 call javaapi#class('HandlerProcessor<C', 'MessageUpdatableContext>', [
-  \ javaapi#method(0,'callHandlersRequest(', 'Direction, C, boolean)', 'boolean'),
-  \ javaapi#method(0,'callHandlersResponse(', 'Direction, C, boolean)', 'void'),
-  \ ])
-
-call javaapi#class('HandlerTubeExchange', '', [
-  \ javaapi#method(0,'isHandleFalse(', ')', 'boolean'),
+  \ javaapi#method(0,0,'HandlerProcessor(', 'HandlerTube, WSBinding, List<? extends Handler>)', ''),
+  \ javaapi#method(0,1,'callHandlersRequest(', 'Direction, C, boolean)', 'boolean'),
+  \ javaapi#method(0,1,'callHandlersResponse(', 'Direction, C, boolean)', 'void'),
   \ ])
 
 call javaapi#class('HandlerTube', 'AbstractFilterTubeImpl', [
-  \ javaapi#method(0,'HandlerTube(', 'Tube, WSDLPort)', 'public'),
-  \ javaapi#method(0,'HandlerTube(', 'Tube, HandlerTube)', 'public'),
-  \ javaapi#method(0,'processRequest(', 'Packet)', 'NextAction'),
-  \ javaapi#method(0,'processResponse(', 'Packet)', 'NextAction'),
-  \ javaapi#method(0,'processException(', 'Throwable)', 'NextAction'),
-  \ javaapi#method(0,'close(', 'MessageContext)', 'void'),
-  \ javaapi#method(0,'isHandlerChainEmpty(', ')', 'boolean'),
+  \ javaapi#field(0,0,'handlers', 'Handler>'),
+  \ javaapi#field(0,0,'port', 'WSDLPort'),
+  \ javaapi#method(0,1,'HandlerTube(', 'Tube, WSDLPort)', ''),
+  \ javaapi#method(0,1,'HandlerTube(', 'Tube, HandlerTube)', ''),
+  \ javaapi#method(0,0,'HandlerTube(', 'HandlerTube, TubeCloner)', ''),
+  \ javaapi#method(0,1,'processRequest(', 'Packet)', 'NextAction'),
+  \ javaapi#method(0,1,'processResponse(', 'Packet)', 'NextAction'),
+  \ javaapi#method(0,1,'processException(', 'Throwable)', 'NextAction'),
+  \ javaapi#method(0,0,'initiateClosing(', 'MessageContext)', 'void'),
+  \ javaapi#method(0,1,'close(', 'MessageContext)', 'void'),
+  \ javaapi#method(0,0,'closeClientsideHandlers(', 'MessageContext)', 'void'),
+  \ javaapi#method(0,0,'closeServersideHandlers(', 'MessageContext)', 'void'),
+  \ javaapi#method(0,1,'isHandlerChainEmpty(', ')', 'boolean'),
   \ ])
 
 call javaapi#class('LogicalMessageContextImpl', 'MessageUpdatableContext', [
-  \ javaapi#method(0,'LogicalMessageContextImpl(', 'WSBinding, JAXBContext, Packet)', 'public'),
-  \ javaapi#method(0,'getMessage(', ')', 'LogicalMessage'),
-  \ ])
-
-call javaapi#class('1', '', [
-  \ ])
-
-call javaapi#class('DOMLogicalMessageImpl', 'SourceLogicalMessageImpl', [
-  \ javaapi#method(0,'DOMLogicalMessageImpl(', 'LogicalMessageImpl, DOMSource)', 'public'),
-  \ javaapi#method(0,'getPayload(', ')', 'Source'),
-  \ javaapi#method(0,'getMessage(', 'HeaderList, AttachmentSet, WSBinding)', 'Message'),
-  \ ])
-
-call javaapi#class('EmptyLogicalMessageImpl', 'ImmutableLM', [
-  \ javaapi#method(0,'EmptyLogicalMessageImpl(', 'LogicalMessageImpl)', 'public'),
-  \ javaapi#method(0,'getPayload(', ')', 'Source'),
-  \ javaapi#method(0,'getPayload(', 'JAXBContext)', 'Object'),
-  \ javaapi#method(0,'getMessage(', 'HeaderList, AttachmentSet, WSBinding)', 'Message'),
-  \ ])
-
-call javaapi#class('ImmutableLM', '', [
-  \ javaapi#method(0,'getPayload(', ')', 'Source'),
-  \ javaapi#method(0,'getPayload(', 'JAXBContext)', 'Object'),
-  \ javaapi#method(0,'getMessage(', 'HeaderList, AttachmentSet, WSBinding)', 'Message'),
-  \ ])
-
-call javaapi#class('JAXBLogicalMessageImpl', 'ImmutableLM', [
-  \ javaapi#method(0,'JAXBLogicalMessageImpl(', 'LogicalMessageImpl, JAXBContext, Object)', 'public'),
-  \ javaapi#method(0,'getPayload(', ')', 'Source'),
-  \ javaapi#method(0,'getPayload(', 'JAXBContext)', 'Object'),
-  \ javaapi#method(0,'getMessage(', 'HeaderList, AttachmentSet, WSBinding)', 'Message'),
-  \ ])
-
-call javaapi#class('SourceLogicalMessageImpl', 'ImmutableLM', [
-  \ javaapi#method(0,'SourceLogicalMessageImpl(', 'LogicalMessageImpl, Source)', 'public'),
-  \ javaapi#method(0,'getPayload(', ')', 'Source'),
-  \ javaapi#method(0,'getPayload(', 'JAXBContext)', 'Object'),
-  \ javaapi#method(0,'getMessage(', 'HeaderList, AttachmentSet, WSBinding)', 'Message'),
+  \ javaapi#method(0,1,'LogicalMessageContextImpl(', 'WSBinding, JAXBContext, Packet)', ''),
+  \ javaapi#method(0,1,'getMessage(', ')', 'LogicalMessage'),
+  \ javaapi#method(0,0,'updateMessage(', ')', 'void'),
   \ ])
 
 call javaapi#class('LogicalMessageImpl', 'LogicalMessage', [
-  \ javaapi#method(0,'LogicalMessageImpl(', 'JAXBContext, Packet)', 'public'),
-  \ javaapi#method(0,'getPayload(', ')', 'Source'),
-  \ javaapi#method(0,'setPayload(', 'Source)', 'void'),
-  \ javaapi#method(0,'getPayload(', 'JAXBContext)', 'Object'),
-  \ javaapi#method(0,'setPayload(', 'Object, JAXBContext)', 'void'),
-  \ javaapi#method(0,'isPayloadModifed(', ')', 'boolean'),
-  \ javaapi#method(0,'getMessage(', 'HeaderList, AttachmentSet, WSBinding)', 'Message'),
+  \ javaapi#field(0,0,'defaultJaxbContext', 'JAXBContext'),
+  \ javaapi#method(0,1,'LogicalMessageImpl(', 'JAXBContext, Packet)', ''),
+  \ javaapi#method(0,1,'getPayload(', ')', 'Source'),
+  \ javaapi#method(0,1,'setPayload(', 'Source)', 'void'),
+  \ javaapi#method(0,1,'getPayload(', 'JAXBContext)', 'Object'),
+  \ javaapi#method(0,1,'setPayload(', 'Object, JAXBContext)', 'void'),
+  \ javaapi#method(0,1,'isPayloadModifed(', ')', 'boolean'),
+  \ javaapi#method(0,1,'getMessage(', 'HeaderList, AttachmentSet, WSBinding)', 'Message'),
   \ ])
 
 call javaapi#class('MessageContextImpl', 'MessageContext', [
-  \ javaapi#method(0,'MessageContextImpl(', 'Packet)', 'public'),
-  \ javaapi#method(0,'setScope(', 'String, Scope)', 'void'),
-  \ javaapi#method(0,'getScope(', 'String)', 'Scope'),
-  \ javaapi#method(0,'size(', ')', 'int'),
-  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,'containsKey(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'containsValue(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'put(', 'String, Object)', 'Object'),
-  \ javaapi#method(0,'get(', 'Object)', 'Object'),
-  \ javaapi#method(0,'putAll(', 'Map<? extends String, ? extends Object>)', 'void'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'remove(', 'Object)', 'Object'),
-  \ javaapi#method(0,'keySet(', ')', 'String>'),
-  \ javaapi#method(0,'entrySet(', ')', 'Object>>'),
-  \ javaapi#method(0,'values(', ')', 'Object>'),
-  \ javaapi#method(0,'put(', 'Object, Object)', 'Object'),
+  \ javaapi#method(0,1,'MessageContextImpl(', 'Packet)', ''),
+  \ javaapi#method(0,0,'updatePacket(', ')', 'void'),
+  \ javaapi#method(0,1,'setScope(', 'String, Scope)', 'void'),
+  \ javaapi#method(0,1,'getScope(', 'String)', 'Scope'),
+  \ javaapi#method(0,1,'size(', ')', 'int'),
+  \ javaapi#method(0,1,'isEmpty(', ')', 'boolean'),
+  \ javaapi#method(0,1,'containsKey(', 'Object)', 'boolean'),
+  \ javaapi#method(0,1,'containsValue(', 'Object)', 'boolean'),
+  \ javaapi#method(0,1,'put(', 'String, Object)', 'Object'),
+  \ javaapi#method(0,1,'get(', 'Object)', 'Object'),
+  \ javaapi#method(0,1,'putAll(', 'Map<? extends String, ? extends Object>)', 'void'),
+  \ javaapi#method(0,1,'clear(', ')', 'void'),
+  \ javaapi#method(0,1,'remove(', 'Object)', 'Object'),
+  \ javaapi#method(0,1,'keySet(', ')', 'String>'),
+  \ javaapi#method(0,1,'entrySet(', ')', 'Object>>'),
+  \ javaapi#method(0,1,'values(', ')', 'Object>'),
+  \ javaapi#method(0,1,'put(', 'Object, Object)', 'Object'),
   \ ])
 
 call javaapi#class('MessageHandlerContextImpl', 'MessageUpdatableContext', [
-  \ javaapi#method(0,'MessageHandlerContextImpl(', 'SEIModel, WSBinding, WSDLPort, Packet, Set<String>)', 'public'),
-  \ javaapi#method(0,'getMessage(', ')', 'Message'),
-  \ javaapi#method(0,'setMessage(', 'Message)', 'void'),
-  \ javaapi#method(0,'getRoles(', ')', 'String>'),
-  \ javaapi#method(0,'getWSBinding(', ')', 'WSBinding'),
-  \ javaapi#method(0,'getSEIModel(', ')', 'SEIModel'),
-  \ javaapi#method(0,'getPort(', ')', 'WSDLPort'),
+  \ javaapi#method(0,1,'MessageHandlerContextImpl(', 'SEIModel, WSBinding, WSDLPort, Packet, Set<String>)', ''),
+  \ javaapi#method(0,1,'getMessage(', ')', 'Message'),
+  \ javaapi#method(0,1,'setMessage(', 'Message)', 'void'),
+  \ javaapi#method(0,1,'getRoles(', ')', 'String>'),
+  \ javaapi#method(0,1,'getWSBinding(', ')', 'WSBinding'),
+  \ javaapi#method(0,1,'getSEIModel(', ')', 'SEIModel'),
+  \ javaapi#method(0,1,'getPort(', ')', 'WSDLPort'),
   \ ])
 
 call javaapi#class('MessageUpdatableContext', 'MessageContext', [
-  \ javaapi#method(0,'MessageUpdatableContext(', 'Packet)', 'public'),
-  \ javaapi#method(0,'setScope(', 'String, Scope)', 'void'),
-  \ javaapi#method(0,'getScope(', 'String)', 'Scope'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'containsKey(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'containsValue(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'entrySet(', ')', 'Object>>'),
-  \ javaapi#method(0,'get(', 'Object)', 'Object'),
-  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,'keySet(', ')', 'String>'),
-  \ javaapi#method(0,'put(', 'String, Object)', 'Object'),
-  \ javaapi#method(0,'putAll(', 'Map<? extends String, ? extends Object>)', 'void'),
-  \ javaapi#method(0,'remove(', 'Object)', 'Object'),
-  \ javaapi#method(0,'size(', ')', 'int'),
-  \ javaapi#method(0,'values(', ')', 'Object>'),
-  \ javaapi#method(0,'put(', 'Object, Object)', 'Object'),
+  \ javaapi#method(0,1,'MessageUpdatableContext(', 'Packet)', ''),
+  \ javaapi#method(0,1,'setScope(', 'String, Scope)', 'void'),
+  \ javaapi#method(0,1,'getScope(', 'String)', 'Scope'),
+  \ javaapi#method(0,1,'clear(', ')', 'void'),
+  \ javaapi#method(0,1,'containsKey(', 'Object)', 'boolean'),
+  \ javaapi#method(0,1,'containsValue(', 'Object)', 'boolean'),
+  \ javaapi#method(0,1,'entrySet(', ')', 'Object>>'),
+  \ javaapi#method(0,1,'get(', 'Object)', 'Object'),
+  \ javaapi#method(0,1,'isEmpty(', ')', 'boolean'),
+  \ javaapi#method(0,1,'keySet(', ')', 'String>'),
+  \ javaapi#method(0,1,'put(', 'String, Object)', 'Object'),
+  \ javaapi#method(0,1,'putAll(', 'Map<? extends String, ? extends Object>)', 'void'),
+  \ javaapi#method(0,1,'remove(', 'Object)', 'Object'),
+  \ javaapi#method(0,1,'size(', ')', 'int'),
+  \ javaapi#method(0,1,'values(', ')', 'Object>'),
+  \ javaapi#method(0,1,'put(', 'Object, Object)', 'Object'),
   \ ])
 
 call javaapi#class('PortInfoImpl', 'PortInfo', [
-  \ javaapi#method(0,'PortInfoImpl(', 'BindingID, QName, QName)', 'public'),
-  \ javaapi#method(0,'getBindingID(', ')', 'String'),
-  \ javaapi#method(0,'getPortName(', ')', 'QName'),
-  \ javaapi#method(0,'getServiceName(', ')', 'QName'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,1,'PortInfoImpl(', 'BindingID, QName, QName)', ''),
+  \ javaapi#method(0,1,'getBindingID(', ')', 'String'),
+  \ javaapi#method(0,1,'getPortName(', ')', 'QName'),
+  \ javaapi#method(0,1,'getServiceName(', ')', 'QName'),
+  \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ ])
 
 call javaapi#class('SOAPHandlerProcessor<C', 'MessageUpdatableContext>', [
-  \ javaapi#method(0,'SOAPHandlerProcessor(', 'boolean, HandlerTube, WSBinding, List<? extends Handler>)', 'public'),
+  \ javaapi#method(0,1,'SOAPHandlerProcessor(', 'boolean, HandlerTube, WSBinding, List<? extends Handler>)', ''),
   \ ])
 
 call javaapi#class('SOAPMessageContextImpl', 'MessageUpdatableContext', [
-  \ javaapi#method(0,'SOAPMessageContextImpl(', 'WSBinding, Packet, Set<String>)', 'public'),
-  \ javaapi#method(0,'getMessage(', ')', 'SOAPMessage'),
-  \ javaapi#method(0,'setMessage(', 'SOAPMessage)', 'void'),
-  \ javaapi#method(0,'getHeaders(', 'QName, JAXBContext, boolean)', 'Object[]'),
-  \ javaapi#method(0,'getRoles(', ')', 'String>'),
+  \ javaapi#method(0,1,'SOAPMessageContextImpl(', 'WSBinding, Packet, Set<String>)', ''),
+  \ javaapi#method(0,1,'getMessage(', ')', 'SOAPMessage'),
+  \ javaapi#method(0,1,'setMessage(', 'SOAPMessage)', 'void'),
+  \ javaapi#method(0,0,'updateMessage(', ')', 'void'),
+  \ javaapi#method(0,1,'getHeaders(', 'QName, JAXBContext, boolean)', 'Object[]'),
+  \ javaapi#method(0,1,'getRoles(', ')', 'String>'),
   \ ])
 
 call javaapi#class('ServerLogicalHandlerTube', 'HandlerTube', [
-  \ javaapi#method(0,'ServerLogicalHandlerTube(', 'WSBinding, SEIModel, WSDLPort, Tube)', 'public'),
-  \ javaapi#method(0,'ServerLogicalHandlerTube(', 'WSBinding, SEIModel, Tube, HandlerTube)', 'public'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'AbstractFilterTubeImpl'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'AbstractTubeImpl'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'Tube'),
+  \ javaapi#method(0,1,'ServerLogicalHandlerTube(', 'WSBinding, SEIModel, WSDLPort, Tube)', ''),
+  \ javaapi#method(0,1,'ServerLogicalHandlerTube(', 'WSBinding, SEIModel, Tube, HandlerTube)', ''),
+  \ javaapi#method(0,0,'initiateClosing(', 'MessageContext)', 'void'),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'AbstractFilterTubeImpl'),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'AbstractTubeImpl'),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'Tube'),
   \ ])
 
 call javaapi#class('ServerMessageHandlerTube', 'HandlerTube', [
-  \ javaapi#method(0,'ServerMessageHandlerTube(', 'SEIModel, WSBinding, Tube, HandlerTube)', 'public'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'AbstractFilterTubeImpl'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'AbstractTubeImpl'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'Tube'),
+  \ javaapi#method(0,1,'ServerMessageHandlerTube(', 'SEIModel, WSBinding, Tube, HandlerTube)', ''),
+  \ javaapi#method(0,0,'initiateClosing(', 'MessageContext)', 'void'),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'AbstractFilterTubeImpl'),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'AbstractTubeImpl'),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'Tube'),
   \ ])
 
 call javaapi#class('ServerSOAPHandlerTube', 'HandlerTube', [
-  \ javaapi#method(0,'ServerSOAPHandlerTube(', 'WSBinding, WSDLPort, Tube)', 'public'),
-  \ javaapi#method(0,'ServerSOAPHandlerTube(', 'WSBinding, Tube, HandlerTube)', 'public'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'AbstractFilterTubeImpl'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'AbstractTubeImpl'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'Tube'),
+  \ javaapi#method(0,1,'ServerSOAPHandlerTube(', 'WSBinding, WSDLPort, Tube)', ''),
+  \ javaapi#method(0,1,'ServerSOAPHandlerTube(', 'WSBinding, Tube, HandlerTube)', ''),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'AbstractFilterTubeImpl'),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'AbstractTubeImpl'),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'Tube'),
   \ ])
 
 call javaapi#class('XMLHandlerProcessor<C', 'MessageUpdatableContext>', [
-  \ javaapi#method(0,'XMLHandlerProcessor(', 'HandlerTube, WSBinding, List<? extends Handler>)', 'public'),
+  \ javaapi#method(0,1,'XMLHandlerProcessor(', 'HandlerTube, WSBinding, List<? extends Handler>)', ''),
   \ ])
 

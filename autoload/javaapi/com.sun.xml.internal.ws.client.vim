@@ -1,88 +1,72 @@
 call javaapi#namespace('com.sun.xml.internal.ws.client')
 
 call javaapi#class('AsyncInvoker', 'Runnable', [
-  \ javaapi#method(0,'AsyncInvoker(', ')', 'public'),
-  \ javaapi#method(0,'setReceiver(', 'AsyncResponseImpl)', 'void'),
-  \ javaapi#method(0,'run(', ')', 'void'),
-  \ javaapi#method(0,'do_run(', ')', 'void'),
-  \ ])
-
-call javaapi#class('1CallbackFuture<T>', 'CompletedFuture<T>', [
-  \ javaapi#method(0,'1CallbackFuture(', 'T, Throwable)', 'public'),
-  \ javaapi#method(0,'getContext(', ')', 'Object>'),
+  \ javaapi#field(0,0,'responseImpl', 'AsyncResponseImpl'),
+  \ javaapi#method(0,1,'AsyncInvoker(', ')', ''),
+  \ javaapi#method(0,1,'setReceiver(', 'AsyncResponseImpl)', 'void'),
+  \ javaapi#method(0,1,'run(', ')', 'void'),
+  \ javaapi#method(0,1,'do_run(', ')', 'void'),
   \ ])
 
 call javaapi#class('AsyncResponseImpl<T>', 'FutureTask<T>', [
-  \ javaapi#method(0,'AsyncResponseImpl(', 'Runnable, AsyncHandler<T>)', 'public'),
-  \ javaapi#method(0,'run(', ')', 'void'),
-  \ javaapi#method(0,'getContext(', ')', 'ResponseContext'),
-  \ javaapi#method(0,'setResponseContext(', 'ResponseContext)', 'void'),
-  \ javaapi#method(0,'set(', 'T, Throwable)', 'void'),
-  \ javaapi#method(0,'getContext(', ')', 'Map'),
+  \ javaapi#method(0,1,'AsyncResponseImpl(', 'Runnable, AsyncHandler<T>)', ''),
+  \ javaapi#method(0,1,'run(', ')', 'void'),
+  \ javaapi#method(0,1,'getContext(', ')', 'ResponseContext'),
+  \ javaapi#method(0,1,'setResponseContext(', 'ResponseContext)', 'void'),
+  \ javaapi#method(0,1,'set(', 'T, Throwable)', 'void'),
+  \ javaapi#method(0,1,'getContext(', ')', 'Map'),
   \ ])
 
 call javaapi#interface('BindingProviderProperties', 'JAXWSProperties', [
-  \ javaapi#field(1,'HOSTNAME_VERIFICATION_PROPERTY', 'String'),
-  \ javaapi#field(1,'HTTP_COOKIE_JAR', 'String'),
-  \ javaapi#field(1,'REDIRECT_REQUEST_PROPERTY', 'String'),
-  \ javaapi#field(1,'ONE_WAY_OPERATION', 'String'),
-  \ javaapi#field(1,'JAXWS_HANDLER_CONFIG', 'String'),
-  \ javaapi#field(1,'JAXWS_CLIENT_HANDLE_PROPERTY', 'String'),
-  \ ])
-
-call javaapi#class('1', 'ResourceLoader', [
-  \ javaapi#method(0,'getResource(', 'String) throws MalformedURLException', 'URL'),
+  \ javaapi#field(1,1,'HOSTNAME_VERIFICATION_PROPERTY', 'String'),
+  \ javaapi#field(1,1,'HTTP_COOKIE_JAR', 'String'),
+  \ javaapi#field(1,1,'REDIRECT_REQUEST_PROPERTY', 'String'),
+  \ javaapi#field(1,1,'ONE_WAY_OPERATION', 'String'),
+  \ javaapi#field(1,1,'JAXWS_HANDLER_CONFIG', 'String'),
+  \ javaapi#field(1,1,'JAXWS_CLIENT_HANDLE_PROPERTY', 'String'),
   \ ])
 
 call javaapi#class('ClientContainer', 'Container', [
-  \ javaapi#method(0,'getSPI(', 'Class<T>)', 'T'),
+  \ javaapi#method(0,1,'getSPI(', 'Class<T>)', 'T'),
   \ ])
 
 call javaapi#class('ClientSchemaValidationTube', 'AbstractSchemaValidationTube', [
-  \ javaapi#method(0,'ClientSchemaValidationTube(', 'WSBinding, WSDLPort, Tube)', 'public'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'AbstractTubeImpl'),
-  \ javaapi#method(0,'processRequest(', 'Packet)', 'NextAction'),
-  \ javaapi#method(0,'processResponse(', 'Packet)', 'NextAction'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'Tube'),
+  \ javaapi#method(0,1,'ClientSchemaValidationTube(', 'WSBinding, WSDLPort, Tube)', ''),
+  \ javaapi#method(0,0,'getValidator(', ')', 'Validator'),
+  \ javaapi#method(0,0,'isNoValidation(', ')', 'boolean'),
+  \ javaapi#method(0,0,'ClientSchemaValidationTube(', 'ClientSchemaValidationTube, TubeCloner)', ''),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'AbstractTubeImpl'),
+  \ javaapi#method(0,1,'processRequest(', 'Packet)', 'NextAction'),
+  \ javaapi#method(0,1,'processResponse(', 'Packet)', 'NextAction'),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'Tube'),
   \ ])
 
 call javaapi#class('ClientTransportException', 'JAXWSExceptionBase', [
-  \ javaapi#method(0,'ClientTransportException(', 'Localizable)', 'public'),
-  \ javaapi#method(0,'ClientTransportException(', 'Localizable, Throwable)', 'public'),
-  \ javaapi#method(0,'ClientTransportException(', 'Throwable)', 'public'),
-  \ javaapi#method(0,'getDefaultResourceBundleName(', ')', 'String'),
+  \ javaapi#method(0,1,'ClientTransportException(', 'Localizable)', ''),
+  \ javaapi#method(0,1,'ClientTransportException(', 'Localizable, Throwable)', ''),
+  \ javaapi#method(0,1,'ClientTransportException(', 'Throwable)', ''),
+  \ javaapi#method(0,1,'getDefaultResourceBundleName(', ')', 'String'),
   \ ])
 
 call javaapi#class('ContentNegotiation', 'ContentNegotiation>', [
-  \ javaapi#field(1,'none', 'ContentNegotiation'),
-  \ javaapi#field(1,'pessimistic', 'ContentNegotiation'),
-  \ javaapi#field(1,'optimistic', 'ContentNegotiation'),
-  \ javaapi#field(1,'PROPERTY', 'String'),
-  \ javaapi#method(1,'values(', ')', 'ContentNegotiation[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'ContentNegotiation'),
-  \ javaapi#method(1,'obtainFromSystemProperty(', ')', 'ContentNegotiation'),
+  \ javaapi#field(1,1,'none', 'ContentNegotiation'),
+  \ javaapi#field(1,1,'pessimistic', 'ContentNegotiation'),
+  \ javaapi#field(1,1,'optimistic', 'ContentNegotiation'),
+  \ javaapi#field(1,1,'PROPERTY', 'String'),
+  \ javaapi#method(1,1,'values(', ')', 'ContentNegotiation[]'),
+  \ javaapi#method(1,1,'valueOf(', 'String)', 'ContentNegotiation'),
+  \ javaapi#method(1,1,'obtainFromSystemProperty(', ')', 'ContentNegotiation'),
   \ ])
 
 call javaapi#class('HandlerConfiguration', '', [
-  \ javaapi#method(0,'HandlerConfiguration(', 'Set<String>, List<Handler>)', 'public'),
-  \ javaapi#method(0,'HandlerConfiguration(', 'Set<String>, HandlerConfiguration)', 'public'),
-  \ javaapi#method(0,'getRoles(', ')', 'String>'),
-  \ javaapi#method(0,'getHandlerChain(', ')', 'Handler>'),
-  \ javaapi#method(0,'getLogicalHandlers(', ')', 'LogicalHandler>'),
-  \ javaapi#method(0,'getSoapHandlers(', ')', 'SOAPHandler>'),
-  \ javaapi#method(0,'getMessageHandlers(', ')', 'MessageHandler>'),
-  \ javaapi#method(0,'getHandlerKnownHeaders(', ')', 'QName>'),
-  \ ])
-
-call javaapi#class('1', 'HandlerResolver', [
-  \ javaapi#method(0,'getHandlerChain(', 'PortInfo)', 'Handler>'),
-  \ ])
-
-call javaapi#class('AnnotationConfigurator', 'HandlerConfigurator', [
-  \ ])
-
-call javaapi#class('HandlerResolverImpl', 'HandlerConfigurator', [
-  \ javaapi#method(0,'HandlerResolverImpl(', 'HandlerResolver)', 'public'),
+  \ javaapi#method(0,1,'HandlerConfiguration(', 'Set<String>, List<Handler>)', ''),
+  \ javaapi#method(0,1,'HandlerConfiguration(', 'Set<String>, HandlerConfiguration)', ''),
+  \ javaapi#method(0,1,'getRoles(', ')', 'String>'),
+  \ javaapi#method(0,1,'getHandlerChain(', ')', 'Handler>'),
+  \ javaapi#method(0,1,'getLogicalHandlers(', ')', 'LogicalHandler>'),
+  \ javaapi#method(0,1,'getSoapHandlers(', ')', 'SOAPHandler>'),
+  \ javaapi#method(0,1,'getMessageHandlers(', ')', 'MessageHandler>'),
+  \ javaapi#method(0,1,'getHandlerKnownHeaders(', ')', 'QName>'),
   \ ])
 
 call javaapi#class('HandlerConfigurator', '', [
@@ -92,177 +76,144 @@ call javaapi#class('MonitorRootClient', 'MonitorBase', [
   \ ])
 
 call javaapi#class('PortInfo', 'WSPortInfo', [
-  \ javaapi#field(0,'portName', 'QName'),
-  \ javaapi#field(0,'targetEndpoint', 'EndpointAddress'),
-  \ javaapi#field(0,'bindingId', 'BindingID'),
-  \ javaapi#field(0,'policyMap', 'PolicyMap'),
-  \ javaapi#field(0,'portModel', 'WSDLPort'),
-  \ javaapi#method(0,'PortInfo(', 'WSServiceDelegate, EndpointAddress, QName, BindingID)', 'public'),
-  \ javaapi#method(0,'PortInfo(', 'WSServiceDelegate, WSDLPort)', 'public'),
-  \ javaapi#method(0,'getPolicyMap(', ')', 'PolicyMap'),
-  \ javaapi#method(0,'createPolicyMap(', ')', 'PolicyMap'),
-  \ javaapi#method(0,'createBinding(', 'WebServiceFeature[], Class<?>)', 'BindingImpl'),
-  \ javaapi#method(0,'getPort(', ')', 'WSDLPort'),
-  \ javaapi#method(0,'getOwner(', ')', 'WSService'),
-  \ javaapi#method(0,'getBindingId(', ')', 'BindingID'),
-  \ javaapi#method(0,'getEndpointAddress(', ')', 'EndpointAddress'),
-  \ javaapi#method(0,'getServiceName(', ')', 'QName'),
-  \ javaapi#method(0,'getPortName(', ')', 'QName'),
-  \ javaapi#method(0,'getBindingID(', ')', 'String'),
-  \ ])
-
-call javaapi#class('1', '', [
-  \ ])
-
-call javaapi#class('MapView', 'Object>', [
-  \ javaapi#method(0,'size(', ')', 'int'),
-  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,'containsKey(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'containsValue(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'get(', 'Object)', 'Object'),
-  \ javaapi#method(0,'put(', 'String, Object)', 'Object'),
-  \ javaapi#method(0,'remove(', 'Object)', 'Object'),
-  \ javaapi#method(0,'putAll(', 'Map<? extends String, ? extends Object>)', 'void'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'keySet(', ')', 'String>'),
-  \ javaapi#method(0,'values(', ')', 'Object>'),
-  \ javaapi#method(0,'entrySet(', ')', 'Object>>'),
-  \ javaapi#method(0,'put(', 'Object, Object)', 'Object'),
+  \ javaapi#field(0,1,'portName', 'QName'),
+  \ javaapi#field(0,1,'targetEndpoint', 'EndpointAddress'),
+  \ javaapi#field(0,1,'bindingId', 'BindingID'),
+  \ javaapi#field(0,1,'policyMap', 'PolicyMap'),
+  \ javaapi#field(0,1,'portModel', 'WSDLPort'),
+  \ javaapi#method(0,1,'PortInfo(', 'WSServiceDelegate, EndpointAddress, QName, BindingID)', ''),
+  \ javaapi#method(0,1,'PortInfo(', 'WSServiceDelegate, WSDLPort)', ''),
+  \ javaapi#method(0,1,'getPolicyMap(', ')', 'PolicyMap'),
+  \ javaapi#method(0,1,'createPolicyMap(', ')', 'PolicyMap'),
+  \ javaapi#method(0,1,'createBinding(', 'WebServiceFeature[], Class<?>)', 'BindingImpl'),
+  \ javaapi#method(0,1,'getPort(', ')', 'WSDLPort'),
+  \ javaapi#method(0,1,'getOwner(', ')', 'WSService'),
+  \ javaapi#method(0,1,'getBindingId(', ')', 'BindingID'),
+  \ javaapi#method(0,1,'getEndpointAddress(', ')', 'EndpointAddress'),
+  \ javaapi#method(0,1,'getServiceName(', ')', 'QName'),
+  \ javaapi#method(0,1,'getPortName(', ')', 'QName'),
+  \ javaapi#method(0,1,'getBindingID(', ')', 'String'),
   \ ])
 
 call javaapi#class('RequestContext', 'PropertySet', [
-  \ javaapi#field(0,'contentNegotiation', 'ContentNegotiation'),
-  \ javaapi#method(0,'getEndPointAddressString(', ')', 'String'),
-  \ javaapi#method(0,'setEndPointAddressString(', 'String)', 'void'),
-  \ javaapi#method(0,'setEndpointAddress(', 'EndpointAddress)', 'void'),
-  \ javaapi#method(0,'getEndpointAddress(', ')', 'EndpointAddress'),
-  \ javaapi#method(0,'getContentNegotiationString(', ')', 'String'),
-  \ javaapi#method(0,'setContentNegotiationString(', 'String)', 'void'),
-  \ javaapi#method(0,'getSoapAction(', ')', 'String'),
-  \ javaapi#method(0,'setSoapAction(', 'String)', 'void'),
-  \ javaapi#method(0,'getSoapActionUse(', ')', 'Boolean'),
-  \ javaapi#method(0,'setSoapActionUse(', 'Boolean)', 'void'),
-  \ javaapi#method(0,'get(', 'Object)', 'Object'),
-  \ javaapi#method(0,'put(', 'String, Object)', 'Object'),
-  \ javaapi#method(0,'getMapView(', ')', 'Object>'),
-  \ javaapi#method(0,'fill(', 'Packet, boolean)', 'void'),
-  \ javaapi#method(0,'copy(', ')', 'RequestContext'),
+  \ javaapi#field(0,1,'contentNegotiation', 'ContentNegotiation'),
+  \ javaapi#method(0,1,'getEndPointAddressString(', ')', 'String'),
+  \ javaapi#method(0,1,'setEndPointAddressString(', 'String)', 'void'),
+  \ javaapi#method(0,1,'setEndpointAddress(', 'EndpointAddress)', 'void'),
+  \ javaapi#method(0,1,'getEndpointAddress(', ')', 'EndpointAddress'),
+  \ javaapi#method(0,1,'getContentNegotiationString(', ')', 'String'),
+  \ javaapi#method(0,1,'setContentNegotiationString(', 'String)', 'void'),
+  \ javaapi#method(0,1,'getSoapAction(', ')', 'String'),
+  \ javaapi#method(0,1,'setSoapAction(', 'String)', 'void'),
+  \ javaapi#method(0,1,'getSoapActionUse(', ')', 'Boolean'),
+  \ javaapi#method(0,1,'setSoapActionUse(', 'Boolean)', 'void'),
+  \ javaapi#method(0,1,'get(', 'Object)', 'Object'),
+  \ javaapi#method(0,1,'put(', 'String, Object)', 'Object'),
+  \ javaapi#method(0,1,'getMapView(', ')', 'Object>'),
+  \ javaapi#method(0,1,'fill(', 'Packet, boolean)', 'void'),
+  \ javaapi#method(0,1,'copy(', ')', 'RequestContext'),
+  \ javaapi#method(0,0,'getPropertyMap(', ')', 'PropertyMap'),
   \ ])
 
 call javaapi#class('ResponseContext', 'Object>', [
-  \ javaapi#method(0,'ResponseContext(', 'Packet)', 'public'),
-  \ javaapi#method(0,'containsKey(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'get(', 'Object)', 'Object'),
-  \ javaapi#method(0,'put(', 'String, Object)', 'Object'),
-  \ javaapi#method(0,'remove(', 'Object)', 'Object'),
-  \ javaapi#method(0,'putAll(', 'Map<? extends String, ? extends Object>)', 'void'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'entrySet(', ')', 'Object>>'),
-  \ javaapi#method(0,'put(', 'Object, Object)', 'Object'),
+  \ javaapi#method(0,1,'ResponseContext(', 'Packet)', ''),
+  \ javaapi#method(0,1,'containsKey(', 'Object)', 'boolean'),
+  \ javaapi#method(0,1,'get(', 'Object)', 'Object'),
+  \ javaapi#method(0,1,'put(', 'String, Object)', 'Object'),
+  \ javaapi#method(0,1,'remove(', 'Object)', 'Object'),
+  \ javaapi#method(0,1,'putAll(', 'Map<? extends String, ? extends Object>)', 'void'),
+  \ javaapi#method(0,1,'clear(', ')', 'void'),
+  \ javaapi#method(0,1,'entrySet(', ')', 'Object>>'),
+  \ javaapi#method(0,1,'put(', 'Object, Object)', 'Object'),
   \ ])
 
 call javaapi#interface('ResponseContextReceiver', '', [
-  \ javaapi#method(0,'setResponseContext(', 'ResponseContext)', 'void'),
-  \ ])
-
-call javaapi#class('1', 'Void>', [
-  \ javaapi#method(0,'run(', ')', 'Void'),
-  \ javaapi#method(0,'run(', ')', 'Object'),
+  \ javaapi#method(0,1,'setResponseContext(', 'ResponseContext)', 'void'),
   \ ])
 
 call javaapi#class('SCAnnotations', '', [
   \ ])
 
 call javaapi#class('SEIPortInfo', 'PortInfo', [
-  \ javaapi#field(0,'sei', 'Class'),
-  \ javaapi#field(0,'model', 'SOAPSEIModel'),
-  \ javaapi#method(0,'SEIPortInfo(', 'WSServiceDelegate, Class, SOAPSEIModel, WSDLPort)', 'public'),
-  \ javaapi#method(0,'createBinding(', 'WebServiceFeature[], Class<?>)', 'BindingImpl'),
+  \ javaapi#field(0,1,'sei', 'Class'),
+  \ javaapi#field(0,1,'model', 'SOAPSEIModel'),
+  \ javaapi#method(0,1,'SEIPortInfo(', 'WSServiceDelegate, Class, SOAPSEIModel, WSDLPort)', ''),
+  \ javaapi#method(0,1,'createBinding(', 'WebServiceFeature[], Class<?>)', 'BindingImpl'),
   \ ])
 
 call javaapi#class('SenderException', 'JAXWSExceptionBase', [
-  \ javaapi#method(0,'SenderException(', 'String, )', 'public'),
-  \ javaapi#method(0,'SenderException(', 'Throwable)', 'public'),
-  \ javaapi#method(0,'SenderException(', 'Localizable)', 'public'),
-  \ javaapi#method(0,'getDefaultResourceBundleName(', ')', 'String'),
-  \ ])
-
-call javaapi#class('1', 'CompletionCallback', [
-  \ javaapi#method(0,'onCompletion(', 'Packet)', 'void'),
-  \ javaapi#method(0,'onCompletion(', 'Throwable)', 'void'),
+  \ javaapi#method(0,1,'SenderException(', 'String, )', ''),
+  \ javaapi#method(0,1,'SenderException(', 'Throwable)', ''),
+  \ javaapi#method(0,1,'SenderException(', 'Localizable)', ''),
+  \ javaapi#method(0,1,'getDefaultResourceBundleName(', ')', 'String'),
   \ ])
 
 call javaapi#class('Stub', 'ResponseContextReceiver', [
-  \ javaapi#field(0,'requestContext', 'RequestContext'),
-  \ javaapi#method(0,'getPortInfo(', ')', 'WSPortInfo'),
-  \ javaapi#method(0,'getOperationDispatcher(', ')', 'OperationDispatcher'),
-  \ javaapi#method(0,'getExecutor(', ')', 'Executor'),
-  \ javaapi#method(0,'close(', ')', 'void'),
-  \ javaapi#method(0,'getBinding(', ')', 'WSBinding'),
-  \ javaapi#method(0,'getRequestContext(', ')', 'Object>'),
-  \ javaapi#method(0,'getResponseContext(', ')', 'ResponseContext'),
-  \ javaapi#method(0,'setResponseContext(', 'ResponseContext)', 'void'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'getWSEndpointReference(', ')', 'WSEndpointReference'),
-  \ javaapi#method(0,'getEndpointReference(', ')', 'W3CEndpointReference'),
-  \ javaapi#method(0,'getEndpointReference(', 'Class<T>)', 'T'),
-  \ javaapi#method(0,'getManagedObjectManager(', ')', 'ManagedObjectManager'),
-  \ javaapi#method(0,'setOutboundHeaders(', 'List<Header>)', 'void'),
-  \ javaapi#method(0,'setOutboundHeaders(', ')', 'void'),
-  \ javaapi#method(0,'getInboundHeaders(', ')', 'Header>'),
-  \ javaapi#method(0,'setAddress(', 'String)', 'void'),
-  \ javaapi#method(0,'getEndpointReference(', ')', 'EndpointReference'),
-  \ javaapi#method(0,'getBinding(', ')', 'Binding'),
-  \ javaapi#method(0,'getResponseContext(', ')', 'Map'),
-  \ ])
-
-call javaapi#class('1', 'WebServiceClient>', [
-  \ javaapi#method(0,'run(', ')', 'WebServiceClient'),
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('2', 'HandlerChain>', [
-  \ javaapi#method(0,'run(', ')', 'HandlerChain'),
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('3', 'WebService>', [
-  \ javaapi#method(0,'run(', ')', 'WebService'),
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('DaemonThreadFactory', 'ThreadFactory', [
-  \ javaapi#method(0,'newThread(', 'Runnable)', 'Thread'),
+  \ javaapi#field(0,0,'owner', 'WSServiceDelegate'),
+  \ javaapi#field(0,0,'endpointReference', 'WSEndpointReference'),
+  \ javaapi#field(0,0,'binding', 'BindingImpl'),
+  \ javaapi#field(0,0,'portInfo', 'WSPortInfo'),
+  \ javaapi#field(0,0,'addrVersion', 'AddressingVersion'),
+  \ javaapi#field(0,1,'requestContext', 'RequestContext'),
+  \ javaapi#field(0,0,'wsdlPort', 'WSDLPort'),
+  \ javaapi#field(0,0,'operationDispatcher', 'OperationDispatcher'),
+  \ javaapi#method(0,0,'Stub(', 'WSServiceDelegate, Tube, BindingImpl, WSDLPort, EndpointAddress, WSEndpointReference)', ''),
+  \ javaapi#method(0,0,'Stub(', 'WSPortInfo, BindingImpl, EndpointAddress, WSEndpointReference)', ''),
+  \ javaapi#method(0,1,'getPortInfo(', ')', 'WSPortInfo'),
+  \ javaapi#method(0,1,'getOperationDispatcher(', ')', 'OperationDispatcher'),
+  \ javaapi#method(0,0,'getPortName(', ')', 'QName'),
+  \ javaapi#method(0,0,'getServiceName(', ')', 'QName'),
+  \ javaapi#method(0,1,'getExecutor(', ')', 'Executor'),
+  \ javaapi#method(0,0,'process(', 'Packet, RequestContext, ResponseContextReceiver)', 'Packet'),
+  \ javaapi#method(0,0,'processAsync(', 'Packet, RequestContext, CompletionCallback)', 'void'),
+  \ javaapi#method(0,1,'close(', ')', 'void'),
+  \ javaapi#method(0,1,'getBinding(', ')', 'WSBinding'),
+  \ javaapi#method(0,1,'getRequestContext(', ')', 'Object>'),
+  \ javaapi#method(0,1,'getResponseContext(', ')', 'ResponseContext'),
+  \ javaapi#method(0,1,'setResponseContext(', 'ResponseContext)', 'void'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
+  \ javaapi#method(0,1,'getWSEndpointReference(', ')', 'WSEndpointReference'),
+  \ javaapi#method(0,1,'getEndpointReference(', ')', 'W3CEndpointReference'),
+  \ javaapi#method(0,1,'getEndpointReference(', 'Class<T>)', 'T'),
+  \ javaapi#method(0,1,'getManagedObjectManager(', ')', 'ManagedObjectManager'),
+  \ javaapi#method(0,1,'setOutboundHeaders(', 'List<Header>)', 'void'),
+  \ javaapi#method(0,1,'setOutboundHeaders(', ')', 'void'),
+  \ javaapi#method(0,1,'getInboundHeaders(', ')', 'Header>'),
+  \ javaapi#method(0,1,'setAddress(', 'String)', 'void'),
+  \ javaapi#method(0,1,'getEndpointReference(', ')', 'EndpointReference'),
+  \ javaapi#method(0,1,'getBinding(', ')', 'Binding'),
+  \ javaapi#method(0,1,'getResponseContext(', ')', 'Map'),
   \ ])
 
 call javaapi#class('WSServiceDelegate', 'WSService', [
-  \ javaapi#method(0,'WSServiceDelegate(', 'URL, QName, Class<? extends Service>)', 'public'),
-  \ javaapi#method(0,'WSServiceDelegate(', 'Source, QName, Class<? extends Service>)', 'public'),
-  \ javaapi#method(0,'getExecutor(', ')', 'Executor'),
-  \ javaapi#method(0,'setExecutor(', 'Executor)', 'void'),
-  \ javaapi#method(0,'getHandlerResolver(', ')', 'HandlerResolver'),
-  \ javaapi#method(0,'setHandlerResolver(', 'HandlerResolver)', 'void'),
-  \ javaapi#method(0,'getPort(', 'QName, Class<T>) throws WebServiceException', 'T'),
-  \ javaapi#method(0,'getPort(', 'QName, Class<T>, )', 'T'),
-  \ javaapi#method(0,'getPort(', 'EndpointReference, Class<T>, )', 'T'),
-  \ javaapi#method(0,'getPort(', 'WSEndpointReference, Class<T>, )', 'T'),
-  \ javaapi#method(0,'getPort(', 'Class<T>, )', 'T'),
-  \ javaapi#method(0,'getPort(', 'Class<T>) throws WebServiceException', 'T'),
-  \ javaapi#method(0,'addPort(', 'QName, String, String) throws WebServiceException', 'void'),
-  \ javaapi#method(0,'createDispatch(', 'QName, Class<T>, Mode) throws WebServiceException', 'Dispatch<T>'),
-  \ javaapi#method(0,'createDispatch(', 'QName, WSEndpointReference, Class<T>, Mode, )', 'Dispatch<T>'),
-  \ javaapi#method(0,'createDispatch(', 'QName, Class<T>, Mode, )', 'Dispatch<T>'),
-  \ javaapi#method(0,'createDispatch(', 'EndpointReference, Class<T>, Mode, )', 'Dispatch<T>'),
-  \ javaapi#method(0,'safeGetPort(', 'QName)', 'PortInfo'),
-  \ javaapi#method(0,'getEndpointAddress(', 'QName)', 'EndpointAddress'),
-  \ javaapi#method(0,'createDispatch(', 'QName, JAXBContext, Mode) throws WebServiceException', 'Object>'),
-  \ javaapi#method(0,'createDispatch(', 'QName, WSEndpointReference, JAXBContext, Mode, )', 'Object>'),
-  \ javaapi#method(0,'getContainer(', ')', 'Container'),
-  \ javaapi#method(0,'createDispatch(', 'QName, JAXBContext, Mode, )', 'Object>'),
-  \ javaapi#method(0,'createDispatch(', 'EndpointReference, JAXBContext, Mode, )', 'Object>'),
-  \ javaapi#method(0,'getServiceName(', ')', 'QName'),
-  \ javaapi#method(0,'getPorts(', ') throws WebServiceException', 'QName>'),
-  \ javaapi#method(0,'getWSDLDocumentLocation(', ')', 'URL'),
-  \ javaapi#method(0,'getWsdlService(', ')', 'WSDLServiceImpl'),
+  \ javaapi#method(0,1,'WSServiceDelegate(', 'URL, QName, Class<? extends Service>)', ''),
+  \ javaapi#method(0,1,'WSServiceDelegate(', 'Source, QName, Class<? extends Service>)', ''),
+  \ javaapi#method(0,1,'getExecutor(', ')', 'Executor'),
+  \ javaapi#method(0,1,'setExecutor(', 'Executor)', 'void'),
+  \ javaapi#method(0,1,'getHandlerResolver(', ')', 'HandlerResolver'),
+  \ javaapi#method(0,1,'setHandlerResolver(', 'HandlerResolver)', 'void'),
+  \ javaapi#method(0,1,'getPort(', 'QName, Class<T>) throws WebServiceException', 'T'),
+  \ javaapi#method(0,1,'getPort(', 'QName, Class<T>, )', 'T'),
+  \ javaapi#method(0,1,'getPort(', 'EndpointReference, Class<T>, )', 'T'),
+  \ javaapi#method(0,1,'getPort(', 'WSEndpointReference, Class<T>, )', 'T'),
+  \ javaapi#method(0,1,'getPort(', 'Class<T>, )', 'T'),
+  \ javaapi#method(0,1,'getPort(', 'Class<T>) throws WebServiceException', 'T'),
+  \ javaapi#method(0,1,'addPort(', 'QName, String, String) throws WebServiceException', 'void'),
+  \ javaapi#method(0,1,'createDispatch(', 'QName, Class<T>, Mode) throws WebServiceException', 'Dispatch<T>'),
+  \ javaapi#method(0,1,'createDispatch(', 'QName, WSEndpointReference, Class<T>, Mode, )', 'Dispatch<T>'),
+  \ javaapi#method(0,1,'createDispatch(', 'QName, Class<T>, Mode, )', 'Dispatch<T>'),
+  \ javaapi#method(0,1,'createDispatch(', 'EndpointReference, Class<T>, Mode, )', 'Dispatch<T>'),
+  \ javaapi#method(0,1,'safeGetPort(', 'QName)', 'PortInfo'),
+  \ javaapi#method(0,1,'getEndpointAddress(', 'QName)', 'EndpointAddress'),
+  \ javaapi#method(0,1,'createDispatch(', 'QName, JAXBContext, Mode) throws WebServiceException', 'Object>'),
+  \ javaapi#method(0,1,'createDispatch(', 'QName, WSEndpointReference, JAXBContext, Mode, )', 'Object>'),
+  \ javaapi#method(0,1,'getContainer(', ')', 'Container'),
+  \ javaapi#method(0,1,'createDispatch(', 'QName, JAXBContext, Mode, )', 'Object>'),
+  \ javaapi#method(0,1,'createDispatch(', 'EndpointReference, JAXBContext, Mode, )', 'Object>'),
+  \ javaapi#method(0,1,'getServiceName(', ')', 'QName'),
+  \ javaapi#method(0,0,'getServiceClass(', ')', 'Class'),
+  \ javaapi#method(0,1,'getPorts(', ') throws WebServiceException', 'QName>'),
+  \ javaapi#method(0,1,'getWSDLDocumentLocation(', ')', 'URL'),
+  \ javaapi#method(0,1,'getWsdlService(', ')', 'WSDLServiceImpl'),
   \ ])
 

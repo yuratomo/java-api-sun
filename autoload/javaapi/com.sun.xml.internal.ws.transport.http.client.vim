@@ -1,38 +1,29 @@
 call javaapi#namespace('com.sun.xml.internal.ws.transport.http.client')
 
-call javaapi#class('1', 'FilterInputStream', [
-  \ javaapi#method(0,'close(', ') throws IOException', 'void'),
-  \ ])
-
-call javaapi#class('HttpClientVerifier', 'HostnameVerifier', [
-  \ javaapi#method(0,'verify(', 'String, SSLSession)', 'boolean'),
-  \ ])
-
-call javaapi#class('WSChunkedOuputStream', 'FilterOutputStream', [
-  \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
-  \ ])
-
 call javaapi#class('HttpClientTransport', '', [
-  \ javaapi#method(0,'HttpClientTransport(', 'Packet, Map<String, List<String>>)', 'public'),
-  \ javaapi#method(0,'getHeaders(', ')', 'String>>'),
+  \ javaapi#method(0,1,'HttpClientTransport(', 'Packet, Map<String, List<String>>)', ''),
+  \ javaapi#method(0,1,'getHeaders(', ')', 'String>>'),
+  \ javaapi#method(0,0,'readResponse(', ')', 'InputStream'),
+  \ javaapi#method(0,0,'readResponseCodeAndMessage(', ')', 'void'),
   \ ])
 
 call javaapi#class('HttpResponseProperties', 'PropertySet', [
-  \ javaapi#method(0,'HttpResponseProperties(', 'HttpClientTransport)', 'public'),
-  \ javaapi#method(0,'getResponseHeaders(', ')', 'String>>'),
-  \ javaapi#method(0,'getResponseCode(', ')', 'int'),
+  \ javaapi#method(0,1,'HttpResponseProperties(', 'HttpClientTransport)', ''),
+  \ javaapi#method(0,1,'getResponseHeaders(', ')', 'String>>'),
+  \ javaapi#method(0,1,'getResponseCode(', ')', 'int'),
+  \ javaapi#method(0,0,'getPropertyMap(', ')', 'PropertyMap'),
   \ ])
 
 call javaapi#class('HttpTransportPipe', 'AbstractTubeImpl', [
-  \ javaapi#field(1,'dump', 'boolean'),
-  \ javaapi#method(0,'HttpTransportPipe(', 'Codec, WSBinding)', 'public'),
-  \ javaapi#method(0,'processException(', 'Throwable)', 'NextAction'),
-  \ javaapi#method(0,'processRequest(', 'Packet)', 'NextAction'),
-  \ javaapi#method(0,'processResponse(', 'Packet)', 'NextAction'),
-  \ javaapi#method(0,'process(', 'Packet)', 'Packet'),
-  \ javaapi#method(0,'preDestroy(', ')', 'void'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'HttpTransportPipe'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'AbstractTubeImpl'),
-  \ javaapi#method(0,'copy(', 'TubeCloner)', 'Tube'),
+  \ javaapi#field(1,1,'dump', 'boolean'),
+  \ javaapi#method(0,1,'HttpTransportPipe(', 'Codec, WSBinding)', ''),
+  \ javaapi#method(0,1,'processException(', 'Throwable)', 'NextAction'),
+  \ javaapi#method(0,1,'processRequest(', 'Packet)', 'NextAction'),
+  \ javaapi#method(0,1,'processResponse(', 'Packet)', 'NextAction'),
+  \ javaapi#method(0,1,'process(', 'Packet)', 'Packet'),
+  \ javaapi#method(0,1,'preDestroy(', ')', 'void'),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'HttpTransportPipe'),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'AbstractTubeImpl'),
+  \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'Tube'),
   \ ])
 

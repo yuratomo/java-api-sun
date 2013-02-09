@@ -1,52 +1,64 @@
 call javaapi#namespace('sun.awt.resources')
 
 call javaapi#class('awt_de', 'ListResourceBundle', [
-  \ javaapi#method(0,'awt_de(', ')', 'public'),
+  \ javaapi#method(0,1,'awt_de(', ')', ''),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
   \ ])
 
 call javaapi#class('awt_es', 'ListResourceBundle', [
-  \ javaapi#method(0,'awt_es(', ')', 'public'),
+  \ javaapi#method(0,1,'awt_es(', ')', ''),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
   \ ])
 
 call javaapi#class('awt_fr', 'ListResourceBundle', [
-  \ javaapi#method(0,'awt_fr(', ')', 'public'),
+  \ javaapi#method(0,1,'awt_fr(', ')', ''),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
   \ ])
 
 call javaapi#class('awt_it', 'ListResourceBundle', [
-  \ javaapi#method(0,'awt_it(', ')', 'public'),
+  \ javaapi#method(0,1,'awt_it(', ')', ''),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
   \ ])
 
 call javaapi#class('awt_ja', 'ListResourceBundle', [
-  \ javaapi#method(0,'awt_ja(', ')', 'public'),
+  \ javaapi#method(0,1,'awt_ja(', ')', ''),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
   \ ])
 
 call javaapi#class('awt_ko', 'ListResourceBundle', [
-  \ javaapi#method(0,'awt_ko(', ')', 'public'),
+  \ javaapi#method(0,1,'awt_ko(', ')', ''),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
   \ ])
 
 call javaapi#class('awt_pt_BR', 'ListResourceBundle', [
-  \ javaapi#method(0,'awt_pt_BR(', ')', 'public'),
+  \ javaapi#method(0,1,'awt_pt_BR(', ')', ''),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
   \ ])
 
 call javaapi#class('awt_sv', 'ListResourceBundle', [
-  \ javaapi#method(0,'awt_sv(', ')', 'public'),
+  \ javaapi#method(0,1,'awt_sv(', ')', ''),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
   \ ])
 
 call javaapi#class('awt_zh_CN', 'ListResourceBundle', [
-  \ javaapi#method(0,'awt_zh_CN(', ')', 'public'),
+  \ javaapi#method(0,1,'awt_zh_CN(', ')', ''),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
   \ ])
 
 call javaapi#class('awt_zh_HK', 'ListResourceBundle', [
-  \ javaapi#method(0,'awt_zh_HK(', ')', 'public'),
+  \ javaapi#method(0,1,'awt_zh_HK(', ')', ''),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
   \ ])
 
 call javaapi#class('awt_zh_TW', 'ListResourceBundle', [
-  \ javaapi#method(0,'awt_zh_TW(', ')', 'public'),
+  \ javaapi#method(0,1,'awt_zh_TW(', ')', ''),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
   \ ])
 
 call javaapi#namespace('sun.awt.resources')
 
 call javaapi#class('awt', 'ListResourceBundle', [
-  \ javaapi#method(0,'awt(', ')', 'public'),
+  \ javaapi#method(0,1,'awt(', ')', ''),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
   \ ])
 

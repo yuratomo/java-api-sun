@@ -1,30 +1,26 @@
 call javaapi#namespace('com.sun.tracing')
 
 call javaapi#interface('Probe', '', [
-  \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
-  \ javaapi#method(0,'trigger(', ')', 'void'),
+  \ javaapi#method(0,1,'isEnabled(', ')', 'boolean'),
+  \ javaapi#method(0,1,'trigger(', ')', 'void'),
   \ ])
 
 call javaapi#interface('ProbeName', 'Annotation', [
-  \ javaapi#method(0,'value(', ')', 'String'),
+  \ javaapi#method(0,1,'value(', ')', 'String'),
   \ ])
 
 call javaapi#interface('Provider', '', [
-  \ javaapi#method(0,'getProbe(', 'Method)', 'Probe'),
-  \ javaapi#method(0,'dispose(', ')', 'void'),
-  \ ])
-
-call javaapi#class('1', 'Field>', [
-  \ javaapi#method(0,'run(', ') throws NoSuchFieldException', 'Field'),
-  \ javaapi#method(0,'run(', ') throws Exception', 'Object'),
+  \ javaapi#method(0,1,'getProbe(', 'Method)', 'Probe'),
+  \ javaapi#method(0,1,'dispose(', ')', 'void'),
   \ ])
 
 call javaapi#class('ProviderFactory', '', [
-  \ javaapi#method(0,'createProvider(', 'Class<T>)', 'T'),
-  \ javaapi#method(1,'getDefaultFactory(', ')', 'ProviderFactory'),
+  \ javaapi#method(0,0,'ProviderFactory(', ')', ''),
+  \ javaapi#method(0,1,'createProvider(', 'Class<T>)', 'T'),
+  \ javaapi#method(1,1,'getDefaultFactory(', ')', 'ProviderFactory'),
   \ ])
 
 call javaapi#interface('ProviderName', 'Annotation', [
-  \ javaapi#method(0,'value(', ')', 'String'),
+  \ javaapi#method(0,1,'value(', ')', 'String'),
   \ ])
 

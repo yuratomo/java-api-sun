@@ -1,11 +1,12 @@
 call javaapi#namespace('com.sun.jndi.url.rmi')
 
 call javaapi#class('rmiURLContext', 'GenericURLContext', [
-  \ javaapi#method(0,'rmiURLContext(', 'Hashtable)', 'public'),
+  \ javaapi#method(0,1,'rmiURLContext(', 'Hashtable)', ''),
+  \ javaapi#method(0,0,'getRootURLContext(', 'String, Hashtable) throws NamingException', 'ResolveResult'),
   \ ])
 
 call javaapi#class('rmiURLContextFactory', 'ObjectFactory', [
-  \ javaapi#method(0,'rmiURLContextFactory(', ')', 'public'),
-  \ javaapi#method(0,'getObjectInstance(', 'Object, Name, Context, Hashtable<?, ?>) throws NamingException', 'Object'),
+  \ javaapi#method(0,1,'rmiURLContextFactory(', ')', ''),
+  \ javaapi#method(0,1,'getObjectInstance(', 'Object, Name, Context, Hashtable<?, ?>) throws NamingException', 'Object'),
   \ ])
 
