@@ -39,7 +39,7 @@ call javaapi#class('FtpClient', 'Closeable', [
   \ javaapi#method(0,1,'removeDirectory(', 'String) throws FtpProtocolException, IOException', 'FtpClient'),
   \ javaapi#method(0,1,'noop(', ') throws FtpProtocolException, IOException', 'FtpClient'),
   \ javaapi#method(0,1,'getStatus(', 'String) throws FtpProtocolException, IOException', 'String'),
-  \ javaapi#method(0,1,'getFeatures(', ') throws FtpProtocolException, IOException', 'String>'),
+  \ javaapi#method(0,1,'getFeatures(', ') throws FtpProtocolException, IOException', 'List'),
   \ javaapi#method(0,1,'abort(', ') throws FtpProtocolException, IOException', 'FtpClient'),
   \ javaapi#method(0,1,'completePending(', ') throws FtpProtocolException, IOException', 'FtpClient'),
   \ javaapi#method(0,1,'reInit(', ') throws FtpProtocolException, IOException', 'FtpClient'),
@@ -51,7 +51,7 @@ call javaapi#class('FtpClient', 'Closeable', [
   \ javaapi#method(0,1,'getSize(', 'String) throws FtpProtocolException, IOException', 'long'),
   \ javaapi#method(0,1,'getLastModified(', 'String) throws FtpProtocolException, IOException', 'Date'),
   \ javaapi#method(0,1,'setDirParser(', 'FtpDirParser)', 'FtpClient'),
-  \ javaapi#method(0,1,'listFiles(', 'String) throws FtpProtocolException, IOException', 'FtpDirEntry>'),
+  \ javaapi#method(0,1,'listFiles(', 'String) throws FtpProtocolException, IOException', 'Iterator'),
   \ javaapi#method(0,1,'useKerberos(', ') throws FtpProtocolException, IOException', 'FtpClient'),
   \ javaapi#method(0,1,'getWelcomeMsg(', ')', 'String'),
   \ javaapi#method(0,1,'getLastReplyCode(', ')', 'FtpReplyCode'),
@@ -111,7 +111,7 @@ call javaapi#class('FtpProtocolException', 'Exception', [
   \ javaapi#method(0,1,'getReplyCode(', ')', 'FtpReplyCode'),
   \ ])
 
-call javaapi#class('FtpReplyCode', 'FtpReplyCode>', [
+call javaapi#class('FtpReplyCode', 'Enum', [
   \ javaapi#field(1,1,'RESTART_MARKER', 'FtpReplyCode'),
   \ javaapi#field(1,1,'SERVICE_READY_IN', 'FtpReplyCode'),
   \ javaapi#field(1,1,'DATA_CONNECTION_ALREADY_OPEN', 'FtpReplyCode'),
@@ -164,7 +164,7 @@ call javaapi#class('FtpReplyCode', 'FtpReplyCode>', [
   \ javaapi#field(1,1,'FILE_NAME_NOT_ALLOWED', 'FtpReplyCode'),
   \ javaapi#field(1,1,'PROTECTED_REPLY', 'FtpReplyCode'),
   \ javaapi#field(1,1,'UNKNOWN_ERROR', 'FtpReplyCode'),
-  \ javaapi#method(1,1,'values(', ')', 'FtpReplyCode[]'),
+  \ javaapi#method(1,1,'values(', ')', 'FtpReplyCode'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'FtpReplyCode'),
   \ javaapi#method(0,1,'getValue(', ')', 'int'),
   \ javaapi#method(0,1,'isPositivePreliminary(', ')', 'boolean'),

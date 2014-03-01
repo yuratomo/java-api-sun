@@ -17,7 +17,7 @@ call javaapi#class('AVA', 'DerEncoder', [
   \ javaapi#method(0,1,'toRFC2253CanonicalString(', ')', 'String'),
   \ ])
 
-call javaapi#class('AVAComparator', 'AVA>', [
+call javaapi#class('AVAComparator', 'Comparator', [
   \ javaapi#method(0,1,'compare(', 'AVA, AVA)', 'int'),
   \ javaapi#method(0,1,'compare(', 'Object, Object)', 'int'),
   \ ])
@@ -54,7 +54,7 @@ call javaapi#class('AlgIdDSA', 'AlgorithmId', [
   \ javaapi#method(0,0,'paramsToString(', ')', 'String'),
   \ ])
 
-call javaapi#class('AttributeNameEnumeration', 'String>', [
+call javaapi#class('AttributeNameEnumeration', 'Vector', [
   \ javaapi#method(0,1,'AttributeNameEnumeration(', ')', ''),
   \ ])
 
@@ -64,13 +64,13 @@ call javaapi#class('AuthorityInfoAccessExtension', 'Extension', [
   \ javaapi#field(1,1,'DESCRIPTIONS', 'String'),
   \ javaapi#method(0,1,'AuthorityInfoAccessExtension(', 'List<AccessDescription>) throws IOException', ''),
   \ javaapi#method(0,1,'AuthorityInfoAccessExtension(', 'Boolean, Object) throws IOException', ''),
-  \ javaapi#method(0,1,'getAccessDescriptions(', ')', 'AccessDescription>'),
+  \ javaapi#method(0,1,'getAccessDescriptions(', ')', 'List'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'encode(', 'OutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
@@ -87,7 +87,7 @@ call javaapi#class('AuthorityKeyIdentifierExtension', 'Extension', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
@@ -104,7 +104,7 @@ call javaapi#class('BasicConstraintsExtension', 'Extension', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
@@ -123,7 +123,7 @@ call javaapi#class('CRLDistributionPointsExtension', 'Extension', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
@@ -134,8 +134,8 @@ call javaapi#class('CRLExtensions', '', [
   \ javaapi#method(0,1,'get(', 'String)', 'Extension'),
   \ javaapi#method(0,1,'set(', 'String, Object)', 'void'),
   \ javaapi#method(0,1,'delete(', 'String)', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'Extension>'),
-  \ javaapi#method(0,1,'getAllExtensions(', ')', 'Extension>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
+  \ javaapi#method(0,1,'getAllExtensions(', ')', 'Collection'),
   \ javaapi#method(0,1,'hasUnsupportedCriticalExtension(', ')', 'boolean'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -156,7 +156,7 @@ call javaapi#class('CRLNumberExtension', 'Extension', [
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'encode(', 'OutputStream) throws IOException', 'void'),
   \ javaapi#method(0,0,'encode(', 'OutputStream, ObjectIdentifier, boolean) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
@@ -181,7 +181,7 @@ call javaapi#class('CRLReasonCodeExtension', 'Extension', [
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'encode(', 'OutputStream) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'getReasonCode(', ')', 'CRLReason'),
   \ ])
@@ -198,13 +198,13 @@ call javaapi#class('CertAndKeyGen', '', [
   \ javaapi#method(0,1,'getCertRequest(', 'X500Name) throws InvalidKeyException, SignatureException', 'PKCS10'),
   \ ])
 
-call javaapi#interface('CertAttrSet<T>', '', [
+call javaapi#interface('CertAttrSet', '', [
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'encode(', 'OutputStream) throws CertificateException, IOException', 'void'),
   \ javaapi#method(0,1,'set(', 'String, Object) throws CertificateException, IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws CertificateException, IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws CertificateException, IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration<T>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
@@ -233,7 +233,7 @@ call javaapi#class('CertException', 'SecurityException', [
 call javaapi#class('CertParseError', 'CertException', [
   \ ])
 
-call javaapi#class('CertificateAlgorithmId', 'String>', [
+call javaapi#class('CertificateAlgorithmId', 'CertAttrSet', [
   \ javaapi#field(1,1,'IDENT', 'String'),
   \ javaapi#field(1,1,'NAME', 'String'),
   \ javaapi#field(1,1,'ALGORITHM', 'String'),
@@ -245,11 +245,11 @@ call javaapi#class('CertificateAlgorithmId', 'String>', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('CertificateExtensions', 'Extension>', [
+call javaapi#class('CertificateExtensions', 'CertAttrSet', [
   \ javaapi#field(1,1,'IDENT', 'String'),
   \ javaapi#field(1,1,'NAME', 'String'),
   \ javaapi#method(0,1,'CertificateExtensions(', ')', ''),
@@ -260,8 +260,8 @@ call javaapi#class('CertificateExtensions', 'Extension>', [
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
   \ javaapi#method(0,1,'getNameByOid(', 'ObjectIdentifier) throws IOException', 'String'),
-  \ javaapi#method(0,1,'getElements(', ')', 'Extension>'),
-  \ javaapi#method(0,1,'getAllExtensions(', ')', 'Extension>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
+  \ javaapi#method(0,1,'getAllExtensions(', ')', 'Collection'),
   \ javaapi#method(0,1,'getUnparseableExtensions(', ')', 'Extension>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'hasUnsupportedCriticalExtension(', ')', 'boolean'),
@@ -280,11 +280,11 @@ call javaapi#class('CertificateIssuerExtension', 'Extension', [
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'encode(', 'OutputStream) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('CertificateIssuerName', 'String>', [
+call javaapi#class('CertificateIssuerName', 'CertAttrSet', [
   \ javaapi#field(1,1,'IDENT', 'String'),
   \ javaapi#field(1,1,'NAME', 'String'),
   \ javaapi#field(1,1,'DN_NAME', 'String'),
@@ -297,11 +297,11 @@ call javaapi#class('CertificateIssuerName', 'String>', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('CertificateIssuerUniqueIdentity', 'String>', [
+call javaapi#class('CertificateIssuerUniqueIdentity', 'CertAttrSet', [
   \ javaapi#field(1,1,'IDENT', 'String'),
   \ javaapi#field(1,1,'NAME', 'String'),
   \ javaapi#field(1,1,'ID', 'String'),
@@ -314,7 +314,7 @@ call javaapi#class('CertificateIssuerUniqueIdentity', 'String>', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
@@ -330,7 +330,7 @@ call javaapi#class('CertificatePoliciesExtension', 'Extension', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
@@ -358,10 +358,10 @@ call javaapi#class('CertificatePolicySet', '', [
   \ javaapi#method(0,1,'CertificatePolicySet(', 'DerInputStream) throws IOException', ''),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'encode(', 'DerOutputStream) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getCertPolicyIds(', ')', 'CertificatePolicyId>'),
+  \ javaapi#method(0,1,'getCertPolicyIds(', ')', 'List'),
   \ ])
 
-call javaapi#class('CertificateSerialNumber', 'String>', [
+call javaapi#class('CertificateSerialNumber', 'CertAttrSet', [
   \ javaapi#field(1,1,'IDENT', 'String'),
   \ javaapi#field(1,1,'NAME', 'String'),
   \ javaapi#field(1,1,'NUMBER', 'String'),
@@ -375,11 +375,11 @@ call javaapi#class('CertificateSerialNumber', 'String>', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('CertificateSubjectName', 'String>', [
+call javaapi#class('CertificateSubjectName', 'CertAttrSet', [
   \ javaapi#field(1,1,'IDENT', 'String'),
   \ javaapi#field(1,1,'NAME', 'String'),
   \ javaapi#field(1,1,'DN_NAME', 'String'),
@@ -392,11 +392,11 @@ call javaapi#class('CertificateSubjectName', 'String>', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('CertificateSubjectUniqueIdentity', 'String>', [
+call javaapi#class('CertificateSubjectUniqueIdentity', 'CertAttrSet', [
   \ javaapi#field(1,1,'IDENT', 'String'),
   \ javaapi#field(1,1,'NAME', 'String'),
   \ javaapi#field(1,1,'ID', 'String'),
@@ -409,11 +409,11 @@ call javaapi#class('CertificateSubjectUniqueIdentity', 'String>', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('CertificateValidity', 'String>', [
+call javaapi#class('CertificateValidity', 'CertAttrSet', [
   \ javaapi#field(1,1,'IDENT', 'String'),
   \ javaapi#field(1,1,'NAME', 'String'),
   \ javaapi#field(1,1,'NOT_BEFORE', 'String'),
@@ -426,13 +426,13 @@ call javaapi#class('CertificateValidity', 'String>', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'valid(', ') throws CertificateNotYetValidException, CertificateExpiredException', 'void'),
   \ javaapi#method(0,1,'valid(', 'Date) throws CertificateNotYetValidException, CertificateExpiredException', 'void'),
   \ ])
 
-call javaapi#class('CertificateVersion', 'String>', [
+call javaapi#class('CertificateVersion', 'CertAttrSet', [
   \ javaapi#field(1,1,'V1', 'int'),
   \ javaapi#field(1,1,'V2', 'int'),
   \ javaapi#field(1,1,'V3', 'int'),
@@ -449,12 +449,12 @@ call javaapi#class('CertificateVersion', 'String>', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'compare(', 'int)', 'int'),
   \ ])
 
-call javaapi#class('CertificateX509Key', 'String>', [
+call javaapi#class('CertificateX509Key', 'CertAttrSet', [
   \ javaapi#field(1,1,'IDENT', 'String'),
   \ javaapi#field(1,1,'NAME', 'String'),
   \ javaapi#field(1,1,'KEY', 'String'),
@@ -466,7 +466,7 @@ call javaapi#class('CertificateX509Key', 'String>', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
@@ -505,7 +505,7 @@ call javaapi#class('DistributionPoint', '', [
   \ javaapi#method(0,1,'DistributionPoint(', 'DerValue) throws IOException', ''),
   \ javaapi#method(0,1,'getFullName(', ')', 'GeneralNames'),
   \ javaapi#method(0,1,'getRelativeName(', ')', 'RDN'),
-  \ javaapi#method(0,1,'getReasonFlags(', ')', 'boolean[]'),
+  \ javaapi#method(0,1,'getReasonFlags(', ')', 'boolean'),
   \ javaapi#method(0,1,'getCRLIssuer(', ')', 'GeneralNames'),
   \ javaapi#method(0,1,'encode(', 'DerOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
@@ -552,15 +552,15 @@ call javaapi#class('ExtendedKeyUsageExtension', 'Extension', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
-  \ javaapi#method(0,1,'getExtendedKeyUsage(', ')', 'String>'),
+  \ javaapi#method(0,1,'getExtendedKeyUsage(', ')', 'List'),
   \ ])
 
 call javaapi#class('Extension', 'Extension', [
   \ javaapi#field(0,0,'extensionId', 'ObjectIdentifier'),
   \ javaapi#field(0,0,'critical', 'boolean'),
-  \ javaapi#field(0,0,'extensionValue', 'byte[]'),
+  \ javaapi#field(0,0,'extensionValue', 'byte'),
   \ javaapi#method(0,1,'Extension(', ')', ''),
   \ javaapi#method(0,1,'Extension(', 'DerValue) throws IOException', ''),
   \ javaapi#method(0,1,'Extension(', 'ObjectIdentifier, boolean, byte[]) throws IOException', ''),
@@ -570,8 +570,8 @@ call javaapi#class('Extension', 'Extension', [
   \ javaapi#method(0,1,'encode(', 'DerOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'isCritical(', ')', 'boolean'),
   \ javaapi#method(0,1,'getExtensionId(', ')', 'ObjectIdentifier'),
-  \ javaapi#method(0,1,'getValue(', ')', 'byte[]'),
-  \ javaapi#method(0,1,'getExtensionValue(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getValue(', ')', 'byte'),
+  \ javaapi#method(0,1,'getExtensionValue(', ')', 'byte'),
   \ javaapi#method(0,1,'getId(', ')', 'String'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -625,8 +625,8 @@ call javaapi#class('GeneralNames', '', [
   \ javaapi#method(0,1,'get(', 'int)', 'GeneralName'),
   \ javaapi#method(0,1,'isEmpty(', ')', 'boolean'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
-  \ javaapi#method(0,1,'iterator(', ')', 'GeneralName>'),
-  \ javaapi#method(0,1,'names(', ')', 'GeneralName>'),
+  \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
+  \ javaapi#method(0,1,'names(', ')', 'List'),
   \ javaapi#method(0,1,'encode(', 'DerOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -653,8 +653,8 @@ call javaapi#class('GeneralSubtrees', 'Cloneable', [
   \ javaapi#method(0,1,'add(', 'GeneralSubtree)', 'void'),
   \ javaapi#method(0,1,'contains(', 'GeneralSubtree)', 'boolean'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
-  \ javaapi#method(0,1,'iterator(', ')', 'GeneralSubtree>'),
-  \ javaapi#method(0,1,'trees(', ')', 'GeneralSubtree>'),
+  \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
+  \ javaapi#method(0,1,'trees(', ')', 'List'),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'encode(', 'DerOutputStream) throws IOException', 'void'),
@@ -673,7 +673,7 @@ call javaapi#class('IPAddressName', 'GeneralNameInterface', [
   \ javaapi#method(0,1,'encode(', 'DerOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'getName(', ') throws IOException', 'String'),
-  \ javaapi#method(0,1,'getBytes(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getBytes(', ')', 'byte'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ javaapi#method(0,1,'constrains(', 'GeneralNameInterface) throws UnsupportedOperationException', 'int'),
@@ -692,7 +692,7 @@ call javaapi#class('InhibitAnyPolicyExtension', 'Extension', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
@@ -707,7 +707,7 @@ call javaapi#class('InvalidityDateExtension', 'Extension', [
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'encode(', 'OutputStream) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(1,1,'toImpl(', 'Extension) throws IOException', 'InvalidityDateExtension'),
   \ ])
@@ -725,7 +725,7 @@ call javaapi#class('IssuerAlternativeNameExtension', 'Extension', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
@@ -745,7 +745,7 @@ call javaapi#class('IssuingDistributionPointExtension', 'Extension', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
@@ -753,7 +753,7 @@ call javaapi#class('KeyIdentifier', '', [
   \ javaapi#method(0,1,'KeyIdentifier(', 'byte[])', ''),
   \ javaapi#method(0,1,'KeyIdentifier(', 'DerValue) throws IOException', ''),
   \ javaapi#method(0,1,'KeyIdentifier(', 'PublicKey) throws IOException', ''),
-  \ javaapi#method(0,1,'getIdentifier(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getIdentifier(', ')', 'byte'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
@@ -781,8 +781,8 @@ call javaapi#class('KeyUsageExtension', 'Extension', [
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'encode(', 'OutputStream) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
-  \ javaapi#method(0,1,'getBits(', ')', 'boolean[]'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
+  \ javaapi#method(0,1,'getBits(', ')', 'boolean'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
@@ -798,7 +798,7 @@ call javaapi#class('NameConstraintsExtension', 'Extension', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'merge(', 'NameConstraintsExtension) throws IOException', 'void'),
   \ javaapi#method(0,1,'verify(', 'X509Certificate) throws IOException', 'boolean'),
@@ -827,9 +827,9 @@ call javaapi#class('NetscapeCertTypeExtension', 'Extension', [
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'encode(', 'OutputStream) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
-  \ javaapi#method(0,1,'getKeyUsageMappedBits(', ')', 'boolean[]'),
+  \ javaapi#method(0,1,'getKeyUsageMappedBits(', ')', 'boolean'),
   \ ])
 
 call javaapi#class('OCSPNoCheckExtension', 'Extension', [
@@ -840,7 +840,7 @@ call javaapi#class('OCSPNoCheckExtension', 'Extension', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
@@ -870,7 +870,7 @@ call javaapi#class('OtherName', 'GeneralNameInterface', [
   \ javaapi#method(0,1,'OtherName(', 'ObjectIdentifier, byte[]) throws IOException', ''),
   \ javaapi#method(0,1,'OtherName(', 'DerValue) throws IOException', ''),
   \ javaapi#method(0,1,'getOID(', ')', 'ObjectIdentifier'),
-  \ javaapi#method(0,1,'getNameValue(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getNameValue(', ')', 'byte'),
   \ javaapi#method(0,1,'getType(', ')', 'int'),
   \ javaapi#method(0,1,'encode(', 'DerOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
@@ -923,7 +923,7 @@ call javaapi#class('PolicyConstraintsExtension', 'Extension', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
@@ -936,11 +936,11 @@ call javaapi#class('PolicyInformation', '', [
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ javaapi#method(0,1,'getPolicyIdentifier(', ')', 'CertificatePolicyId'),
-  \ javaapi#method(0,1,'getPolicyQualifiers(', ')', 'PolicyQualifierInfo>'),
+  \ javaapi#method(0,1,'getPolicyQualifiers(', ')', 'Set'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'encode(', 'DerOutputStream) throws IOException', 'void'),
@@ -958,7 +958,7 @@ call javaapi#class('PolicyMappingsExtension', 'Extension', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
@@ -976,7 +976,7 @@ call javaapi#class('PrivateKeyUsageExtension', 'Extension', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws CertificateException, IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws CertificateException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws CertificateException, IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
@@ -985,7 +985,7 @@ call javaapi#class('RDN', '', [
   \ javaapi#method(0,1,'RDN(', 'String, Map<String, String>) throws IOException', ''),
   \ javaapi#method(0,1,'RDN(', 'AVA)', ''),
   \ javaapi#method(0,1,'RDN(', 'AVA[])', ''),
-  \ javaapi#method(0,1,'avas(', ')', 'AVA>'),
+  \ javaapi#method(0,1,'avas(', ')', 'List'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -1026,13 +1026,13 @@ call javaapi#class('ReasonFlags', '', [
   \ javaapi#method(0,1,'ReasonFlags(', 'BitArray)', ''),
   \ javaapi#method(0,1,'ReasonFlags(', 'DerInputStream) throws IOException', ''),
   \ javaapi#method(0,1,'ReasonFlags(', 'DerValue) throws IOException', ''),
-  \ javaapi#method(0,1,'getFlags(', ')', 'boolean[]'),
+  \ javaapi#method(0,1,'getFlags(', ')', 'boolean'),
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'encode(', 'DerOutputStream) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ ])
 
 call javaapi#class('SerialNumber', '', [
@@ -1059,7 +1059,7 @@ call javaapi#class('SubjectAlternativeNameExtension', 'Extension', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
@@ -1069,13 +1069,13 @@ call javaapi#class('SubjectInfoAccessExtension', 'Extension', [
   \ javaapi#field(1,1,'DESCRIPTIONS', 'String'),
   \ javaapi#method(0,1,'SubjectInfoAccessExtension(', 'List<AccessDescription>) throws IOException', ''),
   \ javaapi#method(0,1,'SubjectInfoAccessExtension(', 'Boolean, Object) throws IOException', ''),
-  \ javaapi#method(0,1,'getAccessDescriptions(', ')', 'AccessDescription>'),
+  \ javaapi#method(0,1,'getAccessDescriptions(', ')', 'List'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'encode(', 'OutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
@@ -1090,7 +1090,7 @@ call javaapi#class('SubjectKeyIdentifierExtension', 'Extension', [
   \ javaapi#method(0,1,'set(', 'String, Object) throws IOException', 'void'),
   \ javaapi#method(0,1,'get(', 'String) throws IOException', 'Object'),
   \ javaapi#method(0,1,'delete(', 'String) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
@@ -1119,7 +1119,7 @@ call javaapi#class('UniqueIdentity', '', [
   \ javaapi#method(0,1,'UniqueIdentity(', 'DerValue) throws IOException', ''),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'encode(', 'DerOutputStream, byte) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getId(', ')', 'boolean[]'),
+  \ javaapi#method(0,1,'getId(', ')', 'boolean'),
   \ ])
 
 call javaapi#class('UnparseableExtension', 'Extension', [
@@ -1164,9 +1164,9 @@ call javaapi#class('X500Name', 'Principal', [
   \ javaapi#method(0,1,'X500Name(', 'DerValue) throws IOException', ''),
   \ javaapi#method(0,1,'X500Name(', 'DerInputStream) throws IOException', ''),
   \ javaapi#method(0,1,'X500Name(', 'byte[]) throws IOException', ''),
-  \ javaapi#method(0,1,'rdns(', ')', 'RDN>'),
+  \ javaapi#method(0,1,'rdns(', ')', 'List'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
-  \ javaapi#method(0,1,'allAvas(', ')', 'AVA>'),
+  \ javaapi#method(0,1,'allAvas(', ')', 'List'),
   \ javaapi#method(0,1,'avaSize(', ')', 'int'),
   \ javaapi#method(0,1,'isEmpty(', ')', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -1195,8 +1195,8 @@ call javaapi#class('X500Name', 'Principal', [
   \ javaapi#method(0,1,'findMostSpecificAttribute(', 'ObjectIdentifier)', 'DerValue'),
   \ javaapi#method(0,1,'emit(', 'DerOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'encode(', 'DerOutputStream) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getEncodedInternal(', ') throws IOException', 'byte[]'),
-  \ javaapi#method(0,1,'getEncoded(', ') throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'getEncodedInternal(', ') throws IOException', 'byte'),
+  \ javaapi#method(0,1,'getEncoded(', ') throws IOException', 'byte'),
   \ javaapi#method(0,1,'constrains(', 'GeneralNameInterface) throws UnsupportedOperationException', 'int'),
   \ javaapi#method(0,1,'subtreeDepth(', ') throws UnsupportedOperationException', 'int'),
   \ javaapi#method(0,1,'commonAncestor(', 'X500Name)', 'X500Name'),
@@ -1217,7 +1217,7 @@ call javaapi#class('X509CRLEntryImpl', 'X509CRLEntry', [
   \ javaapi#method(0,1,'X509CRLEntryImpl(', 'DerValue) throws CRLException', ''),
   \ javaapi#method(0,1,'hasExtensions(', ')', 'boolean'),
   \ javaapi#method(0,1,'encode(', 'DerOutputStream) throws CRLException', 'void'),
-  \ javaapi#method(0,1,'getEncoded(', ') throws CRLException', 'byte[]'),
+  \ javaapi#method(0,1,'getEncoded(', ') throws CRLException', 'byte'),
   \ javaapi#method(0,1,'getCertificateIssuer(', ')', 'X500Principal'),
   \ javaapi#method(0,1,'getSerialNumber(', ')', 'BigInteger'),
   \ javaapi#method(0,1,'getRevocationDate(', ')', 'Date'),
@@ -1226,9 +1226,9 @@ call javaapi#class('X509CRLEntryImpl', 'X509CRLEntry', [
   \ javaapi#method(0,1,'getReasonCode(', ') throws IOException', 'Integer'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'hasUnsupportedCriticalExtension(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getCriticalExtensionOIDs(', ')', 'String>'),
-  \ javaapi#method(0,1,'getNonCriticalExtensionOIDs(', ')', 'String>'),
-  \ javaapi#method(0,1,'getExtensionValue(', 'String)', 'byte[]'),
+  \ javaapi#method(0,1,'getCriticalExtensionOIDs(', ')', 'Set'),
+  \ javaapi#method(0,1,'getNonCriticalExtensionOIDs(', ')', 'Set'),
+  \ javaapi#method(0,1,'getExtensionValue(', 'String)', 'byte'),
   \ javaapi#method(0,1,'getExtension(', 'ObjectIdentifier)', 'Extension'),
   \ javaapi#method(1,1,'toImpl(', 'X509CRLEntry) throws CRLException', 'X509CRLEntryImpl'),
   \ javaapi#method(0,1,'getExtensions(', ')', 'Extension>'),
@@ -1241,8 +1241,8 @@ call javaapi#class('X509CRLImpl', 'X509CRL', [
   \ javaapi#method(0,1,'X509CRLImpl(', 'X500Name, Date, Date)', ''),
   \ javaapi#method(0,1,'X509CRLImpl(', 'X500Name, Date, Date, X509CRLEntry[]) throws CRLException', ''),
   \ javaapi#method(0,1,'X509CRLImpl(', 'X500Name, Date, Date, X509CRLEntry[], CRLExtensions) throws CRLException', ''),
-  \ javaapi#method(0,1,'getEncodedInternal(', ') throws CRLException', 'byte[]'),
-  \ javaapi#method(0,1,'getEncoded(', ') throws CRLException', 'byte[]'),
+  \ javaapi#method(0,1,'getEncodedInternal(', ') throws CRLException', 'byte'),
+  \ javaapi#method(0,1,'getEncoded(', ') throws CRLException', 'byte'),
   \ javaapi#method(0,1,'encodeInfo(', 'OutputStream) throws CRLException', 'void'),
   \ javaapi#method(0,1,'verify(', 'PublicKey) throws CRLException, NoSuchAlgorithmException, InvalidKeyException, NoSuchProviderException, SignatureException', 'void'),
   \ javaapi#method(0,1,'verify(', 'PublicKey, String) throws CRLException, NoSuchAlgorithmException, InvalidKeyException, NoSuchProviderException, SignatureException', 'void'),
@@ -1257,12 +1257,12 @@ call javaapi#class('X509CRLImpl', 'X509CRL', [
   \ javaapi#method(0,1,'getNextUpdate(', ')', 'Date'),
   \ javaapi#method(0,1,'getRevokedCertificate(', 'BigInteger)', 'X509CRLEntry'),
   \ javaapi#method(0,1,'getRevokedCertificate(', 'X509Certificate)', 'X509CRLEntry'),
-  \ javaapi#method(0,1,'getRevokedCertificates(', ')', 'X509CRLEntry>'),
-  \ javaapi#method(0,1,'getTBSCertList(', ') throws CRLException', 'byte[]'),
-  \ javaapi#method(0,1,'getSignature(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getRevokedCertificates(', ')', 'Set'),
+  \ javaapi#method(0,1,'getTBSCertList(', ') throws CRLException', 'byte'),
+  \ javaapi#method(0,1,'getSignature(', ')', 'byte'),
   \ javaapi#method(0,1,'getSigAlgName(', ')', 'String'),
   \ javaapi#method(0,1,'getSigAlgOID(', ')', 'String'),
-  \ javaapi#method(0,1,'getSigAlgParams(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getSigAlgParams(', ')', 'byte'),
   \ javaapi#method(0,1,'getSigAlgId(', ')', 'AlgorithmId'),
   \ javaapi#method(0,1,'getAuthKeyId(', ') throws IOException', 'KeyIdentifier'),
   \ javaapi#method(0,1,'getAuthKeyIdExtension(', ') throws IOException', 'AuthorityKeyIdentifierExtension'),
@@ -1273,12 +1273,12 @@ call javaapi#class('X509CRLImpl', 'X509CRL', [
   \ javaapi#method(0,1,'getIssuerAltNameExtension(', ') throws IOException', 'IssuerAlternativeNameExtension'),
   \ javaapi#method(0,1,'getIssuingDistributionPointExtension(', ') throws IOException', 'IssuingDistributionPointExtension'),
   \ javaapi#method(0,1,'hasUnsupportedCriticalExtension(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getCriticalExtensionOIDs(', ')', 'String>'),
-  \ javaapi#method(0,1,'getNonCriticalExtensionOIDs(', ')', 'String>'),
-  \ javaapi#method(0,1,'getExtensionValue(', 'String)', 'byte[]'),
+  \ javaapi#method(0,1,'getCriticalExtensionOIDs(', ')', 'Set'),
+  \ javaapi#method(0,1,'getNonCriticalExtensionOIDs(', ')', 'Set'),
+  \ javaapi#method(0,1,'getExtensionValue(', 'String)', 'byte'),
   \ javaapi#method(0,1,'getExtension(', 'ObjectIdentifier)', 'Object'),
   \ javaapi#method(1,1,'getIssuerX500Principal(', 'X509CRL)', 'X500Principal'),
-  \ javaapi#method(1,1,'getEncodedInternal(', 'X509CRL) throws CRLException', 'byte[]'),
+  \ javaapi#method(1,1,'getEncodedInternal(', 'X509CRL) throws CRLException', 'byte'),
   \ javaapi#method(1,1,'toImpl(', 'X509CRL) throws CRLException', 'X509CRLImpl'),
   \ javaapi#method(0,1,'derEncode(', 'OutputStream) throws IOException', 'void'),
   \ ])
@@ -1298,7 +1298,7 @@ call javaapi#class('X509CertImpl', 'X509Certificate', [
   \ javaapi#field(1,1,'SIG', 'String'),
   \ javaapi#field(0,0,'info', 'X509CertInfo'),
   \ javaapi#field(0,0,'algId', 'AlgorithmId'),
-  \ javaapi#field(0,0,'signature', 'byte[]'),
+  \ javaapi#field(0,0,'signature', 'byte'),
   \ javaapi#method(0,1,'X509CertImpl(', ')', ''),
   \ javaapi#method(0,1,'X509CertImpl(', 'byte[]) throws CertificateException', ''),
   \ javaapi#method(0,1,'X509CertImpl(', 'InputStream) throws CertificateException', ''),
@@ -1306,8 +1306,8 @@ call javaapi#class('X509CertImpl', 'X509Certificate', [
   \ javaapi#method(0,1,'X509CertImpl(', 'DerValue) throws CertificateException', ''),
   \ javaapi#method(0,1,'encode(', 'OutputStream) throws CertificateEncodingException', 'void'),
   \ javaapi#method(0,1,'derEncode(', 'OutputStream) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getEncoded(', ') throws CertificateEncodingException', 'byte[]'),
-  \ javaapi#method(0,1,'getEncodedInternal(', ') throws CertificateEncodingException', 'byte[]'),
+  \ javaapi#method(0,1,'getEncoded(', ') throws CertificateEncodingException', 'byte'),
+  \ javaapi#method(0,1,'getEncodedInternal(', ') throws CertificateEncodingException', 'byte'),
   \ javaapi#method(0,1,'verify(', 'PublicKey) throws CertificateException, NoSuchAlgorithmException, InvalidKeyException, NoSuchProviderException, SignatureException', 'void'),
   \ javaapi#method(0,1,'verify(', 'PublicKey, String) throws CertificateException, NoSuchAlgorithmException, InvalidKeyException, NoSuchProviderException, SignatureException', 'void'),
   \ javaapi#method(0,1,'sign(', 'PrivateKey, String) throws CertificateException, NoSuchAlgorithmException, InvalidKeyException, NoSuchProviderException, SignatureException', 'void'),
@@ -1317,7 +1317,7 @@ call javaapi#class('X509CertImpl', 'X509Certificate', [
   \ javaapi#method(0,1,'get(', 'String) throws CertificateParsingException', 'Object'),
   \ javaapi#method(0,1,'set(', 'String, Object) throws CertificateException, IOException', 'void'),
   \ javaapi#method(0,1,'delete(', 'String) throws CertificateException, IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'getPublicKey(', ')', 'PublicKey'),
@@ -1330,13 +1330,13 @@ call javaapi#class('X509CertImpl', 'X509Certificate', [
   \ javaapi#method(0,1,'getIssuerX500Principal(', ')', 'X500Principal'),
   \ javaapi#method(0,1,'getNotBefore(', ')', 'Date'),
   \ javaapi#method(0,1,'getNotAfter(', ')', 'Date'),
-  \ javaapi#method(0,1,'getTBSCertificate(', ') throws CertificateEncodingException', 'byte[]'),
-  \ javaapi#method(0,1,'getSignature(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getTBSCertificate(', ') throws CertificateEncodingException', 'byte'),
+  \ javaapi#method(0,1,'getSignature(', ')', 'byte'),
   \ javaapi#method(0,1,'getSigAlgName(', ')', 'String'),
   \ javaapi#method(0,1,'getSigAlgOID(', ')', 'String'),
-  \ javaapi#method(0,1,'getSigAlgParams(', ')', 'byte[]'),
-  \ javaapi#method(0,1,'getIssuerUniqueID(', ')', 'boolean[]'),
-  \ javaapi#method(0,1,'getSubjectUniqueID(', ')', 'boolean[]'),
+  \ javaapi#method(0,1,'getSigAlgParams(', ')', 'byte'),
+  \ javaapi#method(0,1,'getIssuerUniqueID(', ')', 'boolean'),
+  \ javaapi#method(0,1,'getSubjectUniqueID(', ')', 'boolean'),
   \ javaapi#method(0,1,'getAuthorityKeyIdentifierExtension(', ')', 'AuthorityKeyIdentifierExtension'),
   \ javaapi#method(0,1,'getBasicConstraintsExtension(', ')', 'BasicConstraintsExtension'),
   \ javaapi#method(0,1,'getCertificatePoliciesExtension(', ')', 'CertificatePoliciesExtension'),
@@ -1350,29 +1350,29 @@ call javaapi#class('X509CertImpl', 'X509Certificate', [
   \ javaapi#method(0,1,'getSubjectKeyIdentifierExtension(', ')', 'SubjectKeyIdentifierExtension'),
   \ javaapi#method(0,1,'getCRLDistributionPointsExtension(', ')', 'CRLDistributionPointsExtension'),
   \ javaapi#method(0,1,'hasUnsupportedCriticalExtension(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getCriticalExtensionOIDs(', ')', 'String>'),
-  \ javaapi#method(0,1,'getNonCriticalExtensionOIDs(', ')', 'String>'),
+  \ javaapi#method(0,1,'getCriticalExtensionOIDs(', ')', 'Set'),
+  \ javaapi#method(0,1,'getNonCriticalExtensionOIDs(', ')', 'Set'),
   \ javaapi#method(0,1,'getExtension(', 'ObjectIdentifier)', 'Extension'),
   \ javaapi#method(0,1,'getUnparseableExtension(', 'ObjectIdentifier)', 'Extension'),
-  \ javaapi#method(0,1,'getExtensionValue(', 'String)', 'byte[]'),
-  \ javaapi#method(0,1,'getKeyUsage(', ')', 'boolean[]'),
-  \ javaapi#method(0,1,'getExtendedKeyUsage(', ') throws CertificateParsingException', 'String>'),
-  \ javaapi#method(1,1,'getExtendedKeyUsage(', 'X509Certificate) throws CertificateParsingException', 'String>'),
+  \ javaapi#method(0,1,'getExtensionValue(', 'String)', 'byte'),
+  \ javaapi#method(0,1,'getKeyUsage(', ')', 'boolean'),
+  \ javaapi#method(0,1,'getExtendedKeyUsage(', ') throws CertificateParsingException', 'List'),
+  \ javaapi#method(1,1,'getExtendedKeyUsage(', 'X509Certificate) throws CertificateParsingException', 'List'),
   \ javaapi#method(0,1,'getBasicConstraints(', ')', 'int'),
-  \ javaapi#method(0,1,'getSubjectAlternativeNames(', ') throws CertificateParsingException', 'List<?>>'),
-  \ javaapi#method(1,1,'getSubjectAlternativeNames(', 'X509Certificate) throws CertificateParsingException', 'List<?>>'),
-  \ javaapi#method(0,1,'getIssuerAlternativeNames(', ') throws CertificateParsingException', 'List<?>>'),
-  \ javaapi#method(1,1,'getIssuerAlternativeNames(', 'X509Certificate) throws CertificateParsingException', 'List<?>>'),
+  \ javaapi#method(0,1,'getSubjectAlternativeNames(', ') throws CertificateParsingException', 'List'),
+  \ javaapi#method(1,1,'getSubjectAlternativeNames(', 'X509Certificate) throws CertificateParsingException', 'List'),
+  \ javaapi#method(0,1,'getIssuerAlternativeNames(', ') throws CertificateParsingException', 'List'),
+  \ javaapi#method(1,1,'getIssuerAlternativeNames(', 'X509Certificate) throws CertificateParsingException', 'List'),
   \ javaapi#method(0,1,'getAuthorityInfoAccessExtension(', ')', 'AuthorityInfoAccessExtension'),
   \ javaapi#method(1,1,'getSubjectX500Principal(', 'X509Certificate)', 'X500Principal'),
   \ javaapi#method(1,1,'getIssuerX500Principal(', 'X509Certificate)', 'X500Principal'),
-  \ javaapi#method(1,1,'getEncodedInternal(', 'Certificate) throws CertificateEncodingException', 'byte[]'),
+  \ javaapi#method(1,1,'getEncodedInternal(', 'Certificate) throws CertificateEncodingException', 'byte'),
   \ javaapi#method(1,1,'toImpl(', 'X509Certificate) throws CertificateException', 'X509CertImpl'),
   \ javaapi#method(1,1,'isSelfIssued(', 'X509Certificate)', 'boolean'),
   \ javaapi#method(1,1,'isSelfSigned(', 'X509Certificate, String)', 'boolean'),
   \ ])
 
-call javaapi#class('X509CertInfo', 'String>', [
+call javaapi#class('X509CertInfo', 'CertAttrSet', [
   \ javaapi#field(1,1,'IDENT', 'String'),
   \ javaapi#field(1,1,'NAME', 'String'),
   \ javaapi#field(1,1,'VERSION', 'String'),
@@ -1399,9 +1399,9 @@ call javaapi#class('X509CertInfo', 'String>', [
   \ javaapi#method(0,1,'X509CertInfo(', 'byte[]) throws CertificateParsingException', ''),
   \ javaapi#method(0,1,'X509CertInfo(', 'DerValue) throws CertificateParsingException', ''),
   \ javaapi#method(0,1,'encode(', 'OutputStream) throws CertificateException, IOException', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'String>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncodedInfo(', ') throws CertificateEncodingException', 'byte[]'),
+  \ javaapi#method(0,1,'getEncodedInfo(', ') throws CertificateEncodingException', 'byte'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'equals(', 'X509CertInfo)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -1456,11 +1456,11 @@ call javaapi#class('AlgorithmId', 'DerEncoder', [
   \ javaapi#method(0,0,'decodeParams(', ') throws IOException', 'void'),
   \ javaapi#method(0,1,'encode(', 'DerOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'derEncode(', 'OutputStream) throws IOException', 'void'),
-  \ javaapi#method(0,1,'encode(', ') throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'encode(', ') throws IOException', 'byte'),
   \ javaapi#method(0,1,'getOID(', ')', 'ObjectIdentifier'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'getParameters(', ')', 'AlgorithmParameters'),
-  \ javaapi#method(0,1,'getEncodedParams(', ') throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'getEncodedParams(', ') throws IOException', 'byte'),
   \ javaapi#method(0,1,'equals(', 'AlgorithmId)', 'boolean'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'equals(', 'ObjectIdentifier)', 'boolean'),
@@ -1478,8 +1478,8 @@ call javaapi#class('AlgorithmId', 'DerEncoder', [
 
 call javaapi#class('X509Key', 'PublicKey', [
   \ javaapi#field(0,0,'algid', 'AlgorithmId'),
-  \ javaapi#field(0,0,'key', 'byte[]'),
-  \ javaapi#field(0,0,'encodedKey', 'byte[]'),
+  \ javaapi#field(0,0,'key', 'byte'),
+  \ javaapi#field(0,0,'encodedKey', 'byte'),
   \ javaapi#method(0,1,'X509Key(', ')', ''),
   \ javaapi#method(0,0,'setKey(', 'BitArray)', 'void'),
   \ javaapi#method(0,0,'getKey(', ')', 'BitArray'),
@@ -1488,10 +1488,10 @@ call javaapi#class('X509Key', 'PublicKey', [
   \ javaapi#method(0,1,'getAlgorithm(', ')', 'String'),
   \ javaapi#method(0,1,'getAlgorithmId(', ')', 'AlgorithmId'),
   \ javaapi#method(0,1,'encode(', 'DerOutputStream) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getEncoded(', ')', 'byte[]'),
-  \ javaapi#method(0,1,'getEncodedInternal(', ') throws InvalidKeyException', 'byte[]'),
+  \ javaapi#method(0,1,'getEncoded(', ')', 'byte'),
+  \ javaapi#method(0,1,'getEncodedInternal(', ') throws InvalidKeyException', 'byte'),
   \ javaapi#method(0,1,'getFormat(', ')', 'String'),
-  \ javaapi#method(0,1,'encode(', ') throws InvalidKeyException', 'byte[]'),
+  \ javaapi#method(0,1,'encode(', ') throws InvalidKeyException', 'byte'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'decode(', 'InputStream) throws InvalidKeyException', 'void'),
   \ javaapi#method(0,1,'decode(', 'byte[]) throws InvalidKeyException', 'void'),

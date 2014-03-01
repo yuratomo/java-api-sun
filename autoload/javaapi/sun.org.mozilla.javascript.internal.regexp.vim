@@ -61,7 +61,7 @@ call javaapi#class('REProgState', '', [
 call javaapi#class('RegExpImpl', 'RegExpProxy', [
   \ javaapi#field(0,0,'input', 'String'),
   \ javaapi#field(0,0,'multiline', 'boolean'),
-  \ javaapi#field(0,0,'parens', 'SubString[]'),
+  \ javaapi#field(0,0,'parens', 'SubString'),
   \ javaapi#field(0,0,'lastMatch', 'SubString'),
   \ javaapi#field(0,0,'lastParen', 'SubString'),
   \ javaapi#field(0,0,'leftContext', 'SubString'),

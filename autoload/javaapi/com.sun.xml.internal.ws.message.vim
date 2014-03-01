@@ -37,13 +37,13 @@ call javaapi#class('AttachmentSetImpl', 'AttachmentSet', [
   \ javaapi#method(0,1,'get(', 'String)', 'Attachment'),
   \ javaapi#method(0,1,'isEmpty(', ')', 'boolean'),
   \ javaapi#method(0,1,'add(', 'Attachment)', 'void'),
-  \ javaapi#method(0,1,'iterator(', ')', 'Attachment>'),
+  \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
   \ ])
 
 call javaapi#class('AttachmentUnmarshallerImpl', 'AttachmentUnmarshaller', [
   \ javaapi#method(0,1,'AttachmentUnmarshallerImpl(', 'AttachmentSet)', ''),
   \ javaapi#method(0,1,'getAttachmentAsDataHandler(', 'String)', 'DataHandler'),
-  \ javaapi#method(0,1,'getAttachmentAsByteArray(', 'String)', 'byte[]'),
+  \ javaapi#method(0,1,'getAttachmentAsByteArray(', 'String)', 'byte'),
   \ ])
 
 call javaapi#class('ByteArrayAttachment', 'Attachment', [
@@ -51,7 +51,7 @@ call javaapi#class('ByteArrayAttachment', 'Attachment', [
   \ javaapi#method(0,1,'ByteArrayAttachment(', 'String, byte[], String)', ''),
   \ javaapi#method(0,1,'getContentId(', ')', 'String'),
   \ javaapi#method(0,1,'getContentType(', ')', 'String'),
-  \ javaapi#method(0,1,'asByteArray(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'asByteArray(', ')', 'byte'),
   \ javaapi#method(0,1,'asDataHandler(', ')', 'DataHandler'),
   \ javaapi#method(0,1,'asSource(', ')', 'Source'),
   \ javaapi#method(0,1,'asInputStream(', ')', 'InputStream'),
@@ -96,7 +96,7 @@ call javaapi#class('DataHandlerAttachment', 'Attachment', [
   \ javaapi#method(0,1,'DataHandlerAttachment(', 'String, DataHandler)', ''),
   \ javaapi#method(0,1,'getContentId(', ')', 'String'),
   \ javaapi#method(0,1,'getContentType(', ')', 'String'),
-  \ javaapi#method(0,1,'asByteArray(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'asByteArray(', ')', 'byte'),
   \ javaapi#method(0,1,'asDataHandler(', ')', 'DataHandler'),
   \ javaapi#method(0,1,'asSource(', ')', 'Source'),
   \ javaapi#method(0,1,'asInputStream(', ')', 'InputStream'),
@@ -140,7 +140,7 @@ call javaapi#class('JAXBAttachment', 'DataSource', [
   \ javaapi#method(0,1,'JAXBAttachment(', 'String, Object, Bridge, String)', ''),
   \ javaapi#method(0,1,'getContentId(', ')', 'String'),
   \ javaapi#method(0,1,'getContentType(', ')', 'String'),
-  \ javaapi#method(0,1,'asByteArray(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'asByteArray(', ')', 'byte'),
   \ javaapi#method(0,1,'asDataHandler(', ')', 'DataHandler'),
   \ javaapi#method(0,1,'asSource(', ')', 'Source'),
   \ javaapi#method(0,1,'asInputStream(', ')', 'InputStream'),
@@ -156,7 +156,7 @@ call javaapi#class('MimeAttachmentSet', 'AttachmentSet', [
   \ javaapi#method(0,1,'get(', 'String)', 'Attachment'),
   \ javaapi#method(0,1,'isEmpty(', ')', 'boolean'),
   \ javaapi#method(0,1,'add(', 'Attachment)', 'void'),
-  \ javaapi#method(0,1,'iterator(', ')', 'Attachment>'),
+  \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
   \ ])
 
 call javaapi#class('ProblemActionHeader', 'AbstractHeaderImpl', [

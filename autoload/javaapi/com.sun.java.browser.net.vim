@@ -9,10 +9,10 @@ call javaapi#interface('ProxyInfo', '', [
 call javaapi#class('ProxyService', '', [
   \ javaapi#method(0,1,'ProxyService(', ')', ''),
   \ javaapi#method(1,1,'setProvider(', 'ProxyServiceProvider) throws IOException', 'void'),
-  \ javaapi#method(1,1,'getProxyInfo(', 'URL) throws IOException', 'ProxyInfo[]'),
+  \ javaapi#method(1,1,'getProxyInfo(', 'URL) throws IOException', 'ProxyInfo'),
   \ ])
 
 call javaapi#interface('ProxyServiceProvider', '', [
-  \ javaapi#method(0,1,'getProxyInfo(', 'URL)', 'ProxyInfo[]'),
+  \ javaapi#method(0,1,'getProxyInfo(', 'URL)', 'ProxyInfo'),
   \ ])
 

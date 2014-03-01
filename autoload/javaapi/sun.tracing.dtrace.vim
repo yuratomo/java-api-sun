@@ -26,6 +26,6 @@ call javaapi#class('DTraceProviderFactory', 'ProviderFactory', [
 call javaapi#class('JVM', '', [
   \ ])
 
-call javaapi#class('SystemResource', 'Activation>', [
+call javaapi#class('SystemResource', 'WeakReference', [
   \ ])
 

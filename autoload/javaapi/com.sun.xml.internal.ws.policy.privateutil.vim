@@ -209,9 +209,9 @@ call javaapi#class('ServiceConfigurationError', 'Error', [
   \ javaapi#method(0,1,'ServiceConfigurationError(', 'Throwable)', ''),
   \ ])
 
-call javaapi#class('ServiceFinder<T>', 'Iterable<T>', [
-  \ javaapi#method(1,1,'find(', 'Class<T>)', 'ServiceFinder<T>'),
-  \ javaapi#method(0,1,'iterator(', ')', 'Iterator<T>'),
-  \ javaapi#method(0,1,'toArray(', ')', 'T[]'),
+call javaapi#class('ServiceFinder', 'Iterable', [
+  \ javaapi#method(1,1,'find(', 'Class<T>)', 'ServiceFinder'),
+  \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
+  \ javaapi#method(0,1,'toArray(', ')', 'T'),
   \ ])
 

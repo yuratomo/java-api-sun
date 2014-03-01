@@ -183,7 +183,7 @@ call javaapi#interface('XMLResourceIdentifier', '', [
   \ ])
 
 call javaapi#class('XMLString', '', [
-  \ javaapi#field(0,1,'ch', 'char[]'),
+  \ javaapi#field(0,1,'ch', 'char'),
   \ javaapi#field(0,1,'offset', 'int'),
   \ javaapi#field(0,1,'length', 'int'),
   \ javaapi#method(0,1,'XMLString(', ')', ''),

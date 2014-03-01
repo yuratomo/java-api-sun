@@ -26,7 +26,7 @@ call javaapi#interface('ThreadPool', '', [
 call javaapi#interface('ThreadPoolChooser', '', [
   \ javaapi#method(0,1,'getThreadPool(', ')', 'ThreadPool'),
   \ javaapi#method(0,1,'getThreadPool(', 'int)', 'ThreadPool'),
-  \ javaapi#method(0,1,'getThreadPoolIds(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getThreadPoolIds(', ')', 'String'),
   \ ])
 
 call javaapi#interface('ThreadPoolManager', '', [

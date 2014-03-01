@@ -262,7 +262,7 @@ call javaapi#class('XSLTErrorResources', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XSLTErrorResources(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XSLTErrorResources'),
   \ ])
 
@@ -522,7 +522,7 @@ call javaapi#class('XSLTErrorResources_de', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XSLTErrorResources_de(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XSLTErrorResources'),
   \ ])
 
@@ -786,7 +786,7 @@ call javaapi#class('XSLTErrorResources_es', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XSLTErrorResources_es(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XSLTErrorResources'),
   \ ])
 
@@ -1046,7 +1046,7 @@ call javaapi#class('XSLTErrorResources_fr', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XSLTErrorResources_fr(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XSLTErrorResources'),
   \ ])
 
@@ -1306,7 +1306,7 @@ call javaapi#class('XSLTErrorResources_it', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XSLTErrorResources_it(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XSLTErrorResources'),
   \ ])
 
@@ -1566,7 +1566,7 @@ call javaapi#class('XSLTErrorResources_ja', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XSLTErrorResources_ja(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XSLTErrorResources'),
   \ ])
 
@@ -1826,7 +1826,7 @@ call javaapi#class('XSLTErrorResources_ko', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XSLTErrorResources_ko(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XSLTErrorResources'),
   \ ])
 
@@ -2086,7 +2086,7 @@ call javaapi#class('XSLTErrorResources_pt_BR', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XSLTErrorResources_pt_BR(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XSLTErrorResources'),
   \ ])
 
@@ -2346,7 +2346,7 @@ call javaapi#class('XSLTErrorResources_sv', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XSLTErrorResources_sv(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XSLTErrorResources'),
   \ ])
 
@@ -2606,7 +2606,7 @@ call javaapi#class('XSLTErrorResources_zh_CN', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XSLTErrorResources_zh_CN(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XSLTErrorResources'),
   \ ])
 
@@ -2866,7 +2866,7 @@ call javaapi#class('XSLTErrorResources_zh_TW', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XSLTErrorResources_zh_TW(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XSLTErrorResources'),
   \ ])
 

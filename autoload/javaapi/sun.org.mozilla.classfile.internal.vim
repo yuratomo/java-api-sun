@@ -290,7 +290,7 @@ call javaapi#class('ClassFileWriter', '', [
   \ javaapi#method(0,1,'addExceptionHandler(', 'int, int, int, String)', 'void'),
   \ javaapi#method(0,1,'addLineNumberEntry(', 'short)', 'void'),
   \ javaapi#method(0,1,'write(', 'OutputStream) throws IOException', 'void'),
-  \ javaapi#method(0,1,'toByteArray(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'toByteArray(', ')', 'byte'),
   \ ])
 
 call javaapi#class('ConstantPool', '', [

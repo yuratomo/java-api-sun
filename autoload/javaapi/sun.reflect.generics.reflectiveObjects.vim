@@ -19,8 +19,8 @@ call javaapi#class('NotImplementedException', 'RuntimeException', [
 
 call javaapi#class('ParameterizedTypeImpl', 'ParameterizedType', [
   \ javaapi#method(1,1,'make(', 'Class<?>, Type[], Type)', 'ParameterizedTypeImpl'),
-  \ javaapi#method(0,1,'getActualTypeArguments(', ')', 'Type[]'),
-  \ javaapi#method(0,1,'getRawType(', ')', 'Class<?>'),
+  \ javaapi#method(0,1,'getActualTypeArguments(', ')', 'Type'),
+  \ javaapi#method(0,1,'getRawType(', ')', 'Class'),
   \ javaapi#method(0,1,'getOwnerType(', ')', 'Type'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -29,8 +29,8 @@ call javaapi#class('ParameterizedTypeImpl', 'ParameterizedType', [
   \ ])
 
 call javaapi#class('TypeVariableImpl<D', 'GenericDeclaration>', [
-  \ javaapi#method(1,1,'make(', 'T, String, FieldTypeSignature[], GenericsFactory)', 'TypeVariableImpl<T>'),
-  \ javaapi#method(0,1,'getBounds(', ')', 'Type[]'),
+  \ javaapi#method(1,1,'make(', 'T, String, FieldTypeSignature[], GenericsFactory)', 'TypeVariableImpl'),
+  \ javaapi#method(0,1,'getBounds(', ')', 'Type'),
   \ javaapi#method(0,1,'getGenericDeclaration(', ')', 'D'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
@@ -40,8 +40,8 @@ call javaapi#class('TypeVariableImpl<D', 'GenericDeclaration>', [
 
 call javaapi#class('WildcardTypeImpl', 'LazyReflectiveObjectGenerator', [
   \ javaapi#method(1,1,'make(', 'FieldTypeSignature[], FieldTypeSignature[], GenericsFactory)', 'WildcardTypeImpl'),
-  \ javaapi#method(0,1,'getUpperBounds(', ')', 'Type[]'),
-  \ javaapi#method(0,1,'getLowerBounds(', ')', 'Type[]'),
+  \ javaapi#method(0,1,'getUpperBounds(', ')', 'Type'),
+  \ javaapi#method(0,1,'getLowerBounds(', ')', 'Type'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),

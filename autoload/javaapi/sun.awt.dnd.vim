@@ -16,7 +16,7 @@ call javaapi#class('SunDropTargetContextPeer', 'Transferable', [
   \ javaapi#method(0,1,'setTargetActions(', 'int)', 'void'),
   \ javaapi#method(0,1,'getTargetActions(', ')', 'int'),
   \ javaapi#method(0,1,'getTransferable(', ')', 'Transferable'),
-  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor[]'),
+  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor'),
   \ javaapi#method(0,1,'isDataFlavorSupported(', 'DataFlavor)', 'boolean'),
   \ javaapi#method(0,1,'getTransferData(', 'DataFlavor) throws UnsupportedFlavorException, IOException, InvalidDnDOperationException', 'Object'),
   \ javaapi#method(0,0,'getNativeData(', 'long) throws IOException', 'Object'),

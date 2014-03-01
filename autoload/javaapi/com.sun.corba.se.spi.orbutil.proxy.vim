@@ -18,7 +18,7 @@ call javaapi#class('DelegateInvocationHandlerImpl', '', [
 
 call javaapi#interface('InvocationHandlerFactory', '', [
   \ javaapi#method(0,1,'getInvocationHandler(', ')', 'InvocationHandler'),
-  \ javaapi#method(0,1,'getProxyInterfaces(', ')', 'Class[]'),
+  \ javaapi#method(0,1,'getProxyInterfaces(', ')', 'Class'),
   \ ])
 
 call javaapi#interface('LinkedInvocationHandler', 'InvocationHandler', [

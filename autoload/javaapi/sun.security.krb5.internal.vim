@@ -16,7 +16,7 @@ call javaapi#class('APRep', '', [
   \ javaapi#method(0,1,'APRep(', 'EncryptedData)', ''),
   \ javaapi#method(0,1,'APRep(', 'byte[]) throws Asn1Exception, KrbApErrException, IOException', ''),
   \ javaapi#method(0,1,'APRep(', 'DerValue) throws Asn1Exception, KrbApErrException, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ ])
 
 call javaapi#class('APReq', '', [
@@ -28,7 +28,7 @@ call javaapi#class('APReq', '', [
   \ javaapi#method(0,1,'APReq(', 'APOptions, Ticket, EncryptedData)', ''),
   \ javaapi#method(0,1,'APReq(', 'byte[]) throws Asn1Exception, IOException, KrbApErrException, RealmException', ''),
   \ javaapi#method(0,1,'APReq(', 'DerValue) throws Asn1Exception, IOException, KrbApErrException, RealmException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ ])
 
 call javaapi#class('ASRep', 'KDCRep', [
@@ -57,7 +57,7 @@ call javaapi#class('AuthContext', '', [
   \ javaapi#field(0,1,'authenticator', 'Authenticator'),
   \ javaapi#field(0,1,'reqCksumType', 'int'),
   \ javaapi#field(0,1,'safeCksumType', 'int'),
-  \ javaapi#field(0,1,'initializationVector', 'byte[]'),
+  \ javaapi#field(0,1,'initializationVector', 'byte'),
   \ javaapi#method(0,1,'AuthContext(', ')', ''),
   \ ])
 
@@ -71,7 +71,7 @@ call javaapi#class('Authenticator', '', [
   \ javaapi#method(0,1,'Authenticator(', 'Realm, PrincipalName, Checksum, int, KerberosTime, EncryptionKey, Integer, AuthorizationData)', ''),
   \ javaapi#method(0,1,'Authenticator(', 'byte[]) throws Asn1Exception, IOException, KrbApErrException, RealmException', ''),
   \ javaapi#method(0,1,'Authenticator(', 'DerValue) throws Asn1Exception, IOException, KrbApErrException, RealmException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ javaapi#method(0,1,'getChecksum(', ')', 'Checksum'),
   \ javaapi#method(0,1,'getSeqNumber(', ')', 'Integer'),
   \ javaapi#method(0,1,'getSubKey(', ')', 'EncryptionKey'),
@@ -82,7 +82,7 @@ call javaapi#class('AuthorizationData', 'Cloneable', [
   \ javaapi#method(0,1,'AuthorizationData(', 'AuthorizationDataEntry)', ''),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
   \ javaapi#method(0,1,'AuthorizationData(', 'DerValue) throws Asn1Exception, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ javaapi#method(1,1,'parse(', 'DerInputStream, byte, boolean) throws Asn1Exception, IOException', 'AuthorizationData'),
   \ javaapi#method(0,1,'writeAuth(', 'CCacheOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
@@ -92,11 +92,11 @@ call javaapi#class('AuthorizationData', 'Cloneable', [
 
 call javaapi#class('AuthorizationDataEntry', 'Cloneable', [
   \ javaapi#field(0,1,'adType', 'int'),
-  \ javaapi#field(0,1,'adData', 'byte[]'),
+  \ javaapi#field(0,1,'adData', 'byte'),
   \ javaapi#method(0,1,'AuthorizationDataEntry(', 'int, byte[])', ''),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
   \ javaapi#method(0,1,'AuthorizationDataEntry(', 'DerValue) throws Asn1Exception, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ javaapi#method(0,1,'writeEntry(', 'CCacheOutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
@@ -110,7 +110,7 @@ call javaapi#class('ETypeInfo', '', [
   \ javaapi#method(0,1,'ETypeInfo(', 'int, String)', ''),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
   \ javaapi#method(0,1,'ETypeInfo(', 'DerValue) throws Asn1Exception, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ javaapi#method(0,1,'getEType(', ')', 'int'),
   \ javaapi#method(0,1,'getSalt(', ')', 'String'),
   \ ])
@@ -119,10 +119,10 @@ call javaapi#class('ETypeInfo2', '', [
   \ javaapi#method(0,1,'ETypeInfo2(', 'int, String, byte[])', ''),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
   \ javaapi#method(0,1,'ETypeInfo2(', 'DerValue) throws Asn1Exception, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ javaapi#method(0,1,'getEType(', ')', 'int'),
   \ javaapi#method(0,1,'getSalt(', ')', 'String'),
-  \ javaapi#method(0,1,'getParams(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getParams(', ')', 'byte'),
   \ ])
 
 call javaapi#class('EncAPRepPart', '', [
@@ -131,7 +131,7 @@ call javaapi#class('EncAPRepPart', '', [
   \ javaapi#method(0,1,'EncAPRepPart(', 'KerberosTime, int, EncryptionKey, Integer)', ''),
   \ javaapi#method(0,1,'EncAPRepPart(', 'byte[]) throws Asn1Exception, IOException', ''),
   \ javaapi#method(0,1,'EncAPRepPart(', 'DerValue) throws Asn1Exception, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ javaapi#method(0,1,'getSubKey(', ')', 'EncryptionKey'),
   \ javaapi#method(0,1,'getSeqNumber(', ')', 'Integer'),
   \ ])
@@ -140,7 +140,7 @@ call javaapi#class('EncASRepPart', 'EncKDCRepPart', [
   \ javaapi#method(0,1,'EncASRepPart(', 'EncryptionKey, LastReq, int, KerberosTime, TicketFlags, KerberosTime, KerberosTime, KerberosTime, KerberosTime, Realm, PrincipalName, HostAddresses)', ''),
   \ javaapi#method(0,1,'EncASRepPart(', 'byte[]) throws Asn1Exception, IOException, KrbException', ''),
   \ javaapi#method(0,1,'EncASRepPart(', 'DerValue) throws Asn1Exception, IOException, KrbException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ ])
 
 call javaapi#class('EncKDCRepPart', '', [
@@ -162,20 +162,20 @@ call javaapi#class('EncKDCRepPart', '', [
   \ javaapi#method(0,1,'EncKDCRepPart(', 'byte[], int) throws Asn1Exception, IOException, RealmException', ''),
   \ javaapi#method(0,1,'EncKDCRepPart(', 'DerValue, int) throws Asn1Exception, IOException, RealmException', ''),
   \ javaapi#method(0,0,'init(', 'DerValue, int) throws Asn1Exception, IOException, RealmException', 'void'),
-  \ javaapi#method(0,1,'asn1Encode(', 'int) throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', 'int) throws Asn1Exception, IOException', 'byte'),
   \ ])
 
 call javaapi#class('EncKrbCredPart', '', [
-  \ javaapi#field(0,1,'ticketInfo', 'KrbCredInfo[]'),
+  \ javaapi#field(0,1,'ticketInfo', 'KrbCredInfo'),
   \ javaapi#field(0,1,'timeStamp', 'KerberosTime'),
   \ javaapi#method(0,1,'EncKrbCredPart(', 'KrbCredInfo[], KerberosTime, Integer, Integer, HostAddress, HostAddresses) throws IOException', ''),
   \ javaapi#method(0,1,'EncKrbCredPart(', 'byte[]) throws Asn1Exception, IOException, RealmException', ''),
   \ javaapi#method(0,1,'EncKrbCredPart(', 'DerValue) throws Asn1Exception, IOException, RealmException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ ])
 
 call javaapi#class('EncKrbPrivPart', '', [
-  \ javaapi#field(0,1,'userData', 'byte[]'),
+  \ javaapi#field(0,1,'userData', 'byte'),
   \ javaapi#field(0,1,'timestamp', 'KerberosTime'),
   \ javaapi#field(0,1,'usec', 'Integer'),
   \ javaapi#field(0,1,'seqNumber', 'Integer'),
@@ -184,14 +184,14 @@ call javaapi#class('EncKrbPrivPart', '', [
   \ javaapi#method(0,1,'EncKrbPrivPart(', 'byte[], KerberosTime, Integer, Integer, HostAddress, HostAddress)', ''),
   \ javaapi#method(0,1,'EncKrbPrivPart(', 'byte[]) throws Asn1Exception, IOException', ''),
   \ javaapi#method(0,1,'EncKrbPrivPart(', 'DerValue) throws Asn1Exception, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ ])
 
 call javaapi#class('EncTGSRepPart', 'EncKDCRepPart', [
   \ javaapi#method(0,1,'EncTGSRepPart(', 'EncryptionKey, LastReq, int, KerberosTime, TicketFlags, KerberosTime, KerberosTime, KerberosTime, KerberosTime, Realm, PrincipalName, HostAddresses)', ''),
   \ javaapi#method(0,1,'EncTGSRepPart(', 'byte[]) throws Asn1Exception, IOException, KrbException', ''),
   \ javaapi#method(0,1,'EncTGSRepPart(', 'DerValue) throws Asn1Exception, IOException, KrbException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ ])
 
 call javaapi#class('EncTicketPart', '', [
@@ -209,7 +209,7 @@ call javaapi#class('EncTicketPart', '', [
   \ javaapi#method(0,1,'EncTicketPart(', 'TicketFlags, EncryptionKey, Realm, PrincipalName, TransitedEncoding, KerberosTime, KerberosTime, KerberosTime, KerberosTime, HostAddresses, AuthorizationData)', ''),
   \ javaapi#method(0,1,'EncTicketPart(', 'byte[]) throws Asn1Exception, KrbException, IOException', ''),
   \ javaapi#method(0,1,'EncTicketPart(', 'DerValue) throws Asn1Exception, KrbException, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ ])
 
 call javaapi#class('HostAddress', 'Cloneable', [
@@ -221,7 +221,7 @@ call javaapi#class('HostAddress', 'Cloneable', [
   \ javaapi#method(0,1,'HostAddress(', 'int, byte[]) throws KrbApErrException, UnknownHostException', ''),
   \ javaapi#method(0,1,'HostAddress(', 'InetAddress)', ''),
   \ javaapi#method(0,1,'HostAddress(', 'DerValue) throws Asn1Exception, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ javaapi#method(1,1,'parse(', 'DerInputStream, byte, boolean) throws Asn1Exception, IOException', 'HostAddress'),
   \ ])
 
@@ -234,10 +234,10 @@ call javaapi#class('HostAddresses', 'Cloneable', [
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'HostAddresses(', 'DerValue) throws Asn1Exception, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ javaapi#method(1,1,'parse(', 'DerInputStream, byte, boolean) throws Asn1Exception, IOException', 'HostAddresses'),
   \ javaapi#method(0,1,'writeAddrs(', 'CCacheOutputStream) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getInetAddresses(', ')', 'InetAddress[]'),
+  \ javaapi#method(0,1,'getInetAddresses(', ')', 'InetAddress'),
   \ javaapi#method(1,1,'getLocalAddresses(', ') throws IOException', 'HostAddresses'),
   \ javaapi#method(0,1,'HostAddresses(', 'InetAddress[])', ''),
   \ ])
@@ -278,13 +278,13 @@ call javaapi#class('KDCRep', '', [
   \ javaapi#field(0,1,'ticket', 'Ticket'),
   \ javaapi#field(0,1,'encPart', 'EncryptedData'),
   \ javaapi#field(0,1,'encKDCRepPart', 'EncKDCRepPart'),
-  \ javaapi#field(0,1,'pAData', 'PAData[]'),
+  \ javaapi#field(0,1,'pAData', 'PAData'),
   \ javaapi#method(0,1,'KDCRep(', 'PAData[], Realm, PrincipalName, Ticket, EncryptedData, int) throws IOException', ''),
   \ javaapi#method(0,1,'KDCRep(', ')', ''),
   \ javaapi#method(0,1,'KDCRep(', 'byte[], int) throws Asn1Exception, KrbApErrException, RealmException, IOException', ''),
   \ javaapi#method(0,1,'KDCRep(', 'DerValue, int) throws Asn1Exception, RealmException, KrbApErrException, IOException', ''),
   \ javaapi#method(0,0,'init(', 'DerValue, int) throws Asn1Exception, RealmException, IOException, KrbApErrException', 'void'),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ ])
 
 call javaapi#class('KDCReq', '', [
@@ -294,8 +294,8 @@ call javaapi#class('KDCReq', '', [
   \ javaapi#method(0,1,'KDCReq(', 'byte[], int) throws Asn1Exception, IOException, KrbException', ''),
   \ javaapi#method(0,1,'KDCReq(', 'DerValue, int) throws Asn1Exception, IOException, KrbException', ''),
   \ javaapi#method(0,0,'init(', 'DerValue, int) throws Asn1Exception, IOException, KrbException', 'void'),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
-  \ javaapi#method(0,1,'asn1EncodeReqBody(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
+  \ javaapi#method(0,1,'asn1EncodeReqBody(', ') throws Asn1Exception, IOException', 'byte'),
   \ ])
 
 call javaapi#class('KDCReqBody', '', [
@@ -309,17 +309,17 @@ call javaapi#class('KDCReqBody', '', [
   \ javaapi#field(0,1,'addresses', 'HostAddresses'),
   \ javaapi#method(0,1,'KDCReqBody(', 'KDCOptions, PrincipalName, Realm, PrincipalName, KerberosTime, KerberosTime, KerberosTime, int, int[], HostAddresses, EncryptedData, Ticket[]) throws IOException', ''),
   \ javaapi#method(0,1,'KDCReqBody(', 'DerValue, int) throws Asn1Exception, RealmException, KrbException, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', 'int) throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', 'int) throws Asn1Exception, IOException', 'byte'),
   \ javaapi#method(0,1,'getNonce(', ')', 'int'),
   \ ])
 
 call javaapi#class('KRBCred', '', [
-  \ javaapi#field(0,1,'tickets', 'Ticket[]'),
+  \ javaapi#field(0,1,'tickets', 'Ticket'),
   \ javaapi#field(0,1,'encPart', 'EncryptedData'),
   \ javaapi#method(0,1,'KRBCred(', 'Ticket[], EncryptedData) throws IOException', ''),
   \ javaapi#method(0,1,'KRBCred(', 'byte[]) throws Asn1Exception, RealmException, KrbApErrException, IOException', ''),
   \ javaapi#method(0,1,'KRBCred(', 'DerValue) throws Asn1Exception, RealmException, KrbApErrException, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ ])
 
 call javaapi#class('KRBError', 'Serializable', [
@@ -332,9 +332,9 @@ call javaapi#class('KRBError', 'Serializable', [
   \ javaapi#method(0,1,'getServerMicroSeconds(', ')', 'Integer'),
   \ javaapi#method(0,1,'getClientMicroSeconds(', ')', 'Integer'),
   \ javaapi#method(0,1,'getErrorCode(', ')', 'int'),
-  \ javaapi#method(0,1,'getPA(', ')', 'PAData[]'),
+  \ javaapi#method(0,1,'getPA(', ')', 'PAData'),
   \ javaapi#method(0,1,'getErrorString(', ')', 'String'),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ ])
@@ -346,7 +346,7 @@ call javaapi#class('KRBPriv', '', [
   \ javaapi#method(0,1,'KRBPriv(', 'EncryptedData)', ''),
   \ javaapi#method(0,1,'KRBPriv(', 'byte[]) throws Asn1Exception, KrbApErrException, IOException', ''),
   \ javaapi#method(0,1,'KRBPriv(', 'DerValue) throws Asn1Exception, KrbApErrException, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ ])
 
 call javaapi#class('KRBSafe', '', [
@@ -357,11 +357,11 @@ call javaapi#class('KRBSafe', '', [
   \ javaapi#method(0,1,'KRBSafe(', 'KRBSafeBody, Checksum)', ''),
   \ javaapi#method(0,1,'KRBSafe(', 'byte[]) throws Asn1Exception, RealmException, KrbApErrException, IOException', ''),
   \ javaapi#method(0,1,'KRBSafe(', 'DerValue) throws Asn1Exception, RealmException, KrbApErrException, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ ])
 
 call javaapi#class('KRBSafeBody', '', [
-  \ javaapi#field(0,1,'userData', 'byte[]'),
+  \ javaapi#field(0,1,'userData', 'byte'),
   \ javaapi#field(0,1,'timestamp', 'KerberosTime'),
   \ javaapi#field(0,1,'usec', 'Integer'),
   \ javaapi#field(0,1,'seqNumber', 'Integer'),
@@ -369,7 +369,7 @@ call javaapi#class('KRBSafeBody', '', [
   \ javaapi#field(0,1,'rAddress', 'HostAddress'),
   \ javaapi#method(0,1,'KRBSafeBody(', 'byte[], KerberosTime, Integer, Integer, HostAddress, HostAddress)', ''),
   \ javaapi#method(0,1,'KRBSafeBody(', 'DerValue) throws Asn1Exception, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ javaapi#method(1,1,'parse(', 'DerInputStream, byte, boolean) throws Asn1Exception, IOException', 'KRBSafeBody'),
   \ ])
 
@@ -389,7 +389,7 @@ call javaapi#class('KerberosTime', 'Cloneable', [
   \ javaapi#method(0,1,'KerberosTime(', 'Date)', ''),
   \ javaapi#method(0,1,'KerberosTime(', 'boolean)', ''),
   \ javaapi#method(0,1,'toGeneralizedTimeString(', ')', 'String'),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ javaapi#method(0,1,'getTime(', ')', 'long'),
   \ javaapi#method(0,1,'setTime(', 'Date)', 'void'),
   \ javaapi#method(0,1,'setTime(', 'long)', 'void'),
@@ -615,7 +615,7 @@ call javaapi#class('KrbCredInfo', '', [
   \ javaapi#field(0,1,'caddr', 'HostAddresses'),
   \ javaapi#method(0,1,'KrbCredInfo(', 'EncryptionKey, Realm, PrincipalName, TicketFlags, KerberosTime, KerberosTime, KerberosTime, KerberosTime, Realm, PrincipalName, HostAddresses)', ''),
   \ javaapi#method(0,1,'KrbCredInfo(', 'DerValue) throws Asn1Exception, IOException, RealmException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
   \ ])
 
@@ -627,14 +627,14 @@ call javaapi#class('KrbErrException', 'KrbException', [
 call javaapi#class('LastReq', '', [
   \ javaapi#method(0,1,'LastReq(', 'LastReqEntry[]) throws IOException', ''),
   \ javaapi#method(0,1,'LastReq(', 'DerValue) throws Asn1Exception, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ javaapi#method(1,1,'parse(', 'DerInputStream, byte, boolean) throws Asn1Exception, IOException', 'LastReq'),
   \ ])
 
 call javaapi#class('LastReqEntry', '', [
   \ javaapi#method(0,1,'LastReqEntry(', 'int, KerberosTime)', ''),
   \ javaapi#method(0,1,'LastReqEntry(', 'DerValue) throws Asn1Exception, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
   \ ])
 
@@ -666,14 +666,14 @@ call javaapi#class('LoginOptions', 'KDCOptions', [
 call javaapi#class('MethodData', '', [
   \ javaapi#method(0,1,'MethodData(', 'int, byte[])', ''),
   \ javaapi#method(0,1,'MethodData(', 'DerValue) throws Asn1Exception, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ ])
 
 call javaapi#class('NetClient', '', [
   \ javaapi#method(0,1,'NetClient(', ')', ''),
   \ javaapi#method(1,1,'getInstance(', 'String, String, int, int) throws IOException', 'NetClient'),
   \ javaapi#method(0,1,'send(', 'byte[]) throws IOException', 'void'),
-  \ javaapi#method(0,1,'receive(', ') throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'receive(', ') throws IOException', 'byte'),
   \ javaapi#method(0,1,'close(', ') throws IOException', 'void'),
   \ ])
 
@@ -681,9 +681,9 @@ call javaapi#class('PAData', '', [
   \ javaapi#method(0,1,'PAData(', 'int, byte[])', ''),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
   \ javaapi#method(0,1,'PAData(', 'DerValue) throws Asn1Exception, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ javaapi#method(0,1,'getType(', ')', 'int'),
-  \ javaapi#method(0,1,'getValue(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getValue(', ')', 'byte'),
   \ javaapi#method(1,1,'getPreferredEType(', 'PAData[], int) throws IOException, Asn1Exception', 'int'),
   \ javaapi#method(1,1,'getSaltAndParams(', 'int, PAData[]) throws Asn1Exception, IOException', 'SaltAndParams'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
@@ -695,7 +695,7 @@ call javaapi#class('PAEncTSEnc', '', [
   \ javaapi#method(0,1,'PAEncTSEnc(', 'KerberosTime, Integer)', ''),
   \ javaapi#method(0,1,'PAEncTSEnc(', ')', ''),
   \ javaapi#method(0,1,'PAEncTSEnc(', 'DerValue) throws Asn1Exception, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ ])
 
 call javaapi#interface('SeqNumber', '', [
@@ -708,7 +708,7 @@ call javaapi#interface('SeqNumber', '', [
 
 call javaapi#class('TCPClient', 'NetClient', [
   \ javaapi#method(0,1,'send(', 'byte[]) throws IOException', 'void'),
-  \ javaapi#method(0,1,'receive(', ') throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'receive(', ') throws IOException', 'byte'),
   \ javaapi#method(0,1,'close(', ') throws IOException', 'void'),
   \ ])
 
@@ -733,7 +733,7 @@ call javaapi#class('Ticket', 'Cloneable', [
   \ javaapi#method(0,1,'Ticket(', 'Realm, PrincipalName, EncryptedData)', ''),
   \ javaapi#method(0,1,'Ticket(', 'byte[]) throws Asn1Exception, RealmException, KrbApErrException, IOException', ''),
   \ javaapi#method(0,1,'Ticket(', 'DerValue) throws Asn1Exception, RealmException, KrbApErrException, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ javaapi#method(1,1,'parse(', 'DerInputStream, byte, boolean) throws Asn1Exception, IOException, RealmException, KrbApErrException', 'Ticket'),
   \ ])
 
@@ -751,16 +751,16 @@ call javaapi#class('TicketFlags', 'KerberosFlags', [
 
 call javaapi#class('TransitedEncoding', '', [
   \ javaapi#field(0,1,'trType', 'int'),
-  \ javaapi#field(0,1,'contents', 'byte[]'),
+  \ javaapi#field(0,1,'contents', 'byte'),
   \ javaapi#method(0,1,'TransitedEncoding(', 'int, byte[])', ''),
   \ javaapi#method(0,1,'TransitedEncoding(', 'DerValue) throws Asn1Exception, IOException', ''),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte[]'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws Asn1Exception, IOException', 'byte'),
   \ javaapi#method(1,1,'parse(', 'DerInputStream, byte, boolean) throws Asn1Exception, IOException', 'TransitedEncoding'),
   \ ])
 
 call javaapi#class('UDPClient', 'NetClient', [
   \ javaapi#method(0,1,'send(', 'byte[]) throws IOException', 'void'),
-  \ javaapi#method(0,1,'receive(', ') throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'receive(', ') throws IOException', 'byte'),
   \ javaapi#method(0,1,'close(', ')', 'void'),
   \ ])
 

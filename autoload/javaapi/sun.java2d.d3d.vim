@@ -55,7 +55,7 @@ call javaapi#class('D3DGraphicsDevice', 'Win32GraphicsDevice', [
   \ javaapi#method(0,0,'configDisplayMode(', 'int, WindowPeer, int, int, int, int)', 'void'),
   \ javaapi#method(0,0,'enumDisplayModes(', 'int, ArrayList)', 'void'),
   \ javaapi#method(0,1,'getAvailableAcceleratedMemory(', ')', 'int'),
-  \ javaapi#method(0,1,'getConfigurations(', ')', 'GraphicsConfiguration[]'),
+  \ javaapi#method(0,1,'getConfigurations(', ')', 'GraphicsConfiguration'),
   \ javaapi#method(0,1,'getDefaultConfiguration(', ')', 'GraphicsConfiguration'),
   \ javaapi#method(1,1,'isD3DAvailableOnDevice(', 'int)', 'boolean'),
   \ javaapi#method(0,1,'displayChanged(', ')', 'void'),

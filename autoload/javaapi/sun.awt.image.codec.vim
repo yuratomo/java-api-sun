@@ -62,7 +62,7 @@ call javaapi#class('JPEGParam', 'Cloneable', [
   \ javaapi#method(0,1,'isTableInfoValid(', ')', 'boolean'),
   \ javaapi#method(0,1,'setTableInfoValid(', 'boolean)', 'void'),
   \ javaapi#method(0,1,'getMarker(', 'int)', 'boolean'),
-  \ javaapi#method(0,1,'getMarkerData(', 'int)', 'byte[][]'),
+  \ javaapi#method(0,1,'getMarkerData(', 'int)', 'byte[]'),
   \ javaapi#method(0,1,'setMarkerData(', 'int, byte[][])', 'void'),
   \ javaapi#method(0,1,'addMarkerData(', 'int, byte[])', 'void'),
   \ javaapi#method(0,1,'getEncodedColorID(', ')', 'int'),

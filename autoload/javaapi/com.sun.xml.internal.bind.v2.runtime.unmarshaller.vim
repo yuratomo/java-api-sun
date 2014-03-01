@@ -17,10 +17,10 @@ call javaapi#class('Base64Data', 'Pcdata', [
   \ javaapi#method(0,1,'set(', 'byte[], String)', 'void'),
   \ javaapi#method(0,1,'set(', 'DataHandler)', 'void'),
   \ javaapi#method(0,1,'getDataHandler(', ')', 'DataHandler'),
-  \ javaapi#method(0,1,'getExact(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getExact(', ')', 'byte'),
   \ javaapi#method(0,1,'getInputStream(', ') throws IOException', 'InputStream'),
   \ javaapi#method(0,1,'hasData(', ')', 'boolean'),
-  \ javaapi#method(0,1,'get(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'get(', ')', 'byte'),
   \ javaapi#method(0,1,'getDataLen(', ')', 'int'),
   \ javaapi#method(0,1,'getMimeType(', ')', 'String'),
   \ javaapi#method(0,1,'length(', ')', 'int'),
@@ -115,8 +115,8 @@ call javaapi#class('LeafPropertyXsiLoader', 'Loader', [
   \ javaapi#method(0,1,'LeafPropertyXsiLoader(', 'Loader, TransducedAccessor, Accessor)', ''),
   \ javaapi#method(0,1,'startElement(', 'State, TagName) throws SAXException', 'void'),
   \ javaapi#method(0,0,'selectLoader(', 'State, TagName) throws SAXException', 'Loader'),
-  \ javaapi#method(0,1,'getExpectedChildElements(', ')', 'QName>'),
-  \ javaapi#method(0,1,'getExpectedAttributes(', ')', 'QName>'),
+  \ javaapi#method(0,1,'getExpectedChildElements(', ')', 'Collection'),
+  \ javaapi#method(0,1,'getExpectedAttributes(', ')', 'Collection'),
   \ ])
 
 call javaapi#class('Loader', '', [
@@ -126,8 +126,8 @@ call javaapi#class('Loader', '', [
   \ javaapi#method(0,1,'startElement(', 'State, TagName) throws SAXException', 'void'),
   \ javaapi#method(0,1,'childElement(', 'State, TagName) throws SAXException', 'void'),
   \ javaapi#method(0,0,'reportUnexpectedChildElement(', 'TagName, boolean) throws SAXException', 'void'),
-  \ javaapi#method(0,1,'getExpectedChildElements(', ')', 'QName>'),
-  \ javaapi#method(0,1,'getExpectedAttributes(', ')', 'QName>'),
+  \ javaapi#method(0,1,'getExpectedChildElements(', ')', 'Collection'),
+  \ javaapi#method(0,1,'getExpectedAttributes(', ')', 'Collection'),
   \ javaapi#method(0,1,'text(', 'State, CharSequence) throws SAXException', 'void'),
   \ javaapi#method(0,1,'expectText(', ')', 'boolean'),
   \ javaapi#method(0,1,'leaveElement(', 'State, TagName) throws SAXException', 'void'),
@@ -167,7 +167,7 @@ call javaapi#class('MTOMDecorator', 'XmlVisitor', [
   \ javaapi#method(0,1,'getPredictor(', ')', 'TextPredictor'),
   \ ])
 
-call javaapi#class('Messages', 'Messages>', [
+call javaapi#class('Messages', 'Enum', [
   \ javaapi#field(1,1,'UNRESOLVED_IDREF', 'Messages'),
   \ javaapi#field(1,1,'UNEXPECTED_ELEMENT', 'Messages'),
   \ javaapi#field(1,1,'UNEXPECTED_TEXT', 'Messages'),
@@ -176,7 +176,7 @@ call javaapi#class('Messages', 'Messages>', [
   \ javaapi#field(1,1,'UNRECOGNIZED_TYPE_NAME_MAYBE', 'Messages'),
   \ javaapi#field(1,1,'UNABLE_TO_CREATE_MAP', 'Messages'),
   \ javaapi#field(1,1,'UNINTERNED_STRINGS', 'Messages'),
-  \ javaapi#method(1,1,'values(', ')', 'Messages[]'),
+  \ javaapi#method(1,1,'values(', ')', 'Messages'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'Messages'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'format(', ')', 'String'),
@@ -214,7 +214,7 @@ call javaapi#class('SAXConnector', 'UnmarshallerHandler', [
   \ javaapi#method(0,1,'skippedEntity(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('Scope<BeanT,PropT,ItemT,PackT>', '', [
+call javaapi#class('Scope', '', [
   \ javaapi#field(0,1,'context', 'UnmarshallingContext'),
   \ javaapi#method(0,1,'hasStarted(', ')', 'boolean'),
   \ javaapi#method(0,1,'reset(', ')', 'void'),
@@ -267,8 +267,8 @@ call javaapi#class('StructureLoader', 'Loader', [
   \ javaapi#method(0,1,'init(', 'JAXBContextImpl, ClassBeanInfoImpl, Accessor<?, Map<QName, String>>)', 'void'),
   \ javaapi#method(0,1,'startElement(', 'State, TagName) throws SAXException', 'void'),
   \ javaapi#method(0,1,'childElement(', 'State, TagName) throws SAXException', 'void'),
-  \ javaapi#method(0,1,'getExpectedChildElements(', ')', 'QName>'),
-  \ javaapi#method(0,1,'getExpectedAttributes(', ')', 'QName>'),
+  \ javaapi#method(0,1,'getExpectedChildElements(', ')', 'Collection'),
+  \ javaapi#method(0,1,'getExpectedAttributes(', ')', 'Collection'),
   \ javaapi#method(0,1,'text(', 'State, CharSequence) throws SAXException', 'void'),
   \ javaapi#method(0,1,'leaveElement(', 'State, TagName) throws SAXException', 'void'),
   \ javaapi#method(0,1,'getBeanInfo(', ')', 'JaxBeanInfo'),
@@ -301,19 +301,19 @@ call javaapi#class('UnmarshallerImpl', 'AbstractUnmarshallerImpl', [
   \ javaapi#method(0,1,'createUnmarshallerHandler(', 'InfosetScanner, boolean, JaxBeanInfo)', 'XmlVisitor'),
   \ javaapi#method(1,1,'needsInterning(', 'XMLReader)', 'boolean'),
   \ javaapi#method(0,0,'unmarshal(', 'XMLReader, InputSource) throws JAXBException', 'Object'),
-  \ javaapi#method(0,0,'unmarshal(', 'XMLReader, InputSource, Class<T>) throws JAXBException', 'JAXBElement<T>'),
-  \ javaapi#method(0,1,'unmarshal(', 'Source, Class<T>) throws JAXBException', 'JAXBElement<T>'),
+  \ javaapi#method(0,0,'unmarshal(', 'XMLReader, InputSource, Class<T>) throws JAXBException', 'JAXBElement'),
+  \ javaapi#method(0,1,'unmarshal(', 'Source, Class<T>) throws JAXBException', 'JAXBElement'),
   \ javaapi#method(0,1,'unmarshal0(', 'Source, JaxBeanInfo) throws JAXBException', 'Object'),
   \ javaapi#method(0,1,'getEventHandler(', ')', 'ValidationEventHandler'),
   \ javaapi#method(0,1,'hasEventHandler(', ')', 'boolean'),
-  \ javaapi#method(0,1,'unmarshal(', 'Node, Class<T>) throws JAXBException', 'JAXBElement<T>'),
+  \ javaapi#method(0,1,'unmarshal(', 'Node, Class<T>) throws JAXBException', 'JAXBElement'),
   \ javaapi#method(0,1,'unmarshal(', 'Node) throws JAXBException', 'Object'),
   \ javaapi#method(0,1,'unmarshal(', 'SAXSource) throws JAXBException', 'Object'),
   \ javaapi#method(0,1,'unmarshal0(', 'Node, JaxBeanInfo) throws JAXBException', 'Object'),
   \ javaapi#method(0,1,'unmarshal(', 'XMLStreamReader) throws JAXBException', 'Object'),
-  \ javaapi#method(0,1,'unmarshal(', 'XMLStreamReader, Class<T>) throws JAXBException', 'JAXBElement<T>'),
+  \ javaapi#method(0,1,'unmarshal(', 'XMLStreamReader, Class<T>) throws JAXBException', 'JAXBElement'),
   \ javaapi#method(0,1,'unmarshal0(', 'XMLStreamReader, JaxBeanInfo) throws JAXBException', 'Object'),
-  \ javaapi#method(0,1,'unmarshal(', 'XMLEventReader, Class<T>) throws JAXBException', 'JAXBElement<T>'),
+  \ javaapi#method(0,1,'unmarshal(', 'XMLEventReader, Class<T>) throws JAXBException', 'JAXBElement'),
   \ javaapi#method(0,1,'unmarshal(', 'XMLEventReader) throws JAXBException', 'Object'),
   \ javaapi#method(0,1,'unmarshal0(', 'InputStream, JaxBeanInfo) throws JAXBException', 'Object'),
   \ javaapi#method(0,1,'getProperty(', 'String) throws PropertyException', 'Object'),
@@ -328,7 +328,7 @@ call javaapi#class('UnmarshallerImpl', 'AbstractUnmarshallerImpl', [
   \ javaapi#method(0,1,'getAdapter(', 'Class<A>)', 'A'),
   \ javaapi#method(0,1,'createUnmarshalException(', 'SAXException)', 'UnmarshalException'),
   \ javaapi#method(0,1,'handleEvent(', 'ValidationEvent)', 'boolean'),
-  \ javaapi#method(0,1,'getBeanInfo(', 'Class<T>) throws JAXBException', 'JaxBeanInfo<T>'),
+  \ javaapi#method(0,1,'getBeanInfo(', 'Class<T>) throws JAXBException', 'JaxBeanInfo'),
   \ javaapi#method(0,1,'getListener(', ')', 'Listener'),
   \ javaapi#method(0,1,'setListener(', 'Listener)', 'void'),
   \ javaapi#method(0,1,'getContext(', ')', 'UnmarshallingContext'),
@@ -369,9 +369,9 @@ call javaapi#class('UnmarshallingContext', 'Coordinator', [
   \ javaapi#method(0,1,'getObjectFromId(', 'String, Class) throws SAXException', 'Callable'),
   \ javaapi#method(0,1,'startPrefixMapping(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'endPrefixMapping(', 'String)', 'void'),
-  \ javaapi#method(0,1,'getNewlyDeclaredPrefixes(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getAllDeclaredPrefixes(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getPrefixes(', 'String)', 'String>'),
+  \ javaapi#method(0,1,'getNewlyDeclaredPrefixes(', ')', 'String'),
+  \ javaapi#method(0,1,'getAllDeclaredPrefixes(', ')', 'String'),
+  \ javaapi#method(0,1,'getPrefixes(', 'String)', 'Iterator'),
   \ javaapi#method(0,1,'getPrefix(', 'String)', 'String'),
   \ javaapi#method(0,1,'getNamespaceURI(', 'String)', 'String'),
   \ javaapi#method(0,1,'startScope(', 'int)', 'void'),
@@ -383,8 +383,8 @@ call javaapi#class('UnmarshallingContext', 'Coordinator', [
   \ javaapi#method(0,1,'getOuterPeer(', ')', 'Object'),
   \ javaapi#method(0,1,'getXMIMEContentType(', ')', 'String'),
   \ javaapi#method(1,1,'getInstance(', ')', 'UnmarshallingContext'),
-  \ javaapi#method(0,1,'getCurrentExpectedElements(', ')', 'QName>'),
-  \ javaapi#method(0,1,'getCurrentExpectedAttributes(', ')', 'QName>'),
+  \ javaapi#method(0,1,'getCurrentExpectedElements(', ')', 'Collection'),
+  \ javaapi#method(0,1,'getCurrentExpectedAttributes(', ')', 'Collection'),
   \ javaapi#method(0,1,'getStructureLoader(', ')', 'StructureLoader'),
   \ ])
 
@@ -427,14 +427,14 @@ call javaapi#interface('XmlVisitor', '', [
 call javaapi#class('XsiNilLoader', 'ProxyLoader', [
   \ javaapi#method(0,1,'XsiNilLoader(', 'Loader)', ''),
   \ javaapi#method(0,0,'selectLoader(', 'State, TagName) throws SAXException', 'Loader'),
-  \ javaapi#method(0,1,'getExpectedChildElements(', ')', 'QName>'),
-  \ javaapi#method(0,1,'getExpectedAttributes(', ')', 'QName>'),
+  \ javaapi#method(0,1,'getExpectedChildElements(', ')', 'Collection'),
+  \ javaapi#method(0,1,'getExpectedAttributes(', ')', 'Collection'),
   \ javaapi#method(0,0,'onNil(', 'State) throws SAXException', 'void'),
   \ ])
 
 call javaapi#class('XsiTypeLoader', 'Loader', [
   \ javaapi#method(0,1,'XsiTypeLoader(', 'JaxBeanInfo)', ''),
   \ javaapi#method(0,1,'startElement(', 'State, TagName) throws SAXException', 'void'),
-  \ javaapi#method(0,1,'getExpectedAttributes(', ')', 'QName>'),
+  \ javaapi#method(0,1,'getExpectedAttributes(', ')', 'Collection'),
   \ ])
 

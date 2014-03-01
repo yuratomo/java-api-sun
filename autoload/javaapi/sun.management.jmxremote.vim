@@ -14,7 +14,7 @@ call javaapi#class('LocalRMIServerSocketFactory', 'RMIServerSocketFactory', [
   \ ])
 
 call javaapi#class('SingleEntryRegistry', 'RegistryImpl', [
-  \ javaapi#method(0,1,'list(', ')', 'String[]'),
+  \ javaapi#method(0,1,'list(', ')', 'String'),
   \ javaapi#method(0,1,'lookup(', 'String) throws NotBoundException', 'Remote'),
   \ javaapi#method(0,1,'bind(', 'String, Remote) throws AccessException', 'void'),
   \ javaapi#method(0,1,'rebind(', 'String, Remote) throws AccessException', 'void'),

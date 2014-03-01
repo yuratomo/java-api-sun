@@ -13,14 +13,14 @@ call javaapi#class('BerDecoder', '', [
   \ javaapi#method(0,1,'fetchInteger(', 'int) throws BerException', 'int'),
   \ javaapi#method(0,1,'fetchIntegerAsLong(', ') throws BerException', 'long'),
   \ javaapi#method(0,1,'fetchIntegerAsLong(', 'int) throws BerException', 'long'),
-  \ javaapi#method(0,1,'fetchOctetString(', ') throws BerException', 'byte[]'),
-  \ javaapi#method(0,1,'fetchOctetString(', 'int) throws BerException', 'byte[]'),
-  \ javaapi#method(0,1,'fetchOid(', ') throws BerException', 'long[]'),
-  \ javaapi#method(0,1,'fetchOid(', 'int) throws BerException', 'long[]'),
+  \ javaapi#method(0,1,'fetchOctetString(', ') throws BerException', 'byte'),
+  \ javaapi#method(0,1,'fetchOctetString(', 'int) throws BerException', 'byte'),
+  \ javaapi#method(0,1,'fetchOid(', ') throws BerException', 'long'),
+  \ javaapi#method(0,1,'fetchOid(', 'int) throws BerException', 'long'),
   \ javaapi#method(0,1,'fetchNull(', ') throws BerException', 'void'),
   \ javaapi#method(0,1,'fetchNull(', 'int) throws BerException', 'void'),
-  \ javaapi#method(0,1,'fetchAny(', ') throws BerException', 'byte[]'),
-  \ javaapi#method(0,1,'fetchAny(', 'int) throws BerException', 'byte[]'),
+  \ javaapi#method(0,1,'fetchAny(', ') throws BerException', 'byte'),
+  \ javaapi#method(0,1,'fetchAny(', 'int) throws BerException', 'byte'),
   \ javaapi#method(0,1,'openSequence(', ') throws BerException', 'void'),
   \ javaapi#method(0,1,'openSequence(', 'int) throws BerException', 'void'),
   \ javaapi#method(0,1,'closeSequence(', ') throws BerException', 'void'),
@@ -36,9 +36,9 @@ call javaapi#class('BerEncoder', '', [
   \ javaapi#field(1,1,'NullTag', 'int'),
   \ javaapi#field(1,1,'OidTag', 'int'),
   \ javaapi#field(1,1,'SequenceTag', 'int'),
-  \ javaapi#field(0,0,'bytes', 'byte[]'),
+  \ javaapi#field(0,0,'bytes', 'byte'),
   \ javaapi#field(0,0,'start', 'int'),
-  \ javaapi#field(0,0,'stackBuf', 'int[]'),
+  \ javaapi#field(0,0,'stackBuf', 'int'),
   \ javaapi#field(0,0,'stackTop', 'int'),
   \ javaapi#method(0,1,'BerEncoder(', 'byte[])', ''),
   \ javaapi#method(0,1,'trim(', ')', 'int'),
@@ -302,7 +302,7 @@ call javaapi#interface('SnmpEngineFactory', '', [
 call javaapi#class('SnmpEngineId', 'Serializable', [
   \ javaapi#method(0,1,'getReadableId(', ')', 'String'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
-  \ javaapi#method(0,1,'getBytes(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getBytes(', ')', 'byte'),
   \ javaapi#method(1,1,'createEngineId(', 'byte[]) throws IllegalArgumentException', 'SnmpEngineId'),
   \ javaapi#method(1,1,'createEngineId(', ')', 'SnmpEngineId'),
   \ javaapi#method(0,1,'toOid(', ')', 'SnmpOid'),
@@ -366,7 +366,7 @@ call javaapi#class('SnmpIpAddress', 'SnmpOid', [
   \ javaapi#method(0,1,'SnmpIpAddress(', 'long)', ''),
   \ javaapi#method(0,1,'SnmpIpAddress(', 'String) throws IllegalArgumentException', ''),
   \ javaapi#method(0,1,'SnmpIpAddress(', 'long, long, long, long)', ''),
-  \ javaapi#method(0,1,'byteValue(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'byteValue(', ')', 'byte'),
   \ javaapi#method(0,1,'stringValue(', ')', 'String'),
   \ javaapi#method(1,1,'toOid(', 'long[], int) throws SnmpStatusException', 'SnmpOid'),
   \ javaapi#method(1,1,'nextOid(', 'long[], int) throws SnmpStatusException', 'int'),
@@ -375,7 +375,7 @@ call javaapi#class('SnmpIpAddress', 'SnmpOid', [
   \ ])
 
 call javaapi#class('SnmpMessage', 'SnmpMsg', [
-  \ javaapi#field(0,1,'community', 'byte[]'),
+  \ javaapi#field(0,1,'community', 'byte'),
   \ javaapi#method(0,1,'SnmpMessage(', ')', ''),
   \ javaapi#method(0,1,'encodeMessage(', 'byte[]) throws SnmpTooBigException', 'int'),
   \ javaapi#method(0,1,'getRequestId(', 'byte[]) throws SnmpStatusException', 'int'),
@@ -387,7 +387,7 @@ call javaapi#class('SnmpMessage', 'SnmpMsg', [
 
 call javaapi#class('SnmpMsg', 'SnmpDefinitions', [
   \ javaapi#field(0,1,'version', 'int'),
-  \ javaapi#field(0,1,'data', 'byte[]'),
+  \ javaapi#field(0,1,'data', 'byte'),
   \ javaapi#field(0,1,'dataLength', 'int'),
   \ javaapi#field(0,1,'address', 'InetAddress'),
   \ javaapi#field(0,1,'port', 'int'),
@@ -402,7 +402,7 @@ call javaapi#class('SnmpMsg', 'SnmpDefinitions', [
   \ javaapi#method(1,1,'dumpHexBuffer(', 'byte[], int, int)', 'String'),
   \ javaapi#method(0,1,'printMessage(', ')', 'String'),
   \ javaapi#method(0,1,'encodeVarBindList(', 'BerEncoder, SnmpVarBind[]) throws SnmpStatusException, SnmpTooBigException', 'void'),
-  \ javaapi#method(0,1,'decodeVarBindList(', 'BerDecoder) throws BerException', 'SnmpVarBind[]'),
+  \ javaapi#method(0,1,'decodeVarBindList(', 'BerDecoder) throws BerException', 'SnmpVarBind'),
   \ ])
 
 call javaapi#class('SnmpNull', 'SnmpValue', [
@@ -421,7 +421,7 @@ call javaapi#class('SnmpNull', 'SnmpValue', [
   \ ])
 
 call javaapi#class('SnmpOid', 'SnmpValue', [
-  \ javaapi#field(0,0,'components', 'long[]'),
+  \ javaapi#field(0,0,'components', 'long'),
   \ javaapi#field(0,0,'componentCount', 'int'),
   \ javaapi#method(0,1,'SnmpOid(', ')', ''),
   \ javaapi#method(0,1,'SnmpOid(', 'long[])', ''),
@@ -429,14 +429,14 @@ call javaapi#class('SnmpOid', 'SnmpValue', [
   \ javaapi#method(0,1,'SnmpOid(', 'long, long, long, long)', ''),
   \ javaapi#method(0,1,'SnmpOid(', 'String) throws IllegalArgumentException', ''),
   \ javaapi#method(0,1,'getLength(', ')', 'int'),
-  \ javaapi#method(0,1,'longValue(', ')', 'long[]'),
-  \ javaapi#method(0,1,'longValue(', 'boolean)', 'long[]'),
+  \ javaapi#method(0,1,'longValue(', ')', 'long'),
+  \ javaapi#method(0,1,'longValue(', 'boolean)', 'long'),
   \ javaapi#method(0,1,'getOidArc(', 'int) throws SnmpStatusException', 'long'),
   \ javaapi#method(0,1,'toLong(', ')', 'Long'),
   \ javaapi#method(0,1,'toInteger(', ')', 'Integer'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'toBoolean(', ')', 'Boolean'),
-  \ javaapi#method(0,1,'toByte(', ')', 'Byte[]'),
+  \ javaapi#method(0,1,'toByte(', ')', 'Byte'),
   \ javaapi#method(0,1,'toOid(', ')', 'SnmpOid'),
   \ javaapi#method(1,1,'toOid(', 'long[], int) throws SnmpStatusException', 'SnmpOid'),
   \ javaapi#method(1,1,'nextOid(', 'long[], int) throws SnmpStatusException', 'int'),
@@ -466,7 +466,7 @@ call javaapi#interface('SnmpOidDatabase', 'SnmpOidTable', [
   \ javaapi#method(0,1,'removeAll(', ')', 'void'),
   \ javaapi#method(0,1,'resolveVarName(', 'String) throws SnmpStatusException', 'SnmpOidRecord'),
   \ javaapi#method(0,1,'resolveVarOid(', 'String) throws SnmpStatusException', 'SnmpOidRecord'),
-  \ javaapi#method(0,1,'getAllEntries(', ')', 'Vector<?>'),
+  \ javaapi#method(0,1,'getAllEntries(', ')', 'Vector'),
   \ ])
 
 call javaapi#class('SnmpOidDatabaseSupport', 'SnmpOidDatabase', [
@@ -476,7 +476,7 @@ call javaapi#class('SnmpOidDatabaseSupport', 'SnmpOidDatabase', [
   \ javaapi#method(0,1,'remove(', 'SnmpOidTable) throws SnmpStatusException', 'void'),
   \ javaapi#method(0,1,'resolveVarName(', 'String) throws SnmpStatusException', 'SnmpOidRecord'),
   \ javaapi#method(0,1,'resolveVarOid(', 'String) throws SnmpStatusException', 'SnmpOidRecord'),
-  \ javaapi#method(0,1,'getAllEntries(', ')', 'Vector<?>'),
+  \ javaapi#method(0,1,'getAllEntries(', ')', 'Vector'),
   \ javaapi#method(0,1,'removeAll(', ')', 'void'),
   \ ])
 
@@ -490,14 +490,14 @@ call javaapi#class('SnmpOidRecord', '', [
 call javaapi#interface('SnmpOidTable', '', [
   \ javaapi#method(0,1,'resolveVarName(', 'String) throws SnmpStatusException', 'SnmpOidRecord'),
   \ javaapi#method(0,1,'resolveVarOid(', 'String) throws SnmpStatusException', 'SnmpOidRecord'),
-  \ javaapi#method(0,1,'getAllEntries(', ')', 'Vector<?>'),
+  \ javaapi#method(0,1,'getAllEntries(', ')', 'Vector'),
   \ ])
 
 call javaapi#class('SnmpOidTableSupport', 'SnmpOidTable', [
   \ javaapi#method(0,1,'SnmpOidTableSupport(', 'String)', ''),
   \ javaapi#method(0,1,'resolveVarName(', 'String) throws SnmpStatusException', 'SnmpOidRecord'),
   \ javaapi#method(0,1,'resolveVarOid(', 'String) throws SnmpStatusException', 'SnmpOidRecord'),
-  \ javaapi#method(0,1,'getAllEntries(', ')', 'SnmpOidRecord>'),
+  \ javaapi#method(0,1,'getAllEntries(', ')', 'Vector'),
   \ javaapi#method(0,1,'loadMib(', 'SnmpOidRecord[])', 'void'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
@@ -524,7 +524,7 @@ call javaapi#class('SnmpParameters', 'SnmpParams', [
   \ javaapi#method(0,1,'allowSnmpSets(', ')', 'boolean'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
-  \ javaapi#method(0,1,'encodeAuthentication(', 'int) throws SnmpStatusException', 'byte[]'),
+  \ javaapi#method(0,1,'encodeAuthentication(', 'int) throws SnmpStatusException', 'byte'),
   \ ])
 
 call javaapi#class('SnmpParams', 'SnmpDefinitions', [
@@ -536,7 +536,7 @@ call javaapi#class('SnmpParams', 'SnmpDefinitions', [
 call javaapi#class('SnmpPdu', 'Serializable', [
   \ javaapi#field(0,1,'type', 'int'),
   \ javaapi#field(0,1,'version', 'int'),
-  \ javaapi#field(0,1,'varBindList', 'SnmpVarBind[]'),
+  \ javaapi#field(0,1,'varBindList', 'SnmpVarBind'),
   \ javaapi#field(0,1,'requestId', 'int'),
   \ javaapi#field(0,1,'address', 'InetAddress'),
   \ javaapi#field(0,1,'port', 'int'),
@@ -574,7 +574,7 @@ call javaapi#class('SnmpPduFactoryBER', 'Serializable', [
   \ ])
 
 call javaapi#class('SnmpPduPacket', 'SnmpPdu', [
-  \ javaapi#field(0,1,'community', 'byte[]'),
+  \ javaapi#field(0,1,'community', 'byte'),
   \ javaapi#method(0,1,'SnmpPduPacket(', ')', ''),
   \ ])
 
@@ -617,7 +617,7 @@ call javaapi#class('SnmpPeer', 'Serializable', [
   \ javaapi#method(0,1,'useAddressList(', 'InetAddress[])', 'void'),
   \ javaapi#method(0,1,'useNextAddress(', ')', 'void'),
   \ javaapi#method(0,1,'allowSnmpSets(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getDestAddrList(', ')', 'InetAddress[]'),
+  \ javaapi#method(0,1,'getDestAddrList(', ')', 'InetAddress'),
   \ javaapi#method(0,1,'getDestAddr(', ')', 'InetAddress'),
   \ javaapi#method(0,1,'getDestPort(', ')', 'int'),
   \ javaapi#method(0,1,'setDestPort(', 'int)', 'void'),
@@ -653,8 +653,8 @@ call javaapi#class('SnmpScopedPduPacket', 'SnmpPdu', [
   \ javaapi#field(0,1,'msgId', 'int'),
   \ javaapi#field(0,1,'msgFlags', 'byte'),
   \ javaapi#field(0,1,'msgSecurityModel', 'int'),
-  \ javaapi#field(0,1,'contextEngineId', 'byte[]'),
-  \ javaapi#field(0,1,'contextName', 'byte[]'),
+  \ javaapi#field(0,1,'contextEngineId', 'byte'),
+  \ javaapi#field(0,1,'contextName', 'byte'),
   \ javaapi#field(0,1,'securityParameters', 'SnmpSecurityParameters'),
   \ javaapi#method(0,0,'SnmpScopedPduPacket(', ')', ''),
   \ ])
@@ -669,11 +669,11 @@ call javaapi#class('SnmpScopedPduRequest', 'SnmpScopedPduPacket', [
   \ ])
 
 call javaapi#class('SnmpSecurityException', 'Exception', [
-  \ javaapi#field(0,1,'list', 'SnmpVarBind[]'),
+  \ javaapi#field(0,1,'list', 'SnmpVarBind'),
   \ javaapi#field(0,1,'status', 'int'),
   \ javaapi#field(0,1,'params', 'SnmpSecurityParameters'),
-  \ javaapi#field(0,1,'contextEngineId', 'byte[]'),
-  \ javaapi#field(0,1,'contextName', 'byte[]'),
+  \ javaapi#field(0,1,'contextEngineId', 'byte'),
+  \ javaapi#field(0,1,'contextName', 'byte'),
   \ javaapi#field(0,1,'flags', 'byte'),
   \ javaapi#method(0,1,'SnmpSecurityException(', 'String)', ''),
   \ ])
@@ -700,7 +700,7 @@ call javaapi#class('SnmpStatusException', 'Exception', [
   \ ])
 
 call javaapi#class('SnmpString', 'SnmpValue', [
-  \ javaapi#field(0,0,'value', 'byte[]'),
+  \ javaapi#field(0,0,'value', 'byte'),
   \ javaapi#method(0,1,'SnmpString(', ')', ''),
   \ javaapi#method(0,1,'SnmpString(', 'byte[])', ''),
   \ javaapi#method(0,1,'SnmpString(', 'Byte[])', ''),
@@ -709,8 +709,8 @@ call javaapi#class('SnmpString', 'SnmpValue', [
   \ javaapi#method(0,1,'inetAddressValue(', ') throws UnknownHostException', 'InetAddress'),
   \ javaapi#method(1,1,'BinToChar(', 'String)', 'String'),
   \ javaapi#method(1,1,'HexToChar(', 'String)', 'String'),
-  \ javaapi#method(0,1,'byteValue(', ')', 'byte[]'),
-  \ javaapi#method(0,1,'toByte(', ')', 'Byte[]'),
+  \ javaapi#method(0,1,'byteValue(', ')', 'byte'),
+  \ javaapi#method(0,1,'toByte(', ')', 'Byte'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'toOid(', ')', 'SnmpOid'),
   \ javaapi#method(1,1,'toOid(', 'long[], int) throws SnmpStatusException', 'SnmpOid'),
@@ -785,11 +785,11 @@ call javaapi#class('SnmpUnsignedInt', 'SnmpInt', [
 call javaapi#interface('SnmpUsmKeyHandler', '', [
   \ javaapi#field(1,1,'DES_KEY_SIZE', 'int'),
   \ javaapi#field(1,1,'DES_DELTA_SIZE', 'int'),
-  \ javaapi#method(0,1,'password_to_key(', 'String, String) throws IllegalArgumentException', 'byte[]'),
-  \ javaapi#method(0,1,'localizeAuthKey(', 'String, byte[], SnmpEngineId) throws IllegalArgumentException', 'byte[]'),
-  \ javaapi#method(0,1,'localizePrivKey(', 'String, byte[], SnmpEngineId, int) throws IllegalArgumentException', 'byte[]'),
-  \ javaapi#method(0,1,'calculateAuthDelta(', 'String, byte[], byte[], byte[]) throws IllegalArgumentException', 'byte[]'),
-  \ javaapi#method(0,1,'calculatePrivDelta(', 'String, byte[], byte[], byte[], int) throws IllegalArgumentException', 'byte[]'),
+  \ javaapi#method(0,1,'password_to_key(', 'String, String) throws IllegalArgumentException', 'byte'),
+  \ javaapi#method(0,1,'localizeAuthKey(', 'String, byte[], SnmpEngineId) throws IllegalArgumentException', 'byte'),
+  \ javaapi#method(0,1,'localizePrivKey(', 'String, byte[], SnmpEngineId, int) throws IllegalArgumentException', 'byte'),
+  \ javaapi#method(0,1,'calculateAuthDelta(', 'String, byte[], byte[], byte[]) throws IllegalArgumentException', 'byte'),
+  \ javaapi#method(0,1,'calculatePrivDelta(', 'String, byte[], byte[], byte[], int) throws IllegalArgumentException', 'byte'),
   \ ])
 
 call javaapi#class('SnmpV3Message', 'SnmpMsg', [
@@ -797,10 +797,10 @@ call javaapi#class('SnmpV3Message', 'SnmpMsg', [
   \ javaapi#field(0,1,'msgMaxSize', 'int'),
   \ javaapi#field(0,1,'msgFlags', 'byte'),
   \ javaapi#field(0,1,'msgSecurityModel', 'int'),
-  \ javaapi#field(0,1,'msgSecurityParameters', 'byte[]'),
-  \ javaapi#field(0,1,'contextEngineId', 'byte[]'),
-  \ javaapi#field(0,1,'contextName', 'byte[]'),
-  \ javaapi#field(0,1,'encryptedPdu', 'byte[]'),
+  \ javaapi#field(0,1,'msgSecurityParameters', 'byte'),
+  \ javaapi#field(0,1,'contextEngineId', 'byte'),
+  \ javaapi#field(0,1,'contextName', 'byte'),
+  \ javaapi#field(0,1,'encryptedPdu', 'byte'),
   \ javaapi#method(0,1,'SnmpV3Message(', ')', ''),
   \ javaapi#method(0,1,'encodeMessage(', 'byte[]) throws SnmpTooBigException', 'int'),
   \ javaapi#method(0,1,'decodeMessage(', 'byte[], int) throws SnmpStatusException', 'void'),
@@ -885,7 +885,7 @@ call javaapi#class('SnmpVarBind', 'Serializable', [
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SnmpVarBindList', 'SnmpVarBind>', [
+call javaapi#class('SnmpVarBindList', 'Vector', [
   \ javaapi#field(0,1,'identity', 'String'),
   \ javaapi#method(0,1,'SnmpVarBindList(', ')', ''),
   \ javaapi#method(0,1,'SnmpVarBindList(', 'int)', ''),

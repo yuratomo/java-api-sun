@@ -4,9 +4,9 @@ call javaapi#class('AbstractSaslImpl', '', [
   \ javaapi#field(0,0,'completed', 'boolean'),
   \ javaapi#field(0,0,'privacy', 'boolean'),
   \ javaapi#field(0,0,'integrity', 'boolean'),
-  \ javaapi#field(0,0,'qop', 'byte[]'),
+  \ javaapi#field(0,0,'qop', 'byte'),
   \ javaapi#field(0,0,'allQop', 'byte'),
-  \ javaapi#field(0,0,'strength', 'byte[]'),
+  \ javaapi#field(0,0,'strength', 'byte'),
   \ javaapi#field(0,0,'sendMaxBufSize', 'int'),
   \ javaapi#field(0,0,'recvMaxBufSize', 'int'),
   \ javaapi#field(0,0,'rawSendSize', 'int'),
@@ -24,7 +24,7 @@ call javaapi#class('AbstractSaslImpl', '', [
   \ javaapi#method(0,1,'getNegotiatedProperty(', 'String)', 'Object'),
   \ javaapi#method(1,0,'combineMasks(', 'byte[])', 'byte'),
   \ javaapi#method(1,0,'findPreferredMask(', 'byte, byte[])', 'byte'),
-  \ javaapi#method(1,0,'parseQop(', 'String, String[], boolean) throws SaslException', 'byte[]'),
+  \ javaapi#method(1,0,'parseQop(', 'String, String[], boolean) throws SaslException', 'byte'),
   \ javaapi#method(1,0,'traceOutput(', 'String, String, String, byte[])', 'void'),
   \ javaapi#method(1,0,'traceOutput(', 'String, String, String, byte[], int, int)', 'void'),
   \ javaapi#method(1,0,'networkByteOrderToInt(', 'byte[], int, int)', 'int'),
@@ -39,6 +39,6 @@ call javaapi#class('PolicyUtils', '', [
   \ javaapi#field(1,1,'NOANONYMOUS', 'int'),
   \ javaapi#field(1,1,'PASS_CREDENTIALS', 'int'),
   \ javaapi#method(1,1,'checkPolicy(', 'int, Map)', 'boolean'),
-  \ javaapi#method(1,1,'filterMechs(', 'String[], int[], Map)', 'String[]'),
+  \ javaapi#method(1,1,'filterMechs(', 'String[], int[], Map)', 'String'),
   \ ])
 

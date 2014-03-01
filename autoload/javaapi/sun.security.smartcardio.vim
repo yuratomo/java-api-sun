@@ -7,7 +7,7 @@ call javaapi#class('CardImpl', 'Card', [
   \ javaapi#method(0,1,'openLogicalChannel(', ') throws CardException', 'CardChannel'),
   \ javaapi#method(0,1,'beginExclusive(', ') throws CardException', 'void'),
   \ javaapi#method(0,1,'endExclusive(', ') throws CardException', 'void'),
-  \ javaapi#method(0,1,'transmitControlCommand(', 'int, byte[]) throws CardException', 'byte[]'),
+  \ javaapi#method(0,1,'transmitControlCommand(', 'int, byte[]) throws CardException', 'byte'),
   \ javaapi#method(0,1,'disconnect(', 'boolean) throws CardException', 'void'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,0,'finalize(', ') throws Throwable', 'void'),
@@ -30,7 +30,7 @@ call javaapi#class('PCSCException', 'Exception', [
   \ ])
 
 call javaapi#class('PCSCTerminals', 'CardTerminals', [
-  \ javaapi#method(0,1,'list(', 'State) throws CardException', 'CardTerminal>'),
+  \ javaapi#method(0,1,'list(', 'State) throws CardException', 'List'),
   \ javaapi#method(0,1,'waitForChange(', 'long) throws CardException', 'boolean'),
   \ ])
 

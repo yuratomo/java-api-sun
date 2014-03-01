@@ -17,10 +17,10 @@ call javaapi#class('CodeBaseHelper', '', [
 call javaapi#interface('CodeBaseOperations', 'RunTimeOperations', [
   \ javaapi#method(0,1,'get_ir(', ')', 'Repository'),
   \ javaapi#method(0,1,'implementation(', 'String)', 'String'),
-  \ javaapi#method(0,1,'implementations(', 'String[])', 'String[]'),
+  \ javaapi#method(0,1,'implementations(', 'String[])', 'String'),
   \ javaapi#method(0,1,'meta(', 'String)', 'FullValueDescription'),
-  \ javaapi#method(0,1,'metas(', 'String[])', 'FullValueDescription[]'),
-  \ javaapi#method(0,1,'bases(', 'String)', 'String[]'),
+  \ javaapi#method(0,1,'metas(', 'String[])', 'FullValueDescription'),
+  \ javaapi#method(0,1,'bases(', 'String)', 'String'),
   \ ])
 
 call javaapi#namespace('com.sun.org.omg.SendingContext')
@@ -28,7 +28,7 @@ call javaapi#namespace('com.sun.org.omg.SendingContext')
 call javaapi#class('_CodeBaseImplBase', 'ObjectImpl', [
   \ javaapi#method(0,1,'_CodeBaseImplBase(', ')', ''),
   \ javaapi#method(0,1,'_invoke(', 'String, InputStream, ResponseHandler)', 'OutputStream'),
-  \ javaapi#method(0,1,'_ids(', ')', 'String[]'),
+  \ javaapi#method(0,1,'_ids(', ')', 'String'),
   \ ])
 
 call javaapi#class('_CodeBaseStub', 'ObjectImpl', [
@@ -36,10 +36,10 @@ call javaapi#class('_CodeBaseStub', 'ObjectImpl', [
   \ javaapi#method(0,1,'_CodeBaseStub(', 'Delegate)', ''),
   \ javaapi#method(0,1,'get_ir(', ')', 'Repository'),
   \ javaapi#method(0,1,'implementation(', 'String)', 'String'),
-  \ javaapi#method(0,1,'implementations(', 'String[])', 'String[]'),
+  \ javaapi#method(0,1,'implementations(', 'String[])', 'String'),
   \ javaapi#method(0,1,'meta(', 'String)', 'FullValueDescription'),
-  \ javaapi#method(0,1,'metas(', 'String[])', 'FullValueDescription[]'),
-  \ javaapi#method(0,1,'bases(', 'String)', 'String[]'),
-  \ javaapi#method(0,1,'_ids(', ')', 'String[]'),
+  \ javaapi#method(0,1,'metas(', 'String[])', 'FullValueDescription'),
+  \ javaapi#method(0,1,'bases(', 'String)', 'String'),
+  \ javaapi#method(0,1,'_ids(', ')', 'String'),
   \ ])
 

@@ -2,8 +2,8 @@ call javaapi#namespace('com.sun.security.ntlm')
 
 call javaapi#class('Client', 'NTLM', [
   \ javaapi#method(0,1,'Client(', 'String, String, String, String, char[]) throws NTLMException', ''),
-  \ javaapi#method(0,1,'type1(', ')', 'byte[]'),
-  \ javaapi#method(0,1,'type3(', 'byte[], byte[]) throws NTLMException', 'byte[]'),
+  \ javaapi#method(0,1,'type1(', ')', 'byte'),
+  \ javaapi#method(0,1,'type3(', 'byte[], byte[]) throws NTLMException', 'byte'),
   \ javaapi#method(0,1,'getDomain(', ')', 'String'),
   \ javaapi#method(0,1,'dispose(', ')', 'void'),
   \ javaapi#method(0,1,'debug(', 'byte[])', 'void'),
@@ -29,18 +29,18 @@ call javaapi#class('NTLMException', 'GeneralSecurityException', [
 
 call javaapi#class('Server', 'NTLM', [
   \ javaapi#method(0,1,'Server(', 'String, String) throws NTLMException', ''),
-  \ javaapi#method(0,1,'type2(', 'byte[], byte[]) throws NTLMException', 'byte[]'),
-  \ javaapi#method(0,1,'verify(', 'byte[], byte[]) throws NTLMException', 'String[]'),
-  \ javaapi#method(0,1,'getPassword(', 'String, String)', 'char[]'),
+  \ javaapi#method(0,1,'type2(', 'byte[], byte[]) throws NTLMException', 'byte'),
+  \ javaapi#method(0,1,'verify(', 'byte[], byte[]) throws NTLMException', 'String'),
+  \ javaapi#method(0,1,'getPassword(', 'String, String)', 'char'),
   \ javaapi#method(0,1,'debug(', 'byte[])', 'void'),
   \ javaapi#method(0,1,'debug(', 'String, Object[])', 'void'),
   \ ])
 
-call javaapi#class('Version', 'Version>', [
+call javaapi#class('Version', 'Enum', [
   \ javaapi#field(1,1,'NTLM', 'Version'),
   \ javaapi#field(1,1,'NTLM2', 'Version'),
   \ javaapi#field(1,1,'NTLMv2', 'Version'),
-  \ javaapi#method(1,1,'values(', ')', 'Version[]'),
+  \ javaapi#method(1,1,'values(', ')', 'Version'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'Version'),
   \ ])
 

@@ -12,3 +12,7 @@ call javaapi#class('Version', '', [
   \ javaapi#method(1,1,'getDevelopmentVersionNum(', ')', 'int'),
   \ ])
 
+call javaapi#java.lang.String('ORACLE_FEATURE_SERVICE_MECHANISM', '', [
+  \ javaapi#method(0,1,'XalanConstants(', ')', ''),
+  \ ])
+

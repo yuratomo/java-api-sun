@@ -17,7 +17,7 @@ call javaapi#class('DQTMarkerSegment', 'MarkerSegment', [
 call javaapi#class('DRIMarkerSegment', 'MarkerSegment', [
   \ ])
 
-call javaapi#class('ImageTypeIterator', 'ImageTypeSpecifier>', [
+call javaapi#class('ImageTypeIterator', 'Iterator', [
   \ javaapi#method(0,1,'ImageTypeIterator(', 'Iterator<ImageTypeProducer>)', ''),
   \ javaapi#method(0,1,'hasNext(', ')', 'boolean'),
   \ javaapi#method(0,1,'next(', ')', 'ImageTypeSpecifier'),
@@ -99,9 +99,9 @@ call javaapi#class('JPEG', '', [
   \ javaapi#field(1,1,'ADOBE_YCCK', 'int'),
   \ javaapi#field(1,1,'vendor', 'String'),
   \ javaapi#field(1,1,'version', 'String'),
-  \ javaapi#field(1,1,'names', 'String[]'),
-  \ javaapi#field(1,1,'suffixes', 'String[]'),
-  \ javaapi#field(1,1,'MIMETypes', 'String[]'),
+  \ javaapi#field(1,1,'names', 'String'),
+  \ javaapi#field(1,1,'suffixes', 'String'),
+  \ javaapi#field(1,1,'MIMETypes', 'String'),
   \ javaapi#field(1,1,'nativeImageMetadataFormatName', 'String'),
   \ javaapi#field(1,1,'nativeImageMetadataFormatClassName', 'String'),
   \ javaapi#field(1,1,'nativeStreamMetadataFormatName', 'String'),
@@ -117,8 +117,8 @@ call javaapi#class('JPEG', '', [
   \ javaapi#field(1,1,'JCS_YCCA', 'int'),
   \ javaapi#field(1,1,'JCS_YCCK', 'int'),
   \ javaapi#field(1,1,'NUM_JCS_CODES', 'int'),
-  \ javaapi#field(1,1,'bandOffsets', 'int[][]'),
-  \ javaapi#field(1,1,'bOffsRGB', 'int[]'),
+  \ javaapi#field(1,1,'bandOffsets', 'int[]'),
+  \ javaapi#field(1,1,'bOffsRGB', 'int'),
   \ javaapi#field(1,1,'DEFAULT_QUALITY', 'float'),
   \ javaapi#method(0,1,'JPEG(', ')', ''),
   \ ])
@@ -133,7 +133,7 @@ call javaapi#class('JPEGImageMetadataFormat', 'JPEGMetadataFormat', [
 
 call javaapi#class('JPEGImageMetadataFormatResources', 'JPEGMetadataFormatResources', [
   \ javaapi#method(0,1,'JPEGImageMetadataFormatResources(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('JPEGImageReader', 'ImageReader', [
@@ -167,7 +167,7 @@ call javaapi#class('JPEGImageReader', 'ImageReader', [
 
 call javaapi#class('JPEGImageReaderResources', 'ListResourceBundle', [
   \ javaapi#method(0,1,'JPEGImageReaderResources(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('JPEGImageReaderSpi', 'ImageReaderSpi', [
@@ -202,7 +202,7 @@ call javaapi#class('JPEGImageWriter', 'ImageWriter', [
   \ javaapi#method(0,1,'convertStreamMetadata(', 'IIOMetadata, ImageWriteParam)', 'IIOMetadata'),
   \ javaapi#method(0,1,'convertImageMetadata(', 'IIOMetadata, ImageTypeSpecifier, ImageWriteParam)', 'IIOMetadata'),
   \ javaapi#method(0,1,'getNumThumbnailsSupported(', 'ImageTypeSpecifier, ImageWriteParam, IIOMetadata, IIOMetadata)', 'int'),
-  \ javaapi#method(0,1,'getPreferredThumbnailSizes(', 'ImageTypeSpecifier, ImageWriteParam, IIOMetadata, IIOMetadata)', 'Dimension[]'),
+  \ javaapi#method(0,1,'getPreferredThumbnailSizes(', 'ImageTypeSpecifier, ImageWriteParam, IIOMetadata, IIOMetadata)', 'Dimension'),
   \ javaapi#method(0,1,'canWriteRasters(', ')', 'boolean'),
   \ javaapi#method(0,1,'write(', 'IIOMetadata, IIOImage, ImageWriteParam) throws IOException', 'void'),
   \ javaapi#method(0,1,'prepareWriteSequence(', 'IIOMetadata) throws IOException', 'void'),
@@ -215,7 +215,7 @@ call javaapi#class('JPEGImageWriter', 'ImageWriter', [
 
 call javaapi#class('JPEGImageWriterResources', 'ListResourceBundle', [
   \ javaapi#method(0,1,'JPEGImageWriterResources(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('JPEGImageWriterSpi', 'ImageWriterSpi', [
@@ -256,7 +256,7 @@ call javaapi#class('JPEGStreamMetadataFormat', 'JPEGMetadataFormat', [
 
 call javaapi#class('JPEGStreamMetadataFormatResources', 'JPEGMetadataFormatResources', [
   \ javaapi#method(0,1,'JPEGStreamMetadataFormatResources(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('MarkerSegment', 'Cloneable', [

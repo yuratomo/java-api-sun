@@ -61,7 +61,7 @@ call javaapi#class('LoaderHandler', '', [
   \ ])
 
 call javaapi#class('MarshalInputStream', 'ObjectInputStream', [
-  \ javaapi#field(1,0,'permittedSunClasses', 'Class<?>>'),
+  \ javaapi#field(1,0,'permittedSunClasses', 'Class'),
   \ javaapi#method(0,1,'MarshalInputStream(', 'InputStream) throws IOException, StreamCorruptedException', ''),
   \ javaapi#method(0,1,'getDoneCallback(', 'Object)', 'Runnable'),
   \ javaapi#method(0,1,'setDoneCallback(', 'Object, Runnable)', 'void'),
@@ -151,7 +151,7 @@ call javaapi#class('Util', '', [
   \ javaapi#method(1,1,'getUnqualifiedName(', 'Class)', 'String'),
   \ ])
 
-call javaapi#class('WeakClassHashMap<V>', '', [
+call javaapi#class('WeakClassHashMap', '', [
   \ javaapi#method(0,0,'WeakClassHashMap(', ')', ''),
   \ javaapi#method(0,1,'get(', 'Class<?>)', 'V'),
   \ javaapi#method(0,0,'computeValue(', 'Class<?>)', 'V'),

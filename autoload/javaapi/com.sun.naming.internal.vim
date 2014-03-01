@@ -26,7 +26,7 @@ call javaapi#class('VersionHelper', '', [
   \ javaapi#method(1,1,'getVersionHelper(', ')', 'VersionHelper'),
   \ javaapi#method(0,1,'loadClass(', 'String) throws ClassNotFoundException', 'Class'),
   \ javaapi#method(0,1,'loadClass(', 'String, String) throws ClassNotFoundException, MalformedURLException', 'Class'),
-  \ javaapi#method(1,0,'getUrlArray(', 'String) throws MalformedURLException', 'URL[]'),
+  \ javaapi#method(1,0,'getUrlArray(', 'String) throws MalformedURLException', 'URL'),
   \ ])
 
 call javaapi#class('VersionHelper12', 'VersionHelper', [

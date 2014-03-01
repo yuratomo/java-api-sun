@@ -15,7 +15,7 @@ call javaapi#class('BindingIteratorImpl', 'BindingIteratorPOA', [
 call javaapi#class('InterOperableNamingImpl', '', [
   \ javaapi#method(0,1,'InterOperableNamingImpl(', ')', ''),
   \ javaapi#method(0,1,'convertToString(', 'NameComponent[])', 'String'),
-  \ javaapi#method(0,1,'convertToNameComponent(', 'String) throws InvalidName', 'NameComponent[]'),
+  \ javaapi#method(0,1,'convertToNameComponent(', 'String) throws InvalidName', 'NameComponent'),
   \ javaapi#method(0,1,'createURLBasedAddress(', 'String, String) throws InvalidAddress', 'String'),
   \ ])
 
@@ -68,7 +68,7 @@ call javaapi#class('NamingContextImpl', 'NamingContextExtPOA', [
   \ javaapi#method(1,1,'doUnbind(', 'NamingContextDataStore, NameComponent[]) throws NotFound, CannotProceed, InvalidName', 'void'),
   \ javaapi#method(1,0,'resolveFirstAsContext(', 'NamingContextDataStore, NameComponent[]) throws NotFound', 'NamingContext'),
   \ javaapi#method(0,1,'to_string(', 'NameComponent[]) throws InvalidName', 'String'),
-  \ javaapi#method(0,1,'to_name(', 'String) throws InvalidName', 'NameComponent[]'),
+  \ javaapi#method(0,1,'to_name(', 'String) throws InvalidName', 'NameComponent'),
   \ javaapi#method(0,1,'to_url(', 'String, String) throws InvalidAddress, InvalidName', 'String'),
   \ javaapi#method(0,1,'resolve_str(', 'String) throws NotFound, CannotProceed, InvalidName', 'Object'),
   \ javaapi#method(1,1,'nameToString(', 'NameComponent[])', 'String'),

@@ -7,7 +7,7 @@ call javaapi#class('GIFImageMetadata', 'GIFMetadata', [
   \ javaapi#field(0,1,'imageHeight', 'int'),
   \ javaapi#field(0,1,'interlaceFlag', 'boolean'),
   \ javaapi#field(0,1,'sortFlag', 'boolean'),
-  \ javaapi#field(0,1,'localColorTable', 'byte[]'),
+  \ javaapi#field(0,1,'localColorTable', 'byte'),
   \ javaapi#field(0,1,'disposalMethod', 'int'),
   \ javaapi#field(0,1,'userInputFlag', 'boolean'),
   \ javaapi#field(0,1,'transparentColorFlag', 'boolean'),
@@ -22,7 +22,7 @@ call javaapi#class('GIFImageMetadata', 'GIFMetadata', [
   \ javaapi#field(0,1,'characterCellHeight', 'int'),
   \ javaapi#field(0,1,'textForegroundColor', 'int'),
   \ javaapi#field(0,1,'textBackgroundColor', 'int'),
-  \ javaapi#field(0,1,'text', 'byte[]'),
+  \ javaapi#field(0,1,'text', 'byte'),
   \ javaapi#field(0,1,'applicationIDs', 'List'),
   \ javaapi#field(0,1,'authenticationCodes', 'List'),
   \ javaapi#field(0,1,'applicationData', 'List'),
@@ -51,7 +51,7 @@ call javaapi#class('GIFImageMetadataFormat', 'IIOMetadataFormatImpl', [
 
 call javaapi#class('GIFImageMetadataFormatResources', 'ListResourceBundle', [
   \ javaapi#method(0,1,'GIFImageMetadataFormatResources(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('GIFImageReader', 'ImageReader', [
@@ -118,13 +118,13 @@ call javaapi#class('GIFMetadata', 'IIOMetadata', [
   \ javaapi#method(1,0,'getAttribute(', 'Node, String) throws IIOInvalidTreeException', 'String'),
   \ javaapi#method(0,0,'GIFMetadata(', 'boolean, String, String, String[], String[])', ''),
   \ javaapi#method(0,1,'mergeTree(', 'String, Node) throws IIOInvalidTreeException', 'void'),
-  \ javaapi#method(0,0,'getColorTable(', 'Node, String, boolean, int) throws IIOInvalidTreeException', 'byte[]'),
+  \ javaapi#method(0,0,'getColorTable(', 'Node, String, boolean, int) throws IIOInvalidTreeException', 'byte'),
   \ javaapi#method(0,0,'mergeNativeTree(', 'Node) throws IIOInvalidTreeException', 'void'),
   \ javaapi#method(0,0,'mergeStandardTree(', 'Node) throws IIOInvalidTreeException', 'void'),
   \ ])
 
 call javaapi#class('GIFStreamMetadata', 'GIFMetadata', [
-  \ javaapi#field(1,1,'versionStrings', 'String[]'),
+  \ javaapi#field(1,1,'versionStrings', 'String'),
   \ javaapi#field(0,1,'version', 'String'),
   \ javaapi#field(0,1,'logicalScreenWidth', 'int'),
   \ javaapi#field(0,1,'logicalScreenHeight', 'int'),
@@ -132,8 +132,8 @@ call javaapi#class('GIFStreamMetadata', 'GIFMetadata', [
   \ javaapi#field(0,1,'pixelAspectRatio', 'int'),
   \ javaapi#field(0,1,'backgroundColorIndex', 'int'),
   \ javaapi#field(0,1,'sortFlag', 'boolean'),
-  \ javaapi#field(1,1,'colorTableSizes', 'String[]'),
-  \ javaapi#field(0,1,'globalColorTable', 'byte[]'),
+  \ javaapi#field(1,1,'colorTableSizes', 'String'),
+  \ javaapi#field(0,1,'globalColorTable', 'byte'),
   \ javaapi#method(0,0,'GIFStreamMetadata(', 'boolean, String, String, String[], String[])', ''),
   \ javaapi#method(0,1,'GIFStreamMetadata(', ')', ''),
   \ javaapi#method(0,1,'isReadOnly(', ')', 'boolean'),
@@ -159,7 +159,7 @@ call javaapi#class('GIFStreamMetadataFormat', 'IIOMetadataFormatImpl', [
 
 call javaapi#class('GIFStreamMetadataFormatResources', 'ListResourceBundle', [
   \ javaapi#method(0,1,'GIFStreamMetadataFormatResources(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('GIFWritableImageMetadata', 'GIFImageMetadata', [

@@ -54,7 +54,7 @@ call javaapi#class('CommunicatorServer', 'CommunicatorServerMBean', [
   \ javaapi#method(0,1,'setMBeanServer(', 'MBeanServer) throws IllegalArgumentException, IllegalStateException', 'void'),
   \ javaapi#method(0,1,'addNotificationListener(', 'NotificationListener, NotificationFilter, Object) throws IllegalArgumentException', 'void'),
   \ javaapi#method(0,1,'removeNotificationListener(', 'NotificationListener) throws ListenerNotFoundException', 'void'),
-  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo[]'),
+  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo'),
   \ javaapi#method(0,1,'preRegister(', 'MBeanServer, ObjectName) throws Exception', 'ObjectName'),
   \ javaapi#method(0,1,'postRegister(', 'Boolean)', 'void'),
   \ javaapi#method(0,1,'preDeregister(', ') throws Exception', 'void'),
@@ -74,7 +74,7 @@ call javaapi#interface('CommunicatorServerMBean', '', [
   \ javaapi#method(0,1,'getProtocol(', ')', 'String'),
   \ ])
 
-call javaapi#class('SendQ', 'SnmpInformRequest>', [
+call javaapi#class('SendQ', 'Vector', [
   \ javaapi#method(0,1,'addRequest(', 'SnmpInformRequest)', 'void'),
   \ javaapi#method(0,1,'waitUntilReady(', ')', 'boolean'),
   \ javaapi#method(0,1,'getAllOutstandingRequest(', 'long)', 'Vector'),
@@ -120,7 +120,7 @@ call javaapi#class('SnmpAdaptorServer', 'CommunicatorServer', [
   \ javaapi#method(0,1,'setAuthRespEnabled(', 'boolean)', 'void'),
   \ javaapi#method(0,1,'getEnterpriseOid(', ')', 'String'),
   \ javaapi#method(0,1,'setEnterpriseOid(', 'String) throws IllegalArgumentException', 'void'),
-  \ javaapi#method(0,1,'getMibs(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getMibs(', ')', 'String'),
   \ javaapi#method(0,1,'getSnmpOutTraps(', ')', 'Long'),
   \ javaapi#method(0,1,'getSnmpOutGetResponses(', ')', 'Long'),
   \ javaapi#method(0,1,'getSnmpOutGenErrs(', ')', 'Long'),
@@ -205,7 +205,7 @@ call javaapi#interface('SnmpAdaptorServerMBean', 'CommunicatorServerMBean', [
   \ javaapi#method(0,1,'setAuthRespEnabled(', 'boolean)', 'void'),
   \ javaapi#method(0,1,'getEnterpriseOid(', ')', 'String'),
   \ javaapi#method(0,1,'setEnterpriseOid(', 'String) throws IllegalArgumentException', 'void'),
-  \ javaapi#method(0,1,'getMibs(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getMibs(', ')', 'String'),
   \ javaapi#method(0,1,'getSnmpOutTraps(', ')', 'Long'),
   \ javaapi#method(0,1,'getSnmpOutGetResponses(', ')', 'Long'),
   \ javaapi#method(0,1,'getSnmpOutGenErrs(', ')', 'Long'),
@@ -369,8 +369,8 @@ call javaapi#class('SnmpSubRequestHandler', 'Runnable', [
   \ javaapi#field(0,0,'agent', 'SnmpMibAgent'),
   \ javaapi#field(0,0,'errorStatus', 'int'),
   \ javaapi#field(0,0,'errorIndex', 'int'),
-  \ javaapi#field(0,0,'varBind', 'SnmpVarBind>'),
-  \ javaapi#field(0,0,'translation', 'int[]'),
+  \ javaapi#field(0,0,'varBind', 'Vector'),
+  \ javaapi#field(0,0,'translation', 'int'),
   \ javaapi#field(0,0,'data', 'Object'),
   \ javaapi#method(0,0,'SnmpSubRequestHandler(', 'SnmpEngine, SnmpIncomingRequest, SnmpMibAgent, SnmpPdu)', ''),
   \ javaapi#method(0,0,'SnmpSubRequestHandler(', 'SnmpEngine, SnmpIncomingRequest, SnmpMibAgent, SnmpPdu, boolean)', ''),
@@ -389,7 +389,7 @@ call javaapi#class('SnmpTimerServer', 'Thread', [
   \ javaapi#method(0,1,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('WaitQ', 'SnmpInformRequest>', [
+call javaapi#class('WaitQ', 'Vector', [
   \ javaapi#method(0,1,'addWaiting(', 'SnmpInformRequest)', 'void'),
   \ javaapi#method(0,1,'waitUntilReady(', ')', 'boolean'),
   \ javaapi#method(0,1,'getTimeoutRequests(', ')', 'SnmpInformRequest'),

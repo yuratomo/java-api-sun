@@ -32,9 +32,9 @@ call javaapi#class('CMMImageLayout', '', [
   \ javaapi#field(0,1,'OffsetColumn', 'int'),
   \ javaapi#field(0,1,'OffsetRow', 'int'),
   \ javaapi#field(0,1,'NumChannels', 'int'),
-  \ javaapi#field(0,1,'chanData', 'Object[]'),
-  \ javaapi#field(0,1,'DataOffsets', 'int[]'),
-  \ javaapi#field(0,1,'sampleInfo', 'int[]'),
+  \ javaapi#field(0,1,'chanData', 'Object'),
+  \ javaapi#field(0,1,'DataOffsets', 'int'),
+  \ javaapi#field(0,1,'sampleInfo', 'int'),
   \ javaapi#method(0,1,'CMMImageLayout(', 'byte[], int, int)', ''),
   \ javaapi#method(0,1,'CMMImageLayout(', 'short[], int, int)', ''),
   \ javaapi#method(0,1,'CMMImageLayout(', 'BufferedImage)', ''),
@@ -51,8 +51,8 @@ call javaapi#class('ICC_Transform', 'ColorTransform', [
   \ javaapi#method(0,1,'colorConvert(', 'BufferedImage, BufferedImage)', 'void'),
   \ javaapi#method(0,1,'colorConvert(', 'Raster, WritableRaster, float[], float[], float[], float[])', 'void'),
   \ javaapi#method(0,1,'colorConvert(', 'Raster, WritableRaster)', 'void'),
-  \ javaapi#method(0,1,'colorConvert(', 'short[], short[])', 'short[]'),
-  \ javaapi#method(0,1,'colorConvert(', 'byte[], byte[])', 'byte[]'),
+  \ javaapi#method(0,1,'colorConvert(', 'short[], short[])', 'short'),
+  \ javaapi#method(0,1,'colorConvert(', 'byte[], byte[])', 'byte'),
   \ ])
 
 call javaapi#class('pelArrayInfo', '', [

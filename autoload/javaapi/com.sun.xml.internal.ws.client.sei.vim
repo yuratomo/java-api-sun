@@ -1,7 +1,7 @@
 call javaapi#namespace('com.sun.xml.internal.ws.client.sei')
 
 call javaapi#class('AsyncMethodHandler', 'SEIMethodHandler', [
-  \ javaapi#method(0,0,'doInvoke(', 'Object, Object[], AsyncHandler)', 'Object>'),
+  \ javaapi#method(0,0,'doInvoke(', 'Object, Object[], AsyncHandler)', 'Response'),
   \ ])
 
 call javaapi#class('BodyBuilder', '', [
@@ -52,10 +52,10 @@ call javaapi#class('SEIStub', 'Stub', [
 call javaapi#class('SyncMethodHandler', 'SEIMethodHandler', [
   \ ])
 
-call javaapi#class('ValueGetter', 'ValueGetter>', [
+call javaapi#class('ValueGetter', 'Enum', [
   \ javaapi#field(1,1,'PLAIN', 'ValueGetter'),
   \ javaapi#field(1,1,'HOLDER', 'ValueGetter'),
-  \ javaapi#method(1,1,'values(', ')', 'ValueGetter[]'),
+  \ javaapi#method(1,1,'values(', ')', 'ValueGetter'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'ValueGetter'),
   \ ])
 

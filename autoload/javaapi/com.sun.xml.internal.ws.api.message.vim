@@ -3,7 +3,7 @@ call javaapi#namespace('com.sun.xml.internal.ws.api.message')
 call javaapi#interface('Attachment', '', [
   \ javaapi#method(0,1,'getContentId(', ')', 'String'),
   \ javaapi#method(0,1,'getContentType(', ')', 'String'),
-  \ javaapi#method(0,1,'asByteArray(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'asByteArray(', ')', 'byte'),
   \ javaapi#method(0,1,'asDataHandler(', ')', 'DataHandler'),
   \ javaapi#method(0,1,'asSource(', ')', 'Source'),
   \ javaapi#method(0,1,'asInputStream(', ')', 'InputStream'),
@@ -11,7 +11,7 @@ call javaapi#interface('Attachment', '', [
   \ javaapi#method(0,1,'writeTo(', 'SOAPMessage) throws SOAPException', 'void'),
   \ ])
 
-call javaapi#interface('AttachmentSet', 'Attachment>', [
+call javaapi#interface('AttachmentSet', 'Iterable', [
   \ javaapi#method(0,1,'get(', 'String)', 'Attachment'),
   \ javaapi#method(0,1,'isEmpty(', ')', 'boolean'),
   \ javaapi#method(0,1,'add(', 'Attachment)', 'void'),
@@ -68,7 +68,7 @@ call javaapi#interface('Header', '', [
   \ javaapi#method(0,1,'getStringContent(', ')', 'String'),
   \ ])
 
-call javaapi#class('HeaderList', 'Header>', [
+call javaapi#class('HeaderList', 'ArrayList', [
   \ javaapi#method(0,1,'HeaderList(', ')', ''),
   \ javaapi#method(0,1,'HeaderList(', 'HeaderList)', ''),
   \ javaapi#method(0,1,'size(', ')', 'int'),
@@ -81,11 +81,11 @@ call javaapi#class('HeaderList', 'Header>', [
   \ javaapi#method(0,1,'get(', 'String, String)', 'Header'),
   \ javaapi#method(0,1,'get(', 'QName, boolean)', 'Header'),
   \ javaapi#method(0,1,'get(', 'QName)', 'Header'),
-  \ javaapi#method(0,1,'getHeaders(', 'String, String)', 'Header>'),
-  \ javaapi#method(0,1,'getHeaders(', 'String, String, boolean)', 'Header>'),
-  \ javaapi#method(0,1,'getHeaders(', 'QName, boolean)', 'Header>'),
-  \ javaapi#method(0,1,'getHeaders(', 'String)', 'Header>'),
-  \ javaapi#method(0,1,'getHeaders(', 'String, boolean)', 'Header>'),
+  \ javaapi#method(0,1,'getHeaders(', 'String, String)', 'Iterator'),
+  \ javaapi#method(0,1,'getHeaders(', 'String, String, boolean)', 'Iterator'),
+  \ javaapi#method(0,1,'getHeaders(', 'QName, boolean)', 'Iterator'),
+  \ javaapi#method(0,1,'getHeaders(', 'String)', 'Iterator'),
+  \ javaapi#method(0,1,'getHeaders(', 'String, boolean)', 'Iterator'),
   \ javaapi#method(0,1,'getTo(', 'AddressingVersion, SOAPVersion)', 'String'),
   \ javaapi#method(0,1,'getAction(', 'AddressingVersion, SOAPVersion)', 'String'),
   \ javaapi#method(0,1,'getReplyTo(', 'AddressingVersion, SOAPVersion)', 'WSEndpointReference'),
@@ -201,10 +201,10 @@ call javaapi#class('Packet', 'DistributedPropertySet', [
   \ javaapi#method(0,1,'setEndPointAddressString(', 'String)', 'void'),
   \ javaapi#method(0,1,'getContentNegotiationString(', ')', 'String'),
   \ javaapi#method(0,1,'setContentNegotiationString(', 'String)', 'void'),
-  \ javaapi#method(0,1,'getReferenceParameters(', ')', 'Element>'),
+  \ javaapi#method(0,1,'getReferenceParameters(', ')', 'List'),
   \ javaapi#method(0,1,'keepTransportBackChannelOpen(', ')', 'TransportBackChannel'),
-  \ javaapi#method(0,1,'getHandlerScopePropertyNames(', 'boolean)', 'String>'),
-  \ javaapi#method(0,1,'getApplicationScopePropertyNames(', 'boolean)', 'String>'),
+  \ javaapi#method(0,1,'getHandlerScopePropertyNames(', 'boolean)', 'Set'),
+  \ javaapi#method(0,1,'getApplicationScopePropertyNames(', 'boolean)', 'Set'),
   \ javaapi#method(0,1,'createResponse(', 'Message)', 'Packet'),
   \ javaapi#method(0,1,'createClientResponse(', 'Message)', 'Packet'),
   \ javaapi#method(0,1,'createServerResponse(', 'Message, WSDLPort, SEIModel, WSBinding)', 'Packet'),

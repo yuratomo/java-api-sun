@@ -13,7 +13,7 @@ call javaapi#class('ManagedServiceAssertion', 'ManagementAssertion', [
   \ javaapi#method(0,1,'ManagedServiceAssertion(', 'AssertionData, Collection<PolicyAssertion>) throws AssertionCreationException', ''),
   \ javaapi#method(0,1,'isManagementEnabled(', ')', 'boolean'),
   \ javaapi#method(0,1,'getEndpointDisposeDelay(', 'long) throws WebServiceException', 'long'),
-  \ javaapi#method(0,1,'getCommunicationServerImplementations(', ')', 'ImplementationRecord>'),
+  \ javaapi#method(0,1,'getCommunicationServerImplementations(', ')', 'Collection'),
   \ javaapi#method(0,1,'getConfiguratorImplementation(', ')', 'ImplementationRecord'),
   \ javaapi#method(0,1,'getConfigSaverImplementation(', ')', 'ImplementationRecord'),
   \ javaapi#method(0,1,'getConfigReaderImplementation(', ')', 'ImplementationRecord'),

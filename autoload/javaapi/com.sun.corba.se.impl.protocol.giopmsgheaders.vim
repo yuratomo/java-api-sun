@@ -200,7 +200,7 @@ call javaapi#interface('Message', '', [
   \ ])
 
 call javaapi#class('MessageBase', 'Message', [
-  \ javaapi#field(0,1,'giopHeader', 'byte[]'),
+  \ javaapi#field(0,1,'giopHeader', 'byte'),
   \ javaapi#method(0,1,'MessageBase(', ')', ''),
   \ javaapi#method(1,1,'typeToString(', 'int)', 'String'),
   \ javaapi#method(1,1,'typeToString(', 'byte)', 'String'),
@@ -346,7 +346,7 @@ call javaapi#interface('RequestMessage', 'Message', [
   \ javaapi#method(0,1,'getServiceContexts(', ')', 'ServiceContexts'),
   \ javaapi#method(0,1,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,1,'isResponseExpected(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getReserved(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getReserved(', ')', 'byte'),
   \ javaapi#method(0,1,'getObjectKey(', ')', 'ObjectKey'),
   \ javaapi#method(0,1,'getOperation(', ')', 'String'),
   \ javaapi#method(0,1,'getPrincipal(', ')', 'Principal'),
@@ -357,7 +357,7 @@ call javaapi#class('RequestMessage_1_0', 'Message_1_0', [
   \ javaapi#method(0,1,'getServiceContexts(', ')', 'ServiceContexts'),
   \ javaapi#method(0,1,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,1,'isResponseExpected(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getReserved(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getReserved(', ')', 'byte'),
   \ javaapi#method(0,1,'getObjectKey(', ')', 'ObjectKey'),
   \ javaapi#method(0,1,'getOperation(', ')', 'String'),
   \ javaapi#method(0,1,'getPrincipal(', ')', 'Principal'),
@@ -371,7 +371,7 @@ call javaapi#class('RequestMessage_1_1', 'Message_1_1', [
   \ javaapi#method(0,1,'getServiceContexts(', ')', 'ServiceContexts'),
   \ javaapi#method(0,1,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,1,'isResponseExpected(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getReserved(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getReserved(', ')', 'byte'),
   \ javaapi#method(0,1,'getObjectKey(', ')', 'ObjectKey'),
   \ javaapi#method(0,1,'getOperation(', ')', 'String'),
   \ javaapi#method(0,1,'getPrincipal(', ')', 'Principal'),
@@ -383,7 +383,7 @@ call javaapi#class('RequestMessage_1_1', 'Message_1_1', [
 call javaapi#class('RequestMessage_1_2', 'Message_1_2', [
   \ javaapi#method(0,1,'getRequestId(', ')', 'int'),
   \ javaapi#method(0,1,'isResponseExpected(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getReserved(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getReserved(', ')', 'byte'),
   \ javaapi#method(0,1,'getObjectKey(', ')', 'ObjectKey'),
   \ javaapi#method(0,1,'getOperation(', ')', 'String'),
   \ javaapi#method(0,1,'getPrincipal(', ')', 'Principal'),
@@ -396,7 +396,7 @@ call javaapi#class('RequestMessage_1_2', 'Message_1_2', [
 call javaapi#class('TargetAddress', 'IDLEntity', [
   \ javaapi#method(0,1,'TargetAddress(', ')', ''),
   \ javaapi#method(0,1,'discriminator(', ')', 'short'),
-  \ javaapi#method(0,1,'object_key(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'object_key(', ')', 'byte'),
   \ javaapi#method(0,1,'object_key(', 'byte[])', 'void'),
   \ javaapi#method(0,1,'profile(', ')', 'TaggedProfile'),
   \ javaapi#method(0,1,'profile(', 'TaggedProfile)', 'void'),

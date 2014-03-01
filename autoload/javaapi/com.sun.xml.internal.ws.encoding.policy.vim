@@ -15,7 +15,7 @@ call javaapi#class('EncodingPolicyValidator', 'PolicyAssertionValidator', [
   \ javaapi#method(0,1,'EncodingPolicyValidator(', ')', ''),
   \ javaapi#method(0,1,'validateClientSide(', 'PolicyAssertion)', 'Fitness'),
   \ javaapi#method(0,1,'validateServerSide(', 'PolicyAssertion)', 'Fitness'),
-  \ javaapi#method(0,1,'declareSupportedDomains(', ')', 'String[]'),
+  \ javaapi#method(0,1,'declareSupportedDomains(', ')', 'String'),
   \ ])
 
 call javaapi#class('EncodingPrefixMapper', 'PrefixMapper', [
@@ -26,22 +26,22 @@ call javaapi#class('EncodingPrefixMapper', 'PrefixMapper', [
 call javaapi#class('FastInfosetFeatureConfigurator', 'PolicyFeatureConfigurator', [
   \ javaapi#field(1,1,'enabled', 'QName'),
   \ javaapi#method(0,1,'FastInfosetFeatureConfigurator(', ')', ''),
-  \ javaapi#method(0,1,'getFeatures(', 'PolicyMapKey, PolicyMap) throws PolicyException', 'WebServiceFeature>'),
+  \ javaapi#method(0,1,'getFeatures(', 'PolicyMapKey, PolicyMap) throws PolicyException', 'Collection'),
   \ ])
 
 call javaapi#class('MtomFeatureConfigurator', 'PolicyFeatureConfigurator', [
   \ javaapi#method(0,1,'MtomFeatureConfigurator(', ')', ''),
-  \ javaapi#method(0,1,'getFeatures(', 'PolicyMapKey, PolicyMap) throws PolicyException', 'WebServiceFeature>'),
+  \ javaapi#method(0,1,'getFeatures(', 'PolicyMapKey, PolicyMap) throws PolicyException', 'Collection'),
   \ ])
 
 call javaapi#class('MtomPolicyMapConfigurator', 'PolicyMapConfigurator', [
   \ javaapi#method(0,1,'MtomPolicyMapConfigurator(', ')', ''),
-  \ javaapi#method(0,1,'update(', 'PolicyMap, SEIModel, WSBinding) throws PolicyException', 'PolicySubject>'),
+  \ javaapi#method(0,1,'update(', 'PolicyMap, SEIModel, WSBinding) throws PolicyException', 'Collection'),
   \ ])
 
 call javaapi#class('SelectOptimalEncodingFeatureConfigurator', 'PolicyFeatureConfigurator', [
   \ javaapi#field(1,1,'enabled', 'QName'),
   \ javaapi#method(0,1,'SelectOptimalEncodingFeatureConfigurator(', ')', ''),
-  \ javaapi#method(0,1,'getFeatures(', 'PolicyMapKey, PolicyMap) throws PolicyException', 'WebServiceFeature>'),
+  \ javaapi#method(0,1,'getFeatures(', 'PolicyMapKey, PolicyMap) throws PolicyException', 'Collection'),
   \ ])
 

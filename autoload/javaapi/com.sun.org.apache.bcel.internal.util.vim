@@ -71,8 +71,8 @@ call javaapi#class('ClassPath', 'Serializable', [
   \ javaapi#method(0,1,'getInputStream(', 'String, String) throws IOException', 'InputStream'),
   \ javaapi#method(0,1,'getClassFile(', 'String, String) throws IOException', 'ClassFile'),
   \ javaapi#method(0,1,'getClassFile(', 'String) throws IOException', 'ClassFile'),
-  \ javaapi#method(0,1,'getBytes(', 'String, String) throws IOException', 'byte[]'),
-  \ javaapi#method(0,1,'getBytes(', 'String) throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'getBytes(', 'String, String) throws IOException', 'byte'),
+  \ javaapi#method(0,1,'getBytes(', 'String) throws IOException', 'byte'),
   \ javaapi#method(0,1,'getPath(', 'String) throws IOException', 'String'),
   \ javaapi#method(0,1,'getPath(', 'String, String) throws IOException', 'String'),
   \ ])
@@ -91,8 +91,8 @@ call javaapi#class('ClassSet', 'Serializable', [
   \ javaapi#method(0,1,'add(', 'JavaClass)', 'boolean'),
   \ javaapi#method(0,1,'remove(', 'JavaClass)', 'void'),
   \ javaapi#method(0,1,'empty(', ')', 'boolean'),
-  \ javaapi#method(0,1,'toArray(', ')', 'JavaClass[]'),
-  \ javaapi#method(0,1,'getClassNames(', ')', 'String[]'),
+  \ javaapi#method(0,1,'toArray(', ')', 'JavaClass'),
+  \ javaapi#method(0,1,'getClassNames(', ')', 'String'),
   \ ])
 
 call javaapi#class('ClassStack', 'Serializable', [
@@ -109,7 +109,7 @@ call javaapi#class('ClassVector', 'Serializable', [
   \ javaapi#method(0,1,'addElement(', 'JavaClass)', 'void'),
   \ javaapi#method(0,1,'elementAt(', 'int)', 'JavaClass'),
   \ javaapi#method(0,1,'removeElementAt(', 'int)', 'void'),
-  \ javaapi#method(0,1,'toArray(', ')', 'JavaClass[]'),
+  \ javaapi#method(0,1,'toArray(', ')', 'JavaClass'),
   \ ])
 
 call javaapi#class('CodeHTML', 'Constants', [
@@ -145,6 +145,17 @@ call javaapi#interface('Repository', 'Serializable', [
   \ javaapi#method(0,1,'loadClass(', 'String) throws ClassNotFoundException', 'JavaClass'),
   \ javaapi#method(0,1,'loadClass(', 'Class) throws ClassNotFoundException', 'JavaClass'),
   \ javaapi#method(0,1,'clear(', ')', 'void'),
+  \ ])
+
+call javaapi#com.sun.org.apache.bcel.internal.util.SecuritySupport('getInstance()', '', [
+  \ javaapi#method(1,1,'getSystemProperty(', 'String)', 'String'),
+  \ javaapi#method(1,1,'getResourceAsStream(', 'String)', 'InputStream'),
+  \ javaapi#method(1,1,'getResourceAsStream(', 'ClassLoader, String)', 'InputStream'),
+  \ javaapi#method(1,1,'getResourceBundle(', 'String)', 'ListResourceBundle'),
+  \ javaapi#method(1,1,'getResourceBundle(', 'String, Locale)', 'ListResourceBundle'),
+  \ javaapi#method(1,1,'getFileList(', 'File, FilenameFilter)', 'String'),
+  \ javaapi#method(1,1,'getFileExists(', 'File)', 'boolean'),
+  \ javaapi#method(1,1,'findClassLoader(', ')', 'ClassLoader'),
   \ ])
 
 call javaapi#class('SyntheticRepository', 'Repository', [

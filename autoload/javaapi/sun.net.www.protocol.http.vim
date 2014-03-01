@@ -19,14 +19,14 @@ call javaapi#class('AuthCacheValue', 'Serializable', [
   \ javaapi#method(1,1,'setAuthCache(', 'AuthCache)', 'void'),
   \ ])
 
-call javaapi#class('AuthScheme', 'AuthScheme>', [
+call javaapi#class('AuthScheme', 'Enum', [
   \ javaapi#field(1,1,'BASIC', 'AuthScheme'),
   \ javaapi#field(1,1,'DIGEST', 'AuthScheme'),
   \ javaapi#field(1,1,'NTLM', 'AuthScheme'),
   \ javaapi#field(1,1,'NEGOTIATE', 'AuthScheme'),
   \ javaapi#field(1,1,'KERBEROS', 'AuthScheme'),
   \ javaapi#field(1,1,'UNKNOWN', 'AuthScheme'),
-  \ javaapi#method(1,1,'values(', ')', 'AuthScheme[]'),
+  \ javaapi#method(1,1,'values(', ')', 'AuthScheme'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'AuthScheme'),
   \ ])
 
@@ -140,14 +140,14 @@ call javaapi#class('HttpURLConnection', 'HttpURLConnection', [
   \ javaapi#method(0,1,'disconnect(', ')', 'void'),
   \ javaapi#method(0,1,'usingProxy(', ')', 'boolean'),
   \ javaapi#method(0,1,'getHeaderField(', 'String)', 'String'),
-  \ javaapi#method(0,1,'getHeaderFields(', ')', 'String>>'),
+  \ javaapi#method(0,1,'getHeaderFields(', ')', 'List'),
   \ javaapi#method(0,1,'getHeaderField(', 'int)', 'String'),
   \ javaapi#method(0,1,'getHeaderFieldKey(', 'int)', 'String'),
   \ javaapi#method(0,1,'setRequestProperty(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'addRequestProperty(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'setAuthenticationProperty(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'getRequestProperty(', 'String)', 'String'),
-  \ javaapi#method(0,1,'getRequestProperties(', ')', 'String>>'),
+  \ javaapi#method(0,1,'getRequestProperties(', ')', 'List'),
   \ javaapi#method(0,1,'setConnectTimeout(', 'int)', 'void'),
   \ javaapi#method(0,1,'getConnectTimeout(', ')', 'int'),
   \ javaapi#method(0,1,'setReadTimeout(', 'int)', 'void'),
@@ -169,8 +169,8 @@ call javaapi#class('NegotiateAuthentication', 'AuthenticationInfo', [
 
 call javaapi#class('Negotiator', '', [
   \ javaapi#method(0,1,'Negotiator(', ')', ''),
-  \ javaapi#method(0,1,'firstToken(', ') throws IOException', 'byte[]'),
-  \ javaapi#method(0,1,'nextToken(', 'byte[]) throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'firstToken(', ') throws IOException', 'byte'),
+  \ javaapi#method(0,1,'nextToken(', 'byte[]) throws IOException', 'byte'),
   \ ])
 
 call javaapi#namespace('sun.net.www.protocol.http')

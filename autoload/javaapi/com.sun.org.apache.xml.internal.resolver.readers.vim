@@ -111,7 +111,7 @@ call javaapi#class('TR9401CatalogReader', 'TextCatalogReader', [
 
 call javaapi#class('TextCatalogReader', 'CatalogReader', [
   \ javaapi#field(0,0,'catfile', 'InputStream'),
-  \ javaapi#field(0,0,'stack', 'int[]'),
+  \ javaapi#field(0,0,'stack', 'int'),
   \ javaapi#field(0,0,'tokenStack', 'Stack'),
   \ javaapi#field(0,0,'top', 'int'),
   \ javaapi#field(0,0,'caseSensitive', 'boolean'),

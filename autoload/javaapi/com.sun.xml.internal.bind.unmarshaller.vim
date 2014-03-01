@@ -21,7 +21,7 @@ call javaapi#class('DOMScanner', 'InfosetScanner', [
   \ javaapi#method(0,1,'getLocation(', ')', 'ValidationEventLocator'),
   \ ])
 
-call javaapi#interface('InfosetScanner<XmlNode>', '', [
+call javaapi#interface('InfosetScanner', '', [
   \ javaapi#method(0,1,'scan(', 'XmlNode) throws SAXException', 'void'),
   \ javaapi#method(0,1,'setContentHandler(', 'ContentHandler)', 'void'),
   \ javaapi#method(0,1,'getContentHandler(', ')', 'ContentHandler'),

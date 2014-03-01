@@ -18,17 +18,17 @@ call javaapi#class('CustomMediaSizeName', 'MediaSizeName', [
   \ javaapi#method(0,1,'getChoiceName(', ')', 'String'),
   \ javaapi#method(0,1,'getStandardMedia(', ')', 'MediaSizeName'),
   \ javaapi#method(1,1,'findMedia(', 'Media[], float, float, int)', 'MediaSizeName'),
-  \ javaapi#method(0,1,'getSuperEnumTable(', ')', 'Media[]'),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,1,'getSuperEnumTable(', ')', 'Media'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ ])
 
 call javaapi#class('CustomMediaTray', 'MediaTray', [
   \ javaapi#method(0,1,'CustomMediaTray(', 'String, String)', ''),
   \ javaapi#method(0,1,'getChoiceName(', ')', 'String'),
-  \ javaapi#method(0,1,'getSuperEnumTable(', ')', 'Media[]'),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,1,'getSuperEnumTable(', ')', 'Media'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ ])
 
 call javaapi#class('DialogOwner', 'PrintRequestAttribute', [
@@ -123,7 +123,7 @@ call javaapi#class('PSStreamPrintJob', 'CancelablePrintJob', [
 call javaapi#class('PSStreamPrintService', 'StreamPrintService', [
   \ javaapi#method(0,1,'PSStreamPrintService(', 'OutputStream)', ''),
   \ javaapi#method(0,1,'getOutputFormat(', ')', 'String'),
-  \ javaapi#method(0,1,'getSupportedDocFlavors(', ')', 'DocFlavor[]'),
+  \ javaapi#method(0,1,'getSupportedDocFlavors(', ')', 'DocFlavor'),
   \ javaapi#method(0,1,'createPrintJob(', ')', 'DocPrintJob'),
   \ javaapi#method(0,1,'usesClass(', 'Class)', 'boolean'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
@@ -132,7 +132,7 @@ call javaapi#class('PSStreamPrintService', 'StreamPrintService', [
   \ javaapi#method(0,1,'getAttribute(', 'Class<T>)', 'T'),
   \ javaapi#method(0,1,'getAttributes(', ')', 'PrintServiceAttributeSet'),
   \ javaapi#method(0,1,'isDocFlavorSupported(', 'DocFlavor)', 'boolean'),
-  \ javaapi#method(0,1,'getSupportedAttributeCategories(', ')', 'Class<?>[]'),
+  \ javaapi#method(0,1,'getSupportedAttributeCategories(', ')', 'Class'),
   \ javaapi#method(0,1,'isAttributeCategorySupported(', 'Class<? extends Attribute>)', 'boolean'),
   \ javaapi#method(0,1,'getDefaultAttributeValue(', 'Class<? extends Attribute>)', 'Object'),
   \ javaapi#method(0,1,'getSupportedAttributeValues(', 'Class<? extends Attribute>, DocFlavor, AttributeSet)', 'Object'),
@@ -147,7 +147,7 @@ call javaapi#class('PSStreamPrintService', 'StreamPrintService', [
 call javaapi#class('PSStreamPrinterFactory', 'StreamPrintServiceFactory', [
   \ javaapi#method(0,1,'PSStreamPrinterFactory(', ')', ''),
   \ javaapi#method(0,1,'getOutputFormat(', ')', 'String'),
-  \ javaapi#method(0,1,'getSupportedDocFlavors(', ')', 'DocFlavor[]'),
+  \ javaapi#method(0,1,'getSupportedDocFlavors(', ')', 'DocFlavor'),
   \ javaapi#method(0,1,'getPrintService(', 'OutputStream)', 'StreamPrintService'),
   \ ])
 
@@ -334,19 +334,19 @@ call javaapi#class('PrintJob2D', 'PrintJob', [
   \ ])
 
 call javaapi#class('PrintJobAttributeException', 'PrintException', [
-  \ javaapi#method(0,1,'getUnsupportedAttributes(', ')', 'Class[]'),
-  \ javaapi#method(0,1,'getUnsupportedValues(', ')', 'Attribute[]'),
+  \ javaapi#method(0,1,'getUnsupportedAttributes(', ')', 'Class'),
+  \ javaapi#method(0,1,'getUnsupportedValues(', ')', 'Attribute'),
   \ ])
 
 call javaapi#class('PrintJobFlavorException', 'PrintException', [
-  \ javaapi#method(0,1,'getUnsupportedFlavors(', ')', 'DocFlavor[]'),
+  \ javaapi#method(0,1,'getUnsupportedFlavors(', ')', 'DocFlavor'),
   \ ])
 
 call javaapi#class('PrinterGraphicsDevice', 'GraphicsDevice', [
   \ javaapi#method(0,0,'PrinterGraphicsDevice(', 'GraphicsConfiguration, String)', ''),
   \ javaapi#method(0,1,'getType(', ')', 'int'),
   \ javaapi#method(0,1,'getIDstring(', ')', 'String'),
-  \ javaapi#method(0,1,'getConfigurations(', ')', 'GraphicsConfiguration[]'),
+  \ javaapi#method(0,1,'getConfigurations(', ')', 'GraphicsConfiguration'),
   \ javaapi#method(0,1,'getDefaultConfiguration(', ')', 'GraphicsConfiguration'),
   \ javaapi#method(0,1,'setFullScreenWindow(', 'Window)', 'void'),
   \ javaapi#method(0,1,'getFullScreenWindow(', ')', 'Window'),
@@ -626,16 +626,16 @@ call javaapi#interface('SunPrinterJobService', '', [
 
 call javaapi#class('Win32MediaSize', 'MediaSizeName', [
   \ javaapi#method(0,1,'Win32MediaSize(', 'String, int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ ])
 
 call javaapi#class('Win32MediaTray', 'MediaTray', [
   \ javaapi#field(0,1,'winID', 'int'),
   \ javaapi#method(0,0,'Win32MediaTray(', 'int, String)', ''),
   \ javaapi#method(1,0,'getTraySize(', ')', 'int'),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ ])
 
 call javaapi#class('Win32PrintJob', 'CancelablePrintJob', [
@@ -652,8 +652,8 @@ call javaapi#class('Win32PrintJob', 'CancelablePrintJob', [
   \ ])
 
 call javaapi#class('Win32PrintService', 'SunPrinterJobService', [
-  \ javaapi#field(1,1,'predefMedia', 'MediaSize[]'),
-  \ javaapi#field(1,1,'dmPaperToPrintService', 'MediaSizeName[]'),
+  \ javaapi#field(1,1,'predefMedia', 'MediaSize'),
+  \ javaapi#field(1,1,'dmPaperToPrintService', 'MediaSizeName'),
   \ javaapi#method(0,1,'invalidateService(', ')', 'void'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'findPaperID(', 'MediaSizeName)', 'int'),
@@ -667,9 +667,9 @@ call javaapi#class('Win32PrintService', 'SunPrinterJobService', [
   \ javaapi#method(0,1,'removePrintServiceAttributeListener(', 'PrintServiceAttributeListener)', 'void'),
   \ javaapi#method(0,1,'getAttribute(', 'Class<T>)', 'T'),
   \ javaapi#method(0,1,'getAttributes(', ')', 'PrintServiceAttributeSet'),
-  \ javaapi#method(0,1,'getSupportedDocFlavors(', ')', 'DocFlavor[]'),
+  \ javaapi#method(0,1,'getSupportedDocFlavors(', ')', 'DocFlavor'),
   \ javaapi#method(0,1,'isDocFlavorSupported(', 'DocFlavor)', 'boolean'),
-  \ javaapi#method(0,1,'getSupportedAttributeCategories(', ')', 'Class<?>[]'),
+  \ javaapi#method(0,1,'getSupportedAttributeCategories(', ')', 'Class'),
   \ javaapi#method(0,1,'isAttributeCategorySupported(', 'Class<? extends Attribute>)', 'boolean'),
   \ javaapi#method(0,1,'getDefaultAttributeValue(', 'Class<? extends Attribute>)', 'Object'),
   \ javaapi#method(0,1,'getSupportedAttributeValues(', 'Class<? extends Attribute>, DocFlavor, AttributeSet)', 'Object'),
@@ -685,10 +685,10 @@ call javaapi#class('Win32PrintService', 'SunPrinterJobService', [
 call javaapi#class('Win32PrintServiceLookup', 'PrintServiceLookup', [
   \ javaapi#method(1,1,'getWin32PrintLUS(', ')', 'Win32PrintServiceLookup'),
   \ javaapi#method(0,1,'Win32PrintServiceLookup(', ')', ''),
-  \ javaapi#method(0,1,'getPrintServices(', ')', 'PrintService[]'),
+  \ javaapi#method(0,1,'getPrintServices(', ')', 'PrintService'),
   \ javaapi#method(0,1,'getPrintServiceByName(', 'String)', 'PrintService'),
-  \ javaapi#method(0,1,'getPrintServices(', 'DocFlavor, AttributeSet)', 'PrintService[]'),
-  \ javaapi#method(0,1,'getMultiDocPrintServices(', 'DocFlavor[], AttributeSet)', 'MultiDocPrintService[]'),
+  \ javaapi#method(0,1,'getPrintServices(', 'DocFlavor, AttributeSet)', 'PrintService'),
+  \ javaapi#method(0,1,'getMultiDocPrintServices(', 'DocFlavor[], AttributeSet)', 'MultiDocPrintService'),
   \ javaapi#method(0,1,'getDefaultPrintService(', ')', 'PrintService'),
   \ ])
 

@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.swing')
 
-call javaapi#class('AccumulativeRunnable<T>', 'Runnable', [
+call javaapi#class('AccumulativeRunnable', 'Runnable', [
   \ javaapi#method(0,1,'AccumulativeRunnable(', ')', ''),
   \ javaapi#method(0,0,'run(', 'List<T>)', 'void'),
   \ javaapi#method(0,1,'run(', ')', 'void'),
@@ -49,7 +49,7 @@ call javaapi#class('FilePane', 'JPanel', [
   \ javaapi#method(0,1,'setViewType(', 'int)', 'void'),
   \ javaapi#method(0,1,'getViewTypeAction(', 'int)', 'Action'),
   \ javaapi#method(0,0,'installDefaults(', ')', 'void'),
-  \ javaapi#method(0,1,'getActions(', ')', 'Action[]'),
+  \ javaapi#method(0,1,'getActions(', ')', 'Action'),
   \ javaapi#method(0,0,'createActionMap(', ')', 'void'),
   \ javaapi#method(1,1,'addActionsToMap(', 'ActionMap, Action[])', 'void'),
   \ javaapi#method(0,1,'createList(', ')', 'JPanel'),
@@ -320,8 +320,8 @@ call javaapi#class('SwingUtilities2', '', [
   \ javaapi#method(1,1,'getUIDefaultsInt(', 'Object, Locale, int)', 'int'),
   \ javaapi#method(1,1,'compositeRequestFocus(', 'Component)', 'Component'),
   \ javaapi#method(1,1,'tabbedPaneChangeFocusTo(', 'Component)', 'boolean'),
-  \ javaapi#method(1,1,'submit(', 'Callable<V>)', 'Future<V>'),
-  \ javaapi#method(1,1,'submit(', 'Runnable, V)', 'Future<V>'),
+  \ javaapi#method(1,1,'submit(', 'Callable<V>)', 'Future'),
+  \ javaapi#method(1,1,'submit(', 'Runnable, V)', 'Future'),
   \ javaapi#method(1,1,'setSkipClickCount(', 'Component, int)', 'void'),
   \ javaapi#method(1,1,'getAdjustedClickCount(', 'JTextComponent, MouseEvent)', 'int'),
   \ javaapi#method(1,1,'liesInHorizontal(', 'Rectangle, Point, boolean, boolean)', 'Section'),

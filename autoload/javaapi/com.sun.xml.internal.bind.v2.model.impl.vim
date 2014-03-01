@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.bind.v2.model.impl')
 
-call javaapi#class('AnyTypeImpl<T,C>', 'NonElement<T,C>', [
+call javaapi#class('AnyTypeImpl', 'NonElement', [
   \ javaapi#method(0,1,'AnyTypeImpl(', 'Navigator<T, C, ?, ?>)', ''),
   \ javaapi#method(0,1,'getTypeName(', ')', 'QName'),
   \ javaapi#method(0,1,'getType(', ')', 'T'),
@@ -10,7 +10,7 @@ call javaapi#class('AnyTypeImpl<T,C>', 'NonElement<T,C>', [
   \ javaapi#method(0,1,'canBeReferencedByIDREF(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('ArrayInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', 'TypeInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', [
+call javaapi#class('ArrayInfoImpl', 'TypeInfoImpl', [
   \ javaapi#method(0,1,'ArrayInfoImpl(', 'ModelBuilder<TypeT, ClassDeclT, FieldT, MethodT>, Locatable, TypeT)', ''),
   \ javaapi#method(1,1,'calcArrayTypeName(', 'QName)', 'QName'),
   \ javaapi#method(0,1,'getItemType(', ')', 'ClassDeclT>'),
@@ -23,15 +23,15 @@ call javaapi#class('ArrayInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', 'TypeInfoIm
   \ javaapi#method(0,1,'getUpstream(', ')', 'Locatable'),
   \ ])
 
-call javaapi#class('AttributePropertyInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', 'SingleTypePropertyInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', [
+call javaapi#class('AttributePropertyInfoImpl', 'SingleTypePropertyInfoImpl', [
   \ javaapi#method(0,1,'isRequired(', ')', 'boolean'),
   \ javaapi#method(0,1,'getXmlName(', ')', 'QName'),
   \ javaapi#method(0,1,'kind(', ')', 'PropertyKind'),
   \ ])
 
-call javaapi#class('BuiltinLeafInfoImpl<TypeT,ClassDeclT>', 'LeafInfoImpl<TypeT,ClassDeclT>', [
+call javaapi#class('BuiltinLeafInfoImpl', 'LeafInfoImpl', [
   \ javaapi#method(0,0,'BuiltinLeafInfoImpl(', 'TypeT, )', ''),
-  \ javaapi#method(0,1,'getTypeNames(', ')', 'QName[]'),
+  \ javaapi#method(0,1,'getTypeNames(', ')', 'QName'),
   \ javaapi#method(0,1,'isElement(', ')', 'boolean'),
   \ javaapi#method(0,1,'getElementName(', ')', 'QName'),
   \ javaapi#method(0,1,'asElement(', ')', 'ClassDeclT>'),
@@ -44,7 +44,7 @@ call javaapi#class('BuiltinLeafInfoImpl<TypeT,ClassDeclT>', 'LeafInfoImpl<TypeT,
   \ javaapi#method(0,1,'getType(', ')', 'Object'),
   \ ])
 
-call javaapi#class('ClassInfoImpl<T,C,F,M>', 'TypeInfoImpl<T,C,F,M>', [
+call javaapi#class('ClassInfoImpl', 'TypeInfoImpl', [
   \ javaapi#field(0,0,'clazz', 'C'),
   \ javaapi#field(0,0,'attributeWildcard', 'M>'),
   \ javaapi#method(0,1,'getBaseClass(', ')', 'M>'),
@@ -87,18 +87,18 @@ call javaapi#class('ClassInfoImpl<T,C,F,M>', 'TypeInfoImpl<T,C,F,M>', [
   \ javaapi#method(0,1,'getScope(', ')', 'ClassInfo'),
   \ ])
 
-call javaapi#interface('DummyPropertyInfo<T,C,F,M>', '', [
+call javaapi#interface('DummyPropertyInfo', '', [
   \ javaapi#method(0,1,'addType(', 'PropertyInfoImpl<T, C, F, M>)', 'void'),
   \ ])
 
-call javaapi#class('ERPropertyInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', 'PropertyInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', [
+call javaapi#class('ERPropertyInfoImpl', 'PropertyInfoImpl', [
   \ javaapi#method(0,1,'ERPropertyInfoImpl(', 'ClassInfoImpl<TypeT, ClassDeclT, FieldT, MethodT>, PropertySeed<TypeT, ClassDeclT, FieldT, MethodT>)', ''),
   \ javaapi#method(0,1,'getXmlName(', ')', 'QName'),
   \ javaapi#method(0,1,'isCollectionNillable(', ')', 'boolean'),
   \ javaapi#method(0,1,'isCollectionRequired(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('ElementInfoImpl<T,C,F,M>', 'TypeInfoImpl<T,C,F,M>', [
+call javaapi#class('ElementInfoImpl', 'TypeInfoImpl', [
   \ javaapi#method(0,1,'ElementInfoImpl(', 'ModelBuilder<T, C, F, M>, RegistryInfoImpl<T, C, F, M>, M) throws IllegalAnnotationException', ''),
   \ javaapi#method(0,0,'createPropertyImpl(', ')', 'PropertyImpl'),
   \ javaapi#method(0,1,'getProperty(', ')', 'C>'),
@@ -114,7 +114,7 @@ call javaapi#class('ElementInfoImpl<T,C,F,M>', 'TypeInfoImpl<T,C,F,M>', [
   \ javaapi#method(0,1,'getSubstitutionHead(', ')', 'Element'),
   \ ])
 
-call javaapi#class('ElementPropertyInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', 'ERPropertyInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', [
+call javaapi#class('ElementPropertyInfoImpl', 'ERPropertyInfoImpl', [
   \ javaapi#method(0,1,'getTypes(', ')', 'ClassDeclT>>'),
   \ javaapi#method(0,0,'createTypeRef(', 'QName, TypeT, boolean, String)', 'ClassDeclT>'),
   \ javaapi#method(0,1,'isValueList(', ')', 'boolean'),
@@ -125,7 +125,7 @@ call javaapi#class('ElementPropertyInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', '
   \ javaapi#method(0,1,'ref(', ')', 'Collection'),
   \ ])
 
-call javaapi#class('EnumConstantImpl<T,C,F,M>', 'EnumConstant<T,C>', [
+call javaapi#class('EnumConstantImpl', 'EnumConstant', [
   \ javaapi#field(0,0,'lexical', 'String'),
   \ javaapi#field(0,0,'owner', 'M>'),
   \ javaapi#field(0,0,'name', 'String'),
@@ -136,7 +136,7 @@ call javaapi#class('EnumConstantImpl<T,C,F,M>', 'EnumConstant<T,C>', [
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('EnumLeafInfoImpl<T,C,F,M>', 'TypeInfoImpl<T,C,F,M>', [
+call javaapi#class('EnumLeafInfoImpl', 'TypeInfoImpl', [
   \ javaapi#field(0,0,'tokenStringType', 'boolean'),
   \ javaapi#method(0,1,'EnumLeafInfoImpl(', 'ModelBuilder<T, C, F, M>, Locatable, C, T)', ''),
   \ javaapi#method(0,0,'calcConstants(', ')', 'void'),
@@ -159,7 +159,7 @@ call javaapi#class('EnumLeafInfoImpl<T,C,F,M>', 'TypeInfoImpl<T,C,F,M>', [
   \ javaapi#method(0,1,'iterator(', ')', 'M>>'),
   \ ])
 
-call javaapi#class('FieldPropertySeed<TypeT,ClassDeclT,FieldT,MethodT>', 'PropertySeed<TypeT,ClassDeclT,FieldT,MethodT>', [
+call javaapi#class('FieldPropertySeed', 'PropertySeed', [
   \ javaapi#field(0,0,'field', 'FieldT'),
   \ javaapi#method(0,1,'readAnnotation(', 'Class<A>)', 'A'),
   \ javaapi#method(0,1,'hasAnnotation(', 'Class<? extends Annotation>)', 'boolean'),
@@ -169,7 +169,7 @@ call javaapi#class('FieldPropertySeed<TypeT,ClassDeclT,FieldT,MethodT>', 'Proper
   \ javaapi#method(0,1,'getLocation(', ')', 'Location'),
   \ ])
 
-call javaapi#class('GetterSetterPropertySeed<TypeT,ClassDeclT,FieldT,MethodT>', 'PropertySeed<TypeT,ClassDeclT,FieldT,MethodT>', [
+call javaapi#class('GetterSetterPropertySeed', 'PropertySeed', [
   \ javaapi#field(0,0,'getter', 'MethodT'),
   \ javaapi#field(0,0,'setter', 'MethodT'),
   \ javaapi#method(0,1,'getRawType(', ')', 'TypeT'),
@@ -180,7 +180,7 @@ call javaapi#class('GetterSetterPropertySeed<TypeT,ClassDeclT,FieldT,MethodT>', 
   \ javaapi#method(0,1,'getLocation(', ')', 'Location'),
   \ ])
 
-call javaapi#class('LeafInfoImpl<TypeT,ClassDeclT>', 'Location', [
+call javaapi#class('LeafInfoImpl', 'Location', [
   \ javaapi#method(0,0,'LeafInfoImpl(', 'TypeT, QName)', ''),
   \ javaapi#method(0,1,'getType(', ')', 'TypeT'),
   \ javaapi#method(0,1,'canBeReferencedByIDREF(', ')', 'boolean'),
@@ -191,7 +191,7 @@ call javaapi#class('LeafInfoImpl<TypeT,ClassDeclT>', 'Location', [
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('MapPropertyInfoImpl<T,C,F,M>', 'PropertyInfoImpl<T,C,F,M>', [
+call javaapi#class('MapPropertyInfoImpl', 'PropertyInfoImpl', [
   \ javaapi#method(0,1,'MapPropertyInfoImpl(', 'ClassInfoImpl<T, C, F, M>, PropertySeed<T, C, F, M>)', ''),
   \ javaapi#method(0,1,'ref(', ')', 'C>>'),
   \ javaapi#method(0,1,'kind(', ')', 'PropertyKind'),
@@ -202,7 +202,7 @@ call javaapi#class('MapPropertyInfoImpl<T,C,F,M>', 'PropertyInfoImpl<T,C,F,M>', 
   \ javaapi#method(0,1,'getTarget(', 'T)', 'C>'),
   \ ])
 
-call javaapi#class('Messages', 'Messages>', [
+call javaapi#class('Messages', 'Enum', [
   \ javaapi#field(1,1,'ID_MUST_BE_STRING', 'Messages'),
   \ javaapi#field(1,1,'MUTUALLY_EXCLUSIVE_ANNOTATIONS', 'Messages'),
   \ javaapi#field(1,1,'DUPLICATE_ANNOTATIONS', 'Messages'),
@@ -263,13 +263,13 @@ call javaapi#class('Messages', 'Messages>', [
   \ javaapi#field(1,1,'XMLGREGORIANCALENDAR_MONTH', 'Messages'),
   \ javaapi#field(1,1,'XMLGREGORIANCALENDAR_YEAR', 'Messages'),
   \ javaapi#field(1,1,'XMLGREGORIANCALENDAR_TIMEZONE', 'Messages'),
-  \ javaapi#method(1,1,'values(', ')', 'Messages[]'),
+  \ javaapi#method(1,1,'values(', ')', 'Messages'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'Messages'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'format(', ')', 'String'),
   \ ])
 
-call javaapi#class('ModelBuilder<T,C,F,M>', '', [
+call javaapi#class('ModelBuilder', '', [
   \ javaapi#field(0,1,'reader', 'M>'),
   \ javaapi#field(0,1,'nav', 'M>'),
   \ javaapi#field(0,1,'defaultNsUri', 'String'),
@@ -292,7 +292,7 @@ call javaapi#class('ModelBuilder<T,C,F,M>', '', [
   \ javaapi#method(0,1,'isReplaced(', 'C)', 'boolean'),
   \ ])
 
-call javaapi#class('PropertyInfoImpl<T,C,F,M>', 'PropertyInfoImpl>', [
+call javaapi#class('PropertyInfoImpl', 'PropertyInfoImpl>', [
   \ javaapi#field(0,0,'seed', 'M>'),
   \ javaapi#field(0,0,'parent', 'M>'),
   \ javaapi#method(0,0,'PropertyInfoImpl(', 'ClassInfoImpl<T, C, F, M>, PropertySeed<T, C, F, M>)', ''),
@@ -321,12 +321,12 @@ call javaapi#class('PropertyInfoImpl<T,C,F,M>', 'PropertyInfoImpl>', [
   \ javaapi#method(0,1,'compareTo(', 'Object)', 'int'),
   \ ])
 
-call javaapi#interface('PropertySeed<T,C,F,M>', 'AnnotationSource', [
+call javaapi#interface('PropertySeed', 'AnnotationSource', [
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'getRawType(', ')', 'T'),
   \ ])
 
-call javaapi#class('ReferencePropertyInfoImpl<T,C,F,M>', 'ERPropertyInfoImpl<T,C,F,M>', [
+call javaapi#class('ReferencePropertyInfoImpl', 'ERPropertyInfoImpl', [
   \ javaapi#method(0,1,'ReferencePropertyInfoImpl(', 'ClassInfoImpl<T, C, F, M>, PropertySeed<T, C, F, M>)', ''),
   \ javaapi#method(0,1,'ref(', ')', 'C>>'),
   \ javaapi#method(0,1,'kind(', ')', 'PropertyKind'),
@@ -340,7 +340,7 @@ call javaapi#class('ReferencePropertyInfoImpl<T,C,F,M>', 'ERPropertyInfoImpl<T,C
   \ javaapi#method(0,1,'ref(', ')', 'Collection'),
   \ ])
 
-call javaapi#class('RegistryInfoImpl<T,C,F,M>', 'RegistryInfo<T,C>', [
+call javaapi#class('RegistryInfoImpl', 'RegistryInfo', [
   \ javaapi#method(0,1,'getUpstream(', ')', 'Locatable'),
   \ javaapi#method(0,1,'getLocation(', ')', 'Location'),
   \ javaapi#method(0,1,'getReferences(', ')', 'C>>'),
@@ -348,19 +348,19 @@ call javaapi#class('RegistryInfoImpl<T,C,F,M>', 'RegistryInfo<T,C>', [
   \ javaapi#method(0,1,'getClazz(', ')', 'C'),
   \ ])
 
-call javaapi#class('RuntimeAnyTypeImpl', 'Class>', [
-  \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer<V>'),
+call javaapi#class('RuntimeAnyTypeImpl', 'AnyTypeImpl', [
+  \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer'),
   \ ])
 
-call javaapi#class('RuntimeArrayInfoImpl', 'Method>', [
+call javaapi#class('RuntimeArrayInfoImpl', 'ArrayInfoImpl', [
   \ javaapi#method(0,1,'getType(', ')', 'Class'),
   \ javaapi#method(0,1,'getItemType(', ')', 'RuntimeNonElement'),
-  \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer<V>'),
+  \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer'),
   \ javaapi#method(0,1,'getType(', ')', 'Object'),
   \ javaapi#method(0,1,'getItemType(', ')', 'NonElement'),
   \ ])
 
-call javaapi#class('RuntimeAttributePropertyInfoImpl', 'Method>', [
+call javaapi#class('RuntimeAttributePropertyInfoImpl', 'AttributePropertyInfoImpl', [
   \ javaapi#method(0,1,'elementOnlyContent(', ')', 'boolean'),
   \ javaapi#method(0,1,'getTarget(', ')', 'RuntimeNonElement'),
   \ javaapi#method(0,1,'ref(', ')', 'RuntimeNonElement>'),
@@ -373,10 +373,10 @@ call javaapi#class('RuntimeAttributePropertyInfoImpl', 'Method>', [
   \ javaapi#method(0,1,'getRawType(', ')', 'Type'),
   \ ])
 
-call javaapi#class('RuntimeBuiltinLeafInfoImpl<T>', 'Class>', [
-  \ javaapi#field(1,1,'LEAVES', 'RuntimeBuiltinLeafInfoImpl<?>>'),
-  \ javaapi#field(1,1,'STRING', 'String>'),
-  \ javaapi#field(1,1,'builtinBeanInfos', 'RuntimeBuiltinLeafInfoImpl<?>>'),
+call javaapi#class('RuntimeBuiltinLeafInfoImpl', 'BuiltinLeafInfoImpl', [
+  \ javaapi#field(1,1,'LEAVES', 'RuntimeBuiltinLeafInfoImpl'),
+  \ javaapi#field(1,1,'STRING', 'RuntimeBuiltinLeafInfoImpl'),
+  \ javaapi#field(1,1,'builtinBeanInfos', 'RuntimeBuiltinLeafInfoImpl'),
   \ javaapi#field(1,1,'MAP_ANYURI_TO_URI', 'String'),
   \ javaapi#method(0,1,'getClazz(', ')', 'Class'),
   \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer'),
@@ -386,7 +386,7 @@ call javaapi#class('RuntimeBuiltinLeafInfoImpl<T>', 'Class>', [
   \ javaapi#method(0,1,'getTypeName(', 'T)', 'QName'),
   \ ])
 
-call javaapi#class('RuntimeClassInfoImpl', 'Method>', [
+call javaapi#class('RuntimeClassInfoImpl', 'ClassInfoImpl', [
   \ javaapi#method(0,1,'RuntimeClassInfoImpl(', 'RuntimeModelBuilder, Locatable, Class)', ''),
   \ javaapi#method(0,0,'createAccessorFactory(', 'Class)', 'AccessorFactory'),
   \ javaapi#method(0,0,'findXmlAccessorFactoryAnnotation(', 'Class)', 'XmlAccessorFactory'),
@@ -415,7 +415,7 @@ call javaapi#class('RuntimeClassInfoImpl', 'Method>', [
   \ javaapi#method(0,1,'getBaseClass(', ')', 'RuntimeClassInfo'),
   \ ])
 
-call javaapi#class('RuntimeElementInfoImpl', 'Method>', [
+call javaapi#class('RuntimeElementInfoImpl', 'ElementInfoImpl', [
   \ javaapi#method(0,1,'RuntimeElementInfoImpl(', 'RuntimeModelBuilder, RegistryInfoImpl, Method) throws IllegalAnnotationException', ''),
   \ javaapi#method(0,0,'createPropertyImpl(', ')', 'PropertyImpl'),
   \ javaapi#method(0,1,'getProperty(', ')', 'RuntimeElementPropertyInfo'),
@@ -428,26 +428,26 @@ call javaapi#class('RuntimeElementInfoImpl', 'Method>', [
   \ javaapi#method(0,1,'getProperty(', ')', 'ElementPropertyInfo'),
   \ ])
 
-call javaapi#class('RuntimeElementPropertyInfoImpl', 'Method>', [
+call javaapi#class('RuntimeElementPropertyInfoImpl', 'ElementPropertyInfoImpl', [
   \ javaapi#method(0,1,'getAccessor(', ')', 'Accessor'),
   \ javaapi#method(0,1,'elementOnlyContent(', ')', 'boolean'),
   \ javaapi#method(0,1,'ref(', ')', 'RuntimeTypeInfo>'),
   \ javaapi#method(0,0,'createTypeRef(', 'QName, Type, boolean, String)', 'RuntimeTypeRefImpl'),
-  \ javaapi#method(0,1,'getTypes(', ')', 'RuntimeTypeRefImpl>'),
+  \ javaapi#method(0,1,'getTypes(', ')', 'List'),
   \ javaapi#method(0,0,'createTypeRef(', 'QName, Object, boolean, String)', 'TypeRefImpl'),
   \ javaapi#method(0,1,'ref(', ')', 'Collection'),
   \ javaapi#method(0,1,'getIndividualType(', ')', 'Type'),
   \ javaapi#method(0,1,'getRawType(', ')', 'Type'),
   \ ])
 
-call javaapi#class('RuntimeEnumConstantImpl', 'Method>', [
+call javaapi#class('RuntimeEnumConstantImpl', 'EnumConstantImpl', [
   \ javaapi#method(0,1,'RuntimeEnumConstantImpl(', 'RuntimeEnumLeafInfoImpl, String, String, EnumConstantImpl<Type, Class, Field, Method>)', ''),
   \ ])
 
-call javaapi#class('RuntimeEnumLeafInfoImpl<T', 'Enum<T>,B>', [
-  \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer<T>'),
+call javaapi#class('RuntimeEnumLeafInfoImpl<T', 'Enum', [
+  \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer'),
   \ javaapi#method(0,1,'createEnumConstant(', 'String, String, Field, EnumConstantImpl<Type, Class, Field, Method>)', 'RuntimeEnumConstantImpl'),
-  \ javaapi#method(0,1,'getTypeNames(', ')', 'QName[]'),
+  \ javaapi#method(0,1,'getTypeNames(', ')', 'QName'),
   \ javaapi#method(0,1,'isDefault(', ')', 'boolean'),
   \ javaapi#method(0,1,'getClazz(', ')', 'Class'),
   \ javaapi#method(0,1,'useNamespace(', ')', 'boolean'),
@@ -467,7 +467,7 @@ call javaapi#class('RuntimeEnumLeafInfoImpl<T', 'Enum<T>,B>', [
   \ javaapi#method(0,1,'declareNamespace(', 'Object, XMLSerializer) throws AccessorException', 'void'),
   \ ])
 
-call javaapi#class('RuntimeMapPropertyInfoImpl', 'Method>', [
+call javaapi#class('RuntimeMapPropertyInfoImpl', 'MapPropertyInfoImpl', [
   \ javaapi#method(0,1,'getAccessor(', ')', 'Accessor'),
   \ javaapi#method(0,1,'elementOnlyContent(', ')', 'boolean'),
   \ javaapi#method(0,1,'getKeyType(', ')', 'RuntimeNonElement'),
@@ -480,7 +480,7 @@ call javaapi#class('RuntimeMapPropertyInfoImpl', 'Method>', [
   \ javaapi#method(0,1,'getRawType(', ')', 'Type'),
   \ ])
 
-call javaapi#class('RuntimeModelBuilder', 'Method>', [
+call javaapi#class('RuntimeModelBuilder', 'ModelBuilder', [
   \ javaapi#field(0,1,'context', 'JAXBContextImpl'),
   \ javaapi#method(0,1,'RuntimeModelBuilder(', 'JAXBContextImpl, RuntimeAnnotationReader, Map<Class, Class>, String)', ''),
   \ javaapi#method(0,1,'getClassInfo(', 'Class, Locatable)', 'RuntimeNonElement'),
@@ -503,7 +503,7 @@ call javaapi#class('RuntimeModelBuilder', 'Method>', [
   \ javaapi#method(0,0,'createTypeInfoSet(', ')', 'TypeInfoSetImpl'),
   \ ])
 
-call javaapi#class('RuntimeReferencePropertyInfoImpl', 'Method>', [
+call javaapi#class('RuntimeReferencePropertyInfoImpl', 'ReferencePropertyInfoImpl', [
   \ javaapi#method(0,1,'RuntimeReferencePropertyInfoImpl(', 'RuntimeClassInfoImpl, PropertySeed<Type, Class, Field, Method>)', ''),
   \ javaapi#method(0,1,'getElements(', ')', 'RuntimeElement>'),
   \ javaapi#method(0,1,'ref(', ')', 'RuntimeElement>'),
@@ -514,7 +514,7 @@ call javaapi#class('RuntimeReferencePropertyInfoImpl', 'Method>', [
   \ javaapi#method(0,1,'getRawType(', ')', 'Type'),
   \ ])
 
-call javaapi#class('RuntimeTypeInfoSetImpl', 'Method>', [
+call javaapi#class('RuntimeTypeInfoSetImpl', 'TypeInfoSetImpl', [
   \ javaapi#method(0,1,'RuntimeTypeInfoSetImpl(', 'AnnotationReader<Type, Class, Field, Method>)', ''),
   \ javaapi#method(0,0,'createAnyType(', ')', 'RuntimeNonElement'),
   \ javaapi#method(0,1,'getNavigator(', ')', 'ReflectionNavigator'),
@@ -522,12 +522,12 @@ call javaapi#class('RuntimeTypeInfoSetImpl', 'Method>', [
   \ javaapi#method(0,1,'getAnyTypeInfo(', ')', 'RuntimeNonElement'),
   \ javaapi#method(0,1,'getClassInfo(', 'Class)', 'RuntimeNonElement'),
   \ javaapi#method(0,1,'beans(', ')', 'RuntimeClassInfoImpl>'),
-  \ javaapi#method(0,1,'builtins(', ')', 'RuntimeBuiltinLeafInfoImpl<?>>'),
+  \ javaapi#method(0,1,'builtins(', ')', 'RuntimeBuiltinLeafInfoImpl'),
   \ javaapi#method(0,1,'enums(', ')', '?>>'),
   \ javaapi#method(0,1,'arrays(', ')', 'RuntimeArrayInfoImpl>'),
   \ javaapi#method(0,1,'getElementInfo(', 'Class, QName)', 'RuntimeElementInfoImpl'),
   \ javaapi#method(0,1,'getElementMappings(', 'Class)', 'RuntimeElementInfoImpl>'),
-  \ javaapi#method(0,1,'getAllElements(', ')', 'RuntimeElementInfoImpl>'),
+  \ javaapi#method(0,1,'getAllElements(', ')', 'Iterable'),
   \ javaapi#method(0,1,'getElementMappings(', 'Object)', 'Map'),
   \ javaapi#method(0,1,'getElementInfo(', 'Object, QName)', 'ElementInfoImpl'),
   \ javaapi#method(0,1,'getClassInfo(', 'Object)', 'NonElement'),
@@ -539,7 +539,7 @@ call javaapi#class('RuntimeTypeInfoSetImpl', 'Method>', [
   \ javaapi#method(0,1,'getElementInfo(', 'Class, QName)', 'RuntimeElementInfo'),
   \ ])
 
-call javaapi#class('RuntimeTypeRefImpl', 'Class>', [
+call javaapi#class('RuntimeTypeRefImpl', 'TypeRefImpl', [
   \ javaapi#method(0,1,'RuntimeTypeRefImpl(', 'RuntimeElementPropertyInfoImpl, QName, Type, boolean, String)', ''),
   \ javaapi#method(0,1,'getTarget(', ')', 'RuntimeNonElement'),
   \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer'),
@@ -548,7 +548,7 @@ call javaapi#class('RuntimeTypeRefImpl', 'Class>', [
   \ javaapi#method(0,1,'getTarget(', ')', 'NonElement'),
   \ ])
 
-call javaapi#class('RuntimeValuePropertyInfoImpl', 'Method>', [
+call javaapi#class('RuntimeValuePropertyInfoImpl', 'ValuePropertyInfoImpl', [
   \ javaapi#method(0,1,'elementOnlyContent(', ')', 'boolean'),
   \ javaapi#method(0,1,'getSource(', ')', 'RuntimePropertyInfo'),
   \ javaapi#method(0,1,'getTarget(', ')', 'RuntimeNonElement'),
@@ -561,7 +561,7 @@ call javaapi#class('RuntimeValuePropertyInfoImpl', 'Method>', [
   \ javaapi#method(0,1,'getRawType(', ')', 'Type'),
   \ ])
 
-call javaapi#class('SingleTypePropertyInfoImpl<T,C,F,M>', 'PropertyInfoImpl<T,C,F,M>', [
+call javaapi#class('SingleTypePropertyInfoImpl', 'PropertyInfoImpl', [
   \ javaapi#method(0,1,'SingleTypePropertyInfoImpl(', 'ClassInfoImpl<T, C, F, M>, PropertySeed<T, C, F, M>)', ''),
   \ javaapi#method(0,1,'ref(', ')', 'C>>'),
   \ javaapi#method(0,1,'getTarget(', ')', 'C>'),
@@ -572,7 +572,7 @@ call javaapi#class('SingleTypePropertyInfoImpl<T,C,F,M>', 'PropertyInfoImpl<T,C,
   \ javaapi#method(0,1,'ref(', ')', 'Collection'),
   \ ])
 
-call javaapi#class('TypeInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', 'Locatable', [
+call javaapi#class('TypeInfoImpl', 'Locatable', [
   \ javaapi#field(0,0,'owner', 'MethodT>'),
   \ javaapi#field(0,0,'builder', 'MethodT>'),
   \ javaapi#method(0,0,'TypeInfoImpl(', 'ModelBuilder<TypeT, ClassDeclT, FieldT, MethodT>, Locatable)', ''),
@@ -584,7 +584,7 @@ call javaapi#class('TypeInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', 'Locatable',
   \ javaapi#method(0,0,'parseTypeName(', 'ClassDeclT, XmlType)', 'QName'),
   \ ])
 
-call javaapi#class('TypeInfoSetImpl<T,C,F,M>', 'TypeInfoSet<T,C,F,M>', [
+call javaapi#class('TypeInfoSetImpl', 'TypeInfoSet', [
   \ javaapi#field(0,1,'nav', 'M>'),
   \ javaapi#field(0,1,'reader', 'M>'),
   \ javaapi#method(0,1,'TypeInfoSetImpl(', 'Navigator<T, C, F, M>, AnnotationReader<T, C, F, M>, Map<T, ? extends BuiltinLeafInfoImpl<T, C>>)', ''),
@@ -613,7 +613,7 @@ call javaapi#class('TypeInfoSetImpl<T,C,F,M>', 'TypeInfoSet<T,C,F,M>', [
   \ javaapi#method(0,1,'getElementInfo(', 'Object, QName)', 'ElementInfo'),
   \ ])
 
-call javaapi#class('TypeRefImpl<TypeT,ClassDeclT>', 'TypeRef<TypeT,ClassDeclT>', [
+call javaapi#class('TypeRefImpl', 'TypeRef', [
   \ javaapi#field(0,0,'owner', '?>'),
   \ javaapi#method(0,1,'TypeRefImpl(', 'ElementPropertyInfoImpl<TypeT, ClassDeclT, ?, ?>, QName, TypeT, boolean, String)', ''),
   \ javaapi#method(0,1,'getTarget(', ')', 'ClassDeclT>'),
@@ -627,7 +627,7 @@ call javaapi#class('TypeRefImpl<TypeT,ClassDeclT>', 'TypeRef<TypeT,ClassDeclT>',
 call javaapi#class('Util', '', [
   \ ])
 
-call javaapi#class('ValuePropertyInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', 'SingleTypePropertyInfoImpl<TypeT,ClassDeclT,FieldT,MethodT>', [
+call javaapi#class('ValuePropertyInfoImpl', 'SingleTypePropertyInfoImpl', [
   \ javaapi#method(0,1,'kind(', ')', 'PropertyKind'),
   \ ])
 

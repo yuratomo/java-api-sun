@@ -7,12 +7,12 @@ call javaapi#class('Base64', '', [
   \ javaapi#method(1,0,'isData(', 'char)', 'boolean'),
   \ javaapi#method(1,0,'isBase64(', 'char)', 'boolean'),
   \ javaapi#method(1,1,'encode(', 'byte[])', 'String'),
-  \ javaapi#method(1,1,'decode(', 'String)', 'byte[]'),
+  \ javaapi#method(1,1,'decode(', 'String)', 'byte'),
   \ javaapi#method(1,0,'removeWhiteSpace(', 'char[])', 'int'),
   \ ])
 
 call javaapi#class('ByteListImpl', 'AbstractList', [
-  \ javaapi#field(0,0,'data', 'byte[]'),
+  \ javaapi#field(0,0,'data', 'byte'),
   \ javaapi#field(0,0,'canonical', 'String'),
   \ javaapi#method(0,1,'ByteListImpl(', 'byte[])', ''),
   \ javaapi#method(0,1,'getLength(', ')', 'int'),
@@ -25,6 +25,6 @@ call javaapi#class('ByteListImpl', 'AbstractList', [
 call javaapi#class('HexBin', '', [
   \ javaapi#method(0,1,'HexBin(', ')', ''),
   \ javaapi#method(1,1,'encode(', 'byte[])', 'String'),
-  \ javaapi#method(1,1,'decode(', 'String)', 'byte[]'),
+  \ javaapi#method(1,1,'decode(', 'String)', 'byte'),
   \ ])
 

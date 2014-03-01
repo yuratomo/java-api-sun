@@ -63,7 +63,7 @@ call javaapi#class('NamingContextImpl', 'NamingContextExtPOA', [
   \ javaapi#method(0,1,'NewContext(', ') throws SystemException', 'NamingContext'),
   \ javaapi#method(0,1,'Destroy(', ') throws SystemException', 'void'),
   \ javaapi#method(0,1,'to_string(', 'NameComponent[]) throws InvalidName', 'String'),
-  \ javaapi#method(0,1,'to_name(', 'String) throws InvalidName', 'NameComponent[]'),
+  \ javaapi#method(0,1,'to_name(', 'String) throws InvalidName', 'NameComponent'),
   \ javaapi#method(0,1,'to_url(', 'String, String) throws InvalidAddress, InvalidName', 'String'),
   \ javaapi#method(0,1,'resolve_str(', 'String) throws NotFound, CannotProceed, InvalidName', 'Object'),
   \ javaapi#method(0,1,'IsEmpty(', ')', 'boolean'),

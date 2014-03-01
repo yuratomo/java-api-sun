@@ -4,7 +4,7 @@ call javaapi#class('X509V1CertImpl', 'X509Certificate', [
   \ javaapi#method(0,1,'X509V1CertImpl(', ')', ''),
   \ javaapi#method(0,1,'X509V1CertImpl(', 'byte[]) throws CertificateException', ''),
   \ javaapi#method(0,1,'X509V1CertImpl(', 'InputStream) throws CertificateException', ''),
-  \ javaapi#method(0,1,'getEncoded(', ') throws CertificateEncodingException', 'byte[]'),
+  \ javaapi#method(0,1,'getEncoded(', ') throws CertificateEncodingException', 'byte'),
   \ javaapi#method(0,1,'verify(', 'PublicKey) throws CertificateException, NoSuchAlgorithmException, InvalidKeyException, NoSuchProviderException, SignatureException', 'void'),
   \ javaapi#method(0,1,'verify(', 'PublicKey, String) throws CertificateException, NoSuchAlgorithmException, InvalidKeyException, NoSuchProviderException, SignatureException', 'void'),
   \ javaapi#method(0,1,'checkValidity(', ') throws CertificateExpiredException, CertificateNotYetValidException', 'void'),
@@ -19,7 +19,7 @@ call javaapi#class('X509V1CertImpl', 'X509Certificate', [
   \ javaapi#method(0,1,'getNotAfter(', ')', 'Date'),
   \ javaapi#method(0,1,'getSigAlgName(', ')', 'String'),
   \ javaapi#method(0,1,'getSigAlgOID(', ')', 'String'),
-  \ javaapi#method(0,1,'getSigAlgParams(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getSigAlgParams(', ')', 'byte'),
   \ javaapi#method(0,1,'getX509Certificate(', ')', 'X509Certificate'),
   \ ])
 

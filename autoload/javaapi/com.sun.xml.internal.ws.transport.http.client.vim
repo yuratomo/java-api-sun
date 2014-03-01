@@ -2,14 +2,14 @@ call javaapi#namespace('com.sun.xml.internal.ws.transport.http.client')
 
 call javaapi#class('HttpClientTransport', '', [
   \ javaapi#method(0,1,'HttpClientTransport(', 'Packet, Map<String, List<String>>)', ''),
-  \ javaapi#method(0,1,'getHeaders(', ')', 'String>>'),
+  \ javaapi#method(0,1,'getHeaders(', ')', 'List'),
   \ javaapi#method(0,0,'readResponse(', ')', 'InputStream'),
   \ javaapi#method(0,0,'readResponseCodeAndMessage(', ')', 'void'),
   \ ])
 
 call javaapi#class('HttpResponseProperties', 'PropertySet', [
   \ javaapi#method(0,1,'HttpResponseProperties(', 'HttpClientTransport)', ''),
-  \ javaapi#method(0,1,'getResponseHeaders(', ')', 'String>>'),
+  \ javaapi#method(0,1,'getResponseHeaders(', ')', 'List'),
   \ javaapi#method(0,1,'getResponseCode(', ')', 'int'),
   \ javaapi#method(0,0,'getPropertyMap(', ')', 'PropertyMap'),
   \ ])

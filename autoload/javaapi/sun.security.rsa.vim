@@ -3,9 +3,9 @@ call javaapi#namespace('sun.security.rsa')
 call javaapi#class('RSACore', '', [
   \ javaapi#method(1,1,'getByteLength(', 'BigInteger)', 'int'),
   \ javaapi#method(1,1,'getByteLength(', 'RSAKey)', 'int'),
-  \ javaapi#method(1,1,'convert(', 'byte[], int, int)', 'byte[]'),
-  \ javaapi#method(1,1,'rsa(', 'byte[], RSAPublicKey) throws BadPaddingException', 'byte[]'),
-  \ javaapi#method(1,1,'rsa(', 'byte[], RSAPrivateKey) throws BadPaddingException', 'byte[]'),
+  \ javaapi#method(1,1,'convert(', 'byte[], int, int)', 'byte'),
+  \ javaapi#method(1,1,'rsa(', 'byte[], RSAPublicKey) throws BadPaddingException', 'byte'),
+  \ javaapi#method(1,1,'rsa(', 'byte[], RSAPrivateKey) throws BadPaddingException', 'byte'),
   \ ])
 
 call javaapi#class('RSAKeyFactory', 'KeyFactorySpi', [
@@ -38,10 +38,10 @@ call javaapi#class('RSAPadding', '', [
   \ javaapi#method(1,1,'getInstance(', 'int, int, SecureRandom) throws InvalidKeyException, InvalidAlgorithmParameterException', 'RSAPadding'),
   \ javaapi#method(1,1,'getInstance(', 'int, int, SecureRandom, OAEPParameterSpec) throws InvalidKeyException, InvalidAlgorithmParameterException', 'RSAPadding'),
   \ javaapi#method(0,1,'getMaxDataSize(', ')', 'int'),
-  \ javaapi#method(0,1,'pad(', 'byte[], int, int) throws BadPaddingException', 'byte[]'),
-  \ javaapi#method(0,1,'pad(', 'byte[]) throws BadPaddingException', 'byte[]'),
-  \ javaapi#method(0,1,'unpad(', 'byte[], int, int) throws BadPaddingException', 'byte[]'),
-  \ javaapi#method(0,1,'unpad(', 'byte[]) throws BadPaddingException', 'byte[]'),
+  \ javaapi#method(0,1,'pad(', 'byte[], int, int) throws BadPaddingException', 'byte'),
+  \ javaapi#method(0,1,'pad(', 'byte[]) throws BadPaddingException', 'byte'),
+  \ javaapi#method(0,1,'unpad(', 'byte[], int, int) throws BadPaddingException', 'byte'),
+  \ javaapi#method(0,1,'unpad(', 'byte[]) throws BadPaddingException', 'byte'),
   \ ])
 
 call javaapi#class('RSAPrivateCrtKeyImpl', 'PKCS8Key', [
@@ -84,10 +84,10 @@ call javaapi#class('RSASignature', 'SignatureSpi', [
   \ javaapi#method(0,0,'engineUpdate(', 'byte) throws SignatureException', 'void'),
   \ javaapi#method(0,0,'engineUpdate(', 'byte[], int, int) throws SignatureException', 'void'),
   \ javaapi#method(0,0,'engineUpdate(', 'ByteBuffer)', 'void'),
-  \ javaapi#method(0,0,'engineSign(', ') throws SignatureException', 'byte[]'),
+  \ javaapi#method(0,0,'engineSign(', ') throws SignatureException', 'byte'),
   \ javaapi#method(0,0,'engineVerify(', 'byte[]) throws SignatureException', 'boolean'),
-  \ javaapi#method(1,1,'encodeSignature(', 'ObjectIdentifier, byte[]) throws IOException', 'byte[]'),
-  \ javaapi#method(1,1,'decodeSignature(', 'ObjectIdentifier, byte[]) throws IOException', 'byte[]'),
+  \ javaapi#method(1,1,'encodeSignature(', 'ObjectIdentifier, byte[]) throws IOException', 'byte'),
+  \ javaapi#method(1,1,'decodeSignature(', 'ObjectIdentifier, byte[]) throws IOException', 'byte'),
   \ javaapi#method(0,0,'engineSetParameter(', 'String, Object) throws InvalidParameterException', 'void'),
   \ javaapi#method(0,0,'engineGetParameter(', 'String) throws InvalidParameterException', 'Object'),
   \ ])

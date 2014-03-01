@@ -15,7 +15,7 @@ call javaapi#class('MUTube', 'AbstractFilterTubeImpl', [
   \ javaapi#field(0,0,'binding', 'SOAPBindingImpl'),
   \ javaapi#method(0,0,'MUTube(', 'WSBinding, Tube)', ''),
   \ javaapi#method(0,0,'MUTube(', 'MUTube, TubeCloner)', ''),
-  \ javaapi#method(0,1,'getMisUnderstoodHeaders(', 'HeaderList, Set<String>, Set<QName>)', 'QName>'),
+  \ javaapi#method(0,1,'getMisUnderstoodHeaders(', 'HeaderList, Set<String>, Set<QName>)', 'Set'),
   \ ])
 
 call javaapi#class('MessageCreationException', 'ExceptionHasMessage', [

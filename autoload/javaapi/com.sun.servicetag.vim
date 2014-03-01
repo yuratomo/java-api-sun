@@ -15,14 +15,14 @@ call javaapi#class('RegistrationData', '', [
   \ javaapi#method(0,1,'getRegistrationURN(', ')', 'String'),
   \ javaapi#method(0,1,'getEnvironmentMap(', ')', 'String>'),
   \ javaapi#method(0,1,'setEnvironment(', 'String, String)', 'void'),
-  \ javaapi#method(0,1,'getServiceTags(', ')', 'ServiceTag>'),
+  \ javaapi#method(0,1,'getServiceTags(', ')', 'Set'),
   \ javaapi#method(0,1,'addServiceTag(', 'ServiceTag)', 'ServiceTag'),
   \ javaapi#method(0,1,'getServiceTag(', 'String)', 'ServiceTag'),
   \ javaapi#method(0,1,'removeServiceTag(', 'String)', 'ServiceTag'),
   \ javaapi#method(0,1,'updateServiceTag(', 'String, String)', 'ServiceTag'),
   \ javaapi#method(1,1,'loadFromXML(', 'InputStream) throws IOException', 'RegistrationData'),
   \ javaapi#method(0,1,'storeToXML(', 'OutputStream) throws IOException', 'void'),
-  \ javaapi#method(0,1,'toXML(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'toXML(', ')', 'byte'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
@@ -36,7 +36,7 @@ call javaapi#class('Registry', '', [
   \ javaapi#method(0,1,'removeServiceTag(', 'String) throws IOException', 'ServiceTag'),
   \ javaapi#method(0,1,'updateServiceTag(', 'String, String) throws IOException', 'ServiceTag'),
   \ javaapi#method(0,1,'getServiceTag(', 'String) throws IOException', 'ServiceTag'),
-  \ javaapi#method(0,1,'findServiceTags(', 'String) throws IOException', 'ServiceTag>'),
+  \ javaapi#method(0,1,'findServiceTags(', 'String) throws IOException', 'Set'),
   \ ])
 
 call javaapi#class('ServiceTag', '', [

@@ -9,7 +9,7 @@ call javaapi#class('AMXClient', 'AMXMBeanInterface', [
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'getMeta(', ')', '?>'),
   \ javaapi#method(0,1,'getParent(', ')', 'AMXClient'),
-  \ javaapi#method(0,1,'getChildren(', ')', 'AMXClient[]'),
+  \ javaapi#method(0,1,'getChildren(', ')', 'AMXClient'),
   \ javaapi#method(0,1,'getAttribute(', 'String)', 'Object'),
   \ javaapi#method(0,1,'setAttribute(', 'String, Object)', 'void'),
   \ javaapi#method(0,1,'setAttribute(', 'Attribute)', 'void'),
@@ -18,7 +18,7 @@ call javaapi#class('AMXClient', 'AMXMBeanInterface', [
   \ javaapi#method(0,1,'invoke(', 'String, Object[], String[]) throws MBeanException, ReflectionException', 'Object'),
   \ javaapi#method(0,1,'getMBeanInfo(', ')', 'MBeanInfo'),
   \ javaapi#method(0,1,'objectName(', ')', 'ObjectName'),
-  \ javaapi#method(0,1,'getChildren(', ')', 'AMXMBeanInterface[]'),
+  \ javaapi#method(0,1,'getChildren(', ')', 'AMXMBeanInterface'),
   \ javaapi#method(0,1,'getParent(', ')', 'AMXMBeanInterface'),
   \ ])
 
@@ -26,13 +26,13 @@ call javaapi#interface('AMXMBeanInterface', '', [
   \ javaapi#method(0,1,'getMeta(', ')', '?>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'getParent(', ')', 'AMXMBeanInterface'),
-  \ javaapi#method(0,1,'getChildren(', ')', 'AMXMBeanInterface[]'),
+  \ javaapi#method(0,1,'getChildren(', ')', 'AMXMBeanInterface'),
   \ ])
 
 call javaapi#interface('AMXMetadata', 'Annotation', [
   \ javaapi#method(0,1,'isSingleton(', ')', 'boolean'),
   \ javaapi#method(0,1,'group(', ')', 'String'),
-  \ javaapi#method(0,1,'subTypes(', ')', 'String[]'),
+  \ javaapi#method(0,1,'subTypes(', ')', 'String'),
   \ javaapi#method(0,1,'genericInterfaceName(', ')', 'String'),
   \ javaapi#method(0,1,'immutableInfo(', ')', 'boolean'),
   \ javaapi#method(0,1,'interfaceClassName(', ')', 'String'),
@@ -45,7 +45,7 @@ call javaapi#interface('Description', 'Annotation', [
   \ ])
 
 call javaapi#interface('DescriptorFields', 'Annotation', [
-  \ javaapi#method(0,1,'value(', ')', 'String[]'),
+  \ javaapi#method(0,1,'value(', ')', 'String'),
   \ ])
 
 call javaapi#interface('DescriptorKey', 'Annotation', [
@@ -72,20 +72,20 @@ call javaapi#class('GmbalMBeanNOPImpl', 'GmbalMBean', [
   \ javaapi#method(0,1,'removeNotificationListener(', 'NotificationListener, NotificationFilter, Object) throws ListenerNotFoundException', 'void'),
   \ javaapi#method(0,1,'addNotificationListener(', 'NotificationListener, NotificationFilter, Object) throws IllegalArgumentException', 'void'),
   \ javaapi#method(0,1,'removeNotificationListener(', 'NotificationListener) throws ListenerNotFoundException', 'void'),
-  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo[]'),
+  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo'),
   \ ])
 
-call javaapi#class('Impact', 'Impact>', [
+call javaapi#class('Impact', 'Enum', [
   \ javaapi#field(1,1,'INFO', 'Impact'),
   \ javaapi#field(1,1,'ACTION', 'Impact'),
   \ javaapi#field(1,1,'ACTION_INFO', 'Impact'),
   \ javaapi#field(1,1,'UNKNOWN', 'Impact'),
-  \ javaapi#method(1,1,'values(', ')', 'Impact[]'),
+  \ javaapi#method(1,1,'values(', ')', 'Impact'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'Impact'),
   \ ])
 
 call javaapi#interface('IncludeSubclass', 'Annotation', [
-  \ javaapi#method(0,1,'value(', ')', 'Class[]'),
+  \ javaapi#method(0,1,'value(', ')', 'Class'),
   \ ])
 
 call javaapi#interface('InheritedAttribute', 'Annotation', [
@@ -95,7 +95,7 @@ call javaapi#interface('InheritedAttribute', 'Annotation', [
   \ ])
 
 call javaapi#interface('InheritedAttributes', 'Annotation', [
-  \ javaapi#method(0,1,'value(', ')', 'InheritedAttribute[]'),
+  \ javaapi#method(0,1,'value(', ')', 'InheritedAttribute'),
   \ ])
 
 call javaapi#interface('ManagedAttribute', 'Annotation', [
@@ -190,6 +190,6 @@ call javaapi#interface('NameValue', 'Annotation', [
   \ ])
 
 call javaapi#interface('ParameterNames', 'Annotation', [
-  \ javaapi#method(0,1,'value(', ')', 'String[]'),
+  \ javaapi#method(0,1,'value(', ')', 'String'),
   \ ])
 

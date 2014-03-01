@@ -14,7 +14,7 @@ call javaapi#class('ExternalScriptable', 'Scriptable', [
   \ javaapi#method(0,1,'setPrototype(', 'Scriptable)', 'void'),
   \ javaapi#method(0,1,'getParentScope(', ')', 'Scriptable'),
   \ javaapi#method(0,1,'setParentScope(', 'Scriptable)', 'void'),
-  \ javaapi#method(0,1,'getIds(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'getIds(', ')', 'Object'),
   \ javaapi#method(0,1,'getDefaultValue(', 'Class)', 'Object'),
   \ javaapi#method(0,1,'hasInstance(', 'Scriptable)', 'boolean'),
   \ ])
@@ -34,7 +34,7 @@ call javaapi#class('JSAdapter', 'Function', [
   \ javaapi#method(0,1,'setPrototype(', 'Scriptable)', 'void'),
   \ javaapi#method(0,1,'getParentScope(', ')', 'Scriptable'),
   \ javaapi#method(0,1,'setParentScope(', 'Scriptable)', 'void'),
-  \ javaapi#method(0,1,'getIds(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'getIds(', ')', 'Object'),
   \ javaapi#method(0,1,'hasInstance(', 'Scriptable)', 'boolean'),
   \ javaapi#method(0,1,'getDefaultValue(', 'Class)', 'Object'),
   \ javaapi#method(0,1,'call(', 'Context, Scriptable, Scriptable, Object[]) throws RhinoException', 'Object'),
@@ -74,9 +74,9 @@ call javaapi#class('RhinoScriptEngine', 'AbstractScriptEngine', [
 
 call javaapi#class('RhinoScriptEngineFactory', 'ScriptEngineFactoryBase', [
   \ javaapi#method(0,1,'RhinoScriptEngineFactory(', ')', ''),
-  \ javaapi#method(0,1,'getExtensions(', ')', 'String>'),
-  \ javaapi#method(0,1,'getMimeTypes(', ')', 'String>'),
-  \ javaapi#method(0,1,'getNames(', ')', 'String>'),
+  \ javaapi#method(0,1,'getExtensions(', ')', 'List'),
+  \ javaapi#method(0,1,'getMimeTypes(', ')', 'List'),
+  \ javaapi#method(0,1,'getNames(', ')', 'List'),
   \ javaapi#method(0,1,'getParameter(', 'String)', 'Object'),
   \ javaapi#method(0,1,'getScriptEngine(', ')', 'ScriptEngine'),
   \ javaapi#method(0,1,'getMethodCallSyntax(', 'String, String, )', 'String'),

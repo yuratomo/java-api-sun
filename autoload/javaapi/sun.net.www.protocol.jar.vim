@@ -40,7 +40,7 @@ call javaapi#class('JarURLConnection', 'JarURLConnection', [
   \ javaapi#method(0,1,'setRequestProperty(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'getRequestProperty(', 'String)', 'String'),
   \ javaapi#method(0,1,'addRequestProperty(', 'String, String)', 'void'),
-  \ javaapi#method(0,1,'getRequestProperties(', ')', 'String>>'),
+  \ javaapi#method(0,1,'getRequestProperties(', ')', 'List'),
   \ javaapi#method(0,1,'setAllowUserInteraction(', 'boolean)', 'void'),
   \ javaapi#method(0,1,'getAllowUserInteraction(', ')', 'boolean'),
   \ javaapi#method(0,1,'setUseCaches(', 'boolean)', 'void'),

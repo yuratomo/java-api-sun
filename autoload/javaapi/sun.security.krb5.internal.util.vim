@@ -7,8 +7,8 @@ call javaapi#class('KerberosFlags', '', [
   \ javaapi#method(0,1,'KerberosFlags(', 'boolean[])', ''),
   \ javaapi#method(0,1,'set(', 'int, boolean)', 'void'),
   \ javaapi#method(0,1,'get(', 'int)', 'boolean'),
-  \ javaapi#method(0,1,'toBooleanArray(', ')', 'boolean[]'),
-  \ javaapi#method(0,1,'asn1Encode(', ') throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'toBooleanArray(', ')', 'boolean'),
+  \ javaapi#method(0,1,'asn1Encode(', ') throws IOException', 'byte'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 

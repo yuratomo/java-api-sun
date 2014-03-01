@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.istack.internal')
 
-call javaapi#interface('Builder<T>', '', [
+call javaapi#interface('Builder', '', [
   \ javaapi#method(0,1,'build(', ')', 'T'),
   \ ])
 
@@ -13,7 +13,7 @@ call javaapi#class('ByteArrayDataSource', 'DataSource', [
   \ javaapi#method(0,1,'getOutputStream(', ')', 'OutputStream'),
   \ ])
 
-call javaapi#class('FinalArrayList<T>', 'ArrayList<T>', [
+call javaapi#class('FinalArrayList', 'ArrayList', [
   \ javaapi#method(0,1,'FinalArrayList(', 'int)', ''),
   \ javaapi#method(0,1,'FinalArrayList(', ')', ''),
   \ javaapi#method(0,1,'FinalArrayList(', 'Collection<? extends T>)', ''),
@@ -36,7 +36,7 @@ call javaapi#interface('NotNull', 'Annotation', [
 call javaapi#interface('Nullable', 'Annotation', [
   \ ])
 
-call javaapi#interface('Pool<T>', '', [
+call javaapi#interface('Pool', '', [
   \ javaapi#method(0,1,'take(', ')', 'T'),
   \ javaapi#method(0,1,'recycle(', 'T)', 'void'),
   \ ])

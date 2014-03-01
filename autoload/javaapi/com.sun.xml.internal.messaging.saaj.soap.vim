@@ -12,7 +12,7 @@ call javaapi#class('AttachmentPartImpl', 'AttachmentPart', [
   \ javaapi#method(0,1,'setDataHandler(', 'DataHandler) throws IllegalArgumentException', 'void'),
   \ javaapi#method(0,1,'removeAllMimeHeaders(', ')', 'void'),
   \ javaapi#method(0,1,'removeMimeHeader(', 'String)', 'void'),
-  \ javaapi#method(0,1,'getMimeHeader(', 'String)', 'String[]'),
+  \ javaapi#method(0,1,'getMimeHeader(', 'String)', 'String'),
   \ javaapi#method(0,1,'setMimeHeader(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'addMimeHeader(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'getAllMimeHeaders(', ')', 'Iterator'),
@@ -25,7 +25,7 @@ call javaapi#class('AttachmentPartImpl', 'AttachmentPart', [
   \ javaapi#method(0,1,'setRawContent(', 'InputStream, String) throws SOAPException', 'void'),
   \ javaapi#method(0,1,'setRawContentBytes(', 'byte[], int, int, String) throws SOAPException', 'void'),
   \ javaapi#method(0,1,'getRawContent(', ') throws SOAPException', 'InputStream'),
-  \ javaapi#method(0,1,'getRawContentBytes(', ') throws SOAPException', 'byte[]'),
+  \ javaapi#method(0,1,'getRawContentBytes(', ') throws SOAPException', 'byte'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'getMimeHeaders(', ')', 'MimeHeaders'),
   \ ])
@@ -45,7 +45,7 @@ call javaapi#class('EnvelopeFactory', '', [
 call javaapi#class('FastInfosetDataContentHandler', 'DataContentHandler', [
   \ javaapi#field(0,1,'STR_SRC', 'String'),
   \ javaapi#method(0,1,'FastInfosetDataContentHandler(', ')', ''),
-  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor[]'),
+  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor'),
   \ javaapi#method(0,1,'getTransferData(', 'DataFlavor, DataSource) throws IOException', 'Object'),
   \ javaapi#method(0,1,'getContent(', 'DataSource) throws IOException', 'Object'),
   \ javaapi#method(0,1,'writeTo(', 'Object, String, OutputStream) throws IOException', 'void'),
@@ -54,7 +54,7 @@ call javaapi#class('FastInfosetDataContentHandler', 'DataContentHandler', [
 call javaapi#class('GifDataContentHandler', 'Component', [
   \ javaapi#method(0,1,'GifDataContentHandler(', ')', ''),
   \ javaapi#method(0,0,'getDF(', ')', 'ActivationDataFlavor'),
-  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor[]'),
+  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor'),
   \ javaapi#method(0,1,'getTransferData(', 'DataFlavor, DataSource) throws IOException', 'Object'),
   \ javaapi#method(0,1,'getContent(', 'DataSource) throws IOException', 'Object'),
   \ javaapi#method(0,1,'writeTo(', 'Object, String, OutputStream) throws IOException', 'void'),
@@ -63,7 +63,7 @@ call javaapi#class('GifDataContentHandler', 'Component', [
 call javaapi#class('ImageDataContentHandler', 'Component', [
   \ javaapi#field(1,0,'log', 'Logger'),
   \ javaapi#method(0,1,'ImageDataContentHandler(', ')', ''),
-  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor[]'),
+  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor'),
   \ javaapi#method(0,1,'getTransferData(', 'DataFlavor, DataSource) throws IOException', 'Object'),
   \ javaapi#method(0,1,'getContent(', 'DataSource) throws IOException', 'Object'),
   \ javaapi#method(0,1,'writeTo(', 'Object, String, OutputStream) throws IOException', 'void'),
@@ -72,7 +72,7 @@ call javaapi#class('ImageDataContentHandler', 'Component', [
 call javaapi#class('JpegDataContentHandler', 'Component', [
   \ javaapi#field(0,1,'STR_SRC', 'String'),
   \ javaapi#method(0,1,'JpegDataContentHandler(', ')', ''),
-  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor[]'),
+  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor'),
   \ javaapi#method(0,1,'getTransferData(', 'DataFlavor, DataSource)', 'Object'),
   \ javaapi#method(0,1,'getContent(', 'DataSource)', 'Object'),
   \ javaapi#method(0,1,'writeTo(', 'Object, String, OutputStream) throws IOException', 'void'),
@@ -108,7 +108,7 @@ call javaapi#class('MessageImpl', 'SOAPMessage', [
   \ javaapi#field(0,0,'soapPartImpl', 'SOAPPartImpl'),
   \ javaapi#field(0,0,'attachments', 'FinalArrayList'),
   \ javaapi#field(0,0,'saved', 'boolean'),
-  \ javaapi#field(0,0,'messageBytes', 'byte[]'),
+  \ javaapi#field(0,0,'messageBytes', 'byte'),
   \ javaapi#field(0,0,'messageByteCount', 'int'),
   \ javaapi#field(0,0,'properties', 'HashMap'),
   \ javaapi#field(0,0,'multiPart', 'MimeMultipart'),
@@ -161,7 +161,7 @@ call javaapi#class('MessageImpl', 'SOAPMessage', [
 
 call javaapi#class('MultipartDataContentHandler', 'DataContentHandler', [
   \ javaapi#method(0,1,'MultipartDataContentHandler(', ')', ''),
-  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor[]'),
+  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor'),
   \ javaapi#method(0,1,'getTransferData(', 'DataFlavor, DataSource)', 'Object'),
   \ javaapi#method(0,1,'getContent(', 'DataSource)', 'Object'),
   \ javaapi#method(0,1,'writeTo(', 'Object, String, OutputStream) throws IOException', 'void'),
@@ -262,7 +262,7 @@ call javaapi#class('SOAPPartImpl', 'SOAPPart', [
   \ javaapi#method(0,0,'lookForEnvelope(', ') throws SOAPException', 'void'),
   \ javaapi#method(0,1,'removeAllMimeHeaders(', ')', 'void'),
   \ javaapi#method(0,1,'removeMimeHeader(', 'String)', 'void'),
-  \ javaapi#method(0,1,'getMimeHeader(', 'String)', 'String[]'),
+  \ javaapi#method(0,1,'getMimeHeader(', 'String)', 'String'),
   \ javaapi#method(0,1,'setMimeHeader(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'addMimeHeader(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'getAllMimeHeaders(', ')', 'Iterator'),
@@ -364,7 +364,7 @@ call javaapi#class('SOAPVersionMismatchException', 'SOAPExceptionImpl', [
 call javaapi#class('StringDataContentHandler', 'DataContentHandler', [
   \ javaapi#method(0,1,'StringDataContentHandler(', ')', ''),
   \ javaapi#method(0,0,'getDF(', ')', 'ActivationDataFlavor'),
-  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor[]'),
+  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor'),
   \ javaapi#method(0,1,'getTransferData(', 'DataFlavor, DataSource) throws IOException', 'Object'),
   \ javaapi#method(0,1,'getContent(', 'DataSource) throws IOException', 'Object'),
   \ javaapi#method(0,1,'writeTo(', 'Object, String, OutputStream) throws IOException', 'void'),
@@ -373,7 +373,7 @@ call javaapi#class('StringDataContentHandler', 'DataContentHandler', [
 call javaapi#class('XmlDataContentHandler', 'DataContentHandler', [
   \ javaapi#field(0,1,'STR_SRC', 'String'),
   \ javaapi#method(0,1,'XmlDataContentHandler(', ') throws ClassNotFoundException', ''),
-  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor[]'),
+  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor'),
   \ javaapi#method(0,1,'getTransferData(', 'DataFlavor, DataSource) throws IOException', 'Object'),
   \ javaapi#method(0,1,'getContent(', 'DataSource) throws IOException', 'Object'),
   \ javaapi#method(0,1,'writeTo(', 'Object, String, OutputStream) throws IOException', 'void'),

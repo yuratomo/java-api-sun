@@ -25,7 +25,7 @@ call javaapi#class('TOAImpl', 'ObjectAdapterBase', [
   \ javaapi#method(0,1,'getLocalServant(', 'byte[])', 'Object'),
   \ javaapi#method(0,1,'getInvocationServant(', 'OAInvocationInfo)', 'void'),
   \ javaapi#method(0,1,'returnServant(', ')', 'void'),
-  \ javaapi#method(0,1,'getInterfaces(', 'Object, byte[])', 'String[]'),
+  \ javaapi#method(0,1,'getInterfaces(', 'Object, byte[])', 'String'),
   \ javaapi#method(0,1,'getEffectivePolicy(', 'int)', 'Policy'),
   \ javaapi#method(0,1,'getManagerId(', ')', 'int'),
   \ javaapi#method(0,1,'getState(', ')', 'short'),
@@ -37,10 +37,10 @@ call javaapi#class('TOAImpl', 'ObjectAdapterBase', [
 
 call javaapi#class('TransientObjectManager', '', [
   \ javaapi#method(0,1,'TransientObjectManager(', 'ORB)', ''),
-  \ javaapi#method(0,1,'storeServant(', 'Object, Object)', 'byte[]'),
+  \ javaapi#method(0,1,'storeServant(', 'Object, Object)', 'byte'),
   \ javaapi#method(0,1,'lookupServant(', 'byte[])', 'Object'),
   \ javaapi#method(0,1,'lookupServantData(', 'byte[])', 'Object'),
   \ javaapi#method(0,1,'deleteServant(', 'byte[])', 'void'),
-  \ javaapi#method(0,1,'getKey(', 'Object)', 'byte[]'),
+  \ javaapi#method(0,1,'getKey(', 'Object)', 'byte'),
   \ ])
 

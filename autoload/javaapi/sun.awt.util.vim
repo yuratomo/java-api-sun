@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.awt.util')
 
-call javaapi#class('IdentityArrayList<E>', 'AbstractList<E>', [
+call javaapi#class('IdentityArrayList', 'AbstractList', [
   \ javaapi#method(0,1,'IdentityArrayList(', 'int)', ''),
   \ javaapi#method(0,1,'IdentityArrayList(', ')', ''),
   \ javaapi#method(0,1,'IdentityArrayList(', 'Collection<? extends E>)', ''),
@@ -11,8 +11,8 @@ call javaapi#class('IdentityArrayList<E>', 'AbstractList<E>', [
   \ javaapi#method(0,1,'contains(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'indexOf(', 'Object)', 'int'),
   \ javaapi#method(0,1,'lastIndexOf(', 'Object)', 'int'),
-  \ javaapi#method(0,1,'toArray(', ')', 'Object[]'),
-  \ javaapi#method(0,1,'toArray(', 'T[])', 'T[]'),
+  \ javaapi#method(0,1,'toArray(', ')', 'Object'),
+  \ javaapi#method(0,1,'toArray(', 'T[])', 'T'),
   \ javaapi#method(0,1,'get(', 'int)', 'E'),
   \ javaapi#method(0,1,'set(', 'int, E)', 'E'),
   \ javaapi#method(0,1,'add(', 'E)', 'boolean'),
@@ -25,7 +25,7 @@ call javaapi#class('IdentityArrayList<E>', 'AbstractList<E>', [
   \ javaapi#method(0,0,'removeRange(', 'int, int)', 'void'),
   \ ])
 
-call javaapi#class('IdentityLinkedList<E>', 'AbstractSequentialList<E>', [
+call javaapi#class('IdentityLinkedList', 'AbstractSequentialList', [
   \ javaapi#method(0,1,'IdentityLinkedList(', ')', ''),
   \ javaapi#method(0,1,'IdentityLinkedList(', 'Collection<? extends E>)', ''),
   \ javaapi#method(0,1,'getFirst(', ')', 'E'),
@@ -62,9 +62,9 @@ call javaapi#class('IdentityLinkedList<E>', 'AbstractSequentialList<E>', [
   \ javaapi#method(0,1,'pop(', ')', 'E'),
   \ javaapi#method(0,1,'removeFirstOccurrence(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'removeLastOccurrence(', 'Object)', 'boolean'),
-  \ javaapi#method(0,1,'listIterator(', 'int)', 'ListIterator<E>'),
-  \ javaapi#method(0,1,'descendingIterator(', ')', 'Iterator<E>'),
-  \ javaapi#method(0,1,'toArray(', ')', 'Object[]'),
-  \ javaapi#method(0,1,'toArray(', 'T[])', 'T[]'),
+  \ javaapi#method(0,1,'listIterator(', 'int)', 'ListIterator'),
+  \ javaapi#method(0,1,'descendingIterator(', ')', 'Iterator'),
+  \ javaapi#method(0,1,'toArray(', ')', 'Object'),
+  \ javaapi#method(0,1,'toArray(', 'T[])', 'T'),
   \ ])
 

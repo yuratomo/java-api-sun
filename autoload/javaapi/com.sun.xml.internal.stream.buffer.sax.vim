@@ -26,7 +26,7 @@ call javaapi#class('Properties', '', [
   \ ])
 
 call javaapi#class('SAXBufferCreator', 'AbstractCreator', [
-  \ javaapi#field(0,0,'_namespaceAttributes', 'String[]'),
+  \ javaapi#field(0,0,'_namespaceAttributes', 'String'),
   \ javaapi#field(0,0,'_namespaceAttributesPtr', 'int'),
   \ javaapi#method(0,1,'SAXBufferCreator(', ')', ''),
   \ javaapi#method(0,1,'SAXBufferCreator(', 'MutableXMLStreamBuffer)', ''),
@@ -67,9 +67,9 @@ call javaapi#class('SAXBufferProcessor', 'AbstractProcessor', [
   \ javaapi#field(0,0,'_lexicalHandler', 'LexicalHandler'),
   \ javaapi#field(0,0,'_namespacePrefixesFeature', 'boolean'),
   \ javaapi#field(0,0,'_attributes', 'AttributesHolder'),
-  \ javaapi#field(0,0,'_namespacePrefixes', 'String[]'),
+  \ javaapi#field(0,0,'_namespacePrefixes', 'String'),
   \ javaapi#field(0,0,'_namespacePrefixesIndex', 'int'),
-  \ javaapi#field(0,0,'_namespaceAttributesStack', 'int[]'),
+  \ javaapi#field(0,0,'_namespaceAttributesStack', 'int'),
   \ javaapi#field(0,0,'_namespaceAttributesStackIndex', 'int'),
   \ javaapi#method(0,1,'SAXBufferProcessor(', ')', ''),
   \ javaapi#method(0,1,'SAXBufferProcessor(', 'XMLStreamBuffer)', ''),

@@ -31,14 +31,14 @@ call javaapi#class('AsynchronousFileChannelImpl', 'AsynchronousFileChannel', [
   \ javaapi#method(0,0,'begin(', ') throws IOException', 'void'),
   \ javaapi#method(0,0,'end(', ')', 'void'),
   \ javaapi#method(0,0,'end(', 'boolean) throws IOException', 'void'),
-  \ javaapi#method(0,1,'lock(', 'long, long, boolean)', 'FileLock>'),
+  \ javaapi#method(0,1,'lock(', 'long, long, boolean)', 'Future'),
   \ javaapi#method(0,1,'lock(', 'long, long, boolean, A, CompletionHandler<FileLock, ? super A>)', 'void'),
   \ javaapi#method(0,0,'addToFileLockTable(', 'long, long, boolean)', 'FileLockImpl'),
   \ javaapi#method(0,0,'removeFromFileLockTable(', 'FileLockImpl)', 'void'),
   \ javaapi#method(0,0,'implRelease(', 'FileLockImpl) throws IOException', 'void'),
-  \ javaapi#method(0,1,'read(', 'ByteBuffer, long)', 'Integer>'),
+  \ javaapi#method(0,1,'read(', 'ByteBuffer, long)', 'Future'),
   \ javaapi#method(0,1,'read(', 'ByteBuffer, long, A, CompletionHandler<Integer, ? super A>)', 'void'),
-  \ javaapi#method(0,1,'write(', 'ByteBuffer, long)', 'Integer>'),
+  \ javaapi#method(0,1,'write(', 'ByteBuffer, long)', 'Future'),
   \ javaapi#method(0,1,'write(', 'ByteBuffer, long, A, CompletionHandler<Integer, ? super A>)', 'void'),
   \ ])
 
@@ -47,14 +47,14 @@ call javaapi#class('AsynchronousServerSocketChannelImpl', 'AsynchronousServerSoc
   \ javaapi#field(0,0,'localAddress', 'SocketAddress'),
   \ javaapi#method(0,1,'isOpen(', ')', 'boolean'),
   \ javaapi#method(0,1,'close(', ') throws IOException', 'void'),
-  \ javaapi#method(0,1,'accept(', ')', 'AsynchronousSocketChannel>'),
+  \ javaapi#method(0,1,'accept(', ')', 'Future'),
   \ javaapi#method(0,1,'accept(', 'A, CompletionHandler<AsynchronousSocketChannel, ? super A>)', 'void'),
   \ javaapi#method(0,1,'onCancel(', 'PendingFuture<?, ?>)', 'void'),
   \ javaapi#method(0,1,'bind(', 'SocketAddress, int) throws IOException', 'AsynchronousServerSocketChannel'),
   \ javaapi#method(0,1,'getLocalAddress(', ') throws IOException', 'SocketAddress'),
   \ javaapi#method(0,1,'setOption(', 'SocketOption<T>, T) throws IOException', 'AsynchronousServerSocketChannel'),
   \ javaapi#method(0,1,'getOption(', 'SocketOption<T>) throws IOException', 'T'),
-  \ javaapi#method(0,1,'supportedOptions(', ')', 'SocketOption<?>>'),
+  \ javaapi#method(0,1,'supportedOptions(', ')', 'SocketOption'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'setOption(', 'SocketOption, Object) throws IOException', 'NetworkChannel'),
   \ ])
@@ -67,19 +67,19 @@ call javaapi#class('AsynchronousSocketChannelImpl', 'AsynchronousSocketChannel',
   \ javaapi#field(0,0,'state', 'int'),
   \ javaapi#method(0,1,'isOpen(', ')', 'boolean'),
   \ javaapi#method(0,1,'close(', ') throws IOException', 'void'),
-  \ javaapi#method(0,1,'connect(', 'SocketAddress)', 'Void>'),
+  \ javaapi#method(0,1,'connect(', 'SocketAddress)', 'Future'),
   \ javaapi#method(0,1,'connect(', 'SocketAddress, A, CompletionHandler<Void, ? super A>)', 'void'),
-  \ javaapi#method(0,1,'read(', 'ByteBuffer)', 'Integer>'),
+  \ javaapi#method(0,1,'read(', 'ByteBuffer)', 'Future'),
   \ javaapi#method(0,1,'read(', 'ByteBuffer, long, TimeUnit, A, CompletionHandler<Integer, ? super A>)', 'void'),
   \ javaapi#method(0,1,'read(', 'ByteBuffer[], int, int, long, TimeUnit, A, CompletionHandler<Long, ? super A>)', 'void'),
-  \ javaapi#method(0,1,'write(', 'ByteBuffer)', 'Integer>'),
+  \ javaapi#method(0,1,'write(', 'ByteBuffer)', 'Future'),
   \ javaapi#method(0,1,'write(', 'ByteBuffer, long, TimeUnit, A, CompletionHandler<Integer, ? super A>)', 'void'),
   \ javaapi#method(0,1,'write(', 'ByteBuffer[], int, int, long, TimeUnit, A, CompletionHandler<Long, ? super A>)', 'void'),
   \ javaapi#method(0,1,'bind(', 'SocketAddress) throws IOException', 'AsynchronousSocketChannel'),
   \ javaapi#method(0,1,'getLocalAddress(', ') throws IOException', 'SocketAddress'),
   \ javaapi#method(0,1,'setOption(', 'SocketOption<T>, T) throws IOException', 'AsynchronousSocketChannel'),
   \ javaapi#method(0,1,'getOption(', 'SocketOption<T>) throws IOException', 'T'),
-  \ javaapi#method(0,1,'supportedOptions(', ')', 'SocketOption<?>>'),
+  \ javaapi#method(0,1,'supportedOptions(', ')', 'SocketOption'),
   \ javaapi#method(0,1,'getRemoteAddress(', ') throws IOException', 'SocketAddress'),
   \ javaapi#method(0,1,'shutdownInput(', ') throws IOException', 'AsynchronousSocketChannel'),
   \ javaapi#method(0,1,'shutdownOutput(', ') throws IOException', 'AsynchronousSocketChannel'),
@@ -103,7 +103,7 @@ call javaapi#class('ChannelInputStream', 'InputStream', [
   \ javaapi#method(0,1,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('CompletedFuture<V>', 'Future<V>', [
+call javaapi#class('CompletedFuture', 'Future', [
   \ javaapi#method(0,1,'get(', ') throws ExecutionException', 'V'),
   \ javaapi#method(0,1,'get(', 'long, TimeUnit) throws ExecutionException', 'V'),
   \ javaapi#method(0,1,'isCancelled(', ')', 'boolean'),
@@ -120,7 +120,7 @@ call javaapi#class('DatagramChannelImpl', 'DatagramChannel', [
   \ javaapi#method(0,1,'getRemoteAddress(', ') throws IOException', 'SocketAddress'),
   \ javaapi#method(0,1,'setOption(', 'SocketOption<T>, T) throws IOException', 'DatagramChannel'),
   \ javaapi#method(0,1,'getOption(', 'SocketOption<T>) throws IOException', 'T'),
-  \ javaapi#method(0,1,'supportedOptions(', ')', 'SocketOption<?>>'),
+  \ javaapi#method(0,1,'supportedOptions(', ')', 'SocketOption'),
   \ javaapi#method(0,1,'receive(', 'ByteBuffer) throws IOException', 'SocketAddress'),
   \ javaapi#method(0,1,'send(', 'ByteBuffer, SocketAddress) throws IOException', 'int'),
   \ javaapi#method(0,1,'read(', 'ByteBuffer) throws IOException', 'int'),
@@ -213,7 +213,7 @@ call javaapi#class('FileLockTable', '', [
   \ javaapi#method(1,1,'newSharedFileLockTable(', 'Channel, FileDescriptor) throws IOException', 'FileLockTable'),
   \ javaapi#method(0,1,'add(', 'FileLock) throws OverlappingFileLockException', 'void'),
   \ javaapi#method(0,1,'remove(', 'FileLock)', 'void'),
-  \ javaapi#method(0,1,'removeAll(', ')', 'FileLock>'),
+  \ javaapi#method(0,1,'removeAll(', ')', 'List'),
   \ javaapi#method(0,1,'replace(', 'FileLock, FileLock)', 'void'),
   \ ])
 
@@ -260,7 +260,7 @@ call javaapi#class('Net', '', [
 call javaapi#class('OptionKey', '', [
   \ ])
 
-call javaapi#class('PendingFuture<V,A>', 'Future<V>', [
+call javaapi#class('PendingFuture', 'Future', [
   \ javaapi#method(0,1,'get(', ') throws ExecutionException, InterruptedException', 'V'),
   \ javaapi#method(0,1,'get(', 'long, TimeUnit) throws ExecutionException, InterruptedException, TimeoutException', 'V'),
   \ javaapi#method(0,1,'isCancelled(', ')', 'boolean'),
@@ -289,12 +289,12 @@ call javaapi#class('SctpChannelImpl', 'SctpChannel', [
   \ javaapi#method(0,1,'connect(', 'SocketAddress, int, int) throws IOException', 'boolean'),
   \ javaapi#method(0,1,'isConnectionPending(', ')', 'boolean'),
   \ javaapi#method(0,1,'finishConnect(', ') throws IOException', 'boolean'),
-  \ javaapi#method(0,1,'getAllLocalAddresses(', ') throws IOException', 'SocketAddress>'),
-  \ javaapi#method(0,1,'getRemoteAddresses(', ') throws IOException', 'SocketAddress>'),
+  \ javaapi#method(0,1,'getAllLocalAddresses(', ') throws IOException', 'Set'),
+  \ javaapi#method(0,1,'getRemoteAddresses(', ') throws IOException', 'Set'),
   \ javaapi#method(0,1,'shutdown(', ') throws IOException', 'SctpChannel'),
   \ javaapi#method(0,1,'getOption(', 'SctpSocketOption<T>) throws IOException', 'T'),
   \ javaapi#method(0,1,'setOption(', 'SctpSocketOption<T>, T) throws IOException', 'SctpChannel'),
-  \ javaapi#method(0,1,'supportedOptions(', ')', 'SctpSocketOption<?>>'),
+  \ javaapi#method(0,1,'supportedOptions(', ')', 'SctpSocketOption'),
   \ javaapi#method(0,1,'receive(', 'ByteBuffer, T, NotificationHandler<T>) throws IOException', 'MessageInfo'),
   \ javaapi#method(0,1,'send(', 'ByteBuffer, MessageInfo) throws IOException', 'int'),
   \ javaapi#method(0,0,'implConfigureBlocking(', 'boolean) throws IOException', 'void'),
@@ -321,16 +321,16 @@ call javaapi#class('SctpMessageInfoImpl', 'MessageInfo', [
 
 call javaapi#class('SctpMultiChannelImpl', 'SctpMultiChannel', [
   \ javaapi#method(0,1,'SctpMultiChannelImpl(', 'SelectorProvider)', ''),
-  \ javaapi#method(0,1,'associations(', ')', 'Association>'),
+  \ javaapi#method(0,1,'associations(', ')', 'Set'),
   \ javaapi#method(0,1,'bind(', 'SocketAddress, int) throws IOException', 'SctpMultiChannel'),
   \ javaapi#method(0,1,'bindAddress(', 'InetAddress) throws IOException', 'SctpMultiChannel'),
   \ javaapi#method(0,1,'unbindAddress(', 'InetAddress) throws IOException', 'SctpMultiChannel'),
-  \ javaapi#method(0,1,'getAllLocalAddresses(', ') throws IOException', 'SocketAddress>'),
-  \ javaapi#method(0,1,'getRemoteAddresses(', 'Association) throws IOException', 'SocketAddress>'),
+  \ javaapi#method(0,1,'getAllLocalAddresses(', ') throws IOException', 'Set'),
+  \ javaapi#method(0,1,'getRemoteAddresses(', 'Association) throws IOException', 'Set'),
   \ javaapi#method(0,1,'shutdown(', 'Association) throws IOException', 'SctpMultiChannel'),
   \ javaapi#method(0,1,'getOption(', 'SctpSocketOption<T>, Association) throws IOException', 'T'),
   \ javaapi#method(0,1,'setOption(', 'SctpSocketOption<T>, T, Association) throws IOException', 'SctpMultiChannel'),
-  \ javaapi#method(0,1,'supportedOptions(', ')', 'SctpSocketOption<?>>'),
+  \ javaapi#method(0,1,'supportedOptions(', ')', 'SctpSocketOption'),
   \ javaapi#method(0,1,'receive(', 'ByteBuffer, T, NotificationHandler<T>) throws IOException', 'MessageInfo'),
   \ javaapi#method(0,1,'send(', 'ByteBuffer, MessageInfo) throws IOException', 'int'),
   \ javaapi#method(0,1,'branch(', 'Association) throws IOException', 'SctpChannel'),
@@ -344,15 +344,15 @@ call javaapi#class('SctpServerChannelImpl', 'SctpServerChannel', [
   \ javaapi#method(0,1,'bind(', 'SocketAddress, int) throws IOException', 'SctpServerChannel'),
   \ javaapi#method(0,1,'bindAddress(', 'InetAddress) throws IOException', 'SctpServerChannel'),
   \ javaapi#method(0,1,'unbindAddress(', 'InetAddress) throws IOException', 'SctpServerChannel'),
-  \ javaapi#method(0,1,'getAllLocalAddresses(', ') throws IOException', 'SocketAddress>'),
+  \ javaapi#method(0,1,'getAllLocalAddresses(', ') throws IOException', 'Set'),
   \ javaapi#method(0,1,'getOption(', 'SctpSocketOption<T>) throws IOException', 'T'),
   \ javaapi#method(0,1,'setOption(', 'SctpSocketOption<T>, T) throws IOException', 'SctpServerChannel'),
-  \ javaapi#method(0,1,'supportedOptions(', ')', 'SctpSocketOption<?>>'),
+  \ javaapi#method(0,1,'supportedOptions(', ')', 'SctpSocketOption'),
   \ javaapi#method(0,0,'implConfigureBlocking(', 'boolean) throws IOException', 'void'),
   \ javaapi#method(0,1,'implCloseSelectableChannel(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('SctpStdSocketOption<T>', 'SctpSocketOption<T>', [
+call javaapi#class('SctpStdSocketOption', 'SctpSocketOption', [
   \ javaapi#field(1,1,'SCTP_DISABLE_FRAGMENTS', 'int'),
   \ javaapi#field(1,1,'SCTP_EXPLICIT_COMPLETE', 'int'),
   \ javaapi#field(1,1,'SCTP_FRAGMENT_INTERLEAVE', 'int'),
@@ -363,7 +363,7 @@ call javaapi#class('SctpStdSocketOption<T>', 'SctpSocketOption<T>', [
   \ javaapi#method(0,1,'SctpStdSocketOption(', 'String, Class<T>)', ''),
   \ javaapi#method(0,1,'SctpStdSocketOption(', 'String, Class<T>, int)', ''),
   \ javaapi#method(0,1,'name(', ')', 'String'),
-  \ javaapi#method(0,1,'type(', ')', 'Class<T>'),
+  \ javaapi#method(0,1,'type(', ')', 'Class'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
@@ -391,11 +391,11 @@ call javaapi#class('SelectionKeyImpl', 'AbstractSelectionKey', [
   \ ])
 
 call javaapi#class('SelectorImpl', 'AbstractSelector', [
-  \ javaapi#field(0,0,'selectedKeys', 'SelectionKey>'),
-  \ javaapi#field(0,0,'keys', 'SelectionKey>'),
+  \ javaapi#field(0,0,'selectedKeys', 'Set'),
+  \ javaapi#field(0,0,'keys', 'HashSet'),
   \ javaapi#method(0,0,'SelectorImpl(', 'SelectorProvider)', ''),
-  \ javaapi#method(0,1,'keys(', ')', 'SelectionKey>'),
-  \ javaapi#method(0,1,'selectedKeys(', ')', 'SelectionKey>'),
+  \ javaapi#method(0,1,'keys(', ')', 'Set'),
+  \ javaapi#method(0,1,'selectedKeys(', ')', 'Set'),
   \ javaapi#method(0,0,'doSelect(', 'long) throws IOException', 'int'),
   \ javaapi#method(0,1,'select(', 'long) throws IOException', 'int'),
   \ javaapi#method(0,1,'select(', ') throws IOException', 'int'),
@@ -443,7 +443,7 @@ call javaapi#class('ServerSocketChannelImpl', 'ServerSocketChannel', [
   \ javaapi#method(0,1,'getLocalAddress(', ') throws IOException', 'SocketAddress'),
   \ javaapi#method(0,1,'setOption(', 'SocketOption<T>, T) throws IOException', 'ServerSocketChannel'),
   \ javaapi#method(0,1,'getOption(', 'SocketOption<T>) throws IOException', 'T'),
-  \ javaapi#method(0,1,'supportedOptions(', ')', 'SocketOption<?>>'),
+  \ javaapi#method(0,1,'supportedOptions(', ')', 'SocketOption'),
   \ javaapi#method(0,1,'isBound(', ')', 'boolean'),
   \ javaapi#method(0,1,'localAddress(', ')', 'SocketAddress'),
   \ javaapi#method(0,1,'bind(', 'SocketAddress, int) throws IOException', 'ServerSocketChannel'),
@@ -464,7 +464,7 @@ call javaapi#class('ServerSocketChannelImpl', 'ServerSocketChannel', [
 call javaapi#class('SharedFileLockTable', 'FileLockTable', [
   \ javaapi#method(0,1,'add(', 'FileLock) throws OverlappingFileLockException', 'void'),
   \ javaapi#method(0,1,'remove(', 'FileLock)', 'void'),
-  \ javaapi#method(0,1,'removeAll(', ')', 'FileLock>'),
+  \ javaapi#method(0,1,'removeAll(', ')', 'List'),
   \ javaapi#method(0,1,'replace(', 'FileLock, FileLock)', 'void'),
   \ ])
 
@@ -531,7 +531,7 @@ call javaapi#class('SocketChannelImpl', 'SocketChannel', [
   \ javaapi#method(0,1,'getRemoteAddress(', ') throws IOException', 'SocketAddress'),
   \ javaapi#method(0,1,'setOption(', 'SocketOption<T>, T) throws IOException', 'SocketChannel'),
   \ javaapi#method(0,1,'getOption(', 'SocketOption<T>) throws IOException', 'T'),
-  \ javaapi#method(0,1,'supportedOptions(', ')', 'SocketOption<?>>'),
+  \ javaapi#method(0,1,'supportedOptions(', ')', 'SocketOption'),
   \ javaapi#method(0,1,'read(', 'ByteBuffer) throws IOException', 'int'),
   \ javaapi#method(0,1,'read(', 'ByteBuffer[], int, int) throws IOException', 'long'),
   \ javaapi#method(0,1,'write(', 'ByteBuffer) throws IOException', 'int'),

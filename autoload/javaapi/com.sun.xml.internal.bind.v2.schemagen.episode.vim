@@ -13,6 +13,9 @@ call javaapi#interface('Klass', 'TypedXmlWriter', [
   \ javaapi#method(0,1,'ref(', 'String)', 'void'),
   \ ])
 
+call javaapi#void('String)', '', [
+  \ ])
+
 call javaapi#interface('SchemaBindings', 'TypedXmlWriter', [
   \ javaapi#method(0,1,'map(', 'boolean)', 'void'),
   \ ])

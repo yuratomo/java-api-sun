@@ -6,7 +6,7 @@ call javaapi#class('ArrayNotificationBuffer', 'NotificationBuffer', [
   \ javaapi#method(0,1,'fetchNotifications(', 'NotificationBufferFilter, long, long, int) throws InterruptedException', 'NotificationResult'),
   \ ])
 
-call javaapi#class('ArrayQueue<T>', 'AbstractList<T>', [
+call javaapi#class('ArrayQueue', 'AbstractList', [
   \ javaapi#method(0,1,'ArrayQueue(', 'int)', ''),
   \ javaapi#method(0,1,'resize(', 'int)', 'void'),
   \ javaapi#method(0,1,'add(', 'T)', 'boolean'),
@@ -45,10 +45,10 @@ call javaapi#class('ClientNotifForwarder', '', [
   \ javaapi#method(0,0,'removeListenerForMBeanRemovedNotif(', 'Integer) throws IOException, InstanceNotFoundException, ListenerNotFoundException', 'void'),
   \ javaapi#method(0,0,'lostNotifs(', 'String, long)', 'void'),
   \ javaapi#method(0,1,'addNotificationListener(', 'Integer, ObjectName, NotificationListener, NotificationFilter, Object, Subject) throws IOException, InstanceNotFoundException', 'void'),
-  \ javaapi#method(0,1,'removeNotificationListener(', 'ObjectName, NotificationListener) throws ListenerNotFoundException, IOException', 'Integer[]'),
+  \ javaapi#method(0,1,'removeNotificationListener(', 'ObjectName, NotificationListener) throws ListenerNotFoundException, IOException', 'Integer'),
   \ javaapi#method(0,1,'removeNotificationListener(', 'ObjectName, NotificationListener, NotificationFilter, Object) throws ListenerNotFoundException, IOException', 'Integer'),
-  \ javaapi#method(0,1,'removeNotificationListener(', 'ObjectName)', 'Integer[]'),
-  \ javaapi#method(0,1,'preReconnection(', ') throws IOException', 'ClientListenerInfo[]'),
+  \ javaapi#method(0,1,'removeNotificationListener(', 'ObjectName)', 'Integer'),
+  \ javaapi#method(0,1,'preReconnection(', ') throws IOException', 'ClientListenerInfo'),
   \ javaapi#method(0,1,'postReconnection(', 'ClientListenerInfo[]) throws IOException', 'void'),
   \ javaapi#method(0,1,'terminate(', ')', 'void'),
   \ ])

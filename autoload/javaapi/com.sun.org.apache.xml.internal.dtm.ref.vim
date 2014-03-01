@@ -77,7 +77,7 @@ call javaapi#class('DTMDefaultBase', 'DTM', [
   \ javaapi#field(0,0,'m_parent', 'SuballocatedIntVector'),
   \ javaapi#field(0,0,'m_namespaceDeclSets', 'Vector'),
   \ javaapi#field(0,0,'m_namespaceDeclSetElements', 'SuballocatedIntVector'),
-  \ javaapi#field(0,0,'m_elemIndexes', 'int[][][]'),
+  \ javaapi#field(0,0,'m_elemIndexes', 'int[][]'),
   \ javaapi#field(1,1,'DEFAULT_BLOCKSIZE', 'int'),
   \ javaapi#field(1,1,'DEFAULT_NUMBLOCKS', 'int'),
   \ javaapi#field(1,1,'DEFAULT_NUMBLOCKS_SMALL', 'int'),
@@ -92,7 +92,7 @@ call javaapi#class('DTMDefaultBase', 'DTM', [
   \ javaapi#field(0,0,'m_xstrf', 'XMLStringFactory'),
   \ javaapi#field(0,0,'m_expandedNameTable', 'ExpandedNameTable'),
   \ javaapi#field(0,0,'m_indexing', 'boolean'),
-  \ javaapi#field(0,0,'m_traversers', 'DTMAxisTraverser[]'),
+  \ javaapi#field(0,0,'m_traversers', 'DTMAxisTraverser'),
   \ javaapi#method(0,1,'DTMDefaultBase(', 'DTMManager, Source, int, DTMWSFilter, XMLStringFactory, boolean)', ''),
   \ javaapi#method(0,1,'DTMDefaultBase(', 'DTMManager, Source, int, DTMWSFilter, XMLStringFactory, boolean, int, boolean, boolean)', ''),
   \ javaapi#method(0,0,'ensureSizeOfIndex(', 'int, int)', 'void'),
@@ -137,7 +137,7 @@ call javaapi#class('DTMDefaultBase', 'DTM', [
   \ javaapi#method(0,1,'getDocumentRoot(', 'int)', 'int'),
   \ javaapi#method(0,1,'getStringValue(', 'int)', 'XMLString'),
   \ javaapi#method(0,1,'getStringValueChunkCount(', 'int)', 'int'),
-  \ javaapi#method(0,1,'getStringValueChunk(', 'int, int, int[])', 'char[]'),
+  \ javaapi#method(0,1,'getStringValueChunk(', 'int, int, int[])', 'char'),
   \ javaapi#method(0,1,'getExpandedTypeID(', 'int)', 'int'),
   \ javaapi#method(0,1,'getExpandedTypeID(', 'String, String, int)', 'int'),
   \ javaapi#method(0,1,'getLocalNameFromExpandedNameID(', 'int)', 'String'),
@@ -260,7 +260,7 @@ call javaapi#class('DTMDocumentImpl', 'LexicalHandler', [
   \ javaapi#method(0,1,'getDocumentRoot(', 'int)', 'int'),
   \ javaapi#method(0,1,'getStringValue(', 'int)', 'XMLString'),
   \ javaapi#method(0,1,'getStringValueChunkCount(', 'int)', 'int'),
-  \ javaapi#method(0,1,'getStringValueChunk(', 'int, int, int[])', 'char[]'),
+  \ javaapi#method(0,1,'getStringValueChunk(', 'int, int, int[])', 'char'),
   \ javaapi#method(0,1,'getExpandedTypeID(', 'int)', 'int'),
   \ javaapi#method(0,1,'getExpandedTypeID(', 'String, String, int)', 'int'),
   \ javaapi#method(0,1,'getLocalNameFromExpandedNameID(', 'int)', 'String'),
@@ -306,7 +306,7 @@ call javaapi#class('DTMDocumentImpl', 'LexicalHandler', [
   \ ])
 
 call javaapi#class('DTMManagerDefault', 'DTMManager', [
-  \ javaapi#field(0,0,'m_dtms', 'DTM[]'),
+  \ javaapi#field(0,0,'m_dtms', 'DTM'),
   \ javaapi#field(0,0,'m_readerManager', 'XMLReaderManager'),
   \ javaapi#field(0,0,'m_defaultHandler', 'DefaultHandler'),
   \ javaapi#method(0,1,'addDTM(', 'DTM, int)', 'void'),
@@ -565,7 +565,7 @@ call javaapi#class('ExpandedNameTable', '', [
   \ javaapi#method(0,1,'getNamespaceID(', 'int)', 'int'),
   \ javaapi#method(0,1,'getType(', 'int)', 'short'),
   \ javaapi#method(0,1,'getSize(', ')', 'int'),
-  \ javaapi#method(0,1,'getExtendedTypes(', ')', 'ExtendedType[]'),
+  \ javaapi#method(0,1,'getExtendedTypes(', ')', 'ExtendedType'),
   \ ])
 
 call javaapi#class('ExtendedType', '', [
@@ -655,14 +655,5 @@ call javaapi#class('NodeLocator', 'SourceLocator', [
   \ javaapi#method(0,1,'getLineNumber(', ')', 'int'),
   \ javaapi#method(0,1,'getColumnNumber(', ')', 'int'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('ObjectFactory', '', [
-  \ ])
-
-call javaapi#class('SecuritySupport', '', [
-  \ ])
-
-call javaapi#class('SecuritySupport12', 'SecuritySupport', [
   \ ])
 

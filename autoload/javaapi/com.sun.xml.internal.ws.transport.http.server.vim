@@ -11,7 +11,7 @@ call javaapi#class('EndpointImpl', 'Endpoint', [
   \ javaapi#method(0,1,'publish(', 'HttpContext)', 'void'),
   \ javaapi#method(0,1,'stop(', ')', 'void'),
   \ javaapi#method(0,1,'isPublished(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getMetadata(', ')', 'Source>'),
+  \ javaapi#method(0,1,'getMetadata(', ')', 'List'),
   \ javaapi#method(0,1,'setMetadata(', 'List<Source>)', 'void'),
   \ javaapi#method(0,1,'getExecutor(', ')', 'Executor'),
   \ javaapi#method(0,1,'setExecutor(', 'Executor)', 'void'),
@@ -32,10 +32,10 @@ call javaapi#class('HttpEndpoint', 'HttpEndpoint', [
 
 call javaapi#class('PortableConnectionImpl', 'WSHTTPConnection', [
   \ javaapi#method(0,1,'PortableConnectionImpl(', 'HttpAdapter, HttpExchange)', ''),
-  \ javaapi#method(0,1,'getRequestHeaders(', ')', 'String>>'),
+  \ javaapi#method(0,1,'getRequestHeaders(', ')', 'List'),
   \ javaapi#method(0,1,'getRequestHeader(', 'String)', 'String'),
   \ javaapi#method(0,1,'setResponseHeaders(', 'Map<String, List<String>>)', 'void'),
-  \ javaapi#method(0,1,'getResponseHeaders(', ')', 'String>>'),
+  \ javaapi#method(0,1,'getResponseHeaders(', ')', 'List'),
   \ javaapi#method(0,1,'setContentTypeResponseHeader(', 'String)', 'void'),
   \ javaapi#method(0,1,'setStatus(', 'int)', 'void'),
   \ javaapi#method(0,1,'getStatus(', ')', 'int'),
@@ -76,7 +76,7 @@ call javaapi#class('ServerAdapter', 'HttpAdapter', [
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ServerAdapterList', 'ServerAdapter>', [
+call javaapi#class('ServerAdapterList', 'HttpAdapterList', [
   \ javaapi#method(0,1,'ServerAdapterList(', ')', ''),
   \ javaapi#method(0,0,'createHttpAdapter(', 'String, String, WSEndpoint<?>)', 'ServerAdapter'),
   \ javaapi#method(0,0,'createHttpAdapter(', 'String, String, WSEndpoint)', 'HttpAdapter'),
@@ -84,10 +84,10 @@ call javaapi#class('ServerAdapterList', 'ServerAdapter>', [
 
 call javaapi#class('ServerConnectionImpl', 'WSHTTPConnection', [
   \ javaapi#method(0,1,'ServerConnectionImpl(', 'HttpAdapter, HttpExchange)', ''),
-  \ javaapi#method(0,1,'getRequestHeaders(', ')', 'String>>'),
+  \ javaapi#method(0,1,'getRequestHeaders(', ')', 'List'),
   \ javaapi#method(0,1,'getRequestHeader(', 'String)', 'String'),
   \ javaapi#method(0,1,'setResponseHeaders(', 'Map<String, List<String>>)', 'void'),
-  \ javaapi#method(0,1,'getResponseHeaders(', ')', 'String>>'),
+  \ javaapi#method(0,1,'getResponseHeaders(', ')', 'List'),
   \ javaapi#method(0,1,'setContentTypeResponseHeader(', 'String)', 'void'),
   \ javaapi#method(0,1,'setStatus(', 'int)', 'void'),
   \ javaapi#method(0,1,'getStatus(', ')', 'int'),

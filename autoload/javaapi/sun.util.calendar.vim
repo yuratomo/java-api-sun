@@ -189,7 +189,7 @@ call javaapi#class('CalendarDate', 'Cloneable', [
 call javaapi#namespace('sun.util.calendar')
 
 call javaapi#class('ZoneInfoFile', '', [
-  \ javaapi#field(1,1,'JAVAZI_LABEL', 'byte[]'),
+  \ javaapi#field(1,1,'JAVAZI_LABEL', 'byte'),
   \ javaapi#field(1,1,'JAVAZI_VERSION', 'byte'),
   \ javaapi#field(1,1,'TAG_RawOffset', 'byte'),
   \ javaapi#field(1,1,'TAG_LastDSTSaving', 'byte'),
@@ -199,7 +199,7 @@ call javaapi#class('ZoneInfoFile', '', [
   \ javaapi#field(1,1,'TAG_SimpleTimeZone', 'byte'),
   \ javaapi#field(1,1,'TAG_GMTOffsetWillChange', 'byte'),
   \ javaapi#field(1,1,'JAVAZM_FILE_NAME', 'String'),
-  \ javaapi#field(1,1,'JAVAZM_LABEL', 'byte[]'),
+  \ javaapi#field(1,1,'JAVAZM_LABEL', 'byte'),
   \ javaapi#field(1,1,'JAVAZM_VERSION', 'byte'),
   \ javaapi#field(1,1,'TAG_ZoneIDs', 'byte'),
   \ javaapi#field(1,1,'TAG_RawOffsets', 'byte'),
@@ -230,8 +230,8 @@ call javaapi#class('ZoneInfo', 'TimeZone', [
   \ javaapi#method(0,1,'inDaylightTime(', 'Date)', 'boolean'),
   \ javaapi#method(0,1,'getDSTSavings(', ')', 'int'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
-  \ javaapi#method(1,1,'getAvailableIDs(', ')', 'String[]'),
-  \ javaapi#method(1,1,'getAvailableIDs(', 'int)', 'String[]'),
+  \ javaapi#method(1,1,'getAvailableIDs(', ')', 'String'),
+  \ javaapi#method(1,1,'getAvailableIDs(', 'int)', 'String'),
   \ javaapi#method(1,1,'getTimeZone(', 'String)', 'TimeZone'),
   \ javaapi#method(0,1,'getLastRuleInstance(', ')', 'SimpleTimeZone'),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
@@ -246,7 +246,7 @@ call javaapi#namespace('sun.util.calendar')
 call javaapi#class('AbstractCalendar', 'CalendarSystem', [
   \ javaapi#method(0,0,'AbstractCalendar(', ')', ''),
   \ javaapi#method(0,1,'getEra(', 'String)', 'Era'),
-  \ javaapi#method(0,1,'getEras(', ')', 'Era[]'),
+  \ javaapi#method(0,1,'getEras(', ')', 'Era'),
   \ javaapi#method(0,1,'setEra(', 'CalendarDate, String)', 'void'),
   \ javaapi#method(0,0,'setEras(', 'Era[])', 'void'),
   \ javaapi#method(0,1,'getCalendarDate(', ')', 'CalendarDate'),
@@ -337,7 +337,7 @@ call javaapi#class('CalendarSystem', '', [
   \ javaapi#method(0,1,'getMonthLength(', 'CalendarDate)', 'int'),
   \ javaapi#method(0,1,'getWeekLength(', ')', 'int'),
   \ javaapi#method(0,1,'getEra(', 'String)', 'Era'),
-  \ javaapi#method(0,1,'getEras(', ')', 'Era[]'),
+  \ javaapi#method(0,1,'getEras(', ')', 'Era'),
   \ javaapi#method(0,1,'setEra(', 'CalendarDate, String)', 'void'),
   \ javaapi#method(0,1,'getNthDayOfWeek(', 'int, int, CalendarDate)', 'CalendarDate'),
   \ javaapi#method(0,1,'setTimeOfDay(', 'CalendarDate, int)', 'CalendarDate'),

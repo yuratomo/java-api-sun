@@ -10,14 +10,14 @@ call javaapi#interface('Attributes', 'Annotation', [
   \ javaapi#method(0,1,'dependency(', ')', 'DependencyClass'),
   \ ])
 
-call javaapi#class('DependencyClass', 'DependencyClass>', [
+call javaapi#class('DependencyClass', 'Enum', [
   \ javaapi#field(1,1,'UNKNOWN', 'DependencyClass'),
   \ javaapi#field(1,1,'CPU', 'DependencyClass'),
   \ javaapi#field(1,1,'PLATFORM', 'DependencyClass'),
   \ javaapi#field(1,1,'GROUP', 'DependencyClass'),
   \ javaapi#field(1,1,'ISA', 'DependencyClass'),
   \ javaapi#field(1,1,'COMMON', 'DependencyClass'),
-  \ javaapi#method(1,1,'values(', ')', 'DependencyClass[]'),
+  \ javaapi#method(1,1,'values(', ')', 'DependencyClass'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'DependencyClass'),
   \ javaapi#method(0,1,'toDisplayString(', ')', 'String'),
   \ javaapi#method(0,1,'getEncoding(', ')', 'int'),
@@ -47,7 +47,7 @@ call javaapi#interface('ProviderAttributes', 'Annotation', [
   \ javaapi#method(0,1,'value(', ')', 'Attributes'),
   \ ])
 
-call javaapi#class('StabilityLevel', 'StabilityLevel>', [
+call javaapi#class('StabilityLevel', 'Enum', [
   \ javaapi#field(1,1,'INTERNAL', 'StabilityLevel'),
   \ javaapi#field(1,1,'PRIVATE', 'StabilityLevel'),
   \ javaapi#field(1,1,'OBSOLETE', 'StabilityLevel'),
@@ -56,7 +56,7 @@ call javaapi#class('StabilityLevel', 'StabilityLevel>', [
   \ javaapi#field(1,1,'EVOLVING', 'StabilityLevel'),
   \ javaapi#field(1,1,'STABLE', 'StabilityLevel'),
   \ javaapi#field(1,1,'STANDARD', 'StabilityLevel'),
-  \ javaapi#method(1,1,'values(', ')', 'StabilityLevel[]'),
+  \ javaapi#method(1,1,'values(', ')', 'StabilityLevel'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'StabilityLevel'),
   \ javaapi#method(0,1,'getEncoding(', ')', 'int'),
   \ ])

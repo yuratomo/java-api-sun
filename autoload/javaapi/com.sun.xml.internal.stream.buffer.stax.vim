@@ -5,7 +5,7 @@ call javaapi#class('NamespaceContexHelper', 'NamespaceContextEx', [
   \ javaapi#method(0,1,'getNamespaceURI(', 'String)', 'String'),
   \ javaapi#method(0,1,'getPrefix(', 'String)', 'String'),
   \ javaapi#method(0,1,'getPrefixes(', 'String)', 'Iterator'),
-  \ javaapi#method(0,1,'iterator(', ')', 'Binding>'),
+  \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
   \ javaapi#method(0,1,'declareDefaultNamespace(', 'String)', 'void'),
   \ javaapi#method(0,1,'declareNamespace(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'pushContext(', ')', 'void'),
@@ -14,7 +14,7 @@ call javaapi#class('NamespaceContexHelper', 'NamespaceContextEx', [
   \ ])
 
 call javaapi#class('StreamBufferCreator', 'AbstractCreator', [
-  \ javaapi#field(0,0,'attributeValuePrefixes', 'String>'),
+  \ javaapi#field(0,0,'attributeValuePrefixes', 'List'),
   \ javaapi#method(0,0,'storeQualifiedName(', 'int, String, String, String)', 'void'),
   \ javaapi#method(0,0,'storeNamespaceAttribute(', 'String, String)', 'void'),
   \ javaapi#method(0,0,'storeAttribute(', 'String, String, String, String, String)', 'void'),
@@ -34,17 +34,17 @@ call javaapi#class('StreamReaderBufferCreator', 'StreamBufferCreator', [
   \ ])
 
 call javaapi#class('StreamReaderBufferProcessor', 'AbstractProcessor', [
-  \ javaapi#field(0,0,'_stack', 'ElementStackEntry[]'),
+  \ javaapi#field(0,0,'_stack', 'ElementStackEntry'),
   \ javaapi#field(0,0,'_stackTop', 'ElementStackEntry'),
   \ javaapi#field(0,0,'_depth', 'int'),
-  \ javaapi#field(0,0,'_namespaceAIIsPrefix', 'String[]'),
-  \ javaapi#field(0,0,'_namespaceAIIsNamespaceName', 'String[]'),
+  \ javaapi#field(0,0,'_namespaceAIIsPrefix', 'String'),
+  \ javaapi#field(0,0,'_namespaceAIIsNamespaceName', 'String'),
   \ javaapi#field(0,0,'_namespaceAIIsEnd', 'int'),
   \ javaapi#field(0,0,'_nsCtx', 'InternalNamespaceContext'),
   \ javaapi#field(0,0,'_eventType', 'int'),
   \ javaapi#field(0,0,'_attributeCache', 'AttributesHolder'),
   \ javaapi#field(0,0,'_charSequence', 'CharSequence'),
-  \ javaapi#field(0,0,'_characters', 'char[]'),
+  \ javaapi#field(0,0,'_characters', 'char'),
   \ javaapi#field(0,0,'_textOffset', 'int'),
   \ javaapi#field(0,0,'_textLen', 'int'),
   \ javaapi#field(0,0,'_piTarget', 'String'),
@@ -83,7 +83,7 @@ call javaapi#class('StreamReaderBufferProcessor', 'AbstractProcessor', [
   \ javaapi#method(0,1,'getNamespaceContext(', ')', 'NamespaceContextEx'),
   \ javaapi#method(0,1,'getEventType(', ')', 'int'),
   \ javaapi#method(0,1,'getText(', ')', 'String'),
-  \ javaapi#method(0,1,'getTextCharacters(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getTextCharacters(', ')', 'char'),
   \ javaapi#method(0,1,'getTextStart(', ')', 'int'),
   \ javaapi#method(0,1,'getTextLength(', ')', 'int'),
   \ javaapi#method(0,1,'getTextCharacters(', 'int, char[], int, int) throws XMLStreamException', 'int'),

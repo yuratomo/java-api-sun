@@ -1,7 +1,7 @@
 call javaapi#namespace('com.sun.org.apache.xml.internal.security.encryption')
 
 call javaapi#interface('AgreementMethod', '', [
-  \ javaapi#method(0,1,'getKANonce(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getKANonce(', ')', 'byte'),
   \ javaapi#method(0,1,'setKANonce(', 'byte[])', 'void'),
   \ javaapi#method(0,1,'getAgreementMethodInformation(', ')', 'Iterator'),
   \ javaapi#method(0,1,'addAgreementMethodInformation(', 'Element)', 'void'),
@@ -69,7 +69,7 @@ call javaapi#interface('EncryptionMethod', '', [
   \ javaapi#method(0,1,'getAlgorithm(', ')', 'String'),
   \ javaapi#method(0,1,'getKeySize(', ')', 'int'),
   \ javaapi#method(0,1,'setKeySize(', 'int)', 'void'),
-  \ javaapi#method(0,1,'getOAEPparams(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getOAEPparams(', ')', 'byte'),
   \ javaapi#method(0,1,'setOAEPparams(', 'byte[])', 'void'),
   \ javaapi#method(0,1,'getEncryptionMethodInformation(', ')', 'Iterator'),
   \ javaapi#method(0,1,'addEncryptionMethodInformation(', 'Element)', 'void'),
@@ -173,7 +173,7 @@ call javaapi#class('XMLCipher', '', [
   \ javaapi#method(0,1,'encryptKey(', 'Document, Key) throws XMLEncryptionException', 'EncryptedKey'),
   \ javaapi#method(0,1,'decryptKey(', 'EncryptedKey, String) throws XMLEncryptionException', 'Key'),
   \ javaapi#method(0,1,'decryptKey(', 'EncryptedKey) throws XMLEncryptionException', 'Key'),
-  \ javaapi#method(0,1,'decryptToByteArray(', 'Element) throws XMLEncryptionException', 'byte[]'),
+  \ javaapi#method(0,1,'decryptToByteArray(', 'Element) throws XMLEncryptionException', 'byte'),
   \ javaapi#method(0,1,'createEncryptedData(', 'int, String) throws XMLEncryptionException', 'EncryptedData'),
   \ javaapi#method(0,1,'createEncryptedKey(', 'int, String) throws XMLEncryptionException', 'EncryptedKey'),
   \ javaapi#method(0,1,'createAgreementMethod(', 'String)', 'AgreementMethod'),
@@ -191,7 +191,7 @@ call javaapi#class('XMLCipher', '', [
 call javaapi#class('XMLCipherInput', '', [
   \ javaapi#method(0,1,'XMLCipherInput(', 'CipherData) throws XMLEncryptionException', ''),
   \ javaapi#method(0,1,'XMLCipherInput(', 'EncryptedType) throws XMLEncryptionException', ''),
-  \ javaapi#method(0,1,'getBytes(', ') throws XMLEncryptionException', 'byte[]'),
+  \ javaapi#method(0,1,'getBytes(', ') throws XMLEncryptionException', 'byte'),
   \ ])
 
 call javaapi#interface('XMLCipherParameters', '', [

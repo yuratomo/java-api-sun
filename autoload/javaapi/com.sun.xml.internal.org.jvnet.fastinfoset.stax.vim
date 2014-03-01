@@ -6,7 +6,7 @@ call javaapi#interface('FastInfosetStreamReader', '', [
   \ javaapi#method(0,1,'accessLocalName(', ')', 'String'),
   \ javaapi#method(0,1,'accessNamespaceURI(', ')', 'String'),
   \ javaapi#method(0,1,'accessPrefix(', ')', 'String'),
-  \ javaapi#method(0,1,'accessTextCharacters(', ')', 'char[]'),
+  \ javaapi#method(0,1,'accessTextCharacters(', ')', 'char'),
   \ javaapi#method(0,1,'accessTextStart(', ')', 'int'),
   \ javaapi#method(0,1,'accessTextLength(', ')', 'int'),
   \ ])

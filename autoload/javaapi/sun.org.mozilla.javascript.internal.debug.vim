@@ -9,7 +9,7 @@ call javaapi#interface('DebugFrame', '', [
   \ ])
 
 call javaapi#interface('DebuggableObject', '', [
-  \ javaapi#method(0,1,'getAllIds(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'getAllIds(', ')', 'Object'),
   \ ])
 
 call javaapi#interface('DebuggableScript', '', [
@@ -21,7 +21,7 @@ call javaapi#interface('DebuggableScript', '', [
   \ javaapi#method(0,1,'getParamOrVarName(', 'int)', 'String'),
   \ javaapi#method(0,1,'getSourceName(', ')', 'String'),
   \ javaapi#method(0,1,'isGeneratedScript(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getLineNumbers(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getLineNumbers(', ')', 'int'),
   \ javaapi#method(0,1,'getFunctionCount(', ')', 'int'),
   \ javaapi#method(0,1,'getFunction(', 'int)', 'DebuggableScript'),
   \ javaapi#method(0,1,'getParent(', ')', 'DebuggableScript'),

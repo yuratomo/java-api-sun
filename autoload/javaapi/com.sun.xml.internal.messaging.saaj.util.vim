@@ -2,8 +2,8 @@ call javaapi#namespace('com.sun.xml.internal.messaging.saaj.util')
 
 call javaapi#class('Base64', '', [
   \ javaapi#method(0,1,'Base64(', ')', ''),
-  \ javaapi#method(1,1,'encode(', 'byte[])', 'byte[]'),
-  \ javaapi#method(0,1,'decode(', 'byte[])', 'byte[]'),
+  \ javaapi#method(1,1,'encode(', 'byte[])', 'byte'),
+  \ javaapi#method(0,1,'decode(', 'byte[])', 'byte'),
   \ javaapi#method(1,1,'base64Decode(', 'String)', 'String'),
   \ ])
 
@@ -11,14 +11,14 @@ call javaapi#class('ByteInputStream', 'ByteArrayInputStream', [
   \ javaapi#method(0,1,'ByteInputStream(', ')', ''),
   \ javaapi#method(0,1,'ByteInputStream(', 'byte[], int)', ''),
   \ javaapi#method(0,1,'ByteInputStream(', 'byte[], int, int)', ''),
-  \ javaapi#method(0,1,'getBytes(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getBytes(', ')', 'byte'),
   \ javaapi#method(0,1,'getCount(', ')', 'int'),
   \ javaapi#method(0,1,'close(', ') throws IOException', 'void'),
   \ javaapi#method(0,1,'setBuf(', 'byte[])', 'void'),
   \ ])
 
 call javaapi#class('ByteOutputStream', 'OutputStream', [
-  \ javaapi#field(0,0,'buf', 'byte[]'),
+  \ javaapi#field(0,0,'buf', 'byte'),
   \ javaapi#field(0,0,'count', 'int'),
   \ javaapi#method(0,1,'ByteOutputStream(', ')', ''),
   \ javaapi#method(0,1,'ByteOutputStream(', 'int)', ''),
@@ -29,26 +29,26 @@ call javaapi#class('ByteOutputStream', 'OutputStream', [
   \ javaapi#method(0,1,'writeAsAscii(', 'String)', 'void'),
   \ javaapi#method(0,1,'writeTo(', 'OutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'reset(', ')', 'void'),
-  \ javaapi#method(0,1,'toByteArray(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'toByteArray(', ')', 'byte'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
   \ javaapi#method(0,1,'newInputStream(', ')', 'ByteInputStream'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'close(', ')', 'void'),
-  \ javaapi#method(0,1,'getBytes(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getBytes(', ')', 'byte'),
   \ javaapi#method(0,1,'getCount(', ')', 'int'),
   \ ])
 
 call javaapi#class('CharReader', 'CharArrayReader', [
   \ javaapi#method(0,1,'CharReader(', 'char[], int)', ''),
   \ javaapi#method(0,1,'CharReader(', 'char[], int, int)', ''),
-  \ javaapi#method(0,1,'getChars(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getChars(', ')', 'char'),
   \ javaapi#method(0,1,'getCount(', ')', 'int'),
   \ ])
 
 call javaapi#class('CharWriter', 'CharArrayWriter', [
   \ javaapi#method(0,1,'CharWriter(', ')', ''),
   \ javaapi#method(0,1,'CharWriter(', 'int)', ''),
-  \ javaapi#method(0,1,'getChars(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getChars(', ')', 'char'),
   \ javaapi#method(0,1,'getCount(', ')', 'int'),
   \ ])
 

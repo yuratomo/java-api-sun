@@ -514,9 +514,6 @@ call javaapi#class('NonValidatingConfiguration', 'BasicParserConfiguration', [
   \ javaapi#method(0,0,'createValidationManager(', ')', 'ValidationManager'),
   \ ])
 
-call javaapi#class('ObjectFactory', '', [
-  \ ])
-
 call javaapi#class('SAXParser', 'AbstractSAXParser', [
   \ javaapi#field(1,0,'NOTIFY_BUILTIN_REFS', 'String'),
   \ javaapi#field(1,0,'REPORT_WHITESPACE', 'String'),
@@ -534,9 +531,6 @@ call javaapi#class('SecurityConfiguration', 'XIncludeAwareParserConfiguration', 
   \ javaapi#method(0,1,'SecurityConfiguration(', 'SymbolTable)', ''),
   \ javaapi#method(0,1,'SecurityConfiguration(', 'SymbolTable, XMLGrammarPool)', ''),
   \ javaapi#method(0,1,'SecurityConfiguration(', 'SymbolTable, XMLGrammarPool, XMLComponentManager)', ''),
-  \ ])
-
-call javaapi#class('SecuritySupport', '', [
   \ ])
 
 call javaapi#class('StandardParserConfiguration', 'DTDConfiguration', [

@@ -2,9 +2,9 @@ call javaapi#namespace('com.sun.org.apache.xerces.internal.xni.parser')
 
 call javaapi#interface('XMLComponent', '', [
   \ javaapi#method(0,1,'reset(', 'XMLComponentManager) throws XMLConfigurationException', 'void'),
-  \ javaapi#method(0,1,'getRecognizedFeatures(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getRecognizedFeatures(', ')', 'String'),
   \ javaapi#method(0,1,'setFeature(', 'String, boolean) throws XMLConfigurationException', 'void'),
-  \ javaapi#method(0,1,'getRecognizedProperties(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getRecognizedProperties(', ')', 'String'),
   \ javaapi#method(0,1,'setProperty(', 'String, Object) throws XMLConfigurationException', 'void'),
   \ javaapi#method(0,1,'getFeatureDefault(', 'String)', 'Boolean'),
   \ javaapi#method(0,1,'getPropertyDefault(', 'String)', 'Object'),

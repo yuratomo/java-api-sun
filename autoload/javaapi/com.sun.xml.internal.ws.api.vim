@@ -52,7 +52,7 @@ call javaapi#class('EndpointAddress', '', [
   \ ])
 
 call javaapi#interface('FeatureConstructor', 'Annotation', [
-  \ javaapi#method(0,1,'value(', ')', 'String[]'),
+  \ javaapi#method(0,1,'value(', ')', 'String'),
   \ ])
 
 call javaapi#class('PropertySet', '', [
@@ -72,7 +72,7 @@ call javaapi#class('ResourceLoader', '', [
   \ javaapi#method(0,1,'getResource(', 'String) throws MalformedURLException', 'URL'),
   \ ])
 
-call javaapi#class('SOAPVersion', 'SOAPVersion>', [
+call javaapi#class('SOAPVersion', 'Enum', [
   \ javaapi#field(1,1,'SOAP_11', 'SOAPVersion'),
   \ javaapi#field(1,1,'SOAP_12', 'SOAPVersion'),
   \ javaapi#field(0,1,'httpBindingId', 'String'),
@@ -82,12 +82,12 @@ call javaapi#class('SOAPVersion', 'SOAPVersion>', [
   \ javaapi#field(0,1,'saajMessageFactory', 'MessageFactory'),
   \ javaapi#field(0,1,'saajSoapFactory', 'SOAPFactory'),
   \ javaapi#field(0,1,'implicitRole', 'String'),
-  \ javaapi#field(0,1,'implicitRoleSet', 'String>'),
-  \ javaapi#field(0,1,'requiredRoles', 'String>'),
+  \ javaapi#field(0,1,'implicitRoleSet', 'Set'),
+  \ javaapi#field(0,1,'requiredRoles', 'Set'),
   \ javaapi#field(0,1,'roleAttributeName', 'String'),
   \ javaapi#field(0,1,'faultCodeClient', 'QName'),
   \ javaapi#field(0,1,'faultCodeServer', 'QName'),
-  \ javaapi#method(1,1,'values(', ')', 'SOAPVersion[]'),
+  \ javaapi#method(1,1,'values(', ')', 'SOAPVersion'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'SOAPVersion'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(1,1,'fromHttpBinding(', 'String)', 'SOAPVersion'),
@@ -98,27 +98,27 @@ call javaapi#interface('WSBinding', 'Binding', [
   \ javaapi#method(0,1,'getSOAPVersion(', ')', 'SOAPVersion'),
   \ javaapi#method(0,1,'getAddressingVersion(', ')', 'AddressingVersion'),
   \ javaapi#method(0,1,'getBindingId(', ')', 'BindingID'),
-  \ javaapi#method(0,1,'getHandlerChain(', ')', 'Handler>'),
+  \ javaapi#method(0,1,'getHandlerChain(', ')', 'List'),
   \ javaapi#method(0,1,'isFeatureEnabled(', 'Class<? extends WebServiceFeature>)', 'boolean'),
   \ javaapi#method(0,1,'getFeature(', 'Class<F>)', 'F'),
   \ javaapi#method(0,1,'getFeatures(', ')', 'WSFeatureList'),
   \ ])
 
-call javaapi#interface('WSFeatureList', 'WebServiceFeature>', [
+call javaapi#interface('WSFeatureList', 'Iterable', [
   \ javaapi#method(0,1,'isEnabled(', 'Class<? extends WebServiceFeature>)', 'boolean'),
   \ javaapi#method(0,1,'get(', 'Class<F>)', 'F'),
-  \ javaapi#method(0,1,'toArray(', ')', 'WebServiceFeature[]'),
+  \ javaapi#method(0,1,'toArray(', ')', 'WebServiceFeature'),
   \ javaapi#method(0,1,'mergeFeatures(', 'WebServiceFeature[], boolean)', 'void'),
   \ javaapi#method(0,1,'mergeFeatures(', 'Iterable<WebServiceFeature>, boolean)', 'void'),
   \ ])
 
 call javaapi#class('WSService', 'ServiceDelegate', [
-  \ javaapi#field(1,0,'INIT_PARAMS', 'InitParams>'),
+  \ javaapi#field(1,0,'INIT_PARAMS', 'ThreadLocal'),
   \ javaapi#field(1,0,'EMPTY_PARAMS', 'InitParams'),
   \ javaapi#method(0,0,'WSService(', ')', ''),
   \ javaapi#method(0,1,'getPort(', 'WSEndpointReference, Class<T>, )', 'T'),
-  \ javaapi#method(0,1,'createDispatch(', 'QName, WSEndpointReference, Class<T>, Mode, )', 'Dispatch<T>'),
-  \ javaapi#method(0,1,'createDispatch(', 'QName, WSEndpointReference, JAXBContext, Mode, )', 'Object>'),
+  \ javaapi#method(0,1,'createDispatch(', 'QName, WSEndpointReference, Class<T>, Mode, )', 'Dispatch'),
+  \ javaapi#method(0,1,'createDispatch(', 'QName, WSEndpointReference, JAXBContext, Mode, )', 'Dispatch'),
   \ javaapi#method(0,1,'getContainer(', ')', 'Container'),
   \ javaapi#method(1,1,'create(', 'URL, QName)', 'WSService'),
   \ javaapi#method(1,1,'create(', 'QName)', 'WSService'),

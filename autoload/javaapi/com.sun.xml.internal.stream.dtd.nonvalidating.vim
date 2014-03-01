@@ -85,7 +85,7 @@ call javaapi#class('XMLSimpleType', '', [
   \ javaapi#field(1,1,'DEFAULT_TYPE_REQUIRED', 'short'),
   \ javaapi#field(0,1,'type', 'short'),
   \ javaapi#field(0,1,'name', 'String'),
-  \ javaapi#field(0,1,'enumeration', 'String[]'),
+  \ javaapi#field(0,1,'enumeration', 'String'),
   \ javaapi#field(0,1,'list', 'boolean'),
   \ javaapi#field(0,1,'defaultType', 'short'),
   \ javaapi#field(0,1,'defaultValue', 'String'),

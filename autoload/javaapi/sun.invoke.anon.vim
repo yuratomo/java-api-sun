@@ -3,9 +3,9 @@ call javaapi#namespace('sun.invoke.anon')
 call javaapi#class('AnonymousClassLoader', '', [
   \ javaapi#method(0,1,'AnonymousClassLoader(', ')', ''),
   \ javaapi#method(0,1,'AnonymousClassLoader(', 'Class<?>)', ''),
-  \ javaapi#method(0,1,'loadClass(', 'byte[])', 'Class<?>'),
-  \ javaapi#method(0,1,'loadClass(', 'ConstantPoolPatch)', 'Class<?>'),
-  \ javaapi#method(1,1,'readClassFile(', 'Class<?>) throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'loadClass(', 'byte[])', 'Class'),
+  \ javaapi#method(0,1,'loadClass(', 'ConstantPoolPatch)', 'Class'),
+  \ javaapi#method(1,1,'readClassFile(', 'Class<?>) throws IOException', 'byte'),
   \ ])
 
 call javaapi#class('ConstantPoolParser', '', [
@@ -32,8 +32,8 @@ call javaapi#class('ConstantPoolPatch', '', [
   \ javaapi#method(0,1,'getPatch(', 'int)', 'Object'),
   \ javaapi#method(0,1,'clear(', ')', 'void'),
   \ javaapi#method(0,1,'clear(', 'int)', 'void'),
-  \ javaapi#method(0,1,'getPatches(', ')', 'Object[]'),
-  \ javaapi#method(0,1,'getOriginalCP(', ') throws InvalidConstantPoolFormatException', 'Object[]'),
+  \ javaapi#method(0,1,'getPatches(', ')', 'Object'),
+  \ javaapi#method(0,1,'getOriginalCP(', ') throws InvalidConstantPoolFormatException', 'Object'),
   \ javaapi#method(0,1,'putPatches(', 'Map<String, String>, Map<String, Object>, Map<Object, Object>, boolean) throws InvalidConstantPoolFormatException', 'void'),
   \ javaapi#method(0,1,'putUTF8(', 'int, String)', 'void'),
   \ javaapi#method(0,1,'putConstantValue(', 'int, Object)', 'void'),

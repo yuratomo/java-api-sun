@@ -7,8 +7,8 @@ call javaapi#class('AbstractCharsetProvider', 'CharsetProvider', [
   \ javaapi#method(0,0,'deleteCharset(', 'String, String[])', 'void'),
   \ javaapi#method(0,0,'init(', ')', 'void'),
   \ javaapi#method(0,1,'charsetForName(', 'String)', 'Charset'),
-  \ javaapi#method(0,1,'charsets(', ')', 'Charset>'),
-  \ javaapi#method(0,1,'aliases(', 'String)', 'String[]'),
+  \ javaapi#method(0,1,'charsets(', ')', 'Iterator'),
+  \ javaapi#method(0,1,'aliases(', 'String)', 'String'),
   \ ])
 
 call javaapi#interface('ArrayDecoder', '', [
@@ -25,8 +25,8 @@ call javaapi#class('CharsetMapping', '', [
   \ javaapi#method(0,1,'CharsetMapping(', ')', ''),
   \ javaapi#method(0,1,'decodeSingle(', 'int)', 'char'),
   \ javaapi#method(0,1,'decodeDouble(', 'int, int)', 'char'),
-  \ javaapi#method(0,1,'decodeSurrogate(', 'int, char[])', 'char[]'),
-  \ javaapi#method(0,1,'decodeComposite(', 'Entry, char[])', 'char[]'),
+  \ javaapi#method(0,1,'decodeSurrogate(', 'int, char[])', 'char'),
+  \ javaapi#method(0,1,'decodeComposite(', 'Entry, char[])', 'char'),
   \ javaapi#method(0,1,'encodeChar(', 'char)', 'int'),
   \ javaapi#method(0,1,'encodeSurrogate(', 'char, char)', 'int'),
   \ javaapi#method(0,1,'isCompositeBase(', 'Entry)', 'boolean'),
@@ -41,8 +41,8 @@ call javaapi#class('IBM437', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('IBM737', 'Charset', [
@@ -52,8 +52,8 @@ call javaapi#class('IBM737', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('IBM775', 'Charset', [
@@ -63,8 +63,8 @@ call javaapi#class('IBM775', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('IBM850', 'Charset', [
@@ -74,8 +74,8 @@ call javaapi#class('IBM850', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('IBM852', 'Charset', [
@@ -85,8 +85,8 @@ call javaapi#class('IBM852', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('IBM855', 'Charset', [
@@ -96,8 +96,8 @@ call javaapi#class('IBM855', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('IBM857', 'Charset', [
@@ -107,8 +107,8 @@ call javaapi#class('IBM857', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('IBM858', 'Charset', [
@@ -118,8 +118,8 @@ call javaapi#class('IBM858', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('IBM862', 'Charset', [
@@ -129,8 +129,8 @@ call javaapi#class('IBM862', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('IBM866', 'Charset', [
@@ -140,8 +140,8 @@ call javaapi#class('IBM866', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('IBM874', 'Charset', [
@@ -151,8 +151,8 @@ call javaapi#class('IBM874', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('ISO_8859_13', 'Charset', [
@@ -162,8 +162,8 @@ call javaapi#class('ISO_8859_13', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('ISO_8859_15', 'Charset', [
@@ -173,8 +173,8 @@ call javaapi#class('ISO_8859_15', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('ISO_8859_2', 'Charset', [
@@ -184,8 +184,8 @@ call javaapi#class('ISO_8859_2', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('ISO_8859_4', 'Charset', [
@@ -195,8 +195,8 @@ call javaapi#class('ISO_8859_4', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('ISO_8859_5', 'Charset', [
@@ -206,8 +206,8 @@ call javaapi#class('ISO_8859_5', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('ISO_8859_7', 'Charset', [
@@ -217,8 +217,8 @@ call javaapi#class('ISO_8859_7', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('ISO_8859_9', 'Charset', [
@@ -228,8 +228,8 @@ call javaapi#class('ISO_8859_9', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('KOI8_R', 'Charset', [
@@ -239,8 +239,8 @@ call javaapi#class('KOI8_R', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('KOI8_U', 'Charset', [
@@ -250,8 +250,8 @@ call javaapi#class('KOI8_U', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('MS1250', 'Charset', [
@@ -261,8 +261,8 @@ call javaapi#class('MS1250', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('MS1251', 'Charset', [
@@ -272,8 +272,8 @@ call javaapi#class('MS1251', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('MS1253', 'Charset', [
@@ -283,8 +283,8 @@ call javaapi#class('MS1253', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('MS1254', 'Charset', [
@@ -294,8 +294,8 @@ call javaapi#class('MS1254', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('MS1257', 'Charset', [
@@ -305,8 +305,8 @@ call javaapi#class('MS1257', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#class('SingleByte', '', [
@@ -521,8 +521,8 @@ call javaapi#class('MS1252', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ javaapi#method(0,1,'newEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getDecoderSingleByteMappings(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getEncoderIndex2(', ')', 'char'),
+  \ javaapi#method(0,1,'getEncoderIndex1(', ')', 'char'),
   \ ])
 
 call javaapi#namespace('sun.nio.cs')
@@ -530,7 +530,7 @@ call javaapi#namespace('sun.nio.cs')
 call javaapi#class('FastCharsetProvider', 'CharsetProvider', [
   \ javaapi#method(0,0,'FastCharsetProvider(', 'String, Map<String, String>, Map<String, String>, Map<String, Charset>)', ''),
   \ javaapi#method(0,1,'charsetForName(', 'String)', 'Charset'),
-  \ javaapi#method(0,1,'charsets(', ')', 'Charset>'),
+  \ javaapi#method(0,1,'charsets(', ')', 'Iterator'),
   \ ])
 
 call javaapi#class('StandardCharsets', 'FastCharsetProvider', [

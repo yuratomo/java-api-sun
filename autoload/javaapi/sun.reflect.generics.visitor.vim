@@ -1,6 +1,6 @@
 call javaapi#namespace('sun.reflect.generics.visitor')
 
-call javaapi#class('Reifier', 'Type>', [
+call javaapi#class('Reifier', 'TypeTreeVisitor', [
   \ javaapi#method(1,1,'make(', 'GenericsFactory)', 'Reifier'),
   \ javaapi#method(0,1,'getResult(', ')', 'Type'),
   \ javaapi#method(0,1,'visitFormalTypeParameter(', 'FormalTypeParameter)', 'void'),
@@ -22,7 +22,7 @@ call javaapi#class('Reifier', 'Type>', [
   \ javaapi#method(0,1,'getResult(', ')', 'Object'),
   \ ])
 
-call javaapi#interface('TypeTreeVisitor<T>', '', [
+call javaapi#interface('TypeTreeVisitor', '', [
   \ javaapi#method(0,1,'getResult(', ')', 'T'),
   \ javaapi#method(0,1,'visitFormalTypeParameter(', 'FormalTypeParameter)', 'void'),
   \ javaapi#method(0,1,'visitClassTypeSignature(', 'ClassTypeSignature)', 'void'),
@@ -42,7 +42,7 @@ call javaapi#interface('TypeTreeVisitor<T>', '', [
   \ javaapi#method(0,1,'visitVoidDescriptor(', 'VoidDescriptor)', 'void'),
   \ ])
 
-call javaapi#interface('Visitor<T>', 'TypeTreeVisitor<T>', [
+call javaapi#interface('Visitor', 'TypeTreeVisitor', [
   \ javaapi#method(0,1,'visitClassSignature(', 'ClassSignature)', 'void'),
   \ javaapi#method(0,1,'visitMethodTypeSignature(', 'MethodTypeSignature)', 'void'),
   \ ])

@@ -5,9 +5,9 @@ call javaapi#class('BufferAllocator', '', [
   \ javaapi#field(1,1,'MEDIUM_SIZE_LIMIT', 'int'),
   \ javaapi#field(1,1,'LARGE_SIZE_LIMIT', 'int'),
   \ javaapi#method(0,1,'BufferAllocator(', ')', ''),
-  \ javaapi#method(0,1,'getCharBuffer(', 'int)', 'char[]'),
+  \ javaapi#method(0,1,'getCharBuffer(', 'int)', 'char'),
   \ javaapi#method(0,1,'returnCharBuffer(', 'char[])', 'void'),
-  \ javaapi#method(0,1,'getByteBuffer(', 'int)', 'byte[]'),
+  \ javaapi#method(0,1,'getByteBuffer(', 'int)', 'byte'),
   \ javaapi#method(0,1,'returnByteBuffer(', 'byte[])', 'void'),
   \ ])
 

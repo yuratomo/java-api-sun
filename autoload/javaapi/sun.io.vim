@@ -10,7 +10,7 @@ call javaapi#class('ByteToCharASCII', 'ByteToCharConverter', [
 
 call javaapi#class('ByteToCharConverter', '', [
   \ javaapi#field(0,0,'subMode', 'boolean'),
-  \ javaapi#field(0,0,'subChars', 'char[]'),
+  \ javaapi#field(0,0,'subChars', 'char'),
   \ javaapi#field(0,0,'charOff', 'int'),
   \ javaapi#field(0,0,'byteOff', 'int'),
   \ javaapi#field(0,0,'badInputLength', 'int'),
@@ -19,7 +19,7 @@ call javaapi#class('ByteToCharConverter', '', [
   \ javaapi#method(1,1,'getConverter(', 'String) throws UnsupportedEncodingException', 'ByteToCharConverter'),
   \ javaapi#method(0,1,'getCharacterEncoding(', ')', 'String'),
   \ javaapi#method(0,1,'convert(', 'byte[], int, int, char[], int, int) throws MalformedInputException, UnknownCharacterException, ConversionBufferFullException', 'int'),
-  \ javaapi#method(0,1,'convertAll(', 'byte[]) throws MalformedInputException', 'char[]'),
+  \ javaapi#method(0,1,'convertAll(', 'byte[]) throws MalformedInputException', 'char'),
   \ javaapi#method(0,1,'flush(', 'char[], int, int) throws MalformedInputException, ConversionBufferFullException', 'int'),
   \ javaapi#method(0,1,'reset(', ')', 'void'),
   \ javaapi#method(0,1,'getMaxCharsPerByte(', ')', 'int'),
@@ -169,7 +169,7 @@ call javaapi#class('CharToByteASCII', 'CharToByteConverter', [
 
 call javaapi#class('CharToByteConverter', '', [
   \ javaapi#field(0,0,'subMode', 'boolean'),
-  \ javaapi#field(0,0,'subBytes', 'byte[]'),
+  \ javaapi#field(0,0,'subBytes', 'byte'),
   \ javaapi#field(0,0,'charOff', 'int'),
   \ javaapi#field(0,0,'byteOff', 'int'),
   \ javaapi#field(0,0,'badInputLength', 'int'),
@@ -179,7 +179,7 @@ call javaapi#class('CharToByteConverter', '', [
   \ javaapi#method(0,1,'getCharacterEncoding(', ')', 'String'),
   \ javaapi#method(0,1,'convert(', 'char[], int, int, byte[], int, int) throws MalformedInputException, UnknownCharacterException, ConversionBufferFullException', 'int'),
   \ javaapi#method(0,1,'convertAny(', 'char[], int, int, byte[], int, int) throws ConversionBufferFullException', 'int'),
-  \ javaapi#method(0,1,'convertAll(', 'char[]) throws MalformedInputException', 'byte[]'),
+  \ javaapi#method(0,1,'convertAll(', 'char[]) throws MalformedInputException', 'byte'),
   \ javaapi#method(0,1,'flush(', 'byte[], int, int) throws MalformedInputException, ConversionBufferFullException', 'int'),
   \ javaapi#method(0,1,'flushAny(', 'byte[], int, int) throws ConversionBufferFullException', 'int'),
   \ javaapi#method(0,1,'reset(', ')', 'void'),
@@ -274,14 +274,14 @@ call javaapi#class('CharToByteKOI8_R', 'CharToByteSingleByte', [
   \ ])
 
 call javaapi#class('CharToByteSingleByte', 'CharToByteConverter', [
-  \ javaapi#field(0,0,'index1', 'char[]'),
-  \ javaapi#field(0,0,'index2', 'char[]'),
+  \ javaapi#field(0,0,'index1', 'char'),
+  \ javaapi#field(0,0,'index2', 'char'),
   \ javaapi#field(0,0,'mask1', 'int'),
   \ javaapi#field(0,0,'mask2', 'int'),
   \ javaapi#field(0,0,'shift', 'int'),
   \ javaapi#method(0,1,'CharToByteSingleByte(', ')', ''),
-  \ javaapi#method(0,1,'getIndex1(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getIndex2(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getIndex1(', ')', 'char'),
+  \ javaapi#method(0,1,'getIndex2(', ')', 'char'),
   \ javaapi#method(0,1,'flush(', 'byte[], int, int) throws MalformedInputException', 'int'),
   \ javaapi#method(0,1,'convert(', 'char[], int, int, byte[], int, int) throws MalformedInputException, UnknownCharacterException, ConversionBufferFullException', 'int'),
   \ javaapi#method(0,1,'getMaxBytesPerChar(', ')', 'int'),

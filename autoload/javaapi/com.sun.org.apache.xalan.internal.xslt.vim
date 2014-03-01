@@ -8,7 +8,7 @@ call javaapi#class('EnvironmentCheck', '', [
   \ javaapi#field(1,1,'FOUNDCLASSES', 'String'),
   \ javaapi#field(1,1,'CLASS_PRESENT', 'String'),
   \ javaapi#field(1,1,'CLASS_NOTPRESENT', 'String'),
-  \ javaapi#field(0,1,'jarNames', 'String[]'),
+  \ javaapi#field(0,1,'jarNames', 'String'),
   \ javaapi#field(0,0,'outWriter', 'PrintWriter'),
   \ javaapi#method(0,1,'EnvironmentCheck(', ')', ''),
   \ javaapi#method(1,1,'main(', 'String[])', 'void'),
@@ -31,18 +31,9 @@ call javaapi#class('EnvironmentCheck', '', [
   \ javaapi#method(0,0,'logMsg(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('ObjectFactory', '', [
-  \ ])
-
 call javaapi#class('Process', '', [
   \ javaapi#method(0,1,'Process(', ')', ''),
   \ javaapi#method(1,0,'printArgOptions(', 'ResourceBundle)', 'void'),
   \ javaapi#method(1,1,'_main(', 'String[])', 'void'),
-  \ ])
-
-call javaapi#class('SecuritySupport', '', [
-  \ ])
-
-call javaapi#class('SecuritySupport12', 'SecuritySupport', [
   \ ])
 

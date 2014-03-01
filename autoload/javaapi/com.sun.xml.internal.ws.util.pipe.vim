@@ -9,7 +9,7 @@ call javaapi#class('AbstractSchemaValidationTube', 'AbstractFilterTubeImpl', [
   \ javaapi#method(0,0,'AbstractSchemaValidationTube(', 'AbstractSchemaValidationTube, TubeCloner)', ''),
   \ javaapi#method(0,0,'getValidator(', ')', 'Validator'),
   \ javaapi#method(0,0,'isNoValidation(', ')', 'boolean'),
-  \ javaapi#method(0,0,'getSchemaSources(', 'Iterable<SDDocument>, MetadataResolverImpl)', 'Source[]'),
+  \ javaapi#method(0,0,'getSchemaSources(', 'Iterable<SDDocument>, MetadataResolverImpl)', 'Source'),
   \ javaapi#method(0,0,'doProcess(', 'Packet) throws SAXException', 'void'),
   \ ])
 

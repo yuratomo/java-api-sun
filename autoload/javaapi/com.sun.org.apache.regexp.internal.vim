@@ -46,10 +46,10 @@ call javaapi#class('RE', 'Serializable', [
   \ javaapi#method(0,1,'match(', 'String, int)', 'boolean'),
   \ javaapi#method(0,1,'match(', 'CharacterIterator, int)', 'boolean'),
   \ javaapi#method(0,1,'match(', 'String)', 'boolean'),
-  \ javaapi#method(0,1,'split(', 'String)', 'String[]'),
+  \ javaapi#method(0,1,'split(', 'String)', 'String'),
   \ javaapi#method(0,1,'subst(', 'String, String)', 'String'),
   \ javaapi#method(0,1,'subst(', 'String, String, int)', 'String'),
-  \ javaapi#method(0,1,'grep(', 'Object[])', 'String[]'),
+  \ javaapi#method(0,1,'grep(', 'Object[])', 'String'),
   \ ])
 
 call javaapi#class('RECompiler', '', [
@@ -66,7 +66,7 @@ call javaapi#class('REProgram', 'Serializable', [
   \ javaapi#method(0,1,'REProgram(', 'char[])', ''),
   \ javaapi#method(0,1,'REProgram(', 'int, char[])', ''),
   \ javaapi#method(0,1,'REProgram(', 'char[], int)', ''),
-  \ javaapi#method(0,1,'getInstructions(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getInstructions(', ')', 'char'),
   \ javaapi#method(0,1,'setInstructions(', 'char[], int)', 'void'),
   \ ])
 

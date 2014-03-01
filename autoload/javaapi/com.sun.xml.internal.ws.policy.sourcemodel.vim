@@ -33,7 +33,7 @@ call javaapi#class('CompactModelGenerator', 'PolicyModelGenerator', [
   \ ])
 
 call javaapi#class('DefaultPolicyAssertionCreator', 'PolicyAssertionCreator', [
-  \ javaapi#method(0,1,'getSupportedDomainNamespaceURIs(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getSupportedDomainNamespaceURIs(', ')', 'String'),
   \ javaapi#method(0,1,'createAssertion(', 'AssertionData, Collection<PolicyAssertion>, AssertionSet, PolicyAssertionCreator) throws AssertionCreationException', 'PolicyAssertion'),
   \ ])
 
@@ -51,7 +51,7 @@ call javaapi#class('ModelNode', 'Cloneable', [
   \ javaapi#method(0,1,'setOrReplaceNodeData(', 'AssertionData)', 'AssertionData'),
   \ javaapi#method(0,1,'childrenSize(', ')', 'int'),
   \ javaapi#method(0,1,'hasChildren(', ')', 'boolean'),
-  \ javaapi#method(0,1,'iterator(', ')', 'ModelNode>'),
+  \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),

@@ -42,7 +42,7 @@ call javaapi#class('WSDLGenerator', '', [
   \ javaapi#method(0,0,'generateParameterOrder(', 'Operation, JavaMethodImpl)', 'void'),
   \ javaapi#method(0,0,'generateRpcParameterOrder(', 'Operation, JavaMethodImpl)', 'void'),
   \ javaapi#method(0,0,'generateDocumentParameterOrder(', 'Operation, JavaMethodImpl)', 'void'),
-  \ javaapi#method(0,0,'sortMethodParameters(', 'JavaMethodImpl)', 'ParameterImpl>'),
+  \ javaapi#method(0,0,'sortMethodParameters(', 'JavaMethodImpl)', 'List'),
   \ javaapi#method(0,0,'isBodyParameter(', 'ParameterImpl)', 'boolean'),
   \ javaapi#method(0,0,'isHeaderParameter(', 'ParameterImpl)', 'boolean'),
   \ javaapi#method(0,0,'isAttachmentParameter(', 'ParameterImpl)', 'boolean'),

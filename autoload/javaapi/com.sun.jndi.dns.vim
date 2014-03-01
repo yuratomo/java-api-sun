@@ -87,7 +87,7 @@ call javaapi#class('DnsNameParser', 'NameParser', [
   \ ])
 
 call javaapi#class('DnsUrl', 'Uri', [
-  \ javaapi#method(1,1,'fromList(', 'String) throws MalformedURLException', 'DnsUrl[]'),
+  \ javaapi#method(1,1,'fromList(', 'String) throws MalformedURLException', 'DnsUrl'),
   \ javaapi#method(0,1,'DnsUrl(', 'String) throws MalformedURLException', ''),
   \ javaapi#method(0,1,'getDomain(', ')', 'String'),
   \ ])

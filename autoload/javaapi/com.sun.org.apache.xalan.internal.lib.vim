@@ -132,12 +132,3 @@ call javaapi#class('NodeInfo', '', [
   \ javaapi#method(1,1,'columnNumber(', 'NodeList)', 'int'),
   \ ])
 
-call javaapi#class('ObjectFactory', '', [
-  \ ])
-
-call javaapi#class('SecuritySupport', '', [
-  \ ])
-
-call javaapi#class('SecuritySupport12', 'SecuritySupport', [
-  \ ])
-

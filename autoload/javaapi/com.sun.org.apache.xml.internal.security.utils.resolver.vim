@@ -13,7 +13,7 @@ call javaapi#class('ResourceResolver', '', [
   \ javaapi#method(0,1,'setProperty(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'getProperty(', 'String)', 'String'),
   \ javaapi#method(0,1,'addProperties(', 'Map)', 'void'),
-  \ javaapi#method(0,1,'getPropertyKeys(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getPropertyKeys(', ')', 'String'),
   \ javaapi#method(0,1,'understandsProperty(', 'String)', 'boolean'),
   \ ])
 
@@ -37,7 +37,7 @@ call javaapi#class('ResourceResolverSpi', '', [
   \ javaapi#method(0,1,'engineAddProperies(', 'Map)', 'void'),
   \ javaapi#method(0,1,'engineIsThreadSafe(', ')', 'boolean'),
   \ javaapi#method(0,1,'engineCanResolve(', 'Attr, String)', 'boolean'),
-  \ javaapi#method(0,1,'engineGetPropertyKeys(', ')', 'String[]'),
+  \ javaapi#method(0,1,'engineGetPropertyKeys(', ')', 'String'),
   \ javaapi#method(0,1,'understandsProperty(', 'String)', 'boolean'),
   \ javaapi#method(1,1,'fixURI(', 'String)', 'String'),
   \ ])

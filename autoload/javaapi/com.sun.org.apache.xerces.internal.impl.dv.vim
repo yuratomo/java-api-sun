@@ -15,10 +15,10 @@ call javaapi#class('DVFactoryException', 'RuntimeException', [
 
 call javaapi#class('DatatypeException', 'Exception', [
   \ javaapi#field(0,0,'key', 'String'),
-  \ javaapi#field(0,0,'args', 'Object[]'),
+  \ javaapi#field(0,0,'args', 'Object'),
   \ javaapi#method(0,1,'DatatypeException(', 'String, Object[])', ''),
   \ javaapi#method(0,1,'getKey(', ')', 'String'),
-  \ javaapi#method(0,1,'getArgs(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'getArgs(', ')', 'Object'),
   \ javaapi#method(0,1,'getMessage(', ')', 'String'),
   \ ])
 
@@ -34,9 +34,6 @@ call javaapi#class('InvalidDatatypeValueException', 'DatatypeException', [
   \ javaapi#method(0,1,'InvalidDatatypeValueException(', 'String, Object[])', ''),
   \ ])
 
-call javaapi#class('ObjectFactory', '', [
-  \ ])
-
 call javaapi#class('SchemaDVFactory', '', [
   \ javaapi#method(1,1,'getInstance(', ') throws DVFactoryException', 'SchemaDVFactory'),
   \ javaapi#method(1,1,'getInstance(', 'String) throws DVFactoryException', 'SchemaDVFactory'),
@@ -48,15 +45,12 @@ call javaapi#class('SchemaDVFactory', '', [
   \ javaapi#method(0,1,'createTypeUnion(', 'String, String, short, XSSimpleType[], XSObjectList)', 'XSSimpleType'),
   \ ])
 
-call javaapi#class('SecuritySupport', '', [
-  \ ])
-
 call javaapi#class('ValidatedInfo', '', [
   \ javaapi#field(0,1,'normalizedValue', 'String'),
   \ javaapi#field(0,1,'actualValue', 'Object'),
   \ javaapi#field(0,1,'actualValueType', 'short'),
   \ javaapi#field(0,1,'memberType', 'XSSimpleType'),
-  \ javaapi#field(0,1,'memberTypes', 'XSSimpleType[]'),
+  \ javaapi#field(0,1,'memberTypes', 'XSSimpleType'),
   \ javaapi#field(0,1,'itemValueTypes', 'ShortList'),
   \ javaapi#method(0,1,'ValidatedInfo(', ')', ''),
   \ javaapi#method(0,1,'reset(', ')', 'void'),

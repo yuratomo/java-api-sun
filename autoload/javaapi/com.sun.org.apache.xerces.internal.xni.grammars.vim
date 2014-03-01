@@ -15,10 +15,10 @@ call javaapi#interface('XMLGrammarDescription', 'XMLResourceIdentifier', [
   \ ])
 
 call javaapi#interface('XMLGrammarLoader', '', [
-  \ javaapi#method(0,1,'getRecognizedFeatures(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getRecognizedFeatures(', ')', 'String'),
   \ javaapi#method(0,1,'getFeature(', 'String) throws XMLConfigurationException', 'boolean'),
   \ javaapi#method(0,1,'setFeature(', 'String, boolean) throws XMLConfigurationException', 'void'),
-  \ javaapi#method(0,1,'getRecognizedProperties(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getRecognizedProperties(', ')', 'String'),
   \ javaapi#method(0,1,'getProperty(', 'String) throws XMLConfigurationException', 'Object'),
   \ javaapi#method(0,1,'setProperty(', 'String, Object) throws XMLConfigurationException', 'void'),
   \ javaapi#method(0,1,'setLocale(', 'Locale)', 'void'),
@@ -31,7 +31,7 @@ call javaapi#interface('XMLGrammarLoader', '', [
   \ ])
 
 call javaapi#interface('XMLGrammarPool', '', [
-  \ javaapi#method(0,1,'retrieveInitialGrammarSet(', 'String)', 'Grammar[]'),
+  \ javaapi#method(0,1,'retrieveInitialGrammarSet(', 'String)', 'Grammar'),
   \ javaapi#method(0,1,'cacheGrammars(', 'String, Grammar[])', 'void'),
   \ javaapi#method(0,1,'retrieveGrammar(', 'XMLGrammarDescription)', 'Grammar'),
   \ javaapi#method(0,1,'lockPool(', ')', 'void'),
@@ -50,7 +50,7 @@ call javaapi#interface('XMLSchemaDescription', 'XMLGrammarDescription', [
   \ javaapi#field(1,1,'CONTEXT_XSITYPE', 'short'),
   \ javaapi#method(0,1,'getContextType(', ')', 'short'),
   \ javaapi#method(0,1,'getTargetNamespace(', ')', 'String'),
-  \ javaapi#method(0,1,'getLocationHints(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getLocationHints(', ')', 'String'),
   \ javaapi#method(0,1,'getTriggeringComponent(', ')', 'QName'),
   \ javaapi#method(0,1,'getEnclosingElementName(', ')', 'QName'),
   \ javaapi#method(0,1,'getAttributes(', ')', 'XMLAttributes'),

@@ -6,13 +6,13 @@ call javaapi#class('AuthTime', '', [
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('CacheTable', 'ReplayCache>', [
+call javaapi#class('CacheTable', 'Hashtable', [
   \ javaapi#method(0,1,'CacheTable(', ')', ''),
   \ javaapi#method(0,1,'put(', 'String, AuthTime, long)', 'void'),
   \ javaapi#method(0,1,'get(', 'AuthTime, String)', 'Object'),
   \ ])
 
-call javaapi#class('ReplayCache', 'AuthTime>', [
+call javaapi#class('ReplayCache', 'LinkedList', [
   \ javaapi#method(0,1,'ReplayCache(', 'String, CacheTable)', ''),
   \ javaapi#method(0,1,'put(', 'AuthTime, long)', 'void'),
   \ ])

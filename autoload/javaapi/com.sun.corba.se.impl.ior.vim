@@ -1,7 +1,7 @@
 call javaapi#namespace('com.sun.corba.se.impl.ior')
 
 call javaapi#class('ByteBuffer', '', [
-  \ javaapi#field(0,0,'elementData', 'byte[]'),
+  \ javaapi#field(0,0,'elementData', 'byte'),
   \ javaapi#field(0,0,'elementCount', 'int'),
   \ javaapi#field(0,0,'capacityIncrement', 'int'),
   \ javaapi#method(0,1,'ByteBuffer(', 'int, int)', ''),
@@ -14,7 +14,7 @@ call javaapi#class('ByteBuffer', '', [
   \ javaapi#method(0,1,'append(', 'byte)', 'void'),
   \ javaapi#method(0,1,'append(', 'int)', 'void'),
   \ javaapi#method(0,1,'append(', 'String)', 'void'),
-  \ javaapi#method(0,1,'toArray(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'toArray(', ')', 'byte'),
   \ ])
 
 call javaapi#class('EncapsulationUtility', '', [
@@ -22,7 +22,7 @@ call javaapi#class('EncapsulationUtility', '', [
   \ javaapi#method(1,1,'writeIdentifiableSequence(', 'List, OutputStream)', 'void'),
   \ javaapi#method(1,1,'writeOutputStream(', 'OutputStream, OutputStream)', 'void'),
   \ javaapi#method(1,1,'getEncapsulationStream(', 'InputStream)', 'InputStream'),
-  \ javaapi#method(1,1,'readOctets(', 'InputStream)', 'byte[]'),
+  \ javaapi#method(1,1,'readOctets(', 'InputStream)', 'byte'),
   \ javaapi#method(1,1,'writeEncapsulation(', 'WriteContents, OutputStream)', 'void'),
   \ ])
 
@@ -50,7 +50,7 @@ call javaapi#class('GenericIdentifiable', 'Identifiable', [
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ javaapi#method(0,1,'GenericIdentifiable(', 'int, byte[])', ''),
-  \ javaapi#method(0,1,'getData(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getData(', ')', 'byte'),
   \ ])
 
 call javaapi#class('GenericTaggedComponent', 'GenericIdentifiable', [
@@ -147,7 +147,7 @@ call javaapi#class('ObjectAdapterIdArray', 'ObjectAdapterIdBase', [
   \ javaapi#method(0,1,'ObjectAdapterIdArray(', 'String, String)', ''),
   \ javaapi#method(0,1,'getNumLevels(', ')', 'int'),
   \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
-  \ javaapi#method(0,1,'getAdapterName(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getAdapterName(', ')', 'String'),
   \ javaapi#method(0,1,'write(', 'OutputStream)', 'void'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -170,7 +170,7 @@ call javaapi#class('ObjectIdImpl', 'ObjectId', [
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ javaapi#method(0,1,'ObjectIdImpl(', 'byte[])', ''),
-  \ javaapi#method(0,1,'getId(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getId(', ')', 'byte'),
   \ javaapi#method(0,1,'write(', 'OutputStream)', 'void'),
   \ ])
 
@@ -193,7 +193,7 @@ call javaapi#class('ObjectKeyImpl', 'ObjectKey', [
   \ javaapi#method(0,1,'getId(', ')', 'ObjectId'),
   \ javaapi#method(0,1,'ObjectKeyImpl(', 'ObjectKeyTemplate, ObjectId)', ''),
   \ javaapi#method(0,1,'write(', 'OutputStream)', 'void'),
-  \ javaapi#method(0,1,'getBytes(', 'ORB)', 'byte[]'),
+  \ javaapi#method(0,1,'getBytes(', 'ORB)', 'byte'),
   \ javaapi#method(0,1,'getServerRequestDispatcher(', 'ORB)', 'CorbaServerRequestDispatcher'),
   \ ])
 
@@ -201,7 +201,7 @@ call javaapi#class('ObjectKeyTemplateBase', 'ObjectKeyTemplate', [
   \ javaapi#field(1,1,'JIDL_ORB_ID', 'String'),
   \ javaapi#field(1,1,'JIDL_OAID', 'ObjectAdapterId'),
   \ javaapi#field(0,0,'wrapper', 'IORSystemException'),
-  \ javaapi#method(0,1,'getAdapterId(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getAdapterId(', ')', 'byte'),
   \ javaapi#method(0,1,'ObjectKeyTemplateBase(', 'ORB, int, int, int, String, ObjectAdapterId)', ''),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -215,7 +215,7 @@ call javaapi#class('ObjectKeyTemplateBase', 'ObjectKeyTemplate', [
   \ javaapi#method(0,0,'getMagic(', ')', 'int'),
   \ javaapi#method(0,1,'setORBVersion(', 'ORBVersion)', 'void'),
   \ javaapi#method(0,1,'getORBVersion(', ')', 'ORBVersion'),
-  \ javaapi#method(0,0,'readObjectKey(', 'InputStream)', 'byte[]'),
+  \ javaapi#method(0,0,'readObjectKey(', 'InputStream)', 'byte'),
   \ javaapi#method(0,1,'getServerRequestDispatcher(', 'ORB, ObjectId)', 'CorbaServerRequestDispatcher'),
   \ ])
 
@@ -225,7 +225,7 @@ call javaapi#class('ObjectReferenceFactoryImpl', 'ObjectReferenceProducerBase', 
   \ javaapi#method(0,1,'ObjectReferenceFactoryImpl(', 'ORB, IORTemplateList)', ''),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,1,'_truncatable_ids(', ')', 'String[]'),
+  \ javaapi#method(0,1,'_truncatable_ids(', ')', 'String'),
   \ javaapi#method(0,1,'_type(', ')', 'TypeCode'),
   \ javaapi#method(0,1,'_read(', 'InputStream)', 'void'),
   \ javaapi#method(0,1,'_write(', 'OutputStream)', 'void'),
@@ -247,13 +247,13 @@ call javaapi#class('ObjectReferenceTemplateImpl', 'ObjectReferenceProducerBase',
   \ javaapi#method(0,1,'ObjectReferenceTemplateImpl(', 'ORB, IORTemplate)', ''),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,1,'_truncatable_ids(', ')', 'String[]'),
+  \ javaapi#method(0,1,'_truncatable_ids(', ')', 'String'),
   \ javaapi#method(0,1,'_type(', ')', 'TypeCode'),
   \ javaapi#method(0,1,'_read(', 'InputStream)', 'void'),
   \ javaapi#method(0,1,'_write(', 'OutputStream)', 'void'),
   \ javaapi#method(0,1,'server_id(', ')', 'String'),
   \ javaapi#method(0,1,'orb_id(', ')', 'String'),
-  \ javaapi#method(0,1,'adapter_name(', ')', 'String[]'),
+  \ javaapi#method(0,1,'adapter_name(', ')', 'String'),
   \ javaapi#method(0,1,'getIORFactory(', ')', 'IORFactory'),
   \ javaapi#method(0,1,'getIORTemplateList(', ')', 'IORTemplateList'),
   \ ])
@@ -325,7 +325,7 @@ call javaapi#class('WireObjectKeyTemplate', 'ObjectKeyTemplate', [
   \ javaapi#method(0,1,'getServerId(', ')', 'int'),
   \ javaapi#method(0,1,'getORBId(', ')', 'String'),
   \ javaapi#method(0,1,'getObjectAdapterId(', ')', 'ObjectAdapterId'),
-  \ javaapi#method(0,1,'getAdapterId(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getAdapterId(', ')', 'byte'),
   \ javaapi#method(0,1,'getORBVersion(', ')', 'ORBVersion'),
   \ javaapi#method(0,1,'getServerRequestDispatcher(', 'ORB, ObjectId)', 'CorbaServerRequestDispatcher'),
   \ ])

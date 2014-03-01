@@ -3,16 +3,16 @@ call javaapi#namespace('com.sun.jndi.ldap')
 call javaapi#class('BasicControl', 'Control', [
   \ javaapi#field(0,0,'id', 'String'),
   \ javaapi#field(0,0,'criticality', 'boolean'),
-  \ javaapi#field(0,0,'value', 'byte[]'),
+  \ javaapi#field(0,0,'value', 'byte'),
   \ javaapi#method(0,1,'BasicControl(', 'String)', ''),
   \ javaapi#method(0,1,'BasicControl(', 'String, boolean, byte[])', ''),
   \ javaapi#method(0,1,'getID(', ')', 'String'),
   \ javaapi#method(0,1,'isCritical(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getEncodedValue(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getEncodedValue(', ')', 'byte'),
   \ ])
 
 call javaapi#class('Ber', '', [
-  \ javaapi#field(0,0,'buf', 'byte[]'),
+  \ javaapi#field(0,0,'buf', 'byte'),
   \ javaapi#field(0,0,'offset', 'int'),
   \ javaapi#field(0,0,'bufsize', 'int'),
   \ javaapi#field(1,1,'ASN_BOOLEAN', 'int'),
@@ -48,7 +48,7 @@ call javaapi#class('BerDecoder', 'Ber', [
   \ javaapi#method(0,1,'parseInt(', ') throws DecodeException', 'int'),
   \ javaapi#method(0,1,'parseString(', 'boolean) throws DecodeException', 'String'),
   \ javaapi#method(0,1,'parseStringWithTag(', 'int, boolean, int[]) throws DecodeException', 'String'),
-  \ javaapi#method(0,1,'parseOctetString(', 'int, int[]) throws DecodeException', 'byte[]'),
+  \ javaapi#method(0,1,'parseOctetString(', 'int, int[]) throws DecodeException', 'byte'),
   \ javaapi#method(0,1,'bytesLeft(', ')', 'int'),
   \ ])
 
@@ -57,8 +57,8 @@ call javaapi#class('BerEncoder', 'Ber', [
   \ javaapi#method(0,1,'BerEncoder(', 'int)', ''),
   \ javaapi#method(0,1,'reset(', ')', 'void'),
   \ javaapi#method(0,1,'getDataLen(', ')', 'int'),
-  \ javaapi#method(0,1,'getBuf(', ')', 'byte[]'),
-  \ javaapi#method(0,1,'getTrimmedBuf(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getBuf(', ')', 'byte'),
+  \ javaapi#method(0,1,'getTrimmedBuf(', ')', 'byte'),
   \ javaapi#method(0,1,'beginSeq(', 'int)', 'void'),
   \ javaapi#method(0,1,'endSeq(', ') throws EncodeException', 'void'),
   \ javaapi#method(0,1,'encodeByte(', 'int)', 'void'),
@@ -75,7 +75,7 @@ call javaapi#class('BerEncoder', 'Ber', [
 
 call javaapi#class('BindingWithControls', 'Binding', [
   \ javaapi#method(0,1,'BindingWithControls(', 'String, Object, Control[])', ''),
-  \ javaapi#method(0,1,'getControls(', ') throws NamingException', 'Control[]'),
+  \ javaapi#method(0,1,'getControls(', ') throws NamingException', 'Control'),
   \ ])
 
 call javaapi#class('ClientId', '', [
@@ -194,9 +194,9 @@ call javaapi#class('LdapCtx', 'ComponentDirContext', [
   \ javaapi#method(1,1,'mapErrorCode(', 'int, String)', 'NamingException'),
   \ javaapi#method(0,1,'extendedOperation(', 'ExtendedRequest) throws NamingException', 'ExtendedResponse'),
   \ javaapi#method(0,1,'setRequestControls(', 'Control[]) throws NamingException', 'void'),
-  \ javaapi#method(0,1,'getRequestControls(', ') throws NamingException', 'Control[]'),
-  \ javaapi#method(0,1,'getConnectControls(', ') throws NamingException', 'Control[]'),
-  \ javaapi#method(0,1,'getResponseControls(', ') throws NamingException', 'Control[]'),
+  \ javaapi#method(0,1,'getRequestControls(', ') throws NamingException', 'Control'),
+  \ javaapi#method(0,1,'getConnectControls(', ') throws NamingException', 'Control'),
+  \ javaapi#method(0,1,'getResponseControls(', ') throws NamingException', 'Control'),
   \ javaapi#method(0,1,'addNamingListener(', 'Name, int, NamingListener) throws NamingException', 'void'),
   \ javaapi#method(0,1,'addNamingListener(', 'String, int, NamingListener) throws NamingException', 'void'),
   \ javaapi#method(0,1,'removeNamingListener(', 'NamingListener) throws NamingException', 'void'),
@@ -333,10 +333,10 @@ call javaapi#class('LdapReferralContext', 'LdapContext', [
   \ javaapi#method(0,1,'extendedOperation(', 'ExtendedRequest) throws NamingException', 'ExtendedResponse'),
   \ javaapi#method(0,1,'newInstance(', 'Control[]) throws NamingException', 'LdapContext'),
   \ javaapi#method(0,1,'reconnect(', 'Control[]) throws NamingException', 'void'),
-  \ javaapi#method(0,1,'getConnectControls(', ') throws NamingException', 'Control[]'),
+  \ javaapi#method(0,1,'getConnectControls(', ') throws NamingException', 'Control'),
   \ javaapi#method(0,1,'setRequestControls(', 'Control[]) throws NamingException', 'void'),
-  \ javaapi#method(0,1,'getRequestControls(', ') throws NamingException', 'Control[]'),
-  \ javaapi#method(0,1,'getResponseControls(', ') throws NamingException', 'Control[]'),
+  \ javaapi#method(0,1,'getRequestControls(', ') throws NamingException', 'Control'),
+  \ javaapi#method(0,1,'getResponseControls(', ') throws NamingException', 'Control'),
   \ ])
 
 call javaapi#class('LdapReferralException', 'LdapReferralException', [
@@ -353,7 +353,7 @@ call javaapi#class('LdapRequest', '', [
 
 call javaapi#class('LdapResult', '', [
   \ javaapi#field(0,1,'status', 'int'),
-  \ javaapi#field(0,1,'serverCreds', 'byte[]'),
+  \ javaapi#field(0,1,'serverCreds', 'byte'),
   \ javaapi#method(0,1,'LdapResult(', ')', ''),
   \ ])
 
@@ -389,7 +389,7 @@ call javaapi#class('LdapURL', 'Uri', [
   \ javaapi#method(0,1,'getScope(', ')', 'String'),
   \ javaapi#method(0,1,'getFilter(', ')', 'String'),
   \ javaapi#method(0,1,'getExtensions(', ')', 'String'),
-  \ javaapi#method(1,1,'fromList(', 'String) throws NamingException', 'String[]'),
+  \ javaapi#method(1,1,'fromList(', 'String) throws NamingException', 'String'),
   \ javaapi#method(1,1,'hasQueryComponents(', 'String)', 'boolean'),
   \ ])
 
@@ -401,7 +401,7 @@ call javaapi#class('ManageReferralControl', 'BasicControl', [
 
 call javaapi#class('NameClassPairWithControls', 'NameClassPair', [
   \ javaapi#method(0,1,'NameClassPairWithControls(', 'String, String, Control[])', ''),
-  \ javaapi#method(0,1,'getControls(', ') throws NamingException', 'Control[]'),
+  \ javaapi#method(0,1,'getControls(', ') throws NamingException', 'Control'),
   \ ])
 
 call javaapi#class('NamingEventNotifier', 'Runnable', [
@@ -433,7 +433,7 @@ call javaapi#interface('ReferralEnumeration', 'NamingEnumeration', [
 
 call javaapi#class('SearchResultWithControls', 'SearchResult', [
   \ javaapi#method(0,1,'SearchResultWithControls(', 'String, Object, Attributes, boolean, Control[])', ''),
-  \ javaapi#method(0,1,'getControls(', ') throws NamingException', 'Control[]'),
+  \ javaapi#method(0,1,'getControls(', ') throws NamingException', 'Control'),
   \ ])
 
 call javaapi#class('ServiceLocator', '', [
@@ -447,14 +447,14 @@ call javaapi#class('SimpleClientId', 'ClientId', [
 
 call javaapi#class('UnsolicitedResponseImpl', 'UnsolicitedNotification', [
   \ javaapi#method(0,1,'getID(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncodedValue(', ')', 'byte[]'),
-  \ javaapi#method(0,1,'getReferrals(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getEncodedValue(', ')', 'byte'),
+  \ javaapi#method(0,1,'getReferrals(', ')', 'String'),
   \ javaapi#method(0,1,'getException(', ')', 'NamingException'),
-  \ javaapi#method(0,1,'getControls(', ') throws NamingException', 'Control[]'),
+  \ javaapi#method(0,1,'getControls(', ') throws NamingException', 'Control'),
   \ ])
 
 call javaapi#class('VersionHelper', '', [
-  \ javaapi#method(1,0,'getUrlArray(', 'String[]) throws MalformedURLException', 'URL[]'),
+  \ javaapi#method(1,0,'getUrlArray(', 'String[]) throws MalformedURLException', 'URL'),
   \ ])
 
 call javaapi#class('VersionHelper12', 'VersionHelper', [

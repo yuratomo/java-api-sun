@@ -819,7 +819,7 @@ call javaapi#interface('ByteVector', '', [
   \ javaapi#method(0,1,'put(', 'int, byte)', 'void'),
   \ javaapi#method(0,1,'add(', 'byte)', 'void'),
   \ javaapi#method(0,1,'trim(', ')', 'void'),
-  \ javaapi#method(0,1,'getData(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getData(', ')', 'byte'),
   \ ])
 
 call javaapi#class('ByteVectorImpl', 'ByteVector', [
@@ -830,7 +830,7 @@ call javaapi#class('ByteVectorImpl', 'ByteVector', [
   \ javaapi#method(0,1,'put(', 'int, byte)', 'void'),
   \ javaapi#method(0,1,'add(', 'byte)', 'void'),
   \ javaapi#method(0,1,'trim(', ')', 'void'),
-  \ javaapi#method(0,1,'getData(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getData(', ')', 'byte'),
   \ ])
 
 call javaapi#class('ByteVectorFactory', '', [
@@ -976,7 +976,7 @@ call javaapi#class('AccessorGenerator', 'ClassFileConstants', [
   \ javaapi#field(0,0,'shortUnboxIdx', 'short'),
   \ javaapi#field(0,0,'NUM_COMMON_CPOOL_ENTRIES', 'short'),
   \ javaapi#field(0,0,'NUM_BOXING_CPOOL_ENTRIES', 'short'),
-  \ javaapi#field(1,0,'primitiveTypes', 'Class[]'),
+  \ javaapi#field(1,0,'primitiveTypes', 'Class'),
   \ javaapi#method(0,0,'emitCommonConstantPoolEntries(', ')', 'void'),
   \ javaapi#method(0,0,'emitBoxingContantPoolEntries(', ')', 'void'),
   \ javaapi#method(1,0,'add(', 'short, short)', 'short'),
@@ -1127,18 +1127,18 @@ call javaapi#namespace('sun.reflect')
 call javaapi#interface('LangReflectAccess', '', [
   \ javaapi#method(0,1,'newField(', 'Class<?>, String, Class<?>, int, int, String, byte[])', 'Field'),
   \ javaapi#method(0,1,'newMethod(', 'Class<?>, String, Class<?>[], Class<?>, Class<?>[], int, int, String, byte[], byte[], byte[])', 'Method'),
-  \ javaapi#method(0,1,'newConstructor(', 'Class<T>, Class<?>[], Class<?>[], int, int, String, byte[], byte[])', 'Constructor<T>'),
+  \ javaapi#method(0,1,'newConstructor(', 'Class<T>, Class<?>[], Class<?>[], int, int, String, byte[], byte[])', 'Constructor'),
   \ javaapi#method(0,1,'getMethodAccessor(', 'Method)', 'MethodAccessor'),
   \ javaapi#method(0,1,'setMethodAccessor(', 'Method, MethodAccessor)', 'void'),
   \ javaapi#method(0,1,'getConstructorAccessor(', 'Constructor<?>)', 'ConstructorAccessor'),
   \ javaapi#method(0,1,'setConstructorAccessor(', 'Constructor<?>, ConstructorAccessor)', 'void'),
   \ javaapi#method(0,1,'getConstructorSlot(', 'Constructor<?>)', 'int'),
   \ javaapi#method(0,1,'getConstructorSignature(', 'Constructor<?>)', 'String'),
-  \ javaapi#method(0,1,'getConstructorAnnotations(', 'Constructor<?>)', 'byte[]'),
-  \ javaapi#method(0,1,'getConstructorParameterAnnotations(', 'Constructor<?>)', 'byte[]'),
+  \ javaapi#method(0,1,'getConstructorAnnotations(', 'Constructor<?>)', 'byte'),
+  \ javaapi#method(0,1,'getConstructorParameterAnnotations(', 'Constructor<?>)', 'byte'),
   \ javaapi#method(0,1,'copyMethod(', 'Method)', 'Method'),
   \ javaapi#method(0,1,'copyField(', 'Field)', 'Field'),
-  \ javaapi#method(0,1,'copyConstructor(', 'Constructor<T>)', 'Constructor<T>'),
+  \ javaapi#method(0,1,'copyConstructor(', 'Constructor<T>)', 'Constructor'),
   \ ])
 
 call javaapi#namespace('sun.reflect')
@@ -1151,8 +1151,8 @@ call javaapi#class('Reflection', '', [
   \ javaapi#method(1,1,'verifyMemberAccess(', 'Class, Class, Object, int)', 'boolean'),
   \ javaapi#method(1,1,'registerFieldsToFilter(', 'Class, )', 'void'),
   \ javaapi#method(1,1,'registerMethodsToFilter(', 'Class, )', 'void'),
-  \ javaapi#method(1,1,'filterFields(', 'Class, Field[])', 'Field[]'),
-  \ javaapi#method(1,1,'filterMethods(', 'Class, Method[])', 'Method[]'),
+  \ javaapi#method(1,1,'filterFields(', 'Class, Field[])', 'Field'),
+  \ javaapi#method(1,1,'filterMethods(', 'Class, Method[])', 'Method'),
   \ ])
 
 call javaapi#namespace('sun.reflect')
@@ -1172,7 +1172,7 @@ call javaapi#class('ReflectionFactory', '', [
   \ javaapi#method(0,1,'setConstructorAccessor(', 'Constructor, ConstructorAccessor)', 'void'),
   \ javaapi#method(0,1,'copyMethod(', 'Method)', 'Method'),
   \ javaapi#method(0,1,'copyField(', 'Field)', 'Field'),
-  \ javaapi#method(0,1,'copyConstructor(', 'Constructor<T>)', 'Constructor<T>'),
+  \ javaapi#method(0,1,'copyConstructor(', 'Constructor<T>)', 'Constructor'),
   \ javaapi#method(0,1,'newConstructorForSerialization(', 'Class<?>, Constructor)', 'Constructor'),
   \ ])
 
@@ -1270,7 +1270,7 @@ call javaapi#class('ConstantPool', '', [
   \ javaapi#method(0,1,'getMethodAtIfLoaded(', 'int)', 'Member'),
   \ javaapi#method(0,1,'getFieldAt(', 'int)', 'Field'),
   \ javaapi#method(0,1,'getFieldAtIfLoaded(', 'int)', 'Field'),
-  \ javaapi#method(0,1,'getMemberRefInfoAt(', 'int)', 'String[]'),
+  \ javaapi#method(0,1,'getMemberRefInfoAt(', 'int)', 'String'),
   \ javaapi#method(0,1,'getIntAt(', 'int)', 'int'),
   \ javaapi#method(0,1,'getLongAt(', 'int)', 'long'),
   \ javaapi#method(0,1,'getFloatAt(', 'int)', 'float'),

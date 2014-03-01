@@ -5,35 +5,35 @@ call javaapi#class('FoolProofResolver', 'SchemaOutputResolver', [
   \ javaapi#method(0,1,'createOutput(', 'String, String) throws IOException', 'Result'),
   \ ])
 
-call javaapi#class('Form', 'Form>', [
+call javaapi#class('Form', 'Enum', [
   \ javaapi#field(1,1,'QUALIFIED', 'Form'),
   \ javaapi#field(1,1,'UNQUALIFIED', 'Form'),
   \ javaapi#field(1,1,'UNSET', 'Form'),
   \ javaapi#field(0,1,'isEffectivelyQualified', 'boolean'),
-  \ javaapi#method(1,1,'values(', ')', 'Form[]'),
+  \ javaapi#method(1,1,'values(', ')', 'Form'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'Form'),
   \ javaapi#method(0,1,'writeForm(', 'LocalElement, QName)', 'void'),
   \ javaapi#method(0,1,'writeForm(', 'LocalAttribute, QName)', 'void'),
   \ javaapi#method(1,1,'get(', 'XmlNsForm)', 'Form'),
   \ ])
 
-call javaapi#class('GroupKind', 'GroupKind>', [
+call javaapi#class('GroupKind', 'Enum', [
   \ javaapi#field(1,1,'ALL', 'GroupKind'),
   \ javaapi#field(1,1,'SEQUENCE', 'GroupKind'),
   \ javaapi#field(1,1,'CHOICE', 'GroupKind'),
-  \ javaapi#method(1,1,'values(', ')', 'GroupKind[]'),
+  \ javaapi#method(1,1,'values(', ')', 'GroupKind'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'GroupKind'),
   \ ])
 
-call javaapi#class('Messages', 'Messages>', [
+call javaapi#class('Messages', 'Enum', [
   \ javaapi#field(1,1,'ANONYMOUS_TYPE_CYCLE', 'Messages'),
-  \ javaapi#method(1,1,'values(', ')', 'Messages[]'),
+  \ javaapi#method(1,1,'values(', ')', 'Messages'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'Messages'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'format(', ')', 'String'),
   \ ])
 
-call javaapi#class('MultiMap<K', 'Comparable<K>,V>', [
+call javaapi#class('MultiMap<K', 'Comparable', [
   \ javaapi#method(0,1,'MultiMap(', 'V)', ''),
   \ javaapi#method(0,1,'put(', 'K, V)', 'V'),
   \ javaapi#method(0,1,'putAll(', 'Map<? extends K, ? extends V>)', 'void'),
@@ -54,7 +54,7 @@ call javaapi#class('Util', '', [
   \ javaapi#method(1,1,'equal(', 'String, String)', 'boolean'),
   \ ])
 
-call javaapi#class('XmlSchemaGenerator<T,C,F,M>', '', [
+call javaapi#class('XmlSchemaGenerator', '', [
   \ javaapi#method(0,1,'XmlSchemaGenerator(', 'Navigator<T, C, F, M>, TypeInfoSet<T, C, F, M>)', ''),
   \ javaapi#method(0,1,'add(', 'ClassInfo<T, C>)', 'void'),
   \ javaapi#method(0,1,'add(', 'ElementInfo<T, C>)', 'void'),

@@ -308,7 +308,7 @@ call javaapi#class('PredicatedNodeTest', 'NodeTest', [
   \ javaapi#field(0,0,'m_predCount', 'int'),
   \ javaapi#field(0,0,'m_foundLast', 'boolean'),
   \ javaapi#field(0,0,'m_lpi', 'LocPathIterator'),
-  \ javaapi#field(0,0,'m_proximityPositions', 'int[]'),
+  \ javaapi#field(0,0,'m_proximityPositions', 'int'),
   \ javaapi#method(0,1,'clone(', ') throws CloneNotSupportedException', 'Object'),
   \ javaapi#method(0,1,'getPredicateCount(', ')', 'int'),
   \ javaapi#method(0,1,'setPredicateCount(', 'int)', 'void'),
@@ -369,8 +369,8 @@ call javaapi#class('UnionChildIterator', 'ChildTestIterator', [
   \ ])
 
 call javaapi#class('UnionPathIterator', 'LocPathIterator', [
-  \ javaapi#field(0,0,'m_exprs', 'LocPathIterator[]'),
-  \ javaapi#field(0,0,'m_iterators', 'DTMIterator[]'),
+  \ javaapi#field(0,0,'m_exprs', 'LocPathIterator'),
+  \ javaapi#field(0,0,'m_iterators', 'DTMIterator'),
   \ javaapi#method(0,1,'UnionPathIterator(', ')', ''),
   \ javaapi#method(0,1,'setRoot(', 'int, Object)', 'void'),
   \ javaapi#method(0,1,'addIterator(', 'DTMIterator)', 'void'),

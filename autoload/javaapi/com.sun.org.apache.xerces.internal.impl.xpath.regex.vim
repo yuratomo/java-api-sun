@@ -10,7 +10,7 @@ call javaapi#class('BMPattern', '', [
 
 call javaapi#class('CaseInsensitiveMap', '', [
   \ javaapi#method(0,1,'CaseInsensitiveMap(', ')', ''),
-  \ javaapi#method(1,1,'get(', 'int)', 'int[]'),
+  \ javaapi#method(1,1,'get(', 'int)', 'int'),
   \ ])
 
 call javaapi#class('Match', 'Cloneable', [

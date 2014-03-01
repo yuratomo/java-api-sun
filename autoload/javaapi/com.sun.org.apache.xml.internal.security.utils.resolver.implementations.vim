@@ -5,7 +5,7 @@ call javaapi#class('ResolverAnonymous', 'ResourceResolverSpi', [
   \ javaapi#method(0,1,'ResolverAnonymous(', 'InputStream)', ''),
   \ javaapi#method(0,1,'engineResolve(', 'Attr, String)', 'XMLSignatureInput'),
   \ javaapi#method(0,1,'engineCanResolve(', 'Attr, String)', 'boolean'),
-  \ javaapi#method(0,1,'engineGetPropertyKeys(', ')', 'String[]'),
+  \ javaapi#method(0,1,'engineGetPropertyKeys(', ')', 'String'),
   \ ])
 
 call javaapi#class('ResolverDirectHTTP', 'ResourceResolverSpi', [
@@ -13,7 +13,7 @@ call javaapi#class('ResolverDirectHTTP', 'ResourceResolverSpi', [
   \ javaapi#method(0,1,'engineIsThreadSafe(', ')', 'boolean'),
   \ javaapi#method(0,1,'engineResolve(', 'Attr, String) throws ResourceResolverException', 'XMLSignatureInput'),
   \ javaapi#method(0,1,'engineCanResolve(', 'Attr, String)', 'boolean'),
-  \ javaapi#method(0,1,'engineGetPropertyKeys(', ')', 'String[]'),
+  \ javaapi#method(0,1,'engineGetPropertyKeys(', ')', 'String'),
   \ ])
 
 call javaapi#class('ResolverFragment', 'ResourceResolverSpi', [

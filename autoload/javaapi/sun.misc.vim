@@ -71,14 +71,14 @@ call javaapi#class('CharacterEncoder', '', [
 call javaapi#class('ClassFileTransformer', '', [
   \ javaapi#method(0,1,'ClassFileTransformer(', ')', ''),
   \ javaapi#method(1,1,'add(', 'ClassFileTransformer)', 'void'),
-  \ javaapi#method(1,1,'getTransformers(', ')', 'ClassFileTransformer[]'),
-  \ javaapi#method(0,1,'transform(', 'byte[], int, int) throws ClassFormatError', 'byte[]'),
+  \ javaapi#method(1,1,'getTransformers(', ')', 'ClassFileTransformer'),
+  \ javaapi#method(0,1,'transform(', 'byte[], int, int) throws ClassFormatError', 'byte'),
   \ ])
 
 call javaapi#class('ClassLoaderUtil', '', [
   \ javaapi#method(0,1,'ClassLoaderUtil(', ')', ''),
   \ javaapi#method(1,1,'releaseLoader(', 'URLClassLoader)', 'void'),
-  \ javaapi#method(1,1,'releaseLoader(', 'URLClassLoader, List<String>)', 'IOException>'),
+  \ javaapi#method(1,1,'releaseLoader(', 'URLClassLoader, List<String>)', 'List'),
   \ ])
 
 call javaapi#interface('Compare', '', [
@@ -227,6 +227,19 @@ call javaapi#class('GC', '', [
   \ javaapi#method(1,1,'currentLatencyTarget(', ')', 'long'),
   \ ])
 
+call javaapi#int('murmur3_32(byte)', '', [
+  \ javaapi#method(1,1,'murmur3_32(', 'int, byte[])', 'int'),
+  \ javaapi#method(1,1,'murmur3_32(', 'int, byte[], int, int)', 'int'),
+  \ javaapi#method(1,1,'murmur3_32(', 'char[])', 'int'),
+  \ javaapi#method(1,1,'murmur3_32(', 'int, char[])', 'int'),
+  \ javaapi#method(1,1,'murmur3_32(', 'int, char[], int, int)', 'int'),
+  \ javaapi#method(1,1,'murmur3_32(', 'int[])', 'int'),
+  \ javaapi#method(1,1,'murmur3_32(', 'int, int[])', 'int'),
+  \ javaapi#method(1,1,'murmur3_32(', 'int, int[], int, int)', 'int'),
+  \ javaapi#method(1,1,'stringHash32(', 'String)', 'int'),
+  \ javaapi#method(1,1,'randomHashSeed(', 'Object)', 'int'),
+  \ ])
+
 call javaapi#class('HexDumpEncoder', 'CharacterEncoder', [
   \ javaapi#method(0,1,'HexDumpEncoder(', ')', ''),
   \ javaapi#method(0,0,'bytesPerAtom(', ')', 'int'),
@@ -239,7 +252,7 @@ call javaapi#class('HexDumpEncoder', 'CharacterEncoder', [
 
 call javaapi#class('IOUtils', '', [
   \ javaapi#method(0,1,'IOUtils(', ')', ''),
-  \ javaapi#method(1,1,'readFully(', 'InputStream, int, boolean) throws IOException', 'byte[]'),
+  \ javaapi#method(1,1,'readFully(', 'InputStream, int, boolean) throws IOException', 'byte'),
   \ ])
 
 call javaapi#class('InvalidJarIndexException', 'RuntimeException', [
@@ -252,11 +265,27 @@ call javaapi#class('JarFilter', 'FilenameFilter', [
   \ javaapi#method(0,1,'accept(', 'File, String)', 'boolean'),
   \ ])
 
+call javaapi#java.lang.Object('getContext()', '', [
+  \ javaapi#method(0,1,'getExecutionContext(', ')', 'Object'),
+  \ javaapi#method(0,1,'get(', 'Object, Object)', 'Object'),
+  \ javaapi#method(0,1,'put(', 'Object, Object, Object)', 'void'),
+  \ javaapi#method(0,1,'remove(', 'Object, Object)', 'void'),
+  \ javaapi#method(0,1,'get(', 'Object)', 'Object'),
+  \ javaapi#method(0,1,'put(', 'Object, Object)', 'void'),
+  \ javaapi#method(0,1,'remove(', 'Object)', 'void'),
+  \ javaapi#method(0,1,'isDisposed(', ')', 'boolean'),
+  \ javaapi#method(0,1,'isMainAppContext(', ')', 'boolean'),
+  \ ])
+
 call javaapi#interface('JavaIOFileDescriptorAccess', '', [
   \ javaapi#method(0,1,'set(', 'FileDescriptor, int)', 'void'),
   \ javaapi#method(0,1,'get(', 'FileDescriptor)', 'int'),
   \ javaapi#method(0,1,'setHandle(', 'FileDescriptor, long)', 'void'),
   \ javaapi#method(0,1,'getHandle(', 'FileDescriptor)', 'long'),
+  \ ])
+
+call javaapi#java.util.List<java.net.HttpCookie>('String)', '', [
+  \ javaapi#method(0,1,'header(', 'HttpCookie)', 'String'),
   \ ])
 
 call javaapi#interface('JavaNioAccess', '', [
@@ -274,8 +303,11 @@ call javaapi#interface('JavaSecurityProtectionDomainAccess', '', [
   \ javaapi#method(0,1,'getProtectionDomainCache(', ')', 'ProtectionDomainCache'),
   \ ])
 
+call javaapi#void('ByteBuffer)', '', [
+  \ ])
+
 call javaapi#interface('JavaxSecurityAuthKerberosAccess', '', [
-  \ javaapi#method(0,1,'keyTabGetEncryptionKeys(', 'KeyTab, PrincipalName)', 'EncryptionKey[]'),
+  \ javaapi#method(0,1,'keyTabGetEncryptionKeys(', 'KeyTab, PrincipalName)', 'EncryptionKey'),
   \ ])
 
 call javaapi#class('LIFOQueueEnumerator', 'Enumeration', [
@@ -283,7 +315,7 @@ call javaapi#class('LIFOQueueEnumerator', 'Enumeration', [
   \ javaapi#method(0,1,'nextElement(', ')', 'Object'),
   \ ])
 
-call javaapi#class('LRUCache<N,V>', '', [
+call javaapi#class('LRUCache', '', [
   \ javaapi#method(0,1,'LRUCache(', 'int)', ''),
   \ javaapi#method(0,0,'create(', 'N)', 'V'),
   \ javaapi#method(0,0,'hasName(', 'V, N)', 'boolean'),
@@ -300,7 +332,7 @@ call javaapi#class('Lock', '', [
 call javaapi#class('PathPermissions', 'PermissionCollection', [
   \ javaapi#method(0,1,'add(', 'Permission)', 'void'),
   \ javaapi#method(0,1,'implies(', 'Permission)', 'boolean'),
-  \ javaapi#method(0,1,'elements(', ')', 'Permission>'),
+  \ javaapi#method(0,1,'elements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
@@ -339,7 +371,7 @@ call javaapi#class('PostVMInitHook', '', [
   \ ])
 
 call javaapi#class('ProxyGenerator', '', [
-  \ javaapi#method(1,1,'generateProxyClass(', 'String, Class[])', 'byte[]'),
+  \ javaapi#method(1,1,'generateProxyClass(', 'String, Class[])', 'byte'),
   \ ])
 
 call javaapi#class('REException', 'Exception', [
@@ -364,7 +396,7 @@ call javaapi#class('Regexp', '', [
   \ javaapi#field(0,1,'prefixLen', 'int'),
   \ javaapi#field(0,1,'suffixLen', 'int'),
   \ javaapi#field(0,1,'totalLen', 'int'),
-  \ javaapi#field(0,1,'mids', 'String[]'),
+  \ javaapi#field(0,1,'mids', 'String'),
   \ javaapi#method(0,1,'Regexp(', 'String)', ''),
   \ ])
 
@@ -496,8 +528,8 @@ call javaapi#interface('VMNotification', '', [
 call javaapi#class('VMSupport', '', [
   \ javaapi#method(0,1,'VMSupport(', ')', ''),
   \ javaapi#method(1,1,'getAgentProperties(', ')', 'Properties'),
-  \ javaapi#method(1,1,'serializePropertiesToByteArray(', ') throws IOException', 'byte[]'),
-  \ javaapi#method(1,1,'serializeAgentPropertiesToByteArray(', ') throws IOException', 'byte[]'),
+  \ javaapi#method(1,1,'serializePropertiesToByteArray(', ') throws IOException', 'byte'),
+  \ javaapi#method(1,1,'serializeAgentPropertiesToByteArray(', ') throws IOException', 'byte'),
   \ javaapi#method(1,1,'isClassPathAttributePresent(', 'String)', 'boolean'),
   \ ])
 
@@ -556,8 +588,8 @@ call javaapi#class('CharacterDecoder', '', [
   \ javaapi#method(0,0,'decodeAtom(', 'PushbackInputStream, OutputStream, int) throws IOException', 'void'),
   \ javaapi#method(0,0,'readFully(', 'InputStream, byte[], int, int) throws IOException', 'int'),
   \ javaapi#method(0,1,'decodeBuffer(', 'InputStream, OutputStream) throws IOException', 'void'),
-  \ javaapi#method(0,1,'decodeBuffer(', 'String) throws IOException', 'byte[]'),
-  \ javaapi#method(0,1,'decodeBuffer(', 'InputStream) throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'decodeBuffer(', 'String) throws IOException', 'byte'),
+  \ javaapi#method(0,1,'decodeBuffer(', 'InputStream) throws IOException', 'byte'),
   \ javaapi#method(0,1,'decodeBufferToByteBuffer(', 'String) throws IOException', 'ByteBuffer'),
   \ javaapi#method(0,1,'decodeBufferToByteBuffer(', 'InputStream) throws IOException', 'ByteBuffer'),
   \ ])
@@ -597,8 +629,8 @@ call javaapi#class('ExtensionDependency', '', [
 
 call javaapi#namespace('sun.misc')
 
-call javaapi#class('ASCIICaseInsensitiveComparator', 'String>', [
-  \ javaapi#field(1,1,'CASE_INSENSITIVE_ORDER', 'String>'),
+call javaapi#class('ASCIICaseInsensitiveComparator', 'Comparator', [
+  \ javaapi#field(1,1,'CASE_INSENSITIVE_ORDER', 'Comparator'),
   \ javaapi#method(0,1,'ASCIICaseInsensitiveComparator(', ')', ''),
   \ javaapi#method(0,1,'compare(', 'String, String)', 'int'),
   \ javaapi#method(1,1,'lowerCaseHashCode(', 'String)', 'int'),
@@ -614,7 +646,7 @@ call javaapi#class('JarIndex', '', [
   \ javaapi#method(0,1,'JarIndex(', 'String[]) throws IOException', ''),
   \ javaapi#method(1,1,'getJarIndex(', 'JarFile) throws IOException', 'JarIndex'),
   \ javaapi#method(1,1,'getJarIndex(', 'JarFile, MetaIndex) throws IOException', 'JarIndex'),
-  \ javaapi#method(0,1,'getJarFiles(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getJarFiles(', ')', 'String'),
   \ javaapi#method(0,1,'get(', 'String)', 'LinkedList'),
   \ javaapi#method(0,1,'add(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'write(', 'OutputStream) throws IOException', 'void'),
@@ -624,10 +656,10 @@ call javaapi#class('JarIndex', '', [
 
 call javaapi#interface('JavaUtilJarAccess', '', [
   \ javaapi#method(0,1,'jarFileHasClassPathAttribute(', 'JarFile) throws IOException', 'boolean'),
-  \ javaapi#method(0,1,'getCodeSources(', 'JarFile, URL)', 'CodeSource[]'),
+  \ javaapi#method(0,1,'getCodeSources(', 'JarFile, URL)', 'CodeSource'),
   \ javaapi#method(0,1,'getCodeSource(', 'JarFile, URL, String)', 'CodeSource'),
-  \ javaapi#method(0,1,'entryNames(', 'JarFile, CodeSource[])', 'String>'),
-  \ javaapi#method(0,1,'entries2(', 'JarFile)', 'JarEntry>'),
+  \ javaapi#method(0,1,'entryNames(', 'JarFile, CodeSource[])', 'Enumeration'),
+  \ javaapi#method(0,1,'entries2(', 'JarFile)', 'Enumeration'),
   \ javaapi#method(0,1,'setEagerValidation(', 'JarFile, boolean)', 'void'),
   \ javaapi#method(0,1,'getManifestDigests(', 'JarFile)', 'List'),
   \ ])
@@ -640,7 +672,7 @@ call javaapi#class('FileURLMapper', '', [
   \ javaapi#method(0,1,'exists(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('CompoundEnumeration<E>', 'Enumeration<E>', [
+call javaapi#class('CompoundEnumeration', 'Enumeration', [
   \ javaapi#method(0,1,'CompoundEnumeration(', 'Enumeration[])', ''),
   \ javaapi#method(0,1,'hasMoreElements(', ')', 'boolean'),
   \ javaapi#method(0,1,'nextElement(', ')', 'E'),
@@ -680,11 +712,11 @@ call javaapi#class('Resource', '', [
   \ javaapi#method(0,1,'getCodeSourceURL(', ')', 'URL'),
   \ javaapi#method(0,1,'getInputStream(', ') throws IOException', 'InputStream'),
   \ javaapi#method(0,1,'getContentLength(', ') throws IOException', 'int'),
-  \ javaapi#method(0,1,'getBytes(', ') throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'getBytes(', ') throws IOException', 'byte'),
   \ javaapi#method(0,1,'getByteBuffer(', ') throws IOException', 'ByteBuffer'),
   \ javaapi#method(0,1,'getManifest(', ') throws IOException', 'Manifest'),
-  \ javaapi#method(0,1,'getCertificates(', ')', 'Certificate[]'),
-  \ javaapi#method(0,1,'getCodeSigners(', ')', 'CodeSigner[]'),
+  \ javaapi#method(0,1,'getCertificates(', ')', 'Certificate'),
+  \ javaapi#method(0,1,'getCodeSigners(', ')', 'CodeSigner'),
   \ ])
 
 call javaapi#namespace('sun.misc')
@@ -692,16 +724,16 @@ call javaapi#namespace('sun.misc')
 call javaapi#class('URLClassPath', '', [
   \ javaapi#method(0,1,'URLClassPath(', 'URL[], URLStreamHandlerFactory)', ''),
   \ javaapi#method(0,1,'URLClassPath(', 'URL[])', ''),
-  \ javaapi#method(0,1,'closeLoaders(', ')', 'IOException>'),
+  \ javaapi#method(0,1,'closeLoaders(', ')', 'List'),
   \ javaapi#method(0,1,'addURL(', 'URL)', 'void'),
-  \ javaapi#method(0,1,'getURLs(', ')', 'URL[]'),
+  \ javaapi#method(0,1,'getURLs(', ')', 'URL'),
   \ javaapi#method(0,1,'findResource(', 'String, boolean)', 'URL'),
   \ javaapi#method(0,1,'getResource(', 'String, boolean)', 'Resource'),
-  \ javaapi#method(0,1,'findResources(', 'String, boolean)', 'URL>'),
+  \ javaapi#method(0,1,'findResources(', 'String, boolean)', 'Enumeration'),
   \ javaapi#method(0,1,'getResource(', 'String)', 'Resource'),
-  \ javaapi#method(0,1,'getResources(', 'String, boolean)', 'Resource>'),
-  \ javaapi#method(0,1,'getResources(', 'String)', 'Resource>'),
-  \ javaapi#method(1,1,'pathToURLs(', 'String)', 'URL[]'),
+  \ javaapi#method(0,1,'getResources(', 'String, boolean)', 'Enumeration'),
+  \ javaapi#method(0,1,'getResources(', 'String)', 'Enumeration'),
+  \ javaapi#method(1,1,'pathToURLs(', 'String)', 'URL'),
   \ javaapi#method(0,1,'checkURL(', 'URL)', 'URL'),
   \ ])
 
@@ -734,7 +766,7 @@ call javaapi#interface('JavaLangAccess', '', [
   \ javaapi#method(0,1,'getConstantPool(', 'Class)', 'ConstantPool'),
   \ javaapi#method(0,1,'setAnnotationType(', 'Class, AnnotationType)', 'void'),
   \ javaapi#method(0,1,'getAnnotationType(', 'Class)', 'AnnotationType'),
-  \ javaapi#method(0,1,'getEnumConstantsShared(', 'Class<E>)', 'E[]'),
+  \ javaapi#method(0,1,'getEnumConstantsShared(', 'Class<E>)', 'E'),
   \ javaapi#method(0,1,'blockedOn(', 'Thread, Interruptible)', 'void'),
   \ javaapi#method(0,1,'registerShutdownHook(', 'int, boolean, Runnable)', 'void'),
   \ javaapi#method(0,1,'getStackTraceDepth(', 'Throwable)', 'int'),

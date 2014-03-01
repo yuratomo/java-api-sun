@@ -2,8 +2,8 @@ call javaapi#namespace('sun.security.jgss.spnego')
 
 call javaapi#class('NegTokenInit', 'SpNegoToken', [
   \ javaapi#method(0,1,'NegTokenInit(', 'byte[]) throws GSSException', ''),
-  \ javaapi#method(0,1,'getMechTypeList(', ')', 'Oid[]'),
-  \ javaapi#method(0,1,'getMechToken(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getMechTypeList(', ')', 'Oid'),
+  \ javaapi#method(0,1,'getMechToken(', ')', 'byte'),
   \ ])
 
 call javaapi#class('NegTokenTarg', 'SpNegoToken', [
@@ -31,11 +31,11 @@ call javaapi#class('SpNegoContext', 'GSSContextSpi', [
   \ javaapi#method(0,1,'dispose(', ') throws GSSException', 'void'),
   \ javaapi#method(0,1,'isInitiator(', ')', 'boolean'),
   \ javaapi#method(0,1,'isProtReady(', ')', 'boolean'),
-  \ javaapi#method(0,1,'initSecContext(', 'InputStream, int) throws GSSException', 'byte[]'),
-  \ javaapi#method(0,1,'acceptSecContext(', 'InputStream, int) throws GSSException', 'byte[]'),
+  \ javaapi#method(0,1,'initSecContext(', 'InputStream, int) throws GSSException', 'byte'),
+  \ javaapi#method(0,1,'acceptSecContext(', 'InputStream, int) throws GSSException', 'byte'),
   \ javaapi#method(0,1,'isEstablished(', ')', 'boolean'),
   \ javaapi#method(0,1,'isMechContextEstablished(', ')', 'boolean'),
-  \ javaapi#method(0,1,'export(', ') throws GSSException', 'byte[]'),
+  \ javaapi#method(0,1,'export(', ') throws GSSException', 'byte'),
   \ javaapi#method(0,1,'setChannelBinding(', 'ChannelBinding) throws GSSException', 'void'),
   \ javaapi#method(0,1,'requestAnonymity(', 'boolean) throws GSSException', 'void'),
   \ javaapi#method(0,1,'getAnonymityState(', ')', 'boolean'),
@@ -50,11 +50,11 @@ call javaapi#class('SpNegoContext', 'GSSContextSpi', [
   \ javaapi#method(0,1,'getSrcName(', ') throws GSSException', 'GSSNameSpi'),
   \ javaapi#method(0,1,'getDelegCred(', ') throws GSSException', 'GSSCredentialSpi'),
   \ javaapi#method(0,1,'getWrapSizeLimit(', 'int, boolean, int) throws GSSException', 'int'),
-  \ javaapi#method(0,1,'wrap(', 'byte[], int, int, MessageProp) throws GSSException', 'byte[]'),
+  \ javaapi#method(0,1,'wrap(', 'byte[], int, int, MessageProp) throws GSSException', 'byte'),
   \ javaapi#method(0,1,'wrap(', 'InputStream, OutputStream, MessageProp) throws GSSException', 'void'),
-  \ javaapi#method(0,1,'unwrap(', 'byte[], int, int, MessageProp) throws GSSException', 'byte[]'),
+  \ javaapi#method(0,1,'unwrap(', 'byte[], int, int, MessageProp) throws GSSException', 'byte'),
   \ javaapi#method(0,1,'unwrap(', 'InputStream, OutputStream, MessageProp) throws GSSException', 'void'),
-  \ javaapi#method(0,1,'getMIC(', 'byte[], int, int, MessageProp) throws GSSException', 'byte[]'),
+  \ javaapi#method(0,1,'getMIC(', 'byte[], int, int, MessageProp) throws GSSException', 'byte'),
   \ javaapi#method(0,1,'getMIC(', 'InputStream, OutputStream, MessageProp) throws GSSException', 'void'),
   \ javaapi#method(0,1,'verifyMIC(', 'byte[], int, int, byte[], int, int, MessageProp) throws GSSException', 'void'),
   \ javaapi#method(0,1,'verifyMIC(', 'InputStream, InputStream, MessageProp) throws GSSException', 'void'),
@@ -83,7 +83,7 @@ call javaapi#class('SpNegoMechFactory', 'MechanismFactory', [
   \ javaapi#method(0,1,'getMechanismContext(', 'byte[]) throws GSSException', 'GSSContextSpi'),
   \ javaapi#method(0,1,'getMechanismOid(', ')', 'Oid'),
   \ javaapi#method(0,1,'getProvider(', ')', 'Provider'),
-  \ javaapi#method(0,1,'getNameTypes(', ')', 'Oid[]'),
+  \ javaapi#method(0,1,'getNameTypes(', ')', 'Oid'),
   \ ])
 
 call javaapi#class('SpNegoToken', 'GSSToken', [

@@ -3,7 +3,7 @@ call javaapi#namespace('sun.security.jgss.krb5')
 call javaapi#class('AcceptSecContextToken', 'InitialToken', [
   \ javaapi#method(0,1,'AcceptSecContextToken(', 'Krb5Context, KrbApReq) throws KrbException, IOException', ''),
   \ javaapi#method(0,1,'AcceptSecContextToken(', 'Krb5Context, Credentials, KrbApReq, InputStream) throws IOException, GSSException, KrbException', ''),
-  \ javaapi#method(0,1,'encode(', ') throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'encode(', ') throws IOException', 'byte'),
   \ ])
 
 call javaapi#class('CipherHelper', '', [
@@ -11,11 +11,11 @@ call javaapi#class('CipherHelper', '', [
 
 call javaapi#class('InitSecContextToken', 'InitialToken', [
   \ javaapi#method(0,1,'getKrbApReq(', ')', 'KrbApReq'),
-  \ javaapi#method(0,1,'encode(', ') throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'encode(', ') throws IOException', 'byte'),
   \ ])
 
 call javaapi#class('InitialToken', 'Krb5Token', [
-  \ javaapi#method(0,1,'encode(', ') throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'encode(', ') throws IOException', 'byte'),
   \ ])
 
 call javaapi#class('Krb5AcceptCredential', 'Krb5CredElement', [
@@ -58,23 +58,23 @@ call javaapi#class('Krb5Context', 'GSSContextSpi', [
   \ javaapi#method(0,1,'getDelegCred(', ') throws GSSException', 'GSSCredentialSpi'),
   \ javaapi#method(0,1,'isInitiator(', ')', 'boolean'),
   \ javaapi#method(0,1,'isProtReady(', ')', 'boolean'),
-  \ javaapi#method(0,1,'initSecContext(', 'InputStream, int) throws GSSException', 'byte[]'),
+  \ javaapi#method(0,1,'initSecContext(', 'InputStream, int) throws GSSException', 'byte'),
   \ javaapi#method(0,1,'isEstablished(', ')', 'boolean'),
-  \ javaapi#method(0,1,'acceptSecContext(', 'InputStream, int) throws GSSException', 'byte[]'),
+  \ javaapi#method(0,1,'acceptSecContext(', 'InputStream, int) throws GSSException', 'byte'),
   \ javaapi#method(0,1,'getWrapSizeLimit(', 'int, boolean, int) throws GSSException', 'int'),
-  \ javaapi#method(0,1,'wrap(', 'byte[], int, int, MessageProp) throws GSSException', 'byte[]'),
+  \ javaapi#method(0,1,'wrap(', 'byte[], int, int, MessageProp) throws GSSException', 'byte'),
   \ javaapi#method(0,1,'wrap(', 'byte[], int, int, byte[], int, MessageProp) throws GSSException', 'int'),
   \ javaapi#method(0,1,'wrap(', 'byte[], int, int, OutputStream, MessageProp) throws GSSException', 'void'),
   \ javaapi#method(0,1,'wrap(', 'InputStream, OutputStream, MessageProp) throws GSSException', 'void'),
-  \ javaapi#method(0,1,'unwrap(', 'byte[], int, int, MessageProp) throws GSSException', 'byte[]'),
+  \ javaapi#method(0,1,'unwrap(', 'byte[], int, int, MessageProp) throws GSSException', 'byte'),
   \ javaapi#method(0,1,'unwrap(', 'byte[], int, int, byte[], int, MessageProp) throws GSSException', 'int'),
   \ javaapi#method(0,1,'unwrap(', 'InputStream, byte[], int, MessageProp) throws GSSException', 'int'),
   \ javaapi#method(0,1,'unwrap(', 'InputStream, OutputStream, MessageProp) throws GSSException', 'void'),
-  \ javaapi#method(0,1,'getMIC(', 'byte[], int, int, MessageProp) throws GSSException', 'byte[]'),
+  \ javaapi#method(0,1,'getMIC(', 'byte[], int, int, MessageProp) throws GSSException', 'byte'),
   \ javaapi#method(0,1,'getMIC(', 'InputStream, OutputStream, MessageProp) throws GSSException', 'void'),
   \ javaapi#method(0,1,'verifyMIC(', 'byte[], int, int, byte[], int, int, MessageProp) throws GSSException', 'void'),
   \ javaapi#method(0,1,'verifyMIC(', 'InputStream, InputStream, MessageProp) throws GSSException', 'void'),
-  \ javaapi#method(0,1,'export(', ') throws GSSException', 'byte[]'),
+  \ javaapi#method(0,1,'export(', ') throws GSSException', 'byte'),
   \ javaapi#method(0,1,'dispose(', ') throws GSSException', 'void'),
   \ javaapi#method(0,1,'getProvider(', ')', 'Provider'),
   \ javaapi#method(0,1,'inquireSecContext(', 'InquireType) throws GSSException', 'Object'),
@@ -109,7 +109,7 @@ call javaapi#class('Krb5MechFactory', 'MechanismFactory', [
   \ javaapi#method(0,1,'getMechanismContext(', 'byte[]) throws GSSException', 'GSSContextSpi'),
   \ javaapi#method(0,1,'getMechanismOid(', ')', 'Oid'),
   \ javaapi#method(0,1,'getProvider(', ')', 'Provider'),
-  \ javaapi#method(0,1,'getNameTypes(', ')', 'Oid[]'),
+  \ javaapi#method(0,1,'getNameTypes(', ')', 'Oid'),
   \ ])
 
 call javaapi#class('Krb5NameElement', 'GSSNameSpi', [
@@ -117,7 +117,7 @@ call javaapi#class('Krb5NameElement', 'GSSNameSpi', [
   \ javaapi#method(0,1,'equals(', 'GSSNameSpi) throws GSSException', 'boolean'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,1,'export(', ') throws GSSException', 'byte[]'),
+  \ javaapi#method(0,1,'export(', ') throws GSSException', 'byte'),
   \ javaapi#method(0,1,'getMechanism(', ')', 'Oid'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'getGSSNameType(', ')', 'Oid'),
@@ -144,14 +144,14 @@ call javaapi#class('Krb5Util', '', [
   \ javaapi#method(1,1,'getServiceCreds(', 'GSSCaller, String, AccessControlContext) throws LoginException', 'ServiceCreds'),
   \ javaapi#method(1,1,'credsToTicket(', 'Credentials)', 'KerberosTicket'),
   \ javaapi#method(1,1,'ticketToCreds(', 'KerberosTicket) throws KrbException, IOException', 'Credentials'),
-  \ javaapi#method(1,1,'keysFromJavaxKeyTab(', 'KeyTab, PrincipalName)', 'EncryptionKey[]'),
+  \ javaapi#method(1,1,'keysFromJavaxKeyTab(', 'KeyTab, PrincipalName)', 'EncryptionKey'),
   \ ])
 
 call javaapi#class('MessageToken', 'Krb5Token', [
   \ javaapi#method(0,1,'getGSSHeader(', ')', 'GSSHeader'),
   \ javaapi#method(0,1,'getTokenId(', ')', 'int'),
-  \ javaapi#method(0,1,'getEncSeqNumber(', ')', 'byte[]'),
-  \ javaapi#method(0,1,'getChecksum(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getEncSeqNumber(', ')', 'byte'),
+  \ javaapi#method(0,1,'getChecksum(', ')', 'byte'),
   \ javaapi#method(0,1,'getConfState(', ')', 'boolean'),
   \ javaapi#method(0,1,'genSignAndSeqNumber(', 'MessageProp, byte[], byte[], int, int, byte[]) throws GSSException', 'void'),
   \ javaapi#method(0,1,'verifySignAndSeqNumber(', 'byte[], byte[], int, int, byte[]) throws GSSException', 'boolean'),
@@ -167,7 +167,7 @@ call javaapi#class('MessageToken', 'Krb5Token', [
 call javaapi#class('MessageToken_v2', 'Krb5Token', [
   \ javaapi#field(1,0,'TOKEN_HEADER_SIZE', 'int'),
   \ javaapi#field(1,0,'CONFOUNDER_SIZE', 'int'),
-  \ javaapi#field(0,0,'tokenData', 'byte[]'),
+  \ javaapi#field(0,0,'tokenData', 'byte'),
   \ javaapi#field(0,0,'tokenDataLen', 'int'),
   \ javaapi#method(0,1,'getTokenId(', ')', 'int'),
   \ javaapi#method(0,1,'getKeyUsage(', ')', 'int'),
@@ -177,7 +177,7 @@ call javaapi#class('MessageToken_v2', 'Krb5Token', [
   \ javaapi#method(0,1,'getSequenceNumber(', ')', 'int'),
   \ javaapi#method(0,0,'encodeHeader(', 'OutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'encode(', 'OutputStream) throws IOException', 'void'),
-  \ javaapi#method(0,0,'getTokenHeader(', ')', 'byte[]'),
+  \ javaapi#method(0,0,'getTokenHeader(', ')', 'byte'),
   \ ])
 
 call javaapi#class('MicToken', 'MessageToken', [
@@ -189,7 +189,7 @@ call javaapi#class('MicToken', 'MessageToken', [
   \ javaapi#method(0,1,'MicToken(', 'Krb5Context, MessageProp, InputStream) throws GSSException, IOException', ''),
   \ javaapi#method(0,0,'getSealAlg(', 'boolean, int)', 'int'),
   \ javaapi#method(0,1,'encode(', 'byte[], int) throws IOException, GSSException', 'int'),
-  \ javaapi#method(0,1,'encode(', ') throws IOException, GSSException', 'byte[]'),
+  \ javaapi#method(0,1,'encode(', ') throws IOException, GSSException', 'byte'),
   \ ])
 
 call javaapi#class('MicToken_v2', 'MessageToken_v2', [
@@ -199,7 +199,7 @@ call javaapi#class('MicToken_v2', 'MessageToken_v2', [
   \ javaapi#method(0,1,'verify(', 'InputStream) throws GSSException', 'void'),
   \ javaapi#method(0,1,'MicToken_v2(', 'Krb5Context, MessageProp, byte[], int, int) throws GSSException', ''),
   \ javaapi#method(0,1,'MicToken_v2(', 'Krb5Context, MessageProp, InputStream) throws GSSException, IOException', ''),
-  \ javaapi#method(0,1,'encode(', ') throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'encode(', ') throws IOException', 'byte'),
   \ javaapi#method(0,1,'encode(', 'byte[], int) throws IOException', 'int'),
   \ javaapi#method(0,1,'encode(', 'OutputStream) throws IOException', 'void'),
   \ ])
@@ -210,11 +210,11 @@ call javaapi#class('SubjectComber', '', [
 call javaapi#class('WrapToken', 'MessageToken', [
   \ javaapi#method(0,1,'WrapToken(', 'Krb5Context, byte[], int, int, MessageProp) throws GSSException', ''),
   \ javaapi#method(0,1,'WrapToken(', 'Krb5Context, InputStream, MessageProp) throws GSSException', ''),
-  \ javaapi#method(0,1,'getData(', ') throws GSSException', 'byte[]'),
+  \ javaapi#method(0,1,'getData(', ') throws GSSException', 'byte'),
   \ javaapi#method(0,1,'getData(', 'byte[], int) throws GSSException', 'int'),
   \ javaapi#method(0,1,'WrapToken(', 'Krb5Context, MessageProp, byte[], int, int) throws GSSException', ''),
   \ javaapi#method(0,1,'encode(', 'OutputStream) throws IOException, GSSException', 'void'),
-  \ javaapi#method(0,1,'encode(', ') throws IOException, GSSException', 'byte[]'),
+  \ javaapi#method(0,1,'encode(', ') throws IOException, GSSException', 'byte'),
   \ javaapi#method(0,1,'encode(', 'byte[], int) throws IOException, GSSException', 'int'),
   \ javaapi#method(0,0,'getKrb5TokenSize(', ') throws GSSException', 'int'),
   \ javaapi#method(0,0,'getSealAlg(', 'boolean, int) throws GSSException', 'int'),
@@ -223,11 +223,11 @@ call javaapi#class('WrapToken', 'MessageToken', [
 call javaapi#class('WrapToken_v2', 'MessageToken_v2', [
   \ javaapi#method(0,1,'WrapToken_v2(', 'Krb5Context, byte[], int, int, MessageProp) throws GSSException', ''),
   \ javaapi#method(0,1,'WrapToken_v2(', 'Krb5Context, InputStream, MessageProp) throws GSSException', ''),
-  \ javaapi#method(0,1,'getData(', ') throws GSSException', 'byte[]'),
+  \ javaapi#method(0,1,'getData(', ') throws GSSException', 'byte'),
   \ javaapi#method(0,1,'getData(', 'byte[], int) throws GSSException', 'int'),
   \ javaapi#method(0,1,'WrapToken_v2(', 'Krb5Context, MessageProp, byte[], int, int) throws GSSException', ''),
   \ javaapi#method(0,1,'encode(', 'OutputStream) throws IOException', 'void'),
-  \ javaapi#method(0,1,'encode(', ') throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'encode(', ') throws IOException', 'byte'),
   \ javaapi#method(0,1,'encode(', 'byte[], int) throws IOException', 'int'),
   \ ])
 

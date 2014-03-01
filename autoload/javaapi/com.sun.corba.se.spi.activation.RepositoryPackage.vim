@@ -32,15 +32,15 @@ call javaapi#class('ServerDefHolder', 'Streamable', [
 call javaapi#class('StringSeqHelper', '', [
   \ javaapi#method(0,1,'StringSeqHelper(', ')', ''),
   \ javaapi#method(1,1,'insert(', 'Any, String[])', 'void'),
-  \ javaapi#method(1,1,'extract(', 'Any)', 'String[]'),
+  \ javaapi#method(1,1,'extract(', 'Any)', 'String'),
   \ javaapi#method(1,1,'type(', ')', 'TypeCode'),
   \ javaapi#method(1,1,'id(', ')', 'String'),
-  \ javaapi#method(1,1,'read(', 'InputStream)', 'String[]'),
+  \ javaapi#method(1,1,'read(', 'InputStream)', 'String'),
   \ javaapi#method(1,1,'write(', 'OutputStream, String[])', 'void'),
   \ ])
 
 call javaapi#class('StringSeqHolder', 'Streamable', [
-  \ javaapi#field(0,1,'value', 'String[]'),
+  \ javaapi#field(0,1,'value', 'String'),
   \ javaapi#method(0,1,'StringSeqHolder(', ')', ''),
   \ javaapi#method(0,1,'StringSeqHolder(', 'String[])', ''),
   \ javaapi#method(0,1,'_read(', 'InputStream)', 'void'),

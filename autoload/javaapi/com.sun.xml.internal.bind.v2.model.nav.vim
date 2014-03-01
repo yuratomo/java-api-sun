@@ -7,7 +7,7 @@ call javaapi#class('GenericArrayTypeImpl', 'GenericArrayType', [
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#interface('Navigator<T,C,F,M>', '', [
+call javaapi#interface('Navigator', '', [
   \ javaapi#field(1,1,'REFLECTION', 'ReflectionNavigator'),
   \ javaapi#method(0,1,'getSuperClass(', 'C)', 'C'),
   \ javaapi#method(0,1,'getBaseClass(', 'T, C)', 'T'),
@@ -23,7 +23,7 @@ call javaapi#interface('Navigator<T,C,F,M>', '', [
   \ javaapi#method(0,1,'getFieldName(', 'F)', 'String'),
   \ javaapi#method(0,1,'getMethodName(', 'M)', 'String'),
   \ javaapi#method(0,1,'getReturnType(', 'M)', 'T'),
-  \ javaapi#method(0,1,'getMethodParameters(', 'M)', 'T[]'),
+  \ javaapi#method(0,1,'getMethodParameters(', 'M)', 'T'),
   \ javaapi#method(0,1,'isStaticMethod(', 'M)', 'boolean'),
   \ javaapi#method(0,1,'isSubClassOf(', 'T, T)', 'boolean'),
   \ javaapi#method(0,1,'ref(', 'Class)', 'T'),
@@ -49,7 +49,7 @@ call javaapi#interface('Navigator<T,C,F,M>', '', [
   \ javaapi#method(0,1,'erasure(', 'T)', 'T'),
   \ javaapi#method(0,1,'isAbstract(', 'C)', 'boolean'),
   \ javaapi#method(0,1,'isFinal(', 'C)', 'boolean'),
-  \ javaapi#method(0,1,'getEnumConstants(', 'C)', 'F[]'),
+  \ javaapi#method(0,1,'getEnumConstants(', 'C)', 'F'),
   \ javaapi#method(0,1,'getVoidType(', ')', 'T'),
   \ javaapi#method(0,1,'getPackageName(', 'C)', 'String'),
   \ javaapi#method(0,1,'findClass(', 'String, C)', 'C'),
@@ -61,8 +61,8 @@ call javaapi#interface('Navigator<T,C,F,M>', '', [
   \ ])
 
 call javaapi#class('ParameterizedTypeImpl', 'ParameterizedType', [
-  \ javaapi#method(0,1,'getActualTypeArguments(', ')', 'Type[]'),
-  \ javaapi#method(0,1,'getRawType(', ')', 'Class<?>'),
+  \ javaapi#method(0,1,'getActualTypeArguments(', ')', 'Type'),
+  \ javaapi#method(0,1,'getRawType(', ')', 'Class'),
   \ javaapi#method(0,1,'getOwnerType(', ')', 'Type'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -70,7 +70,7 @@ call javaapi#class('ParameterizedTypeImpl', 'ParameterizedType', [
   \ javaapi#method(0,1,'getRawType(', ')', 'Type'),
   \ ])
 
-call javaapi#class('ReflectionNavigator', 'Method>', [
+call javaapi#class('ReflectionNavigator', 'Navigator', [
   \ javaapi#method(0,1,'getSuperClass(', 'Class)', 'Class'),
   \ javaapi#method(0,1,'getBaseClass(', 'Type, Class)', 'Type'),
   \ javaapi#method(0,1,'getClassName(', 'Class)', 'String'),
@@ -85,7 +85,7 @@ call javaapi#class('ReflectionNavigator', 'Method>', [
   \ javaapi#method(0,1,'getFieldName(', 'Field)', 'String'),
   \ javaapi#method(0,1,'getMethodName(', 'Method)', 'String'),
   \ javaapi#method(0,1,'getReturnType(', 'Method)', 'Type'),
-  \ javaapi#method(0,1,'getMethodParameters(', 'Method)', 'Type[]'),
+  \ javaapi#method(0,1,'getMethodParameters(', 'Method)', 'Type'),
   \ javaapi#method(0,1,'isStaticMethod(', 'Method)', 'boolean'),
   \ javaapi#method(0,1,'isFinalMethod(', 'Method)', 'boolean'),
   \ javaapi#method(0,1,'isSubClassOf(', 'Type, Type)', 'boolean'),
@@ -93,7 +93,7 @@ call javaapi#class('ReflectionNavigator', 'Method>', [
   \ javaapi#method(0,1,'use(', 'Class)', 'Class'),
   \ javaapi#method(0,1,'asDecl(', 'Type)', 'Class'),
   \ javaapi#method(0,1,'asDecl(', 'Class)', 'Class'),
-  \ javaapi#method(0,1,'erasure(', 'Type)', 'Class<T>'),
+  \ javaapi#method(0,1,'erasure(', 'Type)', 'Class'),
   \ javaapi#method(0,1,'isAbstract(', 'Class)', 'boolean'),
   \ javaapi#method(0,1,'isFinal(', 'Class)', 'boolean'),
   \ javaapi#method(0,1,'createParameterizedType(', 'Class, )', 'Type'),
@@ -112,7 +112,7 @@ call javaapi#class('ReflectionNavigator', 'Method>', [
   \ javaapi#method(0,1,'isPublicMethod(', 'Method)', 'boolean'),
   \ javaapi#method(0,1,'isPublicField(', 'Field)', 'boolean'),
   \ javaapi#method(0,1,'isEnum(', 'Class)', 'boolean'),
-  \ javaapi#method(0,1,'getEnumConstants(', 'Class)', 'Field[]'),
+  \ javaapi#method(0,1,'getEnumConstants(', 'Class)', 'Field'),
   \ javaapi#method(0,1,'getVoidType(', ')', 'Type'),
   \ javaapi#method(0,1,'getPackageName(', 'Class)', 'String'),
   \ javaapi#method(0,1,'findClass(', 'String, Class)', 'Class'),
@@ -129,7 +129,7 @@ call javaapi#class('ReflectionNavigator', 'Method>', [
   \ javaapi#method(0,1,'findClass(', 'String, Object)', 'Object'),
   \ javaapi#method(0,1,'getPackageName(', 'Object)', 'String'),
   \ javaapi#method(0,1,'getVoidType(', ')', 'Object'),
-  \ javaapi#method(0,1,'getEnumConstants(', 'Object)', 'Object[]'),
+  \ javaapi#method(0,1,'getEnumConstants(', 'Object)', 'Object'),
   \ javaapi#method(0,1,'isFinal(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'isAbstract(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'erasure(', 'Object)', 'Object'),
@@ -155,7 +155,7 @@ call javaapi#class('ReflectionNavigator', 'Method>', [
   \ javaapi#method(0,1,'ref(', 'Class)', 'Object'),
   \ javaapi#method(0,1,'isSubClassOf(', 'Object, Object)', 'boolean'),
   \ javaapi#method(0,1,'isStaticMethod(', 'Object)', 'boolean'),
-  \ javaapi#method(0,1,'getMethodParameters(', 'Object)', 'Object[]'),
+  \ javaapi#method(0,1,'getMethodParameters(', 'Object)', 'Object'),
   \ javaapi#method(0,1,'getReturnType(', 'Object)', 'Object'),
   \ javaapi#method(0,1,'getMethodName(', 'Object)', 'String'),
   \ javaapi#method(0,1,'getFieldName(', 'Object)', 'String'),
@@ -172,7 +172,7 @@ call javaapi#class('ReflectionNavigator', 'Method>', [
   \ javaapi#method(0,1,'getSuperClass(', 'Object)', 'Object'),
   \ ])
 
-call javaapi#class('TypeVisitor<T,P>', '', [
+call javaapi#class('TypeVisitor', '', [
   \ javaapi#method(0,1,'visit(', 'Type, P)', 'T'),
   \ javaapi#method(0,0,'onClass(', 'Class, P)', 'T'),
   \ javaapi#method(0,0,'onParameterizdType(', 'ParameterizedType, P)', 'T'),
@@ -183,8 +183,8 @@ call javaapi#class('TypeVisitor<T,P>', '', [
 
 call javaapi#class('WildcardTypeImpl', 'WildcardType', [
   \ javaapi#method(0,1,'WildcardTypeImpl(', 'Type[], Type[])', ''),
-  \ javaapi#method(0,1,'getUpperBounds(', ')', 'Type[]'),
-  \ javaapi#method(0,1,'getLowerBounds(', ')', 'Type[]'),
+  \ javaapi#method(0,1,'getUpperBounds(', ')', 'Type'),
+  \ javaapi#method(0,1,'getLowerBounds(', ')', 'Type'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ ])

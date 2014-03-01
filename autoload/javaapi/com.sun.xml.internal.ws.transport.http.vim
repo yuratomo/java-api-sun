@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.ws.transport.http')
 
-call javaapi#class('DeploymentDescriptorParser<A>', '', [
+call javaapi#class('DeploymentDescriptorParser', '', [
   \ javaapi#field(1,1,'NS_RUNTIME', 'String'),
   \ javaapi#field(1,1,'JAXWS_WSDL_DD_DIR', 'String'),
   \ javaapi#field(1,1,'QNAME_ENDPOINTS', 'QName'),
@@ -17,8 +17,8 @@ call javaapi#class('DeploymentDescriptorParser<A>', '', [
   \ javaapi#field(1,1,'ATTR_BINDING', 'String'),
   \ javaapi#field(1,1,'ATTRVALUE_VERSION_1_0', 'String'),
   \ javaapi#method(0,1,'DeploymentDescriptorParser(', 'ClassLoader, ResourceLoader, Container, AdapterFactory<A>) throws MalformedURLException', ''),
-  \ javaapi#method(0,1,'parse(', 'String, InputStream)', 'List<A>'),
-  \ javaapi#method(0,1,'parse(', 'File) throws IOException', 'List<A>'),
+  \ javaapi#method(0,1,'parse(', 'String, InputStream)', 'List'),
+  \ javaapi#method(0,1,'parse(', 'File) throws IOException', 'List'),
   \ javaapi#method(1,1,'getBindingIdForToken(', 'String)', 'String'),
   \ javaapi#method(0,0,'getAttribute(', 'Attributes, String)', 'String'),
   \ javaapi#method(0,0,'getQNameAttribute(', 'Attributes, String)', 'QName'),
@@ -34,7 +34,7 @@ call javaapi#class('DeploymentDescriptorParser<A>', '', [
   \ javaapi#method(0,0,'loadClass(', 'String)', 'Class'),
   \ ])
 
-call javaapi#class('HttpAdapter', 'HttpToolkit>', [
+call javaapi#class('HttpAdapter', 'Adapter', [
   \ javaapi#field(0,1,'owner', 'HttpAdapter>'),
   \ javaapi#field(0,1,'urlPattern', 'String'),
   \ javaapi#field(0,0,'stickyCookie', 'boolean'),
@@ -75,7 +75,7 @@ call javaapi#class('HttpMetadataPublisher', '', [
 call javaapi#interface('ResourceLoader', '', [
   \ javaapi#method(0,1,'getResource(', 'String) throws MalformedURLException', 'URL'),
   \ javaapi#method(0,1,'getCatalogFile(', ') throws MalformedURLException', 'URL'),
-  \ javaapi#method(0,1,'getResourcePaths(', 'String)', 'String>'),
+  \ javaapi#method(0,1,'getResourcePaths(', 'String)', 'Set'),
   \ ])
 
 call javaapi#class('WSHTTPConnection', 'PropertySet', [
@@ -93,8 +93,8 @@ call javaapi#class('WSHTTPConnection', 'PropertySet', [
   \ javaapi#method(0,1,'getOutput(', ') throws IOException', 'OutputStream'),
   \ javaapi#method(0,1,'getWebServiceContextDelegate(', ')', 'WebServiceContextDelegate'),
   \ javaapi#method(0,1,'getRequestMethod(', ')', 'String'),
-  \ javaapi#method(0,1,'getRequestHeaders(', ')', 'String>>'),
-  \ javaapi#method(0,1,'getResponseHeaders(', ')', 'String>>'),
+  \ javaapi#method(0,1,'getRequestHeaders(', ')', 'List'),
+  \ javaapi#method(0,1,'getResponseHeaders(', ')', 'List'),
   \ javaapi#method(0,1,'getRequestHeader(', 'String)', 'String'),
   \ javaapi#method(0,1,'getQueryString(', ')', 'String'),
   \ javaapi#method(0,1,'getPathInfo(', ')', 'String'),

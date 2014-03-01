@@ -45,7 +45,7 @@ call javaapi#class('DelegateImpl', 'Delegate', [
   \ javaapi#method(0,1,'orb(', 'Servant)', 'ORB'),
   \ javaapi#method(0,1,'this_object(', 'Servant)', 'Object'),
   \ javaapi#method(0,1,'poa(', 'Servant)', 'POA'),
-  \ javaapi#method(0,1,'object_id(', 'Servant)', 'byte[]'),
+  \ javaapi#method(0,1,'object_id(', 'Servant)', 'byte'),
   \ javaapi#method(0,1,'default_POA(', 'Servant)', 'POA'),
   \ javaapi#method(0,1,'is_a(', 'Servant, String)', 'boolean'),
   \ javaapi#method(0,1,'non_existent(', 'Servant)', 'boolean'),
@@ -99,11 +99,11 @@ call javaapi#class('MultipleObjectMap', 'ActiveObjectMap', [
 
 call javaapi#class('POACurrent', 'ObjectImpl', [
   \ javaapi#method(0,1,'POACurrent(', 'ORB)', ''),
-  \ javaapi#method(0,1,'_ids(', ')', 'String[]'),
+  \ javaapi#method(0,1,'_ids(', ')', 'String'),
   \ javaapi#method(0,1,'get_POA(', ') throws NoContext', 'POA'),
-  \ javaapi#method(0,1,'get_object_id(', ') throws NoContext', 'byte[]'),
+  \ javaapi#method(0,1,'get_object_id(', ') throws NoContext', 'byte'),
   \ javaapi#method(0,1,'getOA(', ')', 'ObjectAdapter'),
-  \ javaapi#method(0,1,'getObjectId(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getObjectId(', ')', 'byte'),
   \ javaapi#method(0,1,'getOperation(', ')', 'String'),
   \ ])
 
@@ -141,7 +141,7 @@ call javaapi#class('POAImpl', 'ObjectAdapterBase', [
   \ javaapi#method(0,1,'create_request_processing_policy(', 'RequestProcessingPolicyValue)', 'RequestProcessingPolicy'),
   \ javaapi#method(0,1,'the_name(', ')', 'String'),
   \ javaapi#method(0,1,'the_parent(', ')', 'POA'),
-  \ javaapi#method(0,1,'the_children(', ')', 'POA[]'),
+  \ javaapi#method(0,1,'the_children(', ')', 'POA'),
   \ javaapi#method(0,1,'the_POAManager(', ')', 'POAManager'),
   \ javaapi#method(0,1,'the_activator(', ')', 'AdapterActivator'),
   \ javaapi#method(0,1,'the_activator(', 'AdapterActivator)', 'void'),
@@ -149,22 +149,22 @@ call javaapi#class('POAImpl', 'ObjectAdapterBase', [
   \ javaapi#method(0,1,'set_servant_manager(', 'ServantManager) throws WrongPolicy', 'void'),
   \ javaapi#method(0,1,'get_servant(', ') throws NoServant, WrongPolicy', 'Servant'),
   \ javaapi#method(0,1,'set_servant(', 'Servant) throws WrongPolicy', 'void'),
-  \ javaapi#method(0,1,'activate_object(', 'Servant) throws ServantAlreadyActive, WrongPolicy', 'byte[]'),
+  \ javaapi#method(0,1,'activate_object(', 'Servant) throws ServantAlreadyActive, WrongPolicy', 'byte'),
   \ javaapi#method(0,1,'activate_object_with_id(', 'byte[], Servant) throws ObjectAlreadyActive, ServantAlreadyActive, WrongPolicy', 'void'),
   \ javaapi#method(0,1,'deactivate_object(', 'byte[]) throws ObjectNotActive, WrongPolicy', 'void'),
   \ javaapi#method(0,1,'create_reference(', 'String) throws WrongPolicy', 'Object'),
   \ javaapi#method(0,1,'create_reference_with_id(', 'byte[], String)', 'Object'),
-  \ javaapi#method(0,1,'servant_to_id(', 'Servant) throws ServantNotActive, WrongPolicy', 'byte[]'),
+  \ javaapi#method(0,1,'servant_to_id(', 'Servant) throws ServantNotActive, WrongPolicy', 'byte'),
   \ javaapi#method(0,1,'servant_to_reference(', 'Servant) throws ServantNotActive, WrongPolicy', 'Object'),
   \ javaapi#method(0,1,'reference_to_servant(', 'Object) throws ObjectNotActive, WrongPolicy, WrongAdapter', 'Servant'),
-  \ javaapi#method(0,1,'reference_to_id(', 'Object) throws WrongAdapter, WrongPolicy', 'byte[]'),
+  \ javaapi#method(0,1,'reference_to_id(', 'Object) throws WrongAdapter, WrongPolicy', 'byte'),
   \ javaapi#method(0,1,'id_to_servant(', 'byte[]) throws ObjectNotActive, WrongPolicy', 'Servant'),
   \ javaapi#method(0,1,'id_to_reference(', 'byte[]) throws ObjectNotActive, WrongPolicy', 'Object'),
-  \ javaapi#method(0,1,'id(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'id(', ')', 'byte'),
   \ javaapi#method(0,1,'getEffectivePolicy(', 'int)', 'Policy'),
   \ javaapi#method(0,1,'getManagerId(', ')', 'int'),
   \ javaapi#method(0,1,'getState(', ')', 'short'),
-  \ javaapi#method(0,1,'getInterfaces(', 'Object, byte[])', 'String[]'),
+  \ javaapi#method(0,1,'getInterfaces(', 'Object, byte[])', 'String'),
   \ javaapi#method(0,0,'getObjectCopierFactory(', ')', 'ObjectCopierFactory'),
   \ javaapi#method(0,1,'enter(', ') throws OADestroyed', 'void'),
   \ javaapi#method(0,1,'exit(', ')', 'void'),
@@ -199,8 +199,8 @@ call javaapi#interface('POAPolicyMediator', '', [
   \ javaapi#method(0,1,'setDefaultServant(', 'Servant) throws WrongPolicy', 'void'),
   \ javaapi#method(0,1,'activateObject(', 'byte[], Servant) throws ObjectAlreadyActive, ServantAlreadyActive, WrongPolicy', 'void'),
   \ javaapi#method(0,1,'deactivateObject(', 'byte[]) throws ObjectNotActive, WrongPolicy', 'Servant'),
-  \ javaapi#method(0,1,'newSystemId(', ') throws WrongPolicy', 'byte[]'),
-  \ javaapi#method(0,1,'servantToId(', 'Servant) throws ServantNotActive, WrongPolicy', 'byte[]'),
+  \ javaapi#method(0,1,'newSystemId(', ') throws WrongPolicy', 'byte'),
+  \ javaapi#method(0,1,'servantToId(', 'Servant) throws ServantNotActive, WrongPolicy', 'byte'),
   \ javaapi#method(0,1,'idToServant(', 'byte[]) throws ObjectNotActive, WrongPolicy', 'Servant'),
   \ ])
 
@@ -215,7 +215,7 @@ call javaapi#class('POAPolicyMediatorBase', 'POAPolicyMediator', [
   \ javaapi#method(0,1,'getServerId(', ')', 'int'),
   \ javaapi#method(0,1,'getInvocationServant(', 'byte[], String) throws ForwardRequest', 'Object'),
   \ javaapi#method(0,0,'setDelegate(', 'Servant, byte[])', 'void'),
-  \ javaapi#method(0,1,'newSystemId(', ') throws WrongPolicy', 'byte[]'),
+  \ javaapi#method(0,1,'newSystemId(', ') throws WrongPolicy', 'byte'),
   \ javaapi#method(0,0,'internalGetServant(', 'byte[], String) throws ForwardRequest', 'Object'),
   \ ])
 
@@ -230,7 +230,7 @@ call javaapi#class('POAPolicyMediatorBase_R', 'POAPolicyMediatorBase', [
   \ javaapi#method(0,1,'deactivateObject(', 'byte[]) throws ObjectNotActive, WrongPolicy', 'Servant'),
   \ javaapi#method(0,0,'deactivateHelper(', 'Key, AOMEntry, Servant) throws ObjectNotActive, WrongPolicy', 'void'),
   \ javaapi#method(0,1,'deactivateObject(', 'Key) throws ObjectNotActive, WrongPolicy', 'Servant'),
-  \ javaapi#method(0,1,'servantToId(', 'Servant) throws ServantNotActive, WrongPolicy', 'byte[]'),
+  \ javaapi#method(0,1,'servantToId(', 'Servant) throws ServantNotActive, WrongPolicy', 'byte'),
   \ ])
 
 call javaapi#class('POAPolicyMediatorFactory', '', [
@@ -247,7 +247,7 @@ call javaapi#class('POAPolicyMediatorImpl_NR_UDS', 'POAPolicyMediatorBase', [
   \ javaapi#method(0,1,'setDefaultServant(', 'Servant) throws WrongPolicy', 'void'),
   \ javaapi#method(0,1,'activateObject(', 'byte[], Servant) throws WrongPolicy, ServantAlreadyActive, ObjectAlreadyActive', 'void'),
   \ javaapi#method(0,1,'deactivateObject(', 'byte[]) throws ObjectNotActive, WrongPolicy', 'Servant'),
-  \ javaapi#method(0,1,'servantToId(', 'Servant) throws ServantNotActive, WrongPolicy', 'byte[]'),
+  \ javaapi#method(0,1,'servantToId(', 'Servant) throws ServantNotActive, WrongPolicy', 'byte'),
   \ javaapi#method(0,1,'idToServant(', 'byte[]) throws WrongPolicy, ObjectNotActive', 'Servant'),
   \ ])
 
@@ -262,7 +262,7 @@ call javaapi#class('POAPolicyMediatorImpl_NR_USM', 'POAPolicyMediatorBase', [
   \ javaapi#method(0,1,'setDefaultServant(', 'Servant) throws WrongPolicy', 'void'),
   \ javaapi#method(0,1,'activateObject(', 'byte[], Servant) throws WrongPolicy, ServantAlreadyActive, ObjectAlreadyActive', 'void'),
   \ javaapi#method(0,1,'deactivateObject(', 'byte[]) throws ObjectNotActive, WrongPolicy', 'Servant'),
-  \ javaapi#method(0,1,'servantToId(', 'Servant) throws ServantNotActive, WrongPolicy', 'byte[]'),
+  \ javaapi#method(0,1,'servantToId(', 'Servant) throws ServantNotActive, WrongPolicy', 'byte'),
   \ javaapi#method(0,1,'idToServant(', 'byte[]) throws WrongPolicy, ObjectNotActive', 'Servant'),
   \ ])
 

@@ -847,9 +847,6 @@ call javaapi#class('NumberCall', 'FunctionCall', [
   \ javaapi#method(0,1,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
   \ ])
 
-call javaapi#class('ObjectFactory', '', [
-  \ ])
-
 call javaapi#class('Otherwise', 'Instruction', [
   \ javaapi#method(0,1,'display(', 'int)', 'void'),
   \ javaapi#method(0,1,'typeCheck(', 'SymbolTable) throws TypeCheckError', 'Type'),
@@ -1084,12 +1081,6 @@ call javaapi#class('RelativePathPattern', 'LocationPathPattern', [
 call javaapi#class('RoundCall', 'FunctionCall', [
   \ javaapi#method(0,1,'RoundCall(', 'QName, Vector)', ''),
   \ javaapi#method(0,1,'translate(', 'ClassGenerator, MethodGenerator)', 'void'),
-  \ ])
-
-call javaapi#class('SecuritySupport', '', [
-  \ ])
-
-call javaapi#class('SecuritySupport12', 'SecuritySupport', [
   \ ])
 
 call javaapi#class('SimpleAttributeValue', 'AttributeValue', [
@@ -1556,18 +1547,18 @@ call javaapi#class('XPathLexer', 'Scanner', [
   \ ])
 
 call javaapi#class('XPathParser', 'lr_parser', [
-  \ javaapi#field(1,0,'_production_table', 'short[][]'),
-  \ javaapi#field(1,0,'_action_table', 'short[][]'),
-  \ javaapi#field(1,0,'_reduce_table', 'short[][]'),
+  \ javaapi#field(1,0,'_production_table', 'short[]'),
+  \ javaapi#field(1,0,'_action_table', 'short[]'),
+  \ javaapi#field(1,0,'_reduce_table', 'short[]'),
   \ javaapi#field(0,0,'action_obj', 'actions'),
   \ javaapi#field(1,1,'EmptyArgs', 'Vector'),
   \ javaapi#field(1,1,'DummyVarRef', 'VariableRef'),
   \ javaapi#field(0,1,'_symbolTable', 'SymbolTable'),
   \ javaapi#method(0,1,'XPathParser(', ')', ''),
   \ javaapi#method(0,1,'XPathParser(', 'Scanner)', ''),
-  \ javaapi#method(0,1,'production_table(', ')', 'short[][]'),
-  \ javaapi#method(0,1,'action_table(', ')', 'short[][]'),
-  \ javaapi#method(0,1,'reduce_table(', ')', 'short[][]'),
+  \ javaapi#method(0,1,'production_table(', ')', 'short[]'),
+  \ javaapi#method(0,1,'action_table(', ')', 'short[]'),
+  \ javaapi#method(0,1,'reduce_table(', ')', 'short[]'),
   \ javaapi#method(0,0,'init_actions(', ')', 'void'),
   \ javaapi#method(0,1,'do_action(', 'int, lr_parser, Stack, int) throws Exception', 'Symbol'),
   \ javaapi#method(0,1,'start_state(', ')', 'int'),
@@ -1613,9 +1604,9 @@ call javaapi#class('XSLTC', '', [
   \ javaapi#method(0,1,'compile(', 'InputStream, String)', 'boolean'),
   \ javaapi#method(0,1,'compile(', 'InputSource, String)', 'boolean'),
   \ javaapi#method(0,1,'compile(', 'Vector)', 'boolean'),
-  \ javaapi#method(0,1,'getBytecodes(', ')', 'byte[][]'),
-  \ javaapi#method(0,1,'compile(', 'String, InputSource, int)', 'byte[][]'),
-  \ javaapi#method(0,1,'compile(', 'String, InputSource)', 'byte[][]'),
+  \ javaapi#method(0,1,'getBytecodes(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'compile(', 'String, InputSource, int)', 'byte[]'),
+  \ javaapi#method(0,1,'compile(', 'String, InputSource)', 'byte[]'),
   \ javaapi#method(0,1,'setXMLReader(', 'XMLReader)', 'void'),
   \ javaapi#method(0,1,'getXMLReader(', ')', 'XMLReader'),
   \ javaapi#method(0,1,'getErrors(', ')', 'Vector'),
@@ -1643,7 +1634,7 @@ call javaapi#class('XSLTC', '', [
   \ javaapi#method(0,1,'nextModeSerial(', ')', 'int'),
   \ javaapi#method(0,1,'nextStylesheetSerial(', ')', 'int'),
   \ javaapi#method(0,1,'nextStepPatternSerial(', ')', 'int'),
-  \ javaapi#method(0,1,'getNumberFieldIndexes(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getNumberFieldIndexes(', ')', 'int'),
   \ javaapi#method(0,1,'nextHelperClassSerial(', ')', 'int'),
   \ javaapi#method(0,1,'nextAttributeSetSerial(', ')', 'int'),
   \ javaapi#method(0,1,'getNamesIndex(', ')', 'Vector'),

@@ -32,3 +32,6 @@ call javaapi#class('BridgePermission', 'BasicPermission', [
   \ javaapi#method(0,1,'BridgePermission(', 'String, String)', ''),
   \ ])
 
+call javaapi#com.sun.corba.se.impl.io.ValueHandlerImpl('newValueHandlerImpl()', '', [
+  \ ])
+

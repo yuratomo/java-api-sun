@@ -1,10 +1,10 @@
 call javaapi#namespace('sun.awt.windows')
 
-call javaapi#class('EHTMLReadMode', 'EHTMLReadMode>', [
+call javaapi#class('EHTMLReadMode', 'Enum', [
   \ javaapi#field(1,1,'HTML_READ_ALL', 'EHTMLReadMode'),
   \ javaapi#field(1,1,'HTML_READ_FRAGMENT', 'EHTMLReadMode'),
   \ javaapi#field(1,1,'HTML_READ_SELECTION', 'EHTMLReadMode'),
-  \ javaapi#method(1,1,'values(', ')', 'EHTMLReadMode[]'),
+  \ javaapi#method(1,1,'values(', ')', 'EHTMLReadMode'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'EHTMLReadMode'),
   \ ])
 
@@ -24,7 +24,7 @@ call javaapi#class('HTMLCodec', 'InputStream', [
   \ javaapi#field(1,1,'EOLN', 'String'),
   \ javaapi#field(1,1,'BYTE_BUFFER_LEN', 'int'),
   \ javaapi#field(1,1,'CHAR_BUFFER_LEN', 'int'),
-  \ javaapi#method(1,1,'convertToHTMLFormat(', 'byte[])', 'byte[]'),
+  \ javaapi#method(1,1,'convertToHTMLFormat(', 'byte[])', 'byte'),
   \ javaapi#method(0,1,'HTMLCodec(', 'InputStream, EHTMLReadMode) throws IOException', ''),
   \ javaapi#method(0,1,'getBaseURL(', ') throws IOException', 'String'),
   \ javaapi#method(0,1,'getVersion(', ') throws IOException', 'String'),
@@ -95,8 +95,8 @@ call javaapi#class('WClipboard', 'SunClipboard', [
   \ javaapi#method(0,0,'clearNativeContext(', ')', 'void'),
   \ javaapi#method(0,1,'openClipboard(', 'SunClipboard) throws IllegalStateException', 'void'),
   \ javaapi#method(0,1,'closeClipboard(', ')', 'void'),
-  \ javaapi#method(0,0,'getClipboardFormats(', ')', 'long[]'),
-  \ javaapi#method(0,0,'getClipboardData(', 'long) throws IOException', 'byte[]'),
+  \ javaapi#method(0,0,'getClipboardFormats(', ')', 'long'),
+  \ javaapi#method(0,0,'getClipboardData(', 'long) throws IOException', 'byte'),
   \ javaapi#method(0,0,'registerClipboardViewerChecked(', ')', 'void'),
   \ javaapi#method(0,0,'unregisterClipboardViewerChecked(', ')', 'void'),
   \ javaapi#method(0,0,'createLocaleTransferable(', 'long[]) throws IOException', 'Transferable'),
@@ -202,7 +202,7 @@ call javaapi#class('WKeyboardFocusManagerPeer', 'KeyboardFocusManagerPeerImpl', 
 call javaapi#class('WListPeer', 'WComponentPeer', [
   \ javaapi#method(0,1,'minimumSize(', ')', 'Dimension'),
   \ javaapi#method(0,1,'isFocusable(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getSelectedIndexes(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getSelectedIndexes(', ')', 'int'),
   \ javaapi#method(0,1,'add(', 'String, int)', 'void'),
   \ javaapi#method(0,1,'removeAll(', ')', 'void'),
   \ javaapi#method(0,1,'setMultipleMode(', 'boolean)', 'void'),
@@ -391,7 +391,7 @@ call javaapi#class('WRobotPeer', 'WObjectPeer', [
   \ javaapi#method(0,1,'keyRelease(', 'int)', 'void'),
   \ javaapi#method(0,1,'getRGBPixel(', 'int, int)', 'int'),
   \ javaapi#method(0,1,'getRGBPixelImpl(', 'int, int)', 'int'),
-  \ javaapi#method(0,1,'getRGBPixels(', 'Rectangle)', 'int[]'),
+  \ javaapi#method(0,1,'getRGBPixels(', 'Rectangle)', 'int'),
   \ ])
 
 call javaapi#class('WScrollPanePeer', 'WPanelPeer', [
@@ -478,57 +478,57 @@ call javaapi#class('WTrayIconPeer', 'WObjectPeer', [
 
 call javaapi#class('awtLocalization_de', 'ListResourceBundle', [
   \ javaapi#method(0,1,'awtLocalization_de(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('awtLocalization_es', 'ListResourceBundle', [
   \ javaapi#method(0,1,'awtLocalization_es(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('awtLocalization_fr', 'ListResourceBundle', [
   \ javaapi#method(0,1,'awtLocalization_fr(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('awtLocalization_it', 'ListResourceBundle', [
   \ javaapi#method(0,1,'awtLocalization_it(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('awtLocalization_ja', 'ListResourceBundle', [
   \ javaapi#method(0,1,'awtLocalization_ja(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('awtLocalization_ko', 'ListResourceBundle', [
   \ javaapi#method(0,1,'awtLocalization_ko(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('awtLocalization_pt_BR', 'ListResourceBundle', [
   \ javaapi#method(0,1,'awtLocalization_pt_BR(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('awtLocalization_sv', 'ListResourceBundle', [
   \ javaapi#method(0,1,'awtLocalization_sv(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('awtLocalization_zh_CN', 'ListResourceBundle', [
   \ javaapi#method(0,1,'awtLocalization_zh_CN(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('awtLocalization_zh_HK', 'ListResourceBundle', [
   \ javaapi#method(0,1,'awtLocalization_zh_HK(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('awtLocalization_zh_TW', 'ListResourceBundle', [
   \ javaapi#method(0,1,'awtLocalization_zh_TW(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#namespace('sun.awt.windows')
@@ -545,12 +545,12 @@ call javaapi#class('WFontMetrics', 'FontMetrics', [
   \ javaapi#method(0,1,'stringWidth(', 'String)', 'int'),
   \ javaapi#method(0,1,'charsWidth(', 'char[], int, int)', 'int'),
   \ javaapi#method(0,1,'bytesWidth(', 'byte[], int, int)', 'int'),
-  \ javaapi#method(0,1,'getWidths(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getWidths(', ')', 'int'),
   \ ])
 
 call javaapi#class('awtLocalization', 'ListResourceBundle', [
   \ javaapi#method(0,1,'awtLocalization(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('WMenuItemPeer', 'WObjectPeer', [
@@ -682,7 +682,7 @@ call javaapi#class('WDataTransferer', 'DataTransferer', [
   \ javaapi#method(1,1,'getInstanceImpl(', ')', 'WDataTransferer'),
   \ javaapi#method(0,1,'getFormatsForFlavors(', 'DataFlavor[], FlavorTable)', 'SortedMap'),
   \ javaapi#method(0,1,'getDefaultUnicodeEncoding(', ')', 'String'),
-  \ javaapi#method(0,1,'translateTransferable(', 'Transferable, DataFlavor, long) throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'translateTransferable(', 'Transferable, DataFlavor, long) throws IOException', 'byte'),
   \ javaapi#method(0,0,'translateBytesOrStream(', 'InputStream, byte[], DataFlavor, long, Transferable) throws IOException', 'Object'),
   \ javaapi#method(0,1,'isLocaleDependentTextFormat(', 'long)', 'boolean'),
   \ javaapi#method(0,1,'isFileFormat(', 'long)', 'boolean'),
@@ -690,10 +690,10 @@ call javaapi#class('WDataTransferer', 'DataTransferer', [
   \ javaapi#method(0,0,'getNativeForFormat(', 'long)', 'String'),
   \ javaapi#method(0,1,'getToolkitThreadBlockedHandler(', ')', 'ToolkitThreadBlockedHandler'),
   \ javaapi#method(0,1,'isImageFormat(', 'long)', 'boolean'),
-  \ javaapi#method(0,0,'imageToPlatformBytes(', 'Image, long) throws IOException', 'byte[]'),
+  \ javaapi#method(0,0,'imageToPlatformBytes(', 'Image, long) throws IOException', 'byte'),
   \ javaapi#method(0,0,'convertFileListToBytes(', 'ArrayList<String>) throws IOException', 'ByteArrayOutputStream'),
   \ javaapi#method(0,0,'platformImageBytesOrStreamToImage(', 'InputStream, byte[], long) throws IOException', 'Image'),
-  \ javaapi#method(0,0,'dragQueryFile(', 'byte[])', 'String[]'),
+  \ javaapi#method(0,0,'dragQueryFile(', 'byte[])', 'String'),
   \ ])
 
 call javaapi#namespace('sun.awt.windows')
@@ -727,7 +727,7 @@ call javaapi#class('WLabelPeer', 'WComponentPeer', [
 call javaapi#namespace('sun.awt.windows')
 
 call javaapi#class('WInputMethodDescriptor', 'InputMethodDescriptor', [
-  \ javaapi#method(0,1,'getAvailableLocales(', ')', 'Locale[]'),
+  \ javaapi#method(0,1,'getAvailableLocales(', ')', 'Locale'),
   \ javaapi#method(0,1,'hasDynamicLocaleList(', ')', 'boolean'),
   \ javaapi#method(0,1,'getInputMethodDisplayName(', 'Locale, Locale)', 'String'),
   \ javaapi#method(0,1,'getInputMethodIcon(', 'Locale)', 'Image'),
@@ -903,7 +903,7 @@ call javaapi#class('WWindowPeer', 'WPanelPeer', [
   \ javaapi#method(0,1,'updateIconImages(', ')', 'void'),
   \ javaapi#method(0,1,'isModalBlocked(', ')', 'boolean'),
   \ javaapi#method(0,1,'setModalBlocked(', 'Dialog, boolean)', 'void'),
-  \ javaapi#method(1,1,'getActiveWindowHandles(', ')', 'long[]'),
+  \ javaapi#method(1,1,'getActiveWindowHandles(', ')', 'long'),
   \ javaapi#method(0,1,'updateGC(', ')', 'void'),
   \ javaapi#method(0,1,'displayChanged(', ')', 'void'),
   \ javaapi#method(0,1,'paletteChanged(', ')', 'void'),

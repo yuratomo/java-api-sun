@@ -275,9 +275,9 @@ call javaapi#class('JvmThreadInstanceEntryImpl', 'Serializable', [
   \ javaapi#method(0,1,'getJvmThreadInstBlockCount(', ') throws SnmpStatusException', 'Long'),
   \ javaapi#method(0,1,'getJvmThreadInstWaitTimeMs(', ') throws SnmpStatusException', 'Long'),
   \ javaapi#method(0,1,'getJvmThreadInstWaitCount(', ') throws SnmpStatusException', 'Long'),
-  \ javaapi#method(0,1,'getJvmThreadInstState(', ') throws SnmpStatusException', 'Byte[]'),
+  \ javaapi#method(0,1,'getJvmThreadInstState(', ') throws SnmpStatusException', 'Byte'),
   \ javaapi#method(0,1,'getJvmThreadInstId(', ') throws SnmpStatusException', 'Long'),
-  \ javaapi#method(0,1,'getJvmThreadInstIndex(', ') throws SnmpStatusException', 'Byte[]'),
+  \ javaapi#method(0,1,'getJvmThreadInstIndex(', ') throws SnmpStatusException', 'Byte'),
   \ ])
 
 call javaapi#class('JvmThreadInstanceTableMetaImpl', 'JvmThreadInstanceTableMeta', [

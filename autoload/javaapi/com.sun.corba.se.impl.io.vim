@@ -4,10 +4,10 @@ call javaapi#class('FVDCodeBaseImpl', '_CodeBaseImplBase', [
   \ javaapi#method(0,1,'FVDCodeBaseImpl(', ')', ''),
   \ javaapi#method(0,1,'get_ir(', ')', 'Repository'),
   \ javaapi#method(0,1,'implementation(', 'String)', 'String'),
-  \ javaapi#method(0,1,'implementations(', 'String[])', 'String[]'),
+  \ javaapi#method(0,1,'implementations(', 'String[])', 'String'),
   \ javaapi#method(0,1,'meta(', 'String)', 'FullValueDescription'),
-  \ javaapi#method(0,1,'metas(', 'String[])', 'FullValueDescription[]'),
-  \ javaapi#method(0,1,'bases(', 'String)', 'String[]'),
+  \ javaapi#method(0,1,'metas(', 'String[])', 'FullValueDescription'),
+  \ javaapi#method(0,1,'bases(', 'String)', 'String'),
   \ ])
 
 call javaapi#class('IIOPInputStream', 'InputStreamHook', [
@@ -117,7 +117,7 @@ call javaapi#class('ObjectStreamClass', 'Serializable', [
   \ javaapi#field(1,1,'CLASS_MASK', 'int'),
   \ javaapi#field(1,1,'FIELD_MASK', 'int'),
   \ javaapi#field(1,1,'METHOD_MASK', 'int'),
-  \ javaapi#field(1,1,'NO_FIELDS', 'ObjectStreamField[]'),
+  \ javaapi#field(1,1,'NO_FIELDS', 'ObjectStreamField'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(1,1,'getSerialVersionUID(', 'Class)', 'long'),
   \ javaapi#method(0,1,'getSerialVersionUID(', ')', 'long'),
@@ -126,7 +126,7 @@ call javaapi#class('ObjectStreamClass', 'Serializable', [
   \ javaapi#method(0,1,'getActualSerialVersionUID(', ')', 'long'),
   \ javaapi#method(0,1,'getActualSerialVersionUIDStr(', ')', 'String'),
   \ javaapi#method(0,1,'forClass(', ')', 'Class'),
-  \ javaapi#method(0,1,'getFields(', ')', 'ObjectStreamField[]'),
+  \ javaapi#method(0,1,'getFields(', ')', 'ObjectStreamField'),
   \ javaapi#method(0,1,'hasField(', 'ValueMember)', 'boolean'),
   \ javaapi#method(0,1,'getField(', 'String)', 'ObjectStreamField'),
   \ javaapi#method(0,1,'writeReplace(', 'Serializable)', 'Serializable'),

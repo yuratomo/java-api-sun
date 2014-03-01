@@ -8,12 +8,12 @@ call javaapi#class('KeyStoreUtil', '', [
 call javaapi#class('KeyTool', '', [
   \ javaapi#method(1,1,'main(', 'String[]) throws Exception', 'void'),
   \ javaapi#method(1,1,'loadCRLs(', 'String) throws Exception', 'CRL>'),
-  \ javaapi#method(1,1,'readCRLsFromCert(', 'X509Certificate) throws Exception', 'CRL>'),
+  \ javaapi#method(1,1,'readCRLsFromCert(', 'X509Certificate) throws Exception', 'List'),
   \ javaapi#method(1,1,'getCacertsKeyStore(', ') throws Exception', 'KeyStore'),
-  \ javaapi#method(1,1,'getPassWithModifier(', 'String, String)', 'char[]'),
+  \ javaapi#method(1,1,'getPassWithModifier(', 'String, String)', 'char'),
   \ ])
 
-call javaapi#class('Pair<A,B>', '', [
+call javaapi#class('Pair', '', [
   \ javaapi#field(0,1,'fst', 'A'),
   \ javaapi#field(0,1,'snd', 'B'),
   \ javaapi#method(0,1,'Pair(', 'A, B)', ''),

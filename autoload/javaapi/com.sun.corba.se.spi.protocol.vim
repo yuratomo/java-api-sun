@@ -151,11 +151,11 @@ call javaapi#interface('RequestDispatcherRegistry', '', [
   \ javaapi#method(0,1,'getObjectAdapterFactories(', ')', 'Set'),
   \ ])
 
-call javaapi#class('RetryType', 'RetryType>', [
+call javaapi#class('RetryType', 'Enum', [
   \ javaapi#field(1,1,'NONE', 'RetryType'),
   \ javaapi#field(1,1,'BEFORE_RESPONSE', 'RetryType'),
   \ javaapi#field(1,1,'AFTER_RESPONSE', 'RetryType'),
-  \ javaapi#method(1,1,'values(', ')', 'RetryType[]'),
+  \ javaapi#method(1,1,'values(', ')', 'RetryType'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'RetryType'),
   \ javaapi#method(0,1,'isRetry(', ')', 'boolean'),
   \ ])

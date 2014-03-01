@@ -9,7 +9,7 @@ call javaapi#class('DetailType', '', [
 call javaapi#class('ExceptionBean', '', [
   \ javaapi#field(0,1,'className', 'String'),
   \ javaapi#field(0,1,'message', 'String'),
-  \ javaapi#field(0,1,'stackTrace', 'StackFrame>'),
+  \ javaapi#field(0,1,'stackTrace', 'List'),
   \ javaapi#field(0,1,'cause', 'ExceptionBean'),
   \ javaapi#field(0,1,'note', 'String'),
   \ javaapi#method(1,1,'marshal(', 'Throwable, Node) throws JAXBException', 'void'),

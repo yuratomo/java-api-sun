@@ -37,7 +37,7 @@ call javaapi#class('PolicyUtil', '', [
   \ javaapi#method(0,1,'PolicyUtil(', ')', ''),
   \ javaapi#method(1,1,'addServiceProviders(', 'Collection<T>, Class<T>)', 'void'),
   \ javaapi#method(1,1,'configureModel(', 'WSDLModel, PolicyMap) throws PolicyException', 'void'),
-  \ javaapi#method(1,1,'getPortScopedFeatures(', 'PolicyMap, QName, QName)', 'WebServiceFeature>'),
+  \ javaapi#method(1,1,'getPortScopedFeatures(', 'PolicyMap, QName, QName)', 'Collection'),
   \ ])
 
 call javaapi#class('PolicyWSDLGeneratorExtension', 'WSDLGeneratorExtension', [
@@ -97,7 +97,7 @@ call javaapi#class('PolicyWSDLParserExtension', 'WSDLParserExtension', [
 call javaapi#class('SafePolicyReader', '', [
   \ javaapi#method(0,1,'SafePolicyReader(', ')', ''),
   \ javaapi#method(0,1,'readPolicyElement(', 'XMLStreamReader, String)', 'PolicyRecord'),
-  \ javaapi#method(0,1,'getUrlsRead(', ')', 'String>'),
+  \ javaapi#method(0,1,'getUrlsRead(', ')', 'Set'),
   \ javaapi#method(0,1,'readPolicyReferenceElement(', 'XMLStreamReader)', 'String'),
   \ javaapi#method(1,1,'relativeToAbsoluteUrl(', 'String, String)', 'String'),
   \ ])

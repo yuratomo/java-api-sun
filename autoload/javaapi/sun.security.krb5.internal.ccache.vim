@@ -39,7 +39,7 @@ call javaapi#class('CredentialsCache', '', [
   \ javaapi#method(0,1,'getPrimaryPrincipal(', ')', 'PrincipalName'),
   \ javaapi#method(0,1,'update(', 'Credentials)', 'void'),
   \ javaapi#method(0,1,'save(', ') throws IOException, KrbException', 'void'),
-  \ javaapi#method(0,1,'getCredsList(', ')', 'Credentials[]'),
+  \ javaapi#method(0,1,'getCredsList(', ')', 'Credentials'),
   \ javaapi#method(0,1,'getDefaultCreds(', ')', 'Credentials'),
   \ javaapi#method(0,1,'getCreds(', 'PrincipalName, Realm)', 'Credentials'),
   \ javaapi#method(0,1,'getCreds(', 'LoginOptions, PrincipalName, Realm)', 'Credentials'),
@@ -76,7 +76,7 @@ call javaapi#class('FileCredentialsCache', 'CredentialsCache', [
   \ javaapi#method(0,1,'update(', 'Credentials)', 'void'),
   \ javaapi#method(0,1,'getPrimaryPrincipal(', ')', 'PrincipalName'),
   \ javaapi#method(0,1,'save(', ') throws IOException, Asn1Exception', 'void'),
-  \ javaapi#method(0,1,'getCredsList(', ')', 'Credentials[]'),
+  \ javaapi#method(0,1,'getCredsList(', ')', 'Credentials'),
   \ javaapi#method(0,1,'getCreds(', 'LoginOptions, PrincipalName, Realm)', 'Credentials'),
   \ javaapi#method(0,1,'getCreds(', 'PrincipalName, Realm)', 'Credentials'),
   \ javaapi#method(0,1,'getDefaultCreds(', ')', 'Credentials'),
@@ -89,7 +89,7 @@ call javaapi#class('MemoryCredentialsCache', 'CredentialsCache', [
   \ javaapi#method(0,1,'exists(', 'String)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Credentials)', 'void'),
   \ javaapi#method(0,1,'save(', ') throws IOException, KrbException', 'void'),
-  \ javaapi#method(0,1,'getCredsList(', ')', 'Credentials[]'),
+  \ javaapi#method(0,1,'getCredsList(', ')', 'Credentials'),
   \ javaapi#method(0,1,'getCreds(', 'PrincipalName, Realm)', 'Credentials'),
   \ javaapi#method(0,1,'getPrimaryPrincipal(', ')', 'PrincipalName'),
   \ ])
@@ -97,6 +97,6 @@ call javaapi#class('MemoryCredentialsCache', 'CredentialsCache', [
 call javaapi#class('Tag', '', [
   \ javaapi#method(0,1,'Tag(', 'int, int, Integer, Integer)', ''),
   \ javaapi#method(0,1,'Tag(', 'int)', ''),
-  \ javaapi#method(0,1,'toByteArray(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'toByteArray(', ')', 'byte'),
   \ ])
 

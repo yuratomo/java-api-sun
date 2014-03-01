@@ -40,27 +40,27 @@ call javaapi#interface('RuntimeEnumLeafInfo', 'RuntimeLeafInfo', [
   \ ])
 
 call javaapi#interface('RuntimeLeafInfo', 'RuntimeNonElement', [
-  \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer<V>'),
+  \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer'),
   \ javaapi#method(0,1,'getClazz(', ')', 'Class'),
-  \ javaapi#method(0,1,'getTypeNames(', ')', 'QName[]'),
+  \ javaapi#method(0,1,'getTypeNames(', ')', 'QName'),
   \ ])
 
-call javaapi#interface('RuntimeMapPropertyInfo', 'Class>', [
+call javaapi#interface('RuntimeMapPropertyInfo', 'MapPropertyInfo', [
   \ javaapi#method(0,1,'getKeyType(', ')', 'RuntimeNonElement'),
   \ javaapi#method(0,1,'getValueType(', ')', 'RuntimeNonElement'),
   \ ])
 
 call javaapi#interface('RuntimeNonElement', 'RuntimeTypeInfo', [
-  \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer<V>'),
+  \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer'),
   \ ])
 
-call javaapi#interface('RuntimeNonElementRef', 'Class>', [
+call javaapi#interface('RuntimeNonElementRef', 'NonElementRef', [
   \ javaapi#method(0,1,'getTarget(', ')', 'RuntimeNonElement'),
   \ javaapi#method(0,1,'getSource(', ')', 'RuntimePropertyInfo'),
   \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer'),
   \ ])
 
-call javaapi#interface('RuntimePropertyInfo', 'Class>', [
+call javaapi#interface('RuntimePropertyInfo', 'PropertyInfo', [
   \ javaapi#method(0,1,'ref(', ')', 'RuntimeTypeInfo>'),
   \ javaapi#method(0,1,'getAccessor(', ')', 'Accessor'),
   \ javaapi#method(0,1,'elementOnlyContent(', ')', 'boolean'),
@@ -72,10 +72,10 @@ call javaapi#interface('RuntimeReferencePropertyInfo', 'RuntimePropertyInfo', [
   \ javaapi#method(0,1,'getElements(', ')', 'RuntimeElement>'),
   \ ])
 
-call javaapi#interface('RuntimeTypeInfo', 'Class>', [
+call javaapi#interface('RuntimeTypeInfo', 'TypeInfo', [
   \ ])
 
-call javaapi#interface('RuntimeTypeInfoSet', 'Method>', [
+call javaapi#interface('RuntimeTypeInfoSet', 'TypeInfoSet', [
   \ javaapi#method(0,1,'arrays(', ')', 'RuntimeArrayInfo>'),
   \ javaapi#method(0,1,'beans(', ')', 'RuntimeClassInfo>'),
   \ javaapi#method(0,1,'builtins(', ')', 'RuntimeBuiltinLeafInfo>'),

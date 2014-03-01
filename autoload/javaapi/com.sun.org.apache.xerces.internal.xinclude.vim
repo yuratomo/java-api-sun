@@ -1,7 +1,7 @@
 call javaapi#namespace('com.sun.org.apache.xerces.internal.xinclude')
 
 call javaapi#class('MultipleScopeNamespaceSupport', 'NamespaceSupport', [
-  \ javaapi#field(0,0,'fScope', 'int[]'),
+  \ javaapi#field(0,0,'fScope', 'int'),
   \ javaapi#field(0,0,'fCurrentScope', 'int'),
   \ javaapi#method(0,1,'MultipleScopeNamespaceSupport(', ')', ''),
   \ javaapi#method(0,1,'MultipleScopeNamespaceSupport(', 'NamespaceContext)', ''),
@@ -94,9 +94,9 @@ call javaapi#class('XIncludeHandler', 'XMLDTDFilter', [
   \ javaapi#field(0,0,'fSettings', 'ParserConfigurationSettings'),
   \ javaapi#method(0,1,'XIncludeHandler(', ')', ''),
   \ javaapi#method(0,1,'reset(', 'XMLComponentManager) throws XNIException', 'void'),
-  \ javaapi#method(0,1,'getRecognizedFeatures(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getRecognizedFeatures(', ')', 'String'),
   \ javaapi#method(0,1,'setFeature(', 'String, boolean) throws XMLConfigurationException', 'void'),
-  \ javaapi#method(0,1,'getRecognizedProperties(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getRecognizedProperties(', ')', 'String'),
   \ javaapi#method(0,1,'setProperty(', 'String, Object) throws XMLConfigurationException', 'void'),
   \ javaapi#method(0,1,'getFeatureDefault(', 'String)', 'Boolean'),
   \ javaapi#method(0,1,'getPropertyDefault(', 'String)', 'Object'),
@@ -236,9 +236,9 @@ call javaapi#class('XPointerElementHandler', 'XPointerSchema', [
   \ javaapi#method(0,1,'XPointerElementHandler(', ')', ''),
   \ javaapi#method(0,1,'reset(', ')', 'void'),
   \ javaapi#method(0,1,'reset(', 'XMLComponentManager) throws XNIException', 'void'),
-  \ javaapi#method(0,1,'getRecognizedFeatures(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getRecognizedFeatures(', ')', 'String'),
   \ javaapi#method(0,1,'setFeature(', 'String, boolean) throws XMLConfigurationException', 'void'),
-  \ javaapi#method(0,1,'getRecognizedProperties(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getRecognizedProperties(', ')', 'String'),
   \ javaapi#method(0,1,'setProperty(', 'String, Object) throws XMLConfigurationException', 'void'),
   \ javaapi#method(0,1,'getFeatureDefault(', 'String)', 'Boolean'),
   \ javaapi#method(0,1,'getPropertyDefault(', 'String)', 'Object'),

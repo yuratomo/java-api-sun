@@ -44,14 +44,14 @@ call javaapi#class('DocumentHandler', 'DefaultHandler', [
   \ javaapi#method(0,1,'hasVariable(', 'String)', 'boolean'),
   \ javaapi#method(0,1,'getVariable(', 'String)', 'Object'),
   \ javaapi#method(0,1,'setVariable(', 'String, Object)', 'void'),
-  \ javaapi#method(0,1,'getObjects(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'getObjects(', ')', 'Object'),
   \ javaapi#method(0,1,'startDocument(', ')', 'void'),
   \ javaapi#method(0,1,'startElement(', 'String, String, String, Attributes) throws SAXException', 'void'),
   \ javaapi#method(0,1,'endElement(', 'String, String, String)', 'void'),
   \ javaapi#method(0,1,'characters(', 'char[], int, int)', 'void'),
   \ javaapi#method(0,1,'handleException(', 'Exception)', 'void'),
   \ javaapi#method(0,1,'parse(', 'InputSource)', 'void'),
-  \ javaapi#method(0,1,'findClass(', 'String)', 'Class<?>'),
+  \ javaapi#method(0,1,'findClass(', 'String)', 'Class'),
   \ ])
 
 call javaapi#class('DoubleElementHandler', 'StringElementHandler', [

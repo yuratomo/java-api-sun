@@ -17,7 +17,7 @@ call javaapi#interface('BMPConstants', '', [
   \ javaapi#field(1,1,'BI_BITFIELDS', 'int'),
   \ javaapi#field(1,1,'BI_JPEG', 'int'),
   \ javaapi#field(1,1,'BI_PNG', 'int'),
-  \ javaapi#field(1,1,'compressionTypeNames', 'String[]'),
+  \ javaapi#field(1,1,'compressionTypeNames', 'String'),
   \ ])
 
 call javaapi#class('BMPImageReader', 'ImageReader', [
@@ -102,7 +102,7 @@ call javaapi#class('BMPMetadata', 'IIOMetadata', [
   \ javaapi#field(0,1,'gammaGreen', 'int'),
   \ javaapi#field(0,1,'gammaBlue', 'int'),
   \ javaapi#field(0,1,'intent', 'int'),
-  \ javaapi#field(0,1,'palette', 'byte[]'),
+  \ javaapi#field(0,1,'palette', 'byte'),
   \ javaapi#field(0,1,'paletteSize', 'int'),
   \ javaapi#field(0,1,'red', 'int'),
   \ javaapi#field(0,1,'green', 'int'),
@@ -127,6 +127,6 @@ call javaapi#class('BMPMetadataFormat', 'IIOMetadataFormatImpl', [
 
 call javaapi#class('BMPMetadataFormatResources', 'ListResourceBundle', [
   \ javaapi#method(0,1,'BMPMetadataFormatResources(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ ])
 

@@ -2,8 +2,8 @@ call javaapi#namespace('com.sun.org.apache.xml.internal.security.c14n.implementa
 
 call javaapi#class('Canonicalizer11', 'CanonicalizerBase', [
   \ javaapi#method(0,1,'Canonicalizer11(', 'boolean)', ''),
-  \ javaapi#method(0,1,'engineCanonicalizeXPathNodeSet(', 'Set, String) throws CanonicalizationException', 'byte[]'),
-  \ javaapi#method(0,1,'engineCanonicalizeSubTree(', 'Node, String) throws CanonicalizationException', 'byte[]'),
+  \ javaapi#method(0,1,'engineCanonicalizeXPathNodeSet(', 'Set, String) throws CanonicalizationException', 'byte'),
+  \ javaapi#method(0,1,'engineCanonicalizeSubTree(', 'Node, String) throws CanonicalizationException', 'byte'),
   \ ])
 
 call javaapi#class('Canonicalizer11_OmitComments', 'Canonicalizer11', [
@@ -20,17 +20,17 @@ call javaapi#class('Canonicalizer11_WithComments', 'Canonicalizer11', [
 
 call javaapi#class('Canonicalizer20010315', 'CanonicalizerBase', [
   \ javaapi#method(0,1,'Canonicalizer20010315(', 'boolean)', ''),
-  \ javaapi#method(0,1,'engineCanonicalizeXPathNodeSet(', 'Set, String) throws CanonicalizationException', 'byte[]'),
-  \ javaapi#method(0,1,'engineCanonicalizeSubTree(', 'Node, String) throws CanonicalizationException', 'byte[]'),
+  \ javaapi#method(0,1,'engineCanonicalizeXPathNodeSet(', 'Set, String) throws CanonicalizationException', 'byte'),
+  \ javaapi#method(0,1,'engineCanonicalizeSubTree(', 'Node, String) throws CanonicalizationException', 'byte'),
   \ ])
 
 call javaapi#class('Canonicalizer20010315Excl', 'CanonicalizerBase', [
   \ javaapi#method(0,1,'Canonicalizer20010315Excl(', 'boolean)', ''),
-  \ javaapi#method(0,1,'engineCanonicalizeSubTree(', 'Node) throws CanonicalizationException', 'byte[]'),
-  \ javaapi#method(0,1,'engineCanonicalizeSubTree(', 'Node, String) throws CanonicalizationException', 'byte[]'),
-  \ javaapi#method(0,1,'engineCanonicalizeSubTree(', 'Node, String, Node) throws CanonicalizationException', 'byte[]'),
-  \ javaapi#method(0,1,'engineCanonicalize(', 'XMLSignatureInput, String) throws CanonicalizationException', 'byte[]'),
-  \ javaapi#method(0,1,'engineCanonicalizeXPathNodeSet(', 'Set, String) throws CanonicalizationException', 'byte[]'),
+  \ javaapi#method(0,1,'engineCanonicalizeSubTree(', 'Node) throws CanonicalizationException', 'byte'),
+  \ javaapi#method(0,1,'engineCanonicalizeSubTree(', 'Node, String) throws CanonicalizationException', 'byte'),
+  \ javaapi#method(0,1,'engineCanonicalizeSubTree(', 'Node, String, Node) throws CanonicalizationException', 'byte'),
+  \ javaapi#method(0,1,'engineCanonicalize(', 'XMLSignatureInput, String) throws CanonicalizationException', 'byte'),
+  \ javaapi#method(0,1,'engineCanonicalizeXPathNodeSet(', 'Set, String) throws CanonicalizationException', 'byte'),
   \ ])
 
 call javaapi#class('Canonicalizer20010315ExclOmitComments', 'Canonicalizer20010315Excl', [
@@ -60,9 +60,9 @@ call javaapi#class('Canonicalizer20010315WithComments', 'Canonicalizer20010315',
 call javaapi#class('CanonicalizerBase', 'CanonicalizerSpi', [
   \ javaapi#field(1,0,'nullNode', 'Attr'),
   \ javaapi#method(0,1,'CanonicalizerBase(', 'boolean)', ''),
-  \ javaapi#method(0,1,'engineCanonicalizeSubTree(', 'Node) throws CanonicalizationException', 'byte[]'),
-  \ javaapi#method(0,1,'engineCanonicalizeXPathNodeSet(', 'Set) throws CanonicalizationException', 'byte[]'),
-  \ javaapi#method(0,1,'engineCanonicalize(', 'XMLSignatureInput) throws CanonicalizationException', 'byte[]'),
+  \ javaapi#method(0,1,'engineCanonicalizeSubTree(', 'Node) throws CanonicalizationException', 'byte'),
+  \ javaapi#method(0,1,'engineCanonicalizeXPathNodeSet(', 'Set) throws CanonicalizationException', 'byte'),
+  \ javaapi#method(0,1,'engineCanonicalize(', 'XMLSignatureInput) throws CanonicalizationException', 'byte'),
   \ javaapi#method(0,1,'setWriter(', 'OutputStream)', 'void'),
   \ ])
 
@@ -95,6 +95,6 @@ call javaapi#class('SymbMap', 'Cloneable', [
 
 call javaapi#class('UtfHelpper', '', [
   \ javaapi#method(0,1,'UtfHelpper(', ')', ''),
-  \ javaapi#method(1,1,'getStringInUtf8(', 'String)', 'byte[]'),
+  \ javaapi#method(1,1,'getStringInUtf8(', 'String)', 'byte'),
   \ ])
 

@@ -184,7 +184,7 @@ call javaapi#class('ProgressMonitor', '', [
   \ javaapi#method(1,1,'getDefault(', ')', 'ProgressMonitor'),
   \ javaapi#method(1,1,'setDefault(', 'ProgressMonitor)', 'void'),
   \ javaapi#method(1,1,'setMeteringPolicy(', 'ProgressMeteringPolicy)', 'void'),
-  \ javaapi#method(0,1,'getProgressSources(', ')', 'ProgressSource>'),
+  \ javaapi#method(0,1,'getProgressSources(', ')', 'ArrayList'),
   \ javaapi#method(0,1,'getProgressUpdateThreshold(', ')', 'int'),
   \ javaapi#method(0,1,'shouldMeterInput(', 'URL, String)', 'boolean'),
   \ javaapi#method(0,1,'registerSource(', 'ProgressSource)', 'void'),

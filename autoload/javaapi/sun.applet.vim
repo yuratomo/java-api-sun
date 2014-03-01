@@ -93,7 +93,7 @@ call javaapi#class('AppletThreadGroup', 'ThreadGroup', [
 call javaapi#class('AppletClassLoader', 'URLClassLoader', [
   \ javaapi#method(0,0,'AppletClassLoader(', 'URL)', ''),
   \ javaapi#method(0,1,'disableRecursiveDirectoryRead(', ')', 'void'),
-  \ javaapi#method(0,1,'getURLs(', ')', 'URL[]'),
+  \ javaapi#method(0,1,'getURLs(', ')', 'URL'),
   \ javaapi#method(0,0,'addJar(', 'String) throws IOException', 'void'),
   \ javaapi#method(0,1,'loadClass(', 'String, boolean) throws ClassNotFoundException', 'Class'),
   \ javaapi#method(0,0,'findClass(', 'String) throws ClassNotFoundException', 'Class'),

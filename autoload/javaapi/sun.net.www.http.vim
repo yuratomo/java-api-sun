@@ -21,7 +21,7 @@ call javaapi#class('ChunkedOutputStream', 'PrintStream', [
   \ javaapi#method(0,1,'flush(', ')', 'void'),
   \ ])
 
-call javaapi#class('ClientVector', 'KeepAliveEntry>', [
+call javaapi#class('ClientVector', 'Stack', [
   \ ])
 
 call javaapi#class('HttpCapture', '', [
@@ -103,7 +103,7 @@ call javaapi#interface('Hurryable', '', [
   \ javaapi#method(0,1,'hurry(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('KeepAliveCache', 'ClientVector>', [
+call javaapi#class('KeepAliveCache', 'HashMap', [
   \ javaapi#method(0,1,'KeepAliveCache(', ')', ''),
   \ javaapi#method(0,1,'put(', 'URL, Object, HttpClient)', 'void'),
   \ javaapi#method(0,1,'remove(', 'HttpClient, Object)', 'void'),
@@ -140,7 +140,7 @@ call javaapi#class('KeepAliveStream', 'MeteredStream', [
   \ javaapi#method(0,0,'setClosed(', ')', 'void'),
   \ ])
 
-call javaapi#class('KeepAliveStreamCleaner', 'KeepAliveCleanerEntry>', [
+call javaapi#class('KeepAliveStreamCleaner', 'LinkedList', [
   \ javaapi#field(1,0,'MAX_DATA_REMAINING', 'int'),
   \ javaapi#field(1,0,'MAX_CAPACITY', 'int'),
   \ javaapi#field(1,0,'TIMEOUT', 'int'),

@@ -17,7 +17,7 @@ call javaapi#class('ContextFactory', '', [
   \ javaapi#method(1,1,'createContext(', 'String, ClassLoader, Map<String, Object>) throws JAXBException', 'JAXBContext'),
   \ ])
 
-call javaapi#class('Messages', 'Messages>', [
+call javaapi#class('Messages', 'Enum', [
   \ javaapi#field(1,1,'ILLEGAL_ENTRY', 'Messages'),
   \ javaapi#field(1,1,'ERROR_LOADING_CLASS', 'Messages'),
   \ javaapi#field(1,1,'INVALID_PROPERTY_VALUE', 'Messages'),
@@ -25,7 +25,7 @@ call javaapi#class('Messages', 'Messages>', [
   \ javaapi#field(1,1,'BROKEN_CONTEXTPATH', 'Messages'),
   \ javaapi#field(1,1,'NO_DEFAULT_CONSTRUCTOR_IN_INNER_CLASS', 'Messages'),
   \ javaapi#field(1,1,'INVALID_TYPE_IN_MAP', 'Messages'),
-  \ javaapi#method(1,1,'values(', ')', 'Messages[]'),
+  \ javaapi#method(1,1,'values(', ')', 'Messages'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'Messages'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'format(', ')', 'String'),

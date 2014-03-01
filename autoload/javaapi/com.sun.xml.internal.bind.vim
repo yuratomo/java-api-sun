@@ -11,7 +11,7 @@ call javaapi#class('AccessorFactoryImpl', 'AccessorFactory', [
   \ javaapi#method(0,1,'createPropertyAccessor(', 'Class, Method, Method)', 'Accessor'),
   \ ])
 
-call javaapi#class('AnyTypeAdapter', 'Object>', [
+call javaapi#class('AnyTypeAdapter', 'XmlAdapter', [
   \ javaapi#method(0,1,'AnyTypeAdapter(', ')', ''),
   \ javaapi#method(0,1,'unmarshal(', 'Object)', 'Object'),
   \ javaapi#method(0,1,'marshal(', 'Object)', 'Object'),
@@ -59,8 +59,8 @@ call javaapi#class('DatatypeConverterImpl', 'DatatypeConverterInterface', [
   \ javaapi#method(1,1,'_parseDateTime(', 'CharSequence)', 'GregorianCalendar'),
   \ javaapi#method(0,1,'printDateTime(', 'Calendar)', 'String'),
   \ javaapi#method(1,1,'_printDateTime(', 'Calendar)', 'String'),
-  \ javaapi#method(0,1,'parseBase64Binary(', 'String)', 'byte[]'),
-  \ javaapi#method(0,1,'parseHexBinary(', 'String)', 'byte[]'),
+  \ javaapi#method(0,1,'parseBase64Binary(', 'String)', 'byte'),
+  \ javaapi#method(0,1,'parseHexBinary(', 'String)', 'byte'),
   \ javaapi#method(0,1,'printHexBinary(', 'byte[])', 'String'),
   \ javaapi#method(0,1,'parseUnsignedInt(', 'String)', 'long'),
   \ javaapi#method(0,1,'printUnsignedInt(', 'long)', 'String'),
@@ -86,7 +86,7 @@ call javaapi#class('DatatypeConverterImpl', 'DatatypeConverterInterface', [
   \ javaapi#method(0,1,'printUnsignedShort(', 'int)', 'String'),
   \ javaapi#method(0,1,'printAnySimpleType(', 'String)', 'String'),
   \ javaapi#method(1,1,'installHook(', 'String)', 'String'),
-  \ javaapi#method(1,1,'_parseBase64Binary(', 'String)', 'byte[]'),
+  \ javaapi#method(1,1,'_parseBase64Binary(', 'String)', 'byte'),
   \ javaapi#method(1,1,'encode(', 'int)', 'char'),
   \ javaapi#method(1,1,'encodeByte(', 'int)', 'byte'),
   \ javaapi#method(1,1,'_printBase64Binary(', 'byte[])', 'String'),
@@ -100,7 +100,7 @@ call javaapi#class('IDResolver', '', [
   \ javaapi#method(0,1,'startDocument(', 'ValidationEventHandler) throws SAXException', 'void'),
   \ javaapi#method(0,1,'endDocument(', ') throws SAXException', 'void'),
   \ javaapi#method(0,1,'bind(', 'String, Object) throws SAXException', 'void'),
-  \ javaapi#method(0,1,'resolve(', 'String, Class) throws SAXException', 'Callable<?>'),
+  \ javaapi#method(0,1,'resolve(', 'String, Class) throws SAXException', 'Callable'),
   \ ])
 
 call javaapi#interface('InternalAccessorFactory', 'AccessorFactory', [

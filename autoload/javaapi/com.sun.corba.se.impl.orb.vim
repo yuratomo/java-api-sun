@@ -58,7 +58,7 @@ call javaapi#class('ORBDataParserImpl', 'ParserImplTableBase', [
   \ javaapi#method(0,1,'getORBServerPort(', ')', 'int'),
   \ javaapi#method(0,1,'getLegacySocketFactory(', ')', 'ORBSocketFactory'),
   \ javaapi#method(0,1,'getSocketFactory(', ')', 'ORBSocketFactory'),
-  \ javaapi#method(0,1,'getUserSpecifiedListenPorts(', ')', 'USLPort[]'),
+  \ javaapi#method(0,1,'getUserSpecifiedListenPorts(', ')', 'USLPort'),
   \ javaapi#method(0,1,'getIORToSocketInfo(', ')', 'IORToSocketInfo'),
   \ javaapi#method(0,1,'getIIOPPrimaryToContactInfo(', ')', 'IIOPPrimaryToContactInfo'),
   \ javaapi#method(0,1,'getORBId(', ')', 'String'),
@@ -83,11 +83,11 @@ call javaapi#class('ORBDataParserImpl', 'ParserImplTableBase', [
   \ javaapi#method(0,1,'getServerIsORBActivated(', ')', 'boolean'),
   \ javaapi#method(0,1,'getBadServerIdHandler(', ')', 'Class'),
   \ javaapi#method(0,1,'getCodeSetComponentInfo(', ')', 'CodeSetComponentInfo'),
-  \ javaapi#method(0,1,'getORBInitializers(', ')', 'ORBInitializer[]'),
-  \ javaapi#method(0,1,'getORBInitialReferences(', ')', 'StringPair[]'),
+  \ javaapi#method(0,1,'getORBInitializers(', ')', 'ORBInitializer'),
+  \ javaapi#method(0,1,'getORBInitialReferences(', ')', 'StringPair'),
   \ javaapi#method(0,1,'getORBDefaultInitialReference(', ')', 'String'),
-  \ javaapi#method(0,1,'getORBDebugFlags(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getAcceptors(', ')', 'Acceptor[]'),
+  \ javaapi#method(0,1,'getORBDebugFlags(', ')', 'String'),
+  \ javaapi#method(0,1,'getAcceptors(', ')', 'Acceptor'),
   \ javaapi#method(0,1,'getCorbaContactInfoListFactory(', ')', 'CorbaContactInfoListFactory'),
   \ javaapi#method(0,1,'acceptorSocketType(', ')', 'String'),
   \ javaapi#method(0,1,'acceptorSocketUseSelectThreadToWait(', ')', 'boolean'),
@@ -153,7 +153,7 @@ call javaapi#class('ORBImpl', 'ORB', [
   \ javaapi#method(0,1,'create_any(', ')', 'Any'),
   \ javaapi#method(0,1,'setTypeCodeForClass(', 'Class, TypeCodeImpl)', 'void'),
   \ javaapi#method(0,1,'getTypeCodeForClass(', 'Class)', 'TypeCodeImpl'),
-  \ javaapi#method(0,1,'list_initial_services(', ')', 'String[]'),
+  \ javaapi#method(0,1,'list_initial_services(', ')', 'String'),
   \ javaapi#method(0,1,'resolve_initial_references(', 'String) throws InvalidName', 'Object'),
   \ javaapi#method(0,1,'register_initial_reference(', 'String, Object) throws InvalidName', 'void'),
   \ javaapi#method(0,1,'run(', ')', 'void'),
@@ -244,7 +244,7 @@ call javaapi#class('ORBSingleton', 'ORB', [
   \ javaapi#method(0,1,'get_default_context(', ')', 'Context'),
   \ javaapi#method(0,1,'create_environment(', ')', 'Environment'),
   \ javaapi#method(0,1,'get_current(', ')', 'Current'),
-  \ javaapi#method(0,1,'list_initial_services(', ')', 'String[]'),
+  \ javaapi#method(0,1,'list_initial_services(', ')', 'String'),
   \ javaapi#method(0,1,'resolve_initial_references(', 'String) throws InvalidName', 'Object'),
   \ javaapi#method(0,1,'register_initial_reference(', 'String, Object) throws InvalidName', 'void'),
   \ javaapi#method(0,1,'send_multiple_requests_oneway(', 'Request[])', 'void'),
@@ -386,7 +386,7 @@ call javaapi#class('ParserDataBase', 'ParserData', [
 
 call javaapi#class('ParserTable', '', [
   \ javaapi#method(1,1,'get(', ')', 'ParserTable'),
-  \ javaapi#method(0,1,'getParserData(', ')', 'ParserData[]'),
+  \ javaapi#method(0,1,'getParserData(', ')', 'ParserData'),
   \ ])
 
 call javaapi#class('PrefixParserAction', 'ParserActionBase', [

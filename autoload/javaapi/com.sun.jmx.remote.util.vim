@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.jmx.remote.util')
 
-call javaapi#class('CacheMap<K,V>', 'WeakHashMap<K,V>', [
+call javaapi#class('CacheMap', 'WeakHashMap', [
   \ javaapi#method(0,1,'CacheMap(', 'int)', ''),
   \ javaapi#method(0,1,'put(', 'K, V)', 'V'),
   \ javaapi#method(0,1,'get(', 'Object)', 'V'),
@@ -8,7 +8,7 @@ call javaapi#class('CacheMap<K,V>', 'WeakHashMap<K,V>', [
 
 call javaapi#class('ClassLoaderWithRepository', 'ClassLoader', [
   \ javaapi#method(0,1,'ClassLoaderWithRepository(', 'ClassLoaderRepository, ClassLoader)', ''),
-  \ javaapi#method(0,0,'findClass(', 'String) throws ClassNotFoundException', 'Class<?>'),
+  \ javaapi#method(0,0,'findClass(', 'String) throws ClassNotFoundException', 'Class'),
   \ ])
 
 call javaapi#class('ClassLogger', '', [
@@ -86,6 +86,6 @@ call javaapi#class('EnvHelp', '', [
 
 call javaapi#class('OrderClassLoaders', 'ClassLoader', [
   \ javaapi#method(0,1,'OrderClassLoaders(', 'ClassLoader, ClassLoader)', ''),
-  \ javaapi#method(0,0,'findClass(', 'String) throws ClassNotFoundException', 'Class<?>'),
+  \ javaapi#method(0,0,'findClass(', 'String) throws ClassNotFoundException', 'Class'),
   \ ])
 

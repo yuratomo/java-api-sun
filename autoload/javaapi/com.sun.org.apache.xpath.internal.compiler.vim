@@ -34,7 +34,7 @@ call javaapi#class('Compiler', 'OpMap', [
   \ javaapi#method(0,1,'locationPathPattern(', 'int) throws TransformerException', 'Expression'),
   \ javaapi#method(0,1,'getWhatToShow(', 'int)', 'int'),
   \ javaapi#method(0,0,'stepPattern(', 'int, int, StepPattern) throws TransformerException', 'StepPattern'),
-  \ javaapi#method(0,1,'getCompiledPredicates(', 'int) throws TransformerException', 'Expression[]'),
+  \ javaapi#method(0,1,'getCompiledPredicates(', 'int) throws TransformerException', 'Expression'),
   \ javaapi#method(0,1,'countPredicates(', 'int) throws TransformerException', 'int'),
   \ javaapi#method(0,1,'warn(', 'String, Object[]) throws TransformerException', 'void'),
   \ javaapi#method(0,1,'assertion(', 'boolean, String)', 'void'),
@@ -130,9 +130,6 @@ call javaapi#class('Keywords', '', [
 call javaapi#class('Lexer', '', [
   \ ])
 
-call javaapi#class('ObjectFactory', '', [
-  \ ])
-
 call javaapi#class('OpCodes', '', [
   \ javaapi#field(1,1,'ENDOP', 'int'),
   \ javaapi#field(1,1,'EMPTY', 'int'),
@@ -226,7 +223,7 @@ call javaapi#class('OpMap', '', [
 
 call javaapi#class('OpMapVector', '', [
   \ javaapi#field(0,0,'m_blocksize', 'int'),
-  \ javaapi#field(0,0,'m_map', 'int[]'),
+  \ javaapi#field(0,0,'m_map', 'int'),
   \ javaapi#field(0,0,'m_lengthPos', 'int'),
   \ javaapi#field(0,0,'m_mapSize', 'int'),
   \ javaapi#method(0,1,'OpMapVector(', 'int, int, int)', ''),
@@ -243,12 +240,6 @@ call javaapi#class('PsuedoNames', '', [
   \ javaapi#field(1,1,'PSEUDONAME_PI', 'String'),
   \ javaapi#field(1,1,'PSEUDONAME_OTHER', 'String'),
   \ javaapi#method(0,1,'PsuedoNames(', ')', ''),
-  \ ])
-
-call javaapi#class('SecuritySupport', '', [
-  \ ])
-
-call javaapi#class('SecuritySupport12', 'SecuritySupport', [
   \ ])
 
 call javaapi#class('XPathDumper', '', [

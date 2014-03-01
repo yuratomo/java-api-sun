@@ -42,9 +42,9 @@ call javaapi#class('AMXGlassfish', '', [
   \ javaapi#method(0,1,'newObjectName(', 'String)', 'ObjectName'),
   \ javaapi#method(0,1,'getBootAMXMBeanObjectName(', ')', 'ObjectName'),
   \ javaapi#method(0,1,'invokeBootAMX(', 'MBeanServerConnection)', 'void'),
-  \ javaapi#method(0,1,'listenForDomainRoot(', 'MBeanServerConnection, T)', 'MBeanListener<T>'),
+  \ javaapi#method(0,1,'listenForDomainRoot(', 'MBeanServerConnection, T)', 'MBeanListener'),
   \ javaapi#method(0,1,'waitAMXReady(', 'MBeanServerConnection)', 'ObjectName'),
-  \ javaapi#method(0,1,'listenForBootAMX(', 'MBeanServerConnection, T)', 'MBeanListener<T>'),
+  \ javaapi#method(0,1,'listenForBootAMX(', 'MBeanServerConnection, T)', 'MBeanListener'),
   \ javaapi#method(0,1,'bootAMX(', 'MBeanServerConnection) throws IOException', 'ObjectName'),
   \ javaapi#method(0,1,'bootAMX(', 'MBeanServer)', 'ObjectName'),
   \ ])
@@ -59,7 +59,7 @@ call javaapi#class('AMXUtil', '', [
 call javaapi#interface('BootAMXMBean', '', [
   \ javaapi#field(1,1,'BOOT_AMX_OPERATION_NAME', 'String'),
   \ javaapi#method(0,1,'bootAMX(', ')', 'ObjectName'),
-  \ javaapi#method(0,1,'getJMXServiceURLs(', ')', 'JMXServiceURL[]'),
+  \ javaapi#method(0,1,'getJMXServiceURLs(', ')', 'JMXServiceURL'),
   \ ])
 
 call javaapi#class('MBeanListener<T', 'Callback>', [

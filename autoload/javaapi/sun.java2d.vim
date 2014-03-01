@@ -84,14 +84,14 @@ call javaapi#namespace('sun.java2d')
 
 call javaapi#class('HeadlessGraphicsEnvironment', 'GraphicsEnvironment', [
   \ javaapi#method(0,1,'HeadlessGraphicsEnvironment(', 'GraphicsEnvironment)', ''),
-  \ javaapi#method(0,1,'getScreenDevices(', ') throws HeadlessException', 'GraphicsDevice[]'),
+  \ javaapi#method(0,1,'getScreenDevices(', ') throws HeadlessException', 'GraphicsDevice'),
   \ javaapi#method(0,1,'getDefaultScreenDevice(', ') throws HeadlessException', 'GraphicsDevice'),
   \ javaapi#method(0,1,'getCenterPoint(', ') throws HeadlessException', 'Point'),
   \ javaapi#method(0,1,'getMaximumWindowBounds(', ') throws HeadlessException', 'Rectangle'),
   \ javaapi#method(0,1,'createGraphics(', 'BufferedImage)', 'Graphics2D'),
-  \ javaapi#method(0,1,'getAllFonts(', ')', 'Font[]'),
-  \ javaapi#method(0,1,'getAvailableFontFamilyNames(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getAvailableFontFamilyNames(', 'Locale)', 'String[]'),
+  \ javaapi#method(0,1,'getAllFonts(', ')', 'Font'),
+  \ javaapi#method(0,1,'getAvailableFontFamilyNames(', ')', 'String'),
+  \ javaapi#method(0,1,'getAvailableFontFamilyNames(', 'Locale)', 'String'),
   \ javaapi#method(0,1,'getSunGraphicsEnvironment(', ')', 'GraphicsEnvironment'),
   \ ])
 
@@ -431,19 +431,19 @@ call javaapi#interface('FontSupport', '', [
 
 call javaapi#class('SunGraphicsEnvironment', 'GraphicsEnvironment', [
   \ javaapi#field(1,1,'isOpenSolaris', 'boolean'),
-  \ javaapi#field(0,0,'screens', 'GraphicsDevice[]'),
+  \ javaapi#field(0,0,'screens', 'GraphicsDevice'),
   \ javaapi#field(0,0,'displayChanger', 'SunDisplayChanger'),
   \ javaapi#method(0,1,'SunGraphicsEnvironment(', ')', ''),
-  \ javaapi#method(0,1,'getScreenDevices(', ')', 'GraphicsDevice[]'),
+  \ javaapi#method(0,1,'getScreenDevices(', ')', 'GraphicsDevice'),
   \ javaapi#method(0,0,'getNumScreens(', ')', 'int'),
   \ javaapi#method(0,0,'makeScreenDevice(', 'int)', 'GraphicsDevice'),
   \ javaapi#method(0,1,'getDefaultScreenDevice(', ')', 'GraphicsDevice'),
   \ javaapi#method(0,1,'createGraphics(', 'BufferedImage)', 'Graphics2D'),
   \ javaapi#method(1,1,'getFontManagerForSGE(', ')', 'FontManagerForSGE'),
   \ javaapi#method(1,1,'useAlternateFontforJALocales(', ')', 'void'),
-  \ javaapi#method(0,1,'getAllFonts(', ')', 'Font[]'),
-  \ javaapi#method(0,1,'getAvailableFontFamilyNames(', 'Locale)', 'String[]'),
-  \ javaapi#method(0,1,'getAvailableFontFamilyNames(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getAllFonts(', ')', 'Font'),
+  \ javaapi#method(0,1,'getAvailableFontFamilyNames(', 'Locale)', 'String'),
+  \ javaapi#method(0,1,'getAvailableFontFamilyNames(', ')', 'String'),
   \ javaapi#method(1,1,'getUsableBounds(', 'GraphicsDevice)', 'Rectangle'),
   \ javaapi#method(0,1,'displayChanged(', ')', 'void'),
   \ javaapi#method(0,1,'paletteChanged(', ')', 'void'),

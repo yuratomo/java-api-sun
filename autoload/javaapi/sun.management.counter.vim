@@ -15,7 +15,7 @@ call javaapi#class('AbstractCounter', 'Counter', [
   \ ])
 
 call javaapi#interface('ByteArrayCounter', 'Counter', [
-  \ javaapi#method(0,1,'byteArrayValue(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'byteArrayValue(', ')', 'byte'),
   \ javaapi#method(0,1,'byteAt(', 'int)', 'byte'),
   \ ])
 
@@ -31,7 +31,7 @@ call javaapi#interface('Counter', 'Serializable', [
   \ ])
 
 call javaapi#interface('LongArrayCounter', 'Counter', [
-  \ javaapi#method(0,1,'longArrayValue(', ')', 'long[]'),
+  \ javaapi#method(0,1,'longArrayValue(', ')', 'long'),
   \ javaapi#method(0,1,'longAt(', 'int)', 'long'),
   \ ])
 

@@ -40,7 +40,7 @@ call javaapi#class('StAXParserWrapper', 'XMLStreamReader', [
   \ javaapi#method(0,1,'getNamespaceURI(', 'int)', 'String'),
   \ javaapi#method(0,1,'getEventType(', ')', 'int'),
   \ javaapi#method(0,1,'getText(', ')', 'String'),
-  \ javaapi#method(0,1,'getTextCharacters(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getTextCharacters(', ')', 'char'),
   \ javaapi#method(0,1,'getTextStart(', ')', 'int'),
   \ javaapi#method(0,1,'getTextLength(', ')', 'int'),
   \ javaapi#method(0,1,'getEncoding(', ')', 'String'),

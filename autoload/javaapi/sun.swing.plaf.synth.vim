@@ -28,7 +28,7 @@ call javaapi#class('DefaultSynthStyle', 'SynthStyle', [
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
   \ javaapi#method(0,1,'addTo(', 'DefaultSynthStyle)', 'DefaultSynthStyle'),
   \ javaapi#method(0,1,'setStateInfo(', 'StateInfo[])', 'void'),
-  \ javaapi#method(0,1,'getStateInfo(', ')', 'StateInfo[]'),
+  \ javaapi#method(0,1,'getStateInfo(', ')', 'StateInfo'),
   \ javaapi#method(0,1,'getStateInfo(', 'int)', 'StateInfo'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])

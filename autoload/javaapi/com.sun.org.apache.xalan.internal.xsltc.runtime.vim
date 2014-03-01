@@ -16,10 +16,10 @@ call javaapi#class('AbstractTranslet', 'Translet', [
   \ javaapi#field(1,1,'VER_SPLIT_NAMES_ARRAY', 'int'),
   \ javaapi#field(1,1,'CURRENT_TRANSLET_VERSION', 'int'),
   \ javaapi#field(0,0,'transletVersion', 'int'),
-  \ javaapi#field(0,0,'namesArray', 'String[]'),
-  \ javaapi#field(0,0,'urisArray', 'String[]'),
-  \ javaapi#field(0,0,'typesArray', 'int[]'),
-  \ javaapi#field(0,0,'namespaceArray', 'String[]'),
+  \ javaapi#field(0,0,'namesArray', 'String'),
+  \ javaapi#field(0,0,'urisArray', 'String'),
+  \ javaapi#field(0,0,'typesArray', 'int'),
+  \ javaapi#field(0,0,'namespaceArray', 'String'),
   \ javaapi#field(0,0,'_templates', 'Templates'),
   \ javaapi#field(0,0,'_hasIdCall', 'boolean'),
   \ javaapi#field(0,0,'stringValueHandler', 'StringValueHandler'),
@@ -63,10 +63,10 @@ call javaapi#class('AbstractTranslet', 'Translet', [
   \ javaapi#method(0,1,'addAuxiliaryClass(', 'Class)', 'void'),
   \ javaapi#method(0,1,'setAuxiliaryClasses(', 'Hashtable)', 'void'),
   \ javaapi#method(0,1,'getAuxiliaryClass(', 'String)', 'Class'),
-  \ javaapi#method(0,1,'getNamesArray(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getUrisArray(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getTypesArray(', ')', 'int[]'),
-  \ javaapi#method(0,1,'getNamespaceArray(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getNamesArray(', ')', 'String'),
+  \ javaapi#method(0,1,'getUrisArray(', ')', 'String'),
+  \ javaapi#method(0,1,'getTypesArray(', ')', 'int'),
+  \ javaapi#method(0,1,'getNamespaceArray(', ')', 'String'),
   \ javaapi#method(0,1,'hasIdCall(', ')', 'boolean'),
   \ javaapi#method(0,1,'getTemplates(', ')', 'Templates'),
   \ javaapi#method(0,1,'setTemplates(', 'Templates)', 'void'),
@@ -196,72 +196,72 @@ call javaapi#interface('Constants', '', [
 
 call javaapi#class('ErrorMessages', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_ca', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_ca(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_cs', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_cs(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_de', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_de(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_es', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_es(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_fr', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_fr(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_it', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_it(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_ja', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_ja(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_ko', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_ko(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_pt_BR', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_pt_BR(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_sk', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_sk(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_sv', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_sv(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_zh_CN', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_zh_CN(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_zh_TW', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_zh_TW(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('Hashtable', '', [
@@ -297,9 +297,6 @@ call javaapi#class('Node', '', [
   \ javaapi#method(0,1,'Node(', 'int, int)', ''),
   \ ])
 
-call javaapi#class('ObjectFactory', '', [
-  \ ])
-
 call javaapi#class('Operators', '', [
   \ javaapi#field(1,1,'EQ', 'int'),
   \ javaapi#field(1,1,'NE', 'int'),
@@ -318,12 +315,6 @@ call javaapi#class('Parameter', '', [
   \ javaapi#field(0,1,'_isDefault', 'boolean'),
   \ javaapi#method(0,1,'Parameter(', 'String, Object)', ''),
   \ javaapi#method(0,1,'Parameter(', 'String, Object, boolean)', ''),
-  \ ])
-
-call javaapi#class('SecuritySupport', '', [
-  \ ])
-
-call javaapi#class('SecuritySupport12', 'SecuritySupport', [
   \ ])
 
 call javaapi#class('StringValueHandler', 'EmptySerializer', [

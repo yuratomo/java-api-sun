@@ -91,7 +91,7 @@ call javaapi#class('DraconianErrorHandler', 'ErrorHandler', [
 
 call javaapi#class('EmptyXMLSchema', 'AbstractXMLSchema', [
   \ javaapi#method(0,1,'EmptyXMLSchema(', ')', ''),
-  \ javaapi#method(0,1,'retrieveInitialGrammarSet(', 'String)', 'Grammar[]'),
+  \ javaapi#method(0,1,'retrieveInitialGrammarSet(', 'String)', 'Grammar'),
   \ javaapi#method(0,1,'cacheGrammars(', 'String, Grammar[])', 'void'),
   \ javaapi#method(0,1,'retrieveGrammar(', 'XMLGrammarDescription)', 'Grammar'),
   \ javaapi#method(0,1,'lockPool(', ')', 'void'),
@@ -121,13 +121,13 @@ call javaapi#class('ReadOnlyGrammarPool', 'XMLGrammarPool', [
   \ javaapi#method(0,1,'clear(', ')', 'void'),
   \ javaapi#method(0,1,'lockPool(', ')', 'void'),
   \ javaapi#method(0,1,'retrieveGrammar(', 'XMLGrammarDescription)', 'Grammar'),
-  \ javaapi#method(0,1,'retrieveInitialGrammarSet(', 'String)', 'Grammar[]'),
+  \ javaapi#method(0,1,'retrieveInitialGrammarSet(', 'String)', 'Grammar'),
   \ javaapi#method(0,1,'unlockPool(', ')', 'void'),
   \ ])
 
 call javaapi#class('SimpleXMLSchema', 'AbstractXMLSchema', [
   \ javaapi#method(0,1,'SimpleXMLSchema(', 'Grammar)', ''),
-  \ javaapi#method(0,1,'retrieveInitialGrammarSet(', 'String)', 'Grammar[]'),
+  \ javaapi#method(0,1,'retrieveInitialGrammarSet(', 'String)', 'Grammar'),
   \ javaapi#method(0,1,'cacheGrammars(', 'String, Grammar[])', 'void'),
   \ javaapi#method(0,1,'retrieveGrammar(', 'XMLGrammarDescription)', 'Grammar'),
   \ javaapi#method(0,1,'lockPool(', ')', 'void'),
@@ -139,14 +139,14 @@ call javaapi#class('SimpleXMLSchema', 'AbstractXMLSchema', [
 
 call javaapi#class('SoftReferenceGrammarPool', 'XMLGrammarPool', [
   \ javaapi#field(1,0,'TABLE_SIZE', 'int'),
-  \ javaapi#field(1,0,'ZERO_LENGTH_GRAMMAR_ARRAY', 'Grammar[]'),
-  \ javaapi#field(0,0,'fGrammars', 'Entry[]'),
+  \ javaapi#field(1,0,'ZERO_LENGTH_GRAMMAR_ARRAY', 'Grammar'),
+  \ javaapi#field(0,0,'fGrammars', 'Entry'),
   \ javaapi#field(0,0,'fPoolIsLocked', 'boolean'),
   \ javaapi#field(0,0,'fGrammarCount', 'int'),
   \ javaapi#field(0,0,'fReferenceQueue', 'ReferenceQueue'),
   \ javaapi#method(0,1,'SoftReferenceGrammarPool(', ')', ''),
   \ javaapi#method(0,1,'SoftReferenceGrammarPool(', 'int)', ''),
-  \ javaapi#method(0,1,'retrieveInitialGrammarSet(', 'String)', 'Grammar[]'),
+  \ javaapi#method(0,1,'retrieveInitialGrammarSet(', 'String)', 'Grammar'),
   \ javaapi#method(0,1,'cacheGrammars(', 'String, Grammar[])', 'void'),
   \ javaapi#method(0,1,'retrieveGrammar(', 'XMLGrammarDescription)', 'Grammar'),
   \ javaapi#method(0,1,'putGrammar(', 'Grammar)', 'void'),

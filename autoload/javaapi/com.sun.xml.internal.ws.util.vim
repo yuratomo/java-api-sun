@@ -3,13 +3,13 @@ call javaapi#namespace('com.sun.xml.internal.ws.util')
 call javaapi#class('ASCIIUtility', '', [
   \ javaapi#method(1,1,'parseInt(', 'byte[], int, int, int) throws NumberFormatException', 'int'),
   \ javaapi#method(1,1,'toString(', 'byte[], int, int)', 'String'),
-  \ javaapi#method(1,1,'getBytes(', 'String)', 'byte[]'),
-  \ javaapi#method(1,1,'getBytes(', 'InputStream) throws IOException', 'byte[]'),
+  \ javaapi#method(1,1,'getBytes(', 'String)', 'byte'),
+  \ javaapi#method(1,1,'getBytes(', 'InputStream) throws IOException', 'byte'),
   \ javaapi#method(1,1,'copyStream(', 'InputStream, OutputStream) throws IOException', 'void'),
   \ ])
 
 call javaapi#class('ByteArrayBuffer', 'OutputStream', [
-  \ javaapi#field(0,0,'buf', 'byte[]'),
+  \ javaapi#field(0,0,'buf', 'byte'),
   \ javaapi#method(0,1,'ByteArrayBuffer(', ')', ''),
   \ javaapi#method(0,1,'ByteArrayBuffer(', 'int)', ''),
   \ javaapi#method(0,1,'ByteArrayBuffer(', 'byte[])', ''),
@@ -19,9 +19,9 @@ call javaapi#class('ByteArrayBuffer', 'OutputStream', [
   \ javaapi#method(0,1,'write(', 'byte[], int, int)', 'void'),
   \ javaapi#method(0,1,'writeTo(', 'OutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'reset(', ')', 'void'),
-  \ javaapi#method(0,1,'toByteArray(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'toByteArray(', ')', 'byte'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
-  \ javaapi#method(0,1,'getRawData(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getRawData(', ')', 'byte'),
   \ javaapi#method(0,1,'close(', ') throws IOException', 'void'),
   \ javaapi#method(0,1,'newInputStream(', ')', 'InputStream'),
   \ javaapi#method(0,1,'newInputStream(', 'int, int)', 'InputStream'),
@@ -38,7 +38,7 @@ call javaapi#class('ByteArrayDataSource', 'DataSource', [
   \ javaapi#method(0,1,'getOutputStream(', ')', 'OutputStream'),
   \ ])
 
-call javaapi#class('CompletedFuture<T>', 'Future<T>', [
+call javaapi#class('CompletedFuture', 'Future', [
   \ javaapi#method(0,1,'CompletedFuture(', 'T, Throwable)', ''),
   \ javaapi#method(0,1,'cancel(', 'boolean)', 'boolean'),
   \ javaapi#method(0,1,'isCancelled(', ')', 'boolean'),
@@ -60,7 +60,7 @@ call javaapi#class('DOMUtil', '', [
   \ javaapi#method(1,1,'writeTagWithAttributes(', 'Element, XMLStreamWriter) throws XMLStreamException', 'void'),
   \ javaapi#method(1,1,'getFirstChild(', 'Element, String, String)', 'Element'),
   \ javaapi#method(1,1,'getFirstElementChild(', 'Node)', 'Element'),
-  \ javaapi#method(1,1,'getChildElements(', 'Node)', 'Element>'),
+  \ javaapi#method(1,1,'getChildElements(', 'Node)', 'List'),
   \ ])
 
 call javaapi#class('FastInfosetReflection', '', [
@@ -77,9 +77,9 @@ call javaapi#class('FastInfosetUtil', '', [
 
 call javaapi#class('HandlerAnnotationInfo', '', [
   \ javaapi#method(0,1,'HandlerAnnotationInfo(', ')', ''),
-  \ javaapi#method(0,1,'getHandlers(', ')', 'Handler>'),
+  \ javaapi#method(0,1,'getHandlers(', ')', 'List'),
   \ javaapi#method(0,1,'setHandlers(', 'List<Handler>)', 'void'),
-  \ javaapi#method(0,1,'getRoles(', ')', 'String>'),
+  \ javaapi#method(0,1,'getRoles(', ')', 'Set'),
   \ javaapi#method(0,1,'setRoles(', 'Set<String>)', 'void'),
   \ ])
 
@@ -114,12 +114,12 @@ call javaapi#class('NamespaceSupport', '', [
   \ javaapi#method(0,1,'slideContextUp(', ')', 'void'),
   \ javaapi#method(0,1,'slideContextDown(', ')', 'void'),
   \ javaapi#method(0,1,'declarePrefix(', 'String, String)', 'boolean'),
-  \ javaapi#method(0,1,'processName(', 'String, String[], boolean)', 'String[]'),
+  \ javaapi#method(0,1,'processName(', 'String, String[], boolean)', 'String'),
   \ javaapi#method(0,1,'getURI(', 'String)', 'String'),
-  \ javaapi#method(0,1,'getPrefixes(', ')', 'String>'),
+  \ javaapi#method(0,1,'getPrefixes(', ')', 'Iterable'),
   \ javaapi#method(0,1,'getPrefix(', 'String)', 'String'),
   \ javaapi#method(0,1,'getPrefixes(', 'String)', 'Iterator'),
-  \ javaapi#method(0,1,'getDeclaredPrefixes(', ')', 'String>'),
+  \ javaapi#method(0,1,'getDeclaredPrefixes(', ')', 'Iterable'),
   \ ])
 
 call javaapi#class('NoCloseInputStream', 'FilterInputStream', [
@@ -134,28 +134,28 @@ call javaapi#class('NoCloseOutputStream', 'FilterOutputStream', [
   \ javaapi#method(0,1,'doClose(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('Pool<T>', '', [
+call javaapi#class('Pool', '', [
   \ javaapi#method(0,1,'Pool(', ')', ''),
   \ javaapi#method(0,1,'take(', ')', 'T'),
   \ javaapi#method(0,1,'recycle(', 'T)', 'void'),
   \ javaapi#method(0,0,'create(', ')', 'T'),
   \ ])
 
-call javaapi#class('QNameMap<V>', '', [
+call javaapi#class('QNameMap', '', [
   \ javaapi#method(0,1,'QNameMap(', ')', ''),
   \ javaapi#method(0,1,'put(', 'String, String, V)', 'void'),
   \ javaapi#method(0,1,'put(', 'QName, V)', 'void'),
   \ javaapi#method(0,1,'get(', 'String, String)', 'V'),
   \ javaapi#method(0,1,'get(', 'QName)', 'V'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
-  \ javaapi#method(0,1,'putAll(', 'QNameMap<? extends V>)', 'QNameMap<V>'),
-  \ javaapi#method(0,1,'putAll(', 'Map<QName, ? extends V>)', 'QNameMap<V>'),
-  \ javaapi#method(0,1,'getOne(', ')', 'Entry<V>'),
-  \ javaapi#method(0,1,'keySet(', ')', 'QName>'),
-  \ javaapi#method(0,1,'values(', ')', 'Iterable<V>'),
+  \ javaapi#method(0,1,'putAll(', 'QNameMap<? extends V>)', 'QNameMap'),
+  \ javaapi#method(0,1,'putAll(', 'Map<QName, ? extends V>)', 'QNameMap'),
+  \ javaapi#method(0,1,'getOne(', ')', 'Entry'),
+  \ javaapi#method(0,1,'keySet(', ')', 'Collection'),
+  \ javaapi#method(0,1,'values(', ')', 'Iterable'),
   \ javaapi#method(0,1,'containsKey(', 'String, String)', 'boolean'),
   \ javaapi#method(0,1,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,1,'entrySet(', ')', 'Entry<V>>'),
+  \ javaapi#method(0,1,'entrySet(', ')', 'Entry'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
@@ -183,11 +183,11 @@ call javaapi#class('ServiceConfigurationError', 'Error', [
   \ javaapi#method(0,1,'ServiceConfigurationError(', 'Throwable)', ''),
   \ ])
 
-call javaapi#class('ServiceFinder<T>', 'Iterable<T>', [
-  \ javaapi#method(1,1,'find(', 'Class<T>, ClassLoader)', 'ServiceFinder<T>'),
-  \ javaapi#method(1,1,'find(', 'Class<T>)', 'ServiceFinder<T>'),
-  \ javaapi#method(0,1,'iterator(', ')', 'Iterator<T>'),
-  \ javaapi#method(0,1,'toArray(', ')', 'T[]'),
+call javaapi#class('ServiceFinder', 'Iterable', [
+  \ javaapi#method(1,1,'find(', 'Class<T>, ClassLoader)', 'ServiceFinder'),
+  \ javaapi#method(1,1,'find(', 'Class<T>)', 'ServiceFinder'),
+  \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
+  \ javaapi#method(0,1,'toArray(', ')', 'T'),
   \ ])
 
 call javaapi#class('StreamUtils', '', [
@@ -223,7 +223,7 @@ call javaapi#class('VersionUtil', '', [
   \ javaapi#method(1,1,'isVersion20(', 'String)', 'boolean'),
   \ javaapi#method(1,1,'isValidVersion(', 'String)', 'boolean'),
   \ javaapi#method(1,1,'getValidVersionString(', ')', 'String'),
-  \ javaapi#method(1,1,'getCanonicalVersion(', 'String)', 'int[]'),
+  \ javaapi#method(1,1,'getCanonicalVersion(', 'String)', 'int'),
   \ javaapi#method(1,1,'compare(', 'String, String)', 'int'),
   \ ])
 

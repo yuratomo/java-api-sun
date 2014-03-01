@@ -9,8 +9,8 @@ call javaapi#class('DynamicMethodMarshallerImpl', 'DynamicMethodMarshaller', [
   \ javaapi#method(1,1,'makeReaderWriter(', 'Class)', 'ReaderWriter'),
   \ javaapi#method(0,1,'DynamicMethodMarshallerImpl(', 'Method)', ''),
   \ javaapi#method(0,1,'getMethod(', ')', 'Method'),
-  \ javaapi#method(0,1,'copyArguments(', 'Object[], ORB) throws RemoteException', 'Object[]'),
-  \ javaapi#method(0,1,'readArguments(', 'InputStream)', 'Object[]'),
+  \ javaapi#method(0,1,'copyArguments(', 'Object[], ORB) throws RemoteException', 'Object'),
+  \ javaapi#method(0,1,'readArguments(', 'InputStream)', 'Object'),
   \ javaapi#method(0,1,'writeArguments(', 'OutputStream, Object[])', 'void'),
   \ javaapi#method(0,1,'copyResult(', 'Object, ORB) throws RemoteException', 'Object'),
   \ javaapi#method(0,1,'readResult(', 'InputStream)', 'Object'),
@@ -27,8 +27,8 @@ call javaapi#class('DynamicStubImpl', 'ObjectImpl', [
   \ javaapi#method(0,1,'setDelegate(', 'Delegate)', 'void'),
   \ javaapi#method(0,1,'getDelegate(', ')', 'Delegate'),
   \ javaapi#method(0,1,'getORB(', ')', 'ORB'),
-  \ javaapi#method(0,1,'_ids(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getTypeIds(', ')', 'String[]'),
+  \ javaapi#method(0,1,'_ids(', ')', 'String'),
+  \ javaapi#method(0,1,'getTypeIds(', ')', 'String'),
   \ javaapi#method(0,1,'connect(', 'ORB) throws RemoteException', 'void'),
   \ javaapi#method(0,1,'isLocal(', ')', 'boolean'),
   \ javaapi#method(0,1,'request(', 'String, boolean)', 'OutputStream'),
@@ -53,8 +53,8 @@ call javaapi#class('IDLNameTranslatorImpl', 'IDLNameTranslator', [
   \ javaapi#method(1,1,'get(', 'Class)', 'IDLNameTranslator'),
   \ javaapi#method(1,1,'get(', 'Class[])', 'IDLNameTranslator'),
   \ javaapi#method(1,1,'getExceptionId(', 'Class)', 'String'),
-  \ javaapi#method(0,1,'getInterfaces(', ')', 'Class[]'),
-  \ javaapi#method(0,1,'getMethods(', ')', 'Method[]'),
+  \ javaapi#method(0,1,'getInterfaces(', ')', 'Class'),
+  \ javaapi#method(0,1,'getMethods(', ')', 'Method'),
   \ javaapi#method(0,1,'getMethod(', 'String)', 'Method'),
   \ javaapi#method(0,1,'getIDLName(', 'Method)', 'String'),
   \ javaapi#method(1,1,'charToUnicodeRepresentation(', 'char)', 'String'),
@@ -66,7 +66,7 @@ call javaapi#class('IDLType', '', [
   \ javaapi#method(0,1,'IDLType(', 'Class, String[], String)', ''),
   \ javaapi#method(0,1,'IDLType(', 'Class, String)', ''),
   \ javaapi#method(0,1,'getJavaClass(', ')', 'Class'),
-  \ javaapi#method(0,1,'getModules(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getModules(', ')', 'String'),
   \ javaapi#method(0,1,'makeConcatenatedName(', 'char, boolean)', 'String'),
   \ javaapi#method(0,1,'getModuleName(', ')', 'String'),
   \ javaapi#method(0,1,'getExceptionName(', ')', 'String'),
@@ -103,7 +103,7 @@ call javaapi#class('IDLTypesUtil', '', [
 call javaapi#class('InvocationHandlerFactoryImpl', 'InvocationHandlerFactory', [
   \ javaapi#method(0,1,'InvocationHandlerFactoryImpl(', 'PresentationManager, ClassData)', ''),
   \ javaapi#method(0,1,'getInvocationHandler(', ')', 'InvocationHandler'),
-  \ javaapi#method(0,1,'getProxyInterfaces(', ')', 'Class[]'),
+  \ javaapi#method(0,1,'getProxyInterfaces(', ')', 'Class'),
   \ ])
 
 call javaapi#class('PresentationManagerImpl', 'PresentationManager', [
@@ -118,7 +118,7 @@ call javaapi#class('PresentationManagerImpl', 'PresentationManager', [
 
 call javaapi#class('ReflectiveTie', 'Servant', [
   \ javaapi#method(0,1,'ReflectiveTie(', 'PresentationManager, ORBUtilSystemException)', ''),
-  \ javaapi#method(0,1,'_all_interfaces(', 'POA, byte[])', 'String[]'),
+  \ javaapi#method(0,1,'_all_interfaces(', 'POA, byte[])', 'String'),
   \ javaapi#method(0,1,'setTarget(', 'Remote)', 'void'),
   \ javaapi#method(0,1,'getTarget(', ')', 'Remote'),
   \ javaapi#method(0,1,'thisObject(', ')', 'Object'),
@@ -136,7 +136,7 @@ call javaapi#class('StubConnectImpl', '', [
 call javaapi#class('StubFactoryBase', 'StubFactory', [
   \ javaapi#field(0,0,'classData', 'ClassData'),
   \ javaapi#method(0,0,'StubFactoryBase(', 'ClassData)', ''),
-  \ javaapi#method(0,1,'getTypeIds(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getTypeIds(', ')', 'String'),
   \ ])
 
 call javaapi#class('StubFactoryDynamicBase', 'StubFactoryBase', [

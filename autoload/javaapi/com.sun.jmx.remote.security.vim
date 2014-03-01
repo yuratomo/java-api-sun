@@ -16,7 +16,7 @@ call javaapi#class('JMXPluggableAuthenticator', 'JMXAuthenticator', [
 
 call javaapi#class('JMXSubjectDomainCombiner', 'SubjectDomainCombiner', [
   \ javaapi#method(0,1,'JMXSubjectDomainCombiner(', 'Subject)', ''),
-  \ javaapi#method(0,1,'combine(', 'ProtectionDomain[], ProtectionDomain[])', 'ProtectionDomain[]'),
+  \ javaapi#method(0,1,'combine(', 'ProtectionDomain[], ProtectionDomain[])', 'ProtectionDomain'),
   \ javaapi#method(1,1,'getContext(', 'Subject)', 'AccessControlContext'),
   \ javaapi#method(1,1,'getDomainCombinerContext(', 'Subject)', 'AccessControlContext'),
   \ ])
@@ -44,7 +44,7 @@ call javaapi#class('MBeanServerAccessController', 'MBeanServerForwarder', [
   \ javaapi#method(0,1,'getClassLoaderFor(', 'ObjectName) throws InstanceNotFoundException', 'ClassLoader'),
   \ javaapi#method(0,1,'getClassLoaderRepository(', ')', 'ClassLoaderRepository'),
   \ javaapi#method(0,1,'getDefaultDomain(', ')', 'String'),
-  \ javaapi#method(0,1,'getDomains(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getDomains(', ')', 'String'),
   \ javaapi#method(0,1,'getMBeanCount(', ')', 'Integer'),
   \ javaapi#method(0,1,'getMBeanInfo(', 'ObjectName) throws InstanceNotFoundException, IntrospectionException, ReflectionException', 'MBeanInfo'),
   \ javaapi#method(0,1,'getObjectInstance(', 'ObjectName) throws InstanceNotFoundException', 'ObjectInstance'),
@@ -55,8 +55,8 @@ call javaapi#class('MBeanServerAccessController', 'MBeanServerForwarder', [
   \ javaapi#method(0,1,'invoke(', 'ObjectName, String, Object[], String[]) throws InstanceNotFoundException, MBeanException, ReflectionException', 'Object'),
   \ javaapi#method(0,1,'isInstanceOf(', 'ObjectName, String) throws InstanceNotFoundException', 'boolean'),
   \ javaapi#method(0,1,'isRegistered(', 'ObjectName)', 'boolean'),
-  \ javaapi#method(0,1,'queryMBeans(', 'ObjectName, QueryExp)', 'ObjectInstance>'),
-  \ javaapi#method(0,1,'queryNames(', 'ObjectName, QueryExp)', 'ObjectName>'),
+  \ javaapi#method(0,1,'queryMBeans(', 'ObjectName, QueryExp)', 'Set'),
+  \ javaapi#method(0,1,'queryNames(', 'ObjectName, QueryExp)', 'Set'),
   \ javaapi#method(0,1,'registerMBean(', 'Object, ObjectName) throws InstanceAlreadyExistsException, MBeanRegistrationException, NotCompliantMBeanException', 'ObjectInstance'),
   \ javaapi#method(0,1,'removeNotificationListener(', 'ObjectName, NotificationListener) throws InstanceNotFoundException, ListenerNotFoundException', 'void'),
   \ javaapi#method(0,1,'removeNotificationListener(', 'ObjectName, NotificationListener, NotificationFilter, Object) throws InstanceNotFoundException, ListenerNotFoundException', 'void'),

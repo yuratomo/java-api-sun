@@ -4,17 +4,17 @@ call javaapi#class('EndEntityChecker', '', [
   \ ])
 
 call javaapi#class('KeyStores', '', [
-  \ javaapi#method(1,1,'getTrustedCerts(', 'KeyStore)', 'X509Certificate>'),
+  \ javaapi#method(1,1,'getTrustedCerts(', 'KeyStore)', 'Set'),
   \ ])
 
 call javaapi#class('PKIXValidator', 'Validator', [
-  \ javaapi#method(0,1,'getTrustedCertificates(', ')', 'X509Certificate>'),
+  \ javaapi#method(0,1,'getTrustedCertificates(', ')', 'Collection'),
   \ javaapi#method(0,1,'getCertPathLength(', ')', 'int'),
   \ javaapi#method(0,1,'getParameters(', ')', 'PKIXBuilderParameters'),
   \ ])
 
 call javaapi#class('SimpleValidator', 'Validator', [
-  \ javaapi#method(0,1,'getTrustedCertificates(', ')', 'X509Certificate>'),
+  \ javaapi#method(0,1,'getTrustedCertificates(', ')', 'Collection'),
   \ ])
 
 call javaapi#class('Validator', '', [
@@ -30,11 +30,11 @@ call javaapi#class('Validator', '', [
   \ javaapi#method(1,1,'getInstance(', 'String, String, KeyStore)', 'Validator'),
   \ javaapi#method(1,1,'getInstance(', 'String, String, Collection<X509Certificate>)', 'Validator'),
   \ javaapi#method(1,1,'getInstance(', 'String, String, PKIXBuilderParameters)', 'Validator'),
-  \ javaapi#method(0,1,'validate(', 'X509Certificate[]) throws CertificateException', 'X509Certificate[]'),
-  \ javaapi#method(0,1,'validate(', 'X509Certificate[], Collection<X509Certificate>) throws CertificateException', 'X509Certificate[]'),
-  \ javaapi#method(0,1,'validate(', 'X509Certificate[], Collection<X509Certificate>, Object) throws CertificateException', 'X509Certificate[]'),
-  \ javaapi#method(0,1,'validate(', 'X509Certificate[], Collection<X509Certificate>, AlgorithmConstraints, Object) throws CertificateException', 'X509Certificate[]'),
-  \ javaapi#method(0,1,'getTrustedCertificates(', ')', 'X509Certificate>'),
+  \ javaapi#method(0,1,'validate(', 'X509Certificate[]) throws CertificateException', 'X509Certificate'),
+  \ javaapi#method(0,1,'validate(', 'X509Certificate[], Collection<X509Certificate>) throws CertificateException', 'X509Certificate'),
+  \ javaapi#method(0,1,'validate(', 'X509Certificate[], Collection<X509Certificate>, Object) throws CertificateException', 'X509Certificate'),
+  \ javaapi#method(0,1,'validate(', 'X509Certificate[], Collection<X509Certificate>, AlgorithmConstraints, Object) throws CertificateException', 'X509Certificate'),
+  \ javaapi#method(0,1,'getTrustedCertificates(', ')', 'Collection'),
   \ javaapi#method(0,1,'setValidationDate(', 'Date)', 'void'),
   \ ])
 

@@ -30,10 +30,10 @@ call javaapi#class('SEIInvokerTube', 'InvokerTube', [
   \ javaapi#method(0,1,'processException(', 'Throwable)', 'NextAction'),
   \ ])
 
-call javaapi#class('ValueGetter', 'ValueGetter>', [
+call javaapi#class('ValueGetter', 'Enum', [
   \ javaapi#field(1,1,'PLAIN', 'ValueGetter'),
   \ javaapi#field(1,1,'HOLDER', 'ValueGetter'),
-  \ javaapi#method(1,1,'values(', ')', 'ValueGetter[]'),
+  \ javaapi#method(1,1,'values(', ')', 'ValueGetter'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'ValueGetter'),
   \ ])
 

@@ -2,7 +2,7 @@ call javaapi#namespace('sun.tools.jar')
 
 call javaapi#class('CommandLine', '', [
   \ javaapi#method(0,1,'CommandLine(', ')', ''),
-  \ javaapi#method(1,1,'parse(', 'String[]) throws IOException', 'String[]'),
+  \ javaapi#method(1,1,'parse(', 'String[]) throws IOException', 'String'),
   \ ])
 
 call javaapi#class('JarException', 'IOException', [

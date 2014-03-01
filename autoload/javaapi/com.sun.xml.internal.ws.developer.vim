@@ -9,8 +9,8 @@ call javaapi#class('BindingTypeFeature', 'WebServiceFeature', [
 
 call javaapi#class('EPRRecipe', '', [
   \ javaapi#method(0,1,'EPRRecipe(', ')', ''),
-  \ javaapi#method(0,1,'getReferenceParameters(', ')', 'Header>'),
-  \ javaapi#method(0,1,'getMetadata(', ')', 'Source>'),
+  \ javaapi#method(0,1,'getReferenceParameters(', ')', 'List'),
+  \ javaapi#method(0,1,'getMetadata(', ')', 'List'),
   \ javaapi#method(0,1,'addReferenceParameter(', 'Header)', 'EPRRecipe'),
   \ javaapi#method(0,1,'addReferenceParameters(', ')', 'EPRRecipe'),
   \ javaapi#method(0,1,'addReferenceParameters(', 'Iterable<? extends Header>)', 'EPRRecipe'),
@@ -78,7 +78,7 @@ call javaapi#class('MemberSubmissionEndpointReference', 'EndpointReference', [
   \ javaapi#field(0,1,'portTypeName', 'AttributedQName'),
   \ javaapi#field(0,1,'serviceName', 'ServiceNameType'),
   \ javaapi#field(0,1,'attributes', 'String>'),
-  \ javaapi#field(0,1,'elements', 'Element>'),
+  \ javaapi#field(0,1,'elements', 'List'),
   \ javaapi#field(1,0,'MSNS', 'String'),
   \ javaapi#method(0,1,'MemberSubmissionEndpointReference(', ')', ''),
   \ javaapi#method(0,1,'MemberSubmissionEndpointReference(', 'Source)', ''),
@@ -155,7 +155,7 @@ call javaapi#interface('WSBindingProvider', 'Closeable', [
   \ javaapi#method(0,1,'setOutboundHeaders(', 'List<Header>)', 'void'),
   \ javaapi#method(0,1,'setOutboundHeaders(', ')', 'void'),
   \ javaapi#method(0,1,'setOutboundHeaders(', ')', 'void'),
-  \ javaapi#method(0,1,'getInboundHeaders(', ')', 'Header>'),
+  \ javaapi#method(0,1,'getInboundHeaders(', ')', 'List'),
   \ javaapi#method(0,1,'setAddress(', 'String)', 'void'),
   \ javaapi#method(0,1,'getWSEndpointReference(', ')', 'WSEndpointReference'),
   \ javaapi#method(0,1,'getPortInfo(', ')', 'WSPortInfo'),

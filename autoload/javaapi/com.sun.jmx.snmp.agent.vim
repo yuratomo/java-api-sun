@@ -6,15 +6,15 @@ call javaapi#class('AcmChecker', '', [
 call javaapi#class('LongList', '', [
   \ javaapi#field(1,1,'DEFAULT_CAPACITY', 'int'),
   \ javaapi#field(1,1,'DEFAULT_INCREMENT', 'int'),
-  \ javaapi#field(0,1,'list', 'long[]'),
+  \ javaapi#field(0,1,'list', 'long'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
   \ javaapi#method(0,1,'add(', 'long)', 'boolean'),
   \ javaapi#method(0,1,'add(', 'int, long)', 'void'),
   \ javaapi#method(0,1,'add(', 'int, long[], int, int)', 'void'),
   \ javaapi#method(0,1,'remove(', 'int, int)', 'long'),
   \ javaapi#method(0,1,'remove(', 'int)', 'long'),
-  \ javaapi#method(0,1,'toArray(', 'long[])', 'long[]'),
-  \ javaapi#method(0,1,'toArray(', ')', 'long[]'),
+  \ javaapi#method(0,1,'toArray(', 'long[])', 'long'),
+  \ javaapi#method(0,1,'toArray(', ')', 'long'),
   \ ])
 
 call javaapi#class('SnmpEntryOid', 'SnmpOid', [
@@ -25,7 +25,7 @@ call javaapi#class('SnmpErrorHandlerAgent', 'SnmpMibAgent', [
   \ javaapi#method(0,1,'SnmpErrorHandlerAgent(', ')', ''),
   \ javaapi#method(0,1,'init(', ') throws IllegalAccessException', 'void'),
   \ javaapi#method(0,1,'preRegister(', 'MBeanServer, ObjectName) throws Exception', 'ObjectName'),
-  \ javaapi#method(0,1,'getRootOid(', ')', 'long[]'),
+  \ javaapi#method(0,1,'getRootOid(', ')', 'long'),
   \ javaapi#method(0,1,'get(', 'SnmpMibRequest) throws SnmpStatusException', 'void'),
   \ javaapi#method(0,1,'check(', 'SnmpMibRequest) throws SnmpStatusException', 'void'),
   \ javaapi#method(0,1,'set(', 'SnmpMibRequest) throws SnmpStatusException', 'void'),
@@ -57,7 +57,7 @@ call javaapi#class('SnmpIndex', 'Serializable', [
   \ javaapi#method(0,1,'SnmpIndex(', 'SnmpOid[])', ''),
   \ javaapi#method(0,1,'SnmpIndex(', 'SnmpOid)', ''),
   \ javaapi#method(0,1,'getNbComponents(', ')', 'int'),
-  \ javaapi#method(0,1,'getComponents(', ')', 'SnmpOid>'),
+  \ javaapi#method(0,1,'getComponents(', ')', 'Vector'),
   \ javaapi#method(0,1,'equals(', 'SnmpIndex)', 'boolean'),
   \ javaapi#method(0,1,'compareTo(', 'SnmpIndex)', 'int'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
@@ -76,7 +76,7 @@ call javaapi#class('SnmpMib', 'SnmpMibAgent', [
   \ javaapi#method(0,1,'check(', 'SnmpMibRequest) throws SnmpStatusException', 'void'),
   \ javaapi#method(0,1,'getNext(', 'SnmpMibRequest) throws SnmpStatusException', 'void'),
   \ javaapi#method(0,1,'getBulk(', 'SnmpMibRequest, int, int) throws SnmpStatusException', 'void'),
-  \ javaapi#method(0,1,'getRootOid(', ')', 'long[]'),
+  \ javaapi#method(0,1,'getRootOid(', ')', 'long'),
   \ ])
 
 call javaapi#class('SnmpMibAgent', 'Serializable', [
@@ -93,7 +93,7 @@ call javaapi#class('SnmpMibAgent', 'Serializable', [
   \ javaapi#method(0,1,'getBulk(', 'SnmpMibRequest, int, int) throws SnmpStatusException', 'void'),
   \ javaapi#method(0,1,'set(', 'SnmpMibRequest) throws SnmpStatusException', 'void'),
   \ javaapi#method(0,1,'check(', 'SnmpMibRequest) throws SnmpStatusException', 'void'),
-  \ javaapi#method(0,1,'getRootOid(', ')', 'long[]'),
+  \ javaapi#method(0,1,'getRootOid(', ')', 'long'),
   \ javaapi#method(0,1,'getMBeanServer(', ')', 'MBeanServer'),
   \ javaapi#method(0,1,'getSnmpAdaptor(', ')', 'SnmpMibHandler'),
   \ javaapi#method(0,1,'setSnmpAdaptor(', 'SnmpMibHandler)', 'void'),
@@ -171,7 +171,7 @@ call javaapi#interface('SnmpMibHandler', '', [
   \ ])
 
 call javaapi#class('SnmpMibNode', 'Serializable', [
-  \ javaapi#field(0,0,'varList', 'int[]'),
+  \ javaapi#field(0,0,'varList', 'int'),
   \ javaapi#field(1,0,'noSuchInstanceException', 'SnmpStatusException'),
   \ javaapi#field(1,0,'noSuchObjectException', 'SnmpStatusException'),
   \ javaapi#field(1,0,'noSuchNameException', 'SnmpStatusException'),
@@ -198,15 +198,15 @@ call javaapi#class('SnmpMibOid', 'SnmpMibNode', [
 
 call javaapi#interface('SnmpMibRequest', '', [
   \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
-  \ javaapi#method(0,1,'getSubList(', ')', 'SnmpVarBind>'),
+  \ javaapi#method(0,1,'getSubList(', ')', 'Vector'),
   \ javaapi#method(0,1,'getVersion(', ')', 'int'),
   \ javaapi#method(0,1,'getRequestPduVersion(', ')', 'int'),
   \ javaapi#method(0,1,'getEngine(', ')', 'SnmpEngine'),
   \ javaapi#method(0,1,'getPrincipal(', ')', 'String'),
   \ javaapi#method(0,1,'getSecurityLevel(', ')', 'int'),
   \ javaapi#method(0,1,'getSecurityModel(', ')', 'int'),
-  \ javaapi#method(0,1,'getContextName(', ')', 'byte[]'),
-  \ javaapi#method(0,1,'getAccessContextName(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getContextName(', ')', 'byte'),
+  \ javaapi#method(0,1,'getAccessContextName(', ')', 'byte'),
   \ javaapi#method(0,1,'getUserData(', ')', 'Object'),
   \ javaapi#method(0,1,'getVarIndex(', 'SnmpVarBind)', 'int'),
   \ javaapi#method(0,1,'addVarBind(', 'SnmpVarBind)', 'void'),
@@ -220,11 +220,11 @@ call javaapi#class('SnmpMibRequestImpl', 'SnmpMibRequest', [
   \ javaapi#method(0,1,'getPrincipal(', ')', 'String'),
   \ javaapi#method(0,1,'getSecurityLevel(', ')', 'int'),
   \ javaapi#method(0,1,'getSecurityModel(', ')', 'int'),
-  \ javaapi#method(0,1,'getContextName(', ')', 'byte[]'),
-  \ javaapi#method(0,1,'getAccessContextName(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getContextName(', ')', 'byte'),
+  \ javaapi#method(0,1,'getAccessContextName(', ')', 'byte'),
   \ javaapi#method(0,1,'getPdu(', ')', 'SnmpPdu'),
   \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
-  \ javaapi#method(0,1,'getSubList(', ')', 'SnmpVarBind>'),
+  \ javaapi#method(0,1,'getSubList(', ')', 'Vector'),
   \ javaapi#method(0,1,'getSize(', ')', 'int'),
   \ javaapi#method(0,1,'getVersion(', ')', 'int'),
   \ javaapi#method(0,1,'getRequestPduVersion(', ')', 'int'),
@@ -235,7 +235,7 @@ call javaapi#class('SnmpMibRequestImpl', 'SnmpMibRequest', [
 
 call javaapi#interface('SnmpMibSubRequest', 'SnmpMibRequest', [
   \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
-  \ javaapi#method(0,1,'getSubList(', ')', 'SnmpVarBind>'),
+  \ javaapi#method(0,1,'getSubList(', ')', 'Vector'),
   \ javaapi#method(0,1,'getEntryOid(', ')', 'SnmpOid'),
   \ javaapi#method(0,1,'isNewEntry(', ')', 'boolean'),
   \ javaapi#method(0,1,'getRowStatusVarBind(', ')', 'SnmpVarBind'),
@@ -265,11 +265,11 @@ call javaapi#class('SnmpMibTable', 'SnmpMibNode', [
   \ javaapi#method(0,1,'removeEntry(', 'int, Object) throws SnmpStatusException', 'void'),
   \ javaapi#method(0,1,'getEntry(', 'SnmpOid) throws SnmpStatusException', 'Object'),
   \ javaapi#method(0,1,'getEntryName(', 'SnmpOid) throws SnmpStatusException', 'ObjectName'),
-  \ javaapi#method(0,1,'getBasicEntries(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'getBasicEntries(', ')', 'Object'),
   \ javaapi#method(0,1,'getSize(', ')', 'int'),
   \ javaapi#method(0,1,'addNotificationListener(', 'NotificationListener, NotificationFilter, Object)', 'void'),
   \ javaapi#method(0,1,'removeNotificationListener(', 'NotificationListener) throws ListenerNotFoundException', 'void'),
-  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo[]'),
+  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo'),
   \ javaapi#method(0,1,'registerEntryFactory(', 'SnmpTableEntryFactory)', 'void'),
   \ javaapi#method(0,0,'isRowStatus(', 'SnmpOid, long, Object)', 'boolean'),
   \ javaapi#method(0,0,'getRowAction(', 'SnmpMibSubRequest, SnmpOid, int) throws SnmpStatusException', 'int'),
@@ -341,7 +341,7 @@ call javaapi#class('SnmpTableEntryNotification', 'Notification', [
   \ ])
 
 call javaapi#class('SnmpTableSupport', 'Serializable', [
-  \ javaapi#field(0,0,'entries', 'Object>'),
+  \ javaapi#field(0,0,'entries', 'List'),
   \ javaapi#field(0,0,'meta', 'SnmpMibTable'),
   \ javaapi#field(0,0,'theMib', 'SnmpMib'),
   \ javaapi#method(0,0,'SnmpTableSupport(', 'SnmpMib)', ''),
@@ -358,14 +358,14 @@ call javaapi#class('SnmpTableSupport', 'Serializable', [
   \ javaapi#method(0,1,'removeEntryCb(', 'int, SnmpOid, ObjectName, Object, SnmpMibTable) throws SnmpStatusException', 'void'),
   \ javaapi#method(0,1,'addNotificationListener(', 'NotificationListener, NotificationFilter, Object)', 'void'),
   \ javaapi#method(0,1,'removeNotificationListener(', 'NotificationListener) throws ListenerNotFoundException', 'void'),
-  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo[]'),
+  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo'),
   \ javaapi#method(0,0,'buildSnmpIndex(', 'long[], int) throws SnmpStatusException', 'SnmpIndex'),
   \ javaapi#method(0,0,'getRegisteredTableMeta(', 'SnmpMib)', 'SnmpMibTable'),
-  \ javaapi#method(0,0,'allocateTable(', ')', 'Object>'),
+  \ javaapi#method(0,0,'allocateTable(', ')', 'List'),
   \ javaapi#method(0,0,'addEntry(', 'SnmpIndex, Object) throws SnmpStatusException', 'void'),
   \ javaapi#method(0,0,'addEntry(', 'SnmpIndex, ObjectName, Object) throws SnmpStatusException', 'void'),
   \ javaapi#method(0,0,'removeEntry(', 'SnmpIndex, Object) throws SnmpStatusException', 'void'),
-  \ javaapi#method(0,0,'getBasicEntries(', ')', 'Object[]'),
+  \ javaapi#method(0,0,'getBasicEntries(', ')', 'Object'),
   \ javaapi#method(0,0,'bindWithTableMeta(', ')', 'void'),
   \ ])
 

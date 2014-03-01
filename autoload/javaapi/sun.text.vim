@@ -56,8 +56,8 @@ call javaapi#class('CompactByteArray', 'Cloneable', [
   \ javaapi#method(0,1,'setElementAt(', 'char, byte)', 'void'),
   \ javaapi#method(0,1,'setElementAt(', 'char, char, byte)', 'void'),
   \ javaapi#method(0,1,'compact(', ')', 'void'),
-  \ javaapi#method(0,1,'getIndexArray(', ')', 'short[]'),
-  \ javaapi#method(0,1,'getStringArray(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getIndexArray(', ')', 'short'),
+  \ javaapi#method(0,1,'getStringArray(', ')', 'byte'),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -73,7 +73,7 @@ call javaapi#class('Normalizer', '', [
 call javaapi#class('SupplementaryCharacterData', 'Cloneable', [
   \ javaapi#method(0,1,'SupplementaryCharacterData(', 'int[])', ''),
   \ javaapi#method(0,1,'getValue(', 'int)', 'int'),
-  \ javaapi#method(0,1,'getArray(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getArray(', ')', 'int'),
   \ ])
 
 call javaapi#namespace('sun.text')

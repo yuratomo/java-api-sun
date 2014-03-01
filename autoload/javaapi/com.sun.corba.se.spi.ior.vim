@@ -83,17 +83,17 @@ call javaapi#interface('MakeImmutable', '', [
 call javaapi#interface('ObjectAdapterId', 'Writeable', [
   \ javaapi#method(0,1,'getNumLevels(', ')', 'int'),
   \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
-  \ javaapi#method(0,1,'getAdapterName(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getAdapterName(', ')', 'String'),
   \ ])
 
 call javaapi#interface('ObjectId', 'Writeable', [
-  \ javaapi#method(0,1,'getId(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getId(', ')', 'byte'),
   \ ])
 
 call javaapi#interface('ObjectKey', 'Writeable', [
   \ javaapi#method(0,1,'getId(', ')', 'ObjectId'),
   \ javaapi#method(0,1,'getTemplate(', ')', 'ObjectKeyTemplate'),
-  \ javaapi#method(0,1,'getBytes(', 'ORB)', 'byte[]'),
+  \ javaapi#method(0,1,'getBytes(', 'ORB)', 'byte'),
   \ javaapi#method(0,1,'getServerRequestDispatcher(', 'ORB)', 'CorbaServerRequestDispatcher'),
   \ ])
 
@@ -108,7 +108,7 @@ call javaapi#interface('ObjectKeyTemplate', 'Writeable', [
   \ javaapi#method(0,1,'getServerId(', ')', 'int'),
   \ javaapi#method(0,1,'getORBId(', ')', 'String'),
   \ javaapi#method(0,1,'getObjectAdapterId(', ')', 'ObjectAdapterId'),
-  \ javaapi#method(0,1,'getAdapterId(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getAdapterId(', ')', 'byte'),
   \ javaapi#method(0,1,'write(', 'ObjectId, OutputStream)', 'void'),
   \ javaapi#method(0,1,'getServerRequestDispatcher(', 'ORB, ObjectId)', 'CorbaServerRequestDispatcher'),
   \ ])
@@ -141,13 +141,13 @@ call javaapi#interface('TaggedProfileTemplate', 'MakeImmutable', [
   \ javaapi#method(0,1,'create(', 'ObjectKeyTemplate, ObjectId)', 'TaggedProfile'),
   \ javaapi#method(0,1,'write(', 'ObjectKeyTemplate, ObjectId, OutputStream)', 'void'),
   \ javaapi#method(0,1,'isEquivalent(', 'TaggedProfileTemplate)', 'boolean'),
-  \ javaapi#method(0,1,'getIOPComponents(', 'ORB, int)', 'TaggedComponent[]'),
+  \ javaapi#method(0,1,'getIOPComponents(', 'ORB, int)', 'TaggedComponent'),
   \ ])
 
 call javaapi#class('TaggedProfileTemplateBase', 'IdentifiableContainerBase', [
   \ javaapi#method(0,1,'TaggedProfileTemplateBase(', ')', ''),
   \ javaapi#method(0,1,'write(', 'OutputStream)', 'void'),
-  \ javaapi#method(0,1,'getIOPComponents(', 'ORB, int)', 'TaggedComponent[]'),
+  \ javaapi#method(0,1,'getIOPComponents(', 'ORB, int)', 'TaggedComponent'),
   \ ])
 
 call javaapi#interface('WriteContents', '', [

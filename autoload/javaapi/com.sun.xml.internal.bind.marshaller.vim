@@ -49,9 +49,9 @@ call javaapi#class('MinimumEscapeHandler', 'CharacterEscapeHandler', [
 call javaapi#class('NamespacePrefixMapper', '', [
   \ javaapi#method(0,1,'NamespacePrefixMapper(', ')', ''),
   \ javaapi#method(0,1,'getPreferredPrefix(', 'String, String, boolean)', 'String'),
-  \ javaapi#method(0,1,'getPreDeclaredNamespaceUris(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getPreDeclaredNamespaceUris2(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getContextualNamespaceDecls(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getPreDeclaredNamespaceUris(', ')', 'String'),
+  \ javaapi#method(0,1,'getPreDeclaredNamespaceUris2(', ')', 'String'),
+  \ javaapi#method(0,1,'getContextualNamespaceDecls(', ')', 'String'),
   \ ])
 
 call javaapi#class('NioEscapeHandler', 'CharacterEscapeHandler', [
@@ -60,7 +60,7 @@ call javaapi#class('NioEscapeHandler', 'CharacterEscapeHandler', [
   \ ])
 
 call javaapi#class('SAX2DOMEx', 'ContentHandler', [
-  \ javaapi#field(0,0,'nodeStack', 'Node>'),
+  \ javaapi#field(0,0,'nodeStack', 'Stack'),
   \ javaapi#field(0,0,'document', 'Document'),
   \ javaapi#method(0,1,'SAX2DOMEx(', 'Node)', ''),
   \ javaapi#method(0,1,'SAX2DOMEx(', 'Node, boolean)', ''),

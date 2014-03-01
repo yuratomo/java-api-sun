@@ -91,7 +91,7 @@ call javaapi#class('AdaptiveResultTreeImpl', 'SimpleResultTreeImpl', [
   \ javaapi#method(0,1,'getDocumentRoot(', 'int)', 'int'),
   \ javaapi#method(0,1,'getStringValue(', 'int)', 'XMLString'),
   \ javaapi#method(0,1,'getStringValueChunkCount(', 'int)', 'int'),
-  \ javaapi#method(0,1,'getStringValueChunk(', 'int, int, int[])', 'char[]'),
+  \ javaapi#method(0,1,'getStringValueChunk(', 'int, int, int[])', 'char'),
   \ javaapi#method(0,1,'getExpandedTypeID(', 'String, String, int)', 'int'),
   \ javaapi#method(0,1,'getLocalNameFromExpandedNameID(', 'int)', 'String'),
   \ javaapi#method(0,1,'getNamespaceFromExpandedNameID(', 'int)', 'String'),
@@ -152,7 +152,7 @@ call javaapi#class('BitArray', 'Externalizable', [
   \ javaapi#method(0,1,'getBit(', 'int)', 'boolean'),
   \ javaapi#method(0,1,'getNextBit(', 'int)', 'int'),
   \ javaapi#method(0,1,'getBitNumber(', 'int)', 'int'),
-  \ javaapi#method(0,1,'data(', ')', 'int[]'),
+  \ javaapi#method(0,1,'data(', ')', 'int'),
   \ javaapi#method(0,1,'setBit(', 'int)', 'void'),
   \ javaapi#method(0,1,'merge(', 'BitArray)', 'BitArray'),
   \ javaapi#method(0,1,'resize(', 'int)', 'void'),
@@ -218,10 +218,10 @@ call javaapi#class('CurrentNodeListIterator', 'DTMAxisIteratorBase', [
 call javaapi#class('DOMAdapter', 'DOM', [
   \ javaapi#method(0,1,'DOMAdapter(', 'DOM, String[], String[], int[], String[])', ''),
   \ javaapi#method(0,1,'setupMapping(', 'String[], String[], int[], String[])', 'void'),
-  \ javaapi#method(0,1,'getNamesArray(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getUrisArray(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getTypesArray(', ')', 'int[]'),
-  \ javaapi#method(0,1,'getNamespaceArray(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getNamesArray(', ')', 'String'),
+  \ javaapi#method(0,1,'getUrisArray(', ')', 'String'),
+  \ javaapi#method(0,1,'getTypesArray(', ')', 'int'),
+  \ javaapi#method(0,1,'getNamespaceArray(', ')', 'String'),
   \ javaapi#method(0,1,'getDOMImpl(', ')', 'DOM'),
   \ javaapi#method(0,1,'getIterator(', ')', 'DTMAxisIterator'),
   \ javaapi#method(0,1,'getStringValue(', ')', 'String'),
@@ -512,7 +512,7 @@ call javaapi#class('NodeSortRecord', '', [
   \ javaapi#field(1,1,'COMPARE_ASCENDING', 'int'),
   \ javaapi#field(1,1,'COMPARE_DESCENDING', 'int'),
   \ javaapi#field(0,0,'_collator', 'Collator'),
-  \ javaapi#field(0,0,'_collators', 'Collator[]'),
+  \ javaapi#field(0,0,'_collators', 'Collator'),
   \ javaapi#field(0,0,'_locale', 'Locale'),
   \ javaapi#field(0,0,'_collatorFactory', 'CollatorFactory'),
   \ javaapi#field(0,0,'_settings', 'SortSettings'),
@@ -522,7 +522,7 @@ call javaapi#class('NodeSortRecord', '', [
   \ javaapi#method(0,1,'getNode(', ')', 'int'),
   \ javaapi#method(0,1,'compareDocOrder(', 'NodeSortRecord)', 'int'),
   \ javaapi#method(0,1,'compareTo(', 'NodeSortRecord)', 'int'),
-  \ javaapi#method(0,1,'getCollator(', ')', 'Collator[]'),
+  \ javaapi#method(0,1,'getCollator(', ')', 'Collator'),
   \ javaapi#method(0,1,'extractValueFromDOM(', 'DOM, int, int, AbstractTranslet, int)', 'String'),
   \ ])
 
@@ -547,9 +547,6 @@ call javaapi#class('NthIterator', 'DTMAxisIteratorBase', [
   \ javaapi#method(0,1,'gotoMark(', ')', 'void'),
   \ ])
 
-call javaapi#class('ObjectFactory', '', [
-  \ ])
-
 call javaapi#class('SAXImpl', 'SAX2DTM2', [
   \ javaapi#method(0,1,'setDocumentURI(', 'String)', 'void'),
   \ javaapi#method(0,1,'getDocumentURI(', ')', 'String'),
@@ -572,10 +569,10 @@ call javaapi#class('SAXImpl', 'SAX2DTM2', [
   \ javaapi#method(0,1,'getNamespaceType(', 'int)', 'int'),
   \ javaapi#method(0,1,'getGeneralizedType(', 'String)', 'int'),
   \ javaapi#method(0,1,'getGeneralizedType(', 'String, boolean)', 'int'),
-  \ javaapi#method(0,1,'getMapping(', 'String[], String[], int[])', 'short[]'),
-  \ javaapi#method(0,1,'getReverseMapping(', 'String[], String[], int[])', 'int[]'),
-  \ javaapi#method(0,1,'getNamespaceMapping(', 'String[])', 'short[]'),
-  \ javaapi#method(0,1,'getReverseNamespaceMapping(', 'String[])', 'short[]'),
+  \ javaapi#method(0,1,'getMapping(', 'String[], String[], int[])', 'short'),
+  \ javaapi#method(0,1,'getReverseMapping(', 'String[], String[], int[])', 'int'),
+  \ javaapi#method(0,1,'getNamespaceMapping(', 'String[])', 'short'),
+  \ javaapi#method(0,1,'getReverseNamespaceMapping(', 'String[])', 'short'),
   \ javaapi#method(0,1,'SAXImpl(', 'XSLTCDTMManager, Source, int, DTMWSFilter, XMLStringFactory, boolean, boolean)', ''),
   \ javaapi#method(0,1,'SAXImpl(', 'XSLTCDTMManager, Source, int, DTMWSFilter, XMLStringFactory, boolean, int, boolean, boolean)', ''),
   \ javaapi#method(0,1,'migrateTo(', 'DTMManager)', 'void'),
@@ -620,17 +617,11 @@ call javaapi#class('SAXImpl', 'SAX2DTM2', [
   \ javaapi#method(0,1,'getUnparsedEntityURI(', 'String)', 'String'),
   \ ])
 
-call javaapi#class('SecuritySupport', '', [
-  \ ])
-
-call javaapi#class('SecuritySupport12', 'SecuritySupport', [
-  \ ])
-
 call javaapi#class('SimpleResultTreeImpl', 'EmptySerializer', [
   \ javaapi#field(1,1,'RTF_ROOT', 'int'),
   \ javaapi#field(1,1,'RTF_TEXT', 'int'),
   \ javaapi#field(1,1,'NUMBER_OF_NODES', 'int'),
-  \ javaapi#field(0,0,'_textArray', 'String[]'),
+  \ javaapi#field(0,0,'_textArray', 'String'),
   \ javaapi#field(0,0,'_dtmManager', 'XSLTCDTMManager'),
   \ javaapi#field(0,0,'_size', 'int'),
   \ javaapi#method(0,1,'SimpleResultTreeImpl(', 'XSLTCDTMManager, int)', ''),
@@ -701,7 +692,7 @@ call javaapi#class('SimpleResultTreeImpl', 'EmptySerializer', [
   \ javaapi#method(0,1,'getDocumentRoot(', 'int)', 'int'),
   \ javaapi#method(0,1,'getStringValue(', 'int)', 'XMLString'),
   \ javaapi#method(0,1,'getStringValueChunkCount(', 'int)', 'int'),
-  \ javaapi#method(0,1,'getStringValueChunk(', 'int, int, int[])', 'char[]'),
+  \ javaapi#method(0,1,'getStringValueChunk(', 'int, int, int[])', 'char'),
   \ javaapi#method(0,1,'getExpandedTypeID(', 'String, String, int)', 'int'),
   \ javaapi#method(0,1,'getLocalNameFromExpandedNameID(', 'int)', 'String'),
   \ javaapi#method(0,1,'getNamespaceFromExpandedNameID(', 'int)', 'String'),

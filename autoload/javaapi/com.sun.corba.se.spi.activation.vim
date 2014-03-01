@@ -27,11 +27,11 @@ call javaapi#class('ActivatorHolder', 'Streamable', [
 call javaapi#interface('ActivatorOperations', '', [
   \ javaapi#method(0,1,'active(', 'int, Server) throws ServerNotRegistered', 'void'),
   \ javaapi#method(0,1,'registerEndpoints(', 'int, String, EndPointInfo[]) throws ServerNotRegistered, NoSuchEndPoint, ORBAlreadyRegistered', 'void'),
-  \ javaapi#method(0,1,'getActiveServers(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getActiveServers(', ')', 'int'),
   \ javaapi#method(0,1,'activate(', 'int) throws ServerAlreadyActive, ServerNotRegistered, ServerHeldDown', 'void'),
   \ javaapi#method(0,1,'shutdown(', 'int) throws ServerNotActive, ServerNotRegistered', 'void'),
   \ javaapi#method(0,1,'install(', 'int) throws ServerNotRegistered, ServerHeldDown, ServerAlreadyInstalled', 'void'),
-  \ javaapi#method(0,1,'getORBNames(', 'int) throws ServerNotRegistered', 'String[]'),
+  \ javaapi#method(0,1,'getORBNames(', 'int) throws ServerNotRegistered', 'String'),
   \ javaapi#method(0,1,'uninstall(', 'int) throws ServerNotRegistered, ServerHeldDown, ServerAlreadyUninstalled', 'void'),
   \ ])
 
@@ -90,15 +90,15 @@ call javaapi#class('EndPointInfoHolder', 'Streamable', [
 call javaapi#class('EndpointInfoListHelper', '', [
   \ javaapi#method(0,1,'EndpointInfoListHelper(', ')', ''),
   \ javaapi#method(1,1,'insert(', 'Any, EndPointInfo[])', 'void'),
-  \ javaapi#method(1,1,'extract(', 'Any)', 'EndPointInfo[]'),
+  \ javaapi#method(1,1,'extract(', 'Any)', 'EndPointInfo'),
   \ javaapi#method(1,1,'type(', ')', 'TypeCode'),
   \ javaapi#method(1,1,'id(', ')', 'String'),
-  \ javaapi#method(1,1,'read(', 'InputStream)', 'EndPointInfo[]'),
+  \ javaapi#method(1,1,'read(', 'InputStream)', 'EndPointInfo'),
   \ javaapi#method(1,1,'write(', 'OutputStream, EndPointInfo[])', 'void'),
   \ ])
 
 call javaapi#class('EndpointInfoListHolder', 'Streamable', [
-  \ javaapi#field(0,1,'value', 'EndPointInfo[]'),
+  \ javaapi#field(0,1,'value', 'EndPointInfo'),
   \ javaapi#method(0,1,'EndpointInfoListHolder(', ')', ''),
   \ javaapi#method(0,1,'EndpointInfoListHolder(', 'EndPointInfo[])', ''),
   \ javaapi#method(0,1,'_read(', 'InputStream)', 'void'),
@@ -276,15 +276,15 @@ call javaapi#class('ORBPortInfoHolder', 'Streamable', [
 call javaapi#class('ORBPortInfoListHelper', '', [
   \ javaapi#method(0,1,'ORBPortInfoListHelper(', ')', ''),
   \ javaapi#method(1,1,'insert(', 'Any, ORBPortInfo[])', 'void'),
-  \ javaapi#method(1,1,'extract(', 'Any)', 'ORBPortInfo[]'),
+  \ javaapi#method(1,1,'extract(', 'Any)', 'ORBPortInfo'),
   \ javaapi#method(1,1,'type(', ')', 'TypeCode'),
   \ javaapi#method(1,1,'id(', ')', 'String'),
-  \ javaapi#method(1,1,'read(', 'InputStream)', 'ORBPortInfo[]'),
+  \ javaapi#method(1,1,'read(', 'InputStream)', 'ORBPortInfo'),
   \ javaapi#method(1,1,'write(', 'OutputStream, ORBPortInfo[])', 'void'),
   \ ])
 
 call javaapi#class('ORBPortInfoListHolder', 'Streamable', [
-  \ javaapi#field(0,1,'value', 'ORBPortInfo[]'),
+  \ javaapi#field(0,1,'value', 'ORBPortInfo'),
   \ javaapi#method(0,1,'ORBPortInfoListHolder(', ')', ''),
   \ javaapi#method(0,1,'ORBPortInfoListHolder(', 'ORBPortInfo[])', ''),
   \ javaapi#method(0,1,'_read(', 'InputStream)', 'void'),
@@ -305,15 +305,15 @@ call javaapi#class('ORBidHelper', '', [
 call javaapi#class('ORBidListHelper', '', [
   \ javaapi#method(0,1,'ORBidListHelper(', ')', ''),
   \ javaapi#method(1,1,'insert(', 'Any, String[])', 'void'),
-  \ javaapi#method(1,1,'extract(', 'Any)', 'String[]'),
+  \ javaapi#method(1,1,'extract(', 'Any)', 'String'),
   \ javaapi#method(1,1,'type(', ')', 'TypeCode'),
   \ javaapi#method(1,1,'id(', ')', 'String'),
-  \ javaapi#method(1,1,'read(', 'InputStream)', 'String[]'),
+  \ javaapi#method(1,1,'read(', 'InputStream)', 'String'),
   \ javaapi#method(1,1,'write(', 'OutputStream, String[])', 'void'),
   \ ])
 
 call javaapi#class('ORBidListHolder', 'Streamable', [
-  \ javaapi#field(0,1,'value', 'String[]'),
+  \ javaapi#field(0,1,'value', 'String'),
   \ javaapi#method(0,1,'ORBidListHolder(', ')', ''),
   \ javaapi#method(0,1,'ORBidListHolder(', 'String[])', ''),
   \ javaapi#method(0,1,'_read(', 'InputStream)', 'void'),
@@ -324,15 +324,15 @@ call javaapi#class('ORBidListHolder', 'Streamable', [
 call javaapi#class('POANameHelper', '', [
   \ javaapi#method(0,1,'POANameHelper(', ')', ''),
   \ javaapi#method(1,1,'insert(', 'Any, String[])', 'void'),
-  \ javaapi#method(1,1,'extract(', 'Any)', 'String[]'),
+  \ javaapi#method(1,1,'extract(', 'Any)', 'String'),
   \ javaapi#method(1,1,'type(', ')', 'TypeCode'),
   \ javaapi#method(1,1,'id(', ')', 'String'),
-  \ javaapi#method(1,1,'read(', 'InputStream)', 'String[]'),
+  \ javaapi#method(1,1,'read(', 'InputStream)', 'String'),
   \ javaapi#method(1,1,'write(', 'OutputStream, String[])', 'void'),
   \ ])
 
 call javaapi#class('POANameHolder', 'Streamable', [
-  \ javaapi#field(0,1,'value', 'String[]'),
+  \ javaapi#field(0,1,'value', 'String'),
   \ javaapi#method(0,1,'POANameHolder(', ')', ''),
   \ javaapi#method(0,1,'POANameHolder(', 'String[])', ''),
   \ javaapi#method(0,1,'_read(', 'InputStream)', 'void'),
@@ -371,8 +371,8 @@ call javaapi#interface('RepositoryOperations', '', [
   \ javaapi#method(0,1,'isInstalled(', 'int) throws ServerNotRegistered', 'boolean'),
   \ javaapi#method(0,1,'install(', 'int) throws ServerNotRegistered, ServerAlreadyInstalled', 'void'),
   \ javaapi#method(0,1,'uninstall(', 'int) throws ServerNotRegistered, ServerAlreadyUninstalled', 'void'),
-  \ javaapi#method(0,1,'listRegisteredServers(', ')', 'int[]'),
-  \ javaapi#method(0,1,'getApplicationNames(', ')', 'String[]'),
+  \ javaapi#method(0,1,'listRegisteredServers(', ')', 'int'),
+  \ javaapi#method(0,1,'getApplicationNames(', ')', 'String'),
   \ javaapi#method(0,1,'getServerID(', 'String) throws ServerNotRegistered', 'int'),
   \ ])
 
@@ -545,15 +545,15 @@ call javaapi#class('ServerIdHelper', '', [
 call javaapi#class('ServerIdsHelper', '', [
   \ javaapi#method(0,1,'ServerIdsHelper(', ')', ''),
   \ javaapi#method(1,1,'insert(', 'Any, int[])', 'void'),
-  \ javaapi#method(1,1,'extract(', 'Any)', 'int[]'),
+  \ javaapi#method(1,1,'extract(', 'Any)', 'int'),
   \ javaapi#method(1,1,'type(', ')', 'TypeCode'),
   \ javaapi#method(1,1,'id(', ')', 'String'),
-  \ javaapi#method(1,1,'read(', 'InputStream)', 'int[]'),
+  \ javaapi#method(1,1,'read(', 'InputStream)', 'int'),
   \ javaapi#method(1,1,'write(', 'OutputStream, int[])', 'void'),
   \ ])
 
 call javaapi#class('ServerIdsHolder', 'Streamable', [
-  \ javaapi#field(0,1,'value', 'int[]'),
+  \ javaapi#field(0,1,'value', 'int'),
   \ javaapi#method(0,1,'ServerIdsHolder(', ')', ''),
   \ javaapi#method(0,1,'ServerIdsHolder(', 'int[])', ''),
   \ javaapi#method(0,1,'_read(', 'InputStream)', 'void'),
@@ -659,38 +659,38 @@ call javaapi#class('TCPPortHelper', '', [
 call javaapi#class('_ActivatorImplBase', 'ObjectImpl', [
   \ javaapi#method(0,1,'_ActivatorImplBase(', ')', ''),
   \ javaapi#method(0,1,'_invoke(', 'String, InputStream, ResponseHandler)', 'OutputStream'),
-  \ javaapi#method(0,1,'_ids(', ')', 'String[]'),
+  \ javaapi#method(0,1,'_ids(', ')', 'String'),
   \ ])
 
 call javaapi#class('_ActivatorStub', 'ObjectImpl', [
   \ javaapi#method(0,1,'_ActivatorStub(', ')', ''),
   \ javaapi#method(0,1,'active(', 'int, Server) throws ServerNotRegistered', 'void'),
   \ javaapi#method(0,1,'registerEndpoints(', 'int, String, EndPointInfo[]) throws ServerNotRegistered, NoSuchEndPoint, ORBAlreadyRegistered', 'void'),
-  \ javaapi#method(0,1,'getActiveServers(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getActiveServers(', ')', 'int'),
   \ javaapi#method(0,1,'activate(', 'int) throws ServerAlreadyActive, ServerNotRegistered, ServerHeldDown', 'void'),
   \ javaapi#method(0,1,'shutdown(', 'int) throws ServerNotActive, ServerNotRegistered', 'void'),
   \ javaapi#method(0,1,'install(', 'int) throws ServerNotRegistered, ServerHeldDown, ServerAlreadyInstalled', 'void'),
-  \ javaapi#method(0,1,'getORBNames(', 'int) throws ServerNotRegistered', 'String[]'),
+  \ javaapi#method(0,1,'getORBNames(', 'int) throws ServerNotRegistered', 'String'),
   \ javaapi#method(0,1,'uninstall(', 'int) throws ServerNotRegistered, ServerHeldDown, ServerAlreadyUninstalled', 'void'),
-  \ javaapi#method(0,1,'_ids(', ')', 'String[]'),
+  \ javaapi#method(0,1,'_ids(', ')', 'String'),
   \ ])
 
 call javaapi#class('_InitialNameServiceImplBase', 'ObjectImpl', [
   \ javaapi#method(0,1,'_InitialNameServiceImplBase(', ')', ''),
   \ javaapi#method(0,1,'_invoke(', 'String, InputStream, ResponseHandler)', 'OutputStream'),
-  \ javaapi#method(0,1,'_ids(', ')', 'String[]'),
+  \ javaapi#method(0,1,'_ids(', ')', 'String'),
   \ ])
 
 call javaapi#class('_InitialNameServiceStub', 'ObjectImpl', [
   \ javaapi#method(0,1,'_InitialNameServiceStub(', ')', ''),
   \ javaapi#method(0,1,'bind(', 'String, Object, boolean) throws NameAlreadyBound', 'void'),
-  \ javaapi#method(0,1,'_ids(', ')', 'String[]'),
+  \ javaapi#method(0,1,'_ids(', ')', 'String'),
   \ ])
 
 call javaapi#class('_LocatorImplBase', 'ObjectImpl', [
   \ javaapi#method(0,1,'_LocatorImplBase(', ')', ''),
   \ javaapi#method(0,1,'_invoke(', 'String, InputStream, ResponseHandler)', 'OutputStream'),
-  \ javaapi#method(0,1,'_ids(', ')', 'String[]'),
+  \ javaapi#method(0,1,'_ids(', ')', 'String'),
   \ ])
 
 call javaapi#class('_LocatorStub', 'ObjectImpl', [
@@ -699,13 +699,13 @@ call javaapi#class('_LocatorStub', 'ObjectImpl', [
   \ javaapi#method(0,1,'locateServerForORB(', 'int, String) throws InvalidORBid, ServerNotRegistered, ServerHeldDown', 'ServerLocationPerORB'),
   \ javaapi#method(0,1,'getEndpoint(', 'String) throws NoSuchEndPoint', 'int'),
   \ javaapi#method(0,1,'getServerPortForType(', 'ServerLocationPerORB, String) throws NoSuchEndPoint', 'int'),
-  \ javaapi#method(0,1,'_ids(', ')', 'String[]'),
+  \ javaapi#method(0,1,'_ids(', ')', 'String'),
   \ ])
 
 call javaapi#class('_RepositoryImplBase', 'ObjectImpl', [
   \ javaapi#method(0,1,'_RepositoryImplBase(', ')', ''),
   \ javaapi#method(0,1,'_invoke(', 'String, InputStream, ResponseHandler)', 'OutputStream'),
-  \ javaapi#method(0,1,'_ids(', ')', 'String[]'),
+  \ javaapi#method(0,1,'_ids(', ')', 'String'),
   \ ])
 
 call javaapi#class('_RepositoryStub', 'ObjectImpl', [
@@ -716,39 +716,39 @@ call javaapi#class('_RepositoryStub', 'ObjectImpl', [
   \ javaapi#method(0,1,'isInstalled(', 'int) throws ServerNotRegistered', 'boolean'),
   \ javaapi#method(0,1,'install(', 'int) throws ServerNotRegistered, ServerAlreadyInstalled', 'void'),
   \ javaapi#method(0,1,'uninstall(', 'int) throws ServerNotRegistered, ServerAlreadyUninstalled', 'void'),
-  \ javaapi#method(0,1,'listRegisteredServers(', ')', 'int[]'),
-  \ javaapi#method(0,1,'getApplicationNames(', ')', 'String[]'),
+  \ javaapi#method(0,1,'listRegisteredServers(', ')', 'int'),
+  \ javaapi#method(0,1,'getApplicationNames(', ')', 'String'),
   \ javaapi#method(0,1,'getServerID(', 'String) throws ServerNotRegistered', 'int'),
-  \ javaapi#method(0,1,'_ids(', ')', 'String[]'),
+  \ javaapi#method(0,1,'_ids(', ')', 'String'),
   \ ])
 
 call javaapi#class('_ServerImplBase', 'ObjectImpl', [
   \ javaapi#method(0,1,'_ServerImplBase(', ')', ''),
   \ javaapi#method(0,1,'_invoke(', 'String, InputStream, ResponseHandler)', 'OutputStream'),
-  \ javaapi#method(0,1,'_ids(', ')', 'String[]'),
+  \ javaapi#method(0,1,'_ids(', ')', 'String'),
   \ ])
 
 call javaapi#class('_ServerManagerImplBase', 'ObjectImpl', [
   \ javaapi#method(0,1,'_ServerManagerImplBase(', ')', ''),
   \ javaapi#method(0,1,'_invoke(', 'String, InputStream, ResponseHandler)', 'OutputStream'),
-  \ javaapi#method(0,1,'_ids(', ')', 'String[]'),
+  \ javaapi#method(0,1,'_ids(', ')', 'String'),
   \ ])
 
 call javaapi#class('_ServerManagerStub', 'ObjectImpl', [
   \ javaapi#method(0,1,'_ServerManagerStub(', ')', ''),
   \ javaapi#method(0,1,'active(', 'int, Server) throws ServerNotRegistered', 'void'),
   \ javaapi#method(0,1,'registerEndpoints(', 'int, String, EndPointInfo[]) throws ServerNotRegistered, NoSuchEndPoint, ORBAlreadyRegistered', 'void'),
-  \ javaapi#method(0,1,'getActiveServers(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getActiveServers(', ')', 'int'),
   \ javaapi#method(0,1,'activate(', 'int) throws ServerAlreadyActive, ServerNotRegistered, ServerHeldDown', 'void'),
   \ javaapi#method(0,1,'shutdown(', 'int) throws ServerNotActive, ServerNotRegistered', 'void'),
   \ javaapi#method(0,1,'install(', 'int) throws ServerNotRegistered, ServerHeldDown, ServerAlreadyInstalled', 'void'),
-  \ javaapi#method(0,1,'getORBNames(', 'int) throws ServerNotRegistered', 'String[]'),
+  \ javaapi#method(0,1,'getORBNames(', 'int) throws ServerNotRegistered', 'String'),
   \ javaapi#method(0,1,'uninstall(', 'int) throws ServerNotRegistered, ServerHeldDown, ServerAlreadyUninstalled', 'void'),
   \ javaapi#method(0,1,'locateServer(', 'int, String) throws NoSuchEndPoint, ServerNotRegistered, ServerHeldDown', 'ServerLocation'),
   \ javaapi#method(0,1,'locateServerForORB(', 'int, String) throws InvalidORBid, ServerNotRegistered, ServerHeldDown', 'ServerLocationPerORB'),
   \ javaapi#method(0,1,'getEndpoint(', 'String) throws NoSuchEndPoint', 'int'),
   \ javaapi#method(0,1,'getServerPortForType(', 'ServerLocationPerORB, String) throws NoSuchEndPoint', 'int'),
-  \ javaapi#method(0,1,'_ids(', ')', 'String[]'),
+  \ javaapi#method(0,1,'_ids(', ')', 'String'),
   \ ])
 
 call javaapi#class('_ServerStub', 'ObjectImpl', [
@@ -756,6 +756,6 @@ call javaapi#class('_ServerStub', 'ObjectImpl', [
   \ javaapi#method(0,1,'shutdown(', ')', 'void'),
   \ javaapi#method(0,1,'install(', ')', 'void'),
   \ javaapi#method(0,1,'uninstall(', ')', 'void'),
-  \ javaapi#method(0,1,'_ids(', ')', 'String[]'),
+  \ javaapi#method(0,1,'_ids(', ')', 'String'),
   \ ])
 

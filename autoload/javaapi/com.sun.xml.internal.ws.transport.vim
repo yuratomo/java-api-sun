@@ -12,7 +12,7 @@ call javaapi#class('DeferredTransportPipe', 'AbstractTubeImpl', [
   \ javaapi#method(0,1,'copy(', 'TubeCloner)', 'Tube'),
   \ ])
 
-call javaapi#class('Headers', 'String>>', [
+call javaapi#class('Headers', 'List', [
   \ javaapi#method(0,1,'Headers(', ')', ''),
   \ javaapi#method(0,1,'add(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'getFirst(', 'String)', 'String'),

@@ -8,7 +8,7 @@ call javaapi#interface('LoggingProxy', '', [
   \ javaapi#method(0,1,'log(', 'Object, Object, String)', 'void'),
   \ javaapi#method(0,1,'log(', 'Object, Object, String, Throwable)', 'void'),
   \ javaapi#method(0,1,'log(', 'Object, Object, String, )', 'void'),
-  \ javaapi#method(0,1,'getLoggerNames(', ')', 'String>'),
+  \ javaapi#method(0,1,'getLoggerNames(', ')', 'List'),
   \ javaapi#method(0,1,'getLoggerLevel(', 'String)', 'String'),
   \ javaapi#method(0,1,'setLoggerLevel(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'getParentLoggerName(', 'String)', 'String'),
@@ -19,7 +19,7 @@ call javaapi#interface('LoggingProxy', '', [
 
 call javaapi#class('LoggingSupport', '', [
   \ javaapi#method(1,1,'isAvailable(', ')', 'boolean'),
-  \ javaapi#method(1,1,'getLoggerNames(', ')', 'String>'),
+  \ javaapi#method(1,1,'getLoggerNames(', ')', 'List'),
   \ javaapi#method(1,1,'getLoggerLevel(', 'String)', 'String'),
   \ javaapi#method(1,1,'setLoggerLevel(', 'String, String)', 'void'),
   \ javaapi#method(1,1,'getParentLoggerName(', 'String)', 'String'),

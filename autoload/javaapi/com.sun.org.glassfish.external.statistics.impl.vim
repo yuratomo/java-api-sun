@@ -98,8 +98,8 @@ call javaapi#class('StatisticImpl', 'Statistic', [
 call javaapi#class('StatsImpl', 'Stats', [
   \ javaapi#method(0,0,'StatsImpl(', 'StatisticImpl[])', ''),
   \ javaapi#method(0,1,'getStatistic(', 'String)', 'Statistic'),
-  \ javaapi#method(0,1,'getStatisticNames(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getStatistics(', ')', 'Statistic[]'),
+  \ javaapi#method(0,1,'getStatisticNames(', ')', 'String'),
+  \ javaapi#method(0,1,'getStatistics(', ')', 'Statistic'),
   \ javaapi#method(0,1,'reset(', ')', 'void'),
   \ ])
 

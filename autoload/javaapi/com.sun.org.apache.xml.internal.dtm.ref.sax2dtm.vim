@@ -98,7 +98,7 @@ call javaapi#class('SAX2DTM', 'DTMDefaultBaseIterators', [
   \ ])
 
 call javaapi#class('SAX2DTM2', 'SAX2DTM', [
-  \ javaapi#field(0,0,'m_extendedTypes', 'ExtendedType[]'),
+  \ javaapi#field(0,0,'m_extendedTypes', 'ExtendedType'),
   \ javaapi#field(0,0,'m_values', 'Vector'),
   \ javaapi#field(0,0,'m_SHIFT', 'int'),
   \ javaapi#field(0,0,'m_MASK', 'int'),

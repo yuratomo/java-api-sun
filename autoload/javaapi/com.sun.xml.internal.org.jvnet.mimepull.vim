@@ -14,7 +14,7 @@ call javaapi#class('ChunkInputStream', 'InputStream', [
 
 call javaapi#interface('Data', '', [
   \ javaapi#method(0,1,'size(', ')', 'int'),
-  \ javaapi#method(0,1,'read(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'read(', ')', 'byte'),
   \ javaapi#method(0,1,'writeTo(', 'DataFile)', 'long'),
   \ javaapi#method(0,1,'createNext(', 'DataHead, ByteBuffer)', 'Data'),
   \ ])
@@ -28,13 +28,13 @@ call javaapi#class('DataHead', '', [
   \ ])
 
 call javaapi#class('FileData', 'Data', [
-  \ javaapi#method(0,1,'read(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'read(', ')', 'byte'),
   \ javaapi#method(0,1,'writeTo(', 'DataFile)', 'long'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
   \ javaapi#method(0,1,'createNext(', 'DataHead, ByteBuffer)', 'Data'),
   \ ])
 
-call javaapi#class('FinalArrayList<T>', 'ArrayList<T>', [
+call javaapi#class('FinalArrayList', 'ArrayList', [
   \ javaapi#method(0,1,'FinalArrayList(', 'int)', ''),
   \ javaapi#method(0,1,'FinalArrayList(', ')', ''),
   \ javaapi#method(0,1,'FinalArrayList(', 'Collection<? extends T>)', ''),
@@ -62,15 +62,15 @@ call javaapi#class('MIMEEvent', '', [
 call javaapi#class('MIMEMessage', '', [
   \ javaapi#method(0,1,'MIMEMessage(', 'InputStream, String)', ''),
   \ javaapi#method(0,1,'MIMEMessage(', 'InputStream, String, MIMEConfig)', ''),
-  \ javaapi#method(0,1,'getAttachments(', ')', 'MIMEPart>'),
+  \ javaapi#method(0,1,'getAttachments(', ')', 'List'),
   \ javaapi#method(0,1,'getPart(', 'int)', 'MIMEPart'),
   \ javaapi#method(0,1,'getPart(', 'String)', 'MIMEPart'),
   \ javaapi#method(0,1,'parseAll(', ')', 'void'),
   \ javaapi#method(0,1,'makeProgress(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('MIMEParser', 'MIMEEvent>', [
-  \ javaapi#method(0,1,'iterator(', ')', 'MIMEEvent>'),
+call javaapi#class('MIMEParser', 'Iterable', [
+  \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
   \ ])
 
 call javaapi#class('MIMEParsingException', 'RuntimeException', [
@@ -87,19 +87,19 @@ call javaapi#class('MIMEPart', '', [
   \ javaapi#method(0,1,'moveTo(', 'File)', 'void'),
   \ javaapi#method(0,1,'getContentId(', ')', 'String'),
   \ javaapi#method(0,1,'getContentType(', ')', 'String'),
-  \ javaapi#method(0,1,'getHeader(', 'String)', 'String>'),
+  \ javaapi#method(0,1,'getHeader(', 'String)', 'List'),
   \ javaapi#method(0,1,'getAllHeaders(', ')', 'Header>'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
 call javaapi#class('MemoryData', 'Data', [
   \ javaapi#method(0,1,'size(', ')', 'int'),
-  \ javaapi#method(0,1,'read(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'read(', ')', 'byte'),
   \ javaapi#method(0,1,'writeTo(', 'DataFile)', 'long'),
   \ javaapi#method(0,1,'createNext(', 'DataHead, ByteBuffer)', 'Data'),
   \ ])
 
-call javaapi#class('WeakDataFile', 'DataFile>', [
+call javaapi#class('WeakDataFile', 'WeakReference', [
   \ ])
 
 call javaapi#class('hdr', 'Header', [

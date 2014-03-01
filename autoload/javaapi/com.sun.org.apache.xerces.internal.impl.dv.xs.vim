@@ -336,7 +336,7 @@ call javaapi#class('XSSimpleTypeDecl', 'TypeInfo', [
   \ javaapi#field(0,1,'maxExclusiveAnnotation', 'XSAnnotation'),
   \ javaapi#field(0,1,'minInclusiveAnnotation', 'XSAnnotation'),
   \ javaapi#field(0,1,'minExclusiveAnnotation', 'XSAnnotation'),
-  \ javaapi#method(1,0,'getGDVs(', ')', 'TypeValidator[]'),
+  \ javaapi#method(1,0,'getGDVs(', ')', 'TypeValidator'),
   \ javaapi#method(0,0,'setDVs(', 'TypeValidator[])', 'void'),
   \ javaapi#method(0,1,'XSSimpleTypeDecl(', ')', ''),
   \ javaapi#method(0,0,'XSSimpleTypeDecl(', 'XSSimpleTypeDecl, String, short, short, boolean, boolean, boolean, boolean, short)', ''),

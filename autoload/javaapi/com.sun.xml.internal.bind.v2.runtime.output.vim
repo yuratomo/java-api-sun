@@ -14,7 +14,7 @@ call javaapi#class('DOMOutput', 'SAXOutput', [
   \ ])
 
 call javaapi#class('Encoded', '', [
-  \ javaapi#field(0,1,'buf', 'byte[]'),
+  \ javaapi#field(0,1,'buf', 'byte'),
   \ javaapi#field(0,1,'len', 'int'),
   \ javaapi#method(0,1,'Encoded(', ')', ''),
   \ javaapi#method(0,1,'Encoded(', 'String)', ''),
@@ -103,7 +103,7 @@ call javaapi#class('NamespaceContextImpl', 'NamespaceContext2', [
   \ javaapi#method(0,1,'getNamespaceURI(', 'int)', 'String'),
   \ javaapi#method(0,1,'getNamespaceURI(', 'String)', 'String'),
   \ javaapi#method(0,1,'getPrefix(', 'String)', 'String'),
-  \ javaapi#method(0,1,'getPrefixes(', 'String)', 'String>'),
+  \ javaapi#method(0,1,'getPrefixes(', 'String)', 'Iterator'),
   \ javaapi#method(0,1,'declareNamespace(', 'String, String, boolean)', 'String'),
   \ javaapi#method(0,1,'count(', ')', 'int'),
   \ ])
@@ -135,7 +135,7 @@ call javaapi#class('StAXExStreamWriterOutput', 'XMLStreamWriterOutput', [
 
 call javaapi#class('UTF8XmlOutput', 'XmlOutputAbstractImpl', [
   \ javaapi#field(0,0,'out', 'OutputStream'),
-  \ javaapi#field(0,0,'octetBuffer', 'byte[]'),
+  \ javaapi#field(0,0,'octetBuffer', 'byte'),
   \ javaapi#field(0,0,'octetBufferIndex', 'int'),
   \ javaapi#field(0,0,'closeStartTagPending', 'boolean'),
   \ javaapi#method(0,1,'UTF8XmlOutput(', 'OutputStream, Encoded[], CharacterEscapeHandler)', ''),
@@ -175,7 +175,7 @@ call javaapi#class('XMLEventWriterOutput', 'XmlOutputAbstractImpl', [
   \ ])
 
 call javaapi#class('XMLStreamWriterOutput', 'XmlOutputAbstractImpl', [
-  \ javaapi#field(0,0,'buf', 'char[]'),
+  \ javaapi#field(0,0,'buf', 'char'),
   \ javaapi#method(1,1,'create(', 'XMLStreamWriter, JAXBContextImpl)', 'XmlOutput'),
   \ javaapi#method(0,0,'XMLStreamWriterOutput(', 'XMLStreamWriter)', ''),
   \ javaapi#method(0,1,'startDocument(', 'XMLSerializer, boolean, int[], NamespaceContextImpl) throws IOException, SAXException, XMLStreamException', 'void'),
@@ -203,7 +203,7 @@ call javaapi#interface('XmlOutput', '', [
   \ ])
 
 call javaapi#class('XmlOutputAbstractImpl', 'XmlOutput', [
-  \ javaapi#field(0,0,'nsUriIndex2prefixIndex', 'int[]'),
+  \ javaapi#field(0,0,'nsUriIndex2prefixIndex', 'int'),
   \ javaapi#field(0,0,'nsContext', 'NamespaceContextImpl'),
   \ javaapi#field(0,0,'serializer', 'XMLSerializer'),
   \ javaapi#method(0,1,'XmlOutputAbstractImpl(', ')', ''),

@@ -2,7 +2,7 @@ call javaapi#namespace('com.sun.corba.se.spi.activation.LocatorPackage')
 
 call javaapi#class('ServerLocation', 'IDLEntity', [
   \ javaapi#field(0,1,'hostname', 'String'),
-  \ javaapi#field(0,1,'ports', 'ORBPortInfo[]'),
+  \ javaapi#field(0,1,'ports', 'ORBPortInfo'),
   \ javaapi#method(0,1,'ServerLocation(', ')', ''),
   \ javaapi#method(0,1,'ServerLocation(', 'String, ORBPortInfo[])', ''),
   \ ])
@@ -28,7 +28,7 @@ call javaapi#class('ServerLocationHolder', 'Streamable', [
 
 call javaapi#class('ServerLocationPerORB', 'IDLEntity', [
   \ javaapi#field(0,1,'hostname', 'String'),
-  \ javaapi#field(0,1,'ports', 'EndPointInfo[]'),
+  \ javaapi#field(0,1,'ports', 'EndPointInfo'),
   \ javaapi#method(0,1,'ServerLocationPerORB(', ')', ''),
   \ javaapi#method(0,1,'ServerLocationPerORB(', 'String, EndPointInfo[])', ''),
   \ ])

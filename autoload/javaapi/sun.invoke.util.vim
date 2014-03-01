@@ -1,7 +1,7 @@
 call javaapi#namespace('sun.invoke.util')
 
 call javaapi#class('BytecodeDescriptor', '', [
-  \ javaapi#method(1,1,'parseMethod(', 'String, ClassLoader)', 'Class<?>>'),
+  \ javaapi#method(1,1,'parseMethod(', 'String, ClassLoader)', 'Class'),
   \ javaapi#method(1,1,'unparse(', 'Class<?>)', 'String'),
   \ javaapi#method(1,1,'unparse(', 'MethodType)', 'String'),
   \ javaapi#method(1,1,'unparse(', 'Object)', 'String'),
@@ -11,7 +11,7 @@ call javaapi#class('BytecodeDescriptor', '', [
 call javaapi#class('BytecodeName', '', [
   \ javaapi#method(1,1,'toBytecodeName(', 'String)', 'String'),
   \ javaapi#method(1,1,'toSourceName(', 'String)', 'String'),
-  \ javaapi#method(1,1,'parseBytecodeName(', 'String)', 'Object[]'),
+  \ javaapi#method(1,1,'parseBytecodeName(', 'String)', 'Object'),
   \ javaapi#method(1,1,'unparseBytecodeName(', 'Object[])', 'String'),
   \ javaapi#method(1,1,'toDisplayName(', 'String)', 'String'),
   \ javaapi#method(1,1,'isSafeBytecodeName(', 'String)', 'boolean'),
@@ -64,10 +64,10 @@ call javaapi#class('VerifyType', '', [
   \ javaapi#method(1,1,'canPassUnchecked(', 'Class<?>, Class<?>)', 'int'),
   \ javaapi#method(1,1,'canPassRaw(', 'Class<?>, Class<?>)', 'int'),
   \ javaapi#method(1,1,'isSpreadArgType(', 'Class<?>)', 'boolean'),
-  \ javaapi#method(1,1,'spreadArgElementType(', 'Class<?>, int)', 'Class<?>'),
+  \ javaapi#method(1,1,'spreadArgElementType(', 'Class<?>, int)', 'Class'),
   \ ])
 
-call javaapi#class('Wrapper', 'Wrapper>', [
+call javaapi#class('Wrapper', 'Enum', [
   \ javaapi#field(1,1,'BOOLEAN', 'Wrapper'),
   \ javaapi#field(1,1,'BYTE', 'Wrapper'),
   \ javaapi#field(1,1,'SHORT', 'Wrapper'),
@@ -78,7 +78,7 @@ call javaapi#class('Wrapper', 'Wrapper>', [
   \ javaapi#field(1,1,'DOUBLE', 'Wrapper'),
   \ javaapi#field(1,1,'OBJECT', 'Wrapper'),
   \ javaapi#field(1,1,'VOID', 'Wrapper'),
-  \ javaapi#method(1,1,'values(', ')', 'Wrapper[]'),
+  \ javaapi#method(1,1,'values(', ')', 'Wrapper'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'Wrapper'),
   \ javaapi#method(0,1,'detailString(', ')', 'String'),
   \ javaapi#method(0,1,'bitWidth(', ')', 'int'),
@@ -99,11 +99,11 @@ call javaapi#class('Wrapper', 'Wrapper>', [
   \ javaapi#method(1,1,'forWrapperType(', 'Class<?>)', 'Wrapper'),
   \ javaapi#method(1,1,'forBasicType(', 'char)', 'Wrapper'),
   \ javaapi#method(1,1,'forBasicType(', 'Class<?>)', 'Wrapper'),
-  \ javaapi#method(0,1,'primitiveType(', ')', 'Class<?>'),
-  \ javaapi#method(0,1,'wrapperType(', ')', 'Class<?>'),
-  \ javaapi#method(0,1,'wrapperType(', 'Class<T>)', 'Class<T>'),
-  \ javaapi#method(1,1,'asWrapperType(', 'Class<T>)', 'Class<T>'),
-  \ javaapi#method(1,1,'asPrimitiveType(', 'Class<T>)', 'Class<T>'),
+  \ javaapi#method(0,1,'primitiveType(', ')', 'Class'),
+  \ javaapi#method(0,1,'wrapperType(', ')', 'Class'),
+  \ javaapi#method(0,1,'wrapperType(', 'Class<T>)', 'Class'),
+  \ javaapi#method(1,1,'asWrapperType(', 'Class<T>)', 'Class'),
+  \ javaapi#method(1,1,'asPrimitiveType(', 'Class<T>)', 'Class'),
   \ javaapi#method(1,1,'isWrapperType(', 'Class<?>)', 'boolean'),
   \ javaapi#method(1,1,'isPrimitiveType(', 'Class<?>)', 'boolean'),
   \ javaapi#method(1,1,'basicTypeChar(', 'Class<?>)', 'char'),
@@ -115,10 +115,10 @@ call javaapi#class('Wrapper', 'Wrapper>', [
   \ javaapi#method(0,1,'wrap(', 'int)', 'Object'),
   \ javaapi#method(0,1,'wrapRaw(', 'long)', 'Object'),
   \ javaapi#method(0,1,'unwrapRaw(', 'Object)', 'long'),
-  \ javaapi#method(0,1,'rawPrimitiveType(', ')', 'Class<?>'),
+  \ javaapi#method(0,1,'rawPrimitiveType(', ')', 'Class'),
   \ javaapi#method(0,1,'rawPrimitive(', ')', 'Wrapper'),
   \ javaapi#method(0,1,'makeArray(', 'int)', 'Object'),
-  \ javaapi#method(0,1,'arrayType(', ')', 'Class<?>'),
+  \ javaapi#method(0,1,'arrayType(', ')', 'Class'),
   \ javaapi#method(0,1,'copyArrayUnboxing(', 'Object[], int, Object, int, int)', 'void'),
   \ javaapi#method(0,1,'copyArrayBoxing(', 'Object, int, Object[], int, int)', 'void'),
   \ ])

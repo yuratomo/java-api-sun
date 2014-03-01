@@ -81,7 +81,7 @@ call javaapi#class('PolicyParser', '', [
   \ javaapi#method(0,1,'setKeyStoreUrl(', 'String)', 'void'),
   \ javaapi#method(0,1,'getKeyStoreType(', ')', 'String'),
   \ javaapi#method(0,1,'setKeyStoreType(', 'String)', 'void'),
-  \ javaapi#method(0,1,'grantElements(', ')', 'GrantEntry>'),
+  \ javaapi#method(0,1,'grantElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'write(', 'Writer)', 'void'),
   \ javaapi#method(1,1,'main(', 'String[]) throws Exception', 'void'),
   \ ])
@@ -89,7 +89,7 @@ call javaapi#class('PolicyParser', '', [
 call javaapi#class('PolicyPermissions', 'PermissionCollection', [
   \ javaapi#method(0,1,'add(', 'Permission)', 'void'),
   \ javaapi#method(0,1,'implies(', 'Permission)', 'boolean'),
-  \ javaapi#method(0,1,'elements(', ')', 'Permission>'),
+  \ javaapi#method(0,1,'elements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 

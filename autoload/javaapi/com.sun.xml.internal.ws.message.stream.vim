@@ -33,7 +33,7 @@ call javaapi#class('StreamAttachment', 'Attachment', [
   \ javaapi#method(0,1,'StreamAttachment(', 'ByteArrayBuffer, String, String)', ''),
   \ javaapi#method(0,1,'getContentId(', ')', 'String'),
   \ javaapi#method(0,1,'getContentType(', ')', 'String'),
-  \ javaapi#method(0,1,'asByteArray(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'asByteArray(', ')', 'byte'),
   \ javaapi#method(0,1,'asDataHandler(', ')', 'DataHandler'),
   \ javaapi#method(0,1,'asSource(', ')', 'Source'),
   \ javaapi#method(0,1,'asInputStream(', ')', 'InputStream'),
@@ -62,7 +62,7 @@ call javaapi#class('StreamHeader', 'AbstractHeaderImpl', [
   \ javaapi#method(0,1,'writeTo(', 'SOAPMessage) throws SOAPException', 'void'),
   \ javaapi#method(0,1,'writeTo(', 'ContentHandler, ErrorHandler) throws SAXException', 'void'),
   \ javaapi#method(0,1,'readAsEPR(', 'AddressingVersion) throws XMLStreamException', 'WSEndpointReference'),
-  \ javaapi#method(0,0,'processHeaderAttributes(', 'XMLStreamReader)', 'Attribute>'),
+  \ javaapi#method(0,0,'processHeaderAttributes(', 'XMLStreamReader)', 'FinalArrayList'),
   \ ])
 
 call javaapi#class('StreamHeader11', 'StreamHeader', [
@@ -70,7 +70,7 @@ call javaapi#class('StreamHeader11', 'StreamHeader', [
   \ javaapi#field(1,0,'SOAP_1_1_ROLE', 'String'),
   \ javaapi#method(0,1,'StreamHeader11(', 'XMLStreamReader, XMLStreamBuffer)', ''),
   \ javaapi#method(0,1,'StreamHeader11(', 'XMLStreamReader) throws XMLStreamException', ''),
-  \ javaapi#method(0,0,'processHeaderAttributes(', 'XMLStreamReader)', 'Attribute>'),
+  \ javaapi#method(0,0,'processHeaderAttributes(', 'XMLStreamReader)', 'FinalArrayList'),
   \ ])
 
 call javaapi#class('StreamHeader12', 'StreamHeader', [
@@ -79,7 +79,7 @@ call javaapi#class('StreamHeader12', 'StreamHeader', [
   \ javaapi#field(1,0,'SOAP_1_2_RELAY', 'String'),
   \ javaapi#method(0,1,'StreamHeader12(', 'XMLStreamReader, XMLStreamBuffer)', ''),
   \ javaapi#method(0,1,'StreamHeader12(', 'XMLStreamReader) throws XMLStreamException', ''),
-  \ javaapi#method(0,0,'processHeaderAttributes(', 'XMLStreamReader)', 'Attribute>'),
+  \ javaapi#method(0,0,'processHeaderAttributes(', 'XMLStreamReader)', 'FinalArrayList'),
   \ ])
 
 call javaapi#class('StreamMessage', 'AbstractMessageImpl', [

@@ -14,7 +14,7 @@ call javaapi#class('SelectOptimalEncodingFeature', 'WebServiceFeature', [
 
 call javaapi#class('ServiceInterceptor', '', [
   \ javaapi#method(0,1,'ServiceInterceptor(', ')', ''),
-  \ javaapi#method(0,1,'preCreateBinding(', 'WSPortInfo, Class<?>, WSFeatureList)', 'WebServiceFeature>'),
+  \ javaapi#method(0,1,'preCreateBinding(', 'WSPortInfo, Class<?>, WSFeatureList)', 'List'),
   \ javaapi#method(0,1,'postCreateProxy(', 'WSBindingProvider, Class<?>)', 'void'),
   \ javaapi#method(0,1,'postCreateDispatch(', 'WSBindingProvider)', 'void'),
   \ javaapi#method(1,1,'aggregate(', ')', 'ServiceInterceptor'),

@@ -34,7 +34,7 @@ call javaapi#class('AbstractPath', 'Path', [
   \ javaapi#method(0,1,'resolve(', 'String)', 'Path'),
   \ javaapi#method(0,1,'resolveSibling(', 'Path)', 'Path'),
   \ javaapi#method(0,1,'resolveSibling(', 'String)', 'Path'),
-  \ javaapi#method(0,1,'iterator(', ')', 'Path>'),
+  \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
   \ javaapi#method(0,1,'toFile(', ')', 'File'),
   \ javaapi#method(0,1,'register(', 'WatchService, Kind<?>) throws IOException', 'WatchKey'),
   \ ])
@@ -55,7 +55,7 @@ call javaapi#class('AbstractUserDefinedFileAttributeView', 'DynamicFileAttribute
 call javaapi#class('AbstractWatchKey', 'WatchKey', [
   \ javaapi#method(0,0,'AbstractWatchKey(', 'Path, AbstractWatchService)', ''),
   \ javaapi#method(0,1,'watchable(', ')', 'Path'),
-  \ javaapi#method(0,1,'pollEvents(', ')', 'WatchEvent<?>>'),
+  \ javaapi#method(0,1,'pollEvents(', ')', 'WatchEvent'),
   \ javaapi#method(0,1,'reset(', ')', 'boolean'),
   \ javaapi#method(0,1,'watchable(', ')', 'Watchable'),
   \ ])
@@ -123,7 +123,7 @@ call javaapi#class('Util', '', [
 
 call javaapi#class('WindowsAclFileAttributeView', 'AbstractAclFileAttributeView', [
   \ javaapi#method(0,1,'getOwner(', ') throws IOException', 'UserPrincipal'),
-  \ javaapi#method(0,1,'getAcl(', ') throws IOException', 'AclEntry>'),
+  \ javaapi#method(0,1,'getAcl(', ') throws IOException', 'List'),
   \ javaapi#method(0,1,'setOwner(', 'UserPrincipal) throws IOException', 'void'),
   \ javaapi#method(0,1,'setAcl(', 'List<AclEntry>) throws IOException', 'void'),
   \ ])
@@ -255,9 +255,9 @@ call javaapi#class('WindowsConstants', '', [
   \ javaapi#field(1,1,'PROCESS_QUERY_INFORMATION', 'int'),
   \ ])
 
-call javaapi#class('WindowsDirectoryStream', 'Path>', [
+call javaapi#class('WindowsDirectoryStream', 'DirectoryStream', [
   \ javaapi#method(0,1,'close(', ') throws IOException', 'void'),
-  \ javaapi#method(0,1,'iterator(', ')', 'Path>'),
+  \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
   \ ])
 
 call javaapi#class('WindowsException', 'Exception', [
@@ -308,9 +308,9 @@ call javaapi#class('WindowsFileSystem', 'FileSystem', [
   \ javaapi#method(0,1,'isOpen(', ')', 'boolean'),
   \ javaapi#method(0,1,'isReadOnly(', ')', 'boolean'),
   \ javaapi#method(0,1,'close(', ') throws IOException', 'void'),
-  \ javaapi#method(0,1,'getRootDirectories(', ')', 'Path>'),
-  \ javaapi#method(0,1,'getFileStores(', ')', 'FileStore>'),
-  \ javaapi#method(0,1,'supportedFileAttributeViews(', ')', 'String>'),
+  \ javaapi#method(0,1,'getRootDirectories(', ')', 'Iterable'),
+  \ javaapi#method(0,1,'getFileStores(', ')', 'Iterable'),
+  \ javaapi#method(0,1,'supportedFileAttributeViews(', ')', 'Set'),
   \ javaapi#method(0,1,'getPath(', 'String, )', 'Path'),
   \ javaapi#method(0,1,'getUserPrincipalLookupService(', ')', 'UserPrincipalLookupService'),
   \ javaapi#method(0,1,'getPathMatcher(', 'String)', 'PathMatcher'),
@@ -336,7 +336,7 @@ call javaapi#class('WindowsFileSystemProvider', 'AbstractFileSystemProvider', [
   \ javaapi#method(0,1,'isHidden(', 'Path) throws IOException', 'boolean'),
   \ javaapi#method(0,1,'getFileStore(', 'Path) throws IOException', 'FileStore'),
   \ javaapi#method(0,1,'createDirectory(', 'Path, FileAttribute<?>) throws IOException', 'void'),
-  \ javaapi#method(0,1,'newDirectoryStream(', 'Path, Filter<? super Path>) throws IOException', 'Path>'),
+  \ javaapi#method(0,1,'newDirectoryStream(', 'Path, Filter<? super Path>) throws IOException', 'DirectoryStream'),
   \ javaapi#method(0,1,'createSymbolicLink(', 'Path, Path, FileAttribute<?>) throws IOException', 'void'),
   \ javaapi#method(0,1,'createLink(', 'Path, Path) throws IOException', 'void'),
   \ javaapi#method(0,1,'readSymbolicLink(', 'Path) throws IOException', 'Path'),
@@ -385,13 +385,13 @@ call javaapi#class('WindowsPath', 'AbstractPath', [
 call javaapi#class('WindowsPathParser', '', [
   \ ])
 
-call javaapi#class('WindowsPathType', 'WindowsPathType>', [
+call javaapi#class('WindowsPathType', 'Enum', [
   \ javaapi#field(1,1,'ABSOLUTE', 'WindowsPathType'),
   \ javaapi#field(1,1,'UNC', 'WindowsPathType'),
   \ javaapi#field(1,1,'RELATIVE', 'WindowsPathType'),
   \ javaapi#field(1,1,'DIRECTORY_RELATIVE', 'WindowsPathType'),
   \ javaapi#field(1,1,'DRIVE_RELATIVE', 'WindowsPathType'),
-  \ javaapi#method(1,1,'values(', ')', 'WindowsPathType[]'),
+  \ javaapi#method(1,1,'values(', ')', 'WindowsPathType'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'WindowsPathType'),
   \ ])
 
@@ -405,7 +405,7 @@ call javaapi#class('WindowsUriSupport', '', [
   \ ])
 
 call javaapi#class('WindowsUserDefinedFileAttributeView', 'AbstractUserDefinedFileAttributeView', [
-  \ javaapi#method(0,1,'list(', ') throws IOException', 'String>'),
+  \ javaapi#method(0,1,'list(', ') throws IOException', 'List'),
   \ javaapi#method(0,1,'size(', 'String) throws IOException', 'int'),
   \ javaapi#method(0,1,'read(', 'String, ByteBuffer) throws IOException', 'int'),
   \ javaapi#method(0,1,'write(', 'String, ByteBuffer) throws IOException', 'int'),

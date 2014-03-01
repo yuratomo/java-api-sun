@@ -52,7 +52,7 @@ call javaapi#class('LCMSTransform', 'ColorTransform', [
   \ javaapi#method(0,1,'colorConvert(', 'BufferedImage, BufferedImage)', 'void'),
   \ javaapi#method(0,1,'colorConvert(', 'Raster, WritableRaster, float[], float[], float[], float[])', 'void'),
   \ javaapi#method(0,1,'colorConvert(', 'Raster, WritableRaster)', 'void'),
-  \ javaapi#method(0,1,'colorConvert(', 'short[], short[])', 'short[]'),
-  \ javaapi#method(0,1,'colorConvert(', 'byte[], byte[])', 'byte[]'),
+  \ javaapi#method(0,1,'colorConvert(', 'short[], short[])', 'short'),
+  \ javaapi#method(0,1,'colorConvert(', 'byte[], byte[])', 'byte'),
   \ ])
 

@@ -2,7 +2,7 @@ call javaapi#namespace('com.sun.xml.internal.bind.v2.runtime.reflect.opt')
 
 call javaapi#class('AccessorInjector', '', [
   \ javaapi#field(1,0,'noOptimize', 'boolean'),
-  \ javaapi#method(1,1,'prepare(', 'Class, String, String, )', 'Class<?>'),
+  \ javaapi#method(1,1,'prepare(', 'Class, String, String, )', 'Class'),
   \ ])
 
 call javaapi#class('Bean', '', [

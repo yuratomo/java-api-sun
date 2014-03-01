@@ -3,10 +3,10 @@ call javaapi#namespace('com.sun.org.omg.CORBA')
 call javaapi#class('AttrDescriptionSeqHelper', '', [
   \ javaapi#method(0,1,'AttrDescriptionSeqHelper(', ')', ''),
   \ javaapi#method(1,1,'insert(', 'Any, AttributeDescription[])', 'void'),
-  \ javaapi#method(1,1,'extract(', 'Any)', 'AttributeDescription[]'),
+  \ javaapi#method(1,1,'extract(', 'Any)', 'AttributeDescription'),
   \ javaapi#method(1,1,'type(', ')', 'TypeCode'),
   \ javaapi#method(1,1,'id(', ')', 'String'),
-  \ javaapi#method(1,1,'read(', 'InputStream)', 'AttributeDescription[]'),
+  \ javaapi#method(1,1,'read(', 'InputStream)', 'AttributeDescription'),
   \ javaapi#method(1,1,'write(', 'OutputStream, AttributeDescription[])', 'void'),
   \ ])
 
@@ -54,10 +54,10 @@ call javaapi#class('AttributeModeHelper', '', [
 call javaapi#class('ContextIdSeqHelper', '', [
   \ javaapi#method(0,1,'ContextIdSeqHelper(', ')', ''),
   \ javaapi#method(1,1,'insert(', 'Any, String[])', 'void'),
-  \ javaapi#method(1,1,'extract(', 'Any)', 'String[]'),
+  \ javaapi#method(1,1,'extract(', 'Any)', 'String'),
   \ javaapi#method(1,1,'type(', ')', 'TypeCode'),
   \ javaapi#method(1,1,'id(', ')', 'String'),
-  \ javaapi#method(1,1,'read(', 'InputStream)', 'String[]'),
+  \ javaapi#method(1,1,'read(', 'InputStream)', 'String'),
   \ javaapi#method(1,1,'write(', 'OutputStream, String[])', 'void'),
   \ ])
 
@@ -84,10 +84,10 @@ call javaapi#class('DefinitionKindHelper', '', [
 call javaapi#class('ExcDescriptionSeqHelper', '', [
   \ javaapi#method(0,1,'ExcDescriptionSeqHelper(', ')', ''),
   \ javaapi#method(1,1,'insert(', 'Any, ExceptionDescription[])', 'void'),
-  \ javaapi#method(1,1,'extract(', 'Any)', 'ExceptionDescription[]'),
+  \ javaapi#method(1,1,'extract(', 'Any)', 'ExceptionDescription'),
   \ javaapi#method(1,1,'type(', ')', 'TypeCode'),
   \ javaapi#method(1,1,'id(', ')', 'String'),
-  \ javaapi#method(1,1,'read(', 'InputStream)', 'ExceptionDescription[]'),
+  \ javaapi#method(1,1,'read(', 'InputStream)', 'ExceptionDescription'),
   \ javaapi#method(1,1,'write(', 'OutputStream, ExceptionDescription[])', 'void'),
   \ ])
 
@@ -133,7 +133,7 @@ call javaapi#class('IdentifierHelper', '', [
   \ ])
 
 call javaapi#class('Initializer', 'IDLEntity', [
-  \ javaapi#field(0,1,'members', 'StructMember[]'),
+  \ javaapi#field(0,1,'members', 'StructMember'),
   \ javaapi#field(0,1,'name', 'String'),
   \ javaapi#method(0,1,'Initializer(', ')', ''),
   \ javaapi#method(0,1,'Initializer(', 'StructMember[], String)', ''),
@@ -152,20 +152,20 @@ call javaapi#class('InitializerHelper', '', [
 call javaapi#class('InitializerSeqHelper', '', [
   \ javaapi#method(0,1,'InitializerSeqHelper(', ')', ''),
   \ javaapi#method(1,1,'insert(', 'Any, Initializer[])', 'void'),
-  \ javaapi#method(1,1,'extract(', 'Any)', 'Initializer[]'),
+  \ javaapi#method(1,1,'extract(', 'Any)', 'Initializer'),
   \ javaapi#method(1,1,'type(', ')', 'TypeCode'),
   \ javaapi#method(1,1,'id(', ')', 'String'),
-  \ javaapi#method(1,1,'read(', 'InputStream)', 'Initializer[]'),
+  \ javaapi#method(1,1,'read(', 'InputStream)', 'Initializer'),
   \ javaapi#method(1,1,'write(', 'OutputStream, Initializer[])', 'void'),
   \ ])
 
 call javaapi#class('OpDescriptionSeqHelper', '', [
   \ javaapi#method(0,1,'OpDescriptionSeqHelper(', ')', ''),
   \ javaapi#method(1,1,'insert(', 'Any, OperationDescription[])', 'void'),
-  \ javaapi#method(1,1,'extract(', 'Any)', 'OperationDescription[]'),
+  \ javaapi#method(1,1,'extract(', 'Any)', 'OperationDescription'),
   \ javaapi#method(1,1,'type(', ')', 'TypeCode'),
   \ javaapi#method(1,1,'id(', ')', 'String'),
-  \ javaapi#method(1,1,'read(', 'InputStream)', 'OperationDescription[]'),
+  \ javaapi#method(1,1,'read(', 'InputStream)', 'OperationDescription'),
   \ javaapi#method(1,1,'write(', 'OutputStream, OperationDescription[])', 'void'),
   \ ])
 
@@ -176,9 +176,9 @@ call javaapi#class('OperationDescription', 'IDLEntity', [
   \ javaapi#field(0,1,'version', 'String'),
   \ javaapi#field(0,1,'result', 'TypeCode'),
   \ javaapi#field(0,1,'mode', 'OperationMode'),
-  \ javaapi#field(0,1,'contexts', 'String[]'),
-  \ javaapi#field(0,1,'parameters', 'ParameterDescription[]'),
-  \ javaapi#field(0,1,'exceptions', 'ExceptionDescription[]'),
+  \ javaapi#field(0,1,'contexts', 'String'),
+  \ javaapi#field(0,1,'parameters', 'ParameterDescription'),
+  \ javaapi#field(0,1,'exceptions', 'ExceptionDescription'),
   \ javaapi#method(0,1,'OperationDescription(', ')', ''),
   \ javaapi#method(0,1,'OperationDescription(', 'String, String, String, String, TypeCode, OperationMode, String[], ParameterDescription[], ExceptionDescription[])', ''),
   \ ])
@@ -216,10 +216,10 @@ call javaapi#class('OperationModeHelper', '', [
 call javaapi#class('ParDescriptionSeqHelper', '', [
   \ javaapi#method(0,1,'ParDescriptionSeqHelper(', ')', ''),
   \ javaapi#method(1,1,'insert(', 'Any, ParameterDescription[])', 'void'),
-  \ javaapi#method(1,1,'extract(', 'Any)', 'ParameterDescription[]'),
+  \ javaapi#method(1,1,'extract(', 'Any)', 'ParameterDescription'),
   \ javaapi#method(1,1,'type(', ')', 'TypeCode'),
   \ javaapi#method(1,1,'id(', ')', 'String'),
-  \ javaapi#method(1,1,'read(', 'InputStream)', 'ParameterDescription[]'),
+  \ javaapi#method(1,1,'read(', 'InputStream)', 'ParameterDescription'),
   \ javaapi#method(1,1,'write(', 'OutputStream, ParameterDescription[])', 'void'),
   \ ])
 
@@ -290,10 +290,10 @@ call javaapi#class('RepositoryIdHelper', '', [
 call javaapi#class('RepositoryIdSeqHelper', '', [
   \ javaapi#method(0,1,'RepositoryIdSeqHelper(', ')', ''),
   \ javaapi#method(1,1,'insert(', 'Any, String[])', 'void'),
-  \ javaapi#method(1,1,'extract(', 'Any)', 'String[]'),
+  \ javaapi#method(1,1,'extract(', 'Any)', 'String'),
   \ javaapi#method(1,1,'type(', ')', 'TypeCode'),
   \ javaapi#method(1,1,'id(', ')', 'String'),
-  \ javaapi#method(1,1,'read(', 'InputStream)', 'String[]'),
+  \ javaapi#method(1,1,'read(', 'InputStream)', 'String'),
   \ javaapi#method(1,1,'write(', 'OutputStream, String[])', 'void'),
   \ ])
 
@@ -310,10 +310,10 @@ call javaapi#class('StructMemberHelper', '', [
 call javaapi#class('StructMemberSeqHelper', '', [
   \ javaapi#method(0,1,'StructMemberSeqHelper(', ')', ''),
   \ javaapi#method(1,1,'insert(', 'Any, StructMember[])', 'void'),
-  \ javaapi#method(1,1,'extract(', 'Any)', 'StructMember[]'),
+  \ javaapi#method(1,1,'extract(', 'Any)', 'StructMember'),
   \ javaapi#method(1,1,'type(', ')', 'TypeCode'),
   \ javaapi#method(1,1,'id(', ')', 'String'),
-  \ javaapi#method(1,1,'read(', 'InputStream)', 'StructMember[]'),
+  \ javaapi#method(1,1,'read(', 'InputStream)', 'StructMember'),
   \ javaapi#method(1,1,'write(', 'OutputStream, StructMember[])', 'void'),
   \ ])
 
@@ -332,10 +332,10 @@ call javaapi#class('ValueMemberHelper', '', [
 call javaapi#class('ValueMemberSeqHelper', '', [
   \ javaapi#method(0,1,'ValueMemberSeqHelper(', ')', ''),
   \ javaapi#method(1,1,'insert(', 'Any, ValueMember[])', 'void'),
-  \ javaapi#method(1,1,'extract(', 'Any)', 'ValueMember[]'),
+  \ javaapi#method(1,1,'extract(', 'Any)', 'ValueMember'),
   \ javaapi#method(1,1,'type(', ')', 'TypeCode'),
   \ javaapi#method(1,1,'id(', ')', 'String'),
-  \ javaapi#method(1,1,'read(', 'InputStream)', 'ValueMember[]'),
+  \ javaapi#method(1,1,'read(', 'InputStream)', 'ValueMember'),
   \ javaapi#method(1,1,'write(', 'OutputStream, ValueMember[])', 'void'),
   \ ])
 
@@ -365,6 +365,6 @@ call javaapi#class('_IDLTypeStub', 'ObjectImpl', [
   \ javaapi#method(0,1,'type(', ')', 'TypeCode'),
   \ javaapi#method(0,1,'def_kind(', ')', 'DefinitionKind'),
   \ javaapi#method(0,1,'destroy(', ')', 'void'),
-  \ javaapi#method(0,1,'_ids(', ')', 'String[]'),
+  \ javaapi#method(0,1,'_ids(', ')', 'String'),
   \ ])
 

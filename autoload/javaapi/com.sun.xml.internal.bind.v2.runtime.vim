@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.bind.v2.runtime')
 
-call javaapi#class('AnyTypeBeanInfo', 'Object>', [
+call javaapi#class('AnyTypeBeanInfo', 'JaxBeanInfo', [
   \ javaapi#method(0,1,'AnyTypeBeanInfo(', 'JAXBContextImpl, RuntimeTypeInfo)', ''),
   \ javaapi#method(0,1,'getElementNamespaceURI(', 'Object)', 'String'),
   \ javaapi#method(0,1,'getElementLocalName(', 'Object)', 'String'),
@@ -11,7 +11,7 @@ call javaapi#class('AnyTypeBeanInfo', 'Object>', [
   \ javaapi#method(0,1,'serializeAttributes(', 'Object, XMLSerializer) throws SAXException', 'void'),
   \ javaapi#method(0,1,'serializeRoot(', 'Object, XMLSerializer) throws SAXException', 'void'),
   \ javaapi#method(0,1,'serializeURIs(', 'Object, XMLSerializer)', 'void'),
-  \ javaapi#method(0,1,'getTransducer(', ')', 'Object>'),
+  \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer'),
   \ javaapi#method(0,1,'getLoader(', 'JAXBContextImpl, boolean)', 'Loader'),
   \ ])
 
@@ -32,26 +32,26 @@ call javaapi#class('ArrayBeanInfoImpl', 'JaxBeanInfo', [
   \ javaapi#method(0,1,'getLoader(', 'JAXBContextImpl, boolean)', 'Loader'),
   \ ])
 
-call javaapi#class('AssociationMap<XmlNode>', '', [
+call javaapi#class('AssociationMap', '', [
   \ javaapi#method(0,1,'AssociationMap(', ')', ''),
   \ javaapi#method(0,1,'addInner(', 'XmlNode, Object)', 'void'),
   \ javaapi#method(0,1,'addOuter(', 'XmlNode, Object)', 'void'),
   \ javaapi#method(0,1,'addUsed(', 'XmlNode)', 'void'),
-  \ javaapi#method(0,1,'byElement(', 'Object)', 'Entry<XmlNode>'),
-  \ javaapi#method(0,1,'byPeer(', 'Object)', 'Entry<XmlNode>'),
+  \ javaapi#method(0,1,'byElement(', 'Object)', 'Entry'),
+  \ javaapi#method(0,1,'byPeer(', 'Object)', 'Entry'),
   \ javaapi#method(0,1,'getInnerPeer(', 'XmlNode)', 'Object'),
   \ javaapi#method(0,1,'getOuterPeer(', 'XmlNode)', 'Object'),
   \ ])
 
-call javaapi#interface('AttributeAccessor<BeanT>', '', [
+call javaapi#interface('AttributeAccessor', '', [
   \ javaapi#method(0,1,'isNilIncluded(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('BinderImpl<XmlNode>', 'Binder<XmlNode>', [
+call javaapi#class('BinderImpl', 'Binder', [
   \ javaapi#method(0,1,'marshal(', 'Object, XmlNode) throws JAXBException', 'void'),
   \ javaapi#method(0,1,'updateJAXB(', 'XmlNode) throws JAXBException', 'Object'),
   \ javaapi#method(0,1,'unmarshal(', 'XmlNode) throws JAXBException', 'Object'),
-  \ javaapi#method(0,1,'unmarshal(', 'XmlNode, Class<T>) throws JAXBException', 'JAXBElement<T>'),
+  \ javaapi#method(0,1,'unmarshal(', 'XmlNode, Class<T>) throws JAXBException', 'JAXBElement'),
   \ javaapi#method(0,1,'setSchema(', 'Schema)', 'void'),
   \ javaapi#method(0,1,'getSchema(', ')', 'Schema'),
   \ javaapi#method(0,1,'getXMLNode(', 'Object)', 'XmlNode'),
@@ -64,7 +64,7 @@ call javaapi#class('BinderImpl<XmlNode>', 'Binder<XmlNode>', [
   \ javaapi#method(0,1,'setProperty(', 'String, Object) throws PropertyException', 'void'),
   \ ])
 
-call javaapi#class('BridgeAdapter<OnWire,InMemory>', 'InternalBridge<InMemory>', [
+call javaapi#class('BridgeAdapter', 'InternalBridge', [
   \ javaapi#method(0,1,'BridgeAdapter(', 'InternalBridge<OnWire>, Class<? extends XmlAdapter<OnWire, InMemory>>)', ''),
   \ javaapi#method(0,1,'marshal(', 'Marshaller, InMemory, XMLStreamWriter) throws JAXBException', 'void'),
   \ javaapi#method(0,1,'marshal(', 'Marshaller, InMemory, OutputStream, NamespaceContext) throws JAXBException', 'void'),
@@ -88,7 +88,7 @@ call javaapi#class('BridgeContextImpl', 'BridgeContext', [
   \ javaapi#method(0,1,'getAttachmentUnmarshaller(', ')', 'AttachmentUnmarshaller'),
   \ ])
 
-call javaapi#class('BridgeImpl<T>', 'InternalBridge<T>', [
+call javaapi#class('BridgeImpl', 'InternalBridge', [
   \ javaapi#method(0,1,'BridgeImpl(', 'JAXBContextImpl, Name, JaxBeanInfo<T>, TypeReference)', ''),
   \ javaapi#method(0,1,'marshal(', 'Marshaller, T, XMLStreamWriter) throws JAXBException', 'void'),
   \ javaapi#method(0,1,'marshal(', 'Marshaller, T, OutputStream, NamespaceContext) throws JAXBException', 'void'),
@@ -103,8 +103,8 @@ call javaapi#class('BridgeImpl<T>', 'InternalBridge<T>', [
   \ javaapi#method(0,1,'marshal(', 'T, XMLSerializer) throws IOException, SAXException, XMLStreamException', 'void'),
   \ ])
 
-call javaapi#class('ClassBeanInfoImpl<BeanT>', 'JaxBeanInfo<BeanT>', [
-  \ javaapi#field(0,1,'properties', 'Property<BeanT>[]'),
+call javaapi#class('ClassBeanInfoImpl', 'JaxBeanInfo', [
+  \ javaapi#field(0,1,'properties', 'Property'),
   \ javaapi#field(0,1,'superClazz', 'BeanT>'),
   \ javaapi#method(0,0,'link(', 'JAXBContextImpl)', 'void'),
   \ javaapi#method(0,1,'wrapUp(', ')', 'void'),
@@ -118,10 +118,10 @@ call javaapi#class('ClassBeanInfoImpl<BeanT>', 'JaxBeanInfo<BeanT>', [
   \ javaapi#method(0,1,'serializeAttributes(', 'BeanT, XMLSerializer) throws SAXException, IOException, XMLStreamException', 'void'),
   \ javaapi#method(0,1,'serializeURIs(', 'BeanT, XMLSerializer) throws SAXException', 'void'),
   \ javaapi#method(0,1,'getLoader(', 'JAXBContextImpl, boolean)', 'Loader'),
-  \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer<BeanT>'),
+  \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer'),
   \ ])
 
-call javaapi#class('CompositeStructureBeanInfo', 'CompositeStructure>', [
+call javaapi#class('CompositeStructureBeanInfo', 'JaxBeanInfo', [
   \ javaapi#method(0,1,'CompositeStructureBeanInfo(', 'JAXBContextImpl)', ''),
   \ javaapi#method(0,1,'getElementNamespaceURI(', 'CompositeStructure)', 'String'),
   \ javaapi#method(0,1,'getElementLocalName(', 'CompositeStructure)', 'String'),
@@ -133,7 +133,7 @@ call javaapi#class('CompositeStructureBeanInfo', 'CompositeStructure>', [
   \ javaapi#method(0,1,'serializeURIs(', 'CompositeStructure, XMLSerializer) throws SAXException', 'void'),
   \ javaapi#method(0,1,'serializeAttributes(', 'CompositeStructure, XMLSerializer) throws SAXException, IOException, XMLStreamException', 'void'),
   \ javaapi#method(0,1,'serializeBody(', 'CompositeStructure, XMLSerializer) throws SAXException, IOException, XMLStreamException', 'void'),
-  \ javaapi#method(0,1,'getTransducer(', ')', 'CompositeStructure>'),
+  \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer'),
   \ javaapi#method(0,1,'serializeURIs(', 'Object, XMLSerializer) throws SAXException', 'void'),
   \ javaapi#method(0,1,'serializeRoot(', 'Object, XMLSerializer) throws SAXException, IOException, XMLStreamException', 'void'),
   \ javaapi#method(0,1,'serializeAttributes(', 'Object, XMLSerializer) throws SAXException, IOException, XMLStreamException', 'void'),
@@ -175,7 +175,7 @@ call javaapi#class('DomPostInitAction', 'Runnable', [
   \ javaapi#method(0,1,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('ElementBeanInfoImpl', 'JAXBElement>', [
+call javaapi#class('ElementBeanInfoImpl', 'JaxBeanInfo', [
   \ javaapi#field(0,1,'expectedType', 'Class'),
   \ javaapi#method(0,0,'ElementBeanInfoImpl(', 'JAXBContextImpl)', ''),
   \ javaapi#method(0,1,'getElementNamespaceURI(', 'JAXBElement)', 'String'),
@@ -189,7 +189,7 @@ call javaapi#class('ElementBeanInfoImpl', 'JAXBElement>', [
   \ javaapi#method(0,1,'serializeRoot(', 'JAXBElement, XMLSerializer) throws SAXException, IOException, XMLStreamException', 'void'),
   \ javaapi#method(0,1,'serializeAttributes(', 'JAXBElement, XMLSerializer)', 'void'),
   \ javaapi#method(0,1,'serializeURIs(', 'JAXBElement, XMLSerializer)', 'void'),
-  \ javaapi#method(0,1,'getTransducer(', ')', 'JAXBElement>'),
+  \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer'),
   \ javaapi#method(0,1,'wrapUp(', ')', 'void'),
   \ javaapi#method(0,1,'link(', 'JAXBContextImpl)', 'void'),
   \ javaapi#method(0,1,'serializeURIs(', 'Object, XMLSerializer) throws SAXException', 'void'),
@@ -203,8 +203,8 @@ call javaapi#class('ElementBeanInfoImpl', 'JAXBElement>', [
   \ javaapi#method(0,1,'getElementNamespaceURI(', 'Object)', 'String'),
   \ ])
 
-call javaapi#class('FilterTransducer<T>', 'Transducer<T>', [
-  \ javaapi#field(0,0,'core', 'Transducer<T>'),
+call javaapi#class('FilterTransducer', 'Transducer', [
+  \ javaapi#field(0,0,'core', 'Transducer'),
   \ javaapi#method(0,0,'FilterTransducer(', 'Transducer<T>)', ''),
   \ javaapi#method(0,1,'isDefault(', ')', 'boolean'),
   \ javaapi#method(0,1,'useNamespace(', ')', 'boolean'),
@@ -223,24 +223,24 @@ call javaapi#class('IllegalAnnotationException', 'JAXBException', [
   \ javaapi#method(0,1,'IllegalAnnotationException(', 'String, Annotation, Annotation)', ''),
   \ javaapi#method(0,1,'IllegalAnnotationException(', 'String, Annotation, Locatable)', ''),
   \ javaapi#method(0,1,'IllegalAnnotationException(', 'String, Throwable, Locatable)', ''),
-  \ javaapi#method(0,1,'getSourcePos(', ')', 'Location>>'),
+  \ javaapi#method(0,1,'getSourcePos(', ')', 'List'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
 call javaapi#class('IllegalAnnotationsException', 'JAXBException', [
   \ javaapi#method(0,1,'IllegalAnnotationsException(', 'List<IllegalAnnotationException>)', ''),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
-  \ javaapi#method(0,1,'getErrors(', ')', 'IllegalAnnotationException>'),
+  \ javaapi#method(0,1,'getErrors(', ')', 'List'),
   \ ])
 
-call javaapi#class('InlineBinaryTransducer<V>', 'FilterTransducer<V>', [
+call javaapi#class('InlineBinaryTransducer', 'FilterTransducer', [
   \ javaapi#method(0,1,'InlineBinaryTransducer(', 'Transducer<V>)', ''),
   \ javaapi#method(0,1,'print(', 'V) throws AccessorException', 'CharSequence'),
   \ javaapi#method(0,1,'writeText(', 'XMLSerializer, V, String) throws IOException, SAXException, XMLStreamException, AccessorException', 'void'),
   \ javaapi#method(0,1,'writeLeafElement(', 'XMLSerializer, Name, V, String) throws IOException, SAXException, XMLStreamException, AccessorException', 'void'),
   \ ])
 
-call javaapi#class('InternalBridge<T>', 'Bridge<T>', [
+call javaapi#class('InternalBridge', 'Bridge', [
   \ javaapi#method(0,0,'InternalBridge(', 'JAXBContextImpl)', ''),
   \ javaapi#method(0,1,'getContext(', ')', 'JAXBContextImpl'),
   \ javaapi#method(0,1,'getContext(', ')', 'JAXBRIContext'),
@@ -248,8 +248,8 @@ call javaapi#class('InternalBridge<T>', 'Bridge<T>', [
 
 call javaapi#class('JAXBContextImpl', 'JAXBRIContext', [
   \ javaapi#field(0,0,'beanInfos', 'JaxBeanInfo>'),
-  \ javaapi#field(0,1,'marshallerPool', 'Marshaller>'),
-  \ javaapi#field(0,1,'unmarshallerPool', 'Unmarshaller>'),
+  \ javaapi#field(0,1,'marshallerPool', 'Pool'),
+  \ javaapi#field(0,1,'unmarshallerPool', 'Pool'),
   \ javaapi#field(0,1,'nameBuilder', 'NameBuilder'),
   \ javaapi#field(0,1,'nameList', 'NameList'),
   \ javaapi#field(0,0,'c14nSupport', 'boolean'),
@@ -259,7 +259,7 @@ call javaapi#class('JAXBContextImpl', 'JAXBRIContext', [
   \ javaapi#field(0,1,'supressAccessorWarnings', 'boolean'),
   \ javaapi#field(0,1,'improvedXsiTypeHandling', 'boolean'),
   \ javaapi#field(0,1,'fastBoot', 'boolean'),
-  \ javaapi#method(0,1,'getXmlNsSet(', ')', 'XmlNs>'),
+  \ javaapi#method(0,1,'getXmlNsSet(', ')', 'Set'),
   \ javaapi#method(0,1,'hasSwaRef(', ')', 'boolean'),
   \ javaapi#method(0,1,'getRuntimeTypeInfoSet(', ')', 'RuntimeTypeInfoSet'),
   \ javaapi#method(0,1,'getTypeInfoSet(', ') throws IllegalAnnotationsException', 'RuntimeTypeInfoSet'),
@@ -270,13 +270,13 @@ call javaapi#class('JAXBContextImpl', 'JAXBRIContext', [
   \ javaapi#method(0,1,'getOrCreate(', 'RuntimeTypeInfo)', 'JaxBeanInfo'),
   \ javaapi#method(0,1,'getBeanInfo(', 'Object)', 'JaxBeanInfo'),
   \ javaapi#method(0,1,'getBeanInfo(', 'Object, boolean) throws JAXBException', 'JaxBeanInfo'),
-  \ javaapi#method(0,1,'getBeanInfo(', 'Class<T>)', 'JaxBeanInfo<T>'),
-  \ javaapi#method(0,1,'getBeanInfo(', 'Class<T>, boolean) throws JAXBException', 'JaxBeanInfo<T>'),
+  \ javaapi#method(0,1,'getBeanInfo(', 'Class<T>)', 'JaxBeanInfo'),
+  \ javaapi#method(0,1,'getBeanInfo(', 'Class<T>, boolean) throws JAXBException', 'JaxBeanInfo'),
   \ javaapi#method(0,1,'selectRootLoader(', 'State, TagName)', 'Loader'),
   \ javaapi#method(0,1,'getGlobalType(', 'QName)', 'JaxBeanInfo'),
   \ javaapi#method(0,1,'getNearestTypeName(', 'QName)', 'String'),
-  \ javaapi#method(0,1,'getValidRootNames(', ')', 'QName>'),
-  \ javaapi#method(0,1,'getUTF8NameTable(', ')', 'Encoded[]'),
+  \ javaapi#method(0,1,'getValidRootNames(', ')', 'Set'),
+  \ javaapi#method(0,1,'getUTF8NameTable(', ')', 'Encoded'),
   \ javaapi#method(0,1,'getNumberOfLocalNames(', ')', 'int'),
   \ javaapi#method(0,1,'getNumberOfElementNames(', ')', 'int'),
   \ javaapi#method(0,1,'getNumberOfAttributeNames(', ')', 'int'),
@@ -289,14 +289,14 @@ call javaapi#class('JAXBContextImpl', 'JAXBRIContext', [
   \ javaapi#method(0,1,'generateSchema(', 'SchemaOutputResolver) throws IOException', 'void'),
   \ javaapi#method(0,1,'getTypeName(', 'TypeReference)', 'QName'),
   \ javaapi#method(0,1,'createTestResolver(', ')', 'SchemaOutputResolver'),
-  \ javaapi#method(0,1,'createBinder(', 'Class<T>)', 'Binder<T>'),
-  \ javaapi#method(0,1,'createBinder(', ')', 'Node>'),
+  \ javaapi#method(0,1,'createBinder(', 'Class<T>)', 'Binder'),
+  \ javaapi#method(0,1,'createBinder(', ')', 'Binder'),
   \ javaapi#method(0,1,'getElementName(', 'Object) throws JAXBException', 'QName'),
   \ javaapi#method(0,1,'getElementName(', 'Class) throws JAXBException', 'QName'),
   \ javaapi#method(0,1,'createBridge(', 'TypeReference)', 'Bridge'),
   \ javaapi#method(0,1,'createBridgeContext(', ')', 'BridgeContext'),
   \ javaapi#method(0,1,'getElementPropertyAccessor(', 'Class, String, String) throws JAXBException', 'RawAccessor'),
-  \ javaapi#method(0,1,'getKnownNamespaceURIs(', ')', 'String>'),
+  \ javaapi#method(0,1,'getKnownNamespaceURIs(', ')', 'List'),
   \ javaapi#method(0,1,'getBuildId(', ')', 'String'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'getXMIMEContentType(', 'Object)', 'String'),
@@ -305,10 +305,10 @@ call javaapi#class('JAXBContextImpl', 'JAXBRIContext', [
   \ javaapi#method(0,1,'createUnmarshaller(', ') throws JAXBException', 'Unmarshaller'),
   \ ])
 
-call javaapi#class('JaxBeanInfo<BeanT>', '', [
+call javaapi#class('JaxBeanInfo', '', [
   \ javaapi#field(0,0,'isNilIncluded', 'boolean'),
   \ javaapi#field(0,0,'flag', 'short'),
-  \ javaapi#field(0,1,'jaxbType', 'Class<BeanT>'),
+  \ javaapi#field(0,1,'jaxbType', 'Class'),
   \ javaapi#method(0,0,'JaxBeanInfo(', 'JAXBContextImpl, RuntimeTypeInfo, Class<BeanT>, QName[], boolean, boolean, boolean)', ''),
   \ javaapi#method(0,0,'JaxBeanInfo(', 'JAXBContextImpl, RuntimeTypeInfo, Class<BeanT>, QName, boolean, boolean, boolean)', ''),
   \ javaapi#method(0,0,'JaxBeanInfo(', 'JAXBContextImpl, RuntimeTypeInfo, Class<BeanT>, boolean, boolean, boolean)', ''),
@@ -324,7 +324,7 @@ call javaapi#class('JaxBeanInfo<BeanT>', '', [
   \ javaapi#method(0,1,'lookForLifecycleMethods(', ')', 'boolean'),
   \ javaapi#method(0,1,'getElementNamespaceURI(', 'BeanT)', 'String'),
   \ javaapi#method(0,1,'getElementLocalName(', 'BeanT)', 'String'),
-  \ javaapi#method(0,1,'getTypeNames(', ')', 'QName>'),
+  \ javaapi#method(0,1,'getTypeNames(', ')', 'Collection'),
   \ javaapi#method(0,1,'getTypeName(', 'BeanT)', 'QName'),
   \ javaapi#method(0,1,'createInstance(', 'UnmarshallingContext) throws IllegalAccessException, InvocationTargetException, InstantiationException, SAXException', 'BeanT'),
   \ javaapi#method(0,1,'reset(', 'BeanT, UnmarshallingContext) throws SAXException', 'boolean'),
@@ -334,7 +334,7 @@ call javaapi#class('JaxBeanInfo<BeanT>', '', [
   \ javaapi#method(0,1,'serializeRoot(', 'BeanT, XMLSerializer) throws SAXException, IOException, XMLStreamException', 'void'),
   \ javaapi#method(0,1,'serializeURIs(', 'BeanT, XMLSerializer) throws SAXException', 'void'),
   \ javaapi#method(0,1,'getLoader(', 'JAXBContextImpl, boolean)', 'Loader'),
-  \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer<BeanT>'),
+  \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer'),
   \ javaapi#method(0,0,'link(', 'JAXBContextImpl)', 'void'),
   \ javaapi#method(0,1,'wrapUp(', ')', 'void'),
   \ javaapi#method(0,0,'setLifecycleFlags(', ')', 'void'),
@@ -343,7 +343,7 @@ call javaapi#class('JaxBeanInfo<BeanT>', '', [
   \ javaapi#method(0,1,'invokeAfterUnmarshalMethod(', 'UnmarshallerImpl, Object, Object) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('LeafBeanInfoImpl<BeanT>', 'JaxBeanInfo<BeanT>', [
+call javaapi#class('LeafBeanInfoImpl', 'JaxBeanInfo', [
   \ javaapi#method(0,1,'LeafBeanInfoImpl(', 'JAXBContextImpl, RuntimeLeafInfo)', ''),
   \ javaapi#method(0,1,'getTypeName(', 'BeanT)', 'QName'),
   \ javaapi#method(0,1,'getElementNamespaceURI(', 'BeanT)', 'String'),
@@ -356,7 +356,7 @@ call javaapi#class('LeafBeanInfoImpl<BeanT>', 'JaxBeanInfo<BeanT>', [
   \ javaapi#method(0,1,'serializeRoot(', 'BeanT, XMLSerializer) throws SAXException, IOException, XMLStreamException', 'void'),
   \ javaapi#method(0,1,'serializeURIs(', 'BeanT, XMLSerializer) throws SAXException', 'void'),
   \ javaapi#method(0,1,'getLoader(', 'JAXBContextImpl, boolean)', 'Loader'),
-  \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer<BeanT>'),
+  \ javaapi#method(0,1,'getTransducer(', ')', 'Transducer'),
   \ ])
 
 call javaapi#class('LifecycleMethods', '', [
@@ -402,7 +402,7 @@ call javaapi#class('MarshallerImpl', 'AbstractMarshallerImpl', [
   \ javaapi#method(0,1,'setListener(', 'Listener)', 'void'),
   \ ])
 
-call javaapi#class('Messages', 'Messages>', [
+call javaapi#class('Messages', 'Enum', [
   \ javaapi#field(1,1,'ILLEGAL_PARAMETER', 'Messages'),
   \ javaapi#field(1,1,'UNABLE_TO_FIND_CONVERSION_METHOD', 'Messages'),
   \ javaapi#field(1,1,'MISSING_ID', 'Messages'),
@@ -429,20 +429,20 @@ call javaapi#class('Messages', 'Messages>', [
   \ javaapi#field(1,1,'FAILED_TO_GENERATE_SCHEMA', 'Messages'),
   \ javaapi#field(1,1,'ERROR_PROCESSING_SCHEMA', 'Messages'),
   \ javaapi#field(1,1,'ILLEGAL_CONTENT', 'Messages'),
-  \ javaapi#method(1,1,'values(', ')', 'Messages[]'),
+  \ javaapi#method(1,1,'values(', ')', 'Messages'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'Messages'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'format(', ')', 'String'),
   \ ])
 
-call javaapi#class('MimeTypedTransducer<V>', 'FilterTransducer<V>', [
+call javaapi#class('MimeTypedTransducer', 'FilterTransducer', [
   \ javaapi#method(0,1,'MimeTypedTransducer(', 'Transducer<V>, MimeType)', ''),
   \ javaapi#method(0,1,'print(', 'V) throws AccessorException', 'CharSequence'),
   \ javaapi#method(0,1,'writeText(', 'XMLSerializer, V, String) throws IOException, SAXException, XMLStreamException, AccessorException', 'void'),
   \ javaapi#method(0,1,'writeLeafElement(', 'XMLSerializer, Name, V, String) throws IOException, SAXException, XMLStreamException, AccessorException', 'void'),
   \ ])
 
-call javaapi#class('Name', 'Name>', [
+call javaapi#class('Name', 'Comparable', [
   \ javaapi#field(0,1,'nsUri', 'String'),
   \ javaapi#field(0,1,'localName', 'String'),
   \ javaapi#field(0,1,'nsUriIndex', 'short'),
@@ -466,9 +466,9 @@ call javaapi#class('NameBuilder', '', [
   \ ])
 
 call javaapi#class('NameList', '', [
-  \ javaapi#field(0,1,'namespaceURIs', 'String[]'),
-  \ javaapi#field(0,1,'nsUriCannotBeDefaulted', 'boolean[]'),
-  \ javaapi#field(0,1,'localNames', 'String[]'),
+  \ javaapi#field(0,1,'namespaceURIs', 'String'),
+  \ javaapi#field(0,1,'nsUriCannotBeDefaulted', 'boolean'),
+  \ javaapi#field(0,1,'localNames', 'String'),
   \ javaapi#field(0,1,'numberOfElementNames', 'int'),
   \ javaapi#field(0,1,'numberOfAttributeNames', 'int'),
   \ javaapi#method(0,1,'NameList(', 'String[], boolean[], String[], int, int)', ''),
@@ -487,7 +487,7 @@ call javaapi#class('RuntimeUtil', '', [
   \ javaapi#method(1,1,'handleTypeMismatchError(', 'XMLSerializer, Object, String, Object) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('SchemaTypeTransducer<V>', 'FilterTransducer<V>', [
+call javaapi#class('SchemaTypeTransducer', 'FilterTransducer', [
   \ javaapi#method(0,1,'SchemaTypeTransducer(', 'Transducer<V>, QName)', ''),
   \ javaapi#method(0,1,'print(', 'V) throws AccessorException', 'CharSequence'),
   \ javaapi#method(0,1,'writeText(', 'XMLSerializer, V, String) throws IOException, SAXException, XMLStreamException, AccessorException', 'void'),
@@ -498,7 +498,7 @@ call javaapi#class('StAXPostInitAction', 'Runnable', [
   \ javaapi#method(0,1,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('SwaRefAdapter', 'DataHandler>', [
+call javaapi#class('SwaRefAdapter', 'XmlAdapter', [
   \ javaapi#method(0,1,'SwaRefAdapter(', ')', ''),
   \ javaapi#method(0,1,'unmarshal(', 'String)', 'DataHandler'),
   \ javaapi#method(0,1,'marshal(', 'DataHandler)', 'String'),
@@ -506,7 +506,7 @@ call javaapi#class('SwaRefAdapter', 'DataHandler>', [
   \ javaapi#method(0,1,'unmarshal(', 'Object) throws Exception', 'Object'),
   \ ])
 
-call javaapi#interface('Transducer<ValueT>', '', [
+call javaapi#interface('Transducer', '', [
   \ javaapi#method(0,1,'isDefault(', ')', 'boolean'),
   \ javaapi#method(0,1,'useNamespace(', ')', 'boolean'),
   \ javaapi#method(0,1,'declareNamespace(', 'ValueT, XMLSerializer) throws AccessorException', 'void'),
@@ -535,7 +535,7 @@ call javaapi#class('ValueListBeanInfoImpl', 'JaxBeanInfo', [
 call javaapi#class('XMLSerializer', 'Coordinator', [
   \ javaapi#field(0,1,'grammar', 'JAXBContextImpl'),
   \ javaapi#field(0,1,'nameList', 'NameList'),
-  \ javaapi#field(0,1,'knownUri2prefixIndexMap', 'int[]'),
+  \ javaapi#field(0,1,'knownUri2prefixIndexMap', 'int'),
   \ javaapi#field(0,1,'attachmentMarshaller', 'AttachmentMarshaller'),
   \ javaapi#method(0,1,'getCachedBase64DataInstance(', ')', 'Base64Data'),
   \ javaapi#method(0,1,'reportError(', 'ValidationEvent) throws SAXException', 'void'),

@@ -9,7 +9,7 @@ call javaapi#class('JAXWSExceptionBase', 'WebServiceException', [
   \ javaapi#method(0,1,'getMessage(', ')', 'String'),
   \ javaapi#method(0,0,'getDefaultResourceBundleName(', ')', 'String'),
   \ javaapi#method(0,1,'getKey(', ')', 'String'),
-  \ javaapi#method(0,1,'getArguments(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'getArguments(', ')', 'Object'),
   \ javaapi#method(0,1,'getResourceBundleName(', ')', 'String'),
   \ ])
 
@@ -20,6 +20,6 @@ call javaapi#class('LocatableWebServiceException', 'WebServiceException', [
   \ javaapi#method(0,1,'LocatableWebServiceException(', 'String, XMLStreamReader)', ''),
   \ javaapi#method(0,1,'LocatableWebServiceException(', 'String, Throwable, XMLStreamReader)', ''),
   \ javaapi#method(0,1,'LocatableWebServiceException(', 'Throwable, XMLStreamReader)', ''),
-  \ javaapi#method(0,1,'getLocation(', ')', 'Locator>'),
+  \ javaapi#method(0,1,'getLocation(', ')', 'List'),
   \ ])
 

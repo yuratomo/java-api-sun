@@ -59,7 +59,7 @@ call javaapi#class('PackagePrefixChecker', '', [
   \ ])
 
 call javaapi#class('RepositoryId', '', [
-  \ javaapi#field(1,1,'IDL_IDENTIFIER_CHARS', 'byte[]'),
+  \ javaapi#field(1,1,'IDL_IDENTIFIER_CHARS', 'byte'),
   \ javaapi#field(1,1,'kInitialValueTag', 'int'),
   \ javaapi#field(1,1,'kNoTypeInfo', 'int'),
   \ javaapi#field(1,1,'kSingleRepTypeInfo', 'int'),
@@ -105,8 +105,8 @@ call javaapi#class('RepositoryId', '', [
   \ javaapi#field(1,1,'cache', 'RepositoryIdCache'),
   \ javaapi#field(1,1,'kjava_rmi_Remote', 'String'),
   \ javaapi#field(1,1,'korg_omg_CORBA_Object', 'String'),
-  \ javaapi#field(1,1,'kNoParamTypes', 'Class[]'),
-  \ javaapi#field(1,1,'kNoArgs', 'Object[]'),
+  \ javaapi#field(1,1,'kNoParamTypes', 'Class'),
+  \ javaapi#field(1,1,'kNoArgs', 'Object'),
   \ javaapi#method(0,1,'getUnqualifiedName(', ')', 'String'),
   \ javaapi#method(0,1,'getDefinedInId(', ')', 'String'),
   \ javaapi#method(0,1,'getTypeString(', ')', 'String'),
@@ -118,7 +118,7 @@ call javaapi#class('RepositoryId', '', [
   \ javaapi#method(0,1,'isRMIValueType(', ')', 'boolean'),
   \ javaapi#method(0,1,'isIDLType(', ')', 'boolean'),
   \ javaapi#method(0,1,'getRepositoryId(', ')', 'String'),
-  \ javaapi#method(1,1,'getByteArray(', 'String)', 'byte[]'),
+  \ javaapi#method(1,1,'getByteArray(', 'String)', 'byte'),
   \ javaapi#method(1,1,'setByteArray(', 'String, byte[])', 'void'),
   \ javaapi#method(0,1,'isSequence(', ')', 'boolean'),
   \ javaapi#method(0,1,'isSupportedFormat(', ')', 'boolean'),

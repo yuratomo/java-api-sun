@@ -9,13 +9,13 @@ call javaapi#class('AclEntryImpl', 'AclEntry', [
   \ javaapi#method(0,1,'addPermission(', 'Permission)', 'boolean'),
   \ javaapi#method(0,1,'removePermission(', 'Permission)', 'boolean'),
   \ javaapi#method(0,1,'checkPermission(', 'Permission)', 'boolean'),
-  \ javaapi#method(0,1,'permissions(', ')', 'Permission>'),
+  \ javaapi#method(0,1,'permissions(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
   \ javaapi#method(0,1,'getPrincipal(', ')', 'Principal'),
   \ ])
 
-call javaapi#class('AclEnumerator', 'AclEntry>', [
+call javaapi#class('AclEnumerator', 'Enumeration', [
   \ javaapi#method(0,1,'hasMoreElements(', ')', 'boolean'),
   \ javaapi#method(0,1,'nextElement(', ')', 'AclEntry'),
   \ javaapi#method(0,1,'nextElement(', ')', 'Object'),
@@ -27,9 +27,9 @@ call javaapi#class('AclImpl', 'OwnerImpl', [
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'addEntry(', 'Principal, AclEntry) throws NotOwnerException', 'boolean'),
   \ javaapi#method(0,1,'removeEntry(', 'Principal, AclEntry) throws NotOwnerException', 'boolean'),
-  \ javaapi#method(0,1,'getPermissions(', 'Principal)', 'Permission>'),
+  \ javaapi#method(0,1,'getPermissions(', 'Principal)', 'Enumeration'),
   \ javaapi#method(0,1,'checkPermission(', 'Principal, Permission)', 'boolean'),
-  \ javaapi#method(0,1,'entries(', ')', 'AclEntry>'),
+  \ javaapi#method(0,1,'entries(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 

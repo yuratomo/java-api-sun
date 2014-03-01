@@ -21,7 +21,7 @@ call javaapi#class('CMNodeFactory', '', [
 call javaapi#class('XSAllCM', 'XSCMValidator', [
   \ javaapi#method(0,1,'XSAllCM(', 'boolean, int)', ''),
   \ javaapi#method(0,1,'addElement(', 'XSElementDecl, boolean)', 'void'),
-  \ javaapi#method(0,1,'startContentModel(', ')', 'int[]'),
+  \ javaapi#method(0,1,'startContentModel(', ')', 'int'),
   \ javaapi#method(0,1,'oneTransition(', 'QName, int[], SubstitutionGroupHandler)', 'Object'),
   \ javaapi#method(0,1,'endContentModel(', 'int[])', 'boolean'),
   \ javaapi#method(0,1,'checkUniqueParticleAttribution(', 'SubstitutionGroupHandler) throws XMLSchemaException', 'boolean'),
@@ -59,7 +59,7 @@ call javaapi#class('XSCMUniOp', 'CMNode', [
 call javaapi#interface('XSCMValidator', '', [
   \ javaapi#field(1,1,'FIRST_ERROR', 'short'),
   \ javaapi#field(1,1,'SUBSEQUENT_ERROR', 'short'),
-  \ javaapi#method(0,1,'startContentModel(', ')', 'int[]'),
+  \ javaapi#method(0,1,'startContentModel(', ')', 'int'),
   \ javaapi#method(0,1,'oneTransition(', 'QName, int[], SubstitutionGroupHandler)', 'Object'),
   \ javaapi#method(0,1,'endContentModel(', 'int[])', 'boolean'),
   \ javaapi#method(0,1,'checkUniqueParticleAttribution(', 'SubstitutionGroupHandler) throws XMLSchemaException', 'boolean'),
@@ -71,7 +71,7 @@ call javaapi#class('XSDFACM', 'XSCMValidator', [
   \ javaapi#method(0,1,'XSDFACM(', 'CMNode, int)', ''),
   \ javaapi#method(0,1,'isFinalState(', 'int)', 'boolean'),
   \ javaapi#method(0,1,'oneTransition(', 'QName, int[], SubstitutionGroupHandler)', 'Object'),
-  \ javaapi#method(0,1,'startContentModel(', ')', 'int[]'),
+  \ javaapi#method(0,1,'startContentModel(', ')', 'int'),
   \ javaapi#method(0,1,'endContentModel(', 'int[])', 'boolean'),
   \ javaapi#method(0,1,'checkUniqueParticleAttribution(', 'SubstitutionGroupHandler) throws XMLSchemaException', 'boolean'),
   \ javaapi#method(0,1,'whatCanGoHere(', 'int[])', 'Vector'),
@@ -80,7 +80,7 @@ call javaapi#class('XSDFACM', 'XSCMValidator', [
 
 call javaapi#class('XSEmptyCM', 'XSCMValidator', [
   \ javaapi#method(0,1,'XSEmptyCM(', ')', ''),
-  \ javaapi#method(0,1,'startContentModel(', ')', 'int[]'),
+  \ javaapi#method(0,1,'startContentModel(', ')', 'int'),
   \ javaapi#method(0,1,'oneTransition(', 'QName, int[], SubstitutionGroupHandler)', 'Object'),
   \ javaapi#method(0,1,'endContentModel(', 'int[])', 'boolean'),
   \ javaapi#method(0,1,'checkUniqueParticleAttribution(', 'SubstitutionGroupHandler) throws XMLSchemaException', 'boolean'),

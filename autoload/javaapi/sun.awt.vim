@@ -34,14 +34,14 @@ call javaapi#class('AWTCharset', 'Charset', [
   \ javaapi#method(0,1,'newDecoder(', ')', 'CharsetDecoder'),
   \ ])
 
-call javaapi#class('AWTPermissionFactory', 'AWTPermission>', [
+call javaapi#class('AWTPermissionFactory', 'PermissionFactory', [
   \ javaapi#method(0,1,'AWTPermissionFactory(', ')', ''),
   \ javaapi#method(0,1,'newPermission(', 'String)', 'AWTPermission'),
   \ javaapi#method(0,1,'newPermission(', 'String)', 'Permission'),
   \ ])
 
 call javaapi#class('CharsetString', '', [
-  \ javaapi#field(0,1,'charsetChars', 'char[]'),
+  \ javaapi#field(0,1,'charsetChars', 'char'),
   \ javaapi#field(0,1,'offset', 'int'),
   \ javaapi#field(0,1,'length', 'int'),
   \ javaapi#field(0,1,'fontDescriptor', 'FontDescriptor'),
@@ -203,7 +203,7 @@ call javaapi#class('OSInfo', '', [
   \ javaapi#field(1,1,'WINDOWS_2003', 'WindowsVersion'),
   \ javaapi#field(1,1,'WINDOWS_VISTA', 'WindowsVersion'),
   \ javaapi#method(1,1,'getOSType(', ') throws SecurityException', 'OSType'),
-  \ javaapi#method(1,1,'getOSTypeAction(', ')', 'OSType>'),
+  \ javaapi#method(1,1,'getOSTypeAction(', ')', 'PrivilegedAction'),
   \ javaapi#method(1,1,'getWindowsVersion(', ') throws SecurityException', 'WindowsVersion'),
   \ ])
 
@@ -229,6 +229,15 @@ call javaapi#class('ScrollPaneWheelScroller', '', [
   \ javaapi#method(1,1,'getAdjustableToScroll(', 'ScrollPane)', 'Adjustable'),
   \ javaapi#method(1,1,'getIncrementFromAdjustable(', 'Adjustable, MouseWheelEvent)', 'int'),
   \ javaapi#method(1,1,'scrollAdjustable(', 'Adjustable, int)', 'void'),
+  \ ])
+
+call javaapi#int('getMaxTextureWidth()', '', [
+  \ javaapi#method(0,1,'getMaxTextureHeight(', ')', 'int'),
+  \ ])
+
+call javaapi#long('getWhen()', '', [
+  \ javaapi#method(0,1,'TimedWindowEvent(', 'Window, int, Window, long)', ''),
+  \ javaapi#method(0,1,'TimedWindowEvent(', 'Window, int, Window, int, int, long)', ''),
   \ ])
 
 call javaapi#class('TracedEventQueue', 'EventQueue', [
@@ -278,7 +287,7 @@ call javaapi#class('Win32FontManager', 'SunFontManager', [
   \ javaapi#method(0,1,'createFontConfiguration(', 'boolean, boolean)', 'FontConfiguration'),
   \ javaapi#method(0,0,'populateFontFileNameMap(', 'HashMap<String, String>, HashMap<String, String>, HashMap<String, ArrayList<String>>, Locale)', 'void'),
   \ javaapi#method(0,0,'getFontPath(', 'boolean)', 'String'),
-  \ javaapi#method(0,1,'getDefaultPlatformFont(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getDefaultPlatformFont(', ')', 'String'),
   \ javaapi#method(0,0,'registerJREFontsWithPlatform(', 'String)', 'void'),
   \ javaapi#method(1,1,'registerJREFontsForPrinting(', ')', 'void'),
   \ javaapi#method(1,0,'registerFontWithPlatform(', 'String)', 'void'),
@@ -411,8 +420,8 @@ call javaapi#class('EventListenerAggregate', '', [
   \ javaapi#method(0,1,'EventListenerAggregate(', 'Class)', ''),
   \ javaapi#method(0,1,'add(', 'EventListener)', 'void'),
   \ javaapi#method(0,1,'remove(', 'EventListener)', 'boolean'),
-  \ javaapi#method(0,1,'getListenersInternal(', ')', 'EventListener[]'),
-  \ javaapi#method(0,1,'getListenersCopy(', ')', 'EventListener[]'),
+  \ javaapi#method(0,1,'getListenersInternal(', ')', 'EventListener'),
+  \ javaapi#method(0,1,'getListenersCopy(', ')', 'EventListener'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
   \ javaapi#method(0,1,'isEmpty(', ')', 'boolean'),
   \ ])
@@ -444,7 +453,7 @@ call javaapi#class('Symbol', 'Charset', [
 call javaapi#namespace('sun.awt')
 
 call javaapi#class('PlatformFont', 'FontPeer', [
-  \ javaapi#field(0,0,'componentFonts', 'FontDescriptor[]'),
+  \ javaapi#field(0,0,'componentFonts', 'FontDescriptor'),
   \ javaapi#field(0,0,'defaultChar', 'char'),
   \ javaapi#field(0,0,'fontConfig', 'FontConfiguration'),
   \ javaapi#field(0,0,'defaultFont', 'FontDescriptor'),
@@ -454,14 +463,14 @@ call javaapi#class('PlatformFont', 'FontPeer', [
   \ javaapi#field(1,0,'osVersion', 'String'),
   \ javaapi#method(0,1,'PlatformFont(', 'String, int)', ''),
   \ javaapi#method(0,0,'getMissingGlyphCharacter(', ')', 'char'),
-  \ javaapi#method(0,1,'makeMultiCharsetString(', 'String)', 'CharsetString[]'),
-  \ javaapi#method(0,1,'makeMultiCharsetString(', 'String, boolean)', 'CharsetString[]'),
-  \ javaapi#method(0,1,'makeMultiCharsetString(', 'char[], int, int)', 'CharsetString[]'),
-  \ javaapi#method(0,1,'makeMultiCharsetString(', 'char[], int, int, boolean)', 'CharsetString[]'),
+  \ javaapi#method(0,1,'makeMultiCharsetString(', 'String)', 'CharsetString'),
+  \ javaapi#method(0,1,'makeMultiCharsetString(', 'String, boolean)', 'CharsetString'),
+  \ javaapi#method(0,1,'makeMultiCharsetString(', 'char[], int, int)', 'CharsetString'),
+  \ javaapi#method(0,1,'makeMultiCharsetString(', 'char[], int, int, boolean)', 'CharsetString'),
   \ javaapi#method(0,1,'mightHaveMultiFontMetrics(', ')', 'boolean'),
-  \ javaapi#method(0,1,'makeConvertedMultiFontString(', 'String)', 'Object[]'),
-  \ javaapi#method(0,1,'makeConvertedMultiFontChars(', 'char[], int, int)', 'Object[]'),
-  \ javaapi#method(0,0,'getFontCache(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'makeConvertedMultiFontString(', 'String)', 'Object'),
+  \ javaapi#method(0,1,'makeConvertedMultiFontChars(', 'char[], int, int)', 'Object'),
+  \ javaapi#method(0,0,'getFontCache(', ')', 'Object'),
   \ ])
 
 call javaapi#namespace('sun.awt')
@@ -625,7 +634,7 @@ call javaapi#class('HeadlessToolkit', 'Toolkit', [
   \ javaapi#method(0,1,'createImage(', 'byte[])', 'Image'),
   \ javaapi#method(0,1,'getFontPeer(', 'String, int)', 'FontPeer'),
   \ javaapi#method(0,1,'getFontMetrics(', 'Font)', 'FontMetrics'),
-  \ javaapi#method(0,1,'getFontList(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getFontList(', ')', 'String'),
   \ javaapi#method(0,1,'addPropertyChangeListener(', 'String, PropertyChangeListener)', 'void'),
   \ javaapi#method(0,1,'removePropertyChangeListener(', 'String, PropertyChangeListener)', 'void'),
   \ javaapi#method(0,1,'isModalityTypeSupported(', 'ModalityType)', 'boolean'),
@@ -633,8 +642,8 @@ call javaapi#class('HeadlessToolkit', 'Toolkit', [
   \ javaapi#method(0,1,'isAlwaysOnTopSupported(', ')', 'boolean'),
   \ javaapi#method(0,1,'addAWTEventListener(', 'AWTEventListener, long)', 'void'),
   \ javaapi#method(0,1,'removeAWTEventListener(', 'AWTEventListener)', 'void'),
-  \ javaapi#method(0,1,'getAWTEventListeners(', ')', 'AWTEventListener[]'),
-  \ javaapi#method(0,1,'getAWTEventListeners(', 'long)', 'AWTEventListener[]'),
+  \ javaapi#method(0,1,'getAWTEventListeners(', ')', 'AWTEventListener'),
+  \ javaapi#method(0,1,'getAWTEventListeners(', 'long)', 'AWTEventListener'),
   \ javaapi#method(0,1,'isDesktopSupported(', ')', 'boolean'),
   \ javaapi#method(0,1,'createDesktopPeer(', 'Desktop) throws HeadlessException', 'DesktopPeer'),
   \ javaapi#method(0,1,'areExtraMouseButtonsEnabled(', ') throws HeadlessException', 'boolean'),
@@ -684,7 +693,7 @@ call javaapi#class('Win32GraphicsConfig', 'GraphicsConfiguration', [
   \ ])
 
 call javaapi#class('Win32GraphicsDevice', 'GraphicsDevice', [
-  \ javaapi#field(0,0,'configs', 'GraphicsConfiguration[]'),
+  \ javaapi#field(0,0,'configs', 'GraphicsConfiguration'),
   \ javaapi#field(0,0,'defaultConfig', 'GraphicsConfiguration'),
   \ javaapi#field(0,0,'descString', 'String'),
   \ javaapi#field(1,0,'pfDisabled', 'boolean'),
@@ -694,7 +703,7 @@ call javaapi#class('Win32GraphicsDevice', 'GraphicsDevice', [
   \ javaapi#method(0,1,'isValid(', ')', 'boolean'),
   \ javaapi#method(0,0,'invalidate(', 'int)', 'void'),
   \ javaapi#method(0,1,'getIDstring(', ')', 'String'),
-  \ javaapi#method(0,1,'getConfigurations(', ')', 'GraphicsConfiguration[]'),
+  \ javaapi#method(0,1,'getConfigurations(', ')', 'GraphicsConfiguration'),
   \ javaapi#method(0,0,'getMaxConfigs(', 'int)', 'int'),
   \ javaapi#method(0,0,'isPixFmtSupported(', 'int, int)', 'boolean'),
   \ javaapi#method(0,0,'getDefaultPixID(', 'int)', 'int'),
@@ -710,7 +719,7 @@ call javaapi#class('Win32GraphicsDevice', 'GraphicsDevice', [
   \ javaapi#method(0,0,'configDisplayMode(', 'int, WindowPeer, int, int, int, int)', 'void'),
   \ javaapi#method(0,0,'enumDisplayModes(', 'int, ArrayList)', 'void'),
   \ javaapi#method(0,1,'getDisplayMode(', ')', 'DisplayMode'),
-  \ javaapi#method(0,1,'getDisplayModes(', ')', 'DisplayMode[]'),
+  \ javaapi#method(0,1,'getDisplayModes(', ')', 'DisplayMode'),
   \ javaapi#method(0,0,'getMatchingDisplayMode(', 'DisplayMode)', 'DisplayMode'),
   \ javaapi#method(0,1,'displayChanged(', ')', 'void'),
   \ javaapi#method(0,1,'paletteChanged(', ')', 'void'),
@@ -731,7 +740,7 @@ call javaapi#class('FontDescriptor', 'Cloneable', [
   \ javaapi#method(0,1,'getNativeName(', ')', 'String'),
   \ javaapi#method(0,1,'getFontCharsetEncoder(', ')', 'CharsetEncoder'),
   \ javaapi#method(0,1,'getFontCharsetName(', ')', 'String'),
-  \ javaapi#method(0,1,'getExclusionRanges(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getExclusionRanges(', ')', 'int'),
   \ javaapi#method(0,1,'isExcluded(', 'char)', 'boolean'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'useUnicode(', ')', 'boolean'),
@@ -750,12 +759,12 @@ call javaapi#class('FontConfiguration', '', [
   \ javaapi#field(1,1,'verbose', 'boolean'),
   \ javaapi#field(1,0,'NUM_FONTS', 'int'),
   \ javaapi#field(1,0,'NUM_STYLES', 'int'),
-  \ javaapi#field(1,0,'fontNames', 'String[]'),
-  \ javaapi#field(1,0,'publicFontNames', 'String[]'),
-  \ javaapi#field(1,0,'styleNames', 'String[]'),
-  \ javaapi#field(1,0,'installedFallbackFontFiles', 'String[]'),
+  \ javaapi#field(1,0,'fontNames', 'String'),
+  \ javaapi#field(1,0,'publicFontNames', 'String'),
+  \ javaapi#field(1,0,'styleNames', 'String'),
+  \ javaapi#field(1,0,'installedFallbackFontFiles', 'String'),
   \ javaapi#field(0,0,'reorderMap', 'HashMap'),
-  \ javaapi#field(1,0,'table_awtfontpaths', 'short[]'),
+  \ javaapi#field(1,0,'table_awtfontpaths', 'short'),
   \ javaapi#method(0,1,'FontConfiguration(', 'SunFontManager)', ''),
   \ javaapi#method(0,1,'init(', ')', 'boolean'),
   \ javaapi#method(0,1,'FontConfiguration(', 'SunFontManager, boolean, boolean)', ''),
@@ -783,18 +792,18 @@ call javaapi#class('FontConfiguration', '', [
   \ javaapi#method(0,0,'mapFileName(', 'String)', 'String'),
   \ javaapi#method(0,0,'initReorderMap(', ')', 'void'),
   \ javaapi#method(1,1,'willReorderForStartupLocale(', ')', 'boolean'),
-  \ javaapi#method(0,0,'split(', 'String)', 'String[]'),
-  \ javaapi#method(0,1,'getFontDescriptors(', 'String, int)', 'FontDescriptor[]'),
+  \ javaapi#method(0,0,'split(', 'String)', 'String'),
+  \ javaapi#method(0,1,'getFontDescriptors(', 'String, int)', 'FontDescriptor'),
   \ javaapi#method(0,0,'makeAWTFontName(', 'String, String)', 'String'),
   \ javaapi#method(0,0,'getEncoding(', 'String, String)', 'String'),
   \ javaapi#method(0,0,'getDefaultFontCharset(', 'String)', 'Charset'),
-  \ javaapi#method(0,1,'getAWTFontPathSet(', ')', 'String>'),
-  \ javaapi#method(0,1,'get2DCompositeFontInfo(', ')', 'CompositeFontDescriptor[]'),
+  \ javaapi#method(0,1,'getAWTFontPathSet(', ')', 'HashSet'),
+  \ javaapi#method(0,1,'get2DCompositeFontInfo(', ')', 'CompositeFontDescriptor'),
   \ javaapi#method(0,0,'getFaceNameFromComponentFontName(', 'String)', 'String'),
   \ javaapi#method(0,0,'getFileNameFromComponentFontName(', 'String)', 'String'),
   \ javaapi#method(0,1,'needToSearchForFile(', 'String)', 'boolean'),
   \ javaapi#method(0,1,'getNumberCoreFonts(', ')', 'int'),
-  \ javaapi#method(0,1,'getPlatformFontNames(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getPlatformFontNames(', ')', 'String'),
   \ javaapi#method(0,1,'getFileNameFromPlatformName(', 'String)', 'String'),
   \ javaapi#method(0,1,'getExtraFontPath(', ')', 'String'),
   \ javaapi#method(0,1,'getVersion(', ')', 'String'),
@@ -803,7 +812,7 @@ call javaapi#class('FontConfiguration', '', [
   \ javaapi#method(1,0,'getComponentFontID(', 'short, int, int)', 'short'),
   \ javaapi#method(1,0,'getComponentFontIDMotif(', 'short, int, int)', 'short'),
   \ javaapi#method(1,0,'getComponentFontName(', 'short)', 'String'),
-  \ javaapi#method(0,0,'getCoreScripts(', 'int)', 'short[]'),
+  \ javaapi#method(0,0,'getCoreScripts(', 'int)', 'short'),
   \ javaapi#method(1,0,'getString(', 'short)', 'String'),
   \ ])
 
@@ -1033,7 +1042,7 @@ call javaapi#class('SunToolkit', 'Toolkit', [
   \ javaapi#method(0,0,'getScreenWidth(', ')', 'int'),
   \ javaapi#method(0,0,'getScreenHeight(', ')', 'int'),
   \ javaapi#method(0,1,'getFontMetrics(', 'Font)', 'FontMetrics'),
-  \ javaapi#method(0,1,'getFontList(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getFontList(', ')', 'String'),
   \ javaapi#method(0,1,'createPanel(', 'Panel)', 'PanelPeer'),
   \ javaapi#method(0,1,'createCanvas(', 'Canvas)', 'CanvasPeer'),
   \ javaapi#method(0,1,'disableBackgroundErase(', 'Canvas)', 'void'),
@@ -1140,7 +1149,7 @@ call javaapi#class('AppContext', '', [
   \ javaapi#field(1,1,'EVENT_QUEUE_COND_KEY', 'Object'),
   \ javaapi#field(1,1,'DISPOSED_PROPERTY_NAME', 'String'),
   \ javaapi#field(1,1,'GUI_DISPOSED', 'String'),
-  \ javaapi#method(1,1,'getAppContexts(', ')', 'AppContext>'),
+  \ javaapi#method(1,1,'getAppContexts(', ')', 'Set'),
   \ javaapi#method(0,1,'isDisposed(', ')', 'boolean'),
   \ javaapi#method(1,1,'getAppContext(', ')', 'AppContext'),
   \ javaapi#method(0,1,'dispose(', ') throws IllegalThreadStateException', 'void'),
@@ -1150,10 +1159,10 @@ call javaapi#class('AppContext', '', [
   \ javaapi#method(0,1,'getThreadGroup(', ')', 'ThreadGroup'),
   \ javaapi#method(0,1,'getContextClassLoader(', ')', 'ClassLoader'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
-  \ javaapi#method(0,1,'getPropertyChangeListeners(', ')', 'PropertyChangeListener[]'),
+  \ javaapi#method(0,1,'getPropertyChangeListeners(', ')', 'PropertyChangeListener'),
   \ javaapi#method(0,1,'addPropertyChangeListener(', 'String, PropertyChangeListener)', 'void'),
   \ javaapi#method(0,1,'removePropertyChangeListener(', 'String, PropertyChangeListener)', 'void'),
-  \ javaapi#method(0,1,'getPropertyChangeListeners(', 'String)', 'PropertyChangeListener[]'),
+  \ javaapi#method(0,1,'getPropertyChangeListeners(', 'String)', 'PropertyChangeListener'),
   \ ])
 
 call javaapi#namespace('sun.awt')

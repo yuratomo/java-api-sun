@@ -16,10 +16,10 @@ call javaapi#class('StringPrep', '', [
 call javaapi#class('StringPrepDataReader', 'Authenticate', [
   \ javaapi#method(0,1,'StringPrepDataReader(', 'InputStream) throws IOException', ''),
   \ javaapi#method(0,1,'read(', 'byte[], char[]) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getDataFormatVersion(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getDataFormatVersion(', ')', 'byte'),
   \ javaapi#method(0,1,'isDataVersionAcceptable(', 'byte[])', 'boolean'),
-  \ javaapi#method(0,1,'readIndexes(', 'int) throws IOException', 'int[]'),
-  \ javaapi#method(0,1,'getUnicodeVersion(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'readIndexes(', 'int) throws IOException', 'int'),
+  \ javaapi#method(0,1,'getUnicodeVersion(', ')', 'byte'),
   \ ])
 
 call javaapi#class('UCharacterDirection', 'ECharacterDirection', [

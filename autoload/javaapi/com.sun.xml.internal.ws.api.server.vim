@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.ws.api.server')
 
-call javaapi#class('AbstractServerAsyncTransport<T>', '', [
+call javaapi#class('AbstractServerAsyncTransport', '', [
   \ javaapi#method(0,1,'AbstractServerAsyncTransport(', 'WSEndpoint)', ''),
   \ javaapi#method(0,0,'decodePacket(', 'T, Codec) throws IOException', 'Packet'),
   \ javaapi#method(0,0,'encodePacket(', 'T, Packet, Codec) throws IOException', 'void'),
@@ -12,21 +12,21 @@ call javaapi#class('AbstractServerAsyncTransport<T>', '', [
   \ ])
 
 call javaapi#class('Adapter<TK', 'Toolkit>', [
-  \ javaapi#field(0,0,'endpoint', 'WSEndpoint<?>'),
-  \ javaapi#field(0,0,'pool', 'Pool<TK>'),
+  \ javaapi#field(0,0,'endpoint', 'WSEndpoint'),
+  \ javaapi#field(0,0,'pool', 'Pool'),
   \ javaapi#method(0,0,'Adapter(', 'WSEndpoint)', ''),
   \ javaapi#method(0,1,'reconfigure(', ')', 'void'),
   \ javaapi#method(0,1,'getSPI(', 'Class<T>)', 'T'),
-  \ javaapi#method(0,1,'getEndpoint(', ')', 'WSEndpoint<?>'),
-  \ javaapi#method(0,0,'getPool(', ')', 'Pool<TK>'),
+  \ javaapi#method(0,1,'getEndpoint(', ')', 'WSEndpoint'),
+  \ javaapi#method(0,0,'getPool(', ')', 'Pool'),
   \ javaapi#method(0,0,'createToolkit(', ')', 'TK'),
   \ ])
 
-call javaapi#interface('AsyncProvider<T>', '', [
+call javaapi#interface('AsyncProvider', '', [
   \ javaapi#method(0,1,'invoke(', 'T, AsyncProviderCallback<T>, WebServiceContext)', 'void'),
   \ ])
 
-call javaapi#interface('AsyncProviderCallback<T>', '', [
+call javaapi#interface('AsyncProviderCallback', '', [
   \ javaapi#method(0,1,'send(', 'T)', 'void'),
   \ javaapi#method(0,1,'sendError(', 'Throwable)', 'void'),
   \ ])
@@ -84,17 +84,17 @@ call javaapi#class('HttpEndpoint', '', [
   \ javaapi#method(0,1,'stop(', ')', 'void'),
   \ ])
 
-call javaapi#class('InstanceResolver<T>', '', [
+call javaapi#class('InstanceResolver', '', [
   \ javaapi#method(0,1,'InstanceResolver(', ')', ''),
   \ javaapi#method(0,1,'resolve(', 'Packet)', 'T'),
   \ javaapi#method(0,1,'postInvoke(', 'Packet, T)', 'void'),
   \ javaapi#method(0,1,'start(', 'WSWebServiceContext, WSEndpoint)', 'void'),
   \ javaapi#method(0,1,'start(', 'WebServiceContext)', 'void'),
   \ javaapi#method(0,1,'dispose(', ')', 'void'),
-  \ javaapi#method(1,1,'createSingleton(', 'T)', 'InstanceResolver<T>'),
-  \ javaapi#method(1,1,'createDefault(', 'Class<T>, boolean)', 'InstanceResolver<T>'),
-  \ javaapi#method(1,1,'createDefault(', 'Class<T>)', 'InstanceResolver<T>'),
-  \ javaapi#method(1,1,'createFromInstanceResolverAnnotation(', 'Class<T>)', 'InstanceResolver<T>'),
+  \ javaapi#method(1,1,'createSingleton(', 'T)', 'InstanceResolver'),
+  \ javaapi#method(1,1,'createDefault(', 'Class<T>, boolean)', 'InstanceResolver'),
+  \ javaapi#method(1,1,'createDefault(', 'Class<T>)', 'InstanceResolver'),
+  \ javaapi#method(1,1,'createFromInstanceResolverAnnotation(', 'Class<T>)', 'InstanceResolver'),
   \ javaapi#method(1,0,'createNewInstance(', 'Class<T>)', 'T'),
   \ javaapi#method(0,1,'createInvoker(', ')', 'Invoker'),
   \ ])
@@ -115,7 +115,7 @@ call javaapi#class('Invoker', '', [
 
 call javaapi#class('Module', '', [
   \ javaapi#method(0,1,'Module(', ')', ''),
-  \ javaapi#method(0,1,'getBoundEndpoints(', ')', 'BoundEndpoint>'),
+  \ javaapi#method(0,1,'getBoundEndpoints(', ')', 'List'),
   \ ])
 
 call javaapi#class('PortAddressResolver', '', [
@@ -134,7 +134,7 @@ call javaapi#interface('SDDocument', '', [
   \ javaapi#method(0,1,'getRootName(', ')', 'QName'),
   \ javaapi#method(0,1,'isWSDL(', ')', 'boolean'),
   \ javaapi#method(0,1,'isSchema(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getImports(', ')', 'String>'),
+  \ javaapi#method(0,1,'getImports(', ')', 'Set'),
   \ javaapi#method(0,1,'getURL(', ')', 'URL'),
   \ javaapi#method(0,1,'writeTo(', 'PortAddressResolver, DocumentAddressResolver, OutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'writeTo(', 'PortAddressResolver, DocumentAddressResolver, XMLStreamWriter) throws XMLStreamException, IOException', 'void'),
@@ -159,7 +159,7 @@ call javaapi#class('ServerPipelineHook', '', [
   \ javaapi#method(0,1,'createSecurityPipe(', 'ServerPipeAssemblerContext, Pipe)', 'Pipe'),
   \ ])
 
-call javaapi#interface('ServiceDefinition', 'SDDocument>', [
+call javaapi#interface('ServiceDefinition', 'Iterable', [
   \ javaapi#method(0,1,'getPrimary(', ')', 'SDDocument'),
   \ javaapi#method(0,1,'addFilter(', 'SDDocumentFilter)', 'void'),
   \ ])
@@ -168,12 +168,12 @@ call javaapi#interface('TransportBackChannel', '', [
   \ javaapi#method(0,1,'close(', ')', 'void'),
   \ ])
 
-call javaapi#class('WSEndpoint<T>', '', [
+call javaapi#class('WSEndpoint', '', [
   \ javaapi#method(0,1,'WSEndpoint(', ')', ''),
   \ javaapi#method(0,1,'createCodec(', ')', 'Codec'),
   \ javaapi#method(0,1,'getServiceName(', ')', 'QName'),
   \ javaapi#method(0,1,'getPortName(', ')', 'QName'),
-  \ javaapi#method(0,1,'getImplementationClass(', ')', 'Class<T>'),
+  \ javaapi#method(0,1,'getImplementationClass(', ')', 'Class'),
   \ javaapi#method(0,1,'getBinding(', ')', 'WSBinding'),
   \ javaapi#method(0,1,'getContainer(', ')', 'Container'),
   \ javaapi#method(0,1,'getPort(', ')', 'WSDLPort'),
@@ -184,15 +184,15 @@ call javaapi#class('WSEndpoint<T>', '', [
   \ javaapi#method(0,1,'createPipeHead(', ')', 'PipeHead'),
   \ javaapi#method(0,1,'dispose(', ')', 'void'),
   \ javaapi#method(0,1,'getServiceDefinition(', ')', 'ServiceDefinition'),
-  \ javaapi#method(0,1,'getComponentRegistry(', ')', 'EndpointComponent>'),
+  \ javaapi#method(0,1,'getComponentRegistry(', ')', 'Set'),
   \ javaapi#method(0,1,'getSEIModel(', ')', 'SEIModel'),
   \ javaapi#method(0,1,'getPolicyMap(', ')', 'PolicyMap'),
   \ javaapi#method(0,1,'getManagedObjectManager(', ')', 'ManagedObjectManager'),
   \ javaapi#method(0,1,'closeManagedObjectManager(', ')', 'void'),
   \ javaapi#method(0,1,'getAssemblerContext(', ')', 'ServerTubeAssemblerContext'),
-  \ javaapi#method(1,1,'create(', 'Class<T>, boolean, Invoker, QName, QName, Container, WSBinding, SDDocumentSource, Collection<? extends SDDocumentSource>, EntityResolver, boolean)', 'WSEndpoint<T>'),
-  \ javaapi#method(1,1,'create(', 'Class<T>, boolean, Invoker, QName, QName, Container, WSBinding, SDDocumentSource, Collection<? extends SDDocumentSource>, EntityResolver)', 'WSEndpoint<T>'),
-  \ javaapi#method(1,1,'create(', 'Class<T>, boolean, Invoker, QName, QName, Container, WSBinding, SDDocumentSource, Collection<? extends SDDocumentSource>, URL)', 'WSEndpoint<T>'),
+  \ javaapi#method(1,1,'create(', 'Class<T>, boolean, Invoker, QName, QName, Container, WSBinding, SDDocumentSource, Collection<? extends SDDocumentSource>, EntityResolver, boolean)', 'WSEndpoint'),
+  \ javaapi#method(1,1,'create(', 'Class<T>, boolean, Invoker, QName, QName, Container, WSBinding, SDDocumentSource, Collection<? extends SDDocumentSource>, EntityResolver)', 'WSEndpoint'),
+  \ javaapi#method(1,1,'create(', 'Class<T>, boolean, Invoker, QName, QName, Container, WSBinding, SDDocumentSource, Collection<? extends SDDocumentSource>, URL)', 'WSEndpoint'),
   \ javaapi#method(1,1,'getDefaultServiceName(', 'Class)', 'QName'),
   \ javaapi#method(1,1,'getDefaultPortName(', 'QName, Class)', 'QName'),
   \ ])

@@ -106,7 +106,7 @@ call javaapi#class('RuleCharacterIterator', '', [
 
 call javaapi#interface('SymbolTable', '', [
   \ javaapi#field(1,1,'SYMBOL_REF', 'char'),
-  \ javaapi#method(0,1,'lookup(', 'String)', 'char[]'),
+  \ javaapi#method(0,1,'lookup(', 'String)', 'char'),
   \ javaapi#method(0,1,'lookupMatcher(', 'int)', 'UnicodeMatcher'),
   \ javaapi#method(0,1,'parseReference(', 'String, ParsePosition, int)', 'String'),
   \ ])
@@ -158,8 +158,8 @@ call javaapi#class('UCharacterIterator', 'Cloneable', [
 
 call javaapi#class('UCharacterProperty', '', [
   \ javaapi#field(0,1,'m_trie_', 'CharTrie'),
-  \ javaapi#field(0,1,'m_trieIndex_', 'char[]'),
-  \ javaapi#field(0,1,'m_trieData_', 'char[]'),
+  \ javaapi#field(0,1,'m_trieIndex_', 'char'),
+  \ javaapi#field(0,1,'m_trieData_', 'char'),
   \ javaapi#field(0,1,'m_trieInitialValue_', 'int'),
   \ javaapi#field(0,1,'m_unicodeVersion_', 'VersionInfo'),
   \ javaapi#field(1,1,'SRC_PROPSVEC', 'int'),
@@ -295,7 +295,7 @@ call javaapi#class('Trie', '', [
   \ javaapi#field(1,0,'SURROGATE_BLOCK_COUNT', 'int'),
   \ javaapi#field(1,0,'BMP_INDEX_LENGTH', 'int'),
   \ javaapi#field(1,0,'SURROGATE_MASK_', 'int'),
-  \ javaapi#field(0,0,'m_index_', 'char[]'),
+  \ javaapi#field(0,0,'m_index_', 'char'),
   \ javaapi#field(0,0,'m_dataManipulate_', 'DataManipulate'),
   \ javaapi#field(0,0,'m_dataOffset_', 'int'),
   \ javaapi#field(0,0,'m_dataLength_', 'int'),
@@ -330,16 +330,16 @@ call javaapi#class('IntTrie', 'Trie', [
 
 call javaapi#class('ICUBinary', '', [
   \ javaapi#method(0,1,'ICUBinary(', ')', ''),
-  \ javaapi#method(1,1,'readHeader(', 'InputStream, byte[], Authenticate) throws IOException', 'byte[]'),
+  \ javaapi#method(1,1,'readHeader(', 'InputStream, byte[], Authenticate) throws IOException', 'byte'),
   \ ])
 
 call javaapi#class('NormalizerDataReader', 'Authenticate', [
   \ javaapi#method(0,0,'NormalizerDataReader(', 'InputStream) throws IOException', ''),
-  \ javaapi#method(0,0,'readIndexes(', 'int) throws IOException', 'int[]'),
+  \ javaapi#method(0,0,'readIndexes(', 'int) throws IOException', 'int'),
   \ javaapi#method(0,0,'read(', 'byte[], byte[], byte[], char[], char[]) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getDataFormatVersion(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getDataFormatVersion(', ')', 'byte'),
   \ javaapi#method(0,1,'isDataVersionAcceptable(', 'byte[])', 'boolean'),
-  \ javaapi#method(0,1,'getUnicodeVersion(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getUnicodeVersion(', ')', 'byte'),
   \ ])
 
 call javaapi#class('ICUData', '', [

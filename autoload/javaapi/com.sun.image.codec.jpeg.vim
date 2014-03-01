@@ -69,7 +69,7 @@ call javaapi#interface('JPEGDecodeParam', 'Cloneable', [
   \ javaapi#method(0,1,'isImageInfoValid(', ')', 'boolean'),
   \ javaapi#method(0,1,'isTableInfoValid(', ')', 'boolean'),
   \ javaapi#method(0,1,'getMarker(', 'int)', 'boolean'),
-  \ javaapi#method(0,1,'getMarkerData(', 'int)', 'byte[][]'),
+  \ javaapi#method(0,1,'getMarkerData(', 'int)', 'byte[]'),
   \ javaapi#method(0,1,'getEncodedColorID(', ')', 'int'),
   \ javaapi#method(0,1,'getNumComponents(', ')', 'int'),
   \ javaapi#method(0,1,'getRestartInterval(', ')', 'int'),
@@ -105,8 +105,8 @@ call javaapi#class('JPEGHuffmanTable', '', [
   \ javaapi#field(1,1,'StdACLuminance', 'JPEGHuffmanTable'),
   \ javaapi#field(1,1,'StdACChrominance', 'JPEGHuffmanTable'),
   \ javaapi#method(0,1,'JPEGHuffmanTable(', 'short[], short[])', ''),
-  \ javaapi#method(0,1,'getLengths(', ')', 'short[]'),
-  \ javaapi#method(0,1,'getSymbols(', ')', 'short[]'),
+  \ javaapi#method(0,1,'getLengths(', ')', 'short'),
+  \ javaapi#method(0,1,'getSymbols(', ')', 'short'),
   \ ])
 
 call javaapi#interface('JPEGImageDecoder', '', [
@@ -136,7 +136,7 @@ call javaapi#class('JPEGQTable', '', [
   \ javaapi#field(1,1,'StdLuminance', 'JPEGQTable'),
   \ javaapi#field(1,1,'StdChrominance', 'JPEGQTable'),
   \ javaapi#method(0,1,'JPEGQTable(', 'int[])', ''),
-  \ javaapi#method(0,1,'getTable(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getTable(', ')', 'int'),
   \ javaapi#method(0,1,'getScaledInstance(', 'float, boolean)', 'JPEGQTable'),
   \ ])
 

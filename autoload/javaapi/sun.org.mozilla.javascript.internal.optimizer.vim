@@ -12,12 +12,12 @@ call javaapi#class('ClassCompiler', '', [
   \ javaapi#method(0,1,'setMainMethodClass(', 'String)', 'void'),
   \ javaapi#method(0,1,'getMainMethodClass(', ')', 'String'),
   \ javaapi#method(0,1,'getCompilerEnv(', ')', 'CompilerEnvirons'),
-  \ javaapi#method(0,1,'getTargetExtends(', ')', 'Class<?>'),
+  \ javaapi#method(0,1,'getTargetExtends(', ')', 'Class'),
   \ javaapi#method(0,1,'setTargetExtends(', 'Class<?>)', 'void'),
-  \ javaapi#method(0,1,'getTargetImplements(', ')', 'Class<?>[]'),
+  \ javaapi#method(0,1,'getTargetImplements(', ')', 'Class'),
   \ javaapi#method(0,1,'setTargetImplements(', 'Class<?>[])', 'void'),
   \ javaapi#method(0,0,'makeAuxiliaryClassName(', 'String, String)', 'String'),
-  \ javaapi#method(0,1,'compileToClassFiles(', 'String, String, int, String)', 'Object[]'),
+  \ javaapi#method(0,1,'compileToClassFiles(', 'String, String, int, String)', 'Object'),
   \ ])
 
 call javaapi#class('Codegen', 'Evaluator', [
@@ -25,7 +25,7 @@ call javaapi#class('Codegen', 'Evaluator', [
   \ javaapi#method(0,1,'captureStackInfo(', 'RhinoException)', 'void'),
   \ javaapi#method(0,1,'getSourcePositionFromStack(', 'Context, int[])', 'String'),
   \ javaapi#method(0,1,'getPatchedStack(', 'RhinoException, String)', 'String'),
-  \ javaapi#method(0,1,'getScriptStack(', 'RhinoException)', 'String>'),
+  \ javaapi#method(0,1,'getScriptStack(', 'RhinoException)', 'List'),
   \ javaapi#method(0,1,'setEvalScriptFlag(', 'Script)', 'void'),
   \ javaapi#method(0,1,'compile(', 'CompilerEnvirons, ScriptNode, String, boolean)', 'Object'),
   \ javaapi#method(0,1,'createScriptObject(', 'Object, Object)', 'Script'),
@@ -54,7 +54,7 @@ call javaapi#class('OptRuntime', 'ScriptRuntime', [
   \ javaapi#method(1,1,'add(', 'Object, double)', 'Object'),
   \ javaapi#method(1,1,'add(', 'double, Object)', 'Object'),
   \ javaapi#method(1,1,'elemIncrDecr(', 'Object, double, Context, int)', 'Object'),
-  \ javaapi#method(1,1,'padStart(', 'Object[], int)', 'Object[]'),
+  \ javaapi#method(1,1,'padStart(', 'Object[], int)', 'Object'),
   \ javaapi#method(1,1,'initFunction(', 'NativeFunction, int, Scriptable, Context)', 'void'),
   \ javaapi#method(1,1,'callSpecial(', 'Context, Callable, Scriptable, Object[], Scriptable, Scriptable, int, String, int)', 'Object'),
   \ javaapi#method(1,1,'newObjectSpecial(', 'Context, Object, Object[], Scriptable, Scriptable, int)', 'Object'),
@@ -63,8 +63,8 @@ call javaapi#class('OptRuntime', 'ScriptRuntime', [
   \ javaapi#method(1,1,'main(', 'Script, String[])', 'void'),
   \ javaapi#method(1,1,'throwStopIteration(', 'Object)', 'void'),
   \ javaapi#method(1,1,'createNativeGenerator(', 'NativeFunction, Scriptable, Scriptable, int, int)', 'Scriptable'),
-  \ javaapi#method(1,1,'getGeneratorStackState(', 'Object)', 'Object[]'),
-  \ javaapi#method(1,1,'getGeneratorLocalsState(', 'Object)', 'Object[]'),
+  \ javaapi#method(1,1,'getGeneratorStackState(', 'Object)', 'Object'),
+  \ javaapi#method(1,1,'getGeneratorLocalsState(', 'Object)', 'Object'),
   \ ])
 
 call javaapi#class('OptTransformer', 'NodeTransformer', [

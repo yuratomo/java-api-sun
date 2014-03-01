@@ -6,7 +6,7 @@ call javaapi#class('AAShapePipe', 'ParallelogramPipe', [
   \ javaapi#method(0,1,'fill(', 'SunGraphics2D, Shape)', 'void'),
   \ javaapi#method(0,1,'fillParallelogram(', 'SunGraphics2D, double, double, double, double, double, double, double, double, double, double)', 'void'),
   \ javaapi#method(0,1,'drawParallelogram(', 'SunGraphics2D, double, double, double, double, double, double, double, double, double, double, double, double)', 'void'),
-  \ javaapi#method(1,1,'getAlphaTile(', 'int)', 'byte[]'),
+  \ javaapi#method(1,1,'getAlphaTile(', 'int)', 'byte'),
   \ javaapi#method(1,1,'dropAlphaTile(', 'byte[])', 'void'),
   \ javaapi#method(0,1,'renderPath(', 'SunGraphics2D, Shape, BasicStroke)', 'void'),
   \ javaapi#method(0,1,'renderTiles(', 'SunGraphics2D, Shape, AATileGenerator, int[])', 'void'),

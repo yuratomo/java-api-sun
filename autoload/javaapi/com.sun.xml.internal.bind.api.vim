@@ -7,7 +7,7 @@ call javaapi#class('AccessorException', 'Exception', [
   \ javaapi#method(0,1,'AccessorException(', 'Throwable)', ''),
   \ ])
 
-call javaapi#class('Bridge<T>', '', [
+call javaapi#class('Bridge', '', [
   \ javaapi#field(0,0,'context', 'JAXBContextImpl'),
   \ javaapi#method(0,0,'Bridge(', 'JAXBContextImpl)', ''),
   \ javaapi#method(0,1,'getContext(', ')', 'JAXBRIContext'),
@@ -58,12 +58,12 @@ call javaapi#class('BridgeContext', '', [
 
 call javaapi#class('ClassResolver', '', [
   \ javaapi#method(0,1,'ClassResolver(', ')', ''),
-  \ javaapi#method(0,1,'resolveElementName(', 'String, String) throws Exception', 'Class<?>'),
+  \ javaapi#method(0,1,'resolveElementName(', 'String, String) throws Exception', 'Class'),
   \ ])
 
 call javaapi#class('CompositeStructure', '', [
-  \ javaapi#field(0,1,'bridges', 'Bridge[]'),
-  \ javaapi#field(0,1,'values', 'Object[]'),
+  \ javaapi#field(0,1,'bridges', 'Bridge'),
+  \ javaapi#field(0,1,'values', 'Object'),
   \ javaapi#method(0,1,'CompositeStructure(', ')', ''),
   \ ])
 
@@ -95,7 +95,7 @@ call javaapi#class('JAXBRIContext', 'JAXBContext', [
   \ javaapi#method(0,1,'createBridge(', 'TypeReference)', 'Bridge'),
   \ javaapi#method(0,1,'createBridgeContext(', ')', 'BridgeContext'),
   \ javaapi#method(0,1,'getElementPropertyAccessor(', 'Class<B>, String, String) throws JAXBException', 'V>'),
-  \ javaapi#method(0,1,'getKnownNamespaceURIs(', ')', 'String>'),
+  \ javaapi#method(0,1,'getKnownNamespaceURIs(', ')', 'List'),
   \ javaapi#method(0,1,'generateSchema(', 'SchemaOutputResolver) throws IOException', 'void'),
   \ javaapi#method(0,1,'getTypeName(', 'TypeReference)', 'QName'),
   \ javaapi#method(0,1,'getBuildId(', ')', 'String'),
@@ -107,15 +107,15 @@ call javaapi#class('JAXBRIContext', 'JAXBContext', [
   \ javaapi#method(1,1,'getBaseType(', 'Type, Class)', 'Type'),
   \ ])
 
-call javaapi#class('Messages', 'Messages>', [
+call javaapi#class('Messages', 'Enum', [
   \ javaapi#field(1,1,'ARGUMENT_CANT_BE_NULL', 'Messages'),
-  \ javaapi#method(1,1,'values(', ')', 'Messages[]'),
+  \ javaapi#method(1,1,'values(', ')', 'Messages'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'Messages'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'format(', ')', 'String'),
   \ ])
 
-call javaapi#class('RawAccessor<B,V>', '', [
+call javaapi#class('RawAccessor', '', [
   \ javaapi#method(0,1,'RawAccessor(', ')', ''),
   \ javaapi#method(0,1,'get(', 'B) throws AccessorException', 'V'),
   \ javaapi#method(0,1,'set(', 'B, V) throws AccessorException', 'void'),
@@ -124,7 +124,7 @@ call javaapi#class('RawAccessor<B,V>', '', [
 call javaapi#class('TypeReference', '', [
   \ javaapi#field(0,1,'tagName', 'QName'),
   \ javaapi#field(0,1,'type', 'Type'),
-  \ javaapi#field(0,1,'annotations', 'Annotation[]'),
+  \ javaapi#field(0,1,'annotations', 'Annotation'),
   \ javaapi#method(0,1,'TypeReference(', 'QName, Type, )', ''),
   \ javaapi#method(0,1,'get(', 'Class<A>)', 'A'),
   \ javaapi#method(0,1,'toItemType(', ')', 'TypeReference'),

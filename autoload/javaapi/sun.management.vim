@@ -60,7 +60,7 @@ call javaapi#class('AgentConfigurationError', 'Error', [
   \ javaapi#method(0,1,'AgentConfigurationError(', 'String, )', ''),
   \ javaapi#method(0,1,'AgentConfigurationError(', 'String, Throwable, )', ''),
   \ javaapi#method(0,1,'getError(', ')', 'String'),
-  \ javaapi#method(0,1,'getParams(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getParams(', ')', 'String'),
   \ ])
 
 call javaapi#class('ClassLoadingImpl', 'ClassLoadingMXBean', [
@@ -127,7 +127,7 @@ call javaapi#class('GarbageCollectorImpl', 'MemoryManagerImpl', [
   \ javaapi#method(0,1,'getCollectionCount(', ')', 'long'),
   \ javaapi#method(0,1,'getCollectionTime(', ')', 'long'),
   \ javaapi#method(0,1,'getLastGcInfo(', ')', 'GcInfo'),
-  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo[]'),
+  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo'),
   \ javaapi#method(0,1,'addNotificationListener(', 'NotificationListener, NotificationFilter, Object)', 'void'),
   \ javaapi#method(0,1,'removeNotificationListener(', 'NotificationListener) throws ListenerNotFoundException', 'void'),
   \ javaapi#method(0,1,'removeNotificationListener(', 'NotificationListener, NotificationFilter, Object) throws ListenerNotFoundException', 'void'),
@@ -135,7 +135,7 @@ call javaapi#class('GarbageCollectorImpl', 'MemoryManagerImpl', [
   \ ])
 
 call javaapi#class('GcInfoBuilder', '', [
-  \ javaapi#method(0,1,'getPoolNames(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getPoolNames(', ')', 'String'),
   \ ])
 
 call javaapi#class('GcInfoCompositeData', 'LazyCompositeData', [
@@ -155,7 +155,7 @@ call javaapi#class('GcInfoCompositeData', 'LazyCompositeData', [
 call javaapi#class('HotSpotDiagnostic', 'HotSpotDiagnosticMXBean', [
   \ javaapi#method(0,1,'HotSpotDiagnostic(', ')', ''),
   \ javaapi#method(0,1,'dumpHeap(', 'String, boolean) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getDiagnosticOptions(', ')', 'VMOption>'),
+  \ javaapi#method(0,1,'getDiagnosticOptions(', ')', 'List'),
   \ javaapi#method(0,1,'getVMOption(', 'String)', 'VMOption'),
   \ javaapi#method(0,1,'setVMOption(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'getObjectName(', ')', 'ObjectName'),
@@ -169,7 +169,7 @@ call javaapi#class('HotspotClassLoading', 'HotspotClassLoadingMBean', [
   \ javaapi#method(0,1,'getInitializedClassCount(', ')', 'long'),
   \ javaapi#method(0,1,'getClassInitializationTime(', ')', 'long'),
   \ javaapi#method(0,1,'getClassVerificationTime(', ')', 'long'),
-  \ javaapi#method(0,1,'getInternalClassLoadingCounters(', ')', 'Counter>'),
+  \ javaapi#method(0,1,'getInternalClassLoadingCounters(', ')', 'List'),
   \ ])
 
 call javaapi#interface('HotspotClassLoadingMBean', '', [
@@ -180,7 +180,7 @@ call javaapi#interface('HotspotClassLoadingMBean', '', [
   \ javaapi#method(0,1,'getInitializedClassCount(', ')', 'long'),
   \ javaapi#method(0,1,'getClassInitializationTime(', ')', 'long'),
   \ javaapi#method(0,1,'getClassVerificationTime(', ')', 'long'),
-  \ javaapi#method(0,1,'getInternalClassLoadingCounters(', ')', 'Counter>'),
+  \ javaapi#method(0,1,'getInternalClassLoadingCounters(', ')', 'List'),
   \ ])
 
 call javaapi#class('HotspotCompilation', 'HotspotCompilationMBean', [
@@ -190,16 +190,16 @@ call javaapi#class('HotspotCompilation', 'HotspotCompilationMBean', [
   \ javaapi#method(0,1,'getInvalidatedCompileCount(', ')', 'long'),
   \ javaapi#method(0,1,'getCompiledMethodCodeSize(', ')', 'long'),
   \ javaapi#method(0,1,'getCompiledMethodSize(', ')', 'long'),
-  \ javaapi#method(0,1,'getCompilerThreadStats(', ')', 'CompilerThreadStat>'),
+  \ javaapi#method(0,1,'getCompilerThreadStats(', ')', 'List'),
   \ javaapi#method(0,1,'getLastCompile(', ')', 'MethodInfo'),
   \ javaapi#method(0,1,'getFailedCompile(', ')', 'MethodInfo'),
   \ javaapi#method(0,1,'getInvalidatedCompile(', ')', 'MethodInfo'),
-  \ javaapi#method(0,1,'getInternalCompilerCounters(', ')', 'Counter>'),
+  \ javaapi#method(0,1,'getInternalCompilerCounters(', ')', 'List'),
   \ ])
 
 call javaapi#interface('HotspotCompilationMBean', '', [
   \ javaapi#method(0,1,'getCompilerThreadCount(', ')', 'int'),
-  \ javaapi#method(0,1,'getCompilerThreadStats(', ')', 'CompilerThreadStat>'),
+  \ javaapi#method(0,1,'getCompilerThreadStats(', ')', 'List'),
   \ javaapi#method(0,1,'getTotalCompileCount(', ')', 'long'),
   \ javaapi#method(0,1,'getBailoutCompileCount(', ')', 'long'),
   \ javaapi#method(0,1,'getInvalidatedCompileCount(', ')', 'long'),
@@ -208,7 +208,7 @@ call javaapi#interface('HotspotCompilationMBean', '', [
   \ javaapi#method(0,1,'getInvalidatedCompile(', ')', 'MethodInfo'),
   \ javaapi#method(0,1,'getCompiledMethodCodeSize(', ')', 'long'),
   \ javaapi#method(0,1,'getCompiledMethodSize(', ')', 'long'),
-  \ javaapi#method(0,1,'getInternalCompilerCounters(', ')', 'Counter>'),
+  \ javaapi#method(0,1,'getInternalCompilerCounters(', ')', 'List'),
   \ ])
 
 call javaapi#class('HotspotInternal', 'MBeanRegistration', [
@@ -223,38 +223,38 @@ call javaapi#interface('HotspotInternalMBean', '', [
   \ ])
 
 call javaapi#class('HotspotMemory', 'HotspotMemoryMBean', [
-  \ javaapi#method(0,1,'getInternalMemoryCounters(', ')', 'Counter>'),
+  \ javaapi#method(0,1,'getInternalMemoryCounters(', ')', 'List'),
   \ ])
 
 call javaapi#interface('HotspotMemoryMBean', '', [
-  \ javaapi#method(0,1,'getInternalMemoryCounters(', ')', 'Counter>'),
+  \ javaapi#method(0,1,'getInternalMemoryCounters(', ')', 'List'),
   \ ])
 
 call javaapi#class('HotspotRuntime', 'HotspotRuntimeMBean', [
   \ javaapi#method(0,1,'getSafepointCount(', ')', 'long'),
   \ javaapi#method(0,1,'getTotalSafepointTime(', ')', 'long'),
   \ javaapi#method(0,1,'getSafepointSyncTime(', ')', 'long'),
-  \ javaapi#method(0,1,'getInternalRuntimeCounters(', ')', 'Counter>'),
+  \ javaapi#method(0,1,'getInternalRuntimeCounters(', ')', 'List'),
   \ ])
 
 call javaapi#interface('HotspotRuntimeMBean', '', [
   \ javaapi#method(0,1,'getSafepointCount(', ')', 'long'),
   \ javaapi#method(0,1,'getTotalSafepointTime(', ')', 'long'),
   \ javaapi#method(0,1,'getSafepointSyncTime(', ')', 'long'),
-  \ javaapi#method(0,1,'getInternalRuntimeCounters(', ')', 'Counter>'),
+  \ javaapi#method(0,1,'getInternalRuntimeCounters(', ')', 'List'),
   \ ])
 
 call javaapi#class('HotspotThread', 'HotspotThreadMBean', [
   \ javaapi#method(0,1,'getInternalThreadCount(', ')', 'int'),
   \ javaapi#method(0,1,'getInternalThreadCpuTimes(', ')', 'Long>'),
   \ javaapi#method(0,1,'getInternalThreadTimes0(', 'String[], long[])', 'int'),
-  \ javaapi#method(0,1,'getInternalThreadingCounters(', ')', 'Counter>'),
+  \ javaapi#method(0,1,'getInternalThreadingCounters(', ')', 'List'),
   \ ])
 
 call javaapi#interface('HotspotThreadMBean', '', [
   \ javaapi#method(0,1,'getInternalThreadCount(', ')', 'int'),
   \ javaapi#method(0,1,'getInternalThreadCpuTimes(', ')', 'Long>'),
-  \ javaapi#method(0,1,'getInternalThreadingCounters(', ')', 'Counter>'),
+  \ javaapi#method(0,1,'getInternalThreadingCounters(', ')', 'List'),
   \ ])
 
 call javaapi#class('LazyCompositeData', 'Serializable', [
@@ -263,7 +263,7 @@ call javaapi#class('LazyCompositeData', 'Serializable', [
   \ javaapi#method(0,1,'containsValue(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'get(', 'String)', 'Object'),
-  \ javaapi#method(0,1,'getAll(', 'String[])', 'Object[]'),
+  \ javaapi#method(0,1,'getAll(', 'String[])', 'Object'),
   \ javaapi#method(0,1,'getCompositeType(', ')', 'CompositeType'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
@@ -278,14 +278,14 @@ call javaapi#class('LockDataConverter', 'StandardMBean', [
   \ javaapi#method(0,1,'setLockInfo(', 'LockInfo)', 'void'),
   \ javaapi#method(0,1,'getLockInfo(', ')', 'LockInfo'),
   \ javaapi#method(0,1,'setLockedSynchronizers(', 'LockInfo[])', 'void'),
-  \ javaapi#method(0,1,'getLockedSynchronizers(', ')', 'LockInfo[]'),
+  \ javaapi#method(0,1,'getLockedSynchronizers(', ')', 'LockInfo'),
   \ ])
 
 call javaapi#interface('LockDataConverterMXBean', '', [
   \ javaapi#method(0,1,'setLockInfo(', 'LockInfo)', 'void'),
   \ javaapi#method(0,1,'getLockInfo(', ')', 'LockInfo'),
   \ javaapi#method(0,1,'setLockedSynchronizers(', 'LockInfo[])', 'void'),
-  \ javaapi#method(0,1,'getLockedSynchronizers(', ')', 'LockInfo[]'),
+  \ javaapi#method(0,1,'getLockedSynchronizers(', ')', 'LockInfo'),
   \ ])
 
 call javaapi#class('ManagementFactory', '', [
@@ -298,11 +298,11 @@ call javaapi#class('ManagementFactoryHelper', '', [
   \ javaapi#method(1,1,'getRuntimeMXBean(', ')', 'RuntimeMXBean'),
   \ javaapi#method(1,1,'getCompilationMXBean(', ')', 'CompilationMXBean'),
   \ javaapi#method(1,1,'getOperatingSystemMXBean(', ')', 'OperatingSystemMXBean'),
-  \ javaapi#method(1,1,'getMemoryPoolMXBeans(', ')', 'MemoryPoolMXBean>'),
-  \ javaapi#method(1,1,'getMemoryManagerMXBeans(', ')', 'MemoryManagerMXBean>'),
-  \ javaapi#method(1,1,'getGarbageCollectorMXBeans(', ')', 'GarbageCollectorMXBean>'),
+  \ javaapi#method(1,1,'getMemoryPoolMXBeans(', ')', 'List'),
+  \ javaapi#method(1,1,'getMemoryManagerMXBeans(', ')', 'List'),
+  \ javaapi#method(1,1,'getGarbageCollectorMXBeans(', ')', 'List'),
   \ javaapi#method(1,1,'getPlatformLoggingMXBean(', ')', 'PlatformLoggingMXBean'),
-  \ javaapi#method(1,1,'getBufferPoolMXBeans(', ')', 'BufferPoolMXBean>'),
+  \ javaapi#method(1,1,'getBufferPoolMXBeans(', ')', 'List'),
   \ javaapi#method(1,1,'getDiagnosticMXBean(', ')', 'HotSpotDiagnosticMXBean'),
   \ javaapi#method(1,1,'getHotspotRuntimeMBean(', ')', 'HotspotRuntimeMBean'),
   \ javaapi#method(1,1,'getHotspotClassLoadingMBean(', ')', 'HotspotClassLoadingMBean'),
@@ -328,15 +328,15 @@ call javaapi#class('MemoryImpl', 'NotificationEmitterSupport', [
   \ javaapi#method(0,1,'getNonHeapMemoryUsage(', ')', 'MemoryUsage'),
   \ javaapi#method(0,1,'isVerbose(', ')', 'boolean'),
   \ javaapi#method(0,1,'setVerbose(', 'boolean)', 'void'),
-  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo[]'),
+  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo'),
   \ javaapi#method(0,1,'getObjectName(', ')', 'ObjectName'),
   \ ])
 
 call javaapi#class('MemoryManagerImpl', 'NotificationEmitterSupport', [
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'isValid(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getMemoryPoolNames(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo[]'),
+  \ javaapi#method(0,1,'getMemoryPoolNames(', ')', 'String'),
+  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo'),
   \ javaapi#method(0,1,'getObjectName(', ')', 'ObjectName'),
   \ ])
 
@@ -358,7 +358,7 @@ call javaapi#class('MemoryPoolImpl', 'MemoryPoolMXBean', [
   \ javaapi#method(0,1,'getPeakUsage(', ')', 'MemoryUsage'),
   \ javaapi#method(0,1,'getUsageThreshold(', ')', 'long'),
   \ javaapi#method(0,1,'setUsageThreshold(', 'long)', 'void'),
-  \ javaapi#method(0,1,'getMemoryManagerNames(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getMemoryManagerNames(', ')', 'String'),
   \ javaapi#method(0,1,'resetPeakUsage(', ')', 'void'),
   \ javaapi#method(0,1,'isUsageThresholdExceeded(', ')', 'boolean'),
   \ javaapi#method(0,1,'getUsageThresholdCount(', ')', 'long'),
@@ -406,7 +406,7 @@ call javaapi#class('NotificationEmitterSupport', 'NotificationEmitter', [
   \ javaapi#method(0,1,'addNotificationListener(', 'NotificationListener, NotificationFilter, Object)', 'void'),
   \ javaapi#method(0,1,'removeNotificationListener(', 'NotificationListener) throws ListenerNotFoundException', 'void'),
   \ javaapi#method(0,1,'removeNotificationListener(', 'NotificationListener, NotificationFilter, Object) throws ListenerNotFoundException', 'void'),
-  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo[]'),
+  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo'),
   \ ])
 
 call javaapi#class('OperatingSystemImpl', 'OperatingSystemMXBean', [
@@ -431,7 +431,7 @@ call javaapi#class('RuntimeImpl', 'RuntimeMXBean', [
   \ javaapi#method(0,1,'getClassPath(', ')', 'String'),
   \ javaapi#method(0,1,'getLibraryPath(', ')', 'String'),
   \ javaapi#method(0,1,'getBootClassPath(', ')', 'String'),
-  \ javaapi#method(0,1,'getInputArguments(', ')', 'String>'),
+  \ javaapi#method(0,1,'getInputArguments(', ')', 'List'),
   \ javaapi#method(0,1,'getUptime(', ')', 'long'),
   \ javaapi#method(0,1,'getStartTime(', ')', 'long'),
   \ javaapi#method(0,1,'isBootClassPathSupported(', ')', 'boolean'),
@@ -472,29 +472,29 @@ call javaapi#class('ThreadImpl', 'ThreadMXBean', [
   \ javaapi#method(0,1,'isThreadAllocatedMemorySupported(', ')', 'boolean'),
   \ javaapi#method(0,1,'isThreadCpuTimeEnabled(', ')', 'boolean'),
   \ javaapi#method(0,1,'isThreadAllocatedMemoryEnabled(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getAllThreadIds(', ')', 'long[]'),
+  \ javaapi#method(0,1,'getAllThreadIds(', ')', 'long'),
   \ javaapi#method(0,1,'getThreadInfo(', 'long)', 'ThreadInfo'),
   \ javaapi#method(0,1,'getThreadInfo(', 'long, int)', 'ThreadInfo'),
-  \ javaapi#method(0,1,'getThreadInfo(', 'long[])', 'ThreadInfo[]'),
-  \ javaapi#method(0,1,'getThreadInfo(', 'long[], int)', 'ThreadInfo[]'),
+  \ javaapi#method(0,1,'getThreadInfo(', 'long[])', 'ThreadInfo'),
+  \ javaapi#method(0,1,'getThreadInfo(', 'long[], int)', 'ThreadInfo'),
   \ javaapi#method(0,1,'setThreadContentionMonitoringEnabled(', 'boolean)', 'void'),
   \ javaapi#method(0,1,'getCurrentThreadCpuTime(', ')', 'long'),
   \ javaapi#method(0,1,'getThreadCpuTime(', 'long)', 'long'),
-  \ javaapi#method(0,1,'getThreadCpuTime(', 'long[])', 'long[]'),
+  \ javaapi#method(0,1,'getThreadCpuTime(', 'long[])', 'long'),
   \ javaapi#method(0,1,'getCurrentThreadUserTime(', ')', 'long'),
   \ javaapi#method(0,1,'getThreadUserTime(', 'long)', 'long'),
-  \ javaapi#method(0,1,'getThreadUserTime(', 'long[])', 'long[]'),
+  \ javaapi#method(0,1,'getThreadUserTime(', 'long[])', 'long'),
   \ javaapi#method(0,1,'setThreadCpuTimeEnabled(', 'boolean)', 'void'),
   \ javaapi#method(0,1,'getThreadAllocatedBytes(', 'long)', 'long'),
-  \ javaapi#method(0,1,'getThreadAllocatedBytes(', 'long[])', 'long[]'),
+  \ javaapi#method(0,1,'getThreadAllocatedBytes(', 'long[])', 'long'),
   \ javaapi#method(0,1,'setThreadAllocatedMemoryEnabled(', 'boolean)', 'void'),
-  \ javaapi#method(0,1,'findMonitorDeadlockedThreads(', ')', 'long[]'),
-  \ javaapi#method(0,1,'findDeadlockedThreads(', ')', 'long[]'),
+  \ javaapi#method(0,1,'findMonitorDeadlockedThreads(', ')', 'long'),
+  \ javaapi#method(0,1,'findDeadlockedThreads(', ')', 'long'),
   \ javaapi#method(0,1,'resetPeakThreadCount(', ')', 'void'),
   \ javaapi#method(0,1,'isObjectMonitorUsageSupported(', ')', 'boolean'),
   \ javaapi#method(0,1,'isSynchronizerUsageSupported(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getThreadInfo(', 'long[], boolean, boolean)', 'ThreadInfo[]'),
-  \ javaapi#method(0,1,'dumpAllThreads(', 'boolean, boolean)', 'ThreadInfo[]'),
+  \ javaapi#method(0,1,'getThreadInfo(', 'long[], boolean, boolean)', 'ThreadInfo'),
+  \ javaapi#method(0,1,'dumpAllThreads(', 'boolean, boolean)', 'ThreadInfo'),
   \ javaapi#method(0,1,'getObjectName(', ')', 'ObjectName'),
   \ ])
 
@@ -517,10 +517,10 @@ call javaapi#class('ThreadInfoCompositeData', 'LazyCompositeData', [
   \ javaapi#method(0,1,'lockOwnerName(', ')', 'String'),
   \ javaapi#method(0,1,'suspended(', ')', 'boolean'),
   \ javaapi#method(0,1,'inNative(', ')', 'boolean'),
-  \ javaapi#method(0,1,'stackTrace(', ')', 'StackTraceElement[]'),
+  \ javaapi#method(0,1,'stackTrace(', ')', 'StackTraceElement'),
   \ javaapi#method(0,1,'lockInfo(', ')', 'LockInfo'),
-  \ javaapi#method(0,1,'lockedMonitors(', ')', 'MonitorInfo[]'),
-  \ javaapi#method(0,1,'lockedSynchronizers(', ')', 'LockInfo[]'),
+  \ javaapi#method(0,1,'lockedMonitors(', ')', 'MonitorInfo'),
+  \ javaapi#method(0,1,'lockedSynchronizers(', ')', 'LockInfo'),
   \ javaapi#method(1,1,'validateCompositeData(', 'CompositeData)', 'void'),
   \ ])
 
@@ -558,7 +558,7 @@ call javaapi#interface('VMManagement', '', [
   \ javaapi#method(0,1,'getClassPath(', ')', 'String'),
   \ javaapi#method(0,1,'getLibraryPath(', ')', 'String'),
   \ javaapi#method(0,1,'getBootClassPath(', ')', 'String'),
-  \ javaapi#method(0,1,'getVmArguments(', ')', 'String>'),
+  \ javaapi#method(0,1,'getVmArguments(', ')', 'List'),
   \ javaapi#method(0,1,'getStartupTime(', ')', 'long'),
   \ javaapi#method(0,1,'getAvailableProcessors(', ')', 'int'),
   \ javaapi#method(0,1,'getCompilerName(', ')', 'String'),
@@ -581,7 +581,7 @@ call javaapi#interface('VMManagement', '', [
   \ javaapi#method(0,1,'getInitializedClassCount(', ')', 'long'),
   \ javaapi#method(0,1,'getClassInitializationTime(', ')', 'long'),
   \ javaapi#method(0,1,'getClassVerificationTime(', ')', 'long'),
-  \ javaapi#method(0,1,'getInternalCounters(', 'String)', 'Counter>'),
+  \ javaapi#method(0,1,'getInternalCounters(', 'String)', 'List'),
   \ ])
 
 call javaapi#class('VMManagementImpl', 'VMManagement', [
@@ -613,8 +613,8 @@ call javaapi#class('VMManagementImpl', 'VMManagement', [
   \ javaapi#method(0,1,'getClassPath(', ')', 'String'),
   \ javaapi#method(0,1,'getLibraryPath(', ')', 'String'),
   \ javaapi#method(0,1,'getBootClassPath(', ')', 'String'),
-  \ javaapi#method(0,1,'getVmArguments(', ')', 'String>'),
-  \ javaapi#method(0,1,'getVmArguments0(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getVmArguments(', ')', 'List'),
+  \ javaapi#method(0,1,'getVmArguments0(', ')', 'String'),
   \ javaapi#method(0,1,'getStartupTime(', ')', 'long'),
   \ javaapi#method(0,1,'getAvailableProcessors(', ')', 'int'),
   \ javaapi#method(0,1,'getCompilerName(', ')', 'String'),
@@ -637,7 +637,7 @@ call javaapi#class('VMManagementImpl', 'VMManagement', [
   \ javaapi#method(0,1,'getInitializedClassCount(', ')', 'long'),
   \ javaapi#method(0,1,'getClassInitializationTime(', ')', 'long'),
   \ javaapi#method(0,1,'getClassVerificationTime(', ')', 'long'),
-  \ javaapi#method(0,1,'getInternalCounters(', 'String)', 'Counter>'),
+  \ javaapi#method(0,1,'getInternalCounters(', 'String)', 'List'),
   \ ])
 
 call javaapi#class('VMOptionCompositeData', 'LazyCompositeData', [

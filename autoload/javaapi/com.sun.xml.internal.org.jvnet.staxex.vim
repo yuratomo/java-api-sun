@@ -8,10 +8,10 @@ call javaapi#class('Base64Data', 'Cloneable', [
   \ javaapi#method(0,1,'set(', 'byte[], String)', 'void'),
   \ javaapi#method(0,1,'set(', 'DataHandler)', 'void'),
   \ javaapi#method(0,1,'getDataHandler(', ')', 'DataHandler'),
-  \ javaapi#method(0,1,'getExact(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getExact(', ')', 'byte'),
   \ javaapi#method(0,1,'getInputStream(', ') throws IOException', 'InputStream'),
   \ javaapi#method(0,1,'hasData(', ')', 'boolean'),
-  \ javaapi#method(0,1,'get(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'get(', ')', 'byte'),
   \ javaapi#method(0,1,'getDataLen(', ')', 'int'),
   \ javaapi#method(0,1,'getMimeType(', ')', 'String'),
   \ javaapi#method(0,1,'length(', ')', 'int'),
@@ -34,12 +34,12 @@ call javaapi#class('ByteArrayOutputStreamEx', 'ByteArrayOutputStream', [
   \ javaapi#method(0,1,'ByteArrayOutputStreamEx(', ')', ''),
   \ javaapi#method(0,1,'ByteArrayOutputStreamEx(', 'int)', ''),
   \ javaapi#method(0,1,'set(', 'Base64Data, String)', 'void'),
-  \ javaapi#method(0,1,'getBuffer(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getBuffer(', ')', 'byte'),
   \ javaapi#method(0,1,'readFrom(', 'InputStream) throws IOException', 'void'),
   \ ])
 
-call javaapi#interface('NamespaceContextEx', 'Binding>', [
-  \ javaapi#method(0,1,'iterator(', ')', 'Binding>'),
+call javaapi#interface('NamespaceContextEx', 'Iterable', [
+  \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
   \ ])
 
 call javaapi#class('StreamingDataHandler', 'DataHandler', [

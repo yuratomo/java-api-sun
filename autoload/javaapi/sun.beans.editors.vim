@@ -5,7 +5,7 @@ call javaapi#class('BooleanEditor', 'PropertyEditorSupport', [
   \ javaapi#method(0,1,'getJavaInitializationString(', ')', 'String'),
   \ javaapi#method(0,1,'getAsText(', ')', 'String'),
   \ javaapi#method(0,1,'setAsText(', 'String) throws IllegalArgumentException', 'void'),
-  \ javaapi#method(0,1,'getTags(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getTags(', ')', 'String'),
   \ ])
 
 call javaapi#class('ByteEditor', 'NumberEditor', [
@@ -26,7 +26,7 @@ call javaapi#class('ColorEditor', 'Panel', [
   \ javaapi#method(0,1,'isPaintable(', ')', 'boolean'),
   \ javaapi#method(0,1,'paintValue(', 'Graphics, Rectangle)', 'void'),
   \ javaapi#method(0,1,'getAsText(', ')', 'String'),
-  \ javaapi#method(0,1,'getTags(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getTags(', ')', 'String'),
   \ javaapi#method(0,1,'getCustomEditor(', ')', 'Component'),
   \ javaapi#method(0,1,'supportsCustomEditor(', ')', 'boolean'),
   \ javaapi#method(0,1,'addPropertyChangeListener(', 'PropertyChangeListener)', 'void'),
@@ -44,7 +44,7 @@ call javaapi#class('EnumEditor', 'PropertyEditor', [
   \ javaapi#method(0,1,'setValue(', 'Object)', 'void'),
   \ javaapi#method(0,1,'getAsText(', ')', 'String'),
   \ javaapi#method(0,1,'setAsText(', 'String)', 'void'),
-  \ javaapi#method(0,1,'getTags(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getTags(', ')', 'String'),
   \ javaapi#method(0,1,'getJavaInitializationString(', ')', 'String'),
   \ javaapi#method(0,1,'isPaintable(', ')', 'boolean'),
   \ javaapi#method(0,1,'paintValue(', 'Graphics, Rectangle)', 'void'),
@@ -71,7 +71,7 @@ call javaapi#class('FontEditor', 'Panel', [
   \ javaapi#method(0,1,'paintValue(', 'Graphics, Rectangle)', 'void'),
   \ javaapi#method(0,1,'getAsText(', ')', 'String'),
   \ javaapi#method(0,1,'setAsText(', 'String) throws IllegalArgumentException', 'void'),
-  \ javaapi#method(0,1,'getTags(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getTags(', ')', 'String'),
   \ javaapi#method(0,1,'getCustomEditor(', ')', 'Component'),
   \ javaapi#method(0,1,'supportsCustomEditor(', ')', 'boolean'),
   \ javaapi#method(0,1,'addPropertyChangeListener(', 'PropertyChangeListener)', 'void'),

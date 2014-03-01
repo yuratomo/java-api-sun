@@ -66,7 +66,7 @@ call javaapi#interface('DTM', '', [
   \ javaapi#method(0,1,'getDocumentRoot(', 'int)', 'int'),
   \ javaapi#method(0,1,'getStringValue(', 'int)', 'XMLString'),
   \ javaapi#method(0,1,'getStringValueChunkCount(', 'int)', 'int'),
-  \ javaapi#method(0,1,'getStringValueChunk(', 'int, int, int[])', 'char[]'),
+  \ javaapi#method(0,1,'getStringValueChunk(', 'int, int, int[])', 'char'),
   \ javaapi#method(0,1,'getExpandedTypeID(', 'int)', 'int'),
   \ javaapi#method(0,1,'getExpandedTypeID(', 'String, String, int)', 'int'),
   \ javaapi#method(0,1,'getLocalNameFromExpandedNameID(', 'int)', 'String'),
@@ -256,14 +256,5 @@ call javaapi#interface('DTMWSFilter', '', [
   \ javaapi#field(1,1,'STRIP', 'short'),
   \ javaapi#field(1,1,'INHERIT', 'short'),
   \ javaapi#method(0,1,'getShouldStripSpace(', 'int, DTM)', 'short'),
-  \ ])
-
-call javaapi#class('ObjectFactory', '', [
-  \ ])
-
-call javaapi#class('SecuritySupport', '', [
-  \ ])
-
-call javaapi#class('SecuritySupport12', 'SecuritySupport', [
   \ ])
 

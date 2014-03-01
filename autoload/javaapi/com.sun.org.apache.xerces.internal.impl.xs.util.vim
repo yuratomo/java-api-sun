@@ -7,8 +7,8 @@ call javaapi#class('LSInputListImpl', 'AbstractList', [
   \ javaapi#method(0,1,'item(', 'int)', 'LSInput'),
   \ javaapi#method(0,1,'get(', 'int)', 'Object'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
-  \ javaapi#method(0,1,'toArray(', ')', 'Object[]'),
-  \ javaapi#method(0,1,'toArray(', 'Object[])', 'Object[]'),
+  \ javaapi#method(0,1,'toArray(', ')', 'Object'),
+  \ javaapi#method(0,1,'toArray(', 'Object[])', 'Object'),
   \ ])
 
 call javaapi#class('ObjectListImpl', 'AbstractList', [
@@ -19,8 +19,8 @@ call javaapi#class('ObjectListImpl', 'AbstractList', [
   \ javaapi#method(0,1,'item(', 'int)', 'Object'),
   \ javaapi#method(0,1,'get(', 'int)', 'Object'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
-  \ javaapi#method(0,1,'toArray(', ')', 'Object[]'),
-  \ javaapi#method(0,1,'toArray(', 'Object[])', 'Object[]'),
+  \ javaapi#method(0,1,'toArray(', ')', 'Object'),
+  \ javaapi#method(0,1,'toArray(', 'Object[])', 'Object'),
   \ ])
 
 call javaapi#class('ShortListImpl', 'AbstractList', [
@@ -67,8 +67,8 @@ call javaapi#class('StringListImpl', 'AbstractList', [
   \ javaapi#method(0,1,'item(', 'int)', 'String'),
   \ javaapi#method(0,1,'get(', 'int)', 'Object'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
-  \ javaapi#method(0,1,'toArray(', ')', 'Object[]'),
-  \ javaapi#method(0,1,'toArray(', 'Object[])', 'Object[]'),
+  \ javaapi#method(0,1,'toArray(', ')', 'Object'),
+  \ javaapi#method(0,1,'toArray(', 'Object[])', 'Object'),
   \ ])
 
 call javaapi#class('XInt', '', [
@@ -93,9 +93,9 @@ call javaapi#class('XSGrammarPool', 'XMLGrammarPoolImpl', [
 call javaapi#class('XSInputSource', 'XMLInputSource', [
   \ javaapi#method(0,1,'XSInputSource(', 'SchemaGrammar[])', ''),
   \ javaapi#method(0,1,'XSInputSource(', 'XSObject[])', ''),
-  \ javaapi#method(0,1,'getGrammars(', ')', 'SchemaGrammar[]'),
+  \ javaapi#method(0,1,'getGrammars(', ')', 'SchemaGrammar'),
   \ javaapi#method(0,1,'setGrammars(', 'SchemaGrammar[])', 'void'),
-  \ javaapi#method(0,1,'getComponents(', ')', 'XSObject[]'),
+  \ javaapi#method(0,1,'getComponents(', ')', 'XSObject'),
   \ javaapi#method(0,1,'setComponents(', 'XSObject[])', 'void'),
   \ ])
 
@@ -136,7 +136,7 @@ call javaapi#class('XSObjectListImpl', 'AbstractList', [
   \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
   \ javaapi#method(0,1,'listIterator(', ')', 'ListIterator'),
   \ javaapi#method(0,1,'listIterator(', 'int)', 'ListIterator'),
-  \ javaapi#method(0,1,'toArray(', ')', 'Object[]'),
-  \ javaapi#method(0,1,'toArray(', 'Object[])', 'Object[]'),
+  \ javaapi#method(0,1,'toArray(', ')', 'Object'),
+  \ javaapi#method(0,1,'toArray(', 'Object[])', 'Object'),
   \ ])
 

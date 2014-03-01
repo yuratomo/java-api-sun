@@ -546,17 +546,17 @@ call javaapi#class('DeferredDocumentImpl', 'DocumentImpl', [
   \ javaapi#field(1,0,'CHUNK_MASK', 'int'),
   \ javaapi#field(1,0,'INITIAL_CHUNK_COUNT', 'int'),
   \ javaapi#field(0,0,'fNodeCount', 'int'),
-  \ javaapi#field(0,0,'fNodeType', 'int[][]'),
-  \ javaapi#field(0,0,'fNodeName', 'Object[][]'),
-  \ javaapi#field(0,0,'fNodeValue', 'Object[][]'),
-  \ javaapi#field(0,0,'fNodeParent', 'int[][]'),
-  \ javaapi#field(0,0,'fNodeLastChild', 'int[][]'),
-  \ javaapi#field(0,0,'fNodePrevSib', 'int[][]'),
-  \ javaapi#field(0,0,'fNodeURI', 'Object[][]'),
-  \ javaapi#field(0,0,'fNodeExtra', 'int[][]'),
+  \ javaapi#field(0,0,'fNodeType', 'int[]'),
+  \ javaapi#field(0,0,'fNodeName', 'Object[]'),
+  \ javaapi#field(0,0,'fNodeValue', 'Object[]'),
+  \ javaapi#field(0,0,'fNodeParent', 'int[]'),
+  \ javaapi#field(0,0,'fNodeLastChild', 'int[]'),
+  \ javaapi#field(0,0,'fNodePrevSib', 'int[]'),
+  \ javaapi#field(0,0,'fNodeURI', 'Object[]'),
+  \ javaapi#field(0,0,'fNodeExtra', 'int[]'),
   \ javaapi#field(0,0,'fIdCount', 'int'),
-  \ javaapi#field(0,0,'fIdName', 'String[]'),
-  \ javaapi#field(0,0,'fIdElement', 'int[]'),
+  \ javaapi#field(0,0,'fIdName', 'String'),
+  \ javaapi#field(0,0,'fIdElement', 'int'),
   \ javaapi#field(0,0,'fNamespacesEnabled', 'boolean'),
   \ javaapi#method(0,1,'DeferredDocumentImpl(', ')', ''),
   \ javaapi#method(0,1,'DeferredDocumentImpl(', 'boolean)', ''),
@@ -1034,9 +1034,6 @@ call javaapi#class('NotationImpl', 'NodeImpl', [
   \ javaapi#method(0,1,'setBaseURI(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('ObjectFactory', '', [
-  \ ])
-
 call javaapi#class('PSVIAttrNSImpl', 'AttrNSImpl', [
   \ javaapi#field(0,0,'fDeclaration', 'XSAttributeDeclaration'),
   \ javaapi#field(0,0,'fTypeDecl', 'XSTypeDefinition'),
@@ -1192,9 +1189,6 @@ call javaapi#class('RangeImpl', 'Range', [
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'detach(', ')', 'void'),
   \ javaapi#method(0,1,'insertedNodeFromDOM(', 'Node)', 'void'),
-  \ ])
-
-call javaapi#class('SecuritySupport', '', [
   \ ])
 
 call javaapi#class('TextImpl', 'CharacterDataImpl', [

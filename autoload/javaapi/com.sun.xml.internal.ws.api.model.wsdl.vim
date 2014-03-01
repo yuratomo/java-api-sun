@@ -32,16 +32,16 @@ call javaapi#interface('WSDLBoundPortType', 'WSDLExtensible', [
   \ javaapi#method(0,1,'getOperation(', 'String, String)', 'WSDLBoundOperation'),
   \ ])
 
-call javaapi#class('WSDLDescriptorKind', 'WSDLDescriptorKind>', [
+call javaapi#class('WSDLDescriptorKind', 'Enum', [
   \ javaapi#field(1,1,'ELEMENT', 'WSDLDescriptorKind'),
   \ javaapi#field(1,1,'TYPE', 'WSDLDescriptorKind'),
-  \ javaapi#method(1,1,'values(', ')', 'WSDLDescriptorKind[]'),
+  \ javaapi#method(1,1,'values(', ')', 'WSDLDescriptorKind'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'WSDLDescriptorKind'),
   \ ])
 
 call javaapi#interface('WSDLExtensible', 'WSDLObject', [
-  \ javaapi#method(0,1,'getExtensions(', ')', 'WSDLExtension>'),
-  \ javaapi#method(0,1,'getExtensions(', 'Class<T>)', 'Iterable<T>'),
+  \ javaapi#method(0,1,'getExtensions(', ')', 'Iterable'),
+  \ javaapi#method(0,1,'getExtensions(', 'Class<T>)', 'Iterable'),
   \ javaapi#method(0,1,'getExtension(', 'Class<T>)', 'T'),
   \ javaapi#method(0,1,'addExtension(', 'WSDLExtension)', 'void'),
   \ ])

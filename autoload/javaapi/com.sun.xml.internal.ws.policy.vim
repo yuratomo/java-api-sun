@@ -4,8 +4,8 @@ call javaapi#class('AssertionSet', 'AssertionSet>', [
   \ javaapi#method(1,1,'createMergedAssertionSet(', 'Collection<AssertionSet>)', 'AssertionSet'),
   \ javaapi#method(1,1,'createAssertionSet(', 'Collection<? extends PolicyAssertion>)', 'AssertionSet'),
   \ javaapi#method(1,1,'emptyAssertionSet(', ')', 'AssertionSet'),
-  \ javaapi#method(0,1,'iterator(', ')', 'PolicyAssertion>'),
-  \ javaapi#method(0,1,'get(', 'QName)', 'PolicyAssertion>'),
+  \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
+  \ javaapi#method(0,1,'get(', 'QName)', 'Collection'),
   \ javaapi#method(0,1,'isEmpty(', ')', 'boolean'),
   \ javaapi#method(0,1,'contains(', 'QName)', 'boolean'),
   \ javaapi#method(0,1,'compareTo(', 'AssertionSet)', 'int'),
@@ -52,7 +52,7 @@ call javaapi#class('NestedPolicy', 'Policy', [
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('Policy', 'AssertionSet>', [
+call javaapi#class('Policy', 'Iterable', [
   \ javaapi#method(1,1,'createNullPolicy(', ')', 'Policy'),
   \ javaapi#method(1,1,'createEmptyPolicy(', ')', 'Policy'),
   \ javaapi#method(1,1,'createNullPolicy(', 'String, String)', 'Policy'),
@@ -67,11 +67,11 @@ call javaapi#class('Policy', 'AssertionSet>', [
   \ javaapi#method(0,1,'getNamespaceVersion(', ')', 'NamespaceVersion'),
   \ javaapi#method(0,1,'getIdOrName(', ')', 'String'),
   \ javaapi#method(0,1,'getNumberOfAssertionSets(', ')', 'int'),
-  \ javaapi#method(0,1,'iterator(', ')', 'AssertionSet>'),
+  \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
   \ javaapi#method(0,1,'isNull(', ')', 'boolean'),
   \ javaapi#method(0,1,'isEmpty(', ')', 'boolean'),
   \ javaapi#method(0,1,'contains(', 'String)', 'boolean'),
-  \ javaapi#method(0,1,'getVocabulary(', ')', 'QName>'),
+  \ javaapi#method(0,1,'getVocabulary(', ')', 'Collection'),
   \ javaapi#method(0,1,'contains(', 'QName)', 'boolean'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -92,8 +92,8 @@ call javaapi#class('PolicyAssertion', '', [
   \ javaapi#method(0,1,'getAttributeValue(', 'QName)', 'String'),
   \ javaapi#method(0,1,'hasNestedAssertions(', ')', 'boolean'),
   \ javaapi#method(0,1,'hasParameters(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getNestedAssertionsIterator(', ')', 'PolicyAssertion>'),
-  \ javaapi#method(0,1,'getParametersIterator(', ')', 'PolicyAssertion>'),
+  \ javaapi#method(0,1,'getNestedAssertionsIterator(', ')', 'Iterator'),
+  \ javaapi#method(0,1,'getParametersIterator(', ')', 'Iterator'),
   \ javaapi#method(0,1,'hasNestedPolicy(', ')', 'boolean'),
   \ javaapi#method(0,1,'getNestedPolicy(', ')', 'NestedPolicy'),
   \ javaapi#method(0,1,'getImplementation(', 'Class<T>)', 'T'),
@@ -129,7 +129,7 @@ call javaapi#class('PolicyIntersector', '', [
   \ javaapi#method(0,1,'intersect(', ')', 'Policy'),
   \ ])
 
-call javaapi#class('PolicyMap', 'Policy>', [
+call javaapi#class('PolicyMap', 'Iterable', [
   \ javaapi#method(1,1,'createPolicyMap(', 'Collection<? extends PolicyMapMutator>)', 'PolicyMap'),
   \ javaapi#method(0,1,'getServiceEffectivePolicy(', 'PolicyMapKey) throws PolicyException', 'Policy'),
   \ javaapi#method(0,1,'getEndpointEffectivePolicy(', 'PolicyMapKey) throws PolicyException', 'Policy'),
@@ -137,13 +137,13 @@ call javaapi#class('PolicyMap', 'Policy>', [
   \ javaapi#method(0,1,'getInputMessageEffectivePolicy(', 'PolicyMapKey) throws PolicyException', 'Policy'),
   \ javaapi#method(0,1,'getOutputMessageEffectivePolicy(', 'PolicyMapKey) throws PolicyException', 'Policy'),
   \ javaapi#method(0,1,'getFaultMessageEffectivePolicy(', 'PolicyMapKey) throws PolicyException', 'Policy'),
-  \ javaapi#method(0,1,'getAllServiceScopeKeys(', ')', 'PolicyMapKey>'),
-  \ javaapi#method(0,1,'getAllEndpointScopeKeys(', ')', 'PolicyMapKey>'),
-  \ javaapi#method(0,1,'getAllOperationScopeKeys(', ')', 'PolicyMapKey>'),
-  \ javaapi#method(0,1,'getAllInputMessageScopeKeys(', ')', 'PolicyMapKey>'),
-  \ javaapi#method(0,1,'getAllOutputMessageScopeKeys(', ')', 'PolicyMapKey>'),
-  \ javaapi#method(0,1,'getAllFaultMessageScopeKeys(', ')', 'PolicyMapKey>'),
-  \ javaapi#method(0,1,'getPolicySubjects(', ')', 'PolicySubject>'),
+  \ javaapi#method(0,1,'getAllServiceScopeKeys(', ')', 'Collection'),
+  \ javaapi#method(0,1,'getAllEndpointScopeKeys(', ')', 'Collection'),
+  \ javaapi#method(0,1,'getAllOperationScopeKeys(', ')', 'Collection'),
+  \ javaapi#method(0,1,'getAllInputMessageScopeKeys(', ')', 'Collection'),
+  \ javaapi#method(0,1,'getAllOutputMessageScopeKeys(', ')', 'Collection'),
+  \ javaapi#method(0,1,'getAllFaultMessageScopeKeys(', ')', 'Collection'),
+  \ javaapi#method(0,1,'getPolicySubjects(', ')', 'Collection'),
   \ javaapi#method(0,1,'isInputMessageSubject(', 'PolicySubject)', 'boolean'),
   \ javaapi#method(0,1,'isOutputMessageSubject(', 'PolicySubject)', 'boolean'),
   \ javaapi#method(0,1,'isFaultMessageSubject(', 'PolicySubject)', 'boolean'),
@@ -154,7 +154,7 @@ call javaapi#class('PolicyMap', 'Policy>', [
   \ javaapi#method(1,1,'createWsdlMessageScopeKey(', 'QName, QName, QName) throws IllegalArgumentException', 'PolicyMapKey'),
   \ javaapi#method(1,1,'createWsdlFaultMessageScopeKey(', 'QName, QName, QName, QName) throws IllegalArgumentException', 'PolicyMapKey'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
-  \ javaapi#method(0,1,'iterator(', ')', 'Policy>'),
+  \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
   \ ])
 
 call javaapi#class('PolicyMapExtender', 'PolicyMapMutator', [

@@ -9,7 +9,7 @@ call javaapi#class('EndpointCreationAttributes', '', [
   \ ])
 
 call javaapi#interface('ManagedEndpointFactory', '', [
-  \ javaapi#method(0,1,'createEndpoint(', 'WSEndpoint<T>, EndpointCreationAttributes)', 'WSEndpoint<T>'),
+  \ javaapi#method(0,1,'createEndpoint(', 'WSEndpoint<T>, EndpointCreationAttributes)', 'WSEndpoint'),
   \ ])
 
 call javaapi#interface('Reconfigurable', '', [

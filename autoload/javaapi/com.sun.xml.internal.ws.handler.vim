@@ -63,7 +63,7 @@ call javaapi#class('HandlerProcessor<C', 'MessageUpdatableContext>', [
   \ ])
 
 call javaapi#class('HandlerTube', 'AbstractFilterTubeImpl', [
-  \ javaapi#field(0,0,'handlers', 'Handler>'),
+  \ javaapi#field(0,0,'handlers', 'List'),
   \ javaapi#field(0,0,'port', 'WSDLPort'),
   \ javaapi#method(0,1,'HandlerTube(', 'Tube, WSDLPort)', ''),
   \ javaapi#method(0,1,'HandlerTube(', 'Tube, HandlerTube)', ''),
@@ -109,9 +109,9 @@ call javaapi#class('MessageContextImpl', 'MessageContext', [
   \ javaapi#method(0,1,'putAll(', 'Map<? extends String, ? extends Object>)', 'void'),
   \ javaapi#method(0,1,'clear(', ')', 'void'),
   \ javaapi#method(0,1,'remove(', 'Object)', 'Object'),
-  \ javaapi#method(0,1,'keySet(', ')', 'String>'),
+  \ javaapi#method(0,1,'keySet(', ')', 'Set'),
   \ javaapi#method(0,1,'entrySet(', ')', 'Object>>'),
-  \ javaapi#method(0,1,'values(', ')', 'Object>'),
+  \ javaapi#method(0,1,'values(', ')', 'Collection'),
   \ javaapi#method(0,1,'put(', 'Object, Object)', 'Object'),
   \ ])
 
@@ -119,7 +119,7 @@ call javaapi#class('MessageHandlerContextImpl', 'MessageUpdatableContext', [
   \ javaapi#method(0,1,'MessageHandlerContextImpl(', 'SEIModel, WSBinding, WSDLPort, Packet, Set<String>)', ''),
   \ javaapi#method(0,1,'getMessage(', ')', 'Message'),
   \ javaapi#method(0,1,'setMessage(', 'Message)', 'void'),
-  \ javaapi#method(0,1,'getRoles(', ')', 'String>'),
+  \ javaapi#method(0,1,'getRoles(', ')', 'Set'),
   \ javaapi#method(0,1,'getWSBinding(', ')', 'WSBinding'),
   \ javaapi#method(0,1,'getSEIModel(', ')', 'SEIModel'),
   \ javaapi#method(0,1,'getPort(', ')', 'WSDLPort'),
@@ -135,12 +135,12 @@ call javaapi#class('MessageUpdatableContext', 'MessageContext', [
   \ javaapi#method(0,1,'entrySet(', ')', 'Object>>'),
   \ javaapi#method(0,1,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,1,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,1,'keySet(', ')', 'String>'),
+  \ javaapi#method(0,1,'keySet(', ')', 'Set'),
   \ javaapi#method(0,1,'put(', 'String, Object)', 'Object'),
   \ javaapi#method(0,1,'putAll(', 'Map<? extends String, ? extends Object>)', 'void'),
   \ javaapi#method(0,1,'remove(', 'Object)', 'Object'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
-  \ javaapi#method(0,1,'values(', ')', 'Object>'),
+  \ javaapi#method(0,1,'values(', ')', 'Collection'),
   \ javaapi#method(0,1,'put(', 'Object, Object)', 'Object'),
   \ ])
 
@@ -162,8 +162,8 @@ call javaapi#class('SOAPMessageContextImpl', 'MessageUpdatableContext', [
   \ javaapi#method(0,1,'getMessage(', ')', 'SOAPMessage'),
   \ javaapi#method(0,1,'setMessage(', 'SOAPMessage)', 'void'),
   \ javaapi#method(0,0,'updateMessage(', ')', 'void'),
-  \ javaapi#method(0,1,'getHeaders(', 'QName, JAXBContext, boolean)', 'Object[]'),
-  \ javaapi#method(0,1,'getRoles(', ')', 'String>'),
+  \ javaapi#method(0,1,'getHeaders(', 'QName, JAXBContext, boolean)', 'Object'),
+  \ javaapi#method(0,1,'getRoles(', ')', 'Set'),
   \ ])
 
 call javaapi#class('ServerLogicalHandlerTube', 'HandlerTube', [

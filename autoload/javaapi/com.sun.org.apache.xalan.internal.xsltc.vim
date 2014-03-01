@@ -65,10 +65,10 @@ call javaapi#interface('DOMCache', '', [
   \ ])
 
 call javaapi#interface('DOMEnhancedForDTM', 'DOM', [
-  \ javaapi#method(0,1,'getMapping(', 'String[], String[], int[])', 'short[]'),
-  \ javaapi#method(0,1,'getReverseMapping(', 'String[], String[], int[])', 'int[]'),
-  \ javaapi#method(0,1,'getNamespaceMapping(', 'String[])', 'short[]'),
-  \ javaapi#method(0,1,'getReverseNamespaceMapping(', 'String[])', 'short[]'),
+  \ javaapi#method(0,1,'getMapping(', 'String[], String[], int[])', 'short'),
+  \ javaapi#method(0,1,'getReverseMapping(', 'String[], String[], int[])', 'int'),
+  \ javaapi#method(0,1,'getNamespaceMapping(', 'String[])', 'short'),
+  \ javaapi#method(0,1,'getReverseNamespaceMapping(', 'String[])', 'short'),
   \ javaapi#method(0,1,'getDocumentURI(', ')', 'String'),
   \ javaapi#method(0,1,'setDocumentURI(', 'String)', 'void'),
   \ javaapi#method(0,1,'getExpandedTypeID2(', 'int)', 'int'),
@@ -107,10 +107,10 @@ call javaapi#interface('Translet', '', [
   \ javaapi#method(0,1,'buildKeys(', 'DOM, DTMAxisIterator, SerializationHandler, int) throws TransletException', 'void'),
   \ javaapi#method(0,1,'addAuxiliaryClass(', 'Class)', 'void'),
   \ javaapi#method(0,1,'getAuxiliaryClass(', 'String)', 'Class'),
-  \ javaapi#method(0,1,'getNamesArray(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getUrisArray(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getTypesArray(', ')', 'int[]'),
-  \ javaapi#method(0,1,'getNamespaceArray(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getNamesArray(', ')', 'String'),
+  \ javaapi#method(0,1,'getUrisArray(', ')', 'String'),
+  \ javaapi#method(0,1,'getTypesArray(', ')', 'int'),
+  \ javaapi#method(0,1,'getNamespaceArray(', ')', 'String'),
   \ ])
 
 call javaapi#class('TransletException', 'SAXException', [

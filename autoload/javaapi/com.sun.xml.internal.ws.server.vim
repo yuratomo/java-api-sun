@@ -1,14 +1,14 @@
 call javaapi#namespace('com.sun.xml.internal.ws.server')
 
-call javaapi#class('AbstractInstanceResolver<T>', 'InstanceResolver<T>', [
+call javaapi#class('AbstractInstanceResolver', 'InstanceResolver', [
   \ javaapi#method(1,0,'getResourceInjector(', 'WSEndpoint)', 'ResourceInjector'),
   \ javaapi#method(1,0,'invokeMethod(', 'Method, Object, )', 'void'),
   \ javaapi#method(0,0,'findAnnotatedMethod(', 'Class, Class<? extends Annotation>)', 'Method'),
   \ javaapi#method(1,0,'buildInjectionPlan(', 'Class<? extends T>, Class<R>, boolean)', 'R>'),
   \ ])
 
-call javaapi#class('AbstractMultiInstanceResolver<T>', 'AbstractInstanceResolver<T>', [
-  \ javaapi#field(0,0,'clazz', 'Class<T>'),
+call javaapi#class('AbstractMultiInstanceResolver', 'AbstractInstanceResolver', [
+  \ javaapi#field(0,0,'clazz', 'Class'),
   \ javaapi#field(0,0,'owner', 'WSEndpoint'),
   \ javaapi#method(0,1,'AbstractMultiInstanceResolver(', 'Class<T>)', ''),
   \ javaapi#method(0,0,'prepare(', 'T)', 'void'),
@@ -43,14 +43,14 @@ call javaapi#interface('DummyWebServiceFeature', '', [
 
 call javaapi#class('EndpointFactory', '', [
   \ javaapi#method(0,1,'EndpointFactory(', ')', ''),
-  \ javaapi#method(1,1,'createEndpoint(', 'Class<T>, boolean, Invoker, QName, QName, Container, WSBinding, SDDocumentSource, Collection<? extends SDDocumentSource>, EntityResolver, boolean)', 'WSEndpoint<T>'),
+  \ javaapi#method(1,1,'createEndpoint(', 'Class<T>, boolean, Invoker, QName, QName, Container, WSBinding, SDDocumentSource, Collection<? extends SDDocumentSource>, EntityResolver, boolean)', 'WSEndpoint'),
   \ javaapi#method(1,1,'verifyImplementorClass(', 'Class<?>)', 'boolean'),
   \ javaapi#method(1,1,'getDefaultServiceName(', 'Class<?>)', 'QName'),
   \ javaapi#method(1,1,'getDefaultPortName(', 'QName, Class<?>)', 'QName'),
   \ javaapi#method(1,1,'getWsdlLocation(', 'Class<?>)', 'String'),
   \ ])
 
-call javaapi#class('EndpointMessageContextImpl', 'Object>', [
+call javaapi#class('EndpointMessageContextImpl', 'AbstractMap', [
   \ javaapi#method(0,1,'EndpointMessageContextImpl(', 'Packet)', ''),
   \ javaapi#method(0,1,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,1,'put(', 'String, Object)', 'Object'),
@@ -61,7 +61,7 @@ call javaapi#class('EndpointMessageContextImpl', 'Object>', [
   \ javaapi#method(0,1,'put(', 'Object, Object)', 'Object'),
   \ ])
 
-call javaapi#class('InvokerTube<T>', 'AbstractTubeImpl', [
+call javaapi#class('InvokerTube', 'AbstractTubeImpl', [
   \ javaapi#method(0,0,'InvokerTube(', 'Invoker)', ''),
   \ javaapi#method(0,1,'setEndpoint(', 'WSEndpoint)', 'void'),
   \ javaapi#method(0,0,'getEndpoint(', ')', 'WSEndpoint'),
@@ -90,7 +90,7 @@ call javaapi#class('MonitorRootService', 'MonitorBase', [
   \ javaapi#method(0,1,'features(', ')', 'WSFeatureList'),
   \ javaapi#method(0,1,'wsdlPortTypeName(', ')', 'QName'),
   \ javaapi#method(0,1,'wsdlEndpointAddress(', ')', 'EndpointAddress'),
-  \ javaapi#method(0,1,'serviceDefinitionImports(', ')', 'String>'),
+  \ javaapi#method(0,1,'serviceDefinitionImports(', ')', 'Set'),
   \ javaapi#method(0,1,'serviceDefinitionURL(', ')', 'URL'),
   \ javaapi#method(0,1,'seiModelWSDLLocation(', ')', 'String'),
   \ javaapi#method(0,1,'jaxwsRuntimeVersion(', ')', 'String'),
@@ -142,7 +142,7 @@ call javaapi#class('SDDocumentImpl', 'SDDocumentSource', [
   \ javaapi#method(0,1,'read(', 'XMLInputFactory) throws IOException, XMLStreamException', 'XMLStreamReader'),
   \ javaapi#method(0,1,'read(', ') throws IOException, XMLStreamException', 'XMLStreamReader'),
   \ javaapi#method(0,1,'getSystemId(', ')', 'URL'),
-  \ javaapi#method(0,1,'getImports(', ')', 'String>'),
+  \ javaapi#method(0,1,'getImports(', ')', 'Set'),
   \ javaapi#method(0,1,'writeTo(', 'OutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'writeTo(', 'PortAddressResolver, DocumentAddressResolver, OutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'writeTo(', 'PortAddressResolver, DocumentAddressResolver, XMLStreamWriter) throws XMLStreamException, IOException', 'void'),
@@ -175,11 +175,11 @@ call javaapi#class('ServiceDefinitionImpl', 'SDDocumentResolver', [
   \ javaapi#method(0,1,'ServiceDefinitionImpl(', 'List<SDDocumentImpl>, SDDocumentImpl)', ''),
   \ javaapi#method(0,1,'getPrimary(', ')', 'SDDocument'),
   \ javaapi#method(0,1,'addFilter(', 'SDDocumentFilter)', 'void'),
-  \ javaapi#method(0,1,'iterator(', ')', 'SDDocument>'),
+  \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
   \ javaapi#method(0,1,'resolve(', 'String)', 'SDDocument'),
   \ ])
 
-call javaapi#class('SingletonResolver<T>', 'AbstractInstanceResolver<T>', [
+call javaapi#class('SingletonResolver', 'AbstractInstanceResolver', [
   \ javaapi#method(0,1,'SingletonResolver(', 'T)', ''),
   \ javaapi#method(0,1,'resolve(', 'Packet)', 'T'),
   \ javaapi#method(0,1,'start(', 'WSWebServiceContext, WSEndpoint)', 'void'),
@@ -201,11 +201,11 @@ call javaapi#class('WSDLGenResolver', 'WSDLResolver', [
   \ javaapi#method(0,1,'updateDocs(', ')', 'SDDocumentImpl'),
   \ ])
 
-call javaapi#class('WSEndpointImpl<T>', 'WSEndpoint<T>', [
-  \ javaapi#method(0,1,'getEndpointReferenceExtensions(', ')', 'EPRExtension>'),
+call javaapi#class('WSEndpointImpl', 'WSEndpoint', [
+  \ javaapi#method(0,1,'getEndpointReferenceExtensions(', ')', 'Collection'),
   \ javaapi#method(0,1,'getOperationDispatcher(', ')', 'OperationDispatcher'),
   \ javaapi#method(0,1,'getPolicyMap(', ')', 'PolicyMap'),
-  \ javaapi#method(0,1,'getImplementationClass(', ')', 'Class<T>'),
+  \ javaapi#method(0,1,'getImplementationClass(', ')', 'Class'),
   \ javaapi#method(0,1,'getBinding(', ')', 'WSBinding'),
   \ javaapi#method(0,1,'getContainer(', ')', 'Container'),
   \ javaapi#method(0,1,'getPort(', ')', 'WSDLPort'),
@@ -216,7 +216,7 @@ call javaapi#class('WSEndpointImpl<T>', 'WSEndpoint<T>', [
   \ javaapi#method(0,1,'createPipeHead(', ')', 'PipeHead'),
   \ javaapi#method(0,1,'dispose(', ')', 'void'),
   \ javaapi#method(0,1,'getServiceDefinition(', ')', 'ServiceDefinitionImpl'),
-  \ javaapi#method(0,1,'getComponentRegistry(', ')', 'EndpointComponent>'),
+  \ javaapi#method(0,1,'getComponentRegistry(', ')', 'Set'),
   \ javaapi#method(0,1,'getEndpointReference(', 'Class<T>, String, String, )', 'T'),
   \ javaapi#method(0,1,'getEndpointReference(', 'Class<T>, String, String, List<Element>, List<Element>)', 'T'),
   \ javaapi#method(0,1,'getPortName(', ')', 'QName'),

@@ -234,7 +234,7 @@ call javaapi#class('IntStack', 'IntVector', [
 
 call javaapi#class('IntVector', 'Cloneable', [
   \ javaapi#field(0,0,'m_blocksize', 'int'),
-  \ javaapi#field(0,0,'m_map', 'int[]'),
+  \ javaapi#field(0,0,'m_map', 'int'),
   \ javaapi#field(0,0,'m_firstFree', 'int'),
   \ javaapi#field(0,0,'m_mapSize', 'int'),
   \ javaapi#method(0,1,'IntVector(', ')', ''),
@@ -325,7 +325,7 @@ call javaapi#class('NamespaceSupport2', 'NamespaceSupport', [
   \ javaapi#method(0,1,'pushContext(', ')', 'void'),
   \ javaapi#method(0,1,'popContext(', ')', 'void'),
   \ javaapi#method(0,1,'declarePrefix(', 'String, String)', 'boolean'),
-  \ javaapi#method(0,1,'processName(', 'String, String[], boolean)', 'String[]'),
+  \ javaapi#method(0,1,'processName(', 'String, String[], boolean)', 'String'),
   \ javaapi#method(0,1,'getURI(', 'String)', 'String'),
   \ javaapi#method(0,1,'getPrefixes(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getPrefix(', 'String)', 'String'),
@@ -371,9 +371,6 @@ call javaapi#class('NodeVector', 'Cloneable', [
   \ javaapi#method(0,1,'sort(', ') throws Exception', 'void'),
   \ ])
 
-call javaapi#class('ObjectFactory', '', [
-  \ ])
-
 call javaapi#class('ObjectPool', 'Serializable', [
   \ javaapi#method(0,1,'ObjectPool(', 'Class)', ''),
   \ javaapi#method(0,1,'ObjectPool(', 'String)', ''),
@@ -401,7 +398,7 @@ call javaapi#class('ObjectStack', 'ObjectVector', [
 
 call javaapi#class('ObjectVector', 'Cloneable', [
   \ javaapi#field(0,0,'m_blocksize', 'int'),
-  \ javaapi#field(0,0,'m_map', 'Object[]'),
+  \ javaapi#field(0,0,'m_map', 'Object'),
   \ javaapi#field(0,0,'m_firstFree', 'int'),
   \ javaapi#field(0,0,'m_mapSize', 'int'),
   \ javaapi#method(0,1,'ObjectVector(', ')', ''),
@@ -497,12 +494,6 @@ call javaapi#class('SAXSourceLocator', 'LocatorImpl', [
   \ javaapi#method(0,1,'getColumnNumber(', ')', 'int'),
   \ ])
 
-call javaapi#class('SecuritySupport', '', [
-  \ ])
-
-call javaapi#class('SecuritySupport12', 'SecuritySupport', [
-  \ ])
-
 call javaapi#class('SerializableLocatorImpl', 'Serializable', [
   \ javaapi#method(0,1,'SerializableLocatorImpl(', ')', ''),
   \ javaapi#method(0,1,'SerializableLocatorImpl(', 'Locator)', ''),
@@ -544,7 +535,7 @@ call javaapi#class('StringToIntTable', '', [
   \ javaapi#method(0,1,'get(', 'String)', 'int'),
   \ javaapi#method(0,1,'getIgnoreCase(', 'String)', 'int'),
   \ javaapi#method(0,1,'contains(', 'String)', 'boolean'),
-  \ javaapi#method(0,1,'keys(', ')', 'String[]'),
+  \ javaapi#method(0,1,'keys(', ')', 'String'),
   \ ])
 
 call javaapi#class('StringToStringTable', '', [
@@ -576,7 +567,7 @@ call javaapi#class('StringToStringTableVector', '', [
 
 call javaapi#class('StringVector', 'Serializable', [
   \ javaapi#field(0,0,'m_blocksize', 'int'),
-  \ javaapi#field(0,0,'m_map', 'String[]'),
+  \ javaapi#field(0,0,'m_map', 'String'),
   \ javaapi#field(0,0,'m_firstFree', 'int'),
   \ javaapi#field(0,0,'m_mapSize', 'int'),
   \ javaapi#method(0,1,'StringVector(', ')', ''),
@@ -606,9 +597,9 @@ call javaapi#class('StylesheetPIHandler', 'DefaultHandler', [
 call javaapi#class('SuballocatedByteVector', '', [
   \ javaapi#field(0,0,'m_blocksize', 'int'),
   \ javaapi#field(0,0,'m_numblocks', 'int'),
-  \ javaapi#field(0,0,'m_map', 'byte[][]'),
+  \ javaapi#field(0,0,'m_map', 'byte[]'),
   \ javaapi#field(0,0,'m_firstFree', 'int'),
-  \ javaapi#field(0,0,'m_map0', 'byte[]'),
+  \ javaapi#field(0,0,'m_map0', 'byte'),
   \ javaapi#method(0,1,'SuballocatedByteVector(', ')', ''),
   \ javaapi#method(0,1,'SuballocatedByteVector(', 'int)', ''),
   \ javaapi#method(0,1,'SuballocatedByteVector(', 'int, int)', ''),
@@ -627,10 +618,10 @@ call javaapi#class('SuballocatedIntVector', '', [
   \ javaapi#field(0,0,'m_MASK', 'int'),
   \ javaapi#field(1,0,'NUMBLOCKS_DEFAULT', 'int'),
   \ javaapi#field(0,0,'m_numblocks', 'int'),
-  \ javaapi#field(0,0,'m_map', 'int[][]'),
+  \ javaapi#field(0,0,'m_map', 'int[]'),
   \ javaapi#field(0,0,'m_firstFree', 'int'),
-  \ javaapi#field(0,0,'m_map0', 'int[]'),
-  \ javaapi#field(0,0,'m_buildCache', 'int[]'),
+  \ javaapi#field(0,0,'m_map0', 'int'),
+  \ javaapi#field(0,0,'m_buildCache', 'int'),
   \ javaapi#field(0,0,'m_buildCacheStartIndex', 'int'),
   \ javaapi#method(0,1,'SuballocatedIntVector(', ')', ''),
   \ javaapi#method(0,1,'SuballocatedIntVector(', 'int, int)', ''),
@@ -643,8 +634,8 @@ call javaapi#class('SuballocatedIntVector', '', [
   \ javaapi#method(0,1,'elementAt(', 'int)', 'int'),
   \ javaapi#method(0,1,'indexOf(', 'int, int)', 'int'),
   \ javaapi#method(0,1,'indexOf(', 'int)', 'int'),
-  \ javaapi#method(0,1,'getMap0(', ')', 'int[]'),
-  \ javaapi#method(0,1,'getMap(', ')', 'int[][]'),
+  \ javaapi#method(0,1,'getMap0(', ')', 'int'),
+  \ javaapi#method(0,1,'getMap(', ')', 'int[]'),
   \ ])
 
 call javaapi#class('SystemIDResolver', '', [

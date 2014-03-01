@@ -21,7 +21,7 @@ call javaapi#class('ASCII_CharStream', '', [
   \ javaapi#method(0,1,'ReInit(', 'InputStream, int, int, int)', 'void'),
   \ javaapi#method(0,1,'ReInit(', 'InputStream, int, int)', 'void'),
   \ javaapi#method(0,1,'GetImage(', ')', 'String'),
-  \ javaapi#method(0,1,'GetSuffix(', 'int)', 'char[]'),
+  \ javaapi#method(0,1,'GetSuffix(', 'int)', 'char'),
   \ javaapi#method(0,1,'Done(', ')', 'void'),
   \ javaapi#method(0,1,'adjustBeginLineColumn(', 'int, int)', 'void'),
   \ ])
@@ -34,12 +34,12 @@ call javaapi#class('AclEntryImpl', 'Serializable', [
   \ javaapi#method(0,1,'addPermission(', 'Permission)', 'boolean'),
   \ javaapi#method(0,1,'removePermission(', 'Permission)', 'boolean'),
   \ javaapi#method(0,1,'checkPermission(', 'Permission)', 'boolean'),
-  \ javaapi#method(0,1,'permissions(', ')', 'Permission>'),
+  \ javaapi#method(0,1,'permissions(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'setNegativePermissions(', ')', 'void'),
   \ javaapi#method(0,1,'getPrincipal(', ')', 'Principal'),
   \ javaapi#method(0,1,'setPrincipal(', 'Principal)', 'boolean'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
-  \ javaapi#method(0,1,'communities(', ')', 'String>'),
+  \ javaapi#method(0,1,'communities(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'addCommunity(', 'String)', 'boolean'),
   \ javaapi#method(0,1,'removeCommunity(', 'String)', 'boolean'),
   \ javaapi#method(0,1,'checkCommunity(', 'String)', 'boolean'),
@@ -52,8 +52,8 @@ call javaapi#class('AclImpl', 'OwnerImpl', [
   \ javaapi#method(0,1,'addEntry(', 'Principal, AclEntry) throws NotOwnerException', 'boolean'),
   \ javaapi#method(0,1,'removeEntry(', 'Principal, AclEntry) throws NotOwnerException', 'boolean'),
   \ javaapi#method(0,1,'removeAll(', 'Principal) throws NotOwnerException', 'void'),
-  \ javaapi#method(0,1,'getPermissions(', 'Principal)', 'Permission>'),
-  \ javaapi#method(0,1,'entries(', ')', 'AclEntry>'),
+  \ javaapi#method(0,1,'getPermissions(', 'Principal)', 'Enumeration'),
+  \ javaapi#method(0,1,'entries(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'checkPermission(', 'Principal, Permission)', 'boolean'),
   \ javaapi#method(0,1,'checkPermission(', 'Principal, String, Permission)', 'boolean'),
   \ javaapi#method(0,1,'checkCommunity(', 'String)', 'boolean'),
@@ -260,7 +260,7 @@ call javaapi#class('JJTParserState', '', [
   \ ])
 
 call javaapi#class('NetMaskImpl', 'PrincipalImpl', [
-  \ javaapi#field(0,0,'subnet', 'byte[]'),
+  \ javaapi#field(0,0,'subnet', 'byte'),
   \ javaapi#field(0,0,'prefix', 'int'),
   \ javaapi#method(0,1,'NetMaskImpl(', ') throws UnknownHostException', ''),
   \ javaapi#method(0,1,'NetMaskImpl(', 'String, int) throws UnknownHostException', ''),
@@ -299,8 +299,8 @@ call javaapi#class('ParseError', 'Exception', [
 call javaapi#class('ParseException', 'Exception', [
   \ javaapi#field(0,0,'specialConstructor', 'boolean'),
   \ javaapi#field(0,1,'currentToken', 'Token'),
-  \ javaapi#field(0,1,'expectedTokenSequences', 'int[][]'),
-  \ javaapi#field(0,1,'tokenImage', 'String[]'),
+  \ javaapi#field(0,1,'expectedTokenSequences', 'int[]'),
+  \ javaapi#field(0,1,'tokenImage', 'String'),
   \ javaapi#field(0,0,'eol', 'String'),
   \ javaapi#method(0,1,'ParseException(', 'Token, int[][], String[])', ''),
   \ javaapi#method(0,1,'ParseException(', ')', ''),
@@ -390,12 +390,12 @@ call javaapi#interface('ParserConstants', '', [
   \ javaapi#field(1,1,'MARK', 'int'),
   \ javaapi#field(1,1,'MASK', 'int'),
   \ javaapi#field(1,1,'DEFAULT', 'int'),
-  \ javaapi#field(1,1,'tokenImage', 'String[]'),
+  \ javaapi#field(1,1,'tokenImage', 'String'),
   \ ])
 
 call javaapi#class('ParserTokenManager', 'ParserConstants', [
-  \ javaapi#field(1,1,'jjstrLiteralImages', 'String[]'),
-  \ javaapi#field(1,1,'lexStateNames', 'String[]'),
+  \ javaapi#field(1,1,'jjstrLiteralImages', 'String'),
+  \ javaapi#field(1,1,'lexStateNames', 'String'),
   \ javaapi#field(0,0,'curChar', 'char'),
   \ javaapi#method(0,1,'ParserTokenManager(', 'ASCII_CharStream)', ''),
   \ javaapi#method(0,1,'ParserTokenManager(', 'ASCII_CharStream, int)', ''),
@@ -432,7 +432,7 @@ call javaapi#interface('ParserTreeConstants', '', [
   \ javaapi#field(1,1,'JJTINFORMCOMMUNITY', 'int'),
   \ javaapi#field(1,1,'JJTINFORMINTERESTEDHOST', 'int'),
   \ javaapi#field(1,1,'JJTHOSTINFORM', 'int'),
-  \ javaapi#field(1,1,'jjtNodeName', 'String[]'),
+  \ javaapi#field(1,1,'jjtNodeName', 'String'),
   \ ])
 
 call javaapi#class('PermissionImpl', 'Serializable', [
@@ -452,12 +452,12 @@ call javaapi#class('PrincipalImpl', 'Serializable', [
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'getAddress(', ')', 'InetAddress'),
-  \ javaapi#method(0,1,'getAddresses(', ')', 'InetAddress[]'),
+  \ javaapi#method(0,1,'getAddresses(', ')', 'InetAddress'),
   \ ])
 
 call javaapi#class('SimpleNode', 'Node', [
   \ javaapi#field(0,0,'parent', 'Node'),
-  \ javaapi#field(0,0,'children', 'Node[]'),
+  \ javaapi#field(0,0,'children', 'Node'),
   \ javaapi#field(0,0,'id', 'int'),
   \ javaapi#field(0,0,'parser', 'Parser'),
   \ javaapi#method(0,1,'SimpleNode(', 'int)', ''),
@@ -483,7 +483,7 @@ call javaapi#class('SnmpAcl', 'Serializable', [
   \ javaapi#method(0,1,'SnmpAcl(', 'String) throws UnknownHostException, IllegalArgumentException', ''),
   \ javaapi#method(0,1,'SnmpAcl(', 'String, String) throws UnknownHostException, IllegalArgumentException', ''),
   \ javaapi#method(0,1,'entries(', ')', 'Enumeration'),
-  \ javaapi#method(0,1,'communities(', ')', 'String>'),
+  \ javaapi#method(0,1,'communities(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(1,1,'getREAD(', ')', 'PermissionImpl'),
   \ javaapi#method(1,1,'getWRITE(', ')', 'PermissionImpl'),

@@ -39,7 +39,7 @@ call javaapi#class('HeaderTokenizer', '', [
 
 call javaapi#class('ImageDataContentHandler', 'Component', [
   \ javaapi#method(0,1,'ImageDataContentHandler(', ')', ''),
-  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor[]'),
+  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor'),
   \ javaapi#method(0,1,'getTransferData(', 'DataFlavor, DataSource) throws IOException', 'Object'),
   \ javaapi#method(0,1,'getContent(', 'DataSource) throws IOException', 'Object'),
   \ javaapi#method(0,1,'writeTo(', 'Object, String, OutputStream) throws IOException', 'void'),
@@ -124,7 +124,7 @@ call javaapi#class('StreamSOAP11Codec', 'StreamSOAPCodec', [
   \ javaapi#method(0,1,'getMimeType(', ')', 'String'),
   \ javaapi#method(0,0,'createHeader(', 'XMLStreamReader, XMLStreamBuffer)', 'StreamHeader'),
   \ javaapi#method(0,0,'getContentType(', 'String)', 'ContentType'),
-  \ javaapi#method(0,0,'getExpectedContentTypes(', ')', 'String>'),
+  \ javaapi#method(0,0,'getExpectedContentTypes(', ')', 'List'),
   \ ])
 
 call javaapi#class('StreamSOAP12Codec', 'StreamSOAPCodec', [
@@ -135,7 +135,7 @@ call javaapi#class('StreamSOAP12Codec', 'StreamSOAPCodec', [
   \ javaapi#method(0,0,'createHeader(', 'XMLStreamReader, XMLStreamBuffer)', 'StreamHeader'),
   \ javaapi#method(0,0,'getContentType(', 'String)', 'ContentType'),
   \ javaapi#method(0,1,'decode(', 'InputStream, String, Packet, AttachmentSet) throws IOException', 'void'),
-  \ javaapi#method(0,0,'getExpectedContentTypes(', ')', 'String>'),
+  \ javaapi#method(0,0,'getExpectedContentTypes(', ')', 'List'),
   \ ])
 
 call javaapi#class('StreamSOAPCodec', 'RootOnlyCodec', [
@@ -143,7 +143,7 @@ call javaapi#class('StreamSOAPCodec', 'RootOnlyCodec', [
   \ javaapi#method(0,1,'encode(', 'Packet, OutputStream)', 'ContentType'),
   \ javaapi#method(0,0,'getContentType(', 'String)', 'ContentType'),
   \ javaapi#method(0,1,'encode(', 'Packet, WritableByteChannel)', 'ContentType'),
-  \ javaapi#method(0,0,'getExpectedContentTypes(', ')', 'String>'),
+  \ javaapi#method(0,0,'getExpectedContentTypes(', ')', 'List'),
   \ javaapi#method(0,1,'decode(', 'InputStream, String, Packet) throws IOException', 'void'),
   \ javaapi#method(0,1,'decode(', 'XMLStreamReader)', 'Message'),
   \ javaapi#method(0,1,'decode(', 'XMLStreamReader, AttachmentSet)', 'Message'),
@@ -159,7 +159,7 @@ call javaapi#class('StreamSOAPCodec', 'RootOnlyCodec', [
 call javaapi#class('StringDataContentHandler', 'DataContentHandler', [
   \ javaapi#method(0,1,'StringDataContentHandler(', ')', ''),
   \ javaapi#method(0,0,'getDF(', ')', 'ActivationDataFlavor'),
-  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor[]'),
+  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor'),
   \ javaapi#method(0,1,'getTransferData(', 'DataFlavor, DataSource) throws IOException', 'Object'),
   \ javaapi#method(0,1,'getContent(', 'DataSource) throws IOException', 'Object'),
   \ javaapi#method(0,1,'writeTo(', 'Object, String, OutputStream) throws IOException', 'void'),
@@ -180,7 +180,7 @@ call javaapi#class('SwACodec', 'MimeCodec', [
   \ ])
 
 call javaapi#class('TagInfoset', '', [
-  \ javaapi#field(0,1,'ns', 'String[]'),
+  \ javaapi#field(0,1,'ns', 'String'),
   \ javaapi#field(0,1,'atts', 'AttributesImpl'),
   \ javaapi#field(0,1,'prefix', 'String'),
   \ javaapi#field(0,1,'nsUri', 'String'),
@@ -209,7 +209,7 @@ call javaapi#class('XMLHTTPBindingCodec', 'MimeCodec', [
 
 call javaapi#class('XmlDataContentHandler', 'DataContentHandler', [
   \ javaapi#method(0,1,'XmlDataContentHandler(', ') throws ClassNotFoundException', ''),
-  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor[]'),
+  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor'),
   \ javaapi#method(0,1,'getTransferData(', 'DataFlavor, DataSource) throws IOException', 'Object'),
   \ javaapi#method(0,1,'getContent(', 'DataSource) throws IOException', 'Object'),
   \ javaapi#method(0,1,'writeTo(', 'Object, String, OutputStream) throws IOException', 'void'),

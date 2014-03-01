@@ -4,7 +4,7 @@ call javaapi#class('ByteArrayOutputStreamEx', 'ByteArrayOutputStream', [
   \ javaapi#method(0,1,'ByteArrayOutputStreamEx(', ')', ''),
   \ javaapi#method(0,1,'ByteArrayOutputStreamEx(', 'int)', ''),
   \ javaapi#method(0,1,'set(', 'Base64Data, String)', 'void'),
-  \ javaapi#method(0,1,'getBuffer(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getBuffer(', ')', 'byte'),
   \ javaapi#method(0,1,'readFrom(', 'InputStream) throws IOException', 'void'),
   \ ])
 
@@ -13,7 +13,7 @@ call javaapi#class('ClassLoaderRetriever', '', [
   \ javaapi#method(1,1,'getClassLoader(', ')', 'ClassLoader'),
   \ ])
 
-call javaapi#class('CollisionCheckStack<E>', 'AbstractList<E>', [
+call javaapi#class('CollisionCheckStack', 'AbstractList', [
   \ javaapi#method(0,1,'CollisionCheckStack(', ')', ''),
   \ javaapi#method(0,1,'setUseIdentity(', 'boolean)', 'void'),
   \ javaapi#method(0,1,'getUseIdentity(', ')', 'boolean'),
@@ -52,14 +52,14 @@ call javaapi#class('FatalAdapter', 'ErrorHandler', [
   \ javaapi#method(0,1,'fatalError(', 'SAXParseException) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('FlattenIterator<T>', 'Iterator<T>', [
+call javaapi#class('FlattenIterator', 'Iterator', [
   \ javaapi#method(0,1,'FlattenIterator(', 'Iterable<? extends Map<?, ? extends T>>)', ''),
   \ javaapi#method(0,1,'remove(', ')', 'void'),
   \ javaapi#method(0,1,'hasNext(', ')', 'boolean'),
   \ javaapi#method(0,1,'next(', ')', 'T'),
   \ ])
 
-call javaapi#class('QNameMap<V>', '', [
+call javaapi#class('QNameMap', '', [
   \ javaapi#method(0,1,'QNameMap(', ')', ''),
   \ javaapi#method(0,1,'put(', 'String, String, V)', 'void'),
   \ javaapi#method(0,1,'put(', 'QName, V)', 'void'),
@@ -67,12 +67,12 @@ call javaapi#class('QNameMap<V>', '', [
   \ javaapi#method(0,1,'get(', 'String, String)', 'V'),
   \ javaapi#method(0,1,'get(', 'QName)', 'V'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
-  \ javaapi#method(0,1,'putAll(', 'QNameMap<? extends V>)', 'QNameMap<V>'),
-  \ javaapi#method(0,1,'getOne(', ')', 'Entry<V>'),
-  \ javaapi#method(0,1,'keySet(', ')', 'QName>'),
+  \ javaapi#method(0,1,'putAll(', 'QNameMap<? extends V>)', 'QNameMap'),
+  \ javaapi#method(0,1,'getOne(', ')', 'Entry'),
+  \ javaapi#method(0,1,'keySet(', ')', 'Collection'),
   \ javaapi#method(0,1,'containsKey(', 'String, String)', 'boolean'),
   \ javaapi#method(0,1,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,1,'entrySet(', ')', 'Entry<V>>'),
+  \ javaapi#method(0,1,'entrySet(', ')', 'Entry'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 

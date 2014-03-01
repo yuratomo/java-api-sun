@@ -45,7 +45,7 @@ call javaapi#class('PrintStreamProviderFactory', 'ProviderFactory', [
   \ ])
 
 call javaapi#class('ProbeSkeleton', 'Probe', [
-  \ javaapi#field(0,0,'parameters', 'Class<?>[]'),
+  \ javaapi#field(0,0,'parameters', 'Class'),
   \ javaapi#method(0,0,'ProbeSkeleton(', 'Class<?>[])', ''),
   \ javaapi#method(0,1,'isEnabled(', ')', 'boolean'),
   \ javaapi#method(0,1,'uncheckedTrigger(', 'Object[])', 'void'),

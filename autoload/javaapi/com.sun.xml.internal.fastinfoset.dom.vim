@@ -4,9 +4,9 @@ call javaapi#class('DOMDocumentParser', 'Decoder', [
   \ javaapi#field(0,0,'_document', 'Document'),
   \ javaapi#field(0,0,'_currentNode', 'Node'),
   \ javaapi#field(0,0,'_currentElement', 'Element'),
-  \ javaapi#field(0,0,'_namespaceAttributes', 'Attr[]'),
+  \ javaapi#field(0,0,'_namespaceAttributes', 'Attr'),
   \ javaapi#field(0,0,'_namespaceAttributesIndex', 'int'),
-  \ javaapi#field(0,0,'_namespacePrefixes', 'int[]'),
+  \ javaapi#field(0,0,'_namespacePrefixes', 'int'),
   \ javaapi#field(0,0,'_namespacePrefixesIndex', 'int'),
   \ javaapi#method(0,1,'DOMDocumentParser(', ')', ''),
   \ javaapi#method(0,1,'parse(', 'Document, InputStream) throws FastInfosetException, IOException', 'void'),
@@ -29,7 +29,7 @@ call javaapi#class('DOMDocumentParser', 'Decoder', [
 
 call javaapi#class('DOMDocumentSerializer', 'Encoder', [
   \ javaapi#field(0,0,'_namespaceScopeContext', 'NamespaceContextImplementation'),
-  \ javaapi#field(0,0,'_attributes', 'Node[]'),
+  \ javaapi#field(0,0,'_attributes', 'Node'),
   \ javaapi#method(0,1,'DOMDocumentSerializer(', ')', ''),
   \ javaapi#method(0,1,'serialize(', 'Node) throws IOException', 'void'),
   \ javaapi#method(0,1,'serialize(', 'Document) throws IOException', 'void'),

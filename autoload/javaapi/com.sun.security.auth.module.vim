@@ -2,7 +2,7 @@ call javaapi#namespace('com.sun.security.auth.module')
 
 call javaapi#class('Crypt', '', [
   \ javaapi#method(0,1,'Crypt(', ')', ''),
-  \ javaapi#method(0,1,'crypt(', 'byte[], byte[])', 'byte[]'),
+  \ javaapi#method(0,1,'crypt(', 'byte[], byte[])', 'byte'),
   \ javaapi#method(1,1,'main(', 'String[])', 'void'),
   \ ])
 
@@ -60,7 +60,7 @@ call javaapi#class('NTSystem', '', [
   \ javaapi#method(0,1,'getDomainSID(', ')', 'String'),
   \ javaapi#method(0,1,'getUserSID(', ')', 'String'),
   \ javaapi#method(0,1,'getPrimaryGroupID(', ')', 'String'),
-  \ javaapi#method(0,1,'getGroupIDs(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getGroupIDs(', ')', 'String'),
   \ javaapi#method(0,1,'getImpersonationToken(', ')', 'long'),
   \ ])
 

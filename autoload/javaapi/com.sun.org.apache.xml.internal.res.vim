@@ -81,7 +81,7 @@ call javaapi#class('XMLErrorResources', 'ListResourceBundle', [
   \ javaapi#field(1,1,'ER_ILLEGAL_ATTRIBUTE_POSITION', 'String'),
   \ javaapi#field(1,1,'ER_ILLEGAL_CHARACTER', 'String'),
   \ javaapi#method(0,1,'XMLErrorResources(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
@@ -164,7 +164,7 @@ call javaapi#class('XMLErrorResources_ca', 'ListResourceBundle', [
   \ javaapi#field(1,1,'ER_SERIALIZER_NOT_CONTENTHANDLER', 'String'),
   \ javaapi#field(1,1,'ER_ILLEGAL_ATTRIBUTE_POSITION', 'String'),
   \ javaapi#method(0,1,'XMLErrorResources_ca(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
@@ -247,7 +247,7 @@ call javaapi#class('XMLErrorResources_cs', 'ListResourceBundle', [
   \ javaapi#field(1,1,'ER_SERIALIZER_NOT_CONTENTHANDLER', 'String'),
   \ javaapi#field(1,1,'ER_ILLEGAL_ATTRIBUTE_POSITION', 'String'),
   \ javaapi#method(0,1,'XMLErrorResources_cs(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
@@ -332,7 +332,7 @@ call javaapi#class('XMLErrorResources_de', 'ListResourceBundle', [
   \ javaapi#field(1,1,'ER_ILLEGAL_ATTRIBUTE_POSITION', 'String'),
   \ javaapi#field(1,1,'ER_ILLEGAL_CHARACTER', 'String'),
   \ javaapi#method(0,1,'XMLErrorResources_de(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
@@ -421,7 +421,7 @@ call javaapi#class('XMLErrorResources_es', 'ListResourceBundle', [
   \ javaapi#field(1,1,'ER_ILLEGAL_ATTRIBUTE_POSITION', 'String'),
   \ javaapi#field(1,1,'ER_ILLEGAL_CHARACTER', 'String'),
   \ javaapi#method(0,1,'XMLErrorResources_es(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
@@ -506,7 +506,7 @@ call javaapi#class('XMLErrorResources_fr', 'ListResourceBundle', [
   \ javaapi#field(1,1,'ER_ILLEGAL_ATTRIBUTE_POSITION', 'String'),
   \ javaapi#field(1,1,'ER_ILLEGAL_CHARACTER', 'String'),
   \ javaapi#method(0,1,'XMLErrorResources_fr(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
@@ -591,7 +591,7 @@ call javaapi#class('XMLErrorResources_it', 'ListResourceBundle', [
   \ javaapi#field(1,1,'ER_ILLEGAL_ATTRIBUTE_POSITION', 'String'),
   \ javaapi#field(1,1,'ER_ILLEGAL_CHARACTER', 'String'),
   \ javaapi#method(0,1,'XMLErrorResources_it(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
@@ -676,7 +676,7 @@ call javaapi#class('XMLErrorResources_ja', 'ListResourceBundle', [
   \ javaapi#field(1,1,'ER_ILLEGAL_ATTRIBUTE_POSITION', 'String'),
   \ javaapi#field(1,1,'ER_ILLEGAL_CHARACTER', 'String'),
   \ javaapi#method(0,1,'XMLErrorResources_ja(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
@@ -761,7 +761,7 @@ call javaapi#class('XMLErrorResources_ko', 'ListResourceBundle', [
   \ javaapi#field(1,1,'ER_ILLEGAL_ATTRIBUTE_POSITION', 'String'),
   \ javaapi#field(1,1,'ER_ILLEGAL_CHARACTER', 'String'),
   \ javaapi#method(0,1,'XMLErrorResources_ko(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
@@ -845,9 +845,9 @@ call javaapi#class('XMLErrorResources_pt_BR', 'ListResourceBundle', [
   \ javaapi#field(1,1,'ER_SERIALIZER_NOT_CONTENTHANDLER', 'String'),
   \ javaapi#field(1,1,'ER_ILLEGAL_ATTRIBUTE_POSITION', 'String'),
   \ javaapi#field(1,1,'ER_ILLEGAL_CHARACTER', 'String'),
-  \ javaapi#field(1,1,'contents', 'Object[][]'),
+  \ javaapi#field(1,1,'contents', 'Object[]'),
   \ javaapi#method(0,1,'XMLErrorResources_pt_BR(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
@@ -930,7 +930,7 @@ call javaapi#class('XMLErrorResources_sk', 'ListResourceBundle', [
   \ javaapi#field(1,1,'ER_SERIALIZER_NOT_CONTENTHANDLER', 'String'),
   \ javaapi#field(1,1,'ER_ILLEGAL_ATTRIBUTE_POSITION', 'String'),
   \ javaapi#method(0,1,'XMLErrorResources_sk(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
@@ -1015,7 +1015,7 @@ call javaapi#class('XMLErrorResources_sv', 'ListResourceBundle', [
   \ javaapi#field(1,1,'ER_ILLEGAL_ATTRIBUTE_POSITION', 'String'),
   \ javaapi#field(1,1,'ER_ILLEGAL_CHARACTER', 'String'),
   \ javaapi#method(0,1,'XMLErrorResources_sv(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
@@ -1098,7 +1098,7 @@ call javaapi#class('XMLErrorResources_tr', 'ListResourceBundle', [
   \ javaapi#field(1,1,'ER_SERIALIZER_NOT_CONTENTHANDLER', 'String'),
   \ javaapi#field(1,1,'ER_ILLEGAL_ATTRIBUTE_POSITION', 'String'),
   \ javaapi#method(0,1,'XMLErrorResources_tr(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
@@ -1183,7 +1183,7 @@ call javaapi#class('XMLErrorResources_zh_CN', 'ListResourceBundle', [
   \ javaapi#field(1,1,'ER_ILLEGAL_ATTRIBUTE_POSITION', 'String'),
   \ javaapi#field(1,1,'ER_ILLEGAL_CHARACTER', 'String'),
   \ javaapi#method(0,1,'XMLErrorResources_zh_CN(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 
@@ -1272,7 +1272,7 @@ call javaapi#class('XMLErrorResources_zh_TW', 'ListResourceBundle', [
   \ javaapi#field(1,1,'ER_ILLEGAL_ATTRIBUTE_POSITION', 'String'),
   \ javaapi#field(1,1,'ER_ILLEGAL_CHARACTER', 'String'),
   \ javaapi#method(0,1,'XMLErrorResources_zh_TW(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XMLErrorResources'),
   \ ])
 

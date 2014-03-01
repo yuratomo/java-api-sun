@@ -3,21 +3,21 @@ call javaapi#namespace('com.sun.org.apache.xml.internal.security.utils')
 call javaapi#class('Base64', '', [
   \ javaapi#field(1,1,'BASE64DEFAULTLENGTH', 'int'),
   \ javaapi#method(1,1,'encode(', 'BigInteger)', 'String'),
-  \ javaapi#method(1,1,'encode(', 'BigInteger, int)', 'byte[]'),
+  \ javaapi#method(1,1,'encode(', 'BigInteger, int)', 'byte'),
   \ javaapi#method(1,1,'decodeBigIntegerFromElement(', 'Element) throws Base64DecodingException', 'BigInteger'),
   \ javaapi#method(1,1,'decodeBigIntegerFromText(', 'Text) throws Base64DecodingException', 'BigInteger'),
   \ javaapi#method(1,1,'fillElementWithBigInteger(', 'Element, BigInteger)', 'void'),
-  \ javaapi#method(1,1,'decode(', 'Element) throws Base64DecodingException', 'byte[]'),
+  \ javaapi#method(1,1,'decode(', 'Element) throws Base64DecodingException', 'byte'),
   \ javaapi#method(1,1,'encodeToElement(', 'Document, String, byte[])', 'Element'),
-  \ javaapi#method(1,1,'decode(', 'byte[]) throws Base64DecodingException', 'byte[]'),
+  \ javaapi#method(1,1,'decode(', 'byte[]) throws Base64DecodingException', 'byte'),
   \ javaapi#method(1,1,'encode(', 'byte[])', 'String'),
-  \ javaapi#method(1,1,'decode(', 'BufferedReader) throws IOException, Base64DecodingException', 'byte[]'),
+  \ javaapi#method(1,1,'decode(', 'BufferedReader) throws IOException, Base64DecodingException', 'byte'),
   \ javaapi#method(1,0,'isWhiteSpace(', 'byte)', 'boolean'),
   \ javaapi#method(1,0,'isPad(', 'byte)', 'boolean'),
   \ javaapi#method(1,1,'encode(', 'byte[], int)', 'String'),
-  \ javaapi#method(1,1,'decode(', 'String) throws Base64DecodingException', 'byte[]'),
+  \ javaapi#method(1,1,'decode(', 'String) throws Base64DecodingException', 'byte'),
   \ javaapi#method(1,0,'getBytesInternal(', 'String, byte[])', 'int'),
-  \ javaapi#method(1,0,'decodeInternal(', 'byte[], int) throws Base64DecodingException', 'byte[]'),
+  \ javaapi#method(1,0,'decodeInternal(', 'byte[], int) throws Base64DecodingException', 'byte'),
   \ javaapi#method(1,1,'decode(', 'String, OutputStream) throws Base64DecodingException, IOException', 'void'),
   \ javaapi#method(1,1,'decode(', 'byte[], OutputStream) throws Base64DecodingException, IOException', 'void'),
   \ javaapi#method(1,0,'decode(', 'byte[], OutputStream, int) throws Base64DecodingException, IOException', 'void'),
@@ -122,7 +122,7 @@ call javaapi#class('DigesterOutputStream', 'ByteArrayOutputStream', [
   \ javaapi#method(0,1,'write(', 'byte[])', 'void'),
   \ javaapi#method(0,1,'write(', 'int)', 'void'),
   \ javaapi#method(0,1,'write(', 'byte[], int, int)', 'void'),
-  \ javaapi#method(0,1,'getDigestValue(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getDigestValue(', ')', 'byte'),
   \ ])
 
 call javaapi#interface('ElementChecker', '', [
@@ -157,9 +157,9 @@ call javaapi#class('ElementProxy', '', [
   \ javaapi#method(0,1,'addBase64Text(', 'byte[])', 'void'),
   \ javaapi#method(0,1,'addText(', 'String)', 'void'),
   \ javaapi#method(0,1,'getBigIntegerFromChildElement(', 'String, String) throws Base64DecodingException', 'BigInteger'),
-  \ javaapi#method(0,1,'getBytesFromChildElement(', 'String, String) throws XMLSecurityException', 'byte[]'),
+  \ javaapi#method(0,1,'getBytesFromChildElement(', 'String, String) throws XMLSecurityException', 'byte'),
   \ javaapi#method(0,1,'getTextFromChildElement(', 'String, String)', 'String'),
-  \ javaapi#method(0,1,'getBytesFromTextChild(', ') throws XMLSecurityException', 'byte[]'),
+  \ javaapi#method(0,1,'getBytesFromTextChild(', ') throws XMLSecurityException', 'byte'),
   \ javaapi#method(0,1,'getTextFromTextChild(', ')', 'String'),
   \ javaapi#method(0,1,'length(', 'String, String)', 'int'),
   \ javaapi#method(0,1,'setXPathNamespaceContext(', 'String, String) throws XMLSecurityException', 'void'),
@@ -259,9 +259,9 @@ call javaapi#class('IgnoreAllErrorHandler', 'ErrorHandler', [
   \ ])
 
 call javaapi#class('JavaUtils', '', [
-  \ javaapi#method(1,1,'getBytesFromFile(', 'String) throws FileNotFoundException, IOException', 'byte[]'),
+  \ javaapi#method(1,1,'getBytesFromFile(', 'String) throws FileNotFoundException, IOException', 'byte'),
   \ javaapi#method(1,1,'writeBytesToFilename(', 'String, byte[])', 'void'),
-  \ javaapi#method(1,1,'getBytesFromStream(', 'InputStream) throws IOException', 'byte[]'),
+  \ javaapi#method(1,1,'getBytesFromStream(', 'InputStream) throws IOException', 'byte'),
   \ ])
 
 call javaapi#class('RFC2253Parser', '', [
@@ -300,7 +300,7 @@ call javaapi#class('UnsyncByteArrayOutputStream', 'OutputStream', [
   \ javaapi#method(0,1,'write(', 'byte[])', 'void'),
   \ javaapi#method(0,1,'write(', 'byte[], int, int)', 'void'),
   \ javaapi#method(0,1,'write(', 'int)', 'void'),
-  \ javaapi#method(0,1,'toByteArray(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'toByteArray(', ')', 'byte'),
   \ javaapi#method(0,1,'reset(', ')', 'void'),
   \ ])
 
@@ -327,8 +327,8 @@ call javaapi#class('XMLUtils', '', [
   \ javaapi#method(1,1,'selectDsNodeText(', 'Node, String, int)', 'Text'),
   \ javaapi#method(1,1,'selectNodeText(', 'Node, String, String, int)', 'Text'),
   \ javaapi#method(1,1,'selectNode(', 'Node, String, String, int)', 'Element'),
-  \ javaapi#method(1,1,'selectDsNodes(', 'Node, String)', 'Element[]'),
-  \ javaapi#method(1,1,'selectNodes(', 'Node, String, String)', 'Element[]'),
+  \ javaapi#method(1,1,'selectDsNodes(', 'Node, String)', 'Element'),
+  \ javaapi#method(1,1,'selectNodes(', 'Node, String, String)', 'Element'),
   \ javaapi#method(1,1,'excludeNodeFromSet(', 'Node, Set)', 'Set'),
   \ javaapi#method(1,1,'isDescendantOrSelf(', 'Node, Node)', 'boolean'),
   \ javaapi#method(1,1,'ignoreLineBreaks(', ')', 'boolean'),

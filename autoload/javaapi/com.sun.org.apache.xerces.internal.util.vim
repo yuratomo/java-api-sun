@@ -109,7 +109,7 @@ call javaapi#class('DOMUtil', '', [
   \ javaapi#method(1,1,'getRoot(', 'Document)', 'Element'),
   \ javaapi#method(1,1,'getAttr(', 'Element, String)', 'Attr'),
   \ javaapi#method(1,1,'getAttrNS(', 'Element, String, String)', 'Attr'),
-  \ javaapi#method(1,1,'getAttrs(', 'Element)', 'Attr[]'),
+  \ javaapi#method(1,1,'getAttrs(', 'Element)', 'Attr'),
   \ javaapi#method(1,1,'getValue(', 'Attr)', 'String'),
   \ javaapi#method(1,1,'getAttrValue(', 'Element, String)', 'String'),
   \ javaapi#method(1,1,'getAttrValueNS(', 'Element, String, String)', 'String'),
@@ -291,11 +291,11 @@ call javaapi#class('NamespaceContextWrapper', 'NamespaceContext', [
   \ ])
 
 call javaapi#class('NamespaceSupport', 'NamespaceContext', [
-  \ javaapi#field(0,0,'fNamespace', 'String[]'),
+  \ javaapi#field(0,0,'fNamespace', 'String'),
   \ javaapi#field(0,0,'fNamespaceSize', 'int'),
-  \ javaapi#field(0,0,'fContext', 'int[]'),
+  \ javaapi#field(0,0,'fContext', 'int'),
   \ javaapi#field(0,0,'fCurrentContext', 'int'),
-  \ javaapi#field(0,0,'fPrefixes', 'String[]'),
+  \ javaapi#field(0,0,'fPrefixes', 'String'),
   \ javaapi#method(0,1,'NamespaceSupport(', ')', ''),
   \ javaapi#method(0,1,'NamespaceSupport(', 'NamespaceContext)', ''),
   \ javaapi#method(0,1,'reset(', ')', 'void'),
@@ -315,9 +315,9 @@ call javaapi#class('NamespaceSupport', 'NamespaceContext', [
 
 call javaapi#class('ParserConfigurationSettings', 'XMLComponentManager', [
   \ javaapi#field(1,0,'PARSER_SETTINGS', 'String'),
-  \ javaapi#field(0,0,'fRecognizedProperties', 'String>'),
+  \ javaapi#field(0,0,'fRecognizedProperties', 'Set'),
   \ javaapi#field(0,0,'fProperties', 'Object>'),
-  \ javaapi#field(0,0,'fRecognizedFeatures', 'String>'),
+  \ javaapi#field(0,0,'fRecognizedFeatures', 'Set'),
   \ javaapi#field(0,0,'fFeatures', 'Boolean>'),
   \ javaapi#field(0,0,'fParentSettings', 'XMLComponentManager'),
   \ javaapi#method(0,1,'ParserConfigurationSettings(', ')', ''),
@@ -447,14 +447,14 @@ call javaapi#class('StAXLocationWrapper', 'XMLLocator', [
   \ javaapi#method(0,1,'getXMLVersion(', ')', 'String'),
   \ ])
 
-call javaapi#class('Status', 'Status>', [
+call javaapi#class('Status', 'Enum', [
   \ javaapi#field(1,1,'SET', 'Status'),
   \ javaapi#field(1,1,'UNKNOWN', 'Status'),
   \ javaapi#field(1,1,'RECOGNIZED', 'Status'),
   \ javaapi#field(1,1,'NOT_SUPPORTED', 'Status'),
   \ javaapi#field(1,1,'NOT_RECOGNIZED', 'Status'),
   \ javaapi#field(1,1,'NOT_ALLOWED', 'Status'),
-  \ javaapi#method(1,1,'values(', ')', 'Status[]'),
+  \ javaapi#method(1,1,'values(', ')', 'Status'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'Status'),
   \ javaapi#method(0,1,'getType(', ')', 'short'),
   \ javaapi#method(0,1,'isExceptional(', ')', 'boolean'),
@@ -462,7 +462,7 @@ call javaapi#class('Status', 'Status>', [
 
 call javaapi#class('SymbolHash', '', [
   \ javaapi#field(0,0,'fTableSize', 'int'),
-  \ javaapi#field(0,0,'fBuckets', 'Entry[]'),
+  \ javaapi#field(0,0,'fBuckets', 'Entry'),
   \ javaapi#field(0,0,'fNum', 'int'),
   \ javaapi#method(0,1,'SymbolHash(', ')', ''),
   \ javaapi#method(0,1,'SymbolHash(', 'int)', ''),
@@ -470,7 +470,7 @@ call javaapi#class('SymbolHash', '', [
   \ javaapi#method(0,1,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,1,'getLength(', ')', 'int'),
   \ javaapi#method(0,1,'getValues(', 'Object[], int)', 'int'),
-  \ javaapi#method(0,1,'getEntries(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'getEntries(', ')', 'Object'),
   \ javaapi#method(0,1,'makeClone(', ')', 'SymbolHash'),
   \ javaapi#method(0,1,'clear(', ')', 'void'),
   \ javaapi#method(0,0,'search(', 'Object, int)', 'Entry'),
@@ -478,7 +478,7 @@ call javaapi#class('SymbolHash', '', [
 
 call javaapi#class('SymbolTable', '', [
   \ javaapi#field(1,0,'TABLE_SIZE', 'int'),
-  \ javaapi#field(0,0,'fBuckets', 'Entry[]'),
+  \ javaapi#field(0,0,'fBuckets', 'Entry'),
   \ javaapi#field(0,0,'fTableSize', 'int'),
   \ javaapi#method(0,1,'SymbolTable(', ')', ''),
   \ javaapi#method(0,1,'SymbolTable(', 'int)', ''),
@@ -611,9 +611,9 @@ call javaapi#class('XMLAttributesImpl', 'XMLBufferListener', [
   \ javaapi#field(0,0,'fNamespaces', 'boolean'),
   \ javaapi#field(0,0,'fLargeCount', 'int'),
   \ javaapi#field(0,0,'fLength', 'int'),
-  \ javaapi#field(0,0,'fAttributes', 'Attribute[]'),
-  \ javaapi#field(0,0,'fAttributeTableView', 'Attribute[]'),
-  \ javaapi#field(0,0,'fAttributeTableViewChainState', 'int[]'),
+  \ javaapi#field(0,0,'fAttributes', 'Attribute'),
+  \ javaapi#field(0,0,'fAttributeTableView', 'Attribute'),
+  \ javaapi#field(0,0,'fAttributeTableViewChainState', 'int'),
   \ javaapi#field(0,0,'fTableViewBuckets', 'int'),
   \ javaapi#field(0,0,'fIsTableViewConsistent', 'boolean'),
   \ javaapi#method(0,1,'XMLAttributesImpl(', ')', ''),
@@ -684,7 +684,7 @@ call javaapi#class('XMLCatalogResolver', 'LSResourceResolver', [
   \ javaapi#method(0,1,'XMLCatalogResolver(', ')', ''),
   \ javaapi#method(0,1,'XMLCatalogResolver(', 'String[])', ''),
   \ javaapi#method(0,1,'XMLCatalogResolver(', 'String[], boolean)', ''),
-  \ javaapi#method(0,1,'getCatalogList(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getCatalogList(', ')', 'String'),
   \ javaapi#method(0,1,'setCatalogList(', 'String[])', 'void'),
   \ javaapi#method(0,1,'clear(', ')', 'void'),
   \ javaapi#method(0,1,'getPreferPublic(', ')', 'boolean'),
@@ -783,12 +783,12 @@ call javaapi#class('XMLErrorCode', '', [
 
 call javaapi#class('XMLGrammarPoolImpl', 'XMLGrammarPool', [
   \ javaapi#field(1,0,'TABLE_SIZE', 'int'),
-  \ javaapi#field(0,0,'fGrammars', 'Entry[]'),
+  \ javaapi#field(0,0,'fGrammars', 'Entry'),
   \ javaapi#field(0,0,'fPoolIsLocked', 'boolean'),
   \ javaapi#field(0,0,'fGrammarCount', 'int'),
   \ javaapi#method(0,1,'XMLGrammarPoolImpl(', ')', ''),
   \ javaapi#method(0,1,'XMLGrammarPoolImpl(', 'int)', ''),
-  \ javaapi#method(0,1,'retrieveInitialGrammarSet(', 'String)', 'Grammar[]'),
+  \ javaapi#method(0,1,'retrieveInitialGrammarSet(', 'String)', 'Grammar'),
   \ javaapi#method(0,1,'cacheGrammars(', 'String, Grammar[])', 'void'),
   \ javaapi#method(0,1,'retrieveGrammar(', 'XMLGrammarDescription)', 'Grammar'),
   \ javaapi#method(0,1,'putGrammar(', 'Grammar)', 'void'),

@@ -152,7 +152,7 @@ call javaapi#class('XPATHErrorResources', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XPATHErrorResources(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 
@@ -308,7 +308,7 @@ call javaapi#class('XPATHErrorResources_de', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XPATHErrorResources_de(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 
@@ -468,7 +468,7 @@ call javaapi#class('XPATHErrorResources_es', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XPATHErrorResources_es(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 
@@ -624,7 +624,7 @@ call javaapi#class('XPATHErrorResources_fr', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XPATHErrorResources_fr(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 
@@ -780,7 +780,7 @@ call javaapi#class('XPATHErrorResources_it', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XPATHErrorResources_it(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 
@@ -936,7 +936,7 @@ call javaapi#class('XPATHErrorResources_ja', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XPATHErrorResources_ja(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 
@@ -1092,7 +1092,7 @@ call javaapi#class('XPATHErrorResources_ko', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XPATHErrorResources_ko(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 
@@ -1248,7 +1248,7 @@ call javaapi#class('XPATHErrorResources_pt_BR', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XPATHErrorResources_pt_BR(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 
@@ -1404,7 +1404,7 @@ call javaapi#class('XPATHErrorResources_sv', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XPATHErrorResources_sv(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 
@@ -1560,7 +1560,7 @@ call javaapi#class('XPATHErrorResources_zh_CN', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XPATHErrorResources_zh_CN(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 
@@ -1716,7 +1716,7 @@ call javaapi#class('XPATHErrorResources_zh_TW', 'ListResourceBundle', [
   \ javaapi#field(1,1,'XML_HEADER', 'String'),
   \ javaapi#field(1,1,'QUERY_HEADER', 'String'),
   \ javaapi#method(0,1,'XPATHErrorResources_zh_TW(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ javaapi#method(1,1,'loadResourceBundle(', 'String) throws MissingResourceException', 'XPATHErrorResources'),
   \ ])
 

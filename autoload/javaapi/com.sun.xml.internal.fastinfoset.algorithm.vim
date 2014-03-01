@@ -54,12 +54,12 @@ call javaapi#class('BuiltInEncodingAlgorithmFactory', '', [
 
 call javaapi#class('BuiltInEncodingAlgorithmState', '', [
   \ javaapi#field(1,1,'INITIAL_LENGTH', 'int'),
-  \ javaapi#field(0,1,'booleanArray', 'boolean[]'),
-  \ javaapi#field(0,1,'shortArray', 'short[]'),
-  \ javaapi#field(0,1,'intArray', 'int[]'),
-  \ javaapi#field(0,1,'longArray', 'long[]'),
-  \ javaapi#field(0,1,'floatArray', 'float[]'),
-  \ javaapi#field(0,1,'doubleArray', 'double[]'),
+  \ javaapi#field(0,1,'booleanArray', 'boolean'),
+  \ javaapi#field(0,1,'shortArray', 'short'),
+  \ javaapi#field(0,1,'intArray', 'int'),
+  \ javaapi#field(0,1,'longArray', 'long'),
+  \ javaapi#field(0,1,'floatArray', 'float'),
+  \ javaapi#field(0,1,'doubleArray', 'double'),
   \ javaapi#method(0,1,'BuiltInEncodingAlgorithmState(', ')', ''),
   \ ])
 
@@ -73,12 +73,12 @@ call javaapi#class('DoubleEncodingAlgorithm', 'IEEE754FloatingPointEncodingAlgor
   \ javaapi#method(0,1,'convertFromCharacters(', 'char[], int, int)', 'Object'),
   \ javaapi#method(0,1,'convertToCharacters(', 'Object, StringBuffer)', 'void'),
   \ javaapi#method(0,1,'decodeFromBytesToDoubleArray(', 'double[], int, byte[], int, int)', 'void'),
-  \ javaapi#method(0,1,'decodeFromInputStreamToDoubleArray(', 'InputStream) throws IOException', 'double[]'),
+  \ javaapi#method(0,1,'decodeFromInputStreamToDoubleArray(', 'InputStream) throws IOException', 'double'),
   \ javaapi#method(0,1,'encodeToOutputStreamFromDoubleArray(', 'double[], OutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'encodeToBytes(', 'Object, int, int, byte[], int)', 'void'),
   \ javaapi#method(0,1,'encodeToBytesFromDoubleArray(', 'double[], int, int, byte[], int)', 'void'),
   \ javaapi#method(0,1,'convertToCharactersFromDoubleArray(', 'double[], StringBuffer)', 'void'),
-  \ javaapi#method(0,1,'generateArrayFromList(', 'List)', 'double[]'),
+  \ javaapi#method(0,1,'generateArrayFromList(', 'List)', 'double'),
   \ ])
 
 call javaapi#class('FloatEncodingAlgorithm', 'IEEE754FloatingPointEncodingAlgorithm', [
@@ -91,12 +91,12 @@ call javaapi#class('FloatEncodingAlgorithm', 'IEEE754FloatingPointEncodingAlgori
   \ javaapi#method(0,1,'convertFromCharacters(', 'char[], int, int)', 'Object'),
   \ javaapi#method(0,1,'convertToCharacters(', 'Object, StringBuffer)', 'void'),
   \ javaapi#method(0,1,'decodeFromBytesToFloatArray(', 'float[], int, byte[], int, int)', 'void'),
-  \ javaapi#method(0,1,'decodeFromInputStreamToFloatArray(', 'InputStream) throws IOException', 'float[]'),
+  \ javaapi#method(0,1,'decodeFromInputStreamToFloatArray(', 'InputStream) throws IOException', 'float'),
   \ javaapi#method(0,1,'encodeToOutputStreamFromFloatArray(', 'float[], OutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'encodeToBytes(', 'Object, int, int, byte[], int)', 'void'),
   \ javaapi#method(0,1,'encodeToBytesFromFloatArray(', 'float[], int, int, byte[], int)', 'void'),
   \ javaapi#method(0,1,'convertToCharactersFromFloatArray(', 'float[], StringBuffer)', 'void'),
-  \ javaapi#method(0,1,'generateArrayFromList(', 'List)', 'float[]'),
+  \ javaapi#method(0,1,'generateArrayFromList(', 'List)', 'float'),
   \ ])
 
 call javaapi#class('HexadecimalEncodingAlgorithm', 'BuiltInEncodingAlgorithm', [
@@ -129,12 +129,12 @@ call javaapi#class('IntEncodingAlgorithm', 'IntegerEncodingAlgorithm', [
   \ javaapi#method(0,1,'convertFromCharacters(', 'char[], int, int)', 'Object'),
   \ javaapi#method(0,1,'convertToCharacters(', 'Object, StringBuffer)', 'void'),
   \ javaapi#method(0,1,'decodeFromBytesToIntArray(', 'int[], int, byte[], int, int)', 'void'),
-  \ javaapi#method(0,1,'decodeFromInputStreamToIntArray(', 'InputStream) throws IOException', 'int[]'),
+  \ javaapi#method(0,1,'decodeFromInputStreamToIntArray(', 'InputStream) throws IOException', 'int'),
   \ javaapi#method(0,1,'encodeToOutputStreamFromIntArray(', 'int[], OutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'encodeToBytes(', 'Object, int, int, byte[], int)', 'void'),
   \ javaapi#method(0,1,'encodeToBytesFromIntArray(', 'int[], int, int, byte[], int)', 'void'),
   \ javaapi#method(0,1,'convertToCharactersFromIntArray(', 'int[], StringBuffer)', 'void'),
-  \ javaapi#method(0,1,'generateArrayFromList(', 'List)', 'int[]'),
+  \ javaapi#method(0,1,'generateArrayFromList(', 'List)', 'int'),
   \ ])
 
 call javaapi#class('IntegerEncodingAlgorithm', 'BuiltInEncodingAlgorithm', [
@@ -157,12 +157,12 @@ call javaapi#class('LongEncodingAlgorithm', 'IntegerEncodingAlgorithm', [
   \ javaapi#method(0,1,'convertFromCharacters(', 'char[], int, int)', 'Object'),
   \ javaapi#method(0,1,'convertToCharacters(', 'Object, StringBuffer)', 'void'),
   \ javaapi#method(0,1,'decodeFromBytesToLongArray(', 'long[], int, byte[], int, int)', 'void'),
-  \ javaapi#method(0,1,'decodeFromInputStreamToIntArray(', 'InputStream) throws IOException', 'long[]'),
+  \ javaapi#method(0,1,'decodeFromInputStreamToIntArray(', 'InputStream) throws IOException', 'long'),
   \ javaapi#method(0,1,'encodeToOutputStreamFromLongArray(', 'long[], OutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'encodeToBytes(', 'Object, int, int, byte[], int)', 'void'),
   \ javaapi#method(0,1,'encodeToBytesFromLongArray(', 'long[], int, int, byte[], int)', 'void'),
   \ javaapi#method(0,1,'convertToCharactersFromLongArray(', 'long[], StringBuffer)', 'void'),
-  \ javaapi#method(0,1,'generateArrayFromList(', 'List)', 'long[]'),
+  \ javaapi#method(0,1,'generateArrayFromList(', 'List)', 'long'),
   \ ])
 
 call javaapi#class('ShortEncodingAlgorithm', 'IntegerEncodingAlgorithm', [
@@ -175,12 +175,12 @@ call javaapi#class('ShortEncodingAlgorithm', 'IntegerEncodingAlgorithm', [
   \ javaapi#method(0,1,'convertFromCharacters(', 'char[], int, int)', 'Object'),
   \ javaapi#method(0,1,'convertToCharacters(', 'Object, StringBuffer)', 'void'),
   \ javaapi#method(0,1,'decodeFromBytesToShortArray(', 'short[], int, byte[], int, int)', 'void'),
-  \ javaapi#method(0,1,'decodeFromInputStreamToShortArray(', 'InputStream) throws IOException', 'short[]'),
+  \ javaapi#method(0,1,'decodeFromInputStreamToShortArray(', 'InputStream) throws IOException', 'short'),
   \ javaapi#method(0,1,'encodeToOutputStreamFromShortArray(', 'short[], OutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'encodeToBytes(', 'Object, int, int, byte[], int)', 'void'),
   \ javaapi#method(0,1,'encodeToBytesFromShortArray(', 'short[], int, int, byte[], int)', 'void'),
   \ javaapi#method(0,1,'convertToCharactersFromShortArray(', 'short[], StringBuffer)', 'void'),
-  \ javaapi#method(0,1,'generateArrayFromList(', 'List)', 'short[]'),
+  \ javaapi#method(0,1,'generateArrayFromList(', 'List)', 'short'),
   \ ])
 
 call javaapi#class('UUIDEncodingAlgorithm', 'LongEncodingAlgorithm', [

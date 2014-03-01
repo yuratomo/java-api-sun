@@ -36,10 +36,10 @@ call javaapi#class('MibLogger', '', [
   \ ])
 
 call javaapi#class('SnmpCachedData', 'SnmpTableHandler', [
-  \ javaapi#field(1,1,'oidComparator', 'SnmpOid>'),
+  \ javaapi#field(1,1,'oidComparator', 'Comparator'),
   \ javaapi#field(0,1,'lastUpdated', 'long'),
-  \ javaapi#field(0,1,'indexes', 'SnmpOid[]'),
-  \ javaapi#field(0,1,'datas', 'Object[]'),
+  \ javaapi#field(0,1,'indexes', 'SnmpOid'),
+  \ javaapi#field(0,1,'datas', 'Object'),
   \ javaapi#method(0,1,'SnmpCachedData(', 'long, SnmpOid[], Object[])', ''),
   \ javaapi#method(0,1,'SnmpCachedData(', 'long, TreeMap<SnmpOid, Object>)', ''),
   \ javaapi#method(0,1,'SnmpCachedData(', 'long, TreeMap<SnmpOid, Object>, boolean)', ''),
@@ -79,7 +79,7 @@ call javaapi#class('SnmpNamedListTableCache', 'SnmpListTableCache', [
 
 call javaapi#class('SnmpTableCache', 'Serializable', [
   \ javaapi#field(0,0,'validity', 'long'),
-  \ javaapi#field(0,0,'datas', 'SnmpCachedData>'),
+  \ javaapi#field(0,0,'datas', 'WeakReference'),
   \ javaapi#method(0,1,'SnmpTableCache(', ')', ''),
   \ javaapi#method(0,0,'isObsolete(', 'SnmpCachedData)', 'boolean'),
   \ javaapi#method(0,0,'getCachedDatas(', ')', 'SnmpCachedData'),

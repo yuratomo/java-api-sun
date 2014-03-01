@@ -25,7 +25,7 @@ call javaapi#class('NameUtil', '', [
   \ javaapi#method(0,0,'isLetter(', 'char)', 'boolean'),
   \ javaapi#method(0,1,'capitalize(', 'String)', 'String'),
   \ javaapi#method(0,0,'classify(', 'char)', 'int'),
-  \ javaapi#method(0,1,'toWordList(', 'String)', 'String>'),
+  \ javaapi#method(0,1,'toWordList(', 'String)', 'List'),
   \ javaapi#method(0,0,'toMixedCaseName(', 'List<String>, boolean)', 'String'),
   \ javaapi#method(0,0,'toMixedCaseVariableName(', 'String[], boolean, boolean)', 'String'),
   \ javaapi#method(0,1,'toConstantName(', 'String)', 'String'),

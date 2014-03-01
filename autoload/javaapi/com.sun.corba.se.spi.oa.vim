@@ -18,7 +18,7 @@ call javaapi#class('OAInvocationInfo', 'ServantObject', [
   \ javaapi#method(0,1,'OAInvocationInfo(', 'ObjectAdapter, byte[])', ''),
   \ javaapi#method(0,1,'OAInvocationInfo(', 'OAInvocationInfo, String)', ''),
   \ javaapi#method(0,1,'oa(', ')', 'ObjectAdapter'),
-  \ javaapi#method(0,1,'id(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'id(', ')', 'byte'),
   \ javaapi#method(0,1,'getServantContainer(', ')', 'Object'),
   \ javaapi#method(0,1,'getCookieHolder(', ')', 'CookieHolder'),
   \ javaapi#method(0,1,'getOperation(', ')', 'String'),
@@ -43,7 +43,7 @@ call javaapi#interface('ObjectAdapter', '', [
   \ javaapi#method(0,1,'exit(', ')', 'void'),
   \ javaapi#method(0,1,'returnServant(', ')', 'void'),
   \ javaapi#method(0,1,'makeInvocationInfo(', 'byte[])', 'OAInvocationInfo'),
-  \ javaapi#method(0,1,'getInterfaces(', 'Object, byte[])', 'String[]'),
+  \ javaapi#method(0,1,'getInterfaces(', 'Object, byte[])', 'String'),
   \ ])
 
 call javaapi#class('ObjectAdapterBase', 'LocalObject', [
@@ -55,7 +55,7 @@ call javaapi#class('ObjectAdapterBase', 'LocalObject', [
   \ javaapi#method(0,1,'omgInvocationWrapper(', ')', 'OMGSystemException'),
   \ javaapi#method(0,1,'initializeTemplate(', 'ObjectKeyTemplate, boolean, Policies, String, String, ObjectAdapterId)', 'void'),
   \ javaapi#method(0,1,'makeObject(', 'String, byte[])', 'Object'),
-  \ javaapi#method(0,1,'getAdapterId(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getAdapterId(', ')', 'byte'),
   \ javaapi#method(0,1,'getORB(', ')', 'ORB'),
   \ javaapi#method(0,1,'getEffectivePolicy(', 'int)', 'Policy'),
   \ javaapi#method(0,1,'getIORTemplate(', ')', 'IORTemplate'),
@@ -71,7 +71,7 @@ call javaapi#class('ObjectAdapterBase', 'LocalObject', [
   \ javaapi#method(0,1,'exit(', ')', 'void'),
   \ javaapi#method(0,0,'getObjectCopierFactory(', ')', 'ObjectCopierFactory'),
   \ javaapi#method(0,1,'makeInvocationInfo(', 'byte[])', 'OAInvocationInfo'),
-  \ javaapi#method(0,1,'getInterfaces(', 'Object, byte[])', 'String[]'),
+  \ javaapi#method(0,1,'getInterfaces(', 'Object, byte[])', 'String'),
   \ ])
 
 call javaapi#interface('ObjectAdapterFactory', '', [

@@ -79,7 +79,7 @@ call javaapi#class('AsynchInvoke', 'Runnable', [
 
 call javaapi#class('CORBAObjectImpl', 'ObjectImpl', [
   \ javaapi#method(0,1,'CORBAObjectImpl(', ')', ''),
-  \ javaapi#method(0,1,'_ids(', ')', 'String[]'),
+  \ javaapi#method(0,1,'_ids(', ')', 'String'),
   \ ])
 
 call javaapi#class('ContextImpl', 'Context', [
@@ -139,7 +139,7 @@ call javaapi#class('NamedValueImpl', 'NamedValue', [
 call javaapi#class('PrincipalImpl', 'Principal', [
   \ javaapi#method(0,1,'PrincipalImpl(', ')', ''),
   \ javaapi#method(0,1,'name(', 'byte[])', 'void'),
-  \ javaapi#method(0,1,'name(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'name(', ')', 'byte'),
   \ ])
 
 call javaapi#class('RequestImpl', 'Request', [

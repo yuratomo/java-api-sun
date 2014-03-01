@@ -8,10 +8,10 @@ call javaapi#class('BitFile', '', [
 
 call javaapi#class('BogusColorSpace', 'ColorSpace', [
   \ javaapi#method(0,1,'BogusColorSpace(', 'int)', ''),
-  \ javaapi#method(0,1,'toRGB(', 'float[])', 'float[]'),
-  \ javaapi#method(0,1,'fromRGB(', 'float[])', 'float[]'),
-  \ javaapi#method(0,1,'toCIEXYZ(', 'float[])', 'float[]'),
-  \ javaapi#method(0,1,'fromCIEXYZ(', 'float[])', 'float[]'),
+  \ javaapi#method(0,1,'toRGB(', 'float[])', 'float'),
+  \ javaapi#method(0,1,'fromRGB(', 'float[])', 'float'),
+  \ javaapi#method(0,1,'toCIEXYZ(', 'float[])', 'float'),
+  \ javaapi#method(0,1,'fromCIEXYZ(', 'float[])', 'float'),
   \ ])
 
 call javaapi#class('I18N', 'I18NImpl', [
@@ -27,8 +27,8 @@ call javaapi#class('I18NImpl', '', [
 call javaapi#class('ImageUtil', '', [
   \ javaapi#method(0,1,'ImageUtil(', ')', ''),
   \ javaapi#method(1,1,'createColorModel(', 'SampleModel)', 'ColorModel'),
-  \ javaapi#method(1,1,'getPackedBinaryData(', 'Raster, Rectangle)', 'byte[]'),
-  \ javaapi#method(1,1,'getUnpackedBinaryData(', 'Raster, Rectangle)', 'byte[]'),
+  \ javaapi#method(1,1,'getPackedBinaryData(', 'Raster, Rectangle)', 'byte'),
+  \ javaapi#method(1,1,'getUnpackedBinaryData(', 'Raster, Rectangle)', 'byte'),
   \ javaapi#method(1,1,'setPackedBinaryData(', 'byte[], WritableRaster, Rectangle)', 'void'),
   \ javaapi#method(1,1,'setUnpackedBinaryData(', 'byte[], WritableRaster, Rectangle)', 'void'),
   \ javaapi#method(1,1,'isBinary(', 'SampleModel)', 'boolean'),
@@ -77,8 +77,8 @@ call javaapi#class('PaletteBuilder', '', [
   \ javaapi#field(0,0,'maxNodes', 'int'),
   \ javaapi#field(0,0,'currLevel', 'int'),
   \ javaapi#field(0,0,'currSize', 'int'),
-  \ javaapi#field(0,0,'reduceList', 'ColorNode[]'),
-  \ javaapi#field(0,0,'palette', 'ColorNode[]'),
+  \ javaapi#field(0,0,'reduceList', 'ColorNode'),
+  \ javaapi#field(0,0,'palette', 'ColorNode'),
   \ javaapi#field(0,0,'transparency', 'int'),
   \ javaapi#field(0,0,'transColor', 'ColorNode'),
   \ javaapi#method(1,1,'createIndexedImage(', 'RenderedImage)', 'RenderedImage'),
@@ -100,7 +100,7 @@ call javaapi#class('PaletteBuilder', '', [
 
 call javaapi#class('ReaderUtil', '', [
   \ javaapi#method(0,1,'ReaderUtil(', ')', ''),
-  \ javaapi#method(1,1,'computeUpdatedPixels(', 'Rectangle, Point, int, int, int, int, int, int, int, int, int, int, int, int)', 'int[]'),
+  \ javaapi#method(1,1,'computeUpdatedPixels(', 'Rectangle, Point, int, int, int, int, int, int, int, int, int, int, int, int)', 'int'),
   \ javaapi#method(1,1,'readMultiByteInteger(', 'ImageInputStream) throws IOException', 'int'),
   \ ])
 
@@ -111,7 +111,7 @@ call javaapi#class('StandardMetadataFormat', 'IIOMetadataFormatImpl', [
 
 call javaapi#class('StandardMetadataFormatResources', 'ListResourceBundle', [
   \ javaapi#method(0,1,'StandardMetadataFormatResources(', ')', ''),
-  \ javaapi#method(0,0,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,0,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('SubImageInputStream', 'ImageInputStreamImpl', [

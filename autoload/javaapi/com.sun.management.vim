@@ -27,7 +27,7 @@ call javaapi#class('GcInfo', 'CompositeDataView', [
   \ javaapi#method(0,1,'containsValue(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'get(', 'String)', 'Object'),
-  \ javaapi#method(0,1,'getAll(', 'String[])', 'Object[]'),
+  \ javaapi#method(0,1,'getAll(', 'String[])', 'Object'),
   \ javaapi#method(0,1,'getCompositeType(', ')', 'CompositeType'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
@@ -37,9 +37,13 @@ call javaapi#class('GcInfo', 'CompositeDataView', [
 
 call javaapi#interface('HotSpotDiagnosticMXBean', 'PlatformManagedObject', [
   \ javaapi#method(0,1,'dumpHeap(', 'String, boolean) throws IOException', 'void'),
-  \ javaapi#method(0,1,'getDiagnosticOptions(', ')', 'VMOption>'),
+  \ javaapi#method(0,1,'getDiagnosticOptions(', ')', 'List'),
   \ javaapi#method(0,1,'getVMOption(', 'String)', 'VMOption'),
   \ javaapi#method(0,1,'setVMOption(', 'String, String)', 'void'),
+  \ ])
+
+call javaapi#void('registerMBeans()', '', [
+  \ javaapi#method(0,1,'unregisterMBeans(', ')', 'void'),
   \ ])
 
 call javaapi#class('OSMBeanFactory', '', [
@@ -69,10 +73,10 @@ call javaapi#interface('OperatingSystemMXBean', 'OperatingSystemMXBean', [
   \ ])
 
 call javaapi#interface('ThreadMXBean', 'ThreadMXBean', [
-  \ javaapi#method(0,1,'getThreadCpuTime(', 'long[])', 'long[]'),
-  \ javaapi#method(0,1,'getThreadUserTime(', 'long[])', 'long[]'),
+  \ javaapi#method(0,1,'getThreadCpuTime(', 'long[])', 'long'),
+  \ javaapi#method(0,1,'getThreadUserTime(', 'long[])', 'long'),
   \ javaapi#method(0,1,'getThreadAllocatedBytes(', 'long)', 'long'),
-  \ javaapi#method(0,1,'getThreadAllocatedBytes(', 'long[])', 'long[]'),
+  \ javaapi#method(0,1,'getThreadAllocatedBytes(', 'long[])', 'long'),
   \ javaapi#method(0,1,'isThreadAllocatedMemorySupported(', ')', 'boolean'),
   \ javaapi#method(0,1,'isThreadAllocatedMemoryEnabled(', ')', 'boolean'),
   \ javaapi#method(0,1,'setThreadAllocatedMemoryEnabled(', 'boolean)', 'void'),

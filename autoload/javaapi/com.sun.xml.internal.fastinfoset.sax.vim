@@ -52,7 +52,7 @@ call javaapi#class('SAXDocumentParser', 'Decoder', [
   \ javaapi#field(0,0,'_primitiveHandler', 'PrimitiveTypeContentHandler'),
   \ javaapi#field(0,0,'builtInAlgorithmState', 'BuiltInEncodingAlgorithmState'),
   \ javaapi#field(0,0,'_attributes', 'AttributesHolder'),
-  \ javaapi#field(0,0,'_namespacePrefixes', 'int[]'),
+  \ javaapi#field(0,0,'_namespacePrefixes', 'int'),
   \ javaapi#field(0,0,'_namespacePrefixesIndex', 'int'),
   \ javaapi#field(0,0,'_clearAttributes', 'boolean'),
   \ javaapi#method(0,1,'SAXDocumentParser(', ')', ''),

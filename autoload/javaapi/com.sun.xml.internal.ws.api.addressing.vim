@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.ws.api.addressing')
 
-call javaapi#class('AddressingVersion', 'AddressingVersion>', [
+call javaapi#class('AddressingVersion', 'Enum', [
   \ javaapi#field(1,1,'W3C', 'AddressingVersion'),
   \ javaapi#field(1,1,'MEMBER', 'AddressingVersion'),
   \ javaapi#field(0,1,'nsUri', 'String'),
@@ -35,7 +35,7 @@ call javaapi#class('AddressingVersion', 'AddressingVersion>', [
   \ javaapi#field(1,1,'UNSET_OUTPUT_ACTION', 'String'),
   \ javaapi#field(1,1,'UNSET_INPUT_ACTION', 'String'),
   \ javaapi#field(1,1,'fault_duplicateAddressInEpr', 'QName'),
-  \ javaapi#method(1,1,'values(', ')', 'AddressingVersion[]'),
+  \ javaapi#method(1,1,'values(', ')', 'AddressingVersion'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'AddressingVersion'),
   \ javaapi#method(1,1,'fromNsUri(', 'String)', 'AddressingVersion'),
   \ javaapi#method(1,1,'fromBinding(', 'WSBinding)', 'AddressingVersion'),
@@ -113,8 +113,8 @@ call javaapi#class('WSEndpointReference', 'WSDLExtension', [
   \ javaapi#method(0,1,'toSpec(', ')', 'EndpointReference'),
   \ javaapi#method(0,1,'toSpec(', 'Class<T>)', 'T'),
   \ javaapi#method(0,1,'getPort(', 'Service, Class<T>, )', 'T'),
-  \ javaapi#method(0,1,'createDispatch(', 'Service, Class<T>, Mode, )', 'Dispatch<T>'),
-  \ javaapi#method(0,1,'createDispatch(', 'Service, JAXBContext, Mode, )', 'Object>'),
+  \ javaapi#method(0,1,'createDispatch(', 'Service, Class<T>, Mode, )', 'Dispatch'),
+  \ javaapi#method(0,1,'createDispatch(', 'Service, JAXBContext, Mode, )', 'Dispatch'),
   \ javaapi#method(0,1,'getVersion(', ')', 'AddressingVersion'),
   \ javaapi#method(0,1,'getAddress(', ')', 'String'),
   \ javaapi#method(0,1,'isAnonymous(', ')', 'boolean'),
@@ -128,7 +128,7 @@ call javaapi#class('WSEndpointReference', 'WSDLExtension', [
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'getName(', ')', 'QName'),
   \ javaapi#method(0,1,'getEPRExtension(', 'QName) throws XMLStreamException', 'EPRExtension'),
-  \ javaapi#method(0,1,'getEPRExtensions(', ') throws XMLStreamException', 'EPRExtension>'),
+  \ javaapi#method(0,1,'getEPRExtensions(', ') throws XMLStreamException', 'Collection'),
   \ javaapi#method(0,1,'getMetaData(', ')', 'Metadata'),
   \ ])
 

@@ -2,7 +2,7 @@ call javaapi#namespace('sun.security.provider')
 
 call javaapi#class('ConfigSpiFile', 'ConfigurationSpi', [
   \ javaapi#method(0,1,'ConfigSpiFile(', 'Parameters) throws IOException', ''),
-  \ javaapi#method(0,0,'engineGetAppConfigurationEntry(', 'String)', 'AppConfigurationEntry[]'),
+  \ javaapi#method(0,0,'engineGetAppConfigurationEntry(', 'String)', 'AppConfigurationEntry'),
   \ javaapi#method(0,0,'engineRefresh(', ')', 'void'),
   \ ])
 
@@ -49,14 +49,14 @@ call javaapi#class('DSAPublicKeyImpl', 'DSAPublicKey', [
 
 call javaapi#class('JavaKeyStore', 'KeyStoreSpi', [
   \ javaapi#method(0,1,'engineGetKey(', 'String, char[]) throws NoSuchAlgorithmException, UnrecoverableKeyException', 'Key'),
-  \ javaapi#method(0,1,'engineGetCertificateChain(', 'String)', 'Certificate[]'),
+  \ javaapi#method(0,1,'engineGetCertificateChain(', 'String)', 'Certificate'),
   \ javaapi#method(0,1,'engineGetCertificate(', 'String)', 'Certificate'),
   \ javaapi#method(0,1,'engineGetCreationDate(', 'String)', 'Date'),
   \ javaapi#method(0,1,'engineSetKeyEntry(', 'String, Key, char[], Certificate[]) throws KeyStoreException', 'void'),
   \ javaapi#method(0,1,'engineSetKeyEntry(', 'String, byte[], Certificate[]) throws KeyStoreException', 'void'),
   \ javaapi#method(0,1,'engineSetCertificateEntry(', 'String, Certificate) throws KeyStoreException', 'void'),
   \ javaapi#method(0,1,'engineDeleteEntry(', 'String) throws KeyStoreException', 'void'),
-  \ javaapi#method(0,1,'engineAliases(', ')', 'String>'),
+  \ javaapi#method(0,1,'engineAliases(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'engineContainsAlias(', 'String)', 'boolean'),
   \ javaapi#method(0,1,'engineSize(', ')', 'int'),
   \ javaapi#method(0,1,'engineIsKeyEntry(', 'String)', 'boolean'),
@@ -69,7 +69,7 @@ call javaapi#class('JavaKeyStore', 'KeyStoreSpi', [
 call javaapi#class('KeyProtector', '', [
   \ javaapi#method(0,1,'KeyProtector(', 'char[]) throws NoSuchAlgorithmException', ''),
   \ javaapi#method(0,0,'finalize(', ')', 'void'),
-  \ javaapi#method(0,1,'protect(', 'Key) throws KeyStoreException', 'byte[]'),
+  \ javaapi#method(0,1,'protect(', 'Key) throws KeyStoreException', 'byte'),
   \ javaapi#method(0,1,'recover(', 'EncryptedPrivateKeyInfo) throws UnrecoverableKeyException', 'Key'),
   \ ])
 
@@ -118,7 +118,7 @@ call javaapi#class('SHA5', 'DigestBase', [
 
 call javaapi#class('SecureRandom', 'SecureRandomSpi', [
   \ javaapi#method(0,1,'SecureRandom(', ')', ''),
-  \ javaapi#method(0,1,'engineGenerateSeed(', 'int)', 'byte[]'),
+  \ javaapi#method(0,1,'engineGenerateSeed(', 'int)', 'byte'),
   \ javaapi#method(0,1,'engineSetSeed(', 'byte[])', 'void'),
   \ javaapi#method(0,1,'engineNextBytes(', 'byte[])', 'void'),
   \ ])
@@ -144,7 +144,7 @@ call javaapi#class('X509Factory', 'CertificateFactorySpi', [
   \ javaapi#method(0,1,'engineGenerateCertPath(', 'InputStream) throws CertificateException', 'CertPath'),
   \ javaapi#method(0,1,'engineGenerateCertPath(', 'InputStream, String) throws CertificateException', 'CertPath'),
   \ javaapi#method(0,1,'engineGenerateCertPath(', 'List<? extends Certificate>) throws CertificateException', 'CertPath'),
-  \ javaapi#method(0,1,'engineGetCertPathEncodings(', ')', 'String>'),
+  \ javaapi#method(0,1,'engineGetCertPathEncodings(', ')', 'Iterator'),
   \ javaapi#method(0,1,'engineGenerateCertificates(', 'InputStream) throws CertificateException', 'Certificate>'),
   \ javaapi#method(0,1,'engineGenerateCRL(', 'InputStream) throws CRLException', 'CRL'),
   \ javaapi#method(0,1,'engineGenerateCRLs(', 'InputStream) throws CRLException', 'CRL>'),
@@ -168,7 +168,7 @@ call javaapi#class('PolicyParser', '', [
   \ javaapi#method(0,1,'setKeyStoreProvider(', 'String)', 'void'),
   \ javaapi#method(0,1,'getStorePassURL(', ')', 'String'),
   \ javaapi#method(0,1,'setStorePassURL(', 'String)', 'void'),
-  \ javaapi#method(0,1,'grantElements(', ')', 'GrantEntry>'),
+  \ javaapi#method(0,1,'grantElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'write(', 'Writer)', 'void'),
   \ javaapi#method(1,1,'main(', 'String[]) throws Exception', 'void'),
   \ ])
@@ -178,7 +178,7 @@ call javaapi#namespace('sun.security.provider')
 call javaapi#class('DSA', 'SignatureSpi', [
   \ javaapi#method(0,0,'engineInitSign(', 'PrivateKey) throws InvalidKeyException', 'void'),
   \ javaapi#method(0,0,'engineInitVerify(', 'PublicKey) throws InvalidKeyException', 'void'),
-  \ javaapi#method(0,0,'engineSign(', ') throws SignatureException', 'byte[]'),
+  \ javaapi#method(0,0,'engineSign(', ') throws SignatureException', 'byte'),
   \ javaapi#method(0,0,'engineVerify(', 'byte[]) throws SignatureException', 'boolean'),
   \ javaapi#method(0,0,'engineVerify(', 'byte[], int, int) throws SignatureException', 'boolean'),
   \ javaapi#method(0,0,'engineSetParameter(', 'String, Object)', 'void'),
@@ -198,7 +198,7 @@ call javaapi#class('DigestBase', 'MessageDigestSpi', [
   \ javaapi#method(0,0,'engineUpdate(', 'byte)', 'void'),
   \ javaapi#method(0,0,'engineUpdate(', 'byte[], int, int)', 'void'),
   \ javaapi#method(0,0,'engineReset(', ')', 'void'),
-  \ javaapi#method(0,0,'engineDigest(', ')', 'byte[]'),
+  \ javaapi#method(0,0,'engineDigest(', ')', 'byte'),
   \ javaapi#method(0,0,'engineDigest(', 'byte[], int, int) throws DigestException', 'int'),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
   \ ])
@@ -217,8 +217,8 @@ call javaapi#class('DSAParameters', 'AlgorithmParametersSpi', [
   \ javaapi#method(0,0,'engineInit(', 'byte[]) throws IOException', 'void'),
   \ javaapi#method(0,0,'engineInit(', 'byte[], String) throws IOException', 'void'),
   \ javaapi#method(0,0,'engineGetParameterSpec(', 'Class<T>) throws InvalidParameterSpecException', 'T'),
-  \ javaapi#method(0,0,'engineGetEncoded(', ') throws IOException', 'byte[]'),
-  \ javaapi#method(0,0,'engineGetEncoded(', 'String) throws IOException', 'byte[]'),
+  \ javaapi#method(0,0,'engineGetEncoded(', ') throws IOException', 'byte'),
+  \ javaapi#method(0,0,'engineGetEncoded(', 'String) throws IOException', 'byte'),
   \ javaapi#method(0,0,'engineToString(', ')', 'String'),
   \ ])
 
@@ -249,6 +249,6 @@ call javaapi#class('PolicyFile', 'Policy', [
   \ javaapi#method(0,1,'implies(', 'ProtectionDomain, Permission)', 'boolean'),
   \ javaapi#method(0,1,'getPermissions(', 'ProtectionDomain)', 'PermissionCollection'),
   \ javaapi#method(0,1,'getPermissions(', 'CodeSource)', 'PermissionCollection'),
-  \ javaapi#method(0,0,'getSignerCertificates(', 'CodeSource)', 'Certificate[]'),
+  \ javaapi#method(0,0,'getSignerCertificates(', 'CodeSource)', 'Certificate'),
   \ ])
 

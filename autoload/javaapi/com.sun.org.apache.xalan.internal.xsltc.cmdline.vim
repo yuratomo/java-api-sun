@@ -6,15 +6,6 @@ call javaapi#class('Compile', '', [
   \ javaapi#method(1,1,'main(', 'String[])', 'void'),
   \ ])
 
-call javaapi#class('ObjectFactory', '', [
-  \ ])
-
-call javaapi#class('SecuritySupport', '', [
-  \ ])
-
-call javaapi#class('SecuritySupport12', 'SecuritySupport', [
-  \ ])
-
 call javaapi#class('Transform', '', [
   \ javaapi#method(0,1,'Transform(', 'String, String, boolean, boolean, int)', ''),
   \ javaapi#method(0,1,'getFileName(', ')', 'String'),

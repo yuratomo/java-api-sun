@@ -13,7 +13,7 @@ call javaapi#class('Log', '', [
   \ javaapi#method(1,1,'getLog(', 'String, String, boolean)', 'Log'),
   \ ])
 
-call javaapi#class('NewThreadAction', 'Thread>', [
+call javaapi#class('NewThreadAction', 'PrivilegedAction', [
   \ javaapi#method(0,1,'NewThreadAction(', 'Runnable, String, boolean)', ''),
   \ javaapi#method(0,1,'NewThreadAction(', 'Runnable, String, boolean, boolean)', ''),
   \ javaapi#method(0,1,'run(', ')', 'Thread'),

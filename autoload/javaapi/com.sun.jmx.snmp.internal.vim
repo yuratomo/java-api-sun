@@ -14,10 +14,10 @@ call javaapi#interface('SnmpAccessControlSubSystem', 'SnmpSubSystem', [
   \ ])
 
 call javaapi#class('SnmpDecryptedPdu', '', [
-  \ javaapi#field(0,1,'data', 'byte[]'),
+  \ javaapi#field(0,1,'data', 'byte'),
   \ javaapi#field(0,1,'dataLength', 'int'),
-  \ javaapi#field(0,1,'contextName', 'byte[]'),
-  \ javaapi#field(0,1,'contextEngineId', 'byte[]'),
+  \ javaapi#field(0,1,'contextName', 'byte'),
+  \ javaapi#field(0,1,'contextEngineId', 'byte'),
   \ javaapi#method(0,1,'SnmpDecryptedPdu(', ')', ''),
   \ ])
 
@@ -58,9 +58,9 @@ call javaapi#interface('SnmpIncomingRequest', '', [
   \ javaapi#method(0,1,'getPrincipal(', ')', 'String'),
   \ javaapi#method(0,1,'getSecurityLevel(', ')', 'int'),
   \ javaapi#method(0,1,'getSecurityModel(', ')', 'int'),
-  \ javaapi#method(0,1,'getContextName(', ')', 'byte[]'),
-  \ javaapi#method(0,1,'getContextEngineId(', ')', 'byte[]'),
-  \ javaapi#method(0,1,'getAccessContext(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getContextName(', ')', 'byte'),
+  \ javaapi#method(0,1,'getContextEngineId(', ')', 'byte'),
+  \ javaapi#method(0,1,'getAccessContext(', ')', 'byte'),
   \ javaapi#method(0,1,'encodeMessage(', 'byte[]) throws SnmpTooBigException', 'int'),
   \ javaapi#method(0,1,'decodeMessage(', 'byte[], int, InetAddress, int) throws SnmpStatusException, SnmpUnknownSecModelException, SnmpBadSecurityLevelException', 'void'),
   \ javaapi#method(0,1,'encodeSnmpPdu(', 'SnmpPdu, int) throws SnmpStatusException, SnmpTooBigException', 'SnmpMsg'),
@@ -76,7 +76,7 @@ call javaapi#interface('SnmpIncomingResponse', '', [
   \ javaapi#method(0,1,'setSecurityCache(', 'SnmpSecurityCache)', 'void'),
   \ javaapi#method(0,1,'getSecurityLevel(', ')', 'int'),
   \ javaapi#method(0,1,'getSecurityModel(', ')', 'int'),
-  \ javaapi#method(0,1,'getContextName(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getContextName(', ')', 'byte'),
   \ javaapi#method(0,1,'decodeMessage(', 'byte[], int, InetAddress, int) throws SnmpStatusException, SnmpSecurityException', 'SnmpMsg'),
   \ javaapi#method(0,1,'decodeSnmpPdu(', ') throws SnmpStatusException', 'SnmpPdu'),
   \ javaapi#method(0,1,'getRequestId(', 'byte[]) throws SnmpStatusException', 'int'),
@@ -161,14 +161,14 @@ call javaapi#interface('SnmpSubSystem', '', [
   \ javaapi#method(0,1,'addModel(', 'int, SnmpModel)', 'void'),
   \ javaapi#method(0,1,'removeModel(', 'int) throws SnmpUnknownModelException', 'SnmpModel'),
   \ javaapi#method(0,1,'getModel(', 'int) throws SnmpUnknownModelException', 'SnmpModel'),
-  \ javaapi#method(0,1,'getModelIds(', ')', 'int[]'),
-  \ javaapi#method(0,1,'getModelNames(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getModelIds(', ')', 'int'),
+  \ javaapi#method(0,1,'getModelNames(', ')', 'String'),
   \ ])
 
 call javaapi#class('SnmpTools', 'SnmpDefinitions', [
   \ javaapi#method(0,1,'SnmpTools(', ')', ''),
   \ javaapi#method(1,1,'binary2ascii(', 'byte[], int)', 'String'),
   \ javaapi#method(1,1,'binary2ascii(', 'byte[])', 'String'),
-  \ javaapi#method(1,1,'ascii2binary(', 'String)', 'byte[]'),
+  \ javaapi#method(1,1,'ascii2binary(', 'String)', 'byte'),
   \ ])
 

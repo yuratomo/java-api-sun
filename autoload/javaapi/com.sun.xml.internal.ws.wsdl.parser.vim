@@ -68,7 +68,7 @@ call javaapi#class('FoolProofParserExtension', 'DelegatingParserExtension', [
 call javaapi#class('InaccessibleWSDLException', 'WebServiceException', [
   \ javaapi#method(0,1,'InaccessibleWSDLException(', 'List<Throwable>)', ''),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
-  \ javaapi#method(0,1,'getErrors(', ')', 'Throwable>'),
+  \ javaapi#method(0,1,'getErrors(', ')', 'List'),
   \ ])
 
 call javaapi#interface('MIMEConstants', '', [

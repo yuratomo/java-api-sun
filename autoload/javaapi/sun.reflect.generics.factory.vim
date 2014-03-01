@@ -2,10 +2,10 @@ call javaapi#namespace('sun.reflect.generics.factory')
 
 call javaapi#class('CoreReflectionFactory', 'GenericsFactory', [
   \ javaapi#method(1,1,'make(', 'GenericDeclaration, Scope)', 'CoreReflectionFactory'),
-  \ javaapi#method(0,1,'makeTypeVariable(', 'String, FieldTypeSignature[])', 'TypeVariable<?>'),
+  \ javaapi#method(0,1,'makeTypeVariable(', 'String, FieldTypeSignature[])', 'TypeVariable'),
   \ javaapi#method(0,1,'makeWildcard(', 'FieldTypeSignature[], FieldTypeSignature[])', 'WildcardType'),
   \ javaapi#method(0,1,'makeParameterizedType(', 'Type, Type[], Type)', 'ParameterizedType'),
-  \ javaapi#method(0,1,'findTypeVariable(', 'String)', 'TypeVariable<?>'),
+  \ javaapi#method(0,1,'findTypeVariable(', 'String)', 'TypeVariable'),
   \ javaapi#method(0,1,'makeNamedType(', 'String)', 'Type'),
   \ javaapi#method(0,1,'makeArrayType(', 'Type)', 'Type'),
   \ javaapi#method(0,1,'makeByte(', ')', 'Type'),
@@ -20,9 +20,9 @@ call javaapi#class('CoreReflectionFactory', 'GenericsFactory', [
   \ ])
 
 call javaapi#interface('GenericsFactory', '', [
-  \ javaapi#method(0,1,'makeTypeVariable(', 'String, FieldTypeSignature[])', 'TypeVariable<?>'),
+  \ javaapi#method(0,1,'makeTypeVariable(', 'String, FieldTypeSignature[])', 'TypeVariable'),
   \ javaapi#method(0,1,'makeParameterizedType(', 'Type, Type[], Type)', 'ParameterizedType'),
-  \ javaapi#method(0,1,'findTypeVariable(', 'String)', 'TypeVariable<?>'),
+  \ javaapi#method(0,1,'findTypeVariable(', 'String)', 'TypeVariable'),
   \ javaapi#method(0,1,'makeWildcard(', 'FieldTypeSignature[], FieldTypeSignature[])', 'WildcardType'),
   \ javaapi#method(0,1,'makeNamedType(', 'String)', 'Type'),
   \ javaapi#method(0,1,'makeArrayType(', 'Type)', 'Type'),

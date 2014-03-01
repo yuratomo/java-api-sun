@@ -94,6 +94,6 @@ call javaapi#class('UnknownServiceContext', 'ServiceContext', [
   \ javaapi#method(0,1,'getId(', ')', 'int'),
   \ javaapi#method(0,1,'writeData(', 'OutputStream) throws SystemException', 'void'),
   \ javaapi#method(0,1,'write(', 'OutputStream, GIOPVersion) throws SystemException', 'void'),
-  \ javaapi#method(0,1,'getData(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getData(', ')', 'byte'),
   \ ])
 

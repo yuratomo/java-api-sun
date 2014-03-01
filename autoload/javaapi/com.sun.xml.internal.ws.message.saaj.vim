@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.ws.message.saaj')
 
-call javaapi#class('SAAJHeader', 'SOAPHeaderElement>', [
+call javaapi#class('SAAJHeader', 'DOMHeader', [
   \ javaapi#method(0,1,'SAAJHeader(', 'SOAPHeaderElement)', ''),
   \ javaapi#method(0,1,'getRole(', 'SOAPVersion)', 'String'),
   \ ])

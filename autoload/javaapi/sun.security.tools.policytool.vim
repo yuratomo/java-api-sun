@@ -124,8 +124,8 @@ call javaapi#class('NoDisplayException', 'RuntimeException', [
 call javaapi#class('Perm', '', [
   \ javaapi#field(0,1,'CLASS', 'String'),
   \ javaapi#field(0,1,'FULL_CLASS', 'String'),
-  \ javaapi#field(0,1,'TARGETS', 'String[]'),
-  \ javaapi#field(0,1,'ACTIONS', 'String[]'),
+  \ javaapi#field(0,1,'TARGETS', 'String'),
+  \ javaapi#field(0,1,'ACTIONS', 'String'),
   \ javaapi#method(0,1,'Perm(', 'String, String, String[], String[])', ''),
   \ ])
 
@@ -299,8 +299,8 @@ call javaapi#class('ToolDialog', 'Dialog', [
   \ javaapi#field(1,1,'CRPE_PANEL', 'int'),
   \ javaapi#field(1,1,'CRPE_PANEL_OK', 'int'),
   \ javaapi#field(1,1,'CRPE_PANEL_CANCEL', 'int'),
-  \ javaapi#field(1,1,'PERM_ARRAY', 'Perm>'),
-  \ javaapi#field(1,1,'PRIN_ARRAY', 'Prin>'),
+  \ javaapi#field(1,1,'PERM_ARRAY', 'ArrayList'),
+  \ javaapi#field(1,1,'PRIN_ARRAY', 'ArrayList'),
   \ ])
 
 call javaapi#class('ToolWindow', 'Frame', [

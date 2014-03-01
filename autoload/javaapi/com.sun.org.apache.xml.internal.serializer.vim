@@ -183,9 +183,6 @@ call javaapi#class('NamespaceMappings', '', [
   \ javaapi#method(0,1,'clone(', ') throws CloneNotSupportedException', 'Object'),
   \ ])
 
-call javaapi#class('ObjectFactory', '', [
-  \ ])
-
 call javaapi#class('OutputPropertiesFactory', '', [
   \ javaapi#field(1,1,'S_BUILTIN_EXTENSIONS_UNIVERSAL', 'String'),
   \ javaapi#field(1,1,'S_KEY_INDENT_AMOUNT', 'String'),
@@ -204,12 +201,6 @@ call javaapi#class('OutputPropertyUtils', '', [
   \ javaapi#method(0,1,'OutputPropertyUtils(', ')', ''),
   \ javaapi#method(1,1,'getBooleanProperty(', 'String, Properties)', 'boolean'),
   \ javaapi#method(1,1,'getIntProperty(', 'String, Properties)', 'int'),
-  \ ])
-
-call javaapi#class('SecuritySupport', '', [
-  \ ])
-
-call javaapi#class('SecuritySupport12', 'SecuritySupport', [
   \ ])
 
 call javaapi#interface('SerializationHandler', 'Serializer', [
@@ -252,8 +243,8 @@ call javaapi#class('SerializerBase', 'SerializerConstants', [
   \ javaapi#field(0,0,'m_sourceLocator', 'SourceLocator'),
   \ javaapi#field(0,0,'m_writer', 'Writer'),
   \ javaapi#field(0,0,'m_elemContext', 'ElemContext'),
-  \ javaapi#field(0,0,'m_charsBuff', 'char[]'),
-  \ javaapi#field(0,0,'m_attrBuff', 'char[]'),
+  \ javaapi#field(0,0,'m_charsBuff', 'char'),
+  \ javaapi#field(0,0,'m_attrBuff', 'char'),
   \ javaapi#field(0,0,'m_needToCallSetDocumentInfo', 'boolean'),
   \ javaapi#method(0,1,'SerializerBase(', ')', ''),
   \ javaapi#method(0,0,'fireEndElem(', 'String) throws SAXException', 'void'),
@@ -498,7 +489,7 @@ call javaapi#class('ToStream', 'SerializerBase', [
   \ javaapi#field(0,0,'m_ispreserve', 'boolean'),
   \ javaapi#field(0,0,'m_isprevtext', 'boolean'),
   \ javaapi#field(0,0,'m_maxCharacter', 'int'),
-  \ javaapi#field(0,0,'m_lineSep', 'char[]'),
+  \ javaapi#field(0,0,'m_lineSep', 'char'),
   \ javaapi#field(0,0,'m_lineSepUse', 'boolean'),
   \ javaapi#field(0,0,'m_lineSepLen', 'int'),
   \ javaapi#field(0,0,'m_charInfo', 'CharInfo'),

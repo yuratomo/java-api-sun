@@ -32,8 +32,8 @@ call javaapi#interface('Statistic', '', [
 
 call javaapi#interface('Stats', '', [
   \ javaapi#method(0,1,'getStatistic(', 'String)', 'Statistic'),
-  \ javaapi#method(0,1,'getStatisticNames(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getStatistics(', ')', 'Statistic[]'),
+  \ javaapi#method(0,1,'getStatisticNames(', ')', 'String'),
+  \ javaapi#method(0,1,'getStatistics(', ')', 'Statistic'),
   \ ])
 
 call javaapi#interface('StringStatistic', 'Statistic', [

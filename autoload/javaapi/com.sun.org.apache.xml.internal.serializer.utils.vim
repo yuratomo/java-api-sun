@@ -83,22 +83,22 @@ call javaapi#class('MsgKey', '', [
 
 call javaapi#class('SerializerMessages', 'ListResourceBundle', [
   \ javaapi#method(0,1,'SerializerMessages(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('SerializerMessages_ca', 'ListResourceBundle', [
   \ javaapi#method(0,1,'SerializerMessages_ca(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('SerializerMessages_cs', 'ListResourceBundle', [
   \ javaapi#method(0,1,'SerializerMessages_cs(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('SerializerMessages_de', 'ListResourceBundle', [
   \ javaapi#method(0,1,'SerializerMessages_de(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('SerializerMessages_en', 'SerializerMessages', [
@@ -107,42 +107,42 @@ call javaapi#class('SerializerMessages_en', 'SerializerMessages', [
 
 call javaapi#class('SerializerMessages_es', 'ListResourceBundle', [
   \ javaapi#method(0,1,'SerializerMessages_es(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('SerializerMessages_fr', 'ListResourceBundle', [
   \ javaapi#method(0,1,'SerializerMessages_fr(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('SerializerMessages_it', 'ListResourceBundle', [
   \ javaapi#method(0,1,'SerializerMessages_it(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('SerializerMessages_ja', 'ListResourceBundle', [
   \ javaapi#method(0,1,'SerializerMessages_ja(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('SerializerMessages_ko', 'ListResourceBundle', [
   \ javaapi#method(0,1,'SerializerMessages_ko(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('SerializerMessages_sv', 'ListResourceBundle', [
   \ javaapi#method(0,1,'SerializerMessages_sv(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('SerializerMessages_zh_CN', 'ListResourceBundle', [
   \ javaapi#method(0,1,'SerializerMessages_zh_CN(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('SerializerMessages_zh_TW', 'ListResourceBundle', [
   \ javaapi#method(0,1,'SerializerMessages_zh_TW(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('StringToIntTable', '', [
@@ -154,7 +154,7 @@ call javaapi#class('StringToIntTable', '', [
   \ javaapi#method(0,1,'get(', 'String)', 'int'),
   \ javaapi#method(0,1,'getIgnoreCase(', 'String)', 'int'),
   \ javaapi#method(0,1,'contains(', 'String)', 'boolean'),
-  \ javaapi#method(0,1,'keys(', ')', 'String[]'),
+  \ javaapi#method(0,1,'keys(', ')', 'String'),
   \ ])
 
 call javaapi#class('SystemIDResolver', '', [

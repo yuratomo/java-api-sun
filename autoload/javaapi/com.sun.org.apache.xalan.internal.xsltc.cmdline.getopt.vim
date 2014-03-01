@@ -5,7 +5,7 @@ call javaapi#class('GetOpt', '', [
   \ javaapi#method(0,1,'printOptions(', ')', 'void'),
   \ javaapi#method(0,1,'getNextOption(', ') throws IllegalArgumentException, MissingOptArgException', 'int'),
   \ javaapi#method(0,1,'getOptionArg(', ')', 'String'),
-  \ javaapi#method(0,1,'getCmdArgs(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getCmdArgs(', ')', 'String'),
   \ ])
 
 call javaapi#class('GetOptsException', 'Exception', [

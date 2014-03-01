@@ -8,7 +8,7 @@ call javaapi#class('AbstractSEIModelImpl', 'SEIModel', [
   \ javaapi#method(0,0,'populateMaps(', ')', 'void'),
   \ javaapi#method(0,1,'getMarshallerPool(', ')', 'Marshaller'),
   \ javaapi#method(0,1,'getJAXBContext(', ')', 'JAXBRIContext'),
-  \ javaapi#method(0,1,'getKnownNamespaceURIs(', ')', 'String>'),
+  \ javaapi#method(0,1,'getKnownNamespaceURIs(', ')', 'List'),
   \ javaapi#method(0,1,'getBridge(', 'TypeReference)', 'Bridge'),
   \ javaapi#method(0,1,'isKnownFault(', 'QName, Method)', 'boolean'),
   \ javaapi#method(0,1,'isCheckedException(', 'Method, Class)', 'boolean'),
@@ -16,7 +16,7 @@ call javaapi#class('AbstractSEIModelImpl', 'SEIModel', [
   \ javaapi#method(0,1,'getJavaMethod(', 'QName)', 'JavaMethodImpl'),
   \ javaapi#method(0,1,'getJavaMethodForWsdlOperation(', 'QName)', 'JavaMethod'),
   \ javaapi#method(0,1,'getQNameForJM(', 'JavaMethodImpl)', 'QName'),
-  \ javaapi#method(0,1,'getJavaMethods(', ')', 'JavaMethodImpl>'),
+  \ javaapi#method(0,1,'getJavaMethods(', ')', 'Collection'),
   \ javaapi#method(0,1,'getWSDLLocation(', ')', 'String'),
   \ javaapi#method(0,1,'getServiceQName(', ')', 'QName'),
   \ javaapi#method(0,1,'getPort(', ')', 'WSDLPort'),
@@ -34,9 +34,9 @@ call javaapi#class('AbstractWrapperBeanGenerator<T,C,M,A', 'Comparable>', [
   \ javaapi#method(0,0,'getSafeType(', 'T)', 'T'),
   \ javaapi#method(0,0,'getHolderValueType(', 'T)', 'T'),
   \ javaapi#method(0,0,'isVoidType(', 'T)', 'boolean'),
-  \ javaapi#method(0,1,'collectRequestBeanMembers(', 'M)', 'List<A>'),
-  \ javaapi#method(0,1,'collectResponseBeanMembers(', 'M)', 'List<A>'),
-  \ javaapi#method(0,1,'collectExceptionBeanMembers(', 'C)', 'Collection<A>'),
+  \ javaapi#method(0,1,'collectRequestBeanMembers(', 'M)', 'List'),
+  \ javaapi#method(0,1,'collectResponseBeanMembers(', 'M)', 'List'),
+  \ javaapi#method(0,1,'collectExceptionBeanMembers(', 'C)', 'Collection'),
   \ ])
 
 call javaapi#class('CheckedExceptionImpl', 'CheckedException', [
@@ -76,11 +76,11 @@ call javaapi#class('JavaMethodImpl', 'JavaMethod', [
   \ javaapi#method(0,1,'getResponseMessageName(', ')', 'String'),
   \ javaapi#method(0,1,'getRequestPayloadName(', ')', 'QName'),
   \ javaapi#method(0,1,'getResponsePayloadName(', ')', 'QName'),
-  \ javaapi#method(0,1,'getRequestParameters(', ')', 'ParameterImpl>'),
-  \ javaapi#method(0,1,'getResponseParameters(', ')', 'ParameterImpl>'),
+  \ javaapi#method(0,1,'getRequestParameters(', ')', 'List'),
+  \ javaapi#method(0,1,'getResponseParameters(', ')', 'List'),
   \ javaapi#method(0,1,'getInputParametersCount(', ')', 'int'),
   \ javaapi#method(0,1,'getCheckedException(', 'Class)', 'CheckedExceptionImpl'),
-  \ javaapi#method(0,1,'getCheckedExceptions(', ')', 'CheckedExceptionImpl>'),
+  \ javaapi#method(0,1,'getCheckedExceptions(', ')', 'List'),
   \ javaapi#method(0,1,'getInputAction(', ')', 'String'),
   \ javaapi#method(0,1,'getOutputAction(', ')', 'String'),
   \ javaapi#method(0,1,'getCheckedException(', 'TypeReference)', 'CheckedExceptionImpl'),
@@ -125,9 +125,9 @@ call javaapi#class('RuntimeModeler', '', [
   \ javaapi#field(1,1,'SERVICE', 'String'),
   \ javaapi#field(1,1,'PORT', 'String'),
   \ javaapi#field(1,1,'HOLDER_CLASS', 'Class'),
-  \ javaapi#field(1,1,'REMOTE_EXCEPTION_CLASS', 'RemoteException>'),
-  \ javaapi#field(1,1,'RUNTIME_EXCEPTION_CLASS', 'RuntimeException>'),
-  \ javaapi#field(1,1,'EXCEPTION_CLASS', 'Exception>'),
+  \ javaapi#field(1,1,'REMOTE_EXCEPTION_CLASS', 'Class'),
+  \ javaapi#field(1,1,'RUNTIME_EXCEPTION_CLASS', 'Class'),
+  \ javaapi#field(1,1,'EXCEPTION_CLASS', 'Class'),
   \ javaapi#method(0,1,'RuntimeModeler(', 'Class, QName, BindingID, )', ''),
   \ javaapi#method(0,1,'RuntimeModeler(', 'Class, QName, WSDLPortImpl, )', ''),
   \ javaapi#method(0,1,'setClassLoader(', 'ClassLoader)', 'void'),
@@ -157,7 +157,7 @@ call javaapi#class('RuntimeModelerException', 'JAXWSExceptionBase', [
 call javaapi#class('SOAPSEIModel', 'AbstractSEIModelImpl', [
   \ javaapi#method(0,1,'SOAPSEIModel(', 'WebServiceFeature[])', ''),
   \ javaapi#method(0,0,'populateMaps(', ')', 'void'),
-  \ javaapi#method(0,1,'getKnownHeaders(', ')', 'QName>'),
+  \ javaapi#method(0,1,'getKnownHeaders(', ')', 'Set'),
   \ ])
 
 call javaapi#class('WrapperBeanGenerator', '', [
@@ -165,10 +165,10 @@ call javaapi#class('WrapperBeanGenerator', '', [
   \ ])
 
 call javaapi#class('WrapperParameter', 'ParameterImpl', [
-  \ javaapi#field(0,0,'wrapperChildren', 'ParameterImpl>'),
+  \ javaapi#field(0,0,'wrapperChildren', 'List'),
   \ javaapi#method(0,1,'WrapperParameter(', 'JavaMethodImpl, TypeReference, Mode, int)', ''),
   \ javaapi#method(0,1,'isWrapperStyle(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getWrapperChildren(', ')', 'ParameterImpl>'),
+  \ javaapi#method(0,1,'getWrapperChildren(', ')', 'List'),
   \ javaapi#method(0,1,'addWrapperChild(', 'ParameterImpl)', 'void'),
   \ javaapi#method(0,1,'clear(', ')', 'void'),
   \ ])

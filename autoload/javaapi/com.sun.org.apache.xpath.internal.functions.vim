@@ -252,7 +252,7 @@ call javaapi#class('FunctionDef1Arg', 'FunctionOneArg', [
 
 call javaapi#class('FunctionMultiArgs', 'Function3Args', [
   \ javaapi#method(0,1,'FunctionMultiArgs(', ')', ''),
-  \ javaapi#method(0,1,'getArgs(', ')', 'Expression[]'),
+  \ javaapi#method(0,1,'getArgs(', ')', 'Expression'),
   \ javaapi#method(0,1,'setArg(', 'Expression, int) throws WrongNumberArgsException', 'void'),
   \ javaapi#method(0,1,'fixupVariables(', 'Vector, int)', 'void'),
   \ javaapi#method(0,1,'checkNumberArgs(', 'int) throws WrongNumberArgsException', 'void'),
@@ -274,15 +274,6 @@ call javaapi#class('FunctionOneArg', 'Function', [
   \ javaapi#method(0,1,'getExpression(', ')', 'Expression'),
   \ javaapi#method(0,1,'setExpression(', 'Expression)', 'void'),
   \ javaapi#method(0,1,'deepEquals(', 'Expression)', 'boolean'),
-  \ ])
-
-call javaapi#class('ObjectFactory', '', [
-  \ ])
-
-call javaapi#class('SecuritySupport', '', [
-  \ ])
-
-call javaapi#class('SecuritySupport12', 'SecuritySupport', [
   \ ])
 
 call javaapi#class('WrongNumberArgsException', 'Exception', [

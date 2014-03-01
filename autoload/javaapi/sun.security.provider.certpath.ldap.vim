@@ -2,8 +2,8 @@ call javaapi#namespace('sun.security.provider.certpath.ldap')
 
 call javaapi#class('LDAPCertStore', 'CertStoreSpi', [
   \ javaapi#method(0,1,'LDAPCertStore(', 'CertStoreParameters) throws InvalidAlgorithmParameterException', ''),
-  \ javaapi#method(0,1,'engineGetCertificates(', 'CertSelector) throws CertStoreException', 'X509Certificate>'),
-  \ javaapi#method(0,1,'engineGetCRLs(', 'CRLSelector) throws CertStoreException', 'X509CRL>'),
+  \ javaapi#method(0,1,'engineGetCertificates(', 'CertSelector) throws CertStoreException', 'Collection'),
+  \ javaapi#method(0,1,'engineGetCRLs(', 'CRLSelector) throws CertStoreException', 'Collection'),
   \ ])
 
 call javaapi#class('LDAPCertStoreHelper', 'CertStoreHelper', [

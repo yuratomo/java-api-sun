@@ -61,72 +61,72 @@ call javaapi#class('CompareGenerator', 'MethodGenerator', [
 
 call javaapi#class('ErrorMessages', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_ca', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_ca(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_cs', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_cs(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_de', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_de(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_es', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_es(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_fr', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_fr(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_it', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_it(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_ja', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_ja(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_ko', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_ko(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_pt_BR', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_pt_BR(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_sk', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_sk(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_sv', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_sv(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_zh_CN', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_zh_CN(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMessages_zh_TW', 'ListResourceBundle', [
   \ javaapi#method(0,1,'ErrorMessages_zh_TW(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ErrorMsg', '', [
@@ -436,9 +436,6 @@ call javaapi#class('NumberType', 'Type', [
   \ javaapi#method(0,1,'isSimple(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('ObjectFactory', '', [
-  \ ])
-
 call javaapi#class('ObjectType', 'Type', [
   \ javaapi#method(0,0,'ObjectType(', 'String)', ''),
   \ javaapi#method(0,0,'ObjectType(', 'Class)', ''),
@@ -456,6 +453,18 @@ call javaapi#class('ObjectType', 'Type', [
   \ javaapi#method(0,1,'translateFrom(', 'ClassGenerator, MethodGenerator, Class)', 'void'),
   \ javaapi#method(0,1,'LOAD(', 'int)', 'Instruction'),
   \ javaapi#method(0,1,'STORE(', 'int)', 'Instruction'),
+  \ ])
+
+call javaapi#com.sun.org.apache.bcel.internal.generic.Instruction('OUTLINEABLECHUNKEND', '', [
+  \ javaapi#method(0,1,'getName(', ')', 'String'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
+  \ javaapi#method(0,1,'toString(', 'boolean)', 'String'),
+  \ ])
+
+call javaapi#com.sun.org.apache.bcel.internal.generic.Instruction('OUTLINEABLECHUNKSTART', '', [
+  \ javaapi#method(0,1,'getName(', ')', 'String'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
+  \ javaapi#method(0,1,'toString(', 'boolean)', 'String'),
   \ ])
 
 call javaapi#class('RealType', 'NumberType', [
@@ -542,12 +551,6 @@ call javaapi#class('RtMethodGenerator', 'MethodGenerator', [
   \ javaapi#method(0,1,'storeHandler(', ')', 'Instruction'),
   \ javaapi#method(0,1,'loadHandler(', ')', 'Instruction'),
   \ javaapi#method(0,1,'getLocalIndex(', 'String)', 'int'),
-  \ ])
-
-call javaapi#class('SecuritySupport', '', [
-  \ ])
-
-call javaapi#class('SecuritySupport12', 'SecuritySupport', [
   \ ])
 
 call javaapi#class('SlotAllocator', '', [

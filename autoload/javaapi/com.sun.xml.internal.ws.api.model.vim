@@ -10,10 +10,10 @@ call javaapi#interface('CheckedException', '', [
   \ javaapi#method(0,1,'getMessageName(', ')', 'String'),
   \ ])
 
-call javaapi#class('ExceptionType', 'ExceptionType>', [
+call javaapi#class('ExceptionType', 'Enum', [
   \ javaapi#field(1,1,'WSDLException', 'ExceptionType'),
   \ javaapi#field(1,1,'UserDefined', 'ExceptionType'),
-  \ javaapi#method(1,1,'values(', ')', 'ExceptionType[]'),
+  \ javaapi#method(1,1,'values(', ')', 'ExceptionType'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'ExceptionType'),
   \ javaapi#method(0,1,'value(', ')', 'int'),
   \ ])
@@ -31,13 +31,13 @@ call javaapi#interface('JavaMethod', '', [
   \ javaapi#method(0,1,'getResponsePayloadName(', ')', 'QName'),
   \ ])
 
-call javaapi#class('MEP', 'MEP>', [
+call javaapi#class('MEP', 'Enum', [
   \ javaapi#field(1,1,'REQUEST_RESPONSE', 'MEP'),
   \ javaapi#field(1,1,'ONE_WAY', 'MEP'),
   \ javaapi#field(1,1,'ASYNC_POLL', 'MEP'),
   \ javaapi#field(1,1,'ASYNC_CALLBACK', 'MEP'),
   \ javaapi#field(0,1,'isAsync', 'boolean'),
-  \ javaapi#method(1,1,'values(', ')', 'MEP[]'),
+  \ javaapi#method(1,1,'values(', ')', 'MEP'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'MEP'),
   \ javaapi#method(0,1,'isOneWay(', ')', 'boolean'),
   \ ])

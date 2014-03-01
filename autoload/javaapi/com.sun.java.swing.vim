@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.java.swing')
 
-call javaapi#interface('Painter<T>', 'Painter', [
+call javaapi#interface('Painter', 'Painter', [
   \ ])
 
 call javaapi#class('SwingUtilities3', '', [

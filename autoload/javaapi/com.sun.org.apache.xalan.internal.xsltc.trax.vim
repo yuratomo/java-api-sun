@@ -48,9 +48,6 @@ call javaapi#class('DOM2TO', 'Locator2', [
   \ javaapi#method(0,1,'getEncoding(', ')', 'String'),
   \ ])
 
-call javaapi#class('ObjectFactory', '', [
-  \ ])
-
 call javaapi#class('OutputSettings', '', [
   \ javaapi#method(0,1,'OutputSettings(', ')', ''),
   \ javaapi#method(0,1,'getProperties(', ')', 'Properties'),
@@ -148,12 +145,6 @@ call javaapi#class('SAX2StAXStreamWriter', 'SAX2StAXBaseWriter', [
   \ javaapi#method(0,1,'endCDATA(', ') throws SAXException', 'void'),
   \ javaapi#method(0,1,'ignorableWhitespace(', 'char[], int, int) throws SAXException', 'void'),
   \ javaapi#method(0,1,'processingInstruction(', 'String, String) throws SAXException', 'void'),
-  \ ])
-
-call javaapi#class('SecuritySupport', '', [
-  \ ])
-
-call javaapi#class('SecuritySupport12', 'SecuritySupport', [
   \ ])
 
 call javaapi#class('SmartTransformerFactoryImpl', 'SAXTransformerFactory', [

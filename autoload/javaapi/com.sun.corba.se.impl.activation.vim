@@ -106,9 +106,9 @@ call javaapi#class('RepositoryImpl', '_RepositoryImplBase', [
   \ javaapi#method(0,1,'isInstalled(', 'int) throws ServerNotRegistered', 'boolean'),
   \ javaapi#method(0,1,'install(', 'int) throws ServerNotRegistered, ServerAlreadyInstalled', 'void'),
   \ javaapi#method(0,1,'uninstall(', 'int) throws ServerNotRegistered, ServerAlreadyUninstalled', 'void'),
-  \ javaapi#method(0,1,'listRegisteredServers(', ')', 'int[]'),
+  \ javaapi#method(0,1,'listRegisteredServers(', ')', 'int'),
   \ javaapi#method(0,1,'getServerID(', 'String) throws ServerNotRegistered', 'int'),
-  \ javaapi#method(0,1,'getApplicationNames(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getApplicationNames(', ')', 'String'),
   \ javaapi#method(1,1,'main(', 'String[])', 'void'),
   \ ])
 
@@ -138,9 +138,9 @@ call javaapi#class('ServerManagerImpl', '_ServerManagerImplBase', [
   \ javaapi#method(0,1,'activate(', 'int) throws ServerAlreadyActive, ServerNotRegistered, ServerHeldDown', 'void'),
   \ javaapi#method(0,1,'active(', 'int, Server) throws ServerNotRegistered', 'void'),
   \ javaapi#method(0,1,'registerEndpoints(', 'int, String, EndPointInfo[]) throws NoSuchEndPoint, ServerNotRegistered, ORBAlreadyRegistered', 'void'),
-  \ javaapi#method(0,1,'getActiveServers(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getActiveServers(', ')', 'int'),
   \ javaapi#method(0,1,'shutdown(', 'int) throws ServerNotActive', 'void'),
-  \ javaapi#method(0,1,'getORBNames(', 'int) throws ServerNotRegistered', 'String[]'),
+  \ javaapi#method(0,1,'getORBNames(', 'int) throws ServerNotRegistered', 'String'),
   \ javaapi#method(0,1,'install(', 'int) throws ServerNotRegistered, ServerHeldDown, ServerAlreadyInstalled', 'void'),
   \ javaapi#method(0,1,'uninstall(', 'int) throws ServerNotRegistered, ServerHeldDown, ServerAlreadyUninstalled', 'void'),
   \ javaapi#method(0,1,'locateServer(', 'int, String) throws NoSuchEndPoint, ServerNotRegistered, ServerHeldDown', 'ServerLocation'),

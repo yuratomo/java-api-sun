@@ -6,7 +6,7 @@ call javaapi#class('IntegerArray', '', [
   \ javaapi#method(0,1,'IntegerArray(', 'int[])', ''),
   \ javaapi#method(0,1,'clear(', ')', 'void'),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
-  \ javaapi#method(0,1,'toIntArray(', ')', 'int[]'),
+  \ javaapi#method(0,1,'toIntArray(', ')', 'int'),
   \ javaapi#method(0,1,'at(', 'int)', 'int'),
   \ javaapi#method(0,1,'set(', 'int, int)', 'void'),
   \ javaapi#method(0,1,'indexOf(', 'int)', 'int'),

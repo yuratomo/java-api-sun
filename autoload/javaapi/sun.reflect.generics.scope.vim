@@ -5,30 +5,30 @@ call javaapi#class('AbstractScope<D', 'GenericDeclaration>', [
   \ javaapi#method(0,0,'getRecvr(', ')', 'D'),
   \ javaapi#method(0,0,'computeEnclosingScope(', ')', 'Scope'),
   \ javaapi#method(0,0,'getEnclosingScope(', ')', 'Scope'),
-  \ javaapi#method(0,1,'lookup(', 'String)', 'TypeVariable<?>'),
+  \ javaapi#method(0,1,'lookup(', 'String)', 'TypeVariable'),
   \ ])
 
-call javaapi#class('ClassScope', 'Class<?>>', [
+call javaapi#class('ClassScope', 'Class', [
   \ javaapi#method(0,0,'computeEnclosingScope(', ')', 'Scope'),
   \ javaapi#method(1,1,'make(', 'Class<?>)', 'ClassScope'),
   \ ])
 
-call javaapi#class('ConstructorScope', 'Constructor>', [
+call javaapi#class('ConstructorScope', 'AbstractScope', [
   \ javaapi#method(0,0,'computeEnclosingScope(', ')', 'Scope'),
   \ javaapi#method(1,1,'make(', 'Constructor)', 'ConstructorScope'),
   \ ])
 
 call javaapi#class('DummyScope', 'Scope', [
   \ javaapi#method(1,1,'make(', ')', 'DummyScope'),
-  \ javaapi#method(0,1,'lookup(', 'String)', 'TypeVariable<?>'),
+  \ javaapi#method(0,1,'lookup(', 'String)', 'TypeVariable'),
   \ ])
 
-call javaapi#class('MethodScope', 'Method>', [
+call javaapi#class('MethodScope', 'AbstractScope', [
   \ javaapi#method(0,0,'computeEnclosingScope(', ')', 'Scope'),
   \ javaapi#method(1,1,'make(', 'Method)', 'MethodScope'),
   \ ])
 
 call javaapi#interface('Scope', '', [
-  \ javaapi#method(0,1,'lookup(', 'String)', 'TypeVariable<?>'),
+  \ javaapi#method(0,1,'lookup(', 'String)', 'TypeVariable'),
   \ ])
 

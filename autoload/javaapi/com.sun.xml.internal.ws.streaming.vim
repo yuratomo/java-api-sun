@@ -49,7 +49,7 @@ call javaapi#class('DOMStreamReader', 'NamespaceContext', [
   \ javaapi#method(0,1,'getPrefix(', ')', 'String'),
   \ javaapi#method(0,1,'getProperty(', 'String) throws IllegalArgumentException', 'Object'),
   \ javaapi#method(0,1,'getText(', ')', 'String'),
-  \ javaapi#method(0,1,'getTextCharacters(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getTextCharacters(', ')', 'char'),
   \ javaapi#method(0,1,'getTextCharacters(', 'int, char[], int, int) throws XMLStreamException', 'int'),
   \ javaapi#method(0,1,'getTextLength(', ')', 'int'),
   \ javaapi#method(0,1,'getTextStart(', ')', 'int'),

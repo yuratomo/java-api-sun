@@ -3,8 +3,8 @@ call javaapi#namespace('com.sun.xml.internal.messaging.saaj.packaging.mime.util'
 call javaapi#class('ASCIIUtility', '', [
   \ javaapi#method(1,1,'parseInt(', 'byte[], int, int, int) throws NumberFormatException', 'int'),
   \ javaapi#method(1,1,'toString(', 'byte[], int, int)', 'String'),
-  \ javaapi#method(1,1,'getBytes(', 'String)', 'byte[]'),
-  \ javaapi#method(1,1,'getBytes(', 'InputStream) throws IOException', 'byte[]'),
+  \ javaapi#method(1,1,'getBytes(', 'String)', 'byte'),
+  \ javaapi#method(1,1,'getBytes(', 'InputStream) throws IOException', 'byte'),
   \ ])
 
 call javaapi#class('BASE64DecoderStream', 'FilterInputStream', [
@@ -13,7 +13,7 @@ call javaapi#class('BASE64DecoderStream', 'FilterInputStream', [
   \ javaapi#method(0,1,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ javaapi#method(0,1,'markSupported(', ')', 'boolean'),
   \ javaapi#method(0,1,'available(', ') throws IOException', 'int'),
-  \ javaapi#method(1,1,'decode(', 'byte[])', 'byte[]'),
+  \ javaapi#method(1,1,'decode(', 'byte[])', 'byte'),
   \ ])
 
 call javaapi#class('BASE64EncoderStream', 'FilterOutputStream', [
@@ -24,7 +24,7 @@ call javaapi#class('BASE64EncoderStream', 'FilterOutputStream', [
   \ javaapi#method(0,1,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,1,'flush(', ') throws IOException', 'void'),
   \ javaapi#method(0,1,'close(', ') throws IOException', 'void'),
-  \ javaapi#method(1,1,'encode(', 'byte[])', 'byte[]'),
+  \ javaapi#method(1,1,'encode(', 'byte[])', 'byte'),
   \ ])
 
 call javaapi#class('BEncoderStream', 'BASE64EncoderStream', [
@@ -56,7 +56,7 @@ call javaapi#class('QEncoderStream', 'QPEncoderStream', [
   \ ])
 
 call javaapi#class('QPDecoderStream', 'FilterInputStream', [
-  \ javaapi#field(0,0,'ba', 'byte[]'),
+  \ javaapi#field(0,0,'ba', 'byte'),
   \ javaapi#field(0,0,'spaces', 'int'),
   \ javaapi#method(0,1,'QPDecoderStream(', 'InputStream)', ''),
   \ javaapi#method(0,1,'read(', ') throws IOException', 'int'),

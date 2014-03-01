@@ -1,9 +1,9 @@
 call javaapi#namespace('com.sun.jmx.mbeanserver')
 
 call javaapi#class('ClassLoaderRepositorySupport', 'ModifiableClassLoaderRepository', [
-  \ javaapi#method(0,1,'loadClass(', 'String) throws ClassNotFoundException', 'Class<?>'),
-  \ javaapi#method(0,1,'loadClassWithout(', 'ClassLoader, String) throws ClassNotFoundException', 'Class<?>'),
-  \ javaapi#method(0,1,'loadClassBefore(', 'ClassLoader, String) throws ClassNotFoundException', 'Class<?>'),
+  \ javaapi#method(0,1,'loadClass(', 'String) throws ClassNotFoundException', 'Class'),
+  \ javaapi#method(0,1,'loadClassWithout(', 'ClassLoader, String) throws ClassNotFoundException', 'Class'),
+  \ javaapi#method(0,1,'loadClassBefore(', 'ClassLoader, String) throws ClassNotFoundException', 'Class'),
   \ javaapi#method(0,1,'addClassLoader(', 'ClassLoader)', 'void'),
   \ javaapi#method(0,1,'removeClassLoader(', 'ClassLoader)', 'void'),
   \ javaapi#method(0,1,'addClassLoader(', 'ObjectName, ClassLoader)', 'void'),
@@ -34,7 +34,7 @@ call javaapi#interface('DynamicMBean2', 'DynamicMBean', [
   \ javaapi#method(0,1,'registerFailed(', ')', 'void'),
   \ ])
 
-call javaapi#class('GetPropertyAction', 'String>', [
+call javaapi#class('GetPropertyAction', 'PrivilegedAction', [
   \ javaapi#method(0,1,'GetPropertyAction(', 'String)', ''),
   \ javaapi#method(0,1,'run(', ')', 'String'),
   \ javaapi#method(0,1,'run(', ')', 'Object'),
@@ -48,7 +48,7 @@ call javaapi#class('Introspector', '', [
   \ javaapi#method(1,1,'testCompliance(', 'Class<?>) throws NotCompliantMBeanException', 'MBeanInfo'),
   \ javaapi#method(1,1,'testComplianceMXBeanInterface(', 'Class<?>) throws NotCompliantMBeanException', 'void'),
   \ javaapi#method(1,1,'testCompliance(', 'Class<?>, Class<?>) throws NotCompliantMBeanException', 'MBeanInfo'),
-  \ javaapi#method(1,1,'getMBeanInterface(', 'Class<?>)', 'Class<?>'),
+  \ javaapi#method(1,1,'getMBeanInterface(', 'Class<?>)', 'Class'),
   \ javaapi#method(1,1,'getStandardMBeanInterface(', 'Class<T>) throws NotCompliantMBeanException', 'T>'),
   \ javaapi#method(1,1,'getMXBeanInterface(', 'Class<T>) throws NotCompliantMBeanException', 'T>'),
   \ javaapi#method(1,1,'descriptorForElement(', 'AnnotatedElement)', 'Descriptor'),
@@ -67,8 +67,8 @@ call javaapi#class('JmxMBeanServer', 'SunJmxMBeanServer', [
   \ javaapi#method(0,1,'registerMBean(', 'Object, ObjectName) throws InstanceAlreadyExistsException, MBeanRegistrationException, NotCompliantMBeanException', 'ObjectInstance'),
   \ javaapi#method(0,1,'unregisterMBean(', 'ObjectName) throws InstanceNotFoundException, MBeanRegistrationException', 'void'),
   \ javaapi#method(0,1,'getObjectInstance(', 'ObjectName) throws InstanceNotFoundException', 'ObjectInstance'),
-  \ javaapi#method(0,1,'queryMBeans(', 'ObjectName, QueryExp)', 'ObjectInstance>'),
-  \ javaapi#method(0,1,'queryNames(', 'ObjectName, QueryExp)', 'ObjectName>'),
+  \ javaapi#method(0,1,'queryMBeans(', 'ObjectName, QueryExp)', 'Set'),
+  \ javaapi#method(0,1,'queryNames(', 'ObjectName, QueryExp)', 'Set'),
   \ javaapi#method(0,1,'isRegistered(', 'ObjectName)', 'boolean'),
   \ javaapi#method(0,1,'getMBeanCount(', ')', 'Integer'),
   \ javaapi#method(0,1,'getAttribute(', 'ObjectName, String) throws MBeanException, AttributeNotFoundException, InstanceNotFoundException, ReflectionException', 'Object'),
@@ -77,7 +77,7 @@ call javaapi#class('JmxMBeanServer', 'SunJmxMBeanServer', [
   \ javaapi#method(0,1,'setAttributes(', 'ObjectName, AttributeList) throws InstanceNotFoundException, ReflectionException', 'AttributeList'),
   \ javaapi#method(0,1,'invoke(', 'ObjectName, String, Object[], String[]) throws InstanceNotFoundException, MBeanException, ReflectionException', 'Object'),
   \ javaapi#method(0,1,'getDefaultDomain(', ')', 'String'),
-  \ javaapi#method(0,1,'getDomains(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getDomains(', ')', 'String'),
   \ javaapi#method(0,1,'addNotificationListener(', 'ObjectName, NotificationListener, NotificationFilter, Object) throws InstanceNotFoundException', 'void'),
   \ javaapi#method(0,1,'addNotificationListener(', 'ObjectName, ObjectName, NotificationFilter, Object) throws InstanceNotFoundException', 'void'),
   \ javaapi#method(0,1,'removeNotificationListener(', 'ObjectName, NotificationListener) throws InstanceNotFoundException, ListenerNotFoundException', 'void'),
@@ -109,15 +109,15 @@ call javaapi#class('JmxMBeanServerBuilder', 'MBeanServerBuilder', [
   \ javaapi#method(0,1,'newMBeanServer(', 'String, MBeanServer, MBeanServerDelegate)', 'MBeanServer'),
   \ ])
 
-call javaapi#class('MBeanAnalyzer<M>', '', [
+call javaapi#class('MBeanAnalyzer', '', [
   \ ])
 
 call javaapi#class('MBeanInstantiator', '', [
   \ javaapi#method(0,1,'testCreation(', 'Class<?>) throws NotCompliantMBeanException', 'void'),
-  \ javaapi#method(0,1,'findClassWithDefaultLoaderRepository(', 'String) throws ReflectionException', 'Class<?>'),
-  \ javaapi#method(0,1,'findClass(', 'String, ClassLoader) throws ReflectionException', 'Class<?>'),
-  \ javaapi#method(0,1,'findClass(', 'String, ObjectName) throws ReflectionException, InstanceNotFoundException', 'Class<?>'),
-  \ javaapi#method(0,1,'findSignatureClasses(', 'String[], ClassLoader) throws ReflectionException', 'Class<?>[]'),
+  \ javaapi#method(0,1,'findClassWithDefaultLoaderRepository(', 'String) throws ReflectionException', 'Class'),
+  \ javaapi#method(0,1,'findClass(', 'String, ClassLoader) throws ReflectionException', 'Class'),
+  \ javaapi#method(0,1,'findClass(', 'String, ObjectName) throws ReflectionException, InstanceNotFoundException', 'Class'),
+  \ javaapi#method(0,1,'findSignatureClasses(', 'String[], ClassLoader) throws ReflectionException', 'Class'),
   \ javaapi#method(0,1,'instantiate(', 'Class<?>) throws ReflectionException, MBeanException', 'Object'),
   \ javaapi#method(0,1,'instantiate(', 'Class<?>, Object[], String[], ClassLoader) throws ReflectionException, MBeanException', 'Object'),
   \ javaapi#method(0,1,'deserialize(', 'ClassLoader, byte[]) throws OperationsException', 'ObjectInputStream'),
@@ -129,7 +129,7 @@ call javaapi#class('MBeanInstantiator', '', [
   \ javaapi#method(0,1,'getClassLoaderRepository(', ')', 'ModifiableClassLoaderRepository'),
   \ ])
 
-call javaapi#class('MBeanIntrospector<M>', '', [
+call javaapi#class('MBeanIntrospector', '', [
   \ ])
 
 call javaapi#class('MBeanServerDelegateImpl', 'MBeanServerDelegate', [
@@ -146,7 +146,7 @@ call javaapi#class('MBeanServerDelegateImpl', 'MBeanServerDelegate', [
   \ javaapi#method(0,1,'getMBeanInfo(', ')', 'MBeanInfo'),
   \ ])
 
-call javaapi#class('MBeanSupport<M>', 'MBeanRegistration', [
+call javaapi#class('MBeanSupport', 'MBeanRegistration', [
   \ javaapi#method(0,1,'isMXBean(', ')', 'boolean'),
   \ javaapi#method(0,1,'register(', 'MBeanServer, ObjectName) throws Exception', 'void'),
   \ javaapi#method(0,1,'unregister(', ')', 'void'),
@@ -164,10 +164,10 @@ call javaapi#class('MBeanSupport<M>', 'MBeanRegistration', [
   \ javaapi#method(0,1,'getMBeanInfo(', ')', 'MBeanInfo'),
   \ javaapi#method(0,1,'getClassName(', ')', 'String'),
   \ javaapi#method(0,1,'getResource(', ')', 'Object'),
-  \ javaapi#method(0,1,'getMBeanInterface(', ')', 'Class<?>'),
+  \ javaapi#method(0,1,'getMBeanInterface(', ')', 'Class'),
   \ ])
 
-call javaapi#class('MXBeanIntrospector', 'ConvertingMethod>', [
+call javaapi#class('MXBeanIntrospector', 'MBeanIntrospector', [
   \ ])
 
 call javaapi#class('MXBeanLookup', '', [
@@ -176,8 +176,8 @@ call javaapi#class('MXBeanLookup', '', [
 call javaapi#class('MXBeanMapping', '', [
   \ javaapi#method(0,0,'MXBeanMapping(', 'Type, OpenType<?>)', ''),
   \ javaapi#method(0,1,'getJavaType(', ')', 'Type'),
-  \ javaapi#method(0,1,'getOpenType(', ')', 'OpenType<?>'),
-  \ javaapi#method(0,1,'getOpenClass(', ')', 'Class<?>'),
+  \ javaapi#method(0,1,'getOpenType(', ')', 'OpenType'),
+  \ javaapi#method(0,1,'getOpenClass(', ')', 'Class'),
   \ javaapi#method(0,1,'fromOpenValue(', 'Object) throws InvalidObjectException', 'Object'),
   \ javaapi#method(0,1,'toOpenValue(', 'Object) throws OpenDataException', 'Object'),
   \ javaapi#method(0,1,'checkReconstructible(', ') throws InvalidObjectException', 'void'),
@@ -194,7 +194,7 @@ call javaapi#class('MXBeanProxy', '', [
   \ javaapi#method(0,1,'invoke(', 'MBeanServerConnection, ObjectName, Method, Object[]) throws Throwable', 'Object'),
   \ ])
 
-call javaapi#class('MXBeanSupport', 'ConvertingMethod>', [
+call javaapi#class('MXBeanSupport', 'MBeanSupport', [
   \ javaapi#method(0,1,'MXBeanSupport(', 'T, Class<T>) throws NotCompliantMBeanException', 'java/lang/Object>'),
   \ javaapi#method(0,1,'register(', 'MBeanServer, ObjectName) throws InstanceAlreadyExistsException', 'void'),
   \ javaapi#method(0,1,'unregister(', ')', 'void'),
@@ -219,20 +219,20 @@ call javaapi#class('NamedObject', '', [
 
 call javaapi#class('ObjectInputStreamWithLoader', 'ObjectInputStream', [
   \ javaapi#method(0,1,'ObjectInputStreamWithLoader(', 'InputStream, ClassLoader) throws IOException', ''),
-  \ javaapi#method(0,0,'resolveClass(', 'ObjectStreamClass) throws IOException, ClassNotFoundException', 'Class<?>'),
+  \ javaapi#method(0,0,'resolveClass(', 'ObjectStreamClass) throws IOException, ClassNotFoundException', 'Class'),
   \ ])
 
-call javaapi#class('PerInterface<M>', '', [
+call javaapi#class('PerInterface', '', [
   \ ])
 
 call javaapi#class('Repository', '', [
   \ javaapi#method(0,1,'Repository(', 'String)', ''),
   \ javaapi#method(0,1,'Repository(', 'String, boolean)', ''),
-  \ javaapi#method(0,1,'getDomains(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getDomains(', ')', 'String'),
   \ javaapi#method(0,1,'addMBean(', 'DynamicMBean, ObjectName, RegistrationContext) throws InstanceAlreadyExistsException', 'void'),
   \ javaapi#method(0,1,'contains(', 'ObjectName)', 'boolean'),
   \ javaapi#method(0,1,'retrieve(', 'ObjectName)', 'DynamicMBean'),
-  \ javaapi#method(0,1,'query(', 'ObjectName, QueryExp)', 'NamedObject>'),
+  \ javaapi#method(0,1,'query(', 'ObjectName, QueryExp)', 'Set'),
   \ javaapi#method(0,1,'remove(', 'ObjectName, RegistrationContext) throws InstanceNotFoundException', 'void'),
   \ javaapi#method(0,1,'getCount(', ')', 'Integer'),
   \ javaapi#method(0,1,'getDefaultDomain(', ')', 'String'),
@@ -240,15 +240,15 @@ call javaapi#class('Repository', '', [
 
 call javaapi#class('SecureClassLoaderRepository', 'ClassLoaderRepository', [
   \ javaapi#method(0,1,'SecureClassLoaderRepository(', 'ClassLoaderRepository)', ''),
-  \ javaapi#method(0,1,'loadClass(', 'String) throws ClassNotFoundException', 'Class<?>'),
-  \ javaapi#method(0,1,'loadClassWithout(', 'ClassLoader, String) throws ClassNotFoundException', 'Class<?>'),
-  \ javaapi#method(0,1,'loadClassBefore(', 'ClassLoader, String) throws ClassNotFoundException', 'Class<?>'),
+  \ javaapi#method(0,1,'loadClass(', 'String) throws ClassNotFoundException', 'Class'),
+  \ javaapi#method(0,1,'loadClassWithout(', 'ClassLoader, String) throws ClassNotFoundException', 'Class'),
+  \ javaapi#method(0,1,'loadClassBefore(', 'ClassLoader, String) throws ClassNotFoundException', 'Class'),
   \ ])
 
-call javaapi#class('StandardMBeanIntrospector', 'Method>', [
+call javaapi#class('StandardMBeanIntrospector', 'MBeanIntrospector', [
   \ ])
 
-call javaapi#class('StandardMBeanSupport', 'Method>', [
+call javaapi#class('StandardMBeanSupport', 'MBeanSupport', [
   \ javaapi#method(0,1,'StandardMBeanSupport(', 'T, Class<T>) throws NotCompliantMBeanException', 'java/lang/Object>'),
   \ javaapi#method(0,1,'register(', 'MBeanServer, ObjectName)', 'void'),
   \ javaapi#method(0,1,'unregister(', ')', 'void'),
@@ -271,7 +271,7 @@ call javaapi#class('Util', '', [
   \ javaapi#method(1,1,'wildmatch(', 'String, String)', 'boolean'),
   \ ])
 
-call javaapi#class('WeakIdentityHashMap<K,V>', '', [
+call javaapi#class('WeakIdentityHashMap', '', [
   \ javaapi#method(0,1,'put(', 'K, V)', 'V'),
   \ javaapi#method(0,1,'remove(', 'K)', 'V'),
   \ ])

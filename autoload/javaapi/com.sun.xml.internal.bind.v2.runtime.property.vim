@@ -1,6 +1,6 @@
 call javaapi#namespace('com.sun.xml.internal.bind.v2.runtime.property')
 
-call javaapi#class('ArrayERProperty<BeanT,ListT,ItemT>', 'ArrayProperty<BeanT,ListT,ItemT>', [
+call javaapi#class('ArrayERProperty', 'ArrayProperty', [
   \ javaapi#field(0,0,'wrapperTagName', 'Name'),
   \ javaapi#field(0,0,'isWrapperNillable', 'boolean'),
   \ javaapi#method(0,0,'ArrayERProperty(', 'JAXBContextImpl, RuntimePropertyInfo, QName, boolean)', ''),
@@ -10,17 +10,17 @@ call javaapi#class('ArrayERProperty<BeanT,ListT,ItemT>', 'ArrayProperty<BeanT,Li
   \ javaapi#method(0,1,'buildChildElementUnmarshallers(', 'UnmarshallerChain, QNameMap<ChildLoader>)', 'void'),
   \ ])
 
-call javaapi#class('ArrayElementLeafProperty<BeanT,ListT,ItemT>', 'ArrayElementProperty<BeanT,ListT,ItemT>', [
+call javaapi#class('ArrayElementLeafProperty', 'ArrayElementProperty', [
   \ javaapi#method(0,1,'ArrayElementLeafProperty(', 'JAXBContextImpl, RuntimeElementPropertyInfo)', ''),
   \ javaapi#method(0,1,'serializeItem(', 'JaxBeanInfo, ItemT, XMLSerializer) throws SAXException, AccessorException, IOException, XMLStreamException', 'void'),
   \ ])
 
-call javaapi#class('ArrayElementNodeProperty<BeanT,ListT,ItemT>', 'ArrayElementProperty<BeanT,ListT,ItemT>', [
+call javaapi#class('ArrayElementNodeProperty', 'ArrayElementProperty', [
   \ javaapi#method(0,1,'ArrayElementNodeProperty(', 'JAXBContextImpl, RuntimeElementPropertyInfo)', ''),
   \ javaapi#method(0,1,'serializeItem(', 'JaxBeanInfo, ItemT, XMLSerializer) throws SAXException, IOException, XMLStreamException', 'void'),
   \ ])
 
-call javaapi#class('ArrayElementProperty<BeanT,ListT,ItemT>', 'ArrayERProperty<BeanT,ListT,ItemT>', [
+call javaapi#class('ArrayElementProperty', 'ArrayERProperty', [
   \ javaapi#field(0,0,'prop', 'RuntimeElementPropertyInfo'),
   \ javaapi#method(0,0,'ArrayElementProperty(', 'JAXBContextImpl, RuntimeElementPropertyInfo)', ''),
   \ javaapi#method(0,1,'wrapUp(', ')', 'void'),
@@ -31,7 +31,7 @@ call javaapi#class('ArrayElementProperty<BeanT,ListT,ItemT>', 'ArrayERProperty<B
   \ javaapi#method(0,1,'getElementPropertyAccessor(', 'String, String)', 'Accessor'),
   \ ])
 
-call javaapi#class('ArrayProperty<BeanT,ListT,ItemT>', 'PropertyImpl<BeanT>', [
+call javaapi#class('ArrayProperty', 'PropertyImpl', [
   \ javaapi#field(0,0,'acc', 'ListT>'),
   \ javaapi#field(0,0,'lister', 'Object>'),
   \ javaapi#method(0,0,'ArrayProperty(', 'JAXBContextImpl, RuntimePropertyInfo)', ''),
@@ -39,7 +39,7 @@ call javaapi#class('ArrayProperty<BeanT,ListT,ItemT>', 'PropertyImpl<BeanT>', [
   \ javaapi#method(0,1,'getIdValue(', 'BeanT)', 'String'),
   \ ])
 
-call javaapi#class('ArrayReferenceNodeProperty<BeanT,ListT,ItemT>', 'ArrayERProperty<BeanT,ListT,ItemT>', [
+call javaapi#class('ArrayReferenceNodeProperty', 'ArrayERProperty', [
   \ javaapi#method(0,1,'ArrayReferenceNodeProperty(', 'JAXBContextImpl, RuntimeReferencePropertyInfo)', ''),
   \ javaapi#method(0,0,'serializeListBody(', 'BeanT, XMLSerializer, ListT) throws IOException, XMLStreamException, SAXException', 'void'),
   \ javaapi#method(0,1,'createBodyUnmarshaller(', 'UnmarshallerChain, QNameMap<ChildLoader>)', 'void'),
@@ -47,9 +47,9 @@ call javaapi#class('ArrayReferenceNodeProperty<BeanT,ListT,ItemT>', 'ArrayERProp
   \ javaapi#method(0,1,'getElementPropertyAccessor(', 'String, String)', 'Accessor'),
   \ ])
 
-call javaapi#class('AttributeProperty<BeanT>', 'PropertyImpl<BeanT>', [
+call javaapi#class('AttributeProperty', 'PropertyImpl', [
   \ javaapi#field(0,1,'attName', 'Name'),
-  \ javaapi#field(0,1,'xacc', 'TransducedAccessor<BeanT>'),
+  \ javaapi#field(0,1,'xacc', 'TransducedAccessor'),
   \ javaapi#method(0,1,'AttributeProperty(', 'JAXBContextImpl, RuntimeAttributePropertyInfo)', ''),
   \ javaapi#method(0,1,'serializeAttributes(', 'BeanT, XMLSerializer) throws SAXException, AccessorException, IOException, XMLStreamException', 'void'),
   \ javaapi#method(0,1,'serializeURIs(', 'BeanT, XMLSerializer) throws AccessorException, SAXException', 'void'),
@@ -69,7 +69,7 @@ call javaapi#class('AttributeProperty<BeanT>', 'PropertyImpl<BeanT>', [
   \ javaapi#method(0,1,'compareTo(', 'Object)', 'int'),
   \ ])
 
-call javaapi#class('ListElementProperty<BeanT,ListT,ItemT>', 'ArrayProperty<BeanT,ListT,ItemT>', [
+call javaapi#class('ListElementProperty', 'ArrayProperty', [
   \ javaapi#method(0,1,'ListElementProperty(', 'JAXBContextImpl, RuntimeElementPropertyInfo)', ''),
   \ javaapi#method(0,1,'getKind(', ')', 'PropertyKind'),
   \ javaapi#method(0,1,'buildChildElementUnmarshallers(', 'UnmarshallerChain, QNameMap<ChildLoader>)', 'void'),
@@ -77,16 +77,16 @@ call javaapi#class('ListElementProperty<BeanT,ListT,ItemT>', 'ArrayProperty<Bean
   \ javaapi#method(0,1,'getElementPropertyAccessor(', 'String, String)', 'Accessor'),
   \ ])
 
-call javaapi#class('Messages', 'Messages>', [
+call javaapi#class('Messages', 'Enum', [
   \ javaapi#field(1,1,'UNSUBSTITUTABLE_TYPE', 'Messages'),
   \ javaapi#field(1,1,'UNEXPECTED_JAVA_TYPE', 'Messages'),
-  \ javaapi#method(1,1,'values(', ')', 'Messages[]'),
+  \ javaapi#method(1,1,'values(', ')', 'Messages'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'Messages'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'format(', ')', 'String'),
   \ ])
 
-call javaapi#interface('Property<BeanT>', 'StructureLoaderBuilder', [
+call javaapi#interface('Property', 'StructureLoaderBuilder', [
   \ javaapi#method(0,1,'reset(', 'BeanT) throws AccessorException', 'void'),
   \ javaapi#method(0,1,'serializeBody(', 'BeanT, XMLSerializer, Object) throws SAXException, AccessorException, IOException, XMLStreamException', 'void'),
   \ javaapi#method(0,1,'serializeURIs(', 'BeanT, XMLSerializer) throws SAXException, AccessorException', 'void'),
@@ -105,7 +105,7 @@ call javaapi#class('PropertyFactory', '', [
   \ javaapi#method(1,1,'create(', 'JAXBContextImpl, RuntimePropertyInfo)', 'Property'),
   \ ])
 
-call javaapi#class('PropertyImpl<BeanT>', 'Property<BeanT>', [
+call javaapi#class('PropertyImpl', 'Property', [
   \ javaapi#field(0,0,'fieldName', 'String'),
   \ javaapi#method(0,1,'PropertyImpl(', 'JAXBContextImpl, RuntimePropertyInfo)', ''),
   \ javaapi#method(0,1,'getInfo(', ')', 'RuntimePropertyInfo'),
@@ -119,7 +119,7 @@ call javaapi#class('PropertyImpl<BeanT>', 'Property<BeanT>', [
   \ javaapi#method(0,1,'getFieldName(', ')', 'String'),
   \ ])
 
-call javaapi#class('SingleElementLeafProperty<BeanT>', 'PropertyImpl<BeanT>', [
+call javaapi#class('SingleElementLeafProperty', 'PropertyImpl', [
   \ javaapi#method(0,1,'SingleElementLeafProperty(', 'JAXBContextImpl, RuntimeElementPropertyInfo)', ''),
   \ javaapi#method(0,1,'reset(', 'BeanT) throws AccessorException', 'void'),
   \ javaapi#method(0,1,'getIdValue(', 'BeanT) throws AccessorException, SAXException', 'String'),
@@ -129,7 +129,7 @@ call javaapi#class('SingleElementLeafProperty<BeanT>', 'PropertyImpl<BeanT>', [
   \ javaapi#method(0,1,'getElementPropertyAccessor(', 'String, String)', 'Accessor'),
   \ ])
 
-call javaapi#class('SingleElementNodeProperty<BeanT,ValueT>', 'PropertyImpl<BeanT>', [
+call javaapi#class('SingleElementNodeProperty', 'PropertyImpl', [
   \ javaapi#method(0,1,'SingleElementNodeProperty(', 'JAXBContextImpl, RuntimeElementPropertyInfo)', ''),
   \ javaapi#method(0,1,'wrapUp(', ')', 'void'),
   \ javaapi#method(0,1,'reset(', 'BeanT) throws AccessorException', 'void'),
@@ -150,7 +150,7 @@ call javaapi#class('SingleMapNodeProperty<BeanT,ValueT', 'Map>', [
   \ javaapi#method(0,1,'getElementPropertyAccessor(', 'String, String)', 'Accessor'),
   \ ])
 
-call javaapi#class('SingleReferenceNodeProperty<BeanT,ValueT>', 'PropertyImpl<BeanT>', [
+call javaapi#class('SingleReferenceNodeProperty', 'PropertyImpl', [
   \ javaapi#method(0,1,'SingleReferenceNodeProperty(', 'JAXBContextImpl, RuntimeReferencePropertyInfo)', ''),
   \ javaapi#method(0,1,'reset(', 'BeanT) throws AccessorException', 'void'),
   \ javaapi#method(0,1,'getIdValue(', 'BeanT)', 'String'),
@@ -176,7 +176,7 @@ call javaapi#class('UnmarshallerChain', '', [
   \ javaapi#method(0,1,'getScopeSize(', ')', 'int'),
   \ ])
 
-call javaapi#class('ValueProperty<BeanT>', 'PropertyImpl<BeanT>', [
+call javaapi#class('ValueProperty', 'PropertyImpl', [
   \ javaapi#method(0,1,'ValueProperty(', 'JAXBContextImpl, RuntimeValuePropertyInfo)', ''),
   \ javaapi#method(0,1,'serializeBody(', 'BeanT, XMLSerializer, Object) throws SAXException, AccessorException, IOException, XMLStreamException', 'void'),
   \ javaapi#method(0,1,'serializeURIs(', 'BeanT, XMLSerializer) throws SAXException, AccessorException', 'void'),

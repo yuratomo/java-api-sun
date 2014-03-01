@@ -2,62 +2,62 @@ call javaapi#namespace('sun.security.util')
 
 call javaapi#class('AuthResources', 'ListResourceBundle', [
   \ javaapi#method(0,1,'AuthResources(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('AuthResources_de', 'ListResourceBundle', [
   \ javaapi#method(0,1,'AuthResources_de(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('AuthResources_es', 'ListResourceBundle', [
   \ javaapi#method(0,1,'AuthResources_es(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('AuthResources_fr', 'ListResourceBundle', [
   \ javaapi#method(0,1,'AuthResources_fr(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('AuthResources_it', 'ListResourceBundle', [
   \ javaapi#method(0,1,'AuthResources_it(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('AuthResources_ja', 'ListResourceBundle', [
   \ javaapi#method(0,1,'AuthResources_ja(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('AuthResources_ko', 'ListResourceBundle', [
   \ javaapi#method(0,1,'AuthResources_ko(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('AuthResources_pt_BR', 'ListResourceBundle', [
   \ javaapi#method(0,1,'AuthResources_pt_BR(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('AuthResources_sv', 'ListResourceBundle', [
   \ javaapi#method(0,1,'AuthResources_sv(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('AuthResources_zh_CN', 'ListResourceBundle', [
   \ javaapi#method(0,1,'AuthResources_zh_CN(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('AuthResources_zh_HK', 'ListResourceBundle', [
   \ javaapi#method(0,1,'AuthResources_zh_HK(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('AuthResources_zh_TW', 'ListResourceBundle', [
   \ javaapi#method(0,1,'AuthResources_zh_TW(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('BigInt', '', [
@@ -67,7 +67,7 @@ call javaapi#class('BigInt', '', [
   \ javaapi#method(0,1,'toInt(', ')', 'int'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'toBigInteger(', ')', 'BigInteger'),
-  \ javaapi#method(0,1,'toByteArray(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'toByteArray(', ')', 'byte'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'equals(', 'BigInt)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -97,7 +97,7 @@ call javaapi#class('DisabledAlgorithmConstraints', 'AlgorithmConstraints', [
   \ javaapi#method(0,1,'permits(', 'Set<CryptoPrimitive>, String, AlgorithmParameters)', 'boolean'),
   \ javaapi#method(0,1,'permits(', 'Set<CryptoPrimitive>, Key)', 'boolean'),
   \ javaapi#method(0,1,'permits(', 'Set<CryptoPrimitive>, String, Key, AlgorithmParameters)', 'boolean'),
-  \ javaapi#method(0,0,'decomposes(', 'String)', 'String>'),
+  \ javaapi#method(0,0,'decomposes(', 'String)', 'Set'),
   \ ])
 
 call javaapi#class('HostnameChecker', '', [
@@ -110,11 +110,14 @@ call javaapi#class('HostnameChecker', '', [
   \ javaapi#method(1,1,'getSubjectX500Name(', 'X509Certificate) throws CertificateParsingException', 'X500Name'),
   \ ])
 
+call javaapi#int('length()', '', [
+  \ ])
+
 call javaapi#class('ManifestDigester', '', [
   \ javaapi#field(1,1,'MF_MAIN_ATTRS', 'String'),
   \ javaapi#method(0,1,'ManifestDigester(', 'byte[])', ''),
   \ javaapi#method(0,1,'get(', 'String, boolean)', 'Entry'),
-  \ javaapi#method(0,1,'manifestDigest(', 'MessageDigest)', 'byte[]'),
+  \ javaapi#method(0,1,'manifestDigest(', 'MessageDigest)', 'byte'),
   \ ])
 
 call javaapi#class('MemoryCache', 'Cache', [
@@ -144,14 +147,14 @@ call javaapi#class('NullCache', 'Cache', [
 
 call javaapi#class('Password', '', [
   \ javaapi#method(0,1,'Password(', ')', ''),
-  \ javaapi#method(1,1,'readPassword(', 'InputStream) throws IOException', 'char[]'),
-  \ javaapi#method(1,1,'readPassword(', 'InputStream, boolean) throws IOException', 'char[]'),
+  \ javaapi#method(1,1,'readPassword(', 'InputStream) throws IOException', 'char'),
+  \ javaapi#method(1,1,'readPassword(', 'InputStream, boolean) throws IOException', 'char'),
   \ ])
 
 call javaapi#class('PathList', '', [
   \ javaapi#method(0,1,'PathList(', ')', ''),
   \ javaapi#method(1,1,'appendPath(', 'String, String)', 'String'),
-  \ javaapi#method(1,1,'pathToURLs(', 'String)', 'URL[]'),
+  \ javaapi#method(1,1,'pathToURLs(', 'String)', 'URL'),
   \ ])
 
 call javaapi#class('PendingException', 'RuntimeException', [
@@ -165,7 +168,7 @@ call javaapi#interface('PermissionFactory<T', 'Permission>', [
 
 call javaapi#class('Resources', 'ListResourceBundle', [
   \ javaapi#method(0,1,'Resources(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('ResourcesMgr', '', [
@@ -176,57 +179,57 @@ call javaapi#class('ResourcesMgr', '', [
 
 call javaapi#class('Resources_de', 'ListResourceBundle', [
   \ javaapi#method(0,1,'Resources_de(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('Resources_es', 'ListResourceBundle', [
   \ javaapi#method(0,1,'Resources_es(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('Resources_fr', 'ListResourceBundle', [
   \ javaapi#method(0,1,'Resources_fr(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('Resources_it', 'ListResourceBundle', [
   \ javaapi#method(0,1,'Resources_it(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('Resources_ja', 'ListResourceBundle', [
   \ javaapi#method(0,1,'Resources_ja(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('Resources_ko', 'ListResourceBundle', [
   \ javaapi#method(0,1,'Resources_ko(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('Resources_pt_BR', 'ListResourceBundle', [
   \ javaapi#method(0,1,'Resources_pt_BR(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('Resources_sv', 'ListResourceBundle', [
   \ javaapi#method(0,1,'Resources_sv(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('Resources_zh_CN', 'ListResourceBundle', [
   \ javaapi#method(0,1,'Resources_zh_CN(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('Resources_zh_HK', 'ListResourceBundle', [
   \ javaapi#method(0,1,'Resources_zh_HK(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('Resources_zh_TW', 'ListResourceBundle', [
   \ javaapi#method(0,1,'Resources_zh_TW(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('UntrustedCertificates', '', [
@@ -295,13 +298,13 @@ call javaapi#class('DerIndefLenConverter', '', [
 
 call javaapi#namespace('sun.security.util')
 
-call javaapi#class('ByteArrayTagOrder', 'Comparator<byte[]>', [
+call javaapi#class('ByteArrayTagOrder', 'Comparator', [
   \ javaapi#method(0,1,'ByteArrayTagOrder(', ')', ''),
   \ javaapi#method(0,1,'compare(', 'byte[], byte[])', 'int'),
   \ javaapi#method(0,1,'compare(', 'Object, Object)', 'int'),
   \ ])
 
-call javaapi#class('ByteArrayLexOrder', 'Comparator<byte[]>', [
+call javaapi#class('ByteArrayLexOrder', 'Comparator', [
   \ javaapi#method(0,1,'ByteArrayLexOrder(', ')', ''),
   \ javaapi#method(0,1,'compare(', 'byte[], byte[])', 'int'),
   \ javaapi#method(0,1,'compare(', 'Object, Object)', 'int'),
@@ -324,7 +327,7 @@ call javaapi#class('DerInputBuffer', 'ByteArrayInputStream', [
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ javaapi#method(0,1,'getInteger(', 'int) throws IOException', 'int'),
-  \ javaapi#method(0,1,'getBitString(', 'int) throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'getBitString(', 'int) throws IOException', 'byte'),
   \ javaapi#method(0,1,'getUTCTime(', 'int) throws IOException', 'Date'),
   \ javaapi#method(0,1,'getGeneralizedTime(', 'int) throws IOException', 'Date'),
   \ ])
@@ -336,21 +339,21 @@ call javaapi#class('DerInputStream', '', [
   \ javaapi#method(0,1,'DerInputStream(', 'byte[]) throws IOException', ''),
   \ javaapi#method(0,1,'DerInputStream(', 'byte[], int, int) throws IOException', ''),
   \ javaapi#method(0,1,'subStream(', 'int, boolean) throws IOException', 'DerInputStream'),
-  \ javaapi#method(0,1,'toByteArray(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'toByteArray(', ')', 'byte'),
   \ javaapi#method(0,1,'getInteger(', ') throws IOException', 'int'),
   \ javaapi#method(0,1,'getBigInteger(', ') throws IOException', 'BigInteger'),
   \ javaapi#method(0,1,'getPositiveBigInteger(', ') throws IOException', 'BigInteger'),
   \ javaapi#method(0,1,'getEnumerated(', ') throws IOException', 'int'),
-  \ javaapi#method(0,1,'getBitString(', ') throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'getBitString(', ') throws IOException', 'byte'),
   \ javaapi#method(0,1,'getUnalignedBitString(', ') throws IOException', 'BitArray'),
-  \ javaapi#method(0,1,'getOctetString(', ') throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'getOctetString(', ') throws IOException', 'byte'),
   \ javaapi#method(0,1,'getBytes(', 'byte[]) throws IOException', 'void'),
   \ javaapi#method(0,1,'getNull(', ') throws IOException', 'void'),
   \ javaapi#method(0,1,'getOID(', ') throws IOException', 'ObjectIdentifier'),
-  \ javaapi#method(0,1,'getSequence(', 'int) throws IOException', 'DerValue[]'),
-  \ javaapi#method(0,1,'getSet(', 'int) throws IOException', 'DerValue[]'),
-  \ javaapi#method(0,1,'getSet(', 'int, boolean) throws IOException', 'DerValue[]'),
-  \ javaapi#method(0,0,'readVector(', 'int) throws IOException', 'DerValue[]'),
+  \ javaapi#method(0,1,'getSequence(', 'int) throws IOException', 'DerValue'),
+  \ javaapi#method(0,1,'getSet(', 'int) throws IOException', 'DerValue'),
+  \ javaapi#method(0,1,'getSet(', 'int, boolean) throws IOException', 'DerValue'),
+  \ javaapi#method(0,0,'readVector(', 'int) throws IOException', 'DerValue'),
   \ javaapi#method(0,1,'getDerValue(', ') throws IOException', 'DerValue'),
   \ javaapi#method(0,1,'getUTF8String(', ') throws IOException', 'String'),
   \ javaapi#method(0,1,'getPrintableString(', ') throws IOException', 'String'),
@@ -413,17 +416,17 @@ call javaapi#class('DerValue', '', [
   \ javaapi#method(0,1,'getTag(', ')', 'byte'),
   \ javaapi#method(0,1,'getBoolean(', ') throws IOException', 'boolean'),
   \ javaapi#method(0,1,'getOID(', ') throws IOException', 'ObjectIdentifier'),
-  \ javaapi#method(0,1,'getOctetString(', ') throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'getOctetString(', ') throws IOException', 'byte'),
   \ javaapi#method(0,1,'getInteger(', ') throws IOException', 'int'),
   \ javaapi#method(0,1,'getBigInteger(', ') throws IOException', 'BigInteger'),
   \ javaapi#method(0,1,'getPositiveBigInteger(', ') throws IOException', 'BigInteger'),
   \ javaapi#method(0,1,'getEnumerated(', ') throws IOException', 'int'),
-  \ javaapi#method(0,1,'getBitString(', ') throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'getBitString(', ') throws IOException', 'byte'),
   \ javaapi#method(0,1,'getUnalignedBitString(', ') throws IOException', 'BitArray'),
   \ javaapi#method(0,1,'getAsString(', ') throws IOException', 'String'),
-  \ javaapi#method(0,1,'getBitString(', 'boolean) throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'getBitString(', 'boolean) throws IOException', 'byte'),
   \ javaapi#method(0,1,'getUnalignedBitString(', 'boolean) throws IOException', 'BitArray'),
-  \ javaapi#method(0,1,'getDataBytes(', ') throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'getDataBytes(', ') throws IOException', 'byte'),
   \ javaapi#method(0,1,'getPrintableString(', ') throws IOException', 'String'),
   \ javaapi#method(0,1,'getT61String(', ') throws IOException', 'String'),
   \ javaapi#method(0,1,'getIA5String(', ') throws IOException', 'String'),
@@ -435,7 +438,7 @@ call javaapi#class('DerValue', '', [
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'equals(', 'DerValue)', 'boolean'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
-  \ javaapi#method(0,1,'toByteArray(', ') throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'toByteArray(', ') throws IOException', 'byte'),
   \ javaapi#method(0,1,'toDerInputStream(', ') throws IOException', 'DerInputStream'),
   \ javaapi#method(0,1,'length(', ')', 'int'),
   \ javaapi#method(1,1,'isPrintableStringChar(', 'char)', 'boolean'),
@@ -488,9 +491,9 @@ call javaapi#class('BitArray', '', [
   \ javaapi#method(0,1,'get(', 'int) throws ArrayIndexOutOfBoundsException', 'boolean'),
   \ javaapi#method(0,1,'set(', 'int, boolean) throws ArrayIndexOutOfBoundsException', 'void'),
   \ javaapi#method(0,1,'length(', ')', 'int'),
-  \ javaapi#method(0,1,'toByteArray(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'toByteArray(', ')', 'byte'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,1,'toBooleanArray(', ')', 'boolean[]'),
+  \ javaapi#method(0,1,'toBooleanArray(', ')', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
@@ -520,7 +523,7 @@ call javaapi#class('ManifestEntryVerifier', '', [
   \ javaapi#method(0,1,'update(', 'byte)', 'void'),
   \ javaapi#method(0,1,'update(', 'byte[], int, int)', 'void'),
   \ javaapi#method(0,1,'getEntry(', ')', 'JarEntry'),
-  \ javaapi#method(0,1,'verify(', 'Hashtable<String, CodeSigner[]>, Hashtable<String, CodeSigner[]>) throws JarException', 'CodeSigner[]'),
+  \ javaapi#method(0,1,'verify(', 'Hashtable<String, CodeSigner[]>, Hashtable<String, CodeSigner[]>) throws JarException', 'CodeSigner'),
   \ ])
 
 call javaapi#namespace('sun.security.util')
